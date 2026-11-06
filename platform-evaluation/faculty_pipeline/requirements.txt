@@ -1,0 +1,5 @@
+duckdb>=1.1  # tested with 2.0.0 (queries use .execute().fetchall(), never .fetchone())
+pyarrow>=15  # tested with 26.0.1 (duckdb Parquet reads)
+numpy>=1.26  # tested with 2.4.6
+# Python 3.13 tested. Screenshot check: node + playwright (optional, not a Python dependency):
+#   NODE_PATH=$(npm root -g) node faculty_pipeline/screenshot.js output/faculty_pipeline

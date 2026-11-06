@@ -1,0 +1,974 @@
+{
+ "calibration_version": "faculty_pipeline_cal_v1",
+ "generated_at": "2026-11-06T08:14:58+00:00",
+ "snapshot": "Fall 2023 (IPEDS HR survey, 2023-11-01 reference date)",
+ "sources": {
+  "ipeds_instructional_staff": {
+   "contract_table": "ipeds_instructional_staff",
+   "vintage": "S2023_IS (Fall 2023)",
+   "filter": "sex='Total' AND race_ethnicity='Total'; scope = with faculty status (siscat 100); leaf rows 20r, 30r, 41r, 42r, 43r (44x is nested in 41x and is excluded)"
+  },
+  "ipeds_new_hires": {
+   "contract_table": "ipeds_new_hires",
+   "vintage": "S2023_NH (Fall 2023)",
+   "filter": "sex='Total' AND race_ethnicity='Total'; 21020 tenured, 21030 on track, 21040 NTT (21041+21042+21043; 21044 is nested in 21041)"
+  },
+  "ipeds_salary_instructional": {
+   "contract_table": "ipeds_salary_instructional",
+   "vintage": "SAL2023_IS (2023-24)",
+   "use": "average salary by rank = sum(outlays)/sum(count) across contract lengths"
+  },
+  "ipeds_enrollment_12mo": {
+   "contract_table": "ipeds_enrollment_12mo",
+   "vintage": "EFFY2024 (2023-24)",
+   "use": "FTE proxy = full-time + part-time/3 (12-month unduplicated headcount)"
+  },
+  "ipeds_completions": {
+   "url": "https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip",
+   "file": "C2023_a_RV.csv",
+   "sha256": "573572493c4c7854470d0a9ed4090aac6622402e342b058f509b792ee75124a6",
+   "vintage": "C2023_A (awards 2022-23, revised)",
+   "use": "first-major awards by 2-digit CIP, weighted by enrollment-years per award, as the discipline-group mix (proxy for both enrollment and faculty allocation)"
+  }
+ },
+ "states": {
+  "PRE": "Pre-tenure (on track)",
+  "ASC": "Associate, tenured",
+  "FUL": "Full professor, tenured",
+  "NTP": "NTT professorial (clinical/teaching/research)",
+  "NTL": "NTT lecturer/instructor/no rank"
+ },
+ "state_ipeds_rows": {
+  "PRE": [
+   "301",
+   "302",
+   "303",
+   "304",
+   "305",
+   "306"
+  ],
+  "ASC": [
+   "202",
+   "203",
+   "204",
+   "205",
+   "206"
+  ],
+  "FUL": [
+   "201"
+  ],
+  "NTP": [
+   "411",
+   "412",
+   "413",
+   "421",
+   "422",
+   "423",
+   "431",
+   "432",
+   "433"
+  ],
+  "NTL": [
+   "414",
+   "415",
+   "416",
+   "424",
+   "425",
+   "426",
+   "434",
+   "435",
+   "436"
+  ]
+ },
+ "discipline_groups": {
+  "ENG": {
+   "label": "Engineering & computing",
+   "cip2": [
+    "11",
+    "14",
+    "15"
+   ]
+  },
+  "SCI": {
+   "label": "Natural sciences & math",
+   "cip2": [
+    "26",
+    "27",
+    "40",
+    "41"
+   ]
+  },
+  "BUS": {
+   "label": "Business",
+   "cip2": [
+    "52"
+   ]
+  },
+  "SOC": {
+   "label": "Social & behavioral sciences",
+   "cip2": [
+    "42",
+    "45",
+    "44",
+    "43"
+   ]
+  },
+  "HUM": {
+   "label": "Arts, humanities & communication",
+   "cip2": [
+    "05",
+    "09",
+    "10",
+    "16",
+    "23",
+    "24",
+    "38",
+    "39",
+    "50",
+    "54"
+   ]
+  },
+  "PRO": {
+   "label": "Health, agriculture, education & other professional",
+   "cip2": "all other 2-digit CIP families"
+  }
+ },
+ "award_enrollment_years": {
+  "5": 4.0,
+  "7": 1.5,
+  "17": 5.0,
+  "18": 4.0,
+  "19": 3.0,
+  "certificates": 0.5
+ },
+ "institutions": {
+  "UIUC": {
+   "unitid": "145637",
+   "name": "University of Illinois Urbana-Champaign",
+   "instructional": {
+    "total": 2498,
+    "all_ft_instructional": 2498,
+    "without_faculty_status": 0,
+    "states": {
+     "PRE": 527,
+     "ASC": 477,
+     "FUL": 799,
+     "NTP": 393,
+     "NTL": 302
+    },
+    "leaf": {
+     "301": 1,
+     "302": 8,
+     "303": 518,
+     "304": 0,
+     "305": 0,
+     "306": 0,
+     "202": 476,
+     "203": 1,
+     "204": 0,
+     "205": 0,
+     "206": 0,
+     "201": 799,
+     "411": 30,
+     "412": 77,
+     "413": 64,
+     "421": 15,
+     "422": 26,
+     "423": 181,
+     "431": 0,
+     "432": 0,
+     "433": 0,
+     "414": 8,
+     "415": 15,
+     "416": 0,
+     "424": 88,
+     "425": 161,
+     "426": 30,
+     "434": 0,
+     "435": 0,
+     "436": 0
+    },
+    "tenured": 1276,
+    "on_track": 527,
+    "ntt": 695,
+    "rank_totals": {
+     "prof": 845,
+     "assoc": 587,
+     "asst": 764,
+     "instr": 96,
+     "lect": 176,
+     "norank": 30
+    },
+    "x44_equals_x41": true
+   },
+   "new_hires": {
+    "tenured": 23,
+    "tenure_track": 95,
+    "ntt": 83,
+    "total_faculty_status": 201,
+    "all_ft_new_hires": 1243
+   },
+   "salary": {
+    "1": {
+     "rank": "Professor",
+     "n": 844,
+     "avg": 173212
+    },
+    "2": {
+     "rank": "Associate professor",
+     "n": 582,
+     "avg": 120990
+    },
+    "3": {
+     "rank": "Assistant professor",
+     "n": 759,
+     "avg": 107084
+    },
+    "4": {
+     "rank": "Instructor",
+     "n": 96,
+     "avg": 93389
+    },
+    "5": {
+     "rank": "Lecturer",
+     "n": 176,
+     "avg": 77546
+    },
+    "6": {
+     "rank": "No academic rank",
+     "n": 30,
+     "avg": 57836
+    }
+   },
+   "enrollment": {
+    "all": 62797,
+    "full_time": 48788,
+    "part_time": 14009,
+    "fte_proxy": 53458
+   },
+   "discipline_groups": {
+    "ENG": {
+     "awards": 4923,
+     "weighted": 14418.0,
+     "share": 0.2882
+    },
+    "SCI": {
+     "awards": 1703,
+     "weighted": 5937.0,
+     "share": 0.1187
+    },
+    "BUS": {
+     "awards": 3935,
+     "weighted": 8131.5,
+     "share": 0.1625
+    },
+    "SOC": {
+     "awards": 1616,
+     "weighted": 5693.0,
+     "share": 0.1138
+    },
+    "HUM": {
+     "awards": 1272,
+     "weighted": 4703.0,
+     "share": 0.094
+    },
+    "PRO": {
+     "awards": 3354,
+     "weighted": 11151.5,
+     "share": 0.2229
+    }
+   }
+  },
+  "UIC": {
+   "unitid": "145600",
+   "name": "University of Illinois Chicago",
+   "instructional": {
+    "total": 2404,
+    "all_ft_instructional": 2404,
+    "without_faculty_status": 0,
+    "states": {
+     "PRE": 445,
+     "ASC": 398,
+     "FUL": 547,
+     "NTP": 650,
+     "NTL": 364
+    },
+    "leaf": {
+     "301": 27,
+     "302": 61,
+     "303": 357,
+     "304": 0,
+     "305": 0,
+     "306": 0,
+     "202": 397,
+     "203": 1,
+     "204": 0,
+     "205": 0,
+     "206": 0,
+     "201": 547,
+     "411": 32,
+     "412": 96,
+     "413": 93,
+     "421": 27,
+     "422": 68,
+     "423": 334,
+     "431": 0,
+     "432": 0,
+     "433": 0,
+     "414": 13,
+     "415": 108,
+     "416": 0,
+     "424": 143,
+     "425": 98,
+     "426": 2,
+     "434": 0,
+     "435": 0,
+     "436": 0
+    },
+    "tenured": 945,
+    "on_track": 445,
+    "ntt": 1014,
+    "rank_totals": {
+     "prof": 633,
+     "assoc": 622,
+     "asst": 785,
+     "instr": 156,
+     "lect": 206,
+     "norank": 2
+    },
+    "x44_equals_x41": true
+   },
+   "new_hires": {
+    "tenured": 9,
+    "tenure_track": 40,
+    "ntt": 105,
+    "total_faculty_status": 154,
+    "all_ft_new_hires": 1399
+   },
+   "salary": {
+    "1": {
+     "rank": "Professor",
+     "n": 447,
+     "avg": 182570
+    },
+    "2": {
+     "rank": "Associate professor",
+     "n": 472,
+     "avg": 142215
+    },
+    "3": {
+     "rank": "Assistant professor",
+     "n": 589,
+     "avg": 122417
+    },
+    "4": {
+     "rank": "Instructor",
+     "n": 136,
+     "avg": 127280
+    },
+    "5": {
+     "rank": "Lecturer",
+     "n": 203,
+     "avg": 76234
+    },
+    "6": {
+     "rank": "No academic rank",
+     "n": 2,
+     "avg": 46988
+    }
+   },
+   "enrollment": {
+    "all": 36493,
+    "full_time": 29404,
+    "part_time": 7089,
+    "fte_proxy": 31767
+   },
+   "discipline_groups": {
+    "ENG": {
+     "awards": 1648,
+     "weighted": 5335.0,
+     "share": 0.1757
+    },
+    "SCI": {
+     "awards": 981,
+     "weighted": 3713.0,
+     "share": 0.1223
+    },
+    "BUS": {
+     "awards": 1423,
+     "weighted": 4350.5,
+     "share": 0.1433
+    },
+    "SOC": {
+     "awards": 1273,
+     "weighted": 4367.0,
+     "share": 0.1438
+    },
+    "HUM": {
+     "awards": 536,
+     "weighted": 1996.5,
+     "share": 0.0657
+    },
+    "PRO": {
+     "awards": 3245,
+     "weighted": 10606.0,
+     "share": 0.3492
+    }
+   }
+  },
+  "UIS": {
+   "unitid": "148654",
+   "name": "University of Illinois Springfield",
+   "instructional": {
+    "total": 194,
+    "all_ft_instructional": 194,
+    "without_faculty_status": 0,
+    "states": {
+     "PRE": 47,
+     "ASC": 75,
+     "FUL": 39,
+     "NTP": 8,
+     "NTL": 25
+    },
+    "leaf": {
+     "301": 0,
+     "302": 6,
+     "303": 41,
+     "304": 0,
+     "305": 0,
+     "306": 0,
+     "202": 68,
+     "203": 7,
+     "204": 0,
+     "205": 0,
+     "206": 0,
+     "201": 39,
+     "411": 0,
+     "412": 0,
+     "413": 0,
+     "421": 0,
+     "422": 1,
+     "423": 7,
+     "431": 0,
+     "432": 0,
+     "433": 0,
+     "414": 0,
+     "415": 0,
+     "416": 0,
+     "424": 25,
+     "425": 0,
+     "426": 0,
+     "434": 0,
+     "435": 0,
+     "436": 0
+    },
+    "tenured": 114,
+    "on_track": 47,
+    "ntt": 33,
+    "rank_totals": {
+     "prof": 39,
+     "assoc": 75,
+     "asst": 55,
+     "instr": 25,
+     "lect": 0,
+     "norank": 0
+    },
+    "x44_equals_x41": true
+   },
+   "new_hires": {
+    "tenured": 1,
+    "tenure_track": 5,
+    "ntt": 3,
+    "total_faculty_status": 9,
+    "all_ft_new_hires": 86
+   },
+   "salary": {
+    "1": {
+     "rank": "Professor",
+     "n": 39,
+     "avg": 109096
+    },
+    "2": {
+     "rank": "Associate professor",
+     "n": 75,
+     "avg": 87793
+    },
+    "3": {
+     "rank": "Assistant professor",
+     "n": 55,
+     "avg": 81072
+    },
+    "4": {
+     "rank": "Instructor",
+     "n": 25,
+     "avg": 59543
+    }
+   },
+   "enrollment": {
+    "all": 5834,
+    "full_time": 3228,
+    "part_time": 2606,
+    "fte_proxy": 4097
+   },
+   "discipline_groups": {
+    "ENG": {
+     "awards": 281,
+     "weighted": 736.5,
+     "share": 0.2139
+    },
+    "SCI": {
+     "awards": 53,
+     "weighted": 199.5,
+     "share": 0.0579
+    },
+    "BUS": {
+     "awards": 230,
+     "weighted": 662.5,
+     "share": 0.1924
+    },
+    "SOC": {
+     "awards": 302,
+     "weighted": 885.5,
+     "share": 0.2572
+    },
+    "HUM": {
+     "awards": 137,
+     "weighted": 485.5,
+     "share": 0.141
+    },
+    "PRO": {
+     "awards": 194,
+     "weighted": 473.5,
+     "share": 0.1375
+    }
+   }
+  }
+ },
+ "big_ten_peers": {
+  "members": [
+   {
+    "unitid": "145637",
+    "name": "University of Illinois Urbana-Champaign",
+    "ft_instructional": 2498,
+    "tenure_density": 0.5108,
+    "tenure_system_share": 0.7218,
+    "ntt_share": 0.2782,
+    "full_share": 0.3199,
+    "pre_per_tenured": 0.413,
+    "new_hire_rate": 0.0805,
+    "ntt_share_of_hires": 0.4129,
+    "tt_hires_per_pre": 0.1803,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "151351",
+    "name": "Indiana University-Bloomington",
+    "ft_instructional": 2098,
+    "tenure_density": 0.4523,
+    "tenure_system_share": 0.6354,
+    "ntt_share": 0.3646,
+    "full_share": 0.2869,
+    "pre_per_tenured": 0.4046,
+    "new_hire_rate": 0.0858,
+    "ntt_share_of_hires": 0.5111,
+    "tt_hires_per_pre": 0.1745,
+    "x44_equals_x41": false
+   },
+   {
+    "unitid": "153658",
+    "name": "University of Iowa",
+    "ft_instructional": 2474,
+    "tenure_density": 0.3868,
+    "tenure_system_share": 0.5206,
+    "ntt_share": 0.4794,
+    "full_share": 0.2316,
+    "pre_per_tenured": 0.3459,
+    "new_hire_rate": 0.0715,
+    "ntt_share_of_hires": 0.6836,
+    "tt_hires_per_pre": 0.1239,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "163286",
+    "name": "University of Maryland-College Park",
+    "ft_instructional": 1967,
+    "tenure_density": 0.5552,
+    "tenure_system_share": 0.6995,
+    "ntt_share": 0.3005,
+    "full_share": 0.3503,
+    "pre_per_tenured": 0.2601,
+    "new_hire_rate": 0.0529,
+    "ntt_share_of_hires": 0.3365,
+    "tt_hires_per_pre": 0.1831,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "170976",
+    "name": "University of Michigan-Ann Arbor",
+    "ft_instructional": 7096,
+    "tenure_density": 0.3038,
+    "tenure_system_share": 0.3944,
+    "ntt_share": 0.6056,
+    "full_share": 0.2076,
+    "pre_per_tenured": 0.2982,
+    "new_hire_rate": 0.1347,
+    "ntt_share_of_hires": 0.8661,
+    "tt_hires_per_pre": 0.1384,
+    "x44_equals_x41": false
+   },
+   {
+    "unitid": "171100",
+    "name": "Michigan State University",
+    "ft_instructional": 2778,
+    "tenure_density": 0.4852,
+    "tenure_system_share": 0.6278,
+    "ntt_share": 0.3722,
+    "full_share": 0.288,
+    "pre_per_tenured": 0.2938,
+    "new_hire_rate": 0.0641,
+    "ntt_share_of_hires": 0.573,
+    "tt_hires_per_pre": 0.1414,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "174066",
+    "name": "University of Minnesota-Twin Cities",
+    "ft_instructional": 3398,
+    "tenure_density": 0.4706,
+    "tenure_system_share": 0.626,
+    "ntt_share": 0.374,
+    "full_share": 0.3075,
+    "pre_per_tenured": 0.3302,
+    "new_hire_rate": 0.0742,
+    "ntt_share_of_hires": 0.6071,
+    "tt_hires_per_pre": 0.1364,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "181464",
+    "name": "University of Nebraska-Lincoln",
+    "ft_instructional": 1296,
+    "tenure_density": 0.5741,
+    "tenure_system_share": 0.75,
+    "ntt_share": 0.25,
+    "full_share": 0.3264,
+    "pre_per_tenured": 0.3065,
+    "new_hire_rate": 0.0532,
+    "ntt_share_of_hires": 0.2899,
+    "tt_hires_per_pre": 0.1886,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "147767",
+    "name": "Northwestern University",
+    "ft_instructional": 2442,
+    "tenure_density": 0.4328,
+    "tenure_system_share": 0.5622,
+    "ntt_share": 0.4378,
+    "full_share": 0.3075,
+    "pre_per_tenured": 0.299,
+    "new_hire_rate": 0.059,
+    "ntt_share_of_hires": 0.5833,
+    "tt_hires_per_pre": 0.1329,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "204796",
+    "name": "Ohio State University-Main Campus",
+    "ft_instructional": 5009,
+    "tenure_density": 0.3825,
+    "tenure_system_share": 0.5059,
+    "ntt_share": 0.4941,
+    "full_share": 0.2262,
+    "pre_per_tenured": 0.3225,
+    "new_hire_rate": 0.0689,
+    "ntt_share_of_hires": 0.5652,
+    "tt_hires_per_pre": 0.2071,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "214777",
+    "name": "Pennsylvania State University-Main Campus",
+    "ft_instructional": 4153,
+    "tenure_density": 0.3672,
+    "tenure_system_share": 0.5073,
+    "ntt_share": 0.4927,
+    "full_share": 0.241,
+    "pre_per_tenured": 0.3816,
+    "new_hire_rate": 0.0624,
+    "ntt_share_of_hires": 0.668,
+    "tt_hires_per_pre": 0.1271,
+    "x44_equals_x41": false
+   },
+   {
+    "unitid": "243780",
+    "name": "Purdue University-Main Campus",
+    "ft_instructional": 1819,
+    "tenure_density": 0.696,
+    "tenure_system_share": 0.9632,
+    "ntt_share": 0.0368,
+    "full_share": 0.4354,
+    "pre_per_tenured": 0.3839,
+    "new_hire_rate": 0.0599,
+    "ntt_share_of_hires": 0.1009,
+    "tt_hires_per_pre": 0.1605,
+    "x44_equals_x41": false
+   },
+   {
+    "unitid": "186380",
+    "name": "Rutgers University-New Brunswick",
+    "ft_instructional": 3426,
+    "tenure_density": 0.3622,
+    "tenure_system_share": 0.4936,
+    "ntt_share": 0.5064,
+    "full_share": 0.2548,
+    "pre_per_tenured": 0.3626,
+    "new_hire_rate": 0.0657,
+    "ntt_share_of_hires": 0.6133,
+    "tt_hires_per_pre": 0.1756,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "240444",
+    "name": "University of Wisconsin-Madison",
+    "ft_instructional": 3832,
+    "tenure_density": 0.3779,
+    "tenure_system_share": 0.5318,
+    "ntt_share": 0.4682,
+    "full_share": 0.2805,
+    "pre_per_tenured": 0.4075,
+    "new_hire_rate": 0.066,
+    "ntt_share_of_hires": 0.5929,
+    "tt_hires_per_pre": 0.1508,
+    "x44_equals_x41": false
+   },
+   {
+    "unitid": "110662",
+    "name": "University of California-Los Angeles",
+    "ft_instructional": 4484,
+    "tenure_density": 0.335,
+    "tenure_system_share": 0.4061,
+    "ntt_share": 0.5939,
+    "full_share": 0.2732,
+    "pre_per_tenured": 0.2124,
+    "new_hire_rate": 0.1209,
+    "ntt_share_of_hires": 0.8081,
+    "tt_hires_per_pre": 0.2257,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "123961",
+    "name": "University of Southern California",
+    "ft_instructional": 2442,
+    "tenure_density": 0.4685,
+    "tenure_system_share": 0.602,
+    "ntt_share": 0.398,
+    "full_share": 0.326,
+    "pre_per_tenured": 0.285,
+    "new_hire_rate": 0.0475,
+    "ntt_share_of_hires": 0.4224,
+    "tt_hires_per_pre": 0.1564,
+    "x44_equals_x41": true
+   },
+   {
+    "unitid": "209551",
+    "name": "University of Oregon",
+    "ft_instructional": 1033,
+    "tenure_density": 0.5721,
+    "tenure_system_share": 0.7135,
+    "ntt_share": 0.2865,
+    "full_share": 0.2943,
+    "pre_per_tenured": 0.247,
+    "new_hire_rate": 0.0687,
+    "ntt_share_of_hires": 0.4507,
+    "tt_hires_per_pre": 0.226,
+    "x44_equals_x41": false
+   },
+   {
+    "unitid": "236948",
+    "name": "University of Washington-Seattle Campus",
+    "ft_instructional": 5407,
+    "tenure_density": 0.4574,
+    "tenure_system_share": 0.6162,
+    "ntt_share": 0.3838,
+    "full_share": 0.2793,
+    "pre_per_tenured": 0.3474,
+    "new_hire_rate": 0.0906,
+    "ntt_share_of_hires": 0.6714,
+    "tt_hires_per_pre": 0.1478,
+    "x44_equals_x41": true
+   }
+  ],
+  "summary": {
+   "tenure_density": {
+    "p25": 0.379,
+    "median": 0.4548,
+    "p75": 0.5044
+   },
+   "tenure_system_share": {
+    "p25": 0.5106,
+    "median": 0.6091,
+    "p75": 0.6835
+   },
+   "ntt_share": {
+    "p25": 0.3165,
+    "median": 0.3909,
+    "p75": 0.4894
+   },
+   "full_share": {
+    "p25": 0.2594,
+    "median": 0.2874,
+    "p75": 0.3168
+   },
+   "new_hire_rate": {
+    "p25": 0.0605,
+    "median": 0.0673,
+    "p75": 0.0789
+   },
+   "ntt_share_of_hires": {
+    "p25": 0.4295,
+    "median": 0.5781,
+    "p75": 0.6543
+   },
+   "tt_hires_per_pre": {
+    "p25": 0.1391,
+    "median": 0.1585,
+    "p75": 0.1824
+   }
+  }
+ },
+ "literature": {
+  "tenure_success": {
+   "default": 0.62,
+   "range": [
+    0.5,
+    0.72
+   ],
+   "what": "Share of an entering assistant-professor cohort that earns tenure at the hiring institution",
+   "evidence": [
+    {
+     "cite": "Kaminski & Geisler (2012), Science 335:864, 2,966 S&E assistant professors at 14 US universities: 64% promoted to associate at the same institution; median time to departure 10.9 years",
+     "url": "https://www.sciencedaily.com/releases/2012/02/120216144240.htm"
+    },
+    {
+     "cite": "Virginia Tech hires 1998-2005: about 64% of assistant professors achieved tenure",
+     "url": "https://faculty.vt.edu/content/dam/faculty_vt_edu/files/studies-reports/An%20Examination%20of%20Departure%20Trends%20among%20Pre-Tenure%20Faculty%20at%20Virginia%20Tech%20-%202003-2013%20(2020).pdf"
+    },
+    {
+     "cite": "University of Michigan ADVANCE (2026): tenure rates of 72-73% for the AY2008-2012 hiring cohort",
+     "url": "https://advance.umich.edu/wp-content/uploads/2026/01/TenureOutcomesByGenderAndRace_ADV-report_2026.pdf"
+    },
+    {
+     "cite": "University of Missouri system, 1980s cohorts: 39% tenured within 6 years, 44% had left (AIR 1995 forum paper, ERIC ED386998)",
+     "url": "https://bvbvf1.bib-bvb.de/vufind/PrimoRecord/cdi_eric_primary_ED386998"
+    }
+   ]
+  },
+  "tenure_clock": {
+   "review_year": 6,
+   "what": "Mandatory promotion-and-tenure dossier in the sixth probationary year; early review allowed; extensions exist",
+   "evidence": [
+    {
+     "cite": "UIUC Provost Communication #9, Promotion and Tenure (AY2025-26)",
+     "url": "https://provost.illinois.edu/policies/provosts-communications/communication-9-promotion-and-tenure/"
+    }
+   ]
+  },
+  "assoc_to_full_years": {
+   "default": 7.0,
+   "range": [
+    6.5,
+    8.2
+   ],
+   "what": "Mean years as associate professor before promotion to full, among those promoted",
+   "evidence": [
+    {
+     "cite": "MLA 'Standing Still' survey (2009): 6.6 years (men) and 8.2 years (women) as associate before promotion",
+     "url": "https://www.bu.edu/win/data/fig6.html"
+    },
+    {
+     "cite": "American Historical Association field report (2012): 7.6 years from associate to full",
+     "url": "https://www.historians.org/perspectives-article/what-makes-a-successful-academic-career-in-history-a-field-report-from-the-higher-ranks-december-2012/"
+    }
+   ]
+  },
+  "faculty_age": {
+   "share_55_plus": 0.37,
+   "share_65_plus": 0.13,
+   "what": "Age profile of US tenure-track faculty (CUPA-HR 2018 data); used to shape the synthetic starting age distribution of tenure-system faculty",
+   "evidence": [
+    {
+     "cite": "McChesney & Bichsel, 'The Aging of Tenure-Track Faculty in Higher Ed' (CUPA-HR, Jan 2020): 37% of faculty are 55+, 13% are 65+",
+     "url": "https://archive.cupahr.org/surveys/research-briefs/2020-aging-of-tenure-track-faculty-in-higher-ed-implications-for-succession-diversity/"
+    }
+   ]
+  },
+  "retirement_behaviour": {
+   "what": "Faculty retire late and the 70+ hazard fell after mandatory retirement ended (1994)",
+   "evidence": [
+    {
+     "cite": "Ashenfelter & Card (2002), 'Did the Elimination of Mandatory Retirement Affect Faculty Retirement?', AER 92(4), NBER w8378: retirement rates at 70-71 fell from about 75%/60% to under 30%",
+     "url": "https://www.nber.org/papers/w8378.pdf"
+    },
+    {
+     "cite": "Yakoboski, 'Understanding the Faculty Retirement (Non)Decision' (TIAA Institute 2015): about two-thirds of tenured faculty 50+ expect to work past normal retirement age",
+     "url": "https://www.tiaa.org/public/institute/publication/2015/understanding-faculty-retirement-non-decision"
+    },
+    {
+     "cite": "National Research Council (1991), 'Ending Mandatory Retirement for Tenured Faculty', ch. 5 Retirement Incentive Programs",
+     "url": "https://nap.nationalacademies.org/read/1795/chapter/8"
+    }
+   ]
+  },
+  "enrollment_demography": {
+   "what": "US high-school graduates peak in 2025, then fall about 13% by 2041; Illinois about -32% (2023-2041)",
+   "evidence": [
+    {
+     "cite": "WICHE, Knocking at the College Door (11th ed., Dec 2024)",
+     "url": "https://www.wiche.edu/knocking/"
+    }
+   ]
+  }
+ },
+ "surs": {
+  "what": "State Universities Retirement System of Illinois: retirement eligibility, Traditional/Portable plans",
+  "tier1": {
+   "applies_to": "First SURS-covered employment before 2011-01-01",
+   "rules": [
+    "Age 62 with 5+ years of service",
+    "Age 55 with 8+ years (age reduction may apply)",
+    "Any age with 30+ years of service"
+   ]
+  },
+  "tier2": {
+   "applies_to": "First SURS-covered employment on or after 2011-01-01",
+   "rules": [
+    "Age 67 with 10+ years of service (no reduction)",
+    "Age 62 with 10+ years, reduced 0.5% per month under 67"
+   ]
+  },
+  "evidence": [
+   {
+    "cite": "SURS, Retirement Eligibility",
+    "url": "https://surs.org/retirement-eligibility/"
+   },
+   {
+    "cite": "SURS FAQ, When am I eligible to retire in the Traditional or Portable Plans?",
+    "url": "https://surs.org/faqs/when-am-i-eligible-to-retire/"
+   },
+   {
+    "cite": "SURS, Traditional Plan",
+    "url": "https://surs.org/retirement-plans/traditional/"
+   }
+  ],
+  "verification_note": "surs.org could not be fetched from the build sandbox (host not allowed); the rules were read from SURS page text returned by web search on 2026-11-06. Re-check before use.",
+  "model_simplification": "Eligibility uses age and tier only: Tier 1 eligible from 55 (service assumed >= 8), Tier 2 from 62 (service assumed >= 10). The 30-years-any-age rule and reciprocal service are not modelled."
+ },
+ "caveats": [
+  "Scope is full-time instructional staff with faculty status (IPEDS siscat 100). Instructional staff without faculty status (siscat 500) have no rank or tenure status and are excluded (0 at UIUC, UIC and UIS).",
+  "IPEDS counts full-time instructional staff only; part-time faculty, research-only and medical-school clinical staff outside instruction are not in the start state.",
+  "is_category_total = false is not a partition in ipeds_instructional_staff: the 44x rows (multi-year) are nested in 41x (multi-year and indefinite) and equal them at UIUC. The leaf set used here is 20r + 30r + 41r + 42r + 43r and is asserted to equal the published total.",
+  "IPEDS gives one snapshot. Transition rates are not estimable from it; they come from published literature and from steady-state flow balance, and are labelled as such.",
+  "No public source gives faculty by discipline. Faculty are allocated to discipline groups in proportion to the completions-weighted mix, so every group starts at the institutional ratio."
+ ]
+}
