@@ -1,0 +1,9 @@
+duckdb>=1.1          # tested with 2.0.0 (queries use .execute().fetchall(), never .fetchone())
+pyarrow>=15          # tested with 26.0.1
+numpy>=1.26          # tested with 2.4.6
+pandas>=2.2          # statsmodels dependency; ETS prediction intervals need an indexed series
+statsmodels>=0.14    # tested with 0.15.0 (ETS, SARIMAX baselines)
+scikit-learn>=1.5    # tested with 1.9.1 (RidgeCV, StandardScaler)
+lightgbm>=4.3        # tested with 4.7.0 (global gradient-boosted model)
+# Python 3.13 tested. Screenshot check: node + playwright (optional, not a Python dependency):
+#   NODE_PATH=$(npm root -g) node turnover_forecast/screenshot.js output/turnover_forecast

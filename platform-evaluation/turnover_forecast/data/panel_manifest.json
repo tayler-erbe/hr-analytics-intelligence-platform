@@ -1,0 +1,117 @@
+{
+ "panel": "turnover_forecast/data/panel.parquet",
+ "sha256": "e479c95bfca88da7705bbc39aba6704b8ffab03e38a771df115cf66708eebfab",
+ "usable_flags": [
+  1,
+  6,
+  9,
+  10,
+  12
+ ],
+ "industries": [
+  "6113",
+  "6111",
+  "6221",
+  "00"
+ ],
+ "by_state": [
+  {
+   "state": "CA",
+   "rows": 4968,
+   "first_yq": 19913,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "IA",
+   "rows": 3924,
+   "first_yq": 19984,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "IL",
+   "rows": 4716,
+   "first_yq": 19932,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "IN",
+   "rows": 4032,
+   "first_yq": 19981,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "MD",
+   "rows": 5184,
+   "first_yq": 19901,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "MI",
+   "rows": 3096,
+   "first_yq": 20003,
+   "last_yq": 20214,
+   "last_6113_sep_yq": 20213
+  },
+  {
+   "state": "MN",
+   "rows": 4536,
+   "first_yq": 19943,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "NE",
+   "rows": 3888,
+   "first_yq": 19991,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "NJ",
+   "rows": 4320,
+   "first_yq": 19961,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "OH",
+   "rows": 3744,
+   "first_yq": 20001,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "OR",
+   "rows": 5040,
+   "first_yq": 19911,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "PA",
+   "rows": 4212,
+   "first_yq": 19971,
+   "last_yq": 20261,
+   "last_6113_sep_yq": 20254
+  },
+  {
+   "state": "WA",
+   "rows": 5184,
+   "first_yq": 19901,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  },
+  {
+   "state": "WI",
+   "rows": 5184,
+   "first_yq": 19901,
+   "last_yq": 20254,
+   "last_6113_sep_yq": 20253
+  }
+ ]
+}

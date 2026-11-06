@@ -1,0 +1,4 @@
+# Regenerable: python turnover_forecast/panel.py && python turnover_forecast/backtest.py
+data/panel.parquet
+data/backtest.parquet
+__pycache__/
