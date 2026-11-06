@@ -1,0 +1,51 @@
+{
+  "prepared_at_utc": "2026-10-29T16:10:08.266305+00:00",
+  "acquisition_date_local": "2026-10-29",
+  "counts": {
+    "occupations": 1016,
+    "class_catalog_records": 883,
+    "distinct_class_codes": 882,
+    "review_candidates": 2649
+  },
+  "sources": [
+    {
+      "path": "data/raw/onet_31_0_occupation_data.json",
+      "url": "https://www.onetcenter.org/dl_files/database/db_31_0_json/occupation_data.json",
+      "sha256": "8eec5d2449c0b96a90fca0f67184b3bf76c15b3549c4f145adb48c3ae55f52f8",
+      "bytes": 345874
+    },
+    {
+      "path": "data/raw/sucss_classes.json",
+      "url": "https://www.sucss.illinois.gov/javascripts/SUCSS/wsClassIndex.aspx/List_By_VariousMethods",
+      "sha256": "8ca3974560c2bc074aa9b4764a2a9b107bd06071d1de235b2090a39e94e1544a",
+      "bytes": 160682
+    },
+    {
+      "path": "data/raw/sucss_class_catalog.html",
+      "url": "https://www.sucss.illinois.gov/pages/classspec/Default.aspx",
+      "sha256": "ec0892e56d0bd043132981c7dc9cf78f498b99e17e4cf16a5a8769e336206413",
+      "bytes": 54311
+    }
+  ],
+  "pending": [
+    "BLS downloads: direct HTTP 403",
+    "SUCSS individual specification text",
+    "IPEDS peer panel",
+    "HigherEdJobs posting access/export",
+    "Official SOC bridge"
+  ],
+  "sucss_request": {
+    "method": "POST",
+    "body": {
+      "iInputs": {
+        "QueryString": "ShowAll"
+      }
+    }
+  },
+  "limitations": [
+    "Catalog entries are classifications, not employees or vacancies.",
+    "Class code 1164 has two catalog records; retained separately pending status review.",
+    "All mappings are unreviewed title-only suggestions.",
+    "No employment trends or AI displacement findings have been calculated."
+  ]
+}

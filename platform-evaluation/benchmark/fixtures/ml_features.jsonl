@@ -1,0 +1,2 @@
+{"available_on": "2026-08-31", "entity_id": "TRAIN1", "feature_name": "prior_failures", "prediction_on": "2026-09-01", "value": 2}
+{"available_on": "2026-10-01", "entity_id": "TRAIN1", "feature_name": "next_month_resolution", "prediction_on": "2026-09-01", "value": 1}

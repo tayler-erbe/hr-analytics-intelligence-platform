@@ -1,0 +1,5 @@
+{"attempt_id": "ATT1", "attempt_number": 1, "completed_at_utc": "2026-11-01T18:00:00Z", "run_id": "RUN1", "status": "success"}
+{"attempt_id": "ATT2", "attempt_number": 1, "completed_at_utc": "2026-11-01T23:50:00Z", "run_id": "RUN2", "status": "failed"}
+{"attempt_id": "ATT3", "attempt_number": 2, "completed_at_utc": "2026-11-02T00:30:00Z", "run_id": "RUN2", "status": "success"}
+{"attempt_id": "ATT4", "attempt_number": 1, "completed_at_utc": "2026-11-01T22:00:00Z", "run_id": "RUN3", "status": "failed"}
+{"attempt_id": "ATT5", "attempt_number": 2, "completed_at_utc": "2026-11-01T22:30:00Z", "run_id": "RUN3", "status": "failed"}

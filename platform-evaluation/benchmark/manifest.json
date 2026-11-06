@@ -1,0 +1,106 @@
+{
+  "benchmark_version": "1.0",
+  "rubric_version": "1.0",
+  "synthetic": true,
+  "build_date": "2026-11-02",
+  "row_counts": {
+    "positions": 5,
+    "appointments": 6,
+    "proposals": 3,
+    "investigators": 4,
+    "awards": 2,
+    "amendments": 3,
+    "award_transactions": 6,
+    "expected_runs": 4,
+    "job_attempts": 5,
+    "external_role_context": 1,
+    "ml_features": 2
+  },
+  "files": [
+    {
+      "path": "benchmark/fixtures/amendments.jsonl",
+      "sha256": "57877c9cae06b74a62b013e699d67b02caf5558bf50258dad493e6d109c126de"
+    },
+    {
+      "path": "benchmark/fixtures/appointments.jsonl",
+      "sha256": "d609bde9889ef2cd996028a27cfde49cccf40578004b3977cf667868e771de9a"
+    },
+    {
+      "path": "benchmark/fixtures/award_transactions.jsonl",
+      "sha256": "b5067f7305bb003b5940f27da786fe15699a3e5630f99f1af88c64bc9653c744"
+    },
+    {
+      "path": "benchmark/fixtures/awards.jsonl",
+      "sha256": "829b88fd22aec8958af14bc1f947885e2228219d75bd0d516c02e7760a13223e"
+    },
+    {
+      "path": "benchmark/fixtures/expected_runs.jsonl",
+      "sha256": "244ecb73e795b48e4b9d9a3a75bad8026dad86964dc954085fa13ae219c44c1e"
+    },
+    {
+      "path": "benchmark/fixtures/external_role_context.jsonl",
+      "sha256": "f9a5c643650f38a069f1e0e20902c9f83456e10d2a96066f2f9e5b66a28986c8"
+    },
+    {
+      "path": "benchmark/fixtures/investigators.jsonl",
+      "sha256": "0c1e27eb05129d122a142603b0bd0a45d3263cf5502688072d5ddf28df672ec9"
+    },
+    {
+      "path": "benchmark/fixtures/job_attempts.jsonl",
+      "sha256": "977b89c6ed318b2f949124f2d14c751f08a21890e44939bf61428e9c8685d186"
+    },
+    {
+      "path": "benchmark/fixtures/ml_features.jsonl",
+      "sha256": "3bd8aa92d57ec50842036d9f291aabe9d99bb8691dc25ea780576892f523a445"
+    },
+    {
+      "path": "benchmark/fixtures/positions.jsonl",
+      "sha256": "86a02d7f5b060d3beb5506e09f78f714be6e2222ee89f17cd08c23180991739c"
+    },
+    {
+      "path": "benchmark/fixtures/proposals.jsonl",
+      "sha256": "91039f9c42b6378db0629a34d8a5c0923855ed1d35fdbb2efcebd8c45914afd2"
+    },
+    {
+      "path": "benchmark/reference.sql",
+      "sha256": "0b287e2020a5a480fe87e942c46e312b3478648279800ffb58c5a3e5dfef30fd"
+    },
+    {
+      "path": "benchmark/answer_keys.json",
+      "sha256": "4a16e5f800d73910a4db31faba8906112daf63d1492d8f4b5aa60ed0321b8f15"
+    },
+    {
+      "path": "benchmark/cases.json",
+      "sha256": "ea94772e5edb2e91cd4a27b3ea016a29c06d21b581a5777fee627dc171628df0"
+    },
+    {
+      "path": "benchmark/documents.md",
+      "sha256": "e382d67ded660ffa679915d0b3846a16f3789e6e11b64950ab0d025bfc0eea49"
+    },
+    {
+      "path": "benchmark/README.md",
+      "sha256": "6ed45203fdbc4a1ceb6760208d5187593be40e770ca82acfda080ed9a0410d5c"
+    },
+    {
+      "path": "benchmark/build_pack.py",
+      "sha256": "1a6d727154e94a9db6c45c5caa408c4ff09acf2944b369b8bc5aa91149ed410d"
+    },
+    {
+      "path": "benchmark/test_reference.py",
+      "sha256": "01e476b863e3d760644f649ba6707fc82014639eeaa9a87edf38a0b4b072560e"
+    },
+    {
+      "path": "benchmark/score_report.py",
+      "sha256": "3e9ecb3e4ecf4859bed1f9d854bb010ffb26216a38dd0885773deff1e189bca7"
+    },
+    {
+      "path": "PLATFORM_EVALUATION_RUBRIC.md",
+      "sha256": "2002bf7854a7fe297f5d4abe72f184990b2ec55b1cb5e786b84f649a20f531d6"
+    }
+  ],
+  "limitations": [
+    "Tiny functional fixture; not a performance or forecasting benchmark.",
+    "Case questions are public development examples; no unseen holdout exists yet.",
+    "No vendor tests executed."
+  ]
+}

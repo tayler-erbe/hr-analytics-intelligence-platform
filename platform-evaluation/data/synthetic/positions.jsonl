@@ -1,0 +1,57 @@
+{"position_id": "D000", "team": "Strategy", "reports_to": null, "kind": "executive"}
+{"position_id": "D01L", "team": "Infrastructure & Reliability", "reports_to": "D000", "kind": "team_lead"}
+{"position_id": "D02L", "team": "Enterprise Applications", "reports_to": "D000", "kind": "team_lead"}
+{"position_id": "D03L", "team": "Software & Experience", "reports_to": "D000", "kind": "team_lead"}
+{"position_id": "D04L", "team": "Data Platforms & Integration", "reports_to": "D000", "kind": "team_lead"}
+{"position_id": "D05L", "team": "Analytics & Decision Support", "reports_to": "D000", "kind": "team_lead"}
+{"position_id": "D06L", "team": "Process & Portfolio", "reports_to": "D000", "kind": "team_lead"}
+{"position_id": "D07L", "team": "Service Enablement", "reports_to": "D000", "kind": "team_lead"}
+{"position_id": "D08L", "team": "IT Business Operations", "reports_to": "D000", "kind": "team_lead"}
+{"position_id": "D001", "team": "Infrastructure & Reliability", "reports_to": "D01L", "kind": "specialist"}
+{"position_id": "D002", "team": "Infrastructure & Reliability", "reports_to": "D01L", "kind": "specialist"}
+{"position_id": "D011", "team": "Infrastructure & Reliability", "reports_to": "D01L", "kind": "specialist"}
+{"position_id": "D012", "team": "Infrastructure & Reliability", "reports_to": "D01L", "kind": "specialist"}
+{"position_id": "D021", "team": "Infrastructure & Reliability", "reports_to": "D01L", "kind": "specialist"}
+{"position_id": "D022", "team": "Infrastructure & Reliability", "reports_to": "D01L", "kind": "specialist"}
+{"position_id": "D031", "team": "Enterprise Applications", "reports_to": "D02L", "kind": "specialist"}
+{"position_id": "D032", "team": "Enterprise Applications", "reports_to": "D02L", "kind": "specialist"}
+{"position_id": "D041", "team": "Enterprise Applications", "reports_to": "D02L", "kind": "specialist"}
+{"position_id": "D042", "team": "Enterprise Applications", "reports_to": "D02L", "kind": "specialist"}
+{"position_id": "D051", "team": "Enterprise Applications", "reports_to": "D02L", "kind": "specialist"}
+{"position_id": "D052", "team": "Enterprise Applications", "reports_to": "D02L", "kind": "specialist"}
+{"position_id": "D061", "team": "Software & Experience", "reports_to": "D03L", "kind": "specialist"}
+{"position_id": "D062", "team": "Software & Experience", "reports_to": "D03L", "kind": "specialist"}
+{"position_id": "D071", "team": "Software & Experience", "reports_to": "D03L", "kind": "specialist"}
+{"position_id": "D072", "team": "Software & Experience", "reports_to": "D03L", "kind": "specialist"}
+{"position_id": "D081", "team": "Software & Experience", "reports_to": "D03L", "kind": "specialist"}
+{"position_id": "D082", "team": "Software & Experience", "reports_to": "D03L", "kind": "specialist"}
+{"position_id": "D091", "team": "Data Platforms & Integration", "reports_to": "D04L", "kind": "specialist"}
+{"position_id": "D092", "team": "Data Platforms & Integration", "reports_to": "D04L", "kind": "specialist"}
+{"position_id": "D101", "team": "Data Platforms & Integration", "reports_to": "D04L", "kind": "specialist"}
+{"position_id": "D102", "team": "Data Platforms & Integration", "reports_to": "D04L", "kind": "specialist"}
+{"position_id": "D111", "team": "Data Platforms & Integration", "reports_to": "D04L", "kind": "specialist"}
+{"position_id": "D112", "team": "Data Platforms & Integration", "reports_to": "D04L", "kind": "specialist"}
+{"position_id": "D121", "team": "Analytics & Decision Support", "reports_to": "D05L", "kind": "specialist"}
+{"position_id": "D122", "team": "Analytics & Decision Support", "reports_to": "D05L", "kind": "specialist"}
+{"position_id": "D131", "team": "Analytics & Decision Support", "reports_to": "D05L", "kind": "specialist"}
+{"position_id": "D132", "team": "Analytics & Decision Support", "reports_to": "D05L", "kind": "specialist"}
+{"position_id": "D141", "team": "Analytics & Decision Support", "reports_to": "D05L", "kind": "specialist"}
+{"position_id": "D142", "team": "Analytics & Decision Support", "reports_to": "D05L", "kind": "specialist"}
+{"position_id": "D151", "team": "Process & Portfolio", "reports_to": "D06L", "kind": "specialist"}
+{"position_id": "D152", "team": "Process & Portfolio", "reports_to": "D06L", "kind": "specialist"}
+{"position_id": "D161", "team": "Process & Portfolio", "reports_to": "D06L", "kind": "specialist"}
+{"position_id": "D162", "team": "Process & Portfolio", "reports_to": "D06L", "kind": "specialist"}
+{"position_id": "D171", "team": "Process & Portfolio", "reports_to": "D06L", "kind": "specialist"}
+{"position_id": "D172", "team": "Process & Portfolio", "reports_to": "D06L", "kind": "specialist"}
+{"position_id": "D181", "team": "Service Enablement", "reports_to": "D07L", "kind": "specialist"}
+{"position_id": "D182", "team": "Service Enablement", "reports_to": "D07L", "kind": "specialist"}
+{"position_id": "D191", "team": "Service Enablement", "reports_to": "D07L", "kind": "specialist"}
+{"position_id": "D192", "team": "Service Enablement", "reports_to": "D07L", "kind": "specialist"}
+{"position_id": "D201", "team": "Service Enablement", "reports_to": "D07L", "kind": "specialist"}
+{"position_id": "D202", "team": "Service Enablement", "reports_to": "D07L", "kind": "specialist"}
+{"position_id": "D211", "team": "IT Business Operations", "reports_to": "D08L", "kind": "specialist"}
+{"position_id": "D212", "team": "IT Business Operations", "reports_to": "D08L", "kind": "specialist"}
+{"position_id": "D221", "team": "IT Business Operations", "reports_to": "D08L", "kind": "specialist"}
+{"position_id": "D222", "team": "IT Business Operations", "reports_to": "D08L", "kind": "specialist"}
+{"position_id": "D231", "team": "IT Business Operations", "reports_to": "D08L", "kind": "specialist"}
+{"position_id": "D232", "team": "IT Business Operations", "reports_to": "D08L", "kind": "specialist"}
