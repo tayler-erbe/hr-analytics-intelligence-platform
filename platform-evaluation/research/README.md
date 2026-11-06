@@ -8,6 +8,10 @@ Research date: 2026-11-06. This page condenses five detailed reports. Read them 
 | [DATABRICKS_AI_CAPABILITIES.md](DATABRICKS_AI_CAPABILITIES.md) | The same for Databricks |
 | [CUSTOM_STACK_DIFFERENTIATORS.md](CUSTOM_STACK_DIFFERENTIATORS.md) | Where independent engineering can match or exceed both, how to prove it fairly, and where it probably will not win |
 | [HR_USE_CASES_AND_GUARDRAILS.md](HR_USE_CASES_AND_GUARDRAILS.md) | 18 prioritized HR use cases, ERP-conversion data-quality work, and Illinois legal guardrails |
+| [IHR_STRATEGIC_PROGRAMS_OPPORTUNITY_BRIEF.md](IHR_STRATEGIC_PROGRAMS_OPPORTUNITY_BRIEF.md) | **Start here for the HR partnership:** what to build for Illinois HR Strategic Programs & Partnerships, why the platforms do not provide it, a 90-day plan |
+| [UIUC_HR_AND_AI_TOOL_LANDSCAPE.md](UIUC_HR_AND_AI_TOOL_LANDSCAPE.md) | Current UIUC/System HR systems, approved AI tools, ERP transformation status, and the gap analysis |
+| [TOOLS_BEYOND_SNOWFLAKE_DATABRICKS.md](TOOLS_BEYOND_SNOWFLAKE_DATABRICKS.md) | HR-native, general and open-source alternatives; best tool per job; 12 gaps no product fills |
+| [SKILLS_RESKILLING_AND_WORKFORCE_PLANNING.md](SKILLS_RESKILLING_AND_WORKFORCE_PLANNING.md) | Practice for skills-based organizations, AI reskilling, competency frameworks, workforce planning and succession |
 | [PUBLIC_DATA_SOURCE_CATALOG.md](PUBLIC_DATA_SOURCE_CATALOG.md) | 31 public data sources, tiers, join keys and hosts ([JSON](public_data_source_catalog.json)) |
 
 **Evidence quality.** The research agents could not open docs.snowflake.com or docs.databricks.com directly. Feature statuses come from search-result excerpts of vendor release notes and docs, and each report marks its confidence and unverified items. Re-check any status against a live account before it goes into a procurement or decision document. Nothing here is a measured result: no vendor account has been tested.
