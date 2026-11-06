@@ -1,0 +1,13 @@
+# Python 3.13. Versions are the ones this pipeline was run and tested with.
+duckdb==2.0.0
+pyarrow==26.0.1
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.18.1
+pyyaml               # imported by erp_readiness/common.py (reused generator); not used directly here
+scikit-learn==1.9.1
+lifelines==0.30.3    # needs autograd-gamma; if its sdist fails to build (setuptools "install_layout" error),
+                     # run: pip install -U "setuptools>=75" && pip install --no-build-isolation autograd-gamma
+lightgbm==4.7.0      # only for the optional, gated readiness ranker
+fairlearn==0.15.0    # adverse-impact / equalized-odds audit
+# Screenshot (optional, not a Python dependency): node + playwright

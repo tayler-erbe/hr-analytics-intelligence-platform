@@ -1,0 +1,8 @@
+{
+  "_comment": "Copy to governance/approval.json ONLY on the approved machine, after written sign-off. The file must never be committed (see .gitignore). It opens the person-level readiness gate together with SUCC_ENABLE_PERSON_LEVEL=1. Record the scope approved (models, attributes, uses) and the review date.",
+  "scope": "candidate-readiness ranking for talent-pool discussion, critical role families: <list>; audit attributes: <list approved by Counsel>",
+  "university_counsel": {"name": "", "date": "", "reference": ""},
+  "office_for_access_and_equity": {"name": "", "date": "", "reference": ""},
+  "illinois_human_resources": {"name": "", "date": "", "reference": ""},
+  "next_review_date": ""
+}
