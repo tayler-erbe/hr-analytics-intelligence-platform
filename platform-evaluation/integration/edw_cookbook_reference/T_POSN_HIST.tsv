@@ -1,0 +1,53 @@
+ordinal	column	datatype	pk	comment
+1	POSN_NBR	VARCHAR2(6)	Y	Position
+2	POSN_HIST_EFF_DT	DATE	Y	The date the details for the position record became effective in the corresponding source system.
+3	POSN_HIST_EXP_DT	DATE		For records no longer in effect, this is the day before the record expired in the EDW (i.e., the last effective date). For current records, expiration date is set to 12/31/9999.
+4	POSN_HIST_CUR_INFO_IND	VARCHAR2(1)		When the value is 'Y', this indicates the record is considered to contain current, effective information. The value of 'N' indicates that the record is no longer considered to contain current information. The value of 'D' indicates that the record has been deleted from the source system.
+5	POSN_CLS_CD	VARCHAR2(5)		A code which identifies a Position Class which can then be assigned to a Position.
+6	POSN_STATUS_DESC	VARCHAR2(30)		Description of the Position Status Code that indicates whether a position is A = Active, C = Cancelled, F = Frozen or I = Inactive.
+7	POSN_TITLE	VARCHAR2(120)		Position Title
+8	POSN_BGN_DT	DATE		First date the position is funded to begin.
+9	POSN_END_DT	DATE		End date of the position. If null, the position is presumed to be a permanent position.
+10	POSN_TYPE_DESC	VARCHAR2(30)		Single or pooled position.
+11	POSN_EMPEE_CLS_CD	VARCHAR2(2)		The employee class is a high level grouping of employees and details that are associated with this grouping. Details from the employee class default to the position class unless otherwise changed.
+12	POSN_EMPEE_CLS_LONG_DESC	VARCHAR2(30)		The full description or title for the associated Employee Class.
+13	POSN_SAL_TBL_CD	VARCHAR2(2)		Table divides the salary groups into smaller groups that are related. For instance you might have one for each union.
+14	CIPC_CD	VARCHAR2(6)		Predefined codes that are validated against the Student College Instructional Validation Form.
+15	CIPC_DESC	VARCHAR2(30)		Predefined description of codes that are validated against the Student College Instructional Validation Form.
+16	COA_CD	VARCHAR2(1)		Chart of Accounts code as defined by the BANNER Finance system. This is the C in C-FOAPAL.
+17	POSN_SAL_GROUP_CD	VARCHAR2(6)		The Salary group is a grouping of salary tables and salary grades generally for a fiscal year.
+18	POSN_SAL_GROUP_DESC	VARCHAR2(30)		The Salary group is a grouping of salary tables and salary grades generally for a fiscal year.
+19	POSN_GROUP_CD	VARCHAR2(4)		The Position Group code.
+20	POSN_GROUP_DESC	VARCHAR2(30)		The Position Group code description.
+21	WORK_SCHED_CD	VARCHAR2(4)		Determines if a Work Schedule is defaulted when a job is established.
+22	WORK_SCHED_DESC	VARCHAR2(30)		Description of a Work Schedule that is defaulted when a job is established.
+23	PAPE_CIV_SVC_ID	VARCHAR2(6)		Banner shows this as the National Occupation Code, but the University is populated it with both the PAPE code and the Civil Service Identifier.
+24	PAPE_CIV_SVC_ID_DESC	VARCHAR2(60)		Banner shows this as the description of the National Occupation Code, but the University is populated it with both the PAPE code and the Civil Service Identifier.
+25	OCCUP_TITLE_CD	VARCHAR2(11)		Contains the Dictionary of Positions Occupational Titles Code.
+26	OCCUP_TITLE_DESC	VARCHAR2(60)		Contains the description of the Dictionary of Positions Occupational Titles Code.
+27	POSN_EXEMPT_IND	VARCHAR2(1)		Indicates if employees assigned to positions in this Position Class will be exempt or non-exempt.
+28	POSN_BRGN_UNIT_CD	VARCHAR2(2)		Bargaining Unit code associated with this position.
+29	POSN_BRGN_UNIT_DESC	VARCHAR2(30)		Bargaining Unit name associated with this position.
+30	POSN_ACCRUE_SNRTY_IND	VARCHAR2(1)		Indicates whether the associated position is able to accrue seniority.
+31	POSN_JOB_PRGS_CD	VARCHAR2(5)		This code groups similar or related position classes in a sequential order. This code aids in tracking seniority balances.
+32	POSN_JOB_PRGS_DESC	VARCHAR2(30)		The description of the job progression code groups similar or related position classes in a sequential order. This code aids in tracking seniority balances.
+33	OPEN_POSN_IND	VARCHAR2(1)		Indicates whether the position is open or filled.
+34	POSN_ONE_TIME_PMT_IND	VARCHAR2(1)		Indicates whether the job is temporary and paid only once or whether it is a permanent job.
+35	POSN_HIST_POST_DT	DATE		Date when the record was inserted or last modified in the EDW.
+36	POSN_MIN_SAL	NUMBER(13,4)		The minimum salary allowed for this position.
+37	POSN_MIDPT_SAL	NUMBER(13,4)		The midpoint salary associated with this position.
+38	POSN_MAX_SAL	NUMBER(13,4)		The maximum salary allowed for this position.
+39	POSN_SAL_RANGE_TYPE_DESC	VARCHAR2(10)		Indicates whether the minimum, midpoint and maximum salary parameters are hourly or annual salaries.
+40	POSN_DATA_STATUS_DESC	VARCHAR2(10)		A description that categorizes the status of records as current, no longer effective (i.e., expired), effective in the future or deleted for University Business.
+41	POSN_DATA_EXP_DT	DATE		The last date on which the data in this record is effective for University Business.
+42	POSN_SAL_RT_TYPE_DESC	VARCHAR2(20)		Indicates whether this position is an Open Range, Established, Prevailing, or Negotiated position.
+43	POSN_BUDG_PRFL_CD	VARCHAR2(6)		The Budget Profile Code indicates whether a particular Position will be included in the annual salary planner process.
+44	POSN_BUDG_PRFL_DESC	VARCHAR2(30)		A description of the Budget Profile Code.
+45	POSN_ROLL_CD	VARCHAR2(1)		
+46	POSN_ROLL_DESC	VARCHAR2(30)		
+47	POSN_STATUS_CD	VARCHAR2(1)		Code that indicates whether a position is A = Active, C = Cancelled, F = Frozen or I = Inactive.
+48	POSN_SAL_GRADE_CD	VARCHAR2(5)		Each salary table must have at least one grade to be usable and there is no maximum. Each Group/Table/Grade combination created indicates whether it is hourly or salaried, as well as the low, minimum, and high salary, and rate.
+49	POSN_SAL_STEP_NBR	NUMBER(3,0)		Salary Steps are tied to a grade and are not required. In general these are used with the type of union or other job where the schedule dictates an automatic increase to another higher step after a certain period of longevity.
+50	POSN_APPT_PCT	NUMBER(5,4)		The Position Appointment Percent identifies the percentage of Full Time the employee will work in this Position.
+51	POSN_DESC_UPDATE_DT	DATE		This is the date that the physical position description was last reviewed.
+52	SUPV_POSN_NBR	VARCHAR2(6)		The Supervising Position Number for this position number.

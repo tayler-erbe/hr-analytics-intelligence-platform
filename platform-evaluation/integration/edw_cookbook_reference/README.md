@@ -9,7 +9,8 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 | T_JOB_DETL_HIST | 79 | Verified 2026-11-06 |
 | T_EMPEE_HIST | 71 | Verified 2026-11-06 |
 | T_EMPEE_HIST_5 | 27 | Verified 2026-11-06 (secured) |
-| T_PERS_HIST, position history, payroll accounting detail, reference tables (org, E-Class, P-Class/job class) | — | Pending |
+| T_POSN_HIST | 52 | Verified 2026-11-06 |
+| T_PERS_HIST, payroll accounting detail, reference tables (org, E-Class, P-Class/job class) | — | Pending |
 
 ## Conventions confirmed by T_JOB_DETL_HIST
 
@@ -41,3 +42,17 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 - Carries termination (TERMN_REASON_CD/DESC, EMPEE_TERMN_DT) and the SURS annuitant fields, plus the full org-hierarchy ancestor path of the employee's organization: CAMPUS_LEVEL_1_CD, ADMIN_LEVEL_2_CD, COLL_LEVEL_3_CD, SCHOOL_SUB_COLL_LEVEL_4_CD, DEPT_LEVEL_5_CD, DEPT_SUB_ORG_LEVEL_6/7/8_CD. These names reveal the EDW org-hierarchy levels (1 campus, 2 admin, 3 college, 4 school/sub-college, 5 department, 6–8 sub-org).
 - Termination fields duplicate T_EMPEE_HIST; use whichever the access role permits. For the models, prefer T_EMPEE_HIST and reconcile against _5 where both are readable.
 - The SURS user/name/note fields are operational and stay NULL in synthetic data.
+
+## Conventions confirmed by T_POSN_HIST
+
+- Primary key: POSN_NBR + POSN_HIST_EFF_DT. `POSN_HIST_EXP_DT` inclusive, 12/31/9999 open end; `POSN_HIST_CUR_INFO_IND` Y/N/D; `POSN_HIST_POST_DT`; data status and data expiration date as in the other tables.
+- Position status: `POSN_STATUS_CD` A Active, C Cancelled, F Frozen, I Inactive (with `POSN_STATUS_DESC`).
+- Vacancy: `OPEN_POSN_IND` (open vs filled). Use it alongside job history; do not infer vacancy only from missing incumbents.
+- Term vs permanent: `POSN_BGN_DT`, `POSN_END_DT` (null = presumed permanent). `POSN_TYPE_DESC` single vs pooled.
+- Class links: `POSN_CLS_CD` (5-char P-Class), `POSN_EMPEE_CLS_CD` (E-Class), and `PAPE_CIV_SVC_ID`/`_DESC` (VARCHAR2(6); populated with the PAPE code or the Civil Service Identifier). `PAPE_CIV_SVC_ID` is the most likely bridge from positions to SUCSS civil-service classes and is the preferred source for the SUCSS -> O*NET bridge once its value format is confirmed. `OCCUP_TITLE_CD` (Dictionary of Positions occupational title) and `CIPC_CD` (CIP) are additional classification codes.
+- Career ladder: `POSN_JOB_PRGS_CD`/`_DESC` groups related position classes in sequential order (job progression); a ready-made source for promotion paths.
+- Pay structure: salary table/group/grade/step, `POSN_MIN_SAL`/`MIDPT_SAL`/`MAX_SAL` with `POSN_SAL_RANGE_TYPE_DESC` (hourly vs annual), `POSN_SAL_RT_TYPE_DESC`, `POSN_EXEMPT_IND`, bargaining unit (`POSN_BRGN_UNIT_CD`/`DESC`), seniority accrual.
+- Position appointment percent `POSN_APPT_PCT` is NUMBER(5,4) (a fraction, e.g. 1.0000); there is no separate budgeted FTE column.
+- Position-description freshness: `POSN_DESC_UPDATE_DT` (last review of the physical position description).
+- Supervision: `SUPV_POSN_NBR`.
+- There is no organization column on the position table; a position's org comes from its job records (or a position-funding/labor-distribution table not yet transcribed).
