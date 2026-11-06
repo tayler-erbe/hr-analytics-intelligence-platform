@@ -1,0 +1,61 @@
+stratum,stratum_pool_size,source_record_id,class_code,class_title,occupational_line
+library,8,4003,4901,Library Assistant,04 Clerical
+library,8,4005,4903,Senior Library Specialist,02 Semi-Professional
+library,8,3951,3108,Museum Exhibits Preparator,14 Skilled Trades
+library,8,2991,4629,Museum Instructor/Educator,01 Professional
+library,8,4004,4902,Library Specialist,02 Semi-Professional
+it,8,4441,5031,Information Technology Technical Associate,01 Professional
+it,8,4440,5032,Information Technology Support Associate,01 Professional
+it,8,3230,4560,Institutional Research Data Specialist,02 Semi-Professional
+it,8,4442,5030,Information Technology Manager/Administrative Coordinator,01 Professional
+it,8,3400,4967,Clinical Practice Data Analyst Specialist,03 Managerial
+it,8,3229,4522,Institutional Research Data Coordinator,02 Semi-Professional
+it,8,3401,4968,Clinical Practice Data Analyst Coordinator,01 Professional
+hr,14,2866,2463,Benefits Manager,03 Managerial
+hr,14,4045,4602,Benefits Representative,02 Semi-Professional
+hr,14,4049,2134,Human Resource Assistant,04 Clerical
+hr,14,4046,4812,Benefits Officer,02 Semi-Professional
+hr,14,4053,2138,Human Resource Manager,03 Managerial
+hr,14,4047,4603,Benefits Counselor,02 Semi-Professional
+finance,46,4439,4651,Accounting Specialist,04 Clerical
+finance,46,4195,4068,Assistant Payroll Manager,03 Managerial
+finance,46,4192,4065,Payroll Specialist I,04 Clerical
+finance,46,3926,4814,Manager of Institutional Audits,01 Professional
+finance,46,3835,2375,Business Manager,03 Managerial
+finance,46,4096,0696,Cashier III,04 Clerical
+finance,46,4069,3283,Collection Specialist,02 Semi-Professional
+student_services,15,3220,1147,Assistant Director of University Student Center,03 Managerial
+student_services,15,4419,3806,Coordinator of Residence Hall Attendant Program,13 Protective Services
+student_services,15,4092,4755,Academic Contract Specialist,04 Clerical
+student_services,15,4250,4555,Records Management Officer,03 Managerial
+student_services,15,3842,2755,Admissions and Records Representative,02 Semi-Professional
+student_services,15,4246,2754,Admissions and Records Assistant,02 Semi-Professional
+facilities,118,4288,2972,Assistant Steam Distribution Operator,"11 Power, Heat, and Light Services"
+facilities,118,3976,4746,Molecular Beam Epitaxy Facility Coordinator,02 Semi-Professional
+facilities,118,4335,1884,Grounds Sub-Foreman,15 Semi-Skilled Trades
+facilities,118,3937,4664,Building Automation Technician II,02 Semi-Professional
+facilities,118,3578,1765,Crafts and Trades General Foreman,14 Skilled Trades
+facilities,118,4385,2596,Laboratory Mechanic,14 Skilled Trades
+facilities,118,4393,1930,Plumber Sub-Foreman,14 Skilled Trades
+facilities,118,4311,2227,Maintenance Laborer,15 Semi-Skilled Trades
+facilities,118,4334,2015,Grounds Worker,15 Semi-Skilled Trades
+admin_business,267,4197,4960,Medical Office Assistant,04 Clerical
+admin_business,267,3456,3858,Mammography Specialist,02 Semi-Professional
+admin_business,267,2918,1004,Graphic Designer Assistant,02 Semi-Professional
+admin_business,267,3783,4561,Non-Invasive Cardiovascular Specialist,02 Semi-Professional
+admin_business,267,3696,5004,Marketing Associate,01 Professional
+admin_business,267,3527,4840,Reimbursement Coding Specialist,02 Semi-Professional
+admin_business,267,3699,0102,Senior Events Coordinator,03 Managerial
+admin_business,267,3397,4974,Senior Quality Specialist,03 Managerial
+admin_business,267,3681,4617,Medical Sonographer Specialist,02 Semi-Professional
+admin_business,267,3484,0990,Anatomy Curator Coordinator,12 Medical Services
+other,401,4622,4212,Security Officer,13 Protective Services
+other,401,2782,1350,Ethanol Plant Research Engineer,01 Professional
+other,401,4350,3899,Cryogenic Technician I,14 Skilled Trades
+other,401,4386,4045,Offset Press Technician,14 Skilled Trades
+other,401,4589,1576,Driver Foreperson,14 Skilled Trades
+other,401,4380,2678,Mill Worker,14 Skilled Trades
+other,401,4126,2764,Admitting Officer II,04 Clerical
+other,401,3132,4736,Anesthesia Supervisor,12 Medical Services
+other,401,4035,4621,Senior Behavioral Interventionist,02 Semi-Professional
+other,401,4060,4060,Pharmacy Technician III,12 Medical Services

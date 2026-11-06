@@ -1,0 +1,6 @@
+# Python 3.13
+duckdb==2.0.0
+pyarrow==26.0.1
+numpy==2.4.6
+scipy==1.18.1
+scikit-learn==1.9.1

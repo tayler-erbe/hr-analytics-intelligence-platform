@@ -1,0 +1,272 @@
+{
+  "abstain_rules": {
+    "min_duty_cov": 0.1,
+    "min_index": 30.0,
+    "no_spec_title_min": 0.6,
+    "title_rescue": 0.6
+  },
+  "acquisition": {
+    "first_retrieved_utc": "2026-11-06T08:10:45+00:00",
+    "last_retrieved_utc": "2026-11-06T08:31:41+00:00",
+    "series_ids_requested": 727,
+    "series_pages_with_no_data": 203,
+    "valid_series_pages": 643
+  },
+  "coverage": {
+    "by_occupational_line": {
+      "(blank)": {
+        "records": 1,
+        "with_spec_duties": 1
+      },
+      "01 Professional": {
+        "records": 132,
+        "with_spec_duties": 122
+      },
+      "02 Semi-Professional": {
+        "records": 213,
+        "with_spec_duties": 209
+      },
+      "03 Managerial": {
+        "records": 150,
+        "with_spec_duties": 143
+      },
+      "04 Clerical": {
+        "records": 88,
+        "with_spec_duties": 88
+      },
+      "05 Stores": {
+        "records": 10,
+        "with_spec_duties": 10
+      },
+      "06 Aeronautical": {
+        "records": 10,
+        "with_spec_duties": 10
+      },
+      "07 Agricultural": {
+        "records": 13,
+        "with_spec_duties": 13
+      },
+      "08 Custodial Services": {
+        "records": 12,
+        "with_spec_duties": 12
+      },
+      "09 Domestic Services": {
+        "records": 3,
+        "with_spec_duties": 3
+      },
+      "10 Food Services": {
+        "records": 18,
+        "with_spec_duties": 18
+      },
+      "11 Power, Heat, and Light Services": {
+        "records": 19,
+        "with_spec_duties": 19
+      },
+      "12 Medical Services": {
+        "records": 51,
+        "with_spec_duties": 51
+      },
+      "13 Protective Services": {
+        "records": 21,
+        "with_spec_duties": 21
+      },
+      "14 Skilled Trades": {
+        "records": 103,
+        "with_spec_duties": 103
+      },
+      "15 Semi-Skilled Trades": {
+        "records": 37,
+        "with_spec_duties": 37
+      },
+      "16 Unskilled Trades": {
+        "records": 2,
+        "with_spec_duties": 2
+      }
+    },
+    "catalog_records": 883,
+    "match_status": {
+      "code_only_title_differs": 1,
+      "no_series_page_lists_code": 21,
+      "title_exact": 861
+    },
+    "records_with_spec_duties": 862,
+    "records_with_spec_effective_date": 862
+  },
+  "evaluation": {
+    "by_stratum": {
+      "admin_business": {
+        "n": 10,
+        "new_abstained": 1,
+        "new_top1": 9,
+        "new_top5": 9,
+        "old_top1": 3,
+        "old_top5": 6
+      },
+      "facilities": {
+        "n": 9,
+        "new_abstained": 1,
+        "new_top1": 4,
+        "new_top5": 7,
+        "old_top1": 0,
+        "old_top5": 0
+      },
+      "finance": {
+        "n": 7,
+        "new_abstained": 0,
+        "new_top1": 7,
+        "new_top5": 7,
+        "old_top1": 4,
+        "old_top5": 5
+      },
+      "hr": {
+        "n": 6,
+        "new_abstained": 0,
+        "new_top1": 4,
+        "new_top5": 6,
+        "old_top1": 2,
+        "old_top5": 6
+      },
+      "it": {
+        "n": 7,
+        "new_abstained": 0,
+        "new_top1": 3,
+        "new_top5": 6,
+        "old_top1": 0,
+        "old_top5": 3
+      },
+      "library": {
+        "n": 5,
+        "new_abstained": 0,
+        "new_top1": 5,
+        "new_top5": 5,
+        "old_top1": 4,
+        "old_top5": 5
+      },
+      "other": {
+        "n": 10,
+        "new_abstained": 0,
+        "new_top1": 5,
+        "new_top5": 10,
+        "old_top1": 2,
+        "old_top5": 4
+      },
+      "student_services": {
+        "n": 6,
+        "new_abstained": 1,
+        "new_top1": 2,
+        "new_top5": 4,
+        "old_top1": 0,
+        "old_top5": 2
+      }
+    },
+    "gold_set": {
+      "label_status": "provisional_agent_label \u2014 requires HR analyst review",
+      "n": 60,
+      "path": "gold/provisional_gold_labels.csv",
+      "strata": {
+        "admin_business": 10,
+        "facilities": 9,
+        "finance": 7,
+        "hr": 6,
+        "it": 7,
+        "library": 5,
+        "other": 10,
+        "student_services": 6
+      }
+    },
+    "new_matcher": {
+      "abstention": {
+        "n": 3,
+        "rate": 0.05
+      },
+      "top1_acceptable_all": {
+        "correct": 39,
+        "n": 60,
+        "rate": 0.65
+      },
+      "top1_acceptable_on_abstained": {
+        "correct": 1,
+        "n": 3,
+        "rate": 0.3333
+      },
+      "top1_acceptable_when_answered": {
+        "correct": 38,
+        "n": 57,
+        "rate": 0.6667
+      },
+      "top1_strict_primary_all": {
+        "correct": 29,
+        "n": 60,
+        "rate": 0.4833
+      },
+      "top5_acceptable_all": {
+        "correct": 54,
+        "n": 60,
+        "rate": 0.9
+      },
+      "top5_acceptable_when_answered": {
+        "correct": 53,
+        "n": 57,
+        "rate": 0.9298
+      }
+    },
+    "old_lexical": {
+      "abstention_rate": 0.0,
+      "note": "baseline never abstains; for reference, rows with title_similarity >= 0.35:",
+      "top1_acceptable": {
+        "correct": 15,
+        "n": 60,
+        "rate": 0.25
+      },
+      "top1_acceptable_when_similarity_ge_0_35": {
+        "correct": 7,
+        "n": 19,
+        "rate": 0.3684
+      },
+      "top1_strict_primary": {
+        "correct": 11,
+        "n": 60,
+        "rate": 0.1833
+      },
+      "top3_acceptable": {
+        "correct": 27,
+        "n": 60,
+        "rate": 0.45
+      },
+      "top5_acceptable": {
+        "correct": 31,
+        "n": 60,
+        "rate": 0.5167
+      }
+    },
+    "old_on_new_answered_subset": {
+      "correct": 15,
+      "n": 57,
+      "rate": 0.2632
+    },
+    "paired": {
+      "both_right": 14,
+      "both_wrong": 20,
+      "new_right_old_wrong": 25,
+      "old_right_new_wrong": 1
+    }
+  },
+  "matcher": {
+    "records_abstained": 30,
+    "records_suggested": 853,
+    "top1_band": {
+      "moderate": 467,
+      "strong": 237,
+      "weak": 179
+    }
+  },
+  "method": "sucss_duty_tfidf_v1",
+  "parser_version": "sucss_series_parser_v1",
+  "weights": {
+    "doc": 0.2,
+    "doc_scale": 0.45,
+    "duty": 0.45,
+    "duty_scale": 0.35,
+    "title": 0.35
+  }
+}
