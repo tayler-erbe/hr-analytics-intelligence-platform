@@ -1,0 +1,315 @@
+# AI proficiency / prompt-sophistication rubric for staff work samples.
+#
+# What it is: an analytic rubric that HUMAN raters apply to a staff member's
+# work sample (prompt log + final output + short rationale form) from one of
+# the scenario tasks in tasks.yaml. It supports the voluntary AI PD staff badges
+# (AI Explorer -> AI Catalyst -> AI Practitioner). No model grades another model: every score
+# is entered by a trained human rater; software only computes agreement.
+#
+# What it is not: a measure for hiring, promotion, pay, discipline, tenure,
+# selection for training or any other employment decision (Illinois HB 3773 /
+# P.A. 103-0804). Results belong to the learner. Program reporting uses
+# aggregates only, with cells of n < 10 suppressed.
+#
+# Status: DRAFT for SME and rater-panel review. Badge thresholds below are
+# PROVISIONAL starting values; the modified-Angoff panel (reliability.angoff)
+# recommends the operational cut scores. Changing a level anchor or a threshold
+# changes what a badge means: bump `version` and log why.
+#
+# Format note: this file uses a plain YAML subset (block maps and lists,
+# quoted strings, short flow lists) so that rubric_io.load_yaml can read it with
+# the standard library alone. No anchors, block scalars or inline comments.
+
+version: ai_proficiency_rubric_v0.1
+status: "draft - not approved for operational use"
+scale:
+  min: 1
+  max: 4
+  levels:
+    - {score: 1, name: Beginning}
+    - {score: 2, name: Developing}
+    - {score: 3, name: Proficient}
+    - {score: 4, name: Advanced}
+  rule: "Score the evidence in the submission, not the tool output quality alone. When evidence sits between two anchors, choose the lower level and note why."
+
+framework_alignment:
+  source: "platform-evaluation/reskilling/competency_framework.yaml (ai_literacy_rubric_v1)"
+  note: "That framework sets role-level design targets and must not score people. This rubric is a separate, opt-in learner credential instrument. The mapping below is for curriculum alignment only."
+  mapping:
+    - {badge: explorer, framework_level: Aware, reading: "Knows what the tools do, where they are permitted and that output must be checked; first guided use."}
+    - {badge: catalyst, framework_level: "Aware, moving to Practitioner", reading: "Safe, bounded use of an approved tool with checking; judgment gates already met."}
+    - {badge: practitioner, framework_level: Practitioner, reading: "Matches the framework's Practitioner indicators: bounded prompts with context, constraints and format; every output checked; human decision kept on people, payments and records."}
+    - {badge: none, framework_level: "Integrator and Leader", reading: "Out of scope for staff badges; workflow redesign is assessed through the role-aligned cohort project, not this rubric."}
+
+program_tiers:
+  source: "AI Professional Development Series (IHR with OCIO, Technology Services, CITL, Library) - tier names confirmed by the coordinator from primary sources, 2026-11-06."
+  staff:
+    - {id: explorer, name: "AI Explorer", delivery: "Self-directed modules in Canvas"}
+    - {id: catalyst, name: "AI Catalyst", delivery: "Tool deep-dive plus a role-scenario session"}
+    - {id: practitioner, name: "AI Practitioner", delivery: "Role-aligned cohort work"}
+  leaders: ["AI Ready Leaders", "AI Adaptive Leaders", "AI Forward Strategies"]
+  leaders_note: "Leader tiers are out of scope for this staff instrument."
+
+ihr_competency_model:
+  source: "IHR HR Competency Model (six competencies). Only the two named below are mapped; confirm exact wording with SP&P."
+  competencies:
+    - {id: DPDS, name: "Digital Proficiency & Data Savviness"}
+    - {id: CF, name: "Cognitive Flexibility"}
+
+data_classification:
+  source: "Campus data classification standard - confirm current category names and the approved-tools list with the Office of the CIO / Cybersecurity before use."
+  categories:
+    - {id: Public, example: "Published policies, public course catalog, press releases"}
+    - {id: Internal, example: "Unit procedures, non-public meeting notes, draft budgets without personal data"}
+    - {id: Sensitive, example: "Personnel records, FERPA-protected student records, individual pay, health or accommodation details"}
+  high_risk_note: "Campus policy may define a further High-Risk tier (e.g., SSNs, credentials, protected health information). Tasks treat any such data as never-enter."
+  tool_note: "Per the opportunity brief, approved tools include Microsoft Copilot Chat, Illinois ChatGPT EDU and Illinois Chat, with Illinois Chat's locally hosted models the option approved for Sensitive data. Tasks name tool CLASSES (public consumer tool, enterprise-licensed tool, locally hosted approved tool) so the instrument survives changes to the list."
+
+dimensions:
+  - id: D1
+    key: task_framing
+    name: "Task framing and context"
+    ihr_competencies: [DPDS]
+    ihr_competency_reading: "Shaping a request so a digital tool can use the context is a core digital-proficiency behaviour."
+    construct: "States the goal, audience, role and relevant background so the tool can do the right task."
+    levels:
+      - score: 1
+        anchor: "Single bare instruction; goal, audience and context absent or wrong."
+        examples:
+          - "\"Write an email about the policy.\""
+          - "Pastes a document with no instruction about what to do with it."
+      - score: 2
+        anchor: "Goal stated; audience or key context missing, so output needs heavy rework."
+        examples:
+          - "Asks for a summary of a leave policy but not who will read it or why."
+      - score: 3
+        anchor: "Goal, audience and the context that matters are stated; irrelevant material is left out."
+        examples:
+          - "\"Summarize this Internal procedure for new department admins who have never processed a hire; they need the three deadlines and who to contact.\""
+      - score: 4
+        anchor: "Frames the task precisely, anticipates ambiguity, and supplies success criteria or a worked example."
+        examples:
+          - "Adds a short example of a good answer and says what would make the draft unusable."
+          - "Splits a large job into staged requests with a stated purpose for each."
+    look_fors: ["purpose stated", "audience named", "only needed context supplied", "success criteria"]
+
+  - id: D2
+    key: constraints_format
+    name: "Constraints and output format"
+    ihr_competencies: [DPDS]
+    ihr_competency_reading: "Specifying usable, testable outputs."
+    construct: "Specifies length, tone, structure, format and must/must-not rules so the output is usable without rework."
+    levels:
+      - score: 1
+        anchor: "No constraints; accepts whatever form the tool returns."
+        examples:
+          - "Asks for 'a table' and pastes a 900-word narrative into the deliverable."
+      - score: 2
+        anchor: "One or two constraints (e.g., length) but format or must-not rules missing."
+        examples:
+          - "\"Keep it short.\" with no structure or tone."
+      - score: 3
+        anchor: "Clear format, length, tone and at least one must-not rule that fits the task."
+        examples:
+          - "\"Return a 3-column table (step, owner, deadline); plain language; do not invent dates not in the source.\""
+      - score: 4
+        anchor: "Constraints are complete and testable, including what to do when information is missing."
+        examples:
+          - "\"If a deadline is not in the text, write 'not stated' rather than guessing.\""
+          - "Specifies a reusable output schema that downstream steps rely on."
+    look_fors: ["format specified", "length/tone", "must-not rules", "missing-information behaviour"]
+
+  - id: D3
+    key: iteration
+    name: "Iteration and refinement"
+    ihr_competencies: [CF]
+    ihr_competency_reading: "Revising approach when the first one fails; changing strategy rather than repeating it."
+    construct: "Evaluates each output against the goal and revises the prompt or decomposes the task to close specific gaps."
+    levels:
+      - score: 1
+        anchor: "One attempt accepted as-is, or repeats the same request unchanged."
+        examples:
+          - "Regenerates three times without changing the prompt."
+      - score: 2
+        anchor: "Follows up, but with vague feedback (\"make it better\")."
+        examples:
+          - "\"Try again, more professional.\""
+      - score: 3
+        anchor: "Follow-ups name the specific gap and the fix; output improves measurably."
+        examples:
+          - "\"Step 4 merged two approvals; list them separately and keep the original order.\""
+      - score: 4
+        anchor: "Iterates strategically: diagnoses why the output failed, changes approach (decompose, add example, switch tool) and stops when criteria are met."
+        examples:
+          - "Notices the tool drops table rows past 40 and switches to processing in batches with a row-count check."
+    look_fors: ["specific feedback", "prompt revised not just re-run", "stopping rule"]
+
+  - id: D4
+    key: verification
+    name: "Verification of outputs and source checking"
+    ihr_competencies: [DPDS]
+    ihr_competency_reading: "Data savviness: reconciling figures and checking sources before trusting them."
+    construct: "Checks facts, figures, citations and extracted values against authoritative sources before use, and records what was checked."
+    levels:
+      - score: 1
+        anchor: "Uses output unchecked, including invented citations, figures or policy references."
+        examples:
+          - "Cites a policy section the tool produced that does not exist."
+      - score: 2
+        anchor: "Spot-checks some content but misses a planted error or does not say what was checked."
+        examples:
+          - "Checks dates but not dollar totals in an extracted table."
+      - score: 3
+        anchor: "Checks every fact, figure and citation that the decision depends on against the source and corrects errors found."
+        examples:
+          - "Reconciles extracted totals to the source report and fixes a transposed figure."
+      - score: 4
+        anchor: "Uses a systematic check (reconciliation, sample, second source), documents it, and flags residual uncertainty to the reader."
+        examples:
+          - "Adds a verification note: 'All 14 amounts reconciled to the ledger total; two policy links confirmed on the live policy site.'"
+    look_fors: ["planted error caught", "citations confirmed at source", "totals reconciled", "check documented"]
+
+  - id: D5
+    key: data_sensitivity
+    name: "Data-sensitivity judgment"
+    ihr_competencies: [DPDS]
+    ihr_competency_reading: "Data savviness: knowing the data's classification and handling it accordingly."
+    construct: "Classifies the data (Public / Internal / Sensitive, per campus policy) before using any tool, and minimizes, de-identifies or withholds data accordingly."
+    gate: true
+    auto_floor_rule: "If Sensitive data (or never-enter data) is entered into a tool not approved for it, D5 = 1 regardless of other evidence, and the rater flags the submission for a learning conversation (not discipline)."
+    levels:
+      - score: 1
+        anchor: "Enters Sensitive data into an unapproved tool, or cannot classify the data."
+        examples:
+          - "Pastes a spreadsheet with names and individual salaries into a public consumer chatbot."
+      - score: 2
+        anchor: "Classifies the data roughly but over-shares (e.g., keeps identifiers that the task does not need) in an approved tool, or misclassifies Internal as Public."
+        examples:
+          - "Uses the enterprise tool correctly but leaves student IDs in a prompt that only needed counts."
+      - score: 3
+        anchor: "Classifies correctly, uses a tool approved for that class, and removes data the task does not need."
+        examples:
+          - "Labels the file Sensitive, uses the locally hosted approved tool, and replaces names with row numbers."
+      - score: 4
+        anchor: "Applies data minimization by design (aggregates, synthetic stand-ins, structure-only prompts) and explains the classification reasoning, including edge cases."
+        examples:
+          - "Gets the formula help it needs by describing column structure only, so no records leave the spreadsheet."
+    look_fors: ["classification stated", "tool matches class", "identifiers removed", "minimization reasoning"]
+
+  - id: D6
+    key: human_in_the_loop
+    name: "Human-in-the-loop decision"
+    ihr_competencies: [CF, DPDS]
+    ihr_competency_reading: "Shifting between automated assistance and human judgment as stakes change (CF); knowing where data-driven output stops being sufficient (DPDS)."
+    construct: "Recognizes which steps must stay with an accountable person (decisions about people, payments, records of entry, policy interpretation) and designs the hand-off."
+    gate: true
+    levels:
+      - score: 1
+        anchor: "Lets the tool make or effectively make a decision about a person, payment or official record."
+        examples:
+          - "Uses the tool's ranking of applicants as the shortlist."
+          - "Sends an AI-drafted denial to a student without review."
+      - score: 2
+        anchor: "Says a human should review but leaves the review undefined or rubber-stamp."
+        examples:
+          - "\"A person will check it.\" with no criteria or owner."
+      - score: 3
+        anchor: "Names the decision that stays human, who owns it, and what the reviewer checks; AI output is labelled as draft/advisory."
+        examples:
+          - "\"The advisor makes the hold-release decision; the draft only lists the documents on file.\""
+      - score: 4
+        anchor: "Designs proportionate oversight: escalation triggers, a record of AI suggestion vs final decision, and notice to affected people where policy requires it."
+        examples:
+          - "Logs which sentences the tool drafted, and routes any exception to the HR partner before sending."
+    look_fors: ["decision owner named", "review criteria", "draft labelled", "escalation/notice"]
+
+  - id: D7
+    key: tool_choice
+    name: "Appropriate tool choice"
+    ihr_competencies: [DPDS, CF]
+    ihr_competency_reading: "Choosing among tools, including no AI (DPDS); adapting the method to the problem (CF)."
+    construct: "Chooses whether to use generative AI at all, and which approved tool or non-AI method fits the task, data class and accuracy need."
+    levels:
+      - score: 1
+        anchor: "Uses a generative tool where it is unsuitable (exact arithmetic, authoritative lookups) or an unapproved tool, with no rationale."
+        examples:
+          - "Asks a chatbot to total 300 ledger lines instead of using the spreadsheet."
+      - score: 2
+        anchor: "Uses an approved tool but the choice is habitual; misses an obviously better non-AI or approved alternative."
+        examples:
+          - "Uses chat to search a policy that the official policy library answers directly."
+      - score: 3
+        anchor: "Choice fits task, data class and accuracy need, and the rationale is stated."
+        examples:
+          - "Uses the spreadsheet for totals and the enterprise tool only to draft the narrative."
+      - score: 4
+        anchor: "Combines tools deliberately (AI for drafting, deterministic tools for computation, official sources for facts) and states when not to use AI."
+        examples:
+          - "\"I would not use AI for the eligibility determination itself; the rule is deterministic and lives in the system of record.\""
+    look_fors: ["AI vs non-AI decision", "tool approved for data class", "computation kept deterministic", "rationale"]
+
+  - id: D8
+    key: documentation_reuse
+    name: "Documentation and reuse"
+    ihr_competencies: [DPDS]
+    ihr_competency_reading: "Making digital work auditable and reusable."
+    construct: "Leaves a record others can audit and reuse: final prompt, version, data class, checks done, and limits."
+    levels:
+      - score: 1
+        anchor: "No record of prompts, tool or checks; result cannot be reproduced."
+        examples:
+          - "Submits only the final text."
+      - score: 2
+        anchor: "Saves the prompt but not the context, tool, data class or checks."
+        examples:
+          - "Pastes the last prompt into the submission with no notes."
+      - score: 3
+        anchor: "Records tool, final prompt, data class, verification done and known limits in the unit's format."
+        examples:
+          - "Fills the prompt-card template: purpose, tool, data class, prompt, checks, owner."
+      - score: 4
+        anchor: "Produces a reusable, parameterized prompt or procedure with a test example, and states when it should not be reused."
+        examples:
+          - "Adds the template to the unit's prompt library with placeholders, a sample input and a 'do not use for' line."
+    look_fors: ["prompt card", "tool + data class recorded", "checks recorded", "reuse limits"]
+
+# Candidate dimension score = mean of the (adjudicated) scores on that
+# dimension across the tasks attempted in one sitting (normally 2 tasks: one
+# common task + one role-family task). Total = sum of the 8 dimension means
+# (range 8-32). Gate dimensions are non-compensatory: a high total cannot
+# make up for unsafe data handling or a missing human decision.
+badges:
+  scoring_unit: "mean across tasks attempted in one sitting (minimum 2 tasks)"
+  order: [explorer, catalyst, practitioner]
+  explorer:
+    name: "AI Explorer"
+    meaning: "Has made a first, safe use of an approved tool: frames a basic request, recognizes data that must not be entered, and knows output must be checked."
+    awarding_note: "Explorer is a self-directed Canvas tier. Whether it is awarded on module completion alone or with a work sample is a program decision; this threshold describes the work-sample evidence expected at Explorer and is used for placement and feedback either way."
+    provisional_total_cut: 13.0
+    all_dimensions_min: 1.0
+    dimension_floors: {D5: 2.0}
+    min_dimensions_at_3: 0
+  catalyst:
+    name: "AI Catalyst"
+    meaning: "Uses an approved tool safely on routine work, checks the output, and keeps people decisions with people."
+    provisional_total_cut: 18.0
+    all_dimensions_min: 2.0
+    dimension_floors: {D5: 3.0, D6: 2.0}
+    min_dimensions_at_3: 0
+  practitioner:
+    name: "AI Practitioner"
+    meaning: "Writes bounded, context-rich prompts, iterates purposefully, verifies systematically, chooses tools deliberately and documents for reuse."
+    provisional_total_cut: 25.0
+    all_dimensions_min: 2.0
+    dimension_floors: {D4: 3.0, D5: 3.0, D6: 3.0}
+    min_dimensions_at_3: 6
+  decision_rules:
+    - "Practitioner if every Practitioner rule holds."
+    - "Else Catalyst if every Catalyst rule holds."
+    - "Else Explorer if every Explorer rule holds."
+    - "Else 'Not yet' with dimension-level feedback; the learner may re-attempt with different tasks after 30 days."
+  double_scoring:
+    rate: 0.20
+    adjudicate_if_abs_diff_gt: 1
+    adjudicate_gate_disagreement: true
+    note: "Every submission within 1.0 total point of a cut score, and every submission where raters disagree on a gate dimension (D5, D6) across a floor, is also second-scored."

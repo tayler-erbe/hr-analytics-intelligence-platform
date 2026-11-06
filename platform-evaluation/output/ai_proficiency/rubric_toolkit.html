@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'none'">
+<title>AI Proficiency Rubric Toolkit</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f5f2; --surface: #fcfcfb; --surface-2: #efeee9; --text: #1a1a19; --muted: #5d5c57;
+  --border: #d9d7cf; --accent: #2a64b8; --accent-ink: #ffffff; --focus: #2a78d6;
+  --warn-bg: #fff4d6; --warn-ink: #5b4300; --bad-bg: #fde8e6; --bad-ink: #8a1f17; --good-bg: #e3f4e8; --good-ink: #165c2c;
+  --grid: #e4e2db; --axis: #8d8b84;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #121211; --surface: #1a1a19; --surface-2: #242422; --text: #f0efec; --muted: #b9b8b0;
+    --border: #3a3a37; --accent: #5b9bf0; --accent-ink: #0d0d0c; --focus: #79adf3;
+    --warn-bg: #3a2f10; --warn-ink: #f5d98a; --bad-bg: #3d1a17; --bad-ink: #f4a69e; --good-bg: #14301d; --good-ink: #9fdcb1;
+    --grid: #2e2e2b; --axis: #8d8b84;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #2f9a2f;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121211; --surface: #1a1a19; --surface-2: #242422; --text: #f0efec; --muted: #b9b8b0;
+  --border: #3a3a37; --accent: #5b9bf0; --accent-ink: #0d0d0c; --focus: #79adf3;
+  --warn-bg: #3a2f10; --warn-ink: #f5d98a; --bad-bg: #3d1a17; --bad-ink: #f4a69e; --good-bg: #14301d; --good-ink: #9fdcb1;
+  --grid: #2e2e2b; --axis: #8d8b84;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #2f9a2f;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow-x: hidden; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+header { background: var(--surface); border-bottom: 1px solid var(--border); }
+header .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 14px; padding-bottom: 10px; }
+h1 { font-size: 1.35rem; margin: 0; flex: 1 1 auto; }
+h2 { font-size: 1.2rem; margin: 28px 0 8px; }
+h3 { font-size: 1.02rem; margin: 20px 0 6px; }
+p { margin: 6px 0 10px; }
+.muted { color: var(--muted); }
+.small { font-size: .86rem; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: .78rem; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); white-space: nowrap; }
+.pill.gate { background: var(--warn-bg); color: var(--warn-ink); border-color: transparent; }
+.banner { background: var(--warn-bg); color: var(--warn-ink); padding: 8px 12px; border-radius: 8px; margin: 12px 0; font-size: .9rem; }
+nav { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--border); }
+nav .wrap { display: flex; gap: 4px; overflow-x: auto; padding-top: 6px; padding-bottom: 6px; }
+nav button { flex: 0 0 auto; }
+button, .btn { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+nav button[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+main section { display: none; padding-bottom: 48px; }
+main section.active { display: block; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; min-width: 0; }
+.card h3 { margin-top: 0; }
+details.card > summary { cursor: pointer; font-weight: 600; list-style: none; }
+details.card > summary::-webkit-details-marker { display: none; }
+details.card > summary::before { content: "\25B8"; display: inline-block; width: 1em; color: var(--muted); }
+details.card[open] > summary::before { content: "\25BE"; }
+details.card { margin: 8px 0; }
+.tbl { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px 0 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: var(--surface-2); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.ok { color: var(--good-ink); background: var(--good-bg); }
+.bad { color: var(--bad-ink); background: var(--bad-bg); }
+.warn { color: var(--warn-ink); background: var(--warn-bg); }
+.tag { font-size: .78rem; padding: 0 6px; border-radius: 6px; white-space: nowrap; }
+ul.tight { margin: 4px 0 8px; padding-left: 20px; }
+.kpis { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); margin: 10px 0; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.kpi .v { font-size: 1.6rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+.kpi .l { font-size: .82rem; color: var(--muted); }
+form .row { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+label { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 2px; }
+input[type=text], input[type=number], select, textarea { width: 100%; font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+textarea { min-height: 64px; }
+fieldset { border: 1px solid var(--border); border-radius: 10px; margin: 10px 0; padding: 8px 12px; min-width: 0; }
+legend { font-weight: 600; padding: 0 4px; }
+.levels { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0; }
+.levels label { display: inline-flex; align-items: center; gap: 4px; color: var(--text); font-size: .9rem; border: 1px solid var(--border); border-radius: 8px; padding: 4px 10px; margin: 0; cursor: pointer; }
+.levels input { margin: 0; }
+.levels label:has(input:checked) { border-color: var(--accent); background: var(--surface-2); font-weight: 600; }
+.anchor-text { font-size: .85rem; color: var(--muted); min-height: 1.3em; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.msg { font-size: .88rem; padding: 6px 10px; border-radius: 8px; margin: 6px 0; display: none; }
+.msg.show { display: block; }
+.chart { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px; margin: 8px 0 14px; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { fill: var(--muted); font-size: 11px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .84rem; margin: 4px 6px 6px; }
+.legend span::before { content: ""; display: inline-block; width: 12px; height: 3px; border-radius: 2px; margin-right: 5px; vertical-align: middle; background: var(--c); }
+#tip { position: fixed; pointer-events: none; z-index: 20; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; font-size: .82rem; box-shadow: 0 4px 14px rgba(0,0,0,.18); display: none; max-width: 260px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin: 8px 0; }
+.filters > div { min-width: 160px; }
+#dcGrid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); }
+code { font-size: .88em; background: var(--surface-2); padding: 0 4px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>AI Proficiency Rubric Toolkit</h1>
+    <span class="pill" id="ver"></span>
+    <button type="button" id="themeBtn" aria-label="Toggle light or dark theme">Theme</button>
+  </div>
+  <div class="wrap">
+    <div class="banner"><strong>Draft for SME and rater-panel review.</strong> Human raters score; this page only records scores and shows agreement statistics. The reliability report uses <strong>synthetic</strong> ratings (no real people). Results are learner credentials, never inputs to hiring, promotion, pay, discipline or selection for training (Illinois HB 3773). Nothing on this page sends data anywhere.</div>
+  </div>
+</header>
+<nav aria-label="Sections">
+  <div class="wrap" role="tablist">
+    <button type="button" role="tab" data-tab="rubric">Rubric</button>
+    <button type="button" role="tab" data-tab="tasks">Tasks</button>
+    <button type="button" role="tab" data-tab="score">Score</button>
+    <button type="button" role="tab" data-tab="report">Reliability report</button>
+    <button type="button" role="tab" data-tab="about">About</button>
+  </div>
+</nav>
+<main class="wrap">
+  <section id="rubric" role="tabpanel">
+    <h2>Badge tiers</h2>
+    <p class="muted small">A candidate completes two tasks in one sitting (the common judgment task T12 plus one role-family task). Each task is scored 1&ndash;4 on all eight dimensions; a dimension score is the mean across the two tasks and the total is the sum (8&ndash;32). Gate dimensions are non-compensatory.</p>
+    <div class="grid" id="tiers"></div>
+    <h2>Dimensions</h2>
+    <div id="dims"></div>
+  </section>
+
+  <section id="tasks" role="tabpanel">
+    <h2>Scenario tasks</h2>
+    <p class="muted small" id="taskIntro"></p>
+    <div class="filters"><div><label for="famFilter">Role family</label><select id="famFilter"></select></div></div>
+    <div id="taskList"></div>
+  </section>
+
+  <section id="score" role="tabpanel">
+    <h2>Score a work sample</h2>
+    <p class="muted small">Use pseudonymous codes only (for example rater <code>R2</code>, candidate <code>C014</code>). Do not type names, NetIDs, UINs or email addresses. Saved rows stay in this browser (local storage, if the browser allows it) until you export them. Export writes a CSV file to your computer; nothing is uploaded.</p>
+    <form id="scoreForm" autocomplete="off" novalidate>
+      <div class="row">
+        <div><label for="fRater">Rater code</label><input type="text" id="fRater" required maxlength="12" placeholder="R1"></div>
+        <div><label for="fCand">Candidate code</label><input type="text" id="fCand" required maxlength="8" placeholder="C001"></div>
+        <div><label for="fTask">Task</label><select id="fTask"></select></div>
+        <div><label for="fSession">Scoring session</label><input type="number" id="fSession" min="0" max="99" value="1"></div>
+        <div><label for="fRead">Read</label><select id="fRead"><option value="operational-1">First read</option><option value="operational-2">Second read (double-score)</option><option value="adjudication">Adjudication</option><option value="anchor">Anchor paper (calibration)</option></select></div>
+      </div>
+      <div id="dimInputs"></div>
+      <div><label for="fNotes">Evidence notes (no personal data)</label><textarea id="fNotes" maxlength="600"></textarea></div>
+      <div class="msg" id="formMsg" role="status"></div>
+      <div class="actions">
+        <button type="submit" class="primary">Save score</button>
+        <button type="reset">Clear form</button>
+      </div>
+    </form>
+    <h3>Saved scores (<span id="nRows">0</span>)</h3>
+    <div class="actions">
+      <button type="button" id="exportLong">Export CSV (one row per dimension)</button>
+      <button type="button" id="exportSummary">Export candidate summary CSV</button>
+      <button type="button" id="clearAll">Delete all saved rows</button>
+    </div>
+    <div class="tbl"><table id="savedTbl"></table></div>
+    <h3>Candidate preview</h3>
+    <p class="muted small">Advisory only: a badge is issued after double-scoring and adjudication rules are met. Uses Angoff-recommended total cuts when available, provisional cuts otherwise.</p>
+    <div class="tbl"><table id="candTbl"></table></div>
+  </section>
+
+  <section id="report" role="tabpanel">
+    <h2>Reliability report: synthetic study</h2>
+    <p class="muted small" id="repIntro"></p>
+    <div class="kpis" id="kpis"></div>
+    <div class="banner" id="reading"></div>
+    <h3>Did the analysis recover what was planted?</h3>
+    <div class="tbl"><table id="recov"></table></div>
+    <h3>Rater severity (mean deviation from other raters on shared artifacts)</h3>
+    <div class="chart" id="sevChart"></div>
+    <h3>Rater drift against anchor-paper master scores</h3>
+    <div class="chart" id="driftChart"></div>
+    <div class="tbl"><table id="driftTbl"></table></div>
+    <h3>Agreement by dimension</h3>
+    <div class="tbl"><table id="dimTbl"></table></div>
+    <h3>Item analysis (candidate dimension means, n = <span id="nItems"></span>)</h3>
+    <div class="tbl"><table id="itemTbl"></table></div>
+    <h3>Standard setting: modified Angoff</h3>
+    <div class="tbl"><table id="angTbl"></table></div>
+    <h3>Badge decisions and decision consistency</h3>
+    <div class="tbl"><table id="badgeTbl"></table></div>
+    <div class="grid" id="dcGrid"></div>
+    <h3>Fairness: DIF by role family</h3>
+    <p class="muted small" id="difMethod"></p>
+    <div class="tbl"><table id="difTbl"></table></div>
+    <h3>Badge rates by role family (four-fifths check)</h3>
+    <div class="tbl"><table id="impTbl"></table></div>
+    <h3>Seed sensitivity</h3>
+    <div class="tbl"><table id="seedTbl"></table></div>
+  </section>
+
+  <section id="about" role="tabpanel">
+    <h2>About this toolkit</h2>
+    <div class="card">
+      <p><strong>Purpose.</strong> Evidence of applied AI proficiency for the staff AI PD tiers (AI Explorer &rarr; AI Catalyst &rarr; AI Practitioner), measured from work samples rather than attendance.</p>
+      <p><strong>Who scores.</strong> Trained human raters. No model grades another model. Software computes agreement (weighted kappa, Krippendorff's alpha, ICC), rater severity and drift, item statistics, Angoff cut scores, decision consistency and DIF.</p>
+      <p><strong>Privacy.</strong> Pseudonymous codes only; work samples and scores stay on approved university systems; program reporting uses aggregates with cells under 10 suppressed. This page makes no network requests (a Content-Security-Policy blocks them).</p>
+      <p><strong>Limits.</strong> Badge thresholds are provisional until a real Angoff panel meets. The report shows how the toolkit behaves on synthetic data with planted properties; it says nothing about real staff or raters.</p>
+      <p class="muted small">Source files: <code>platform-evaluation/ai_proficiency/</code> (rubric.yaml, tasks.yaml, reliability.py, CALIBRATION_WORKFLOW.md, README.md).</p>
+    </div>
+  </section>
+</main>
+<div id="tip" role="tooltip"></div>
+<script id="data" type="application/json">{"rubric": {"version": "ai_proficiency_rubric_v0.1", "status": "draft - not approved for operational use", "scale": {"min": 1, "max": 4, "levels": [{"score": 1, "name": "Beginning"}, {"score": 2, "name": "Developing"}, {"score": 3, "name": "Proficient"}, {"score": 4, "name": "Advanced"}], "rule": "Score the evidence in the submission, not the tool output quality alone. When evidence sits between two anchors, choose the lower level and note why."}, "framework_alignment": {"source": "platform-evaluation/reskilling/competency_framework.yaml (ai_literacy_rubric_v1)", "note": "That framework sets role-level design targets and must not score people. This rubric is a separate, opt-in learner credential instrument. The mapping below is for curriculum alignment only.", "mapping": [{"badge": "explorer", "framework_level": "Aware", "reading": "Knows what the tools do, where they are permitted and that output must be checked; first guided use."}, {"badge": "catalyst", "framework_level": "Aware, moving to Practitioner", "reading": "Safe, bounded use of an approved tool with checking; judgment gates already met."}, {"badge": "practitioner", "framework_level": "Practitioner", "reading": "Matches the framework's Practitioner indicators: bounded prompts with context, constraints and format; every output checked; human decision kept on people, payments and records."}, {"badge": "none", "framework_level": "Integrator and Leader", "reading": "Out of scope for staff badges; workflow redesign is assessed through the role-aligned cohort project, not this rubric."}]}, "program_tiers": {"source": "AI Professional Development Series (IHR with OCIO, Technology Services, CITL, Library) - tier names confirmed by the coordinator from primary sources, 2026-11-06.", "staff": [{"id": "explorer", "name": "AI Explorer", "delivery": "Self-directed modules in Canvas"}, {"id": "catalyst", "name": "AI Catalyst", "delivery": "Tool deep-dive plus a role-scenario session"}, {"id": "practitioner", "name": "AI Practitioner", "delivery": "Role-aligned cohort work"}], "leaders": ["AI Ready Leaders", "AI Adaptive Leaders", "AI Forward Strategies"], "leaders_note": "Leader tiers are out of scope for this staff instrument."}, "ihr_competency_model": {"source": "IHR HR Competency Model (six competencies). Only the two named below are mapped; confirm exact wording with SP&P.", "competencies": [{"id": "DPDS", "name": "Digital Proficiency & Data Savviness"}, {"id": "CF", "name": "Cognitive Flexibility"}]}, "data_classification": {"source": "Campus data classification standard - confirm current category names and the approved-tools list with the Office of the CIO / Cybersecurity before use.", "categories": [{"id": "Public", "example": "Published policies, public course catalog, press releases"}, {"id": "Internal", "example": "Unit procedures, non-public meeting notes, draft budgets without personal data"}, {"id": "Sensitive", "example": "Personnel records, FERPA-protected student records, individual pay, health or accommodation details"}], "high_risk_note": "Campus policy may define a further High-Risk tier (e.g., SSNs, credentials, protected health information). Tasks treat any such data as never-enter.", "tool_note": "Per the opportunity brief, approved tools include Microsoft Copilot Chat, Illinois ChatGPT EDU and Illinois Chat, with Illinois Chat's locally hosted models the option approved for Sensitive data. Tasks name tool CLASSES (public consumer tool, enterprise-licensed tool, locally hosted approved tool) so the instrument survives changes to the list."}, "dimensions": [{"id": "D1", "key": "task_framing", "name": "Task framing and context", "ihr_competencies": ["DPDS"], "ihr_competency_reading": "Shaping a request so a digital tool can use the context is a core digital-proficiency behaviour.", "construct": "States the goal, audience, role and relevant background so the tool can do the right task.", "levels": [{"score": 1, "anchor": "Single bare instruction; goal, audience and context absent or wrong.", "examples": ["\"Write an email about the policy.\"", "Pastes a document with no instruction about what to do with it."]}, {"score": 2, "anchor": "Goal stated; audience or key context missing, so output needs heavy rework.", "examples": ["Asks for a summary of a leave policy but not who will read it or why."]}, {"score": 3, "anchor": "Goal, audience and the context that matters are stated; irrelevant material is left out.", "examples": ["\"Summarize this Internal procedure for new department admins who have never processed a hire; they need the three deadlines and who to contact.\""]}, {"score": 4, "anchor": "Frames the task precisely, anticipates ambiguity, and supplies success criteria or a worked example.", "examples": ["Adds a short example of a good answer and says what would make the draft unusable.", "Splits a large job into staged requests with a stated purpose for each."]}], "look_fors": ["purpose stated", "audience named", "only needed context supplied", "success criteria"]}, {"id": "D2", "key": "constraints_format", "name": "Constraints and output format", "ihr_competencies": ["DPDS"], "ihr_competency_reading": "Specifying usable, testable outputs.", "construct": "Specifies length, tone, structure, format and must/must-not rules so the output is usable without rework.", "levels": [{"score": 1, "anchor": "No constraints; accepts whatever form the tool returns.", "examples": ["Asks for 'a table' and pastes a 900-word narrative into the deliverable."]}, {"score": 2, "anchor": "One or two constraints (e.g., length) but format or must-not rules missing.", "examples": ["\"Keep it short.\" with no structure or tone."]}, {"score": 3, "anchor": "Clear format, length, tone and at least one must-not rule that fits the task.", "examples": ["\"Return a 3-column table (step, owner, deadline); plain language; do not invent dates not in the source.\""]}, {"score": 4, "anchor": "Constraints are complete and testable, including what to do when information is missing.", "examples": ["\"If a deadline is not in the text, write 'not stated' rather than guessing.\"", "Specifies a reusable output schema that downstream steps rely on."]}], "look_fors": ["format specified", "length/tone", "must-not rules", "missing-information behaviour"]}, {"id": "D3", "key": "iteration", "name": "Iteration and refinement", "ihr_competencies": ["CF"], "ihr_competency_reading": "Revising approach when the first one fails; changing strategy rather than repeating it.", "construct": "Evaluates each output against the goal and revises the prompt or decomposes the task to close specific gaps.", "levels": [{"score": 1, "anchor": "One attempt accepted as-is, or repeats the same request unchanged.", "examples": ["Regenerates three times without changing the prompt."]}, {"score": 2, "anchor": "Follows up, but with vague feedback (\"make it better\").", "examples": ["\"Try again, more professional.\""]}, {"score": 3, "anchor": "Follow-ups name the specific gap and the fix; output improves measurably.", "examples": ["\"Step 4 merged two approvals; list them separately and keep the original order.\""]}, {"score": 4, "anchor": "Iterates strategically: diagnoses why the output failed, changes approach (decompose, add example, switch tool) and stops when criteria are met.", "examples": ["Notices the tool drops table rows past 40 and switches to processing in batches with a row-count check."]}], "look_fors": ["specific feedback", "prompt revised not just re-run", "stopping rule"]}, {"id": "D4", "key": "verification", "name": "Verification of outputs and source checking", "ihr_competencies": ["DPDS"], "ihr_competency_reading": "Data savviness: reconciling figures and checking sources before trusting them.", "construct": "Checks facts, figures, citations and extracted values against authoritative sources before use, and records what was checked.", "levels": [{"score": 1, "anchor": "Uses output unchecked, including invented citations, figures or policy references.", "examples": ["Cites a policy section the tool produced that does not exist."]}, {"score": 2, "anchor": "Spot-checks some content but misses a planted error or does not say what was checked.", "examples": ["Checks dates but not dollar totals in an extracted table."]}, {"score": 3, "anchor": "Checks every fact, figure and citation that the decision depends on against the source and corrects errors found.", "examples": ["Reconciles extracted totals to the source report and fixes a transposed figure."]}, {"score": 4, "anchor": "Uses a systematic check (reconciliation, sample, second source), documents it, and flags residual uncertainty to the reader.", "examples": ["Adds a verification note: 'All 14 amounts reconciled to the ledger total; two policy links confirmed on the live policy site.'"]}], "look_fors": ["planted error caught", "citations confirmed at source", "totals reconciled", "check documented"]}, {"id": "D5", "key": "data_sensitivity", "name": "Data-sensitivity judgment", "ihr_competencies": ["DPDS"], "ihr_competency_reading": "Data savviness: knowing the data's classification and handling it accordingly.", "construct": "Classifies the data (Public / Internal / Sensitive, per campus policy) before using any tool, and minimizes, de-identifies or withholds data accordingly.", "gate": true, "auto_floor_rule": "If Sensitive data (or never-enter data) is entered into a tool not approved for it, D5 = 1 regardless of other evidence, and the rater flags the submission for a learning conversation (not discipline).", "levels": [{"score": 1, "anchor": "Enters Sensitive data into an unapproved tool, or cannot classify the data.", "examples": ["Pastes a spreadsheet with names and individual salaries into a public consumer chatbot."]}, {"score": 2, "anchor": "Classifies the data roughly but over-shares (e.g., keeps identifiers that the task does not need) in an approved tool, or misclassifies Internal as Public.", "examples": ["Uses the enterprise tool correctly but leaves student IDs in a prompt that only needed counts."]}, {"score": 3, "anchor": "Classifies correctly, uses a tool approved for that class, and removes data the task does not need.", "examples": ["Labels the file Sensitive, uses the locally hosted approved tool, and replaces names with row numbers."]}, {"score": 4, "anchor": "Applies data minimization by design (aggregates, synthetic stand-ins, structure-only prompts) and explains the classification reasoning, including edge cases.", "examples": ["Gets the formula help it needs by describing column structure only, so no records leave the spreadsheet."]}], "look_fors": ["classification stated", "tool matches class", "identifiers removed", "minimization reasoning"]}, {"id": "D6", "key": "human_in_the_loop", "name": "Human-in-the-loop decision", "ihr_competencies": ["CF", "DPDS"], "ihr_competency_reading": "Shifting between automated assistance and human judgment as stakes change (CF); knowing where data-driven output stops being sufficient (DPDS).", "construct": "Recognizes which steps must stay with an accountable person (decisions about people, payments, records of entry, policy interpretation) and designs the hand-off.", "gate": true, "levels": [{"score": 1, "anchor": "Lets the tool make or effectively make a decision about a person, payment or official record.", "examples": ["Uses the tool's ranking of applicants as the shortlist.", "Sends an AI-drafted denial to a student without review."]}, {"score": 2, "anchor": "Says a human should review but leaves the review undefined or rubber-stamp.", "examples": ["\"A person will check it.\" with no criteria or owner."]}, {"score": 3, "anchor": "Names the decision that stays human, who owns it, and what the reviewer checks; AI output is labelled as draft/advisory.", "examples": ["\"The advisor makes the hold-release decision; the draft only lists the documents on file.\""]}, {"score": 4, "anchor": "Designs proportionate oversight: escalation triggers, a record of AI suggestion vs final decision, and notice to affected people where policy requires it.", "examples": ["Logs which sentences the tool drafted, and routes any exception to the HR partner before sending."]}], "look_fors": ["decision owner named", "review criteria", "draft labelled", "escalation/notice"]}, {"id": "D7", "key": "tool_choice", "name": "Appropriate tool choice", "ihr_competencies": ["DPDS", "CF"], "ihr_competency_reading": "Choosing among tools, including no AI (DPDS); adapting the method to the problem (CF).", "construct": "Chooses whether to use generative AI at all, and which approved tool or non-AI method fits the task, data class and accuracy need.", "levels": [{"score": 1, "anchor": "Uses a generative tool where it is unsuitable (exact arithmetic, authoritative lookups) or an unapproved tool, with no rationale.", "examples": ["Asks a chatbot to total 300 ledger lines instead of using the spreadsheet."]}, {"score": 2, "anchor": "Uses an approved tool but the choice is habitual; misses an obviously better non-AI or approved alternative.", "examples": ["Uses chat to search a policy that the official policy library answers directly."]}, {"score": 3, "anchor": "Choice fits task, data class and accuracy need, and the rationale is stated.", "examples": ["Uses the spreadsheet for totals and the enterprise tool only to draft the narrative."]}, {"score": 4, "anchor": "Combines tools deliberately (AI for drafting, deterministic tools for computation, official sources for facts) and states when not to use AI.", "examples": ["\"I would not use AI for the eligibility determination itself; the rule is deterministic and lives in the system of record.\""]}], "look_fors": ["AI vs non-AI decision", "tool approved for data class", "computation kept deterministic", "rationale"]}, {"id": "D8", "key": "documentation_reuse", "name": "Documentation and reuse", "ihr_competencies": ["DPDS"], "ihr_competency_reading": "Making digital work auditable and reusable.", "construct": "Leaves a record others can audit and reuse: final prompt, version, data class, checks done, and limits.", "levels": [{"score": 1, "anchor": "No record of prompts, tool or checks; result cannot be reproduced.", "examples": ["Submits only the final text."]}, {"score": 2, "anchor": "Saves the prompt but not the context, tool, data class or checks.", "examples": ["Pastes the last prompt into the submission with no notes."]}, {"score": 3, "anchor": "Records tool, final prompt, data class, verification done and known limits in the unit's format.", "examples": ["Fills the prompt-card template: purpose, tool, data class, prompt, checks, owner."]}, {"score": 4, "anchor": "Produces a reusable, parameterized prompt or procedure with a test example, and states when it should not be reused.", "examples": ["Adds the template to the unit's prompt library with placeholders, a sample input and a 'do not use for' line."]}], "look_fors": ["prompt card", "tool + data class recorded", "checks recorded", "reuse limits"]}], "badges": {"scoring_unit": "mean across tasks attempted in one sitting (minimum 2 tasks)", "order": ["explorer", "catalyst", "practitioner"], "explorer": {"name": "AI Explorer", "meaning": "Has made a first, safe use of an approved tool: frames a basic request, recognizes data that must not be entered, and knows output must be checked.", "awarding_note": "Explorer is a self-directed Canvas tier. Whether it is awarded on module completion alone or with a work sample is a program decision; this threshold describes the work-sample evidence expected at Explorer and is used for placement and feedback either way.", "provisional_total_cut": 13.0, "all_dimensions_min": 1.0, "dimension_floors": {"D5": 2.0}, "min_dimensions_at_3": 0}, "catalyst": {"name": "AI Catalyst", "meaning": "Uses an approved tool safely on routine work, checks the output, and keeps people decisions with people.", "provisional_total_cut": 18.0, "all_dimensions_min": 2.0, "dimension_floors": {"D5": 3.0, "D6": 2.0}, "min_dimensions_at_3": 0}, "practitioner": {"name": "AI Practitioner", "meaning": "Writes bounded, context-rich prompts, iterates purposefully, verifies systematically, chooses tools deliberately and documents for reuse.", "provisional_total_cut": 25.0, "all_dimensions_min": 2.0, "dimension_floors": {"D4": 3.0, "D5": 3.0, "D6": 3.0}, "min_dimensions_at_3": 6}, "decision_rules": ["Practitioner if every Practitioner rule holds.", "Else Catalyst if every Catalyst rule holds.", "Else Explorer if every Explorer rule holds.", "Else 'Not yet' with dimension-level feedback; the learner may re-attempt with different tasks after 30 days."], "double_scoring": {"rate": 0.2, "adjudicate_if_abs_diff_gt": 1, "adjudicate_gate_disagreement": true, "note": "Every submission within 1.0 total point of a cut score, and every submission where raters disagree on a gate dimension (D5, D6) across a floor, is also second-scored."}}}, "tasks": {"version": "ai_proficiency_tasks_v0.1", "time_limit_minutes_default": 35, "tier_alignment": "Staff tiers are AI Explorer (self-directed, Canvas) -> AI Catalyst (tool deep-dive plus a role-scenario session) -> AI Practitioner. The role-family tasks are written to be used as the Catalyst role-scenario session work sample; badge_focus marks the tier a task discriminates best (all tasks are scored on all 8 dimensions).", "sitting": "One common task (T12) plus one task from the candidate's role family, chosen by the candidate. Extended time and paper/transcript modes are available as accommodations.", "tasks": [{"id": "T01", "role_family": "HR", "title": "Draft a plain-language summary of a leave policy change", "badge_focus": "catalyst", "scenario": "Your unit has a revised (synthetic) vacation-carryover policy. Supervisors keep asking what changed. Produce a one-page summary for supervisors and a 3-question FAQ.", "materials": "Two versions of a 4-page synthetic policy (Public), a forwarded supervisor email that quotes one named employee's leave balance (Sensitive).", "planted": ["The forwarded email includes an individual's leave balance and medical-leave reference", "A carryover cap differs between the policy text and its own summary table"], "auto_floor": "Pasting the forwarded email with the individual's details into any tool -> D5 = 1.", "guide": {"D1": "3: names supervisors as audience, purpose is 'what changed and what to do'. 1: 'summarize this'.", "D2": "3: one page, plain language, FAQ count fixed, 'do not add rules not in the policy'. 1: no format.", "D3": "3: corrects a specific omission (e.g., effective date). 1: accepts first draft.", "D4": "3: catches the cap mismatch and resolves it from the policy text or flags it to the policy owner. 1: repeats the wrong cap.", "D5": "3: classifies policy as Public and the email as Sensitive; uses only the policy text. 1: email pasted in.", "D6": "3: HR policy owner approves the summary before release; no individual leave question answered by the tool. 1: tool output published directly.", "D7": "3: enterprise tool for drafting; compares versions with a document-compare feature rather than asking the model to diff. 1: unapproved tool.", "D8": "3: prompt card with source version and date. 1: nothing recorded."}}, {"id": "T02", "role_family": "HR", "title": "Structure interview questions for a staff search", "badge_focus": "practitioner", "scenario": "A search committee asks you for a structured interview guide for a synthetic Office Support Specialist posting, with rating anchors the committee will apply.", "materials": "Synthetic job description (Public), a spreadsheet of 12 synthetic applicants with names and resume excerpts (Sensitive), committee chair's note asking you to 'have AI rank them first'.", "planted": ["Chair's request to have the tool rank applicants", "One job-description duty that is not essential (legal risk if used as a criterion)"], "auto_floor": "Any applicant data in any tool -> D5 = 1. Producing a tool-generated ranking or shortlist -> D6 = 1.", "guide": {"D1": "3: frames task as job-related, structured questions tied to listed duties. 1: 'give me interview questions'.", "D2": "3: fixed number of questions, behavioral format, 1-4 anchors per question, no questions on protected characteristics. 1: free-form list.", "D3": "3: revises questions that were not job-related or were leading. 1: none.", "D4": "3: checks each question maps to a duty in the job description; flags the non-essential duty. 1: accepts unrelated questions.", "D5": "3: works from the job description only; applicant file never enters a tool. 1: applicant data entered.", "D6": "3: declines the ranking request in writing, explains HB 3773 and committee responsibility; committee scores applicants. 1: tool ranks applicants.", "D7": "3: AI used for question drafting only; scoring stays in the committee's form. 1: AI for candidate evaluation.", "D8": "3: guide saved with version, duty mapping and a 'not for screening' note. 1: no record."}}, {"id": "T03", "role_family": "HR", "title": "Summarize de-identified exit-survey comments into themes", "badge_focus": "practitioner", "scenario": "Your director wants five themes from 60 synthetic exit-survey comments for a unit meeting, with counts and one representative paraphrase per theme.", "materials": "60 synthetic comments (Sensitive: several mention a named supervisor or a health condition), a count of respondents by unit (Internal).", "planted": ["Three comments are identifiable when quoted", "One unit has only 4 respondents"], "auto_floor": "Comments entered into a tool not approved for Sensitive data -> D5 = 1.", "guide": {"D1": "3: states purpose, audience and that themes are for discussion, not individual follow-up. 1: 'what are the themes'.", "D2": "3: fixed theme count, counts per theme, paraphrase not verbatim, 'no names or unit names under n=10'. 1: no rules.", "D3": "3: merges or splits themes after reading a sample; asks for counts to be re-derived. 1: none.", "D4": "3: hand-codes a sample (e.g., 15 comments) and compares to the tool's theme assignment; recounts. 1: reports tool counts as fact.", "D5": "3: uses the tool approved for Sensitive data (locally hosted) and removes names first; suppresses the n=4 unit. 1: public tool or names left in.", "D6": "3: director/HR analyst reviews themes before sharing; no individual follow-up triggered by the tool. 1: tool output circulated.", "D7": "3: approved local tool for the text, spreadsheet for counts. 1: public tool.", "D8": "3: coding frame, sample check result and suppression rule recorded. 1: nothing."}}, {"id": "T04", "role_family": "Finance", "title": "Reconcile a vendor invoice summary", "badge_focus": "catalyst", "scenario": "You receive a 3-page synthetic invoice and the PO line items. Prepare a short note to the approver saying whether the invoice matches the PO and what differs.", "materials": "Synthetic invoice PDF and PO table (Internal), 14 line items; one line has transposed digits; the invoice total is correct for the wrong line.", "planted": ["Transposed amount on one line", "Tax applied to a tax-exempt line"], "auto_floor": "None (no Sensitive data); note: entering a vendor bank-account number into any tool is never-enter -> D5 = 1.", "guide": {"D1": "3: approver is the audience; 'match / differences / recommended action'. 1: 'check this invoice'.", "D2": "3: table of differences with line, PO amount, invoice amount; 'do not compute totals'. 1: narrative only.", "D3": "3: asks for missing line after noticing count mismatch. 1: none.", "D4": "3: totals reconciled in spreadsheet; finds transposition and tax issue. 1: accepts tool's 'matches'.", "D5": "3: Internal data in an enterprise tool; bank details removed. 1: bank details entered.", "D6": "3: approver decides payment; note labelled as prepared with AI assistance. 1: recommends auto-approval.", "D7": "3: spreadsheet for arithmetic, AI only for extraction/drafting. 1: AI computes totals.", "D8": "3: note records what was reconciled and how. 1: none."}}, {"id": "T05", "role_family": "Finance", "title": "Explain a budget variance to a department head", "badge_focus": "practitioner", "scenario": "A department head asks why a synthetic operating account is 18% over budget at mid-year. Draft a 200-word explanation and a chart suggestion.", "materials": "Synthetic budget-vs-actual table (Internal) by object code; one large one-time charge; a salary line with individual pay amounts (Sensitive).", "planted": ["Individual salary detail in the table", "A misleading year-over-year comparison the tool tends to make (different fiscal calendars)"], "auto_floor": "Individual pay amounts entered into a tool not approved for Sensitive data -> D5 = 1.", "guide": {"D1": "3: states audience (non-finance department head), purpose and the period. 1: 'explain this table'.", "D2": "3: 200 words, cause-first, no jargon, 'use only figures in the table'. 1: no limits.", "D3": "3: corrects a causal claim that the data does not support. 1: none.", "D4": "3: verifies every figure quoted and catches the fiscal-calendar mismatch. 1: unsupported causal story.", "D5": "3: aggregates salary lines to object-code level before use. 1: individual pay entered.", "D6": "3: finance manager reviews before sending; explanation framed as draft analysis. 1: sends unreviewed.", "D7": "3: variance math in spreadsheet; AI drafts prose. 1: AI does the math.", "D8": "3: assumptions and data date stated. 1: none."}}, {"id": "T06", "role_family": "Advising", "title": "Draft a response to a student about a registration hold", "badge_focus": "catalyst", "scenario": "A synthetic student emails, upset about a registration hold. Draft a reply explaining next steps, using the (synthetic) hold-type guide.", "materials": "Student email with name, UIN-like ID and mention of a disability accommodation (Sensitive, FERPA); public hold-type guide.", "planted": ["Student ID and accommodation reference in the email", "The guide lists two offices; only one handles this hold type"], "auto_floor": "Student identifiers or accommodation details entered into a tool not approved for Sensitive data -> D5 = 1.", "guide": {"D1": "3: tone (empathetic, clear), audience (student), goal (next steps). 1: 'reply to this'.", "D2": "3: under 150 words, steps as a list, 'do not promise a release date'. 1: none.", "D3": "3: adjusts tone or removes an over-promise. 1: none.", "D4": "3: confirms the correct office and link in the official guide. 1: wrong office sent.", "D5": "3: rewrites the situation generically ('a student with a financial hold') with no identifiers. 1: email pasted in.", "D6": "3: advisor decides and sends; tool never decides hold release. 1: tool's text sent unread.", "D7": "3: approved tool for drafting; student system for the hold facts. 1: unapproved tool.", "D8": "3: saves a reusable, identifier-free reply template. 1: none."}}, {"id": "T07", "role_family": "Advising", "title": "Build a degree-progress checklist from catalog text", "badge_focus": "practitioner", "scenario": "Turn a synthetic program's catalog requirements into a checklist advisors can use in meetings, with prerequisites in order.", "materials": "Synthetic catalog page (Public) with a footnote exception; a prior-year version with different hours.", "planted": ["Footnote exception that the tool tends to drop", "Old catalog year mixed in"], "auto_floor": "None (Public data); a student record pasted in to 'test' the checklist -> D5 = 1.", "guide": {"D1": "3: states catalog year, audience (advisors) and use (in-meeting checklist). 1: 'make a checklist'.", "D2": "3: checklist structure with hours and prerequisites; 'include all footnotes as notes'. 1: none.", "D3": "3: second pass to recover dropped exception; ordering fixed. 1: none.", "D4": "3: line-by-line comparison with the catalog; catches year mix-up. 1: wrong hours retained.", "D5": "3: Public data only; tests with a synthetic student profile. 1: real-looking record used.", "D6": "3: checklist marked as aid; degree audit system remains authoritative; advisor confirms. 1: presented as official audit.", "D7": "3: notes that the degree-audit system is the source of truth; AI for formatting only. 1: AI used to determine eligibility.", "D8": "3: catalog year and review date on the checklist; owner named. 1: none."}}, {"id": "T08", "role_family": "IT support", "title": "Turn a ticket thread into a knowledge-base article", "badge_focus": "catalyst", "scenario": "A resolved synthetic ticket thread about VPN setup has 22 messages. Write a knowledge-base article for end users.", "materials": "Ticket thread (Internal) containing a user's name, device serial and a temporary password in one message.", "planted": ["Temporary password in thread", "One troubleshooting step that was later found to be wrong"], "auto_floor": "Credentials entered into any tool -> D5 = 1.", "guide": {"D1": "3: audience end users, outcome 'set up VPN without a ticket'. 1: 'summarize ticket'.", "D2": "3: numbered steps, screenshots placeholders, 'omit steps later reversed'. 1: none.", "D3": "3: removes the wrong step after checking the thread end. 1: wrong step kept.", "D4": "3: walks through the steps on a test device or checks vendor docs. 1: unverified.", "D5": "3: strips names, serials and the password before any tool use. 1: password entered.", "D6": "3: KB owner/peer reviews before publishing. 1: auto-published.", "D7": "3: approved tool; vendor docs for authoritative settings. 1: unapproved tool.", "D8": "3: article metadata: version, tested OS, reviewer. 1: none."}}, {"id": "T09", "role_family": "IT support", "title": "Write a spreadsheet formula without sharing the data", "badge_focus": "practitioner", "scenario": "A unit needs a formula that flags device-inventory rows whose warranty ends within 90 days and whose assigned user has left. Get AI help without exposing the inventory.", "materials": "Synthetic inventory spreadsheet (Internal) with an assigned-user column (Sensitive when combined with HR status).", "planted": ["Date format differs between two columns", "Blank warranty dates"], "auto_floor": "Rows with user names or HR status entered into a tool not approved for Sensitive data -> D5 = 1.", "guide": {"D1": "3: describes columns, types and the rule clearly. 1: 'help with formula'.", "D2": "3: names the spreadsheet product, output column, blank-handling rule. 1: none.", "D3": "3: fixes the date-format issue after testing. 1: none.", "D4": "3: tests formula on constructed edge cases (blank, boundary day 90). 1: untested.", "D5": "3: describes structure only, no rows shared (level 4 if justified as minimization). 1: rows pasted.", "D6": "3: flags go to the inventory owner for confirmation, not automatic device recall. 1: auto-action.", "D7": "3: AI for formula drafting; logic validated in the spreadsheet. 1: asks AI to process the whole sheet.", "D8": "3: formula documented with test cases. 1: none."}}, {"id": "T10", "role_family": "Admin", "title": "Produce meeting minutes and action items from notes", "badge_focus": "catalyst", "scenario": "Turn rough synthetic notes from a 60-minute committee meeting into minutes and an action-item table.", "materials": "Rough notes (Internal) including a confidential personnel matter discussed in closed session.", "planted": ["Closed-session personnel item", "An action item with no owner"], "auto_floor": "Closed-session personnel details entered into a tool not approved for Sensitive data -> D5 = 1.", "guide": {"D1": "3: committee name, audience (members), required sections. 1: 'clean these up'.", "D2": "3: minutes template, action table (item, owner, due), 'mark unknown owner as TBD'. 1: none.", "D3": "3: asks the tool to separate decisions from discussion. 1: none.", "D4": "3: checks names of owners and dates against notes; flags missing owner. 1: invented owner accepted.", "D5": "3: closed-session item removed before tool use and handled manually. 1: included.", "D6": "3: chair approves minutes before distribution. 1: distributed directly.", "D7": "3: approved tool; does not use recording/transcription without consent. 1: unapproved tool.", "D8": "3: saved template prompt for future minutes. 1: none."}}, {"id": "T11", "role_family": "Admin", "title": "Compare three event-catering quotes", "badge_focus": "practitioner", "scenario": "Compare three synthetic catering quotes for a 120-person event against purchasing rules and recommend one with reasons.", "materials": "Three quotes (Internal) in different formats; purchasing rule excerpt (Public); one quote omits gratuity that another includes.", "planted": ["Non-comparable totals (gratuity)", "A threshold above which a different purchasing process applies"], "auto_floor": "None (no Sensitive data).", "guide": {"D1": "3: states event size, criteria and decision-maker. 1: 'which is best'.", "D2": "3: normalized comparison table with per-person cost; 'state assumptions'. 1: none.", "D3": "3: asks for normalization after spotting gratuity difference. 1: none.", "D4": "3: recomputes per-person cost; checks threshold in the rule text. 1: wrong comparison accepted.", "D5": "3: Internal quotes in an approved tool; vendor contact details not needed and omitted. 1: careless sharing.", "D6": "3: recommendation advisory; purchasing approver decides. 1: AI choice treated as decision.", "D7": "3: spreadsheet for cost math; AI to extract terms. 1: AI arithmetic.", "D8": "3: assumptions and sources listed. 1: none."}}, {"id": "T12", "role_family": "Common", "title": "Decide whether and how to use AI for a request (judgment task)", "badge_focus": "all", "scenario": "Your supervisor forwards four short synthetic requests and asks you to say, for each, whether you would use AI, which approved tool class, what data you would include, what you would check, and what stays with a person. Then carry out one of them.", "materials": "Four request cards: (a) rewrite a public web page for readability; (b) summarize a grievance file; (c) total a reimbursement batch; (d) draft a welcome email to new hires using an HR roster.", "planted": ["(b) is Sensitive and involves a decision about a person", "(c) is a computation task", "(d) needs a roster with personal data that can be replaced by placeholders"], "auto_floor": "Choosing to put the grievance file in a tool not approved for Sensitive data -> D5 = 1. Letting AI recommend the grievance outcome -> D6 = 1.", "guide": {"D1": "3: for the executed request, frames goal and audience clearly. 1: bare prompt.", "D2": "3: format and must-not rules for the executed request. 1: none.", "D3": "3: purposeful refinement on the executed request. 1: none.", "D4": "3: names the check for each card (e.g., totals reconciled for c). 1: no checks named.", "D5": "3: classifies all four correctly (a Public, b Sensitive, c Internal or Sensitive depending on personal data, d Sensitive roster -> placeholders). 1: misclassifies b.", "D6": "3: identifies that (b) outcome and (c) payment approval stay human, with owners. 1: AI decides b.", "D7": "3: no AI for c (spreadsheet), local approved tool or no AI for b, enterprise tool for a and d. 1: AI for everything.", "D8": "3: brief decision log for all four. 1: none."}}]}, "report": {"generated_from": "synthetic seeded study (no real people)", "seed": 20261106, "rubric_version": "ai_proficiency_rubric_v0.1", "dimensions": {"D1": "Task framing and context", "D2": "Constraints and output format", "D3": "Iteration and refinement", "D4": "Verification of outputs and source checking", "D5": "Data-sensitivity judgment", "D6": "Human-in-the-loop decision", "D7": "Appropriate tool choice", "D8": "Documentation and reuse"}, "calibration": {"n_artifacts": 20, "k_raters": 6, "total_score": {"ICC(1,1)": 0.702, "ICC(2,1)": 0.7132, "ICC(2,k)": 0.9372, "ICC(3,1)": 0.9201, "ICC(3,k)": 0.9857}, "total_score_ci95": {"ICC(2,k)": [0.8587, 0.9612], "ICC(2,1)": [0.5028, 0.8084]}, "alpha_ordinal_all_cells": 0.5839, "alpha_interval_all_cells": 0.5962, "per_dimension": {"D1": {"ICC(2,1)": 0.5712, "ICC(2,k)": 0.8888, "alpha_ordinal": 0.5458}, "D2": {"ICC(2,1)": 0.6424, "ICC(2,k)": 0.9151, "alpha_ordinal": 0.5788}, "D3": {"ICC(2,1)": 0.6529, "ICC(2,k)": 0.9186, "alpha_ordinal": 0.6448}, "D4": {"ICC(2,1)": 0.6688, "ICC(2,k)": 0.9238, "alpha_ordinal": 0.6346}, "D5": {"ICC(2,1)": 0.4958, "ICC(2,k)": 0.8551, "alpha_ordinal": 0.4438}, "D6": {"ICC(2,1)": 0.5303, "ICC(2,k)": 0.8714, "alpha_ordinal": 0.5083}, "D7": {"ICC(2,1)": 0.7064, "ICC(2,k)": 0.9352, "alpha_ordinal": 0.6797}, "D8": {"ICC(2,1)": 0.4957, "ICC(2,k)": 0.855, "alpha_ordinal": 0.4657}}, "pairwise_qwk": {"R1-R2": 0.7049, "R1-R3": 0.5586, "R1-R4": 0.6736, "R1-R5": 0.5927, "R1-R6": 0.7177, "R2-R3": 0.5424, "R2-R4": 0.7503, "R2-R5": 0.6389, "R2-R6": 0.7069, "R3-R4": 0.5373, "R3-R5": 0.3907, "R3-R6": 0.5814, "R4-R5": 0.5816, "R4-R6": 0.6487, "R5-R6": 0.6106}, "pairwise_qwk_range": [0.3907, 0.7503], "note": "ICC(2,k) is the reliability of the MEAN of k=6 raters; operational scores use 1-2 raters, so ICC(2,1) is the figure that applies to a single operational read."}, "double_scoring": {"n_artifacts": 300, "n_double_scored_artifacts": 60, "double_rate": 0.2, "n_double_cells": 480, "qwk_slots_all": 0.4457, "n": 480, "exact": 0.4521, "adjacent_or_exact": 0.9292, "adjudicated_cells": 34, "adjudication_rate": 0.0708, "per_dimension": {"D1": {"alpha_ordinal": 0.412, "qwk_slots": 0.4526, "n": 60, "exact": 0.45, "adjacent_or_exact": 0.9333}, "D2": {"alpha_ordinal": 0.6258, "qwk_slots": 0.6487, "n": 60, "exact": 0.5167, "adjacent_or_exact": 0.9833}, "D3": {"alpha_ordinal": 0.4515, "qwk_slots": 0.4342, "n": 60, "exact": 0.5333, "adjacent_or_exact": 0.9167}, "D4": {"alpha_ordinal": 0.4049, "qwk_slots": 0.4714, "n": 60, "exact": 0.45, "adjacent_or_exact": 0.9167}, "D5": {"alpha_ordinal": 0.3669, "qwk_slots": 0.3792, "n": 60, "exact": 0.4833, "adjacent_or_exact": 0.8833}, "D6": {"alpha_ordinal": 0.4379, "qwk_slots": 0.4283, "n": 60, "exact": 0.4, "adjacent_or_exact": 0.9167}, "D7": {"alpha_ordinal": 0.4754, "qwk_slots": 0.4924, "n": 60, "exact": 0.4333, "adjacent_or_exact": 0.9667}, "D8": {"alpha_ordinal": -0.0617, "qwk_slots": -0.0385, "n": 60, "exact": 0.35, "adjacent_or_exact": 0.9167}}, "note": "Raters rotate, so slot-based kappa (first vs second read) treats 'rater slot' as the rater; Krippendorff's alpha is the primary statistic because it handles rotating raters and missing cells."}, "raters": {"severity": {"R1": {"n": 616, "mean_dev": -0.0919, "se": 0.0225}, "R2": {"n": 672, "mean_dev": 0.1182, "se": 0.0222}, "R3": {"n": 696, "mean_dev": -0.7029, "se": 0.0206}, "R4": {"n": 600, "mean_dev": 0.023, "se": 0.0223}, "R5": {"n": 632, "mean_dev": 0.487, "se": 0.0214}, "R6": {"n": 624, "mean_dev": 0.2321, "se": 0.0253}}, "drift": {"R1": {"sessions": [0, 1, 2, 3, 4], "bias": [0.0063, 0.0125, 0.0375, -0.0125, 0.05], "exact": [0.6875, 0.7625, 0.7375, 0.7125, 0.75], "slope": 0.0063, "drift_flag": false, "bias_flag": false, "agreement_flag": false, "flag": false, "reasons": []}, "R2": {"sessions": [0, 1, 2, 3, 4], "bias": [0.0813, 0.1375, 0.1125, 0.1625, 0.15], "exact": [0.7188, 0.7875, 0.7625, 0.6875, 0.725], "slope": 0.0162, "drift_flag": false, "bias_flag": false, "agreement_flag": false, "flag": false, "reasons": []}, "R3": {"sessions": [0, 1, 2, 3, 4], "bias": [-0.5312, -0.425, -0.4125, -0.5, -0.475], "exact": [0.4375, 0.575, 0.575, 0.5125, 0.525], "slope": 0.0038, "drift_flag": false, "bias_flag": true, "agreement_flag": true, "flag": true, "reasons": ["latest bias -0.47", "latest exact agreement 52%"]}, "R4": {"sessions": [0, 1, 2, 3, 4], "bias": [0.0875, 0.0875, 0.125, 0.1375, -0.025], "exact": [0.7, 0.6875, 0.7, 0.6875, 0.725], "slope": -0.0175, "drift_flag": false, "bias_flag": false, "agreement_flag": false, "flag": false, "reasons": []}, "R5": {"sessions": [0, 1, 2, 3, 4], "bias": [0.4813, 0.5, 0.325, 0.525, 0.4375], "exact": [0.5, 0.475, 0.6375, 0.4625, 0.5375], "slope": -0.0063, "drift_flag": false, "bias_flag": true, "agreement_flag": true, "flag": true, "reasons": ["latest bias +0.44", "latest exact agreement 54%"]}, "R6": {"sessions": [0, 1, 2, 3, 4], "bias": [-0.0312, 0.05, 0.3125, 0.45, 0.5625], "exact": [0.6937, 0.825, 0.6625, 0.525, 0.45], "slope": 0.1588, "drift_flag": true, "bias_flag": true, "agreement_flag": true, "flag": true, "reasons": ["trend +0.16/session", "latest bias +0.56", "latest exact agreement 45%"]}}}, "items": {"alpha": 0.9401, "n_persons": 150, "items": [{"item": "D1", "mean": 2.6483, "sd": 0.7751, "distribution": {"1": 0.04, "2": 0.2867, "3": 0.48, "4": 0.1933}, "item_rest_r": 0.833, "alpha_if_deleted": 0.9287, "flags": []}, {"item": "D2", "mean": 2.7633, "sd": 0.7695, "distribution": {"1": 0.0267, "2": 0.2467, "3": 0.44, "4": 0.2867}, "item_rest_r": 0.8668, "alpha_if_deleted": 0.9261, "flags": []}, {"item": "D3", "mean": 2.5483, "sd": 0.7607, "distribution": {"1": 0.0467, "2": 0.32, "3": 0.4667, "4": 0.1667}, "item_rest_r": 0.8461, "alpha_if_deleted": 0.9277, "flags": []}, {"item": "D4", "mean": 2.4367, "sd": 0.7965, "distribution": {"1": 0.06, "2": 0.3867, "3": 0.3933, "4": 0.16}, "item_rest_r": 0.836, "alpha_if_deleted": 0.9286, "flags": []}, {"item": "D5", "mean": 2.68, "sd": 0.7131, "distribution": {"1": 0.0133, "2": 0.28, "3": 0.4867, "4": 0.22}, "item_rest_r": 0.8154, "alpha_if_deleted": 0.93, "flags": []}, {"item": "D6", "mean": 2.6483, "sd": 0.7036, "distribution": {"1": 0.02, "2": 0.28, "3": 0.5133, "4": 0.1867}, "item_rest_r": 0.8027, "alpha_if_deleted": 0.9309, "flags": []}, {"item": "D7", "mean": 2.4433, "sd": 0.7294, "distribution": {"1": 0.0467, "2": 0.3733, "3": 0.46, "4": 0.12}, "item_rest_r": 0.7935, "alpha_if_deleted": 0.9315, "flags": []}, {"item": "D8", "mean": 2.5367, "sd": 0.4546, "distribution": {"1": 0.0, "2": 0.2667, "3": 0.6867, "4": 0.0467}, "item_rest_r": 0.4783, "alpha_if_deleted": 0.9494, "flags": ["alpha rises if deleted"]}], "total_mean": 20.705, "total_sd": 4.8349, "sem_total": 1.1837, "sem_basis": "Cronbach's alpha across the 8 dimensions (internal consistency). Rater error is reported separately (ICC(2,1)); a G-study would combine both."}, "tasks": {"T01": {"n_cells": 72, "mean": 3.0417}, "T02": {"n_cells": 64, "mean": 2.5}, "T03": {"n_cells": 104, "mean": 2.3317}, "T04": {"n_cells": 136, "mean": 2.9706}, "T05": {"n_cells": 104, "mean": 2.6394}, "T06": {"n_cells": 88, "mean": 2.4375}, "T07": {"n_cells": 152, "mean": 2.9243}, "T08": {"n_cells": 120, "mean": 2.4208}, "T09": {"n_cells": 120, "mean": 2.0667}, "T10": {"n_cells": 176, "mean": 2.6761}, "T11": {"n_cells": 64, "mean": 2.1406}, "T12": {"n_cells": 1200, "mean": 2.59}}, "angoff": {"explorer": {"round1": {"n_panelists": 8, "panelist_totals": [13.6, 12.0, 13.0, 10.6, 14.9, 15.4, 15.4, 15.1], "cut": 13.75, "sd_totals": 1.7792, "se_cut": 0.6291, "item_means": {"D1": 1.7625, "D2": 1.7125, "D3": 1.425, "D4": 1.85, "D5": 2.025, "D6": 1.8125, "D7": 1.6125, "D8": 1.55}, "item_sd": {"D1": 0.3159, "D2": 0.3399, "D3": 0.4528, "D4": 0.4209, "D5": 0.3808, "D6": 0.3357, "D7": 0.4357, "D8": 0.2928}, "impact": {"cut": 13.75, "pass_rate": 0.9067, "pass_rate_cut_minus_2se": 0.9733, "pass_rate_cut_plus_2se": 0.8333}}, "round2": {"n_panelists": 8, "panelist_totals": [13.6, 12.8, 13.6, 12.6, 14.1, 14.3, 13.8, 13.0], "cut": 13.475, "sd_totals": 0.6159, "se_cut": 0.2177, "item_means": {"D1": 1.6875, "D2": 1.6125, "D3": 1.5875, "D4": 1.7375, "D5": 2.125, "D6": 1.7875, "D7": 1.525, "D8": 1.4125}, "item_sd": {"D1": 0.0835, "D2": 0.1885, "D3": 0.1553, "D4": 0.1847, "D5": 0.2053, "D6": 0.0991, "D7": 0.1669, "D8": 0.1553}, "impact": {"cut": 13.475, "pass_rate": 0.9333, "pass_rate_cut_minus_2se": 0.9333, "pass_rate_cut_plus_2se": 0.9067}}, "provisional_cut": 13.0, "recommended_cut": 13.5}, "catalyst": {"round1": {"n_panelists": 8, "panelist_totals": [17.2, 19.2, 19.2, 14.2, 18.9, 21.6, 18.9, 18.8], "cut": 18.5, "sd_totals": 2.1105, "se_cut": 0.7462, "item_means": {"D1": 2.35, "D2": 2.3, "D3": 1.925, "D4": 2.35, "D5": 2.9875, "D6": 2.55, "D7": 2.225, "D8": 1.8125}, "item_sd": {"D1": 0.3665, "D2": 0.3891, "D3": 0.2659, "D4": 0.5425, "D5": 0.6379, "D6": 0.3964, "D7": 0.2315, "D8": 0.6105}, "impact": {"cut": 18.5, "pass_rate": 0.7067, "pass_rate_cut_minus_2se": 0.7533, "pass_rate_cut_plus_2se": 0.5933}}, "round2": {"n_panelists": 8, "panelist_totals": [18.1, 18.1, 17.4, 16.9, 19.3, 18.7, 19.2, 18.5], "cut": 18.275, "sd_totals": 0.8328, "se_cut": 0.2944, "item_means": {"D1": 2.2375, "D2": 2.1125, "D3": 1.9625, "D4": 2.475, "D5": 2.95, "D6": 2.45, "D7": 2.15, "D8": 1.9375}, "item_sd": {"D1": 0.1768, "D2": 0.1458, "D3": 0.2264, "D4": 0.1282, "D5": 0.1069, "D6": 0.239, "D7": 0.1414, "D8": 0.1847}, "impact": {"cut": 18.275, "pass_rate": 0.7067, "pass_rate_cut_minus_2se": 0.7333, "pass_rate_cut_plus_2se": 0.6733}}, "provisional_cut": 18.0, "recommended_cut": 18.5}, "practitioner": {"round1": {"n_panelists": 8, "panelist_totals": [25.1, 26.3, 24.8, 20.8, 24.3, 28.0, 26.3, 24.2], "cut": 24.975, "sd_totals": 2.111, "se_cut": 0.7464, "item_means": {"D1": 3.3125, "D2": 3.075, "D3": 2.8875, "D4": 3.2875, "D5": 3.4, "D6": 3.2, "D7": 2.975, "D8": 2.8375}, "item_sd": {"D1": 0.3834, "D2": 0.4301, "D3": 0.2997, "D4": 0.5592, "D5": 0.4, "D6": 0.4472, "D7": 0.44, "D8": 0.3662}, "impact": {"cut": 24.975, "pass_rate": 0.2067, "pass_rate_cut_minus_2se": 0.2933, "pass_rate_cut_plus_2se": 0.14}}, "round2": {"n_panelists": 8, "panelist_totals": [24.5, 25.3, 24.1, 24.3, 24.8, 26.0, 26.7, 24.7], "cut": 25.05, "sd_totals": 0.8976, "se_cut": 0.3174, "item_means": {"D1": 3.1375, "D2": 3.0375, "D3": 3.0, "D4": 3.25, "D5": 3.4625, "D6": 3.3625, "D7": 3.025, "D8": 2.775}, "item_sd": {"D1": 0.1685, "D2": 0.1685, "D3": 0.1852, "D4": 0.2204, "D5": 0.2504, "D6": 0.1847, "D7": 0.2121, "D8": 0.1389}, "impact": {"cut": 25.05, "pass_rate": 0.2067, "pass_rate_cut_minus_2se": 0.24, "pass_rate_cut_plus_2se": 0.1533}}, "provisional_cut": 25.0, "recommended_cut": 25.0}}, "badges": {"counts_provisional": {"Not yet": 18, "Explorer": 67, "Catalyst": 36, "Practitioner": 29}, "counts_recommended": {"Not yet": 19, "Explorer": 66, "Catalyst": 36, "Practitioner": 29}, "counts_truth": {"Not yet": 13, "Explorer": 69, "Catalyst": 42, "Practitioner": 26}, "recommended_cuts": {"explorer": 13.5, "catalyst": 18.5, "practitioner": 25.0}, "decision_consistency_double_scored": {"n": 30, "p0": 0.4667, "kappa": 0.2332, "kappa_linear": 0.3421, "labels": ["Not yet", "Explorer", "Catalyst", "Practitioner"], "confusion": [[1, 1, 0, 0], [2, 7, 4, 3], [0, 2, 3, 3], [0, 1, 0, 3]]}, "decision_consistency_replication_synthetic": {"n": 150, "p0": 0.5467, "kappa": 0.352, "kappa_linear": 0.5283, "labels": ["Not yet", "Explorer", "Catalyst", "Practitioner"], "confusion": [[6, 7, 0, 0], [12, 35, 15, 4], [0, 17, 16, 5], [0, 1, 7, 25]]}, "decision_consistency_replication_calibrated_raters_synthetic": {"n": 150, "p0": 0.74, "kappa": 0.6134, "kappa_linear": 0.7273, "labels": ["Not yet", "Explorer", "Catalyst", "Practitioner"], "confusion": [[13, 4, 0, 0], [5, 57, 14, 0], [0, 7, 19, 5], [0, 1, 3, 22]]}, "decision_consistency_by_cut_synthetic": {"Explorer or above": {"n": 150, "p0": 0.8733, "kappa": 0.3185, "kappa_linear": 0.3185, "labels": ["no", "yes"], "confusion": [[6, 7], [12, 125]]}, "Catalyst or above": {"n": 150, "p0": 0.7533, "kappa": 0.5056, "kappa_linear": 0.5056, "labels": ["no", "yes"], "confusion": [[60, 19], [18, 53]]}, "Practitioner or above": {"n": 150, "p0": 0.8867, "kappa": 0.6733, "kappa_linear": 0.6733, "labels": ["no", "yes"], "confusion": [[108, 9], [8, 25]]}}, "classification_accuracy_vs_truth_synthetic": {"n": 150, "p0": 0.64, "kappa": 0.4752, "kappa_linear": 0.6209, "labels": ["Not yet", "Explorer", "Catalyst", "Practitioner"], "confusion": [[8, 11, 0, 0], [5, 43, 17, 1], [0, 14, 21, 1], [0, 1, 4, 24]]}, "n_within_1pt_of_a_cut": 58, "note": "The double-scored estimate uses only the ~20% of candidates read twice, so its CI is wide. The replication and accuracy estimates exist only because the data are synthetic."}, "fairness": {"dif": {"D1": {"HR": {"alpha_mh": 3.3023, "delta_mh": -2.8073, "chi2": 2.576, "p": 0.1085, "ets_class": "A", "smd": -0.2056, "smd_over_sd": -0.2652, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 2.9708, "delta_mh": -2.5588, "chi2": 1.9364, "p": 0.1641, "ets_class": "A", "smd": -0.1687, "smd_over_sd": -0.2176, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "Finance": {"alpha_mh": 1.0082, "delta_mh": -0.0192, "chi2": 0.069, "p": 0.7928, "ets_class": "A", "smd": -0.0333, "smd_over_sd": -0.043, "review": false, "stage1_review": false}, "Advising": {"alpha_mh": 0.7089, "delta_mh": 0.8086, "chi2": 0.0952, "p": 0.7577, "ets_class": "A", "smd": 0.0854, "smd_over_sd": 0.1102, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 0.6215, "delta_mh": 1.1176, "chi2": 0.2734, "p": 0.601, "ets_class": "A", "smd": 0.111, "smd_over_sd": 0.1432, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "IT support": {"alpha_mh": 1.1609, "delta_mh": -0.3505, "chi2": 0.0023, "p": 0.9614, "ets_class": "A", "smd": -0.0065, "smd_over_sd": -0.0084, "review": false, "stage1_review": false}, "Admin": {"alpha_mh": 0.307, "delta_mh": 2.7754, "chi2": 1.9609, "p": 0.1614, "ets_class": "A", "smd": 0.1596, "smd_over_sd": 0.2059, "review": false, "stage1_review": false}}, "D2": {"HR": {"alpha_mh": 0.4103, "delta_mh": 2.0938, "chi2": 1.8983, "p": 0.1683, "ets_class": "A", "smd": 0.1384, "smd_over_sd": 0.1799, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 0.4011, "delta_mh": 2.147, "chi2": 2.2356, "p": 0.1349, "ets_class": "A", "smd": 0.1667, "smd_over_sd": 0.2166, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "Finance": {"alpha_mh": 0.6169, "delta_mh": 1.1351, "chi2": 0.1477, "p": 0.7008, "ets_class": "A", "smd": 0.0872, "smd_over_sd": 0.1133, "review": false, "stage1_review": false}, "Advising": {"alpha_mh": 1.4372, "delta_mh": -0.8523, "chi2": 0.0231, "p": 0.8793, "ets_class": "A", "smd": 0.007, "smd_over_sd": 0.0091, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 2.0553, "delta_mh": -1.693, "chi2": 0.371, "p": 0.5425, "ets_class": "A", "smd": -0.0509, "smd_over_sd": -0.0662, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "IT support": {"alpha_mh": 2.5727, "delta_mh": -2.2207, "chi2": 0.6993, "p": 0.403, "ets_class": "A", "smd": -0.201, "smd_over_sd": -0.2612, "review": false, "stage1_review": false}, "Admin": {"alpha_mh": 1.9888, "delta_mh": -1.6157, "chi2": 0.3571, "p": 0.5501, "ets_class": "A", "smd": -0.0433, "smd_over_sd": -0.0563, "review": false, "stage1_review": false}}, "D3": {"HR": {"alpha_mh": 2.9883, "delta_mh": -2.5726, "chi2": 1.4108, "p": 0.2349, "ets_class": "A", "smd": -0.1244, "smd_over_sd": -0.1636, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 2.151, "delta_mh": -1.7999, "chi2": 0.6124, "p": 0.4339, "ets_class": "A", "smd": -0.0993, "smd_over_sd": -0.1305, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "Finance": {"alpha_mh": 0.6408, "delta_mh": 1.046, "chi2": 0.2281, "p": 0.6329, "ets_class": "A", "smd": 0.1282, "smd_over_sd": 0.1686, "review": false, "stage1_review": false}, "Advising": {"alpha_mh": 2.6911, "delta_mh": -2.3264, "chi2": 1.1873, "p": 0.2759, "ets_class": "A", "smd": -0.0155, "smd_over_sd": -0.0203, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 2.5929, "delta_mh": -2.239, "chi2": 1.314, "p": 0.2517, "ets_class": "A", "smd": -0.0598, "smd_over_sd": -0.0786, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "IT support": {"alpha_mh": 0.3279, "delta_mh": 2.6204, "chi2": 2.5417, "p": 0.1109, "ets_class": "A", "smd": -0.0149, "smd_over_sd": -0.0196, "review": false, "stage1_review": false}, "Admin": {"alpha_mh": 0.7816, "delta_mh": 0.579, "chi2": 0.0, "p": 0.9953, "ets_class": "A", "smd": 0.018, "smd_over_sd": 0.0236, "review": false, "stage1_review": false}}, "D4": {"HR": {"alpha_mh": 2.5562, "delta_mh": -2.2055, "chi2": 0.9419, "p": 0.3318, "ets_class": "A", "smd": -0.1032, "smd_over_sd": -0.1296, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 2.1201, "delta_mh": -1.7659, "chi2": 0.4428, "p": 0.5058, "ets_class": "A", "smd": -0.0829, "smd_over_sd": -0.1041, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "Finance": {"alpha_mh": 0.2981, "delta_mh": 2.8446, "chi2": 3.7878, "p": 0.0516, "ets_class": "A", "smd": 0.0578, "smd_over_sd": 0.0726, "review": false, "stage1_review": false}, "Advising": {"alpha_mh": 0.7764, "delta_mh": 0.5947, "chi2": 0.009, "p": 0.9245, "ets_class": "A", "smd": 0.2946, "smd_over_sd": 0.3698, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 1.0725, "delta_mh": -0.1645, "chi2": 0.0319, "p": 0.8583, "ets_class": "A", "smd": 0.2328, "smd_over_sd": 0.2923, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "IT support": {"alpha_mh": 2.9308, "delta_mh": -2.5269, "chi2": 2.3167, "p": 0.128, "ets_class": "A", "smd": -0.2088, "smd_over_sd": -0.2621, "review": false, "stage1_review": false}, "Admin": {"alpha_mh": 0.8304, "delta_mh": 0.4367, "chi2": 0.0108, "p": 0.9172, "ets_class": "A", "smd": -0.019, "smd_over_sd": -0.0239, "review": false, "stage1_review": false}}, "D5": {"HR": {"alpha_mh": 1.3619, "delta_mh": -0.7258, "chi2": 0.0922, "p": 0.7615, "ets_class": "A", "smd": 0.0838, "smd_over_sd": 0.1176, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 1.4698, "delta_mh": -0.905, "chi2": 0.2029, "p": 0.6524, "ets_class": "A", "smd": 0.0656, "smd_over_sd": 0.0919, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "Finance": {"alpha_mh": 1.3869, "delta_mh": -0.7687, "chi2": 0.0685, "p": 0.7936, "ets_class": "A", "smd": -0.0847, "smd_over_sd": -0.1188, "review": false, "stage1_review": false}, "Advising": {"alpha_mh": 1.6095, "delta_mh": -1.1185, "chi2": 0.3416, "p": 0.5589, "ets_class": "A", "smd": -0.1074, "smd_over_sd": -0.1506, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 1.8322, "delta_mh": -1.4229, "chi2": 0.724, "p": 0.3948, "ets_class": "A", "smd": -0.152, "smd_over_sd": -0.2132, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "IT support": {"alpha_mh": 0.3325, "delta_mh": 2.5879, "chi2": 2.3326, "p": 0.1267, "ets_class": "A", "smd": 0.1174, "smd_over_sd": 0.1646, "review": false, "stage1_review": false}, "Admin": {"alpha_mh": 0.8697, "delta_mh": 0.328, "chi2": 0.0032, "p": 0.9549, "ets_class": "A", "smd": -0.0338, "smd_over_sd": -0.0474, "review": false, "stage1_review": false}}, "D6": {"HR": {"alpha_mh": 0.8955, "delta_mh": 0.2593, "chi2": 0.0035, "p": 0.9526, "ets_class": "A", "smd": 0.0226, "smd_over_sd": 0.0322, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 0.8692, "delta_mh": 0.3295, "chi2": 0.0001, "p": 0.9907, "ets_class": "A", "smd": 0.02, "smd_over_sd": 0.0284, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "Finance": {"alpha_mh": 1.2271, "delta_mh": -0.481, "chi2": 0.0061, "p": 0.9379, "ets_class": "A", "smd": -0.1555, "smd_over_sd": -0.2211, "review": false, "stage1_review": false}, "Advising": {"alpha_mh": 0.5028, "delta_mh": 1.6157, "chi2": 1.2399, "p": 0.2655, "ets_class": "A", "smd": 0.1688, "smd_over_sd": 0.2398, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 0.6098, "delta_mh": 1.1623, "chi2": 0.537, "p": 0.4637, "ets_class": "A", "smd": 0.136, "smd_over_sd": 0.1933, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "IT support": {"alpha_mh": 1.1229, "delta_mh": -0.2724, "chi2": 0.0058, "p": 0.9394, "ets_class": "A", "smd": -0.1234, "smd_over_sd": -0.1754, "review": false, "stage1_review": false}, "Admin": {"alpha_mh": 2.1578, "delta_mh": -1.8074, "chi2": 0.726, "p": 0.3942, "ets_class": "A", "smd": 0.0934, "smd_over_sd": 0.1327, "review": false, "stage1_review": false}}, "D7": {"HR": {"alpha_mh": 0.2079, "delta_mh": 3.6908, "chi2": 5.0967, "p": 0.024, "ets_class": "C", "smd": 0.2103, "smd_over_sd": 0.2883, "review": false, "stage1_review": true, "stage2": {"alpha_mh": 0.2954, "delta_mh": 2.8655, "chi2": 2.4733, "p": 0.1158, "ets_class": "A", "smd": 0.1452, "smd_over_sd": 0.1991, "review": false, "reference_excludes": ["Advising"], "matching_excludes": []}}, "Finance": {"alpha_mh": 0.6094, "delta_mh": 1.1639, "chi2": 0.3729, "p": 0.5414, "ets_class": "A", "smd": 0.131, "smd_over_sd": 0.1796, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 0.9625, "delta_mh": 0.0898, "chi2": 0.0514, "p": 0.8206, "ets_class": "A", "smd": 0.016, "smd_over_sd": 0.0219, "review": false, "reference_excludes": ["Advising"], "matching_excludes": []}}, "Advising": {"alpha_mh": 10.6044, "delta_mh": -5.549, "chi2": 8.4643, "p": 0.0036, "ets_class": "C", "smd": -0.36, "smd_over_sd": -0.4936, "review": true, "stage1_review": true, "stage2": {"alpha_mh": 6.9869, "delta_mh": -4.5685, "chi2": 4.807, "p": 0.0283, "ets_class": "C", "smd": -0.3034, "smd_over_sd": -0.416, "review": true, "reference_excludes": ["HR"], "matching_excludes": []}}, "IT support": {"alpha_mh": 1.029, "delta_mh": -0.0672, "chi2": 0.0634, "p": 0.8012, "ets_class": "A", "smd": -0.0045, "smd_over_sd": -0.0062, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 0.6899, "delta_mh": 0.8724, "chi2": 0.0534, "p": 0.8173, "ets_class": "A", "smd": 0.0414, "smd_over_sd": 0.0567, "review": false, "reference_excludes": ["HR"], "matching_excludes": []}}, "Admin": {"alpha_mh": 1.0805, "delta_mh": -0.1819, "chi2": 0.0267, "p": 0.8701, "ets_class": "A", "smd": 0.0192, "smd_over_sd": 0.0263, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 2.2676, "delta_mh": -1.924, "chi2": 0.8817, "p": 0.3477, "ets_class": "A", "smd": -0.109, "smd_over_sd": -0.1494, "review": false, "reference_excludes": ["Advising"], "matching_excludes": []}}}, "D8": {"HR": {"alpha_mh": 0.6336, "delta_mh": 1.0723, "chi2": 0.4581, "p": 0.4985, "ets_class": "A", "smd": 0.0872, "smd_over_sd": 0.1918, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 0.6123, "delta_mh": 1.1527, "chi2": 0.5495, "p": 0.4585, "ets_class": "A", "smd": 0.1, "smd_over_sd": 0.2199, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "Finance": {"alpha_mh": 1.1456, "delta_mh": -0.3194, "chi2": 0.0018, "p": 0.9659, "ets_class": "A", "smd": -0.1026, "smd_over_sd": -0.2257, "review": false, "stage1_review": false}, "Advising": {"alpha_mh": 0.9318, "delta_mh": 0.166, "chi2": 0.0119, "p": 0.9131, "ets_class": "A", "smd": 0.1, "smd_over_sd": 0.22, "review": false, "stage1_review": false, "stage2": {"alpha_mh": 1.1338, "delta_mh": -0.295, "chi2": 0.0, "p": 0.9995, "ets_class": "A", "smd": 0.0433, "smd_over_sd": 0.0953, "review": false, "reference_excludes": [], "matching_excludes": ["D7"]}}, "IT support": {"alpha_mh": 0.6489, "delta_mh": 1.0162, "chi2": 0.3683, "p": 0.5439, "ets_class": "A", "smd": 0.071, "smd_over_sd": 0.1562, "review": false, "stage1_review": false}, "Admin": {"alpha_mh": 2.3233, "delta_mh": -1.981, "chi2": 1.8302, "p": 0.1761, "ets_class": "A", "smd": -0.1532, "smd_over_sd": -0.337, "review": false, "stage1_review": false}}}, "dif_flagged": [["D7", "Advising"]], "dif_flagged_stage1": [["D7", "HR"], ["D7", "Advising"]], "dif_method": "Focal = one role family, reference = all others; matched on rest score (sum of other 7 dimensions) in 5 quantile bands. MH on dimension mean >= 3; SMD on the dimension mean. Flag = ETS class C, or |SMD|/SD >= 0.25 with MH p < .05. Stage 2 re-tests every comparison with stage-1-flagged dimensions removed from the matching score and oppositely-flagged families removed from the reference (purification). With 30 per family these tests have low power and some false-positive risk; flags trigger SME content review, never automatic score changes.", "impact_catalyst_or_above": {"Admin": {"n": 30, "pass": 26, "rate": 0.8667, "ratio_to_top": 0.9286, "four_fifths_flag": false, "fisher_p_vs_top": 0.6707}, "Advising": {"n": 30, "pass": 26, "rate": 0.8667, "ratio_to_top": 0.9286, "four_fifths_flag": false, "fisher_p_vs_top": 0.6707}, "Finance": {"n": 30, "pass": 27, "rate": 0.9, "ratio_to_top": 0.9643, "four_fifths_flag": false, "fisher_p_vs_top": 1.0}, "HR": {"n": 30, "pass": 28, "rate": 0.9333, "ratio_to_top": 1.0, "four_fifths_flag": false, "fisher_p_vs_top": 1.0}, "IT support": {"n": 30, "pass": 24, "rate": 0.8, "ratio_to_top": 0.8571, "four_fifths_flag": false, "fisher_p_vs_top": 0.2542}}, "impact_practitioner": {"Admin": {"n": 30, "pass": 9, "rate": 0.3, "ratio_to_top": 1.0, "four_fifths_flag": false, "fisher_p_vs_top": 1.0}, "Advising": {"n": 30, "pass": 6, "rate": 0.2, "ratio_to_top": 0.6667, "four_fifths_flag": true, "fisher_p_vs_top": 0.552}, "Finance": {"n": 30, "pass": 7, "rate": 0.2333, "ratio_to_top": 0.7778, "four_fifths_flag": true, "fisher_p_vs_top": 0.771}, "HR": {"n": 30, "pass": 5, "rate": 0.1667, "ratio_to_top": 0.5556, "four_fifths_flag": true, "fisher_p_vs_top": 0.3604}, "IT support": {"n": 30, "pass": 2, "rate": 0.0667, "ratio_to_top": 0.2222, "four_fifths_flag": true, "fisher_p_vs_top": 0.0419}}}, "recovery_checks": [{"check": "Most severe rater recovered", "expected": "R3", "observed": "R3", "pass": true}, {"check": "Most lenient rater recovered", "expected": "R5", "observed": "R5", "pass": true}, {"check": "Only the drifting rater flagged for drift (trend)", "expected": ["R6"], "observed": ["R6"], "pass": true}, {"check": "Static-bias raters flagged for bias vs master", "expected": ["R3", "R5"], "observed": ["R3", "R5"], "pass": true}, {"check": "Weakest item (lowest item-rest r)", "expected": "D8", "observed": "D8", "pass": true}, {"check": "Planted DIF detected (D7, Advising)", "expected": true, "observed": true, "pass": true}, {"check": "False DIF flags among the 39 null comparisons (<= 2, i.e. ~5%)", "expected": "<= 2", "observed": 0, "pass": true}, {"check": "Angoff round-2 explorer cut within 0.5 of panel target", "expected": 13.5, "observed": 13.48, "pass": true}, {"check": "Angoff round-2 catalyst cut within 0.5 of panel target", "expected": 18.6, "observed": 18.27, "pass": true}, {"check": "Angoff round-2 practitioner cut within 0.5 of panel target", "expected": 25.1, "observed": 25.05, "pass": true}, {"check": "Panel converged (round-2 SD < round-1 SD, every badge)", "expected": true, "observed": true, "pass": true}], "seed_sensitivity": {"seeds": [1, 20], "n_seeds": 20, "pass_counts": {"Most severe rater recovered": 20, "Most lenient rater recovered": 20, "Only the drifting rater flagged for drift (trend)": 18, "Static-bias raters flagged for bias vs master": 20, "Weakest item (lowest item-rest r)": 20, "Planted DIF detected (D7, Advising)": 18, "False DIF flags among the 39 null comparisons (<= 2, i.e. ~5%)": 20, "Angoff round-2 explorer cut within 0.5 of panel target": 20, "Angoff round-2 catalyst cut within 0.5 of panel target": 20, "Angoff round-2 practitioner cut within 0.5 of panel target": 20, "Panel converged (round-2 SD < round-1 SD, every badge)": 20}, "false_dif_flag_rate": 0.0205, "replication_decision_consistency_p0": {"min": 0.52, "median": 0.5933, "max": 0.6667}}}}</script>
+<script>
+(function () {
+  "use strict";
+  var D = JSON.parse(document.getElementById("data").textContent);
+  var R = D.rubric, T = D.tasks.tasks, REP = D.report;
+  var DIMS = R.dimensions.map(function (d) { return d.id; });
+  var BADGES = R.badges.order;
+  var LABELS = ["Not yet", "Explorer", "Catalyst", "Practitioner"];
+  var STORE = "aiprof-scores-v1";
+
+  function el(tag, attrs, kids) {
+    var e = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      if (k === "text") e.textContent = attrs[k];
+      else if (k === "html") e.innerHTML = attrs[k];
+      else if (k === "class") e.className = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    });
+    (kids || []).forEach(function (c) { if (c != null) e.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return e;
+  }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
+  function fmt(x, d) { if (x == null || isNaN(x)) return "n/a"; return Number(x).toFixed(d == null ? 2 : d); }
+  function pct(x) { return x == null ? "n/a" : Math.round(x * 100) + "%"; }
+  function table(id, head, rows, numCols) {
+    var t = document.getElementById(id); t.innerHTML = "";
+    var thead = el("thead", null, [el("tr", null, head.map(function (h, i) { return el("th", {class: numCols && numCols.indexOf(i) >= 0 ? "num" : "", scope: "col", html: h}); }))]);
+    var tb = el("tbody");
+    rows.forEach(function (r) {
+      var tr = el("tr");
+      r.forEach(function (c, i) {
+        var cls = numCols && numCols.indexOf(i) >= 0 ? "num" : "";
+        if (c && typeof c === "object" && "html" in c) tr.appendChild(el("td", {class: (cls + " " + (c.cls || "")).trim(), html: c.html}));
+        else tr.appendChild(el("td", {class: cls, text: c == null ? "" : String(c)}));
+      });
+      tb.appendChild(tr);
+    });
+    t.appendChild(thead); t.appendChild(tb);
+  }
+  var store = {
+    get: function () { try { return JSON.parse(localStorage.getItem(STORE) || "[]"); } catch (e) { return memRows; } },
+    set: function (rows) { memRows = rows; try { localStorage.setItem(STORE, JSON.stringify(rows)); } catch (e) { /* storage unavailable: keep in memory */ } }
+  };
+  var memRows = [];
+
+  // ---------------- theme + tabs ----------------
+  document.getElementById("ver").textContent = R.version;
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var root = document.documentElement;
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme") === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+    try { localStorage.setItem("aiprof-theme", root.getAttribute("data-theme")); } catch (e) {}
+    drawCharts();
+  });
+  try { var th = localStorage.getItem("aiprof-theme"); if (th) document.documentElement.setAttribute("data-theme", th); } catch (e) {}
+  var tabs = Array.prototype.slice.call(document.querySelectorAll("nav [data-tab]"));
+  function show(name) {
+    tabs.forEach(function (b) { b.setAttribute("aria-selected", b.dataset.tab === name ? "true" : "false"); });
+    document.querySelectorAll("main section").forEach(function (s) { s.classList.toggle("active", s.id === name); });
+    if (name === "report") drawCharts();
+  }
+  tabs.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.tab); try { history.replaceState(null, "", "#" + b.dataset.tab); } catch (e) {} }); });
+  var start = (location.hash || "#rubric").slice(1);
+  show(document.getElementById(start) ? start : "rubric");
+
+  // ---------------- rubric ----------------
+  var recCuts = (REP.badges && REP.badges.recommended_cuts) || {};
+  var dimName = {}; R.dimensions.forEach(function (d) { dimName[d.id] = d.name; });
+  var tiers = document.getElementById("tiers");
+  BADGES.forEach(function (b) {
+    var rule = R.badges[b], li = [];
+    li.push("Total &ge; <strong>" + fmt(rule.provisional_total_cut, 1) + "</strong> provisional" + (recCuts[b] != null ? " (Angoff, synthetic panel: " + fmt(recCuts[b], 1) + ")" : ""));
+    li.push("Every dimension &ge; " + fmt(rule.all_dimensions_min, 1));
+    Object.keys(rule.dimension_floors).forEach(function (d) { li.push(esc(d + " " + dimName[d]) + " &ge; " + fmt(rule.dimension_floors[d], 1)); });
+    if (rule.min_dimensions_at_3) li.push("At least " + rule.min_dimensions_at_3 + " dimensions at &ge; 3");
+    var tier = R.program_tiers.staff.filter(function (s) { return s.id === b; })[0];
+    tiers.appendChild(el("div", {class: "card"}, [
+      el("h3", {text: rule.name}),
+      el("p", {class: "muted small", text: tier ? tier.delivery : ""}),
+      el("p", {text: rule.meaning}),
+      el("ul", {class: "tight small", html: li.map(function (x) { return "<li>" + x + "</li>"; }).join("")}),
+      rule.awarding_note ? el("p", {class: "muted small", text: rule.awarding_note}) : null
+    ]));
+  });
+  var comp = {}; R.ihr_competency_model.competencies.forEach(function (c) { comp[c.id] = c.name; });
+  var dimsBox = document.getElementById("dims");
+  R.dimensions.forEach(function (d, i) {
+    var tags = (d.ihr_competencies || []).map(function (c) { return '<span class="pill">' + esc(comp[c] || c) + "</span>"; }).join(" ");
+    var rows = d.levels.map(function (lv) {
+      return [{html: "<strong>" + lv.score + "</strong> " + esc(R.scale.levels[lv.score - 1].name)}, lv.anchor, {html: "<ul class='tight'>" + lv.examples.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>"}];
+    });
+    var det = el("details", {class: "card"});
+    if (i === 0) det.setAttribute("open", "");
+    det.appendChild(el("summary", {html: esc(d.id + " " + d.name) + (d.gate ? ' <span class="pill gate">gate</span>' : "")}));
+    det.appendChild(el("p", {text: d.construct}));
+    det.appendChild(el("p", {class: "small", html: "HR Competency Model: " + tags + " <span class='muted'>" + esc(d.ihr_competency_reading || "") + "</span>"}));
+    if (d.auto_floor_rule) det.appendChild(el("p", {class: "small warn", style: "padding:6px 8px;border-radius:6px", text: "Auto-floor: " + d.auto_floor_rule}));
+    var wrap = el("div", {class: "tbl"}); var tb = el("table"); tb.id = "dimtbl-" + d.id; wrap.appendChild(tb); det.appendChild(wrap);
+    det.appendChild(el("p", {class: "small muted", text: "Look for: " + d.look_fors.join("; ")}));
+    dimsBox.appendChild(det);
+    table(tb.id, ["Level", "Anchor", "Behavioral examples"], rows);
+  });
+
+  // ---------------- tasks ----------------
+  document.getElementById("taskIntro").textContent = D.tasks.sitting + " " + D.tasks.tier_alignment;
+  var fams = ["All"]; T.forEach(function (t) { if (fams.indexOf(t.role_family) < 0) fams.push(t.role_family); });
+  var ff = document.getElementById("famFilter");
+  fams.forEach(function (f) { ff.appendChild(el("option", {value: f, text: f})); });
+  function renderTasks() {
+    var box = document.getElementById("taskList"); box.innerHTML = "";
+    T.filter(function (t) { return ff.value === "All" || t.role_family === ff.value; }).forEach(function (t) {
+      var det = el("details", {class: "card"});
+      det.appendChild(el("summary", {html: esc(t.id + " " + t.title) + ' <span class="pill">' + esc(t.role_family) + '</span> <span class="pill">focus: ' + esc(t.badge_focus) + "</span>"}));
+      det.appendChild(el("p", {html: "<strong>Scenario.</strong> " + esc(t.scenario)}));
+      det.appendChild(el("p", {html: "<strong>Synthetic materials.</strong> " + esc(t.materials)}));
+      det.appendChild(el("p", {html: "<strong>Planted for observation.</strong></p><ul class='tight'>" + t.planted.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>"}));
+      det.appendChild(el("p", {class: "small warn", style: "padding:6px 8px;border-radius:6px", text: "Auto-floor: " + t.auto_floor}));
+      var wrap = el("div", {class: "tbl"}); var tb = el("table"); tb.id = "tg-" + t.id; wrap.appendChild(tb); det.appendChild(wrap);
+      box.appendChild(det);
+      table(tb.id, ["Dimension", "Scoring guide (3 = Proficient; 1 = red flag)"], DIMS.map(function (d) { return [d + " " + dimName[d], t.guide[d]]; }));
+    });
+  }
+  ff.addEventListener("change", renderTasks); renderTasks();
+
+  // ---------------- scoring form ----------------
+  var fTask = document.getElementById("fTask");
+  T.forEach(function (t) { fTask.appendChild(el("option", {value: t.id, text: t.id + " " + t.title})); });
+  var dimInputs = document.getElementById("dimInputs");
+  R.dimensions.forEach(function (d) {
+    var fs = el("fieldset");
+    fs.appendChild(el("legend", {text: d.id + " " + d.name + (d.gate ? " (gate)" : "")}));
+    var lv = el("div", {class: "levels"});
+    d.levels.forEach(function (l) {
+      var id = "r-" + d.id + "-" + l.score;
+      var inp = el("input", {type: "radio", name: d.id, value: String(l.score), id: id});
+      inp.addEventListener("change", function () { anchor.textContent = l.score + " " + R.scale.levels[l.score - 1].name + ": " + l.anchor; });
+      lv.appendChild(el("label", {for: id}, [inp, String(l.score)]));
+    });
+    var anchor = el("div", {class: "anchor-text", "aria-live": "polite"});
+    fs.appendChild(lv); fs.appendChild(anchor);
+    if (d.gate) {
+      var cb = el("input", {type: "checkbox", id: "af-" + d.id});
+      cb.addEventListener("change", function () { if (cb.checked) { var r1 = document.getElementById("r-" + d.id + "-1"); r1.checked = true; r1.dispatchEvent(new Event("change")); } });
+      fs.appendChild(el("label", {for: "af-" + d.id, style: "display:flex;gap:6px;align-items:center;margin-top:4px"}, [cb, "Task auto-floor rule applies (sets " + d.id + " = 1)"]));
+    }
+    dimInputs.appendChild(fs);
+  });
+  var PII = [/[^\s@]+@[^\s@]+\.[^\s@]+/, /\b\d{9}\b/, /\b\d{3}-\d{2}-\d{4}\b/];
+  function msg(text, cls) { var m = document.getElementById("formMsg"); m.textContent = text; m.className = "msg show " + cls; }
+  document.getElementById("scoreForm").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var rater = document.getElementById("fRater").value.trim().toUpperCase();
+    var cand = document.getElementById("fCand").value.trim().toUpperCase();
+    var notes = document.getElementById("fNotes").value.trim();
+    if (!/^[A-Z][A-Z0-9-]{0,11}$/.test(rater)) return msg("Rater code: letters/digits only, starting with a letter (e.g. R2).", "bad");
+    if (!/^[A-Z]{1,3}[0-9]{2,5}$/.test(cand)) return msg("Candidate code must be a pseudonymous code such as C014, not a name or ID.", "bad");
+    if (PII.some(function (re) { return re.test(notes); })) return msg("Notes look like they contain an email address or ID number. Remove it before saving.", "bad");
+    var row = {saved: new Date().toISOString(), rater: rater, candidate_id: cand, task_id: fTask.value,
+      role_family: T.filter(function (t) { return t.id === fTask.value; })[0].role_family,
+      session: parseInt(document.getElementById("fSession").value || "0", 10), read: document.getElementById("fRead").value, notes: notes, scores: {}, autofloor: []};
+    for (var i = 0; i < DIMS.length; i++) {
+      var c = document.querySelector('input[name="' + DIMS[i] + '"]:checked');
+      if (!c) return msg("Score every dimension before saving (missing " + DIMS[i] + ").", "bad");
+      row.scores[DIMS[i]] = parseInt(c.value, 10);
+    }
+    R.dimensions.forEach(function (d) { var cb = document.getElementById("af-" + d.id); if (cb && cb.checked) row.autofloor.push(d.id); });
+    var rows = store.get();
+    if (rows.some(function (r) { return r.rater === rater && r.candidate_id === cand && r.task_id === row.task_id && r.read === row.read; }))
+      return msg("This rater already saved this read for this candidate and task. Delete the earlier row first.", "warn");
+    rows.push(row); store.set(rows);
+    msg("Saved. " + rows.length + " row(s) in this browser.", "ok");
+    document.getElementById("scoreForm").reset();
+    document.querySelectorAll(".anchor-text").forEach(function (a) { a.textContent = ""; });
+    document.getElementById("fRater").value = rater;
+    renderSaved();
+  });
+  document.getElementById("scoreForm").addEventListener("reset", function () { setTimeout(function () { document.querySelectorAll(".anchor-text").forEach(function (a) { a.textContent = ""; }); }, 0); });
+
+  function meets(rule, s, cut) {
+    var tot = DIMS.reduce(function (a, d) { return a + s[d]; }, 0);
+    if (tot < cut) return false;
+    if (DIMS.some(function (d) { return s[d] < rule.all_dimensions_min; })) return false;
+    if (Object.keys(rule.dimension_floors).some(function (d) { return s[d] < rule.dimension_floors[d]; })) return false;
+    return DIMS.filter(function (d) { return s[d] >= 3; }).length >= (rule.min_dimensions_at_3 || 0);
+  }
+  function classify(s) {
+    for (var i = BADGES.length - 1; i >= 0; i--) {
+      var b = BADGES[i], rule = R.badges[b];
+      if (meets(rule, s, recCuts[b] != null ? recCuts[b] : rule.provisional_total_cut)) return rule.name;
+    }
+    return "Not yet";
+  }
+  function candidateSummary(rows) {
+    var by = {};
+    rows.filter(function (r) { return r.read !== "anchor"; }).forEach(function (r) {
+      (by[r.candidate_id] = by[r.candidate_id] || {})[r.task_id] = (by[r.candidate_id][r.task_id] || []).concat([r]);
+    });
+    return Object.keys(by).sort().map(function (c) {
+      var tasks = by[c], means = {}, needsAdj = false, dbl = 0;
+      DIMS.forEach(function (d) { means[d] = 0; });
+      var tids = Object.keys(tasks);
+      tids.forEach(function (t) {
+        var reads = tasks[t], adj = reads.filter(function (r) { return r.read === "adjudication"; })[0];
+        var ops = reads.filter(function (r) { return r.read !== "adjudication"; });
+        if (ops.length > 1) dbl++;
+        DIMS.forEach(function (d) {
+          var v;
+          if (adj) v = adj.scores[d];
+          else {
+            v = ops.reduce(function (a, r) { return a + r.scores[d]; }, 0) / ops.length;
+            if (ops.length > 1 && Math.abs(ops[0].scores[d] - ops[1].scores[d]) > 1) needsAdj = true;
+          }
+          means[d] += v / tids.length;
+        });
+      });
+      var total = DIMS.reduce(function (a, d) { return a + means[d]; }, 0);
+      var status = tids.length < 2 ? "Needs 2 tasks" : needsAdj ? "Needs adjudication" : classify(means);
+      return {candidate_id: c, tasks: tids.join("|"), n_double: dbl, means: means, total: total, status: status};
+    });
+  }
+  function renderSaved() {
+    var rows = store.get();
+    document.getElementById("nRows").textContent = rows.length;
+    var t = document.getElementById("savedTbl"); t.innerHTML = "";
+    t.appendChild(el("thead", null, [el("tr", null, ["Candidate", "Task", "Rater", "Read", "Session"].concat(DIMS).concat(["Auto-floor", ""]).map(function (h) { return el("th", {text: h}); }))]));
+    var tb = el("tbody");
+    rows.forEach(function (r, i) {
+      var del = el("button", {type: "button", "aria-label": "Delete row " + (i + 1), text: "Delete"});
+      del.addEventListener("click", function () { var rr = store.get(); rr.splice(i, 1); store.set(rr); renderSaved(); });
+      tb.appendChild(el("tr", null, [r.candidate_id, r.task_id, r.rater, r.read, String(r.session)].concat(DIMS.map(function (d) { return String(r.scores[d]); })).concat([r.autofloor.join(" ")]).map(function (x) { return el("td", {text: x}); }).concat([el("td", null, [del])])));
+    });
+    t.appendChild(tb);
+    var sum = candidateSummary(rows);
+    table("candTbl", ["Candidate", "Tasks", "Double-scored tasks"].concat(DIMS).concat(["Total", "Preview"]),
+      sum.map(function (s) { return [s.candidate_id, s.tasks, s.n_double].concat(DIMS.map(function (d) { return fmt(s.means[d], 1); })).concat([fmt(s.total, 1), s.status]); }),
+      DIMS.map(function (_, i) { return i + 3; }).concat([DIMS.length + 3]));
+  }
+  function csvCell(v) { var s = String(v == null ? "" : v); if (/^[=+\-@]/.test(s)) s = "'" + s; return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }
+  function download(name, lines) {
+    var blob = new Blob([lines.map(function (l) { return l.map(csvCell).join(","); }).join("\r\n") + "\r\n"], {type: "text/csv;charset=utf-8"});
+    var a = el("a", {href: URL.createObjectURL(blob), download: name});
+    document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
+  }
+  document.getElementById("exportLong").addEventListener("click", function () {
+    var rows = store.get(); if (!rows.length) return alert("No saved rows to export.");
+    var out = [["phase", "session", "artifact_id", "candidate_id", "role_family", "task_id", "rater", "dim", "score", "master", "auto_floor", "rubric_version", "saved_at", "notes"]];
+    rows.forEach(function (r) {
+      var phase = r.read === "adjudication" ? "adjudication" : r.read === "anchor" ? "anchor" : "operational";
+      DIMS.forEach(function (d) { out.push([phase, r.session, r.candidate_id + "-" + r.task_id, r.candidate_id, r.role_family, r.task_id, r.rater, d, r.scores[d], "", r.autofloor.indexOf(d) >= 0 ? 1 : 0, R.version, r.saved, r.notes]); });
+    });
+    download("ai_proficiency_ratings_long.csv", out);
+  });
+  document.getElementById("exportSummary").addEventListener("click", function () {
+    var sum = candidateSummary(store.get()); if (!sum.length) return alert("No candidates to summarize.");
+    var out = [["candidate_id", "tasks", "n_double_scored_tasks"].concat(DIMS).concat(["total", "preview_status", "rubric_version"])];
+    sum.forEach(function (s) { out.push([s.candidate_id, s.tasks, s.n_double].concat(DIMS.map(function (d) { return s.means[d].toFixed(2); })).concat([s.total.toFixed(2), s.status, R.version])); });
+    download("ai_proficiency_candidate_summary.csv", out);
+  });
+  document.getElementById("clearAll").addEventListener("click", function () {
+    if (confirm("Delete every saved row in this browser? Export first if you need them.")) { store.set([]); renderSaved(); }
+  });
+  renderSaved();
+
+  // ---------------- reliability report ----------------
+  var cal = REP.calibration, dbl = REP.double_scoring, bd = REP.badges;
+  document.getElementById("repIntro").textContent = "Seeded synthetic study (seed " + REP.seed + ", " + REP.rubric_version + "). " + cal.n_artifacts + " calibration artifacts scored by all " + cal.k_raters + " raters; " + dbl.n_artifacts + " operational artifacts (" + pct(dbl.double_rate) + " double-scored); anchor papers seeded in every session. Planted properties: R3 severe, R5 lenient, R6 drifting lenient, D8 weakly discriminating, D7 harder for Advising at equal proficiency.";
+  var dcd = bd.decision_consistency_double_scored, dcr = bd.decision_consistency_replication_synthetic, dcc = bd.decision_consistency_replication_calibrated_raters_synthetic;
+  var kp = [
+    [fmt(cal.total_score["ICC(2,k)"]), "ICC(2,k) total score, mean of 6 raters (95% CI " + fmt(cal.total_score_ci95["ICC(2,k)"][0]) + "&ndash;" + fmt(cal.total_score_ci95["ICC(2,k)"][1]) + ")"],
+    [fmt(cal.total_score["ICC(2,1)"]), "ICC(2,1) total score, single rater (95% CI " + fmt(cal.total_score_ci95["ICC(2,1)"][0]) + "&ndash;" + fmt(cal.total_score_ci95["ICC(2,1)"][1]) + ")"],
+    [fmt(cal.alpha_ordinal_all_cells), "Krippendorff's alpha (ordinal), calibration, all dimension cells"],
+    [fmt(dbl.qwk_slots_all), "Quadratic-weighted kappa, first vs second read, operational"],
+    [pct(dcd.p0), "Badge decision agreement, double-scored candidates (n = " + dcd.n + ")"],
+    [pct(dcc.p0), "Same, synthetic replication with severity and drift removed"]
+  ];
+  var kb = document.getElementById("kpis");
+  kp.forEach(function (k) { kb.appendChild(el("div", {class: "kpi"}, [el("div", {class: "v", html: k[0]}), el("div", {class: "l", html: k[1]})])); });
+  document.getElementById("reading").innerHTML = "<strong>How to read this.</strong> Total scores averaged over many raters are reliable (ICC(2,k)), but a <em>single</em> read is much less so, and dimension-level agreement on operational double reads is modest (alpha " +
+    fmt(Math.min.apply(null, DIMS.map(function (d) { return dbl.per_dimension[d].alpha_ordinal; }))) + "&ndash;" + fmt(Math.max.apply(null, DIMS.map(function (d) { return dbl.per_dimension[d].alpha_ordinal; }))) +
+    "). With the planted severe, lenient and drifting raters, two independent scorings put a candidate in the same badge tier only " + pct(dcr.p0) + " of the time; removing severity and drift raises that to " + pct(dcc.p0) +
+    ". That gap is what the calibration workflow (anchor papers, drift checks, double-scoring and adjudication near cuts) exists to close. These are synthetic numbers; a real pilot must produce its own.";
+  table("recov", ["Check", "Expected", "Observed", "Result"], REP.recovery_checks.map(function (c) {
+    return [c.check, JSON.stringify(c.expected), JSON.stringify(c.observed), {html: c.pass ? "PASS" : "FAIL", cls: c.pass ? "ok" : "bad"}];
+  }));
+  var dr = REP.raters.drift, sv = REP.raters.severity;
+  table("driftTbl", ["Rater", "Bias by session (0 = calibration)", "Trend / session", "Latest exact agreement", "Flags"], Object.keys(dr).map(function (r) {
+    var v = dr[r];
+    return [r, v.bias.map(function (b) { return (b >= 0 ? "+" : "") + fmt(b); }).join("  "), (v.slope >= 0 ? "+" : "") + fmt(v.slope), pct(v.exact[v.exact.length - 1]), {html: v.reasons.length ? esc(v.reasons.join("; ")) : "none", cls: v.drift_flag ? "bad" : v.flag ? "warn" : ""}];
+  }), [2, 3]);
+  table("dimTbl", ["Dimension", "Calibration ICC(2,1)", "Calibration ICC(2,k)", "Calibration alpha", "Double-read alpha", "Double-read QWK", "Exact", "Within 1"], DIMS.map(function (d) {
+    var c = cal.per_dimension[d], o = dbl.per_dimension[d];
+    return [d + " " + dimName[d], fmt(c["ICC(2,1)"]), fmt(c["ICC(2,k)"]), fmt(c.alpha_ordinal), fmt(o.alpha_ordinal), fmt(o.qwk_slots), pct(o.exact), pct(o.adjacent_or_exact)];
+  }), [1, 2, 3, 4, 5, 6, 7]);
+  var it = REP.items;
+  document.getElementById("nItems").textContent = it.n_persons;
+  table("itemTbl", ["Dimension", "Mean", "SD", "% at 1 / 2 / 3 / 4", "Item-rest r", "Alpha if deleted", "Flags"], it.items.map(function (x) {
+    var dist = [1, 2, 3, 4].map(function (l) { return pct(x.distribution[String(l)]); }).join(" / ");
+    return [x.item + " " + dimName[x.item], fmt(x.mean), fmt(x.sd), dist, fmt(x.item_rest_r), fmt(x.alpha_if_deleted), {html: x.flags.length ? esc(x.flags.join("; ")) : "none", cls: x.flags.length ? "warn" : ""}];
+  }).concat([[{html: "<strong>All 8</strong>"}, "", "", "", "", "alpha " + fmt(it.alpha), "Total mean " + fmt(it.total_mean) + ", SD " + fmt(it.total_sd) + ", SEM " + fmt(it.sem_total)]]), [1, 2, 4, 5]);
+  var ang = REP.angoff, angRows = [];
+  BADGES.forEach(function (b) {
+    ["round1", "round2"].forEach(function (r) {
+      var a = ang[b][r];
+      angRows.push([R.badges[b].name, r.replace("round", "Round "), fmt(a.cut), fmt(a.sd_totals), fmt(a.se_cut), pct(a.impact.pass_rate), pct(a.impact.pass_rate_cut_plus_2se) + " &ndash; " + pct(a.impact.pass_rate_cut_minus_2se)].map(function (v, i) { return i === 6 ? {html: v} : v; }));
+    });
+    angRows.push([R.badges[b].name, {html: "<strong>Recommended</strong>"}, {html: "<strong>" + fmt(ang[b].recommended_cut, 1) + "</strong>"}, "", "", "provisional was " + fmt(ang[b].provisional_cut, 1), ""]);
+  });
+  table("angTbl", ["Badge", "Round", "Cut (mean of panelist totals)", "SD of totals", "SE of cut", "Share at or above cut", "Range at cut &plusmn; 2 SE"], angRows, [2, 3, 4]);
+  table("badgeTbl", ["Outcome"].concat(LABELS), [
+    ["Synthetic truth"].concat(LABELS.map(function (l) { return bd.counts_truth[l]; })),
+    ["Provisional cuts"].concat(LABELS.map(function (l) { return bd.counts_provisional[l]; })),
+    ["Recommended (Angoff) cuts"].concat(LABELS.map(function (l) { return bd.counts_recommended[l]; }))
+  ], [1, 2, 3, 4]);
+  var dcg = document.getElementById("dcGrid");
+  [[dcd, "Double-scored candidates: first read vs second read"], [dcr, "Synthetic replication: two fresh scorings"], [dcc, "Replication, raters calibrated (no severity or drift)"], [bd.classification_accuracy_vs_truth_synthetic, "Operational decision vs synthetic truth"]].forEach(function (p, idx) {
+    var m = p[0], id = "dc" + idx;
+    var card = el("div", {class: "card"}, [el("h3", {text: p[1]}), el("p", {class: "small", text: "n = " + m.n + "; agreement " + pct(m.p0) + "; kappa " + fmt(m.kappa) + "; linear-weighted kappa " + fmt(m.kappa_linear)})]);
+    var w = el("div", {class: "tbl"}); var tb = el("table"); tb.id = id; w.appendChild(tb); card.appendChild(w); dcg.appendChild(card);
+    table(id, ["rows vs cols"].concat(m.labels), m.confusion.map(function (r, i) { return [m.labels[i]].concat(r); }), [1, 2, 3, 4]);
+  });
+  var cutDc = bd.decision_consistency_by_cut_synthetic;
+  dcg.appendChild(el("div", {class: "card"}, [el("h3", {text: "Consistency at each cut (replication)"}), el("ul", {class: "tight small", html: Object.keys(cutDc).map(function (k) { return "<li>" + esc(k) + ": " + pct(cutDc[k].p0) + " agreement, kappa " + fmt(cutDc[k].kappa) + "</li>"; }).join("") + "<li>Candidates within 1 point of a cut: " + bd.n_within_1pt_of_a_cut + " (these get a second read)</li>"})]));
+  var fr = REP.fairness, famList = Object.keys(fr.dif[DIMS[0]]);
+  document.getElementById("difMethod").textContent = fr.dif_method + " Cells show SMD/SD (negative = harder for that family at equal matched score) and the MH ETS class.";
+  table("difTbl", ["Dimension"].concat(famList), DIMS.map(function (d) {
+    return [d + " " + dimName[d]].concat(famList.map(function (f) {
+      var v = fr.dif[d][f];
+      return {html: fmt(v.smd_over_sd) + " &middot; " + esc(v.ets_class) + (v.review ? " &middot; <strong>review</strong>" : "") + (v.stage1_review && !v.review ? " <span class='muted'>(cleared at stage 2)</span>" : ""), cls: v.review ? "bad" : ""};
+    }));
+  }));
+  var imp = fr.impact_catalyst_or_above, imp2 = fr.impact_practitioner;
+  table("impTbl", ["Role family", "n", "Catalyst or above", "Ratio to top", "Practitioner", "Ratio to top"], Object.keys(imp).map(function (f) {
+    var a = imp[f], b = imp2[f];
+    if (a.suppressed) return [f, a.n, "suppressed (n < 10)", "", "", ""];
+    return [f, a.n, pct(a.rate), {html: fmt(a.ratio_to_top) + (a.four_fifths_flag ? " &middot; below 0.8 (Fisher p " + fmt(a.fisher_p_vs_top, 3) + ")" : ""), cls: a.four_fifths_flag ? "warn" : ""}, pct(b.rate), {html: fmt(b.ratio_to_top) + (b.four_fifths_flag ? " &middot; below 0.8 (Fisher p " + fmt(b.fisher_p_vs_top, 3) + ")" : ""), cls: b.four_fifths_flag ? "warn" : ""}];
+  }), [1, 2, 4]);
+  var ss = REP.seed_sensitivity;
+  if (ss) table("seedTbl", ["Check (seeds " + ss.seeds[0] + "&ndash;" + ss.seeds[1] + ")", "Recovered"], Object.keys(ss.pass_counts).map(function (k) { return [k, ss.pass_counts[k] + " / " + ss.n_seeds]; }).concat([
+    ["False DIF flag rate per null comparison", pct(ss.false_dif_flag_rate)],
+    ["Replication badge agreement (min / median / max)", pct(ss.replication_decision_consistency_p0.min) + " / " + pct(ss.replication_decision_consistency_p0.median) + " / " + pct(ss.replication_decision_consistency_p0.max)]
+  ]), [1]);
+
+  // ---------------- charts (inline SVG) ----------------
+  var tip = document.getElementById("tip");
+  function showTip(ev, html) { tip.innerHTML = html; tip.style.display = "block"; var x = Math.min(ev.clientX + 12, window.innerWidth - tip.offsetWidth - 8); tip.style.left = x + "px"; tip.style.top = (ev.clientY + 12) + "px"; }
+  function hideTip() { tip.style.display = "none"; }
+  var NS = "http://www.w3.org/2000/svg";
+  function s(tag, attrs, parent) { var e = document.createElementNS(NS, tag); Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); }); if (parent) parent.appendChild(e); return e; }
+  function cssv(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function drawCharts() {
+    if (!document.getElementById("report").classList.contains("active")) return;
+    drawSeverity(); drawDrift();
+  }
+  function drawSeverity() {
+    var box = document.getElementById("sevChart"); box.innerHTML = "";
+    var raters = Object.keys(sv), W = 640, rowH = 34, H = raters.length * rowH + 46, L = 46, Rm = 20;
+    var vals = raters.map(function (r) { return sv[r]; });
+    var lo = Math.min(-1, Math.min.apply(null, vals.map(function (v) { return v.mean_dev - 2 * v.se; }))), hi = Math.max(1, Math.max.apply(null, vals.map(function (v) { return v.mean_dev + 2 * v.se; })));
+    var x = function (v) { return L + (v - lo) / (hi - lo) * (W - L - Rm); };
+    var svg = s("svg", {viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Rater severity: mean deviation from other raters, with plus or minus 2 standard errors"}, box);
+    for (var t = Math.ceil(lo * 2) / 2; t <= hi + 1e-9; t += 0.5) {
+      s("line", {x1: x(t), x2: x(t), y1: 10, y2: H - 28, stroke: cssv(t === 0 ? "--axis" : "--grid"), "stroke-width": t === 0 ? 1.5 : 1}, svg);
+      var tx = s("text", {x: x(t), y: H - 12, "text-anchor": "middle"}, svg); tx.textContent = (t > 0 ? "+" : "") + t.toFixed(1);
+    }
+    var lab = s("text", {x: W - Rm, y: H - 0, "text-anchor": "end"}, svg); lab.textContent = "← severe   points vs other raters   lenient →";
+    raters.forEach(function (r, i) {
+      var v = sv[r], y = 22 + i * rowH;
+      var rt = s("text", {x: L - 10, y: y + 4, "text-anchor": "end"}, svg); rt.textContent = r;
+      s("line", {x1: x(v.mean_dev - 2 * v.se), x2: x(v.mean_dev + 2 * v.se), y1: y, y2: y, stroke: cssv("--s1"), "stroke-width": 2, "stroke-linecap": "round"}, svg);
+      s("circle", {cx: x(v.mean_dev), cy: y, r: 5, fill: cssv("--s1"), stroke: cssv("--surface"), "stroke-width": 2}, svg);
+      var hit = s("rect", {x: L, y: y - rowH / 2, width: W - L - Rm, height: rowH, fill: "transparent"}, svg);
+      hit.addEventListener("pointermove", function (ev) { showTip(ev, "<strong>" + r + "</strong><br>mean deviation " + (v.mean_dev >= 0 ? "+" : "") + fmt(v.mean_dev) + "<br>&plusmn;2 SE " + fmt(2 * v.se) + "<br>shared ratings " + v.n); });
+      hit.addEventListener("pointerleave", hideTip);
+    });
+  }
+  function drawDrift() {
+    var box = document.getElementById("driftChart"); box.innerHTML = "";
+    var raters = Object.keys(dr), W = 640, H = 280, L = 46, Rm = 44, Tm = 14, B = 34;
+    var sessions = dr[raters[0]].sessions;
+    var all = []; raters.forEach(function (r) { all = all.concat(dr[r].bias); });
+    var lo = Math.min(-0.75, Math.min.apply(null, all)), hi = Math.max(0.75, Math.max.apply(null, all));
+    var x = function (i) { return L + (i - sessions[0]) / (sessions[sessions.length - 1] - sessions[0]) * (W - L - Rm); };
+    var y = function (v) { return Tm + (hi - v) / (hi - lo) * (H - Tm - B); };
+    var leg = el("div", {class: "legend"});
+    raters.forEach(function (r, i) { leg.appendChild(el("span", {style: "--c: var(--s" + (i + 1) + ")", text: r + (dr[r].drift_flag ? " (drift)" : "")})); });
+    box.appendChild(leg);
+    var svg = s("svg", {viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "Rater bias against master scores by session, one line per rater"}, box);
+    for (var t = Math.ceil(lo * 4) / 4; t <= hi + 1e-9; t += 0.25) {
+      s("line", {x1: L, x2: W - Rm, y1: y(t), y2: y(t), stroke: cssv(Math.abs(t) < 1e-9 ? "--axis" : "--grid"), "stroke-width": Math.abs(t) < 1e-9 ? 1.5 : 1}, svg);
+      if (Math.abs(t * 2 - Math.round(t * 2)) < 1e-9) { var tx = s("text", {x: L - 8, y: y(t) + 4, "text-anchor": "end"}, svg); tx.textContent = (t > 0 ? "+" : "") + t.toFixed(1); }
+    }
+    sessions.forEach(function (sn) { var tx = s("text", {x: x(sn), y: H - 14, "text-anchor": "middle"}, svg); tx.textContent = sn === 0 ? "Cal" : "S" + sn; });
+    var xl = s("text", {x: (W - Rm + L) / 2, y: H - 1, "text-anchor": "middle"}, svg); xl.textContent = "scoring session (Cal = calibration set)";
+    raters.forEach(function (r, i) {
+      var col = cssv("--s" + (i + 1)), v = dr[r];
+      s("polyline", {points: v.sessions.map(function (sn, j) { return x(sn) + "," + y(v.bias[j]); }).join(" "), fill: "none", stroke: col, "stroke-width": 2, "stroke-linejoin": "round"}, svg);
+      v.sessions.forEach(function (sn, j) {
+        s("circle", {cx: x(sn), cy: y(v.bias[j]), r: 4, fill: col, stroke: cssv("--surface"), "stroke-width": 2}, svg);
+        var hit = s("circle", {cx: x(sn), cy: y(v.bias[j]), r: 11, fill: "transparent"}, svg);
+        hit.addEventListener("pointermove", function (ev) { showTip(ev, "<strong>" + r + "</strong>, " + (sn === 0 ? "calibration" : "session " + sn) + "<br>bias vs master " + (v.bias[j] >= 0 ? "+" : "") + fmt(v.bias[j]) + "<br>exact agreement " + pct(v.exact[j])); });
+        hit.addEventListener("pointerleave", hideTip);
+      });
+      if (v.flag) { var lt = s("text", {x: x(v.sessions[v.sessions.length - 1]) + 8, y: y(v.bias[v.bias.length - 1]) + 4}, svg); lt.textContent = r; lt.style.fill = cssv("--text"); }
+    });
+  }
+  window.addEventListener("resize", hideTip);
+})();
+</script>
+</body>
+</html>

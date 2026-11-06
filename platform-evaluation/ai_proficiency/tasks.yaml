@@ -1,0 +1,243 @@
+# Scenario-based performance tasks for the staff AI proficiency assessment.
+#
+# Every task is a realistic work situation for a university staff role. All
+# materials are SYNTHETIC: names are placeholders ("Employee A", "Student 3"),
+# figures are invented, and nothing comes from university systems. Materials are
+# generated per sitting from the task's `materials` description; a planted
+# error or sensitive field is included on purpose so that verification (D4) and
+# data-sensitivity judgment (D5) can be observed.
+#
+# What the candidate submits for every task (the "work sample"):
+#   1. the full prompt log (all turns) exported from the tool used, or a
+#      transcript if the task is done on paper (accommodation);
+#   2. the final deliverable;
+#   3. the rationale form: data class + why, tool + why, what was checked and
+#      how, which decision stays with a person and who owns it, prompt card.
+#
+# Raters score all 8 rubric dimensions for every task. `guide` gives the
+# task-specific evidence for Proficient (3) and the Beginning (1) red flag; the
+# generic anchors in rubric.yaml decide scores 2 and 4.
+#
+# Format: same YAML subset as rubric.yaml.
+
+version: ai_proficiency_tasks_v0.1
+time_limit_minutes_default: 35
+tier_alignment: "Staff tiers are AI Explorer (self-directed, Canvas) -> AI Catalyst (tool deep-dive plus a role-scenario session) -> AI Practitioner. The role-family tasks are written to be used as the Catalyst role-scenario session work sample; badge_focus marks the tier a task discriminates best (all tasks are scored on all 8 dimensions)."
+sitting: "One common task (T12) plus one task from the candidate's role family, chosen by the candidate. Extended time and paper/transcript modes are available as accommodations."
+
+tasks:
+  - id: T01
+    role_family: HR
+    title: "Draft a plain-language summary of a leave policy change"
+    badge_focus: catalyst
+    scenario: "Your unit has a revised (synthetic) vacation-carryover policy. Supervisors keep asking what changed. Produce a one-page summary for supervisors and a 3-question FAQ."
+    materials: "Two versions of a 4-page synthetic policy (Public), a forwarded supervisor email that quotes one named employee's leave balance (Sensitive)."
+    planted: ["The forwarded email includes an individual's leave balance and medical-leave reference", "A carryover cap differs between the policy text and its own summary table"]
+    auto_floor: "Pasting the forwarded email with the individual's details into any tool -> D5 = 1."
+    guide:
+      D1: "3: names supervisors as audience, purpose is 'what changed and what to do'. 1: 'summarize this'."
+      D2: "3: one page, plain language, FAQ count fixed, 'do not add rules not in the policy'. 1: no format."
+      D3: "3: corrects a specific omission (e.g., effective date). 1: accepts first draft."
+      D4: "3: catches the cap mismatch and resolves it from the policy text or flags it to the policy owner. 1: repeats the wrong cap."
+      D5: "3: classifies policy as Public and the email as Sensitive; uses only the policy text. 1: email pasted in."
+      D6: "3: HR policy owner approves the summary before release; no individual leave question answered by the tool. 1: tool output published directly."
+      D7: "3: enterprise tool for drafting; compares versions with a document-compare feature rather than asking the model to diff. 1: unapproved tool."
+      D8: "3: prompt card with source version and date. 1: nothing recorded."
+
+  - id: T02
+    role_family: HR
+    title: "Structure interview questions for a staff search"
+    badge_focus: practitioner
+    scenario: "A search committee asks you for a structured interview guide for a synthetic Office Support Specialist posting, with rating anchors the committee will apply."
+    materials: "Synthetic job description (Public), a spreadsheet of 12 synthetic applicants with names and resume excerpts (Sensitive), committee chair's note asking you to 'have AI rank them first'."
+    planted: ["Chair's request to have the tool rank applicants", "One job-description duty that is not essential (legal risk if used as a criterion)"]
+    auto_floor: "Any applicant data in any tool -> D5 = 1. Producing a tool-generated ranking or shortlist -> D6 = 1."
+    guide:
+      D1: "3: frames task as job-related, structured questions tied to listed duties. 1: 'give me interview questions'."
+      D2: "3: fixed number of questions, behavioral format, 1-4 anchors per question, no questions on protected characteristics. 1: free-form list."
+      D3: "3: revises questions that were not job-related or were leading. 1: none."
+      D4: "3: checks each question maps to a duty in the job description; flags the non-essential duty. 1: accepts unrelated questions."
+      D5: "3: works from the job description only; applicant file never enters a tool. 1: applicant data entered."
+      D6: "3: declines the ranking request in writing, explains HB 3773 and committee responsibility; committee scores applicants. 1: tool ranks applicants."
+      D7: "3: AI used for question drafting only; scoring stays in the committee's form. 1: AI for candidate evaluation."
+      D8: "3: guide saved with version, duty mapping and a 'not for screening' note. 1: no record."
+
+  - id: T03
+    role_family: HR
+    title: "Summarize de-identified exit-survey comments into themes"
+    badge_focus: practitioner
+    scenario: "Your director wants five themes from 60 synthetic exit-survey comments for a unit meeting, with counts and one representative paraphrase per theme."
+    materials: "60 synthetic comments (Sensitive: several mention a named supervisor or a health condition), a count of respondents by unit (Internal)."
+    planted: ["Three comments are identifiable when quoted", "One unit has only 4 respondents"]
+    auto_floor: "Comments entered into a tool not approved for Sensitive data -> D5 = 1."
+    guide:
+      D1: "3: states purpose, audience and that themes are for discussion, not individual follow-up. 1: 'what are the themes'."
+      D2: "3: fixed theme count, counts per theme, paraphrase not verbatim, 'no names or unit names under n=10'. 1: no rules."
+      D3: "3: merges or splits themes after reading a sample; asks for counts to be re-derived. 1: none."
+      D4: "3: hand-codes a sample (e.g., 15 comments) and compares to the tool's theme assignment; recounts. 1: reports tool counts as fact."
+      D5: "3: uses the tool approved for Sensitive data (locally hosted) and removes names first; suppresses the n=4 unit. 1: public tool or names left in."
+      D6: "3: director/HR analyst reviews themes before sharing; no individual follow-up triggered by the tool. 1: tool output circulated."
+      D7: "3: approved local tool for the text, spreadsheet for counts. 1: public tool."
+      D8: "3: coding frame, sample check result and suppression rule recorded. 1: nothing."
+
+  - id: T04
+    role_family: Finance
+    title: "Reconcile a vendor invoice summary"
+    badge_focus: catalyst
+    scenario: "You receive a 3-page synthetic invoice and the PO line items. Prepare a short note to the approver saying whether the invoice matches the PO and what differs."
+    materials: "Synthetic invoice PDF and PO table (Internal), 14 line items; one line has transposed digits; the invoice total is correct for the wrong line."
+    planted: ["Transposed amount on one line", "Tax applied to a tax-exempt line"]
+    auto_floor: "None (no Sensitive data); note: entering a vendor bank-account number into any tool is never-enter -> D5 = 1."
+    guide:
+      D1: "3: approver is the audience; 'match / differences / recommended action'. 1: 'check this invoice'."
+      D2: "3: table of differences with line, PO amount, invoice amount; 'do not compute totals'. 1: narrative only."
+      D3: "3: asks for missing line after noticing count mismatch. 1: none."
+      D4: "3: totals reconciled in spreadsheet; finds transposition and tax issue. 1: accepts tool's 'matches'."
+      D5: "3: Internal data in an enterprise tool; bank details removed. 1: bank details entered."
+      D6: "3: approver decides payment; note labelled as prepared with AI assistance. 1: recommends auto-approval."
+      D7: "3: spreadsheet for arithmetic, AI only for extraction/drafting. 1: AI computes totals."
+      D8: "3: note records what was reconciled and how. 1: none."
+
+  - id: T05
+    role_family: Finance
+    title: "Explain a budget variance to a department head"
+    badge_focus: practitioner
+    scenario: "A department head asks why a synthetic operating account is 18% over budget at mid-year. Draft a 200-word explanation and a chart suggestion."
+    materials: "Synthetic budget-vs-actual table (Internal) by object code; one large one-time charge; a salary line with individual pay amounts (Sensitive)."
+    planted: ["Individual salary detail in the table", "A misleading year-over-year comparison the tool tends to make (different fiscal calendars)"]
+    auto_floor: "Individual pay amounts entered into a tool not approved for Sensitive data -> D5 = 1."
+    guide:
+      D1: "3: states audience (non-finance department head), purpose and the period. 1: 'explain this table'."
+      D2: "3: 200 words, cause-first, no jargon, 'use only figures in the table'. 1: no limits."
+      D3: "3: corrects a causal claim that the data does not support. 1: none."
+      D4: "3: verifies every figure quoted and catches the fiscal-calendar mismatch. 1: unsupported causal story."
+      D5: "3: aggregates salary lines to object-code level before use. 1: individual pay entered."
+      D6: "3: finance manager reviews before sending; explanation framed as draft analysis. 1: sends unreviewed."
+      D7: "3: variance math in spreadsheet; AI drafts prose. 1: AI does the math."
+      D8: "3: assumptions and data date stated. 1: none."
+
+  - id: T06
+    role_family: Advising
+    title: "Draft a response to a student about a registration hold"
+    badge_focus: catalyst
+    scenario: "A synthetic student emails, upset about a registration hold. Draft a reply explaining next steps, using the (synthetic) hold-type guide."
+    materials: "Student email with name, UIN-like ID and mention of a disability accommodation (Sensitive, FERPA); public hold-type guide."
+    planted: ["Student ID and accommodation reference in the email", "The guide lists two offices; only one handles this hold type"]
+    auto_floor: "Student identifiers or accommodation details entered into a tool not approved for Sensitive data -> D5 = 1."
+    guide:
+      D1: "3: tone (empathetic, clear), audience (student), goal (next steps). 1: 'reply to this'."
+      D2: "3: under 150 words, steps as a list, 'do not promise a release date'. 1: none."
+      D3: "3: adjusts tone or removes an over-promise. 1: none."
+      D4: "3: confirms the correct office and link in the official guide. 1: wrong office sent."
+      D5: "3: rewrites the situation generically ('a student with a financial hold') with no identifiers. 1: email pasted in."
+      D6: "3: advisor decides and sends; tool never decides hold release. 1: tool's text sent unread."
+      D7: "3: approved tool for drafting; student system for the hold facts. 1: unapproved tool."
+      D8: "3: saves a reusable, identifier-free reply template. 1: none."
+
+  - id: T07
+    role_family: Advising
+    title: "Build a degree-progress checklist from catalog text"
+    badge_focus: practitioner
+    scenario: "Turn a synthetic program's catalog requirements into a checklist advisors can use in meetings, with prerequisites in order."
+    materials: "Synthetic catalog page (Public) with a footnote exception; a prior-year version with different hours."
+    planted: ["Footnote exception that the tool tends to drop", "Old catalog year mixed in"]
+    auto_floor: "None (Public data); a student record pasted in to 'test' the checklist -> D5 = 1."
+    guide:
+      D1: "3: states catalog year, audience (advisors) and use (in-meeting checklist). 1: 'make a checklist'."
+      D2: "3: checklist structure with hours and prerequisites; 'include all footnotes as notes'. 1: none."
+      D3: "3: second pass to recover dropped exception; ordering fixed. 1: none."
+      D4: "3: line-by-line comparison with the catalog; catches year mix-up. 1: wrong hours retained."
+      D5: "3: Public data only; tests with a synthetic student profile. 1: real-looking record used."
+      D6: "3: checklist marked as aid; degree audit system remains authoritative; advisor confirms. 1: presented as official audit."
+      D7: "3: notes that the degree-audit system is the source of truth; AI for formatting only. 1: AI used to determine eligibility."
+      D8: "3: catalog year and review date on the checklist; owner named. 1: none."
+
+  - id: T08
+    role_family: "IT support"
+    title: "Turn a ticket thread into a knowledge-base article"
+    badge_focus: catalyst
+    scenario: "A resolved synthetic ticket thread about VPN setup has 22 messages. Write a knowledge-base article for end users."
+    materials: "Ticket thread (Internal) containing a user's name, device serial and a temporary password in one message."
+    planted: ["Temporary password in thread", "One troubleshooting step that was later found to be wrong"]
+    auto_floor: "Credentials entered into any tool -> D5 = 1."
+    guide:
+      D1: "3: audience end users, outcome 'set up VPN without a ticket'. 1: 'summarize ticket'."
+      D2: "3: numbered steps, screenshots placeholders, 'omit steps later reversed'. 1: none."
+      D3: "3: removes the wrong step after checking the thread end. 1: wrong step kept."
+      D4: "3: walks through the steps on a test device or checks vendor docs. 1: unverified."
+      D5: "3: strips names, serials and the password before any tool use. 1: password entered."
+      D6: "3: KB owner/peer reviews before publishing. 1: auto-published."
+      D7: "3: approved tool; vendor docs for authoritative settings. 1: unapproved tool."
+      D8: "3: article metadata: version, tested OS, reviewer. 1: none."
+
+  - id: T09
+    role_family: "IT support"
+    title: "Write a spreadsheet formula without sharing the data"
+    badge_focus: practitioner
+    scenario: "A unit needs a formula that flags device-inventory rows whose warranty ends within 90 days and whose assigned user has left. Get AI help without exposing the inventory."
+    materials: "Synthetic inventory spreadsheet (Internal) with an assigned-user column (Sensitive when combined with HR status)."
+    planted: ["Date format differs between two columns", "Blank warranty dates"]
+    auto_floor: "Rows with user names or HR status entered into a tool not approved for Sensitive data -> D5 = 1."
+    guide:
+      D1: "3: describes columns, types and the rule clearly. 1: 'help with formula'."
+      D2: "3: names the spreadsheet product, output column, blank-handling rule. 1: none."
+      D3: "3: fixes the date-format issue after testing. 1: none."
+      D4: "3: tests formula on constructed edge cases (blank, boundary day 90). 1: untested."
+      D5: "3: describes structure only, no rows shared (level 4 if justified as minimization). 1: rows pasted."
+      D6: "3: flags go to the inventory owner for confirmation, not automatic device recall. 1: auto-action."
+      D7: "3: AI for formula drafting; logic validated in the spreadsheet. 1: asks AI to process the whole sheet."
+      D8: "3: formula documented with test cases. 1: none."
+
+  - id: T10
+    role_family: Admin
+    title: "Produce meeting minutes and action items from notes"
+    badge_focus: catalyst
+    scenario: "Turn rough synthetic notes from a 60-minute committee meeting into minutes and an action-item table."
+    materials: "Rough notes (Internal) including a confidential personnel matter discussed in closed session."
+    planted: ["Closed-session personnel item", "An action item with no owner"]
+    auto_floor: "Closed-session personnel details entered into a tool not approved for Sensitive data -> D5 = 1."
+    guide:
+      D1: "3: committee name, audience (members), required sections. 1: 'clean these up'."
+      D2: "3: minutes template, action table (item, owner, due), 'mark unknown owner as TBD'. 1: none."
+      D3: "3: asks the tool to separate decisions from discussion. 1: none."
+      D4: "3: checks names of owners and dates against notes; flags missing owner. 1: invented owner accepted."
+      D5: "3: closed-session item removed before tool use and handled manually. 1: included."
+      D6: "3: chair approves minutes before distribution. 1: distributed directly."
+      D7: "3: approved tool; does not use recording/transcription without consent. 1: unapproved tool."
+      D8: "3: saved template prompt for future minutes. 1: none."
+
+  - id: T11
+    role_family: Admin
+    title: "Compare three event-catering quotes"
+    badge_focus: practitioner
+    scenario: "Compare three synthetic catering quotes for a 120-person event against purchasing rules and recommend one with reasons."
+    materials: "Three quotes (Internal) in different formats; purchasing rule excerpt (Public); one quote omits gratuity that another includes."
+    planted: ["Non-comparable totals (gratuity)", "A threshold above which a different purchasing process applies"]
+    auto_floor: "None (no Sensitive data)."
+    guide:
+      D1: "3: states event size, criteria and decision-maker. 1: 'which is best'."
+      D2: "3: normalized comparison table with per-person cost; 'state assumptions'. 1: none."
+      D3: "3: asks for normalization after spotting gratuity difference. 1: none."
+      D4: "3: recomputes per-person cost; checks threshold in the rule text. 1: wrong comparison accepted."
+      D5: "3: Internal quotes in an approved tool; vendor contact details not needed and omitted. 1: careless sharing."
+      D6: "3: recommendation advisory; purchasing approver decides. 1: AI choice treated as decision."
+      D7: "3: spreadsheet for cost math; AI to extract terms. 1: AI arithmetic."
+      D8: "3: assumptions and sources listed. 1: none."
+
+  - id: T12
+    role_family: Common
+    title: "Decide whether and how to use AI for a request (judgment task)"
+    badge_focus: all
+    scenario: "Your supervisor forwards four short synthetic requests and asks you to say, for each, whether you would use AI, which approved tool class, what data you would include, what you would check, and what stays with a person. Then carry out one of them."
+    materials: "Four request cards: (a) rewrite a public web page for readability; (b) summarize a grievance file; (c) total a reimbursement batch; (d) draft a welcome email to new hires using an HR roster."
+    planted: ["(b) is Sensitive and involves a decision about a person", "(c) is a computation task", "(d) needs a roster with personal data that can be replaced by placeholders"]
+    auto_floor: "Choosing to put the grievance file in a tool not approved for Sensitive data -> D5 = 1. Letting AI recommend the grievance outcome -> D6 = 1."
+    guide:
+      D1: "3: for the executed request, frames goal and audience clearly. 1: bare prompt."
+      D2: "3: format and must-not rules for the executed request. 1: none."
+      D3: "3: purposeful refinement on the executed request. 1: none."
+      D4: "3: names the check for each card (e.g., totals reconciled for c). 1: no checks named."
+      D5: "3: classifies all four correctly (a Public, b Sensitive, c Internal or Sensitive depending on personal data, d Sensitive roster -> placeholders). 1: misclassifies b."
+      D6: "3: identifies that (b) outcome and (c) payment approval stay human, with owners. 1: AI decides b."
+      D7: "3: no AI for c (spreadsheet), local approved tool or no AI for b, enterprise tool for a and d. 1: AI for everything."
+      D8: "3: brief decision log for all four. 1: none."

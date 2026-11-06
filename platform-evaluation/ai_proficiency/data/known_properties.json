@@ -1,0 +1,111 @@
+{
+  "seed": 20261106,
+  "raters": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6"
+  ],
+  "severity": {
+    "R1": 0.0,
+    "R2": 0.1,
+    "R3": -0.55,
+    "R4": 0.05,
+    "R5": 0.5,
+    "R6": 0.0
+  },
+  "drift_per_session": {
+    "R6": 0.25
+  },
+  "rater_noise_sd": 0.35,
+  "loading": {
+    "D1": 0.9,
+    "D2": 0.85,
+    "D3": 0.8,
+    "D4": 0.9,
+    "D5": 0.75,
+    "D6": 0.8,
+    "D7": 0.8,
+    "D8": 0.25
+  },
+  "difficulty": {
+    "D1": 0.0,
+    "D2": -0.1,
+    "D3": 0.15,
+    "D4": 0.2,
+    "D5": -0.1,
+    "D6": 0.0,
+    "D7": 0.05,
+    "D8": 0.1
+  },
+  "dif": {
+    "D7|Advising": -0.6
+  },
+  "families": [
+    "HR",
+    "Finance",
+    "Advising",
+    "IT support",
+    "Admin"
+  ],
+  "n_per_family": 30,
+  "n_sessions": 4,
+  "n_calibration": 20,
+  "n_anchors_per_session": 10,
+  "double_rate": 0.2,
+  "angoff_targets": {
+    "explorer": {
+      "D1": 1.7,
+      "D2": 1.6,
+      "D3": 1.5,
+      "D4": 1.7,
+      "D5": 2.2,
+      "D6": 1.8,
+      "D7": 1.6,
+      "D8": 1.4
+    },
+    "catalyst": {
+      "D1": 2.3,
+      "D2": 2.2,
+      "D3": 2.0,
+      "D4": 2.4,
+      "D5": 3.0,
+      "D6": 2.5,
+      "D7": 2.2,
+      "D8": 2.0
+    },
+    "practitioner": {
+      "D1": 3.2,
+      "D2": 3.1,
+      "D3": 3.0,
+      "D4": 3.3,
+      "D5": 3.4,
+      "D6": 3.3,
+      "D7": 3.0,
+      "D8": 2.8
+    }
+  },
+  "angoff_target_totals": {
+    "explorer": 13.5,
+    "catalyst": 18.6,
+    "practitioner": 25.1
+  },
+  "expected": {
+    "most_severe_rater": "R3",
+    "most_lenient_rater": "R5",
+    "drifting_raters": [
+      "R6"
+    ],
+    "static_bias_raters": [
+      "R3",
+      "R5"
+    ],
+    "weakest_item": "D8",
+    "dif_flag": [
+      "D7",
+      "Advising"
+    ]
+  }
+}

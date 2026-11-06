@@ -1,0 +1,5 @@
+# Runtime: Python 3.13 standard library + numpy.
+numpy>=2.0
+# Optional, tests only: PyYAML is used (if present) to cross-check the stdlib YAML reader.
+# pyyaml>=6.0
+# Optional, screenshot check only (Node): playwright (npm), run with `node screenshot_check.js`.
