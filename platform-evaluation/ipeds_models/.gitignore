@@ -1,0 +1,4 @@
+# Regenerable: python ipeds_models/acquire_finance.py && python ipeds_models/build_panel.py && python ipeds_models/models.py
+data/
+artifacts/*.parquet
+__pycache__/

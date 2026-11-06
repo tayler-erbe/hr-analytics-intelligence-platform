@@ -1,0 +1,18 @@
+{
+ "run_at_utc": "2026-11-06T14:55:32+00:00",
+ "seed": 20240,
+ "quick": false,
+ "bootstrap_reps": 1000,
+ "panel_sha256": "b68d0796062ccac49a0048138b01cc362fee8ac2140b8c6aa1b880777c3aacdd",
+ "versions": {
+  "python": "3.13.18",
+  "numpy": "2.4.6",
+  "pandas": "2.3.3",
+  "scikit-learn": "1.9.1",
+  "lightgbm": "4.7.0",
+  "statsmodels": "0.15.0"
+ },
+ "validation_predictions_rows": 188212,
+ "uofi_rows": 546,
+ "runtime_seconds": 1371.6
+}

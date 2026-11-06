@@ -1,0 +1,992 @@
+{
+ "built_at_utc": "2026-11-06T14:55:27.730894+00:00",
+ "years": [
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023
+ ],
+ "thresholds": {
+  "shift_caution": 0.15,
+  "shift_exclude": 0.35,
+  "min_ft_instr": 20,
+  "min_group_ft": 20,
+  "min_rank_n": 10,
+  "min_fte": 200,
+  "pay_min": 25000,
+  "pay_max": 450000
+ },
+ "summary": {
+  "institution_years": 25211,
+  "institutions": 3462,
+  "by_year": {
+   "2015": 3087,
+   "2016": 2933,
+   "2017": 2907,
+   "2018": 2801,
+   "2019": 2730,
+   "2020": 2690,
+   "2021": 2680,
+   "2022": 2696,
+   "2023": 2687
+  },
+  "by_sector_2023": {
+   "1": 811,
+   "2": 1595,
+   "3": 281
+  },
+  "excluded_share": {
+   "staff": 0.0211,
+   "tenure": 0.0129,
+   "new_hires": 0.1304,
+   "faculty_pay": 0.0131,
+   "enrollment": 0.0286
+  },
+  "flags_by_code": {
+   "PANDEMIC_PERIOD|info": 5370,
+   "EQ9_METHOD_2015|caution": 3087,
+   "NEW_HIRE_WINDOW_2015|exclude": 3087,
+   "SOC2018_CATEGORY_BASIS|caution": 2801,
+   "LEVEL_SHIFT_FTE12|caution": 1727,
+   "LEVEL_SHIFT_PUBLISHED_GRAND_TOTAL|caution": 1380,
+   "LEVEL_SHIFT_FAC_PAY_REAL_7|caution": 714,
+   "LEVEL_SHIFT_FT_INSTR|caution": 534,
+   "LEVEL_SHIFT_FTE12|exclude": 511,
+   "LEVEL_SHIFT_PUBLISHED_GRAND_TOTAL|exclude": 326,
+   "IMPLAUSIBLE_PAY|caution": 239,
+   "PARENT_INCLUDES_CHILD_CAMPUSES|exclude": 147,
+   "IMPUTED_VALUES|exclude": 143,
+   "LEVEL_SHIFT_FAC_PAY_REAL_7|exclude": 118,
+   "LEVEL_SHIFT_FT_INSTR|exclude": 117,
+   "HR_RESPONSE_STATUS|exclude": 68,
+   "HR_IMPUTED_BY_NCES|exclude": 67,
+   "MISSING_HR_YEAR|exclude": 2
+  },
+  "peer_benchmarks_exclude_flags_unioned": 3,
+  "finance_research_nonnull": 20531,
+  "uofi": [
+   [
+    "145600",
+    2015,
+    12279,
+    43.225141679546624,
+    42.01252266739659,
+    124074.40914656519,
+    359600769.16893554,
+    false,
+    false
+   ],
+   [
+    "145600",
+    2016,
+    12473,
+    42.34642497482377,
+    42.54092769440655,
+    125339.20895169227,
+    360127337.11320406,
+    false,
+    false
+   ],
+   [
+    "145600",
+    2017,
+    12664,
+    42.036044812469555,
+    40.722876069200595,
+    126274.01455609796,
+    378404832.0085968,
+    false,
+    false
+   ],
+   [
+    "145600",
+    2018,
+    13059,
+    40.987424312994875,
+    40.80427446569179,
+    123258.03373266826,
+    359105350.22351235,
+    false,
+    false
+   ],
+   [
+    "145600",
+    2019,
+    13134,
+    40.59496567505721,
+    39.942825862173834,
+    129395.31244346818,
+    358771906.54017174,
+    false,
+    false
+   ],
+   [
+    "145600",
+    2020,
+    13745,
+    41.77777777777778,
+    40.46098142533337,
+    133127.1507846582,
+    391280561.9997485,
+    false,
+    false
+   ],
+   [
+    "145600",
+    2021,
+    13856,
+    40.95532950022114,
+    40.699074754002055,
+    126645.63724258733,
+    401091892.1867277,
+    false,
+    false
+   ],
+   [
+    "145600",
+    2022,
+    13770,
+    40.25294374182294,
+    41.36377290477621,
+    121061.69973917057,
+    376351631.3024851,
+    false,
+    false
+   ],
+   [
+    "145600",
+    2023,
+    14460,
+    39.30948419301165,
+    43.325842696629216,
+    128703.0,
+    349582082.0,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2015,
+    11722,
+    57.46268656716418,
+    23.069353695977327,
+    138374.94654984944,
+    693872185.3535564,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2016,
+    11466,
+    56.53914590747331,
+    21.953320951961555,
+    136621.99584563068,
+    667068491.9770628,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2017,
+    11500,
+    56.15418309242225,
+    22.32792932724978,
+    137461.52469357837,
+    705579587.2828996,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2018,
+    11697,
+    55.453752181500874,
+    22.021198486360298,
+    138643.1337474747,
+    656942531.2192359,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2019,
+    12002,
+    53.62134688691233,
+    21.705398318111946,
+    138960.53820381235,
+    728732378.4811897,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2020,
+    12431,
+    53.45110928512736,
+    21.988537871015673,
+    135763.4601109377,
+    747230122.8293474,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2021,
+    12083,
+    54.64300453982666,
+    20.370557691010855,
+    129351.38878581498,
+    777343326.6303245,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2022,
+    12223,
+    53.32778702163061,
+    20.797318450963044,
+    126086.13835082392,
+    754912950.5866535,
+    false,
+    false
+   ],
+   [
+    "145637",
+    2023,
+    12905,
+    51.080864691753405,
+    21.69928705945655,
+    127603.0,
+    690867906.0,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2015,
+    879,
+    50.0,
+    20.11902037079423,
+    87171.30526695348,
+    2526003.4289609874,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2016,
+    884,
+    48.113207547169814,
+    21.027592768791628,
+    86197.73623652672,
+    2188207.4703040035,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2017,
+    875,
+    55.23809523809524,
+    24.064906490649065,
+    92022.79164941235,
+    3243581.951080683,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2018,
+    878,
+    55.3921568627451,
+    24.538848518725544,
+    87436.06454748259,
+    2793248.2074867897,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2019,
+    845,
+    54.72636815920398,
+    25.629360024264482,
+    87568.51056868688,
+    2173001.9450184004,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2020,
+    858,
+    53.960396039603964,
+    26.48148148148148,
+    87494.64798841474,
+    3731091.770652934,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2021,
+    828,
+    59.16230366492147,
+    26.428343440791572,
+    82748.79750010563,
+    4748085.738094964,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2022,
+    832,
+    58.79396984924623,
+    23.66325369738339,
+    81890.91187858362,
+    5033093.992230453,
+    false,
+    false
+   ],
+   [
+    "148654",
+    2023,
+    879,
+    58.76288659793814,
+    23.180379746835442,
+    86153.0,
+    1514872.0,
+    false,
+    false
+   ]
+  ]
+ },
+ "source_members": [
+  {
+   "file": "HD2015",
+   "member": "hd2015.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "FLAGS2015",
+   "member": "flags2015.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "S2015_OC",
+   "member": "s2015_oc_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "S2015_IS",
+   "member": "s2015_is_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "S2015_NH",
+   "member": "s2015_nh_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "SAL2015_IS",
+   "member": "sal2015_is_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "SAL2015_NIS",
+   "member": "sal2015_nis_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "EF2015A",
+   "member": "ef2015a_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "EFIA2016",
+   "member": "efia2016_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "F1415_F1A",
+   "member": "f1415_f1a_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "F1415_F2",
+   "member": "f1415_f2_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "HD2016",
+   "member": "hd2016.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "FLAGS2016",
+   "member": "flags2016.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "S2016_OC",
+   "member": "s2016_oc_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "S2016_IS",
+   "member": "s2016_is_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "S2016_NH",
+   "member": "s2016_nh_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "SAL2016_IS",
+   "member": "sal2016_is_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "SAL2016_NIS",
+   "member": "sal2016_nis_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "EF2016A",
+   "member": "ef2016a_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "EFIA2017",
+   "member": "efia2017_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "F1516_F1A",
+   "member": "f1516_f1a_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "F1516_F2",
+   "member": "f1516_f2_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "HD2017",
+   "member": "hd2017.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "FLAGS2017",
+   "member": "flags2017.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "S2017_OC",
+   "member": "s2017_oc_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "S2017_IS",
+   "member": "s2017_is_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "S2017_NH",
+   "member": "s2017_nh_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "SAL2017_IS",
+   "member": "sal2017_is_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "SAL2017_NIS",
+   "member": "sal2017_nis_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "EF2017A",
+   "member": "ef2017a_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "EFIA2018",
+   "member": "efia2018_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "F1617_F1A",
+   "member": "f1617_f1a_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "F1617_F2",
+   "member": "f1617_f2_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "HD2018",
+   "member": "hd2018.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "FLAGS2018",
+   "member": "flags2018.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "S2018_OC",
+   "member": "s2018_oc_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "S2018_IS",
+   "member": "s2018_is_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "S2018_NH",
+   "member": "s2018_nh_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "SAL2018_IS",
+   "member": "sal2018_is_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "SAL2018_NIS",
+   "member": "sal2018_nis_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "EF2018A",
+   "member": "ef2018a_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "EFIA2019",
+   "member": "efia2019_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "F1718_F1A",
+   "member": "f1718_f1a_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "F1718_F2",
+   "member": "f1718_f2_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "HD2019",
+   "member": "hd2019.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "FLAGS2019",
+   "member": "flags2019.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "S2019_OC",
+   "member": "s2019_oc_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "S2019_IS",
+   "member": "s2019_is_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "S2019_NH",
+   "member": "s2019_nh_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "SAL2019_IS",
+   "member": "sal2019_is_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "SAL2019_NIS",
+   "member": "sal2019_nis_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "EF2019A",
+   "member": "ef2019a_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "EFIA2020",
+   "member": "efia2020_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "F1819_F1A",
+   "member": "f1819_f1a_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "F1819_F2",
+   "member": "f1819_f2_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "HD2020",
+   "member": "hd2020.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "FLAGS2020",
+   "member": "flags2020.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "S2020_OC",
+   "member": "s2020_oc_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "S2020_IS",
+   "member": "s2020_is_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "S2020_NH",
+   "member": "s2020_nh_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "SAL2020_IS",
+   "member": "sal2020_is_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "SAL2020_NIS",
+   "member": "sal2020_nis_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "EF2020A",
+   "member": "ef2020a_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "EFIA2021",
+   "member": "efia2021_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "F1920_F1A",
+   "member": "f1920_f1a_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "F1920_F2",
+   "member": "f1920_f2_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "HD2021",
+   "member": "hd2021.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "FLAGS2021",
+   "member": "flags2021.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "S2021_OC",
+   "member": "s2021_oc_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "S2021_IS",
+   "member": "s2021_is_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "S2021_NH",
+   "member": "s2021_nh_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "SAL2021_IS",
+   "member": "sal2021_is_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "SAL2021_NIS",
+   "member": "sal2021_nis_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "EF2021A",
+   "member": "ef2021a_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "EFIA2022",
+   "member": "efia2022_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "F2021_F1A",
+   "member": "f2021_f1a_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "F2021_F2",
+   "member": "f2021_f2_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "HD2022",
+   "member": "hd2022.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "FLAGS2022",
+   "member": "flags2022.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "S2022_OC",
+   "member": "s2022_oc_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "S2022_IS",
+   "member": "s2022_is_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "S2022_NH",
+   "member": "s2022_nh_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "SAL2022_IS",
+   "member": "sal2022_is_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "SAL2022_NIS",
+   "member": "sal2022_nis_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "EF2022A",
+   "member": "ef2022a_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "EFIA2023",
+   "member": "EFIA2023_RV.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "F2122_F1A",
+   "member": "f2122_f1a_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "F2122_F2",
+   "member": "f2122_f2_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "HD2023",
+   "member": "HD2023.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "FLAGS2023",
+   "member": "Flags2023.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "S2023_OC",
+   "member": "s2023_oc.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "S2023_IS",
+   "member": "s2023_is.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "S2023_NH",
+   "member": "s2023_nh.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "SAL2023_IS",
+   "member": "sal2023_is.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "SAL2023_NIS",
+   "member": "sal2023_nis.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "EF2023A",
+   "member": "ef2023a.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "EFIA2024",
+   "member": "EFIA2024.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "F2223_F1A",
+   "member": "f2223_f1a.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "F2223_F2",
+   "member": "f2223_f2.csv",
+   "fall_year": 2023
+  }
+ ],
+ "columns": [
+  "unitid",
+  "year",
+  "name",
+  "state",
+  "sector",
+  "carnegie_basic",
+  "carnegie_group",
+  "instsize",
+  "hospital",
+  "medical",
+  "landgrant",
+  "hbcu",
+  "region",
+  "staff_total",
+  "staff_ft",
+  "published_grand_total",
+  "published_ft_total",
+  "graduate_assistants",
+  "staff_210",
+  "staff_ft_210",
+  "staff_220",
+  "staff_ft_220",
+  "staff_230",
+  "staff_ft_230",
+  "staff_250",
+  "staff_ft_250",
+  "staff_300",
+  "staff_ft_300",
+  "staff_310",
+  "staff_ft_310",
+  "staff_320",
+  "staff_ft_320",
+  "staff_330",
+  "staff_ft_330",
+  "staff_340",
+  "staff_ft_340",
+  "staff_350",
+  "staff_ft_350",
+  "staff_360",
+  "staff_ft_360",
+  "staff_370",
+  "staff_ft_370",
+  "staff_380",
+  "staff_ft_380",
+  "staff_390",
+  "staff_ft_390",
+  "ft_instr",
+  "ft_instr_published",
+  "tenured",
+  "tenure_track",
+  "non_tenure_track",
+  "no_faculty_status",
+  "tenured_share",
+  "tenure_track_share",
+  "nh_filed",
+  "nh_total_published",
+  "nh_210",
+  "nh_220",
+  "nh_230",
+  "nh_250",
+  "nh_300",
+  "nh_310",
+  "nh_320",
+  "nh_330",
+  "nh_340",
+  "nh_350",
+  "nh_360",
+  "nh_370",
+  "nh_380",
+  "nh_390",
+  "nh_rate_all",
+  "nh_rate_210",
+  "nh_rate_220",
+  "nh_rate_230",
+  "nh_rate_250",
+  "nh_rate_300",
+  "nh_rate_310",
+  "nh_rate_320",
+  "nh_rate_330",
+  "nh_rate_340",
+  "nh_rate_350",
+  "nh_rate_360",
+  "nh_rate_370",
+  "nh_rate_380",
+  "nh_rate_390",
+  "fac_n_7",
+  "fac_n_1",
+  "fac_n_2",
+  "fac_n_3",
+  "fac_pay_real_7",
+  "fac_pay_real_1",
+  "fac_pay_real_2",
+  "fac_pay_real_3",
+  "nis_ft_n",
+  "nis_pay_real",
+  "fte12",
+  "fall_fte",
+  "fall_headcount",
+  "fte12_grad",
+  "grad_fte_share",
+  "staff_per_100_fte",
+  "research_exp_real",
+  "total_exp_real",
+  "research_per_fte",
+  "stat_hr",
+  "prch_hr",
+  "imp_hr",
+  "prch_f",
+  "oc_imputed_cells",
+  "is_imputed_cells",
+  "nh_imputed_cells",
+  "sal_imputed_cells",
+  "nis_imputed",
+  "fte_imputed",
+  "excl_staff",
+  "excl_tenure",
+  "excl_new_hires",
+  "excl_faculty_pay",
+  "excl_enrollment",
+  "is_uofi",
+  "is_big_ten"
+ ]
+}

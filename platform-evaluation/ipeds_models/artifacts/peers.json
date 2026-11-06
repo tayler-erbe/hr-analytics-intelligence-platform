@@ -1,0 +1,2832 @@
+{
+ "k": 15,
+ "universe": 2687,
+ "features": {
+  "full": [
+   "log_fte",
+   "log_staff",
+   "staff_per_100_fte",
+   "grad_fte_share",
+   "log_research_per_fte",
+   "research_exp_share",
+   "research_share",
+   "instr_share",
+   "health_share",
+   "tenured_share",
+   "log_pay7",
+   "ga_per_100_fte",
+   "medical",
+   "hospital",
+   "public",
+   "r1",
+   "landgrant"
+  ],
+  "no_medical": [
+   "log_fte",
+   "log_staff",
+   "staff_per_100_fte",
+   "grad_fte_share",
+   "log_research_per_fte",
+   "research_exp_share",
+   "research_share",
+   "instr_share",
+   "tenured_share",
+   "log_pay7",
+   "ga_per_100_fte",
+   "public",
+   "r1",
+   "landgrant"
+  ]
+ },
+ "labels": {
+  "log_fte": "Student FTE (log)",
+  "log_staff": "Staff headcount (log)",
+  "staff_per_100_fte": "Staff per 100 FTE",
+  "grad_fte_share": "Graduate share of FTE",
+  "log_research_per_fte": "Research $ per FTE (log)",
+  "research_exp_share": "Research share of expenses",
+  "research_share": "Research staff share",
+  "instr_share": "Instructional staff share",
+  "health_share": "Healthcare staff share",
+  "tenured_share": "Tenured share",
+  "log_pay7": "Faculty pay (log, real)",
+  "ga_per_100_fte": "Grad assistants per 100 FTE",
+  "medical": "Medical school",
+  "hospital": "Hospital",
+  "public": "Public",
+  "r1": "R1",
+  "landgrant": "Land grant"
+ },
+ "campuses": {
+  "145637": {
+   "name": "University of Illinois Urbana-Champaign",
+   "short": "UIUC",
+   "full": {
+    "neighbours": [
+     {
+      "unitid": "199193",
+      "name": "North Carolina State University at Raleigh",
+      "state": "NC",
+      "distance": 1.091,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "233921",
+      "name": "Virginia Polytechnic Institute and State University",
+      "state": "VA",
+      "distance": 1.305,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "243780",
+      "name": "Purdue University-Main Campus",
+      "state": "IN",
+      "distance": 1.338,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "139959",
+      "name": "University of Georgia",
+      "state": "GA",
+      "distance": 1.685,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "104179",
+      "name": "University of Arizona",
+      "state": "AZ",
+      "distance": 1.724,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "171100",
+      "name": "Michigan State University",
+      "state": "MI",
+      "distance": 1.873,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "174066",
+      "name": "University of Minnesota-Twin Cities",
+      "state": "MN",
+      "distance": 1.895,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "159391",
+      "name": "Louisiana State University and Agricultural & Mechanical College",
+      "state": "LA",
+      "distance": 2.024,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "221759",
+      "name": "The University of Tennessee-Knoxville",
+      "state": "TN",
+      "distance": 2.029,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "236939",
+      "name": "Washington State University",
+      "state": "WA",
+      "distance": 2.039,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "141574",
+      "name": "University of Hawaii at Manoa",
+      "state": "HI",
+      "distance": 2.086,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "228723",
+      "name": "Texas A & M University-College Station",
+      "state": "TX",
+      "distance": 2.105,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "100858",
+      "name": "Auburn University",
+      "state": "AL",
+      "distance": 2.131,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "155399",
+      "name": "Kansas State University",
+      "state": "KS",
+      "distance": 2.159,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "153603",
+      "name": "Iowa State University",
+      "state": "IA",
+      "distance": 2.481,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     }
+    ],
+    "big_ten_ranks": [
+     {
+      "unitid": "243780",
+      "name": "Purdue University-Main Campus",
+      "rank": 3,
+      "distance": 1.338,
+      "top_gaps": [
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -1.01
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": 0.6
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.54
+       }
+      ]
+     },
+     {
+      "unitid": "171100",
+      "name": "Michigan State University",
+      "rank": 6,
+      "distance": 1.873,
+      "top_gaps": [
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -1.24
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 0.76
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.69
+       }
+      ]
+     },
+     {
+      "unitid": "174066",
+      "name": "University of Minnesota-Twin Cities",
+      "rank": 7,
+      "distance": 1.895,
+      "top_gaps": [
+       {
+        "feature": "Research staff share",
+        "z_diff": 1.12
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 0.92
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -0.75
+       }
+      ]
+     },
+     {
+      "unitid": "181464",
+      "name": "University of Nebraska-Lincoln",
+      "rank": 20,
+      "distance": 4.044,
+      "top_gaps": [
+       {
+        "feature": "Medical school",
+        "z_diff": -3.74
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.76
+       },
+       {
+        "feature": "Student FTE (log)",
+        "z_diff": -0.6
+       }
+      ]
+     },
+     {
+      "unitid": "163286",
+      "name": "University of Maryland-College Park",
+      "rank": 24,
+      "distance": 4.438,
+      "top_gaps": [
+       {
+        "feature": "Research staff share",
+        "z_diff": 4.29
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.63
+       },
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -0.54
+       }
+      ]
+     },
+     {
+      "unitid": "240444",
+      "name": "University of Wisconsin-Madison",
+      "rank": 42,
+      "distance": 5.942,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 1.94
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.2
+       }
+      ]
+     },
+     {
+      "unitid": "110662",
+      "name": "University of California-Los Angeles",
+      "rank": 66,
+      "distance": 6.664,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": 2.36
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.14
+       }
+      ]
+     },
+     {
+      "unitid": "209551",
+      "name": "University of Oregon",
+      "rank": 78,
+      "distance": 7.007,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Medical school",
+        "z_diff": -3.74
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.29
+       }
+      ]
+     },
+     {
+      "unitid": "151351",
+      "name": "Indiana University-Bloomington",
+      "rank": 86,
+      "distance": 7.134,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Medical school",
+        "z_diff": -3.74
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.6
+       }
+      ]
+     },
+     {
+      "unitid": "186380",
+      "name": "Rutgers University-New Brunswick",
+      "rank": 94,
+      "distance": 7.441,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": 4.21
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -2.4
+       }
+      ]
+     },
+     {
+      "unitid": "170976",
+      "name": "University of Michigan-Ann Arbor",
+      "rank": 123,
+      "distance": 8.155,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.36
+       }
+      ]
+     },
+     {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "rank": 133,
+      "distance": 8.319,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": 2.9
+       }
+      ]
+     },
+     {
+      "unitid": "214777",
+      "name": "Pennsylvania State University-Main Campus",
+      "rank": 179,
+      "distance": 8.856,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -3.91
+       }
+      ]
+     },
+     {
+      "unitid": "236948",
+      "name": "University of Washington-Seattle Campus",
+      "rank": 266,
+      "distance": 9.466,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -3.91
+       }
+      ]
+     },
+     {
+      "unitid": "204796",
+      "name": "Ohio State University-Main Campus",
+      "rank": 473,
+      "distance": 10.015,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": 7.65
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.54
+       }
+      ]
+     }
+    ],
+    "overlap_top_k_big_ten": 3,
+    "median_big_ten_rank": 78.0,
+    "median_distance_top_k": 2.0244273851070917,
+    "median_distance_big_ten": 7.007,
+    "focal_missing_features": 0,
+    "overlap_top_25_big_ten": 5
+   },
+   "no_medical": {
+    "neighbours": [
+     {
+      "unitid": "134130",
+      "name": "University of Florida",
+      "state": "FL",
+      "distance": 0.95,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "199193",
+      "name": "North Carolina State University at Raleigh",
+      "state": "NC",
+      "distance": 1.091,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "233921",
+      "name": "Virginia Polytechnic Institute and State University",
+      "state": "VA",
+      "distance": 1.259,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "243780",
+      "name": "Purdue University-Main Campus",
+      "state": "IN",
+      "distance": 1.329,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "181464",
+      "name": "University of Nebraska-Lincoln",
+      "state": "NE",
+      "distance": 1.462,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "139959",
+      "name": "University of Georgia",
+      "state": "GA",
+      "distance": 1.676,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "104179",
+      "name": "University of Arizona",
+      "state": "AZ",
+      "distance": 1.712,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "217882",
+      "name": "Clemson University",
+      "state": "SC",
+      "distance": 1.716,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "171100",
+      "name": "Michigan State University",
+      "state": "MI",
+      "distance": 1.821,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "174066",
+      "name": "University of Minnesota-Twin Cities",
+      "state": "MN",
+      "distance": 1.846,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "155399",
+      "name": "Kansas State University",
+      "state": "KS",
+      "distance": 1.943,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "159391",
+      "name": "Louisiana State University and Agricultural & Mechanical College",
+      "state": "LA",
+      "distance": 1.986,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "228723",
+      "name": "Texas A & M University-College Station",
+      "state": "TX",
+      "distance": 2.0,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "221759",
+      "name": "The University of Tennessee-Knoxville",
+      "state": "TN",
+      "distance": 2.006,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "236939",
+      "name": "Washington State University",
+      "state": "WA",
+      "distance": 2.013,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     }
+    ],
+    "big_ten_ranks": [
+     {
+      "unitid": "243780",
+      "name": "Purdue University-Main Campus",
+      "rank": 4,
+      "distance": 1.329,
+      "top_gaps": [
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -1.01
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": 0.6
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.54
+       }
+      ]
+     },
+     {
+      "unitid": "181464",
+      "name": "University of Nebraska-Lincoln",
+      "rank": 5,
+      "distance": 1.462,
+      "top_gaps": [
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.76
+       },
+       {
+        "feature": "Student FTE (log)",
+        "z_diff": -0.6
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -0.55
+       }
+      ]
+     },
+     {
+      "unitid": "171100",
+      "name": "Michigan State University",
+      "rank": 9,
+      "distance": 1.821,
+      "top_gaps": [
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -1.24
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 0.76
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.69
+       }
+      ]
+     },
+     {
+      "unitid": "174066",
+      "name": "University of Minnesota-Twin Cities",
+      "rank": 10,
+      "distance": 1.846,
+      "top_gaps": [
+       {
+        "feature": "Research staff share",
+        "z_diff": 1.12
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 0.92
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -0.75
+       }
+      ]
+     },
+     {
+      "unitid": "240444",
+      "name": "University of Wisconsin-Madison",
+      "rank": 25,
+      "distance": 2.658,
+      "top_gaps": [
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 1.94
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.2
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": 0.74
+       }
+      ]
+     },
+     {
+      "unitid": "186380",
+      "name": "Rutgers University-New Brunswick",
+      "rank": 31,
+      "distance": 3.118,
+      "top_gaps": [
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -2.4
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.35
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -1.14
+       }
+      ]
+     },
+     {
+      "unitid": "110662",
+      "name": "University of California-Los Angeles",
+      "rank": 35,
+      "distance": 3.307,
+      "top_gaps": [
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.14
+       },
+       {
+        "feature": "Faculty pay (log, real)",
+        "z_diff": 1.48
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.48
+       }
+      ]
+     },
+     {
+      "unitid": "204796",
+      "name": "Ohio State University-Main Campus",
+      "rank": 40,
+      "distance": 3.725,
+      "top_gaps": [
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.54
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": -1.8
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.14
+       }
+      ]
+     },
+     {
+      "unitid": "163286",
+      "name": "University of Maryland-College Park",
+      "rank": 41,
+      "distance": 4.405,
+      "top_gaps": [
+       {
+        "feature": "Research staff share",
+        "z_diff": 4.29
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.63
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": 0.36
+       }
+      ]
+     },
+     {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "rank": 63,
+      "distance": 5.737,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -1.99
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.1
+       }
+      ]
+     },
+     {
+      "unitid": "209551",
+      "name": "University of Oregon",
+      "rank": 67,
+      "distance": 5.918,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.29
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -1.25
+       }
+      ]
+     },
+     {
+      "unitid": "151351",
+      "name": "Indiana University-Bloomington",
+      "rank": 73,
+      "distance": 6.053,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.6
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -1.59
+       }
+      ]
+     },
+     {
+      "unitid": "170976",
+      "name": "University of Michigan-Ann Arbor",
+      "rank": 87,
+      "distance": 6.211,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -2.36
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.76
+       }
+      ]
+     },
+     {
+      "unitid": "214777",
+      "name": "Pennsylvania State University-Main Campus",
+      "rank": 132,
+      "distance": 7.106,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -3.91
+       },
+       {
+        "feature": "Research $ per FTE (log)",
+        "z_diff": -2.36
+       }
+      ]
+     },
+     {
+      "unitid": "236948",
+      "name": "University of Washington-Seattle Campus",
+      "rank": 160,
+      "distance": 7.631,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": -5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -3.91
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 3.12
+       }
+      ]
+     }
+    ],
+    "overlap_top_k_big_ten": 4,
+    "median_big_ten_rank": 40.0,
+    "median_distance_top_k": 1.7158152113664435,
+    "median_distance_big_ten": 3.725,
+    "focal_missing_features": 0,
+    "overlap_top_25_big_ten": 5
+   },
+   "profile": {
+    "log_fte": 10.9884,
+    "log_staff": 9.4253,
+    "staff_per_100_fte": 20.9557,
+    "grad_fte_share": 39.0283,
+    "log_research_per_fte": 9.434,
+    "research_exp_share": 0.2382,
+    "research_share": 0.0531,
+    "instr_share": 0.2251,
+    "health_share": 0.0214,
+    "tenured_share": 53.0172,
+    "log_pay7": 11.7572,
+    "ga_per_100_fte": 10.4475,
+    "medical": 1.0,
+    "hospital": 0.0,
+    "public": 1.0,
+    "r1": 1.0,
+    "landgrant": 1.0
+   }
+  },
+  "145600": {
+   "name": "University of Illinois Chicago",
+   "short": "UIC",
+   "full": {
+    "neighbours": [
+     {
+      "unitid": "206084",
+      "name": "University of Toledo",
+      "state": "OH",
+      "distance": 5.335,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "176017",
+      "name": "University of Mississippi",
+      "state": "MS",
+      "distance": 5.702,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "204796",
+      "name": "Ohio State University-Main Campus",
+      "state": "OH",
+      "distance": 5.726,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "228802",
+      "name": "The University of Texas at Tyler",
+      "state": "TX",
+      "distance": 5.78,
+      "big_ten": false,
+      "carnegie": "D/PU",
+      "sector": 1
+     },
+     {
+      "unitid": "229337",
+      "name": "Texas Tech University Health Sciences Center",
+      "state": "TX",
+      "distance": 6.258,
+      "big_ten": false,
+      "carnegie": "Special focus",
+      "sector": 1
+     },
+     {
+      "unitid": "157289",
+      "name": "University of Louisville",
+      "state": "KY",
+      "distance": 6.375,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "state": "IA",
+      "distance": 6.641,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "482149",
+      "name": "Augusta University",
+      "state": "GA",
+      "distance": 6.73,
+      "big_ten": false,
+      "carnegie": "D/PU",
+      "sector": 1
+     },
+     {
+      "unitid": "126562",
+      "name": "University of Colorado Denver/Anschutz Medical Campus",
+      "state": "CO",
+      "distance": 6.79,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "135726",
+      "name": "University of Miami",
+      "state": "FL",
+      "distance": 6.907,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 2
+     },
+     {
+      "unitid": "181428",
+      "name": "University of Nebraska Medical Center",
+      "state": "NE",
+      "distance": 7.227,
+      "big_ten": false,
+      "carnegie": "Special focus",
+      "sector": 1
+     },
+     {
+      "unitid": "230764",
+      "name": "University of Utah",
+      "state": "UT",
+      "distance": 7.526,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "160755",
+      "name": "Tulane University of Louisiana",
+      "state": "LA",
+      "distance": 7.648,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 2
+     },
+     {
+      "unitid": "196307",
+      "name": "Upstate Medical University",
+      "state": "NY",
+      "distance": 7.651,
+      "big_ten": false,
+      "carnegie": "Special focus",
+      "sector": 1
+     },
+     {
+      "unitid": "198419",
+      "name": "Duke University",
+      "state": "NC",
+      "distance": 7.795,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 2
+     }
+    ],
+    "big_ten_ranks": [
+     {
+      "unitid": "204796",
+      "name": "Ohio State University-Main Campus",
+      "rank": 3,
+      "distance": 5.726,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -1.84
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": -1.26
+       }
+      ]
+     },
+     {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "rank": 7,
+      "distance": 6.641,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -6.59
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -0.45
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": -0.35
+       }
+      ]
+     },
+     {
+      "unitid": "186380",
+      "name": "Rutgers University-New Brunswick",
+      "rank": 16,
+      "distance": 7.833,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -2.29
+       }
+      ]
+     },
+     {
+      "unitid": "236948",
+      "name": "University of Washington-Seattle Campus",
+      "rank": 34,
+      "distance": 9.0,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -7.63
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 3.65
+       },
+       {
+        "feature": "Research $ per FTE (log)",
+        "z_diff": -2.32
+       }
+      ]
+     },
+     {
+      "unitid": "110662",
+      "name": "University of California-Los Angeles",
+      "rank": 35,
+      "distance": 9.001,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -7.13
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Faculty pay (log, real)",
+        "z_diff": 1.54
+       }
+      ]
+     },
+     {
+      "unitid": "170976",
+      "name": "University of Michigan-Ann Arbor",
+      "rank": 41,
+      "distance": 9.484,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -9.35
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": -0.91
+       },
+       {
+        "feature": "Instructional staff share",
+        "z_diff": 0.75
+       }
+      ]
+     },
+     {
+      "unitid": "214777",
+      "name": "Pennsylvania State University-Main Campus",
+      "rank": 56,
+      "distance": 10.149,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -9.61
+       },
+       {
+        "feature": "Research $ per FTE (log)",
+        "z_diff": -2.32
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -1.7
+       }
+      ]
+     },
+     {
+      "unitid": "240444",
+      "name": "University of Wisconsin-Madison",
+      "rank": 82,
+      "distance": 11.187,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -8.91
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 4.15
+       }
+      ]
+     },
+     {
+      "unitid": "209551",
+      "name": "University of Oregon",
+      "rank": 126,
+      "distance": 11.99,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -9.76
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": -5.28
+       },
+       {
+        "feature": "Medical school",
+        "z_diff": -3.74
+       }
+      ]
+     },
+     {
+      "unitid": "151351",
+      "name": "Indiana University-Bloomington",
+      "rank": 133,
+      "distance": 12.084,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -9.98
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": -5.28
+       },
+       {
+        "feature": "Medical school",
+        "z_diff": -3.74
+       }
+      ]
+     },
+     {
+      "unitid": "171100",
+      "name": "Michigan State University",
+      "rank": 134,
+      "distance": 12.116,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -9.05
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": -5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       }
+      ]
+     },
+     {
+      "unitid": "174066",
+      "name": "University of Minnesota-Twin Cities",
+      "rank": 144,
+      "distance": 12.207,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -9.06
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": -5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       }
+      ]
+     },
+     {
+      "unitid": "243780",
+      "name": "Purdue University-Main Campus",
+      "rank": 156,
+      "distance": 12.325,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -9.65
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": -5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       }
+      ]
+     },
+     {
+      "unitid": "181464",
+      "name": "University of Nebraska-Lincoln",
+      "rank": 251,
+      "distance": 13.166,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -9.95
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": -5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       }
+      ]
+     },
+     {
+      "unitid": "163286",
+      "name": "University of Maryland-College Park",
+      "rank": 498,
+      "distance": 13.662,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": -10.03
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": -5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       }
+      ]
+     }
+    ],
+    "overlap_top_k_big_ten": 2,
+    "median_big_ten_rank": 82.0,
+    "median_distance_top_k": 6.729910357087726,
+    "median_distance_big_ten": 11.187,
+    "focal_missing_features": 0,
+    "overlap_top_25_big_ten": 3
+   },
+   "no_medical": {
+    "neighbours": [
+     {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "state": "IA",
+      "distance": 0.809,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "234076",
+      "name": "University of Virginia-Main Campus",
+      "state": "VA",
+      "distance": 1.487,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "170976",
+      "name": "University of Michigan-Ann Arbor",
+      "state": "MI",
+      "distance": 1.588,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "230764",
+      "name": "University of Utah",
+      "state": "UT",
+      "distance": 1.755,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "218663",
+      "name": "University of South Carolina-Columbia",
+      "state": "SC",
+      "distance": 1.913,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "151351",
+      "name": "Indiana University-Bloomington",
+      "state": "IN",
+      "distance": 2.101,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "134097",
+      "name": "Florida State University",
+      "state": "FL",
+      "distance": 2.148,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "228787",
+      "name": "The University of Texas at Dallas",
+      "state": "TX",
+      "distance": 2.173,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "207500",
+      "name": "University of Oklahoma-Norman Campus",
+      "state": "OK",
+      "distance": 2.204,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "100751",
+      "name": "The University of Alabama",
+      "state": "AL",
+      "distance": 2.347,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "176017",
+      "name": "University of Mississippi",
+      "state": "MS",
+      "distance": 2.361,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "228778",
+      "name": "The University of Texas at Austin",
+      "state": "TX",
+      "distance": 2.434,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "225511",
+      "name": "University of Houston",
+      "state": "TX",
+      "distance": 2.538,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "209551",
+      "name": "University of Oregon",
+      "state": "OR",
+      "distance": 2.559,
+      "big_ten": true,
+      "carnegie": "R1",
+      "sector": 1
+     },
+     {
+      "unitid": "221999",
+      "name": "Vanderbilt University",
+      "state": "TN",
+      "distance": 2.562,
+      "big_ten": false,
+      "carnegie": "R1",
+      "sector": 2
+     }
+    ],
+    "big_ten_ranks": [
+     {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "rank": 1,
+      "distance": 0.809,
+      "top_gaps": [
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -0.45
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": -0.35
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.32
+       }
+      ]
+     },
+     {
+      "unitid": "170976",
+      "name": "University of Michigan-Ann Arbor",
+      "rank": 3,
+      "distance": 1.588,
+      "top_gaps": [
+       {
+        "feature": "Research staff share",
+        "z_diff": -0.91
+       },
+       {
+        "feature": "Instructional staff share",
+        "z_diff": 0.75
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -0.72
+       }
+      ]
+     },
+     {
+      "unitid": "151351",
+      "name": "Indiana University-Bloomington",
+      "rank": 6,
+      "distance": 2.101,
+      "top_gaps": [
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -1.49
+       },
+       {
+        "feature": "Staff per 100 FTE",
+        "z_diff": -0.62
+       },
+       {
+        "feature": "Graduate share of FTE",
+        "z_diff": -0.6
+       }
+      ]
+     },
+     {
+      "unitid": "209551",
+      "name": "University of Oregon",
+      "rank": 14,
+      "distance": 2.559,
+      "top_gaps": [
+       {
+        "feature": "Tenured share",
+        "z_diff": 1.42
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 1.32
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -1.15
+       }
+      ]
+     },
+     {
+      "unitid": "214777",
+      "name": "Pennsylvania State University-Main Campus",
+      "rank": 39,
+      "distance": 3.263,
+      "top_gaps": [
+       {
+        "feature": "Research $ per FTE (log)",
+        "z_diff": -2.32
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -1.7
+       },
+       {
+        "feature": "Faculty pay (log, real)",
+        "z_diff": -0.87
+       }
+      ]
+     },
+     {
+      "unitid": "236948",
+      "name": "University of Washington-Seattle Campus",
+      "rank": 71,
+      "distance": 4.78,
+      "top_gaps": [
+       {
+        "feature": "Research staff share",
+        "z_diff": 3.65
+       },
+       {
+        "feature": "Research $ per FTE (log)",
+        "z_diff": -2.32
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": -1.7
+       }
+      ]
+     },
+     {
+      "unitid": "204796",
+      "name": "Ohio State University-Main Campus",
+      "rank": 81,
+      "distance": 5.423,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": -1.26
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -0.92
+       }
+      ]
+     },
+     {
+      "unitid": "110662",
+      "name": "University of California-Los Angeles",
+      "rank": 83,
+      "distance": 5.492,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Faculty pay (log, real)",
+        "z_diff": 1.54
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": 0.86
+       }
+      ]
+     },
+     {
+      "unitid": "243780",
+      "name": "Purdue University-Main Campus",
+      "rank": 91,
+      "distance": 5.564,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": 1.65
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 1.21
+       }
+      ]
+     },
+     {
+      "unitid": "181464",
+      "name": "University of Nebraska-Lincoln",
+      "rank": 101,
+      "distance": 5.69,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 1.77
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": 1.4
+       }
+      ]
+     },
+     {
+      "unitid": "186380",
+      "name": "Rutgers University-New Brunswick",
+      "rank": 114,
+      "distance": 5.79,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -2.29
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 1.07
+       }
+      ]
+     },
+     {
+      "unitid": "171100",
+      "name": "Michigan State University",
+      "rank": 178,
+      "distance": 6.086,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 2.97
+       },
+       {
+        "feature": "Grad assistants per 100 FTE",
+        "z_diff": -1.14
+       }
+      ]
+     },
+     {
+      "unitid": "174066",
+      "name": "University of Minnesota-Twin Cities",
+      "rank": 206,
+      "distance": 6.25,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 3.13
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 1.65
+       }
+      ]
+     },
+     {
+      "unitid": "240444",
+      "name": "University of Wisconsin-Madison",
+      "rank": 350,
+      "distance": 6.767,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 4.15
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 1.2
+       }
+      ]
+     },
+     {
+      "unitid": "163286",
+      "name": "University of Maryland-College Park",
+      "rank": 902,
+      "distance": 7.631,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 4.83
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 2.5
+       }
+      ]
+     }
+    ],
+    "overlap_top_k_big_ten": 4,
+    "median_big_ten_rank": 83.0,
+    "median_distance_top_k": 2.1727650014863618,
+    "median_distance_big_ten": 5.492,
+    "focal_missing_features": 0,
+    "overlap_top_25_big_ten": 4
+   },
+   "profile": {
+    "log_fte": 10.4213,
+    "log_staff": 9.5486,
+    "staff_per_100_fte": 41.7962,
+    "grad_fte_share": 37.8605,
+    "log_research_per_fte": 9.3214,
+    "research_exp_share": 0.1036,
+    "research_share": 0.0382,
+    "instr_share": 0.2265,
+    "health_share": 0.2824,
+    "tenured_share": 40.1726,
+    "log_pay7": 11.7395,
+    "ga_per_100_fte": 10.125,
+    "medical": 1.0,
+    "hospital": 1.0,
+    "public": 1.0,
+    "r1": 1.0,
+    "landgrant": 0.0
+   }
+  },
+  "148654": {
+   "name": "University of Illinois Springfield",
+   "short": "UIS",
+   "full": {
+    "neighbours": [
+     {
+      "unitid": "149772",
+      "name": "Western Illinois University",
+      "state": "IL",
+      "distance": 1.105,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "127741",
+      "name": "University of Northern Colorado",
+      "state": "CO",
+      "distance": 1.323,
+      "big_ten": false,
+      "carnegie": "D/PU",
+      "sector": 1
+     },
+     {
+      "unitid": "147703",
+      "name": "Northern Illinois University",
+      "state": "IL",
+      "distance": 1.409,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "144892",
+      "name": "Eastern Illinois University",
+      "state": "IL",
+      "distance": 1.635,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "106245",
+      "name": "University of Arkansas at Little Rock",
+      "state": "AR",
+      "distance": 1.798,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "151324",
+      "name": "Indiana State University",
+      "state": "IN",
+      "distance": 1.863,
+      "big_ten": false,
+      "carnegie": "D/PU",
+      "sector": 1
+     },
+     {
+      "unitid": "167987",
+      "name": "University of Massachusetts-Dartmouth",
+      "state": "MA",
+      "distance": 1.909,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "229063",
+      "name": "Texas Southern University",
+      "state": "TX",
+      "distance": 1.952,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "155681",
+      "name": "Pittsburg State University",
+      "state": "KS",
+      "distance": 1.98,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "225414",
+      "name": "University of Houston-Clear Lake",
+      "state": "TX",
+      "distance": 1.989,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "202134",
+      "name": "Cleveland State University",
+      "state": "OH",
+      "distance": 2.07,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "159939",
+      "name": "University of New Orleans",
+      "state": "LA",
+      "distance": 2.072,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "221847",
+      "name": "Tennessee Technological University",
+      "state": "TN",
+      "distance": 2.073,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "228501",
+      "name": "Sul Ross State University",
+      "state": "TX",
+      "distance": 2.084,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "212115",
+      "name": "East Stroudsburg University of Pennsylvania",
+      "state": "PA",
+      "distance": 2.095,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     }
+    ],
+    "big_ten_ranks": [
+     {
+      "unitid": "151351",
+      "name": "Indiana University-Bloomington",
+      "rank": 2259,
+      "distance": 5.693,
+      "top_gaps": [
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Student FTE (log)",
+        "z_diff": 1.55
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 1.5
+       }
+      ]
+     },
+     {
+      "unitid": "209551",
+      "name": "University of Oregon",
+      "rank": 2281,
+      "distance": 5.782,
+      "top_gaps": [
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 2.23
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 1.15
+       }
+      ]
+     },
+     {
+      "unitid": "181464",
+      "name": "University of Nebraska-Lincoln",
+      "rank": 2538,
+      "distance": 7.991,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 3.0
+       }
+      ]
+     },
+     {
+      "unitid": "243780",
+      "name": "Purdue University-Main Campus",
+      "rank": 2586,
+      "distance": 8.953,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Medical school",
+        "z_diff": 3.74
+       }
+      ]
+     },
+     {
+      "unitid": "214777",
+      "name": "Pennsylvania State University-Main Campus",
+      "rank": 2591,
+      "distance": 8.993,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Medical school",
+        "z_diff": 3.74
+       }
+      ]
+     },
+     {
+      "unitid": "170976",
+      "name": "University of Michigan-Ann Arbor",
+      "rank": 2592,
+      "distance": 8.994,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Medical school",
+        "z_diff": 3.74
+       }
+      ]
+     },
+     {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "rank": 2614,
+      "distance": 9.436,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Medical school",
+        "z_diff": 3.74
+       }
+      ]
+     },
+     {
+      "unitid": "171100",
+      "name": "Michigan State University",
+      "rank": 2615,
+      "distance": 9.562,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 4.2
+       }
+      ]
+     },
+     {
+      "unitid": "174066",
+      "name": "University of Minnesota-Twin Cities",
+      "rank": 2627,
+      "distance": 10.059,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 4.36
+       }
+      ]
+     },
+     {
+      "unitid": "236948",
+      "name": "University of Washington-Seattle Campus",
+      "rank": 2630,
+      "distance": 10.224,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 4.57
+       }
+      ]
+     },
+     {
+      "unitid": "163286",
+      "name": "University of Maryland-College Park",
+      "rank": 2646,
+      "distance": 10.933,
+      "top_gaps": [
+       {
+        "feature": "Research staff share",
+        "z_diff": 5.74
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       }
+      ]
+     },
+     {
+      "unitid": "110662",
+      "name": "University of California-Los Angeles",
+      "rank": 2652,
+      "distance": 11.346,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       }
+      ]
+     },
+     {
+      "unitid": "186380",
+      "name": "Rutgers University-New Brunswick",
+      "rank": 2654,
+      "distance": 11.737,
+      "top_gaps": [
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": 4.93
+       }
+      ]
+     },
+     {
+      "unitid": "240444",
+      "name": "University of Wisconsin-Madison",
+      "rank": 2655,
+      "distance": 11.89,
+      "top_gaps": [
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 5.38
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       }
+      ]
+     },
+     {
+      "unitid": "204796",
+      "name": "Ohio State University-Main Campus",
+      "rank": 2664,
+      "distance": 13.302,
+      "top_gaps": [
+       {
+        "feature": "Healthcare staff share",
+        "z_diff": 8.37
+       },
+       {
+        "feature": "Hospital",
+        "z_diff": 5.28
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       }
+      ]
+     }
+    ],
+    "overlap_top_k_big_ten": 0,
+    "median_big_ten_rank": 2615.0,
+    "median_distance_top_k": 1.9521838974388348,
+    "median_distance_big_ten": 9.562,
+    "focal_missing_features": 1,
+    "overlap_top_25_big_ten": 0
+   },
+   "no_medical": {
+    "neighbours": [
+     {
+      "unitid": "149772",
+      "name": "Western Illinois University",
+      "state": "IL",
+      "distance": 1.008,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "127741",
+      "name": "University of Northern Colorado",
+      "state": "CO",
+      "distance": 1.322,
+      "big_ten": false,
+      "carnegie": "D/PU",
+      "sector": 1
+     },
+     {
+      "unitid": "147703",
+      "name": "Northern Illinois University",
+      "state": "IL",
+      "distance": 1.402,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "144892",
+      "name": "Eastern Illinois University",
+      "state": "IL",
+      "distance": 1.601,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "149231",
+      "name": "Southern Illinois University-Edwardsville",
+      "state": "IL",
+      "distance": 1.732,
+      "big_ten": false,
+      "carnegie": "D/PU",
+      "sector": 1
+     },
+     {
+      "unitid": "106245",
+      "name": "University of Arkansas at Little Rock",
+      "state": "AR",
+      "distance": 1.798,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "151324",
+      "name": "Indiana State University",
+      "state": "IN",
+      "distance": 1.839,
+      "big_ten": false,
+      "carnegie": "D/PU",
+      "sector": 1
+     },
+     {
+      "unitid": "167987",
+      "name": "University of Massachusetts-Dartmouth",
+      "state": "MA",
+      "distance": 1.904,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "220075",
+      "name": "East Tennessee State University",
+      "state": "TN",
+      "distance": 1.913,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "229063",
+      "name": "Texas Southern University",
+      "state": "TX",
+      "distance": 1.952,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "155681",
+      "name": "Pittsburg State University",
+      "state": "KS",
+      "distance": 1.962,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "225414",
+      "name": "University of Houston-Clear Lake",
+      "state": "TX",
+      "distance": 1.988,
+      "big_ten": false,
+      "carnegie": "Masters",
+      "sector": 1
+     },
+     {
+      "unitid": "179566",
+      "name": "Missouri State University-Springfield",
+      "state": "MO",
+      "distance": 2.036,
+      "big_ten": false,
+      "carnegie": "D/PU",
+      "sector": 1
+     },
+     {
+      "unitid": "221847",
+      "name": "Tennessee Technological University",
+      "state": "TN",
+      "distance": 2.044,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     },
+     {
+      "unitid": "159939",
+      "name": "University of New Orleans",
+      "state": "LA",
+      "distance": 2.052,
+      "big_ten": false,
+      "carnegie": "R2",
+      "sector": 1
+     }
+    ],
+    "big_ten_ranks": [
+     {
+      "unitid": "151351",
+      "name": "Indiana University-Bloomington",
+      "rank": 2343,
+      "distance": 5.689,
+      "top_gaps": [
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Student FTE (log)",
+        "z_diff": 1.55
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 1.5
+       }
+      ]
+     },
+     {
+      "unitid": "209551",
+      "name": "University of Oregon",
+      "rank": 2368,
+      "distance": 5.764,
+      "top_gaps": [
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 2.23
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 1.15
+       }
+      ]
+     },
+     {
+      "unitid": "153658",
+      "name": "University of Iowa",
+      "rank": 2384,
+      "distance": 5.836,
+      "top_gaps": [
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 1.63
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.58
+       }
+      ]
+     },
+     {
+      "unitid": "170976",
+      "name": "University of Michigan-Ann Arbor",
+      "rank": 2485,
+      "distance": 6.185,
+      "top_gaps": [
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -2.24
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 2.15
+       }
+      ]
+     },
+     {
+      "unitid": "214777",
+      "name": "Pennsylvania State University-Main Campus",
+      "rank": 2490,
+      "distance": 6.213,
+      "top_gaps": [
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 1.91
+       },
+       {
+        "feature": "Tenured share",
+        "z_diff": -1.81
+       }
+      ]
+     },
+     {
+      "unitid": "236948",
+      "name": "University of Washington-Seattle Campus",
+      "rank": 2592,
+      "distance": 7.481,
+      "top_gaps": [
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research staff share",
+        "z_diff": 4.57
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 2.06
+       }
+      ]
+     },
+     {
+      "unitid": "181464",
+      "name": "University of Nebraska-Lincoln",
+      "rank": 2615,
+      "distance": 7.987,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 3.0
+       }
+      ]
+     },
+     {
+      "unitid": "204796",
+      "name": "Ohio State University-Main Campus",
+      "rank": 2619,
+      "distance": 8.063,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Staff headcount (log)",
+        "z_diff": 2.36
+       }
+      ]
+     },
+     {
+      "unitid": "243780",
+      "name": "Purdue University-Main Campus",
+      "rank": 2621,
+      "distance": 8.114,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 2.43
+       }
+      ]
+     },
+     {
+      "unitid": "186380",
+      "name": "Rutgers University-New Brunswick",
+      "rank": 2637,
+      "distance": 8.457,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 2.3
+       }
+      ]
+     },
+     {
+      "unitid": "171100",
+      "name": "Michigan State University",
+      "rank": 2649,
+      "distance": 8.723,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 4.2
+       }
+      ]
+     },
+     {
+      "unitid": "110662",
+      "name": "University of California-Los Angeles",
+      "rank": 2652,
+      "distance": 8.796,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Faculty pay (log, real)",
+        "z_diff": 2.95
+       }
+      ]
+     },
+     {
+      "unitid": "174066",
+      "name": "University of Minnesota-Twin Cities",
+      "rank": 2657,
+      "distance": 9.266,
+      "top_gaps": [
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       },
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 4.36
+       }
+      ]
+     },
+     {
+      "unitid": "240444",
+      "name": "University of Wisconsin-Madison",
+      "rank": 2660,
+      "distance": 9.888,
+      "top_gaps": [
+       {
+        "feature": "Research share of expenses",
+        "z_diff": 5.38
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       }
+      ]
+     },
+     {
+      "unitid": "163286",
+      "name": "University of Maryland-College Park",
+      "rank": 2663,
+      "distance": 10.271,
+      "top_gaps": [
+       {
+        "feature": "Research staff share",
+        "z_diff": 5.74
+       },
+       {
+        "feature": "Land grant",
+        "z_diff": 5.09
+       },
+       {
+        "feature": "R1",
+        "z_diff": 4.64
+       }
+      ]
+     }
+    ],
+    "overlap_top_k_big_ten": 0,
+    "median_big_ten_rank": 2619.0,
+    "median_distance_top_k": 1.903749807003726,
+    "median_distance_big_ten": 8.063,
+    "focal_missing_features": 1,
+    "overlap_top_25_big_ten": 0
+   },
+   "profile": {
+    "log_fte": 8.1518,
+    "log_staff": 6.7405,
+    "staff_per_100_fte": 24.424,
+    "grad_fte_share": 40.6077,
+    "log_research_per_fte": 6.8613,
+    "research_exp_share": 0.0289,
+    "research_share": null,
+    "instr_share": 0.3801,
+    "health_share": 0.0016,
+    "tenured_share": 58.9064,
+    "log_pay7": 11.3335,
+    "ga_per_100_fte": 7.859,
+    "medical": 0.0,
+    "hospital": 0.0,
+    "public": 1.0,
+    "r1": 0.0,
+    "landgrant": 0.0
+   }
+  }
+ },
+ "big_ten_profile_median": {
+  "log_fte": 10.765,
+  "log_staff": 9.772,
+  "staff_per_100_fte": 38.7868,
+  "grad_fte_share": 23.3428,
+  "log_research_per_fte": 9.4971,
+  "research_exp_share": 0.1689,
+  "research_share": 0.0575,
+  "instr_share": 0.2578,
+  "health_share": 0.0332,
+  "tenured_share": 43.7737,
+  "log_pay7": 11.7185,
+  "ga_per_100_fte": 8.7056,
+  "medical": 1.0,
+  "hospital": 1.0,
+  "public": 1.0,
+  "r1": 1.0,
+  "landgrant": 1.0
+ }
+}
