@@ -1,6 +1,6 @@
 # Project rules for coding agents
 
-Read [`CODEX_HANDOFF.md`](CODEX_HANDOFF.md) for the current task, and [`platform-evaluation/ARCHITECTURE.md`](platform-evaluation/ARCHITECTURE.md) for the folder map.
+Current tasks, in order: [`CODEX_HANDOFF_EDW_PROFILING.md`](CODEX_HANDOFF_EDW_PROFILING.md) (profile EDW and build calibrated synthetic data), then [`CODEX_HANDOFF.md`](CODEX_HANDOFF.md) (run succession on real data). Read and [`platform-evaluation/ARCHITECTURE.md`](platform-evaluation/ARCHITECTURE.md) for the folder map.
 
 1. **Data handling.** Real University employee, payroll, HR, survey or position-description data stays on approved machines or inside EDW/Denodo. Never commit it, push it, paste it into chat or send it to a cloud or AI service, unless the University's approval for this tool explicitly covers that data class. Confirm with Tayler before reading real rows.
 2. **What Git holds.** Only public data and synthetic data go in Git. Everything under `platform-evaluation/data/` that the `.gitignore` files exclude stays excluded.
