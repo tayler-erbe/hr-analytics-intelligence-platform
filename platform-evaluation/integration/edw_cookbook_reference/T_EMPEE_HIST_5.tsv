@@ -1,0 +1,28 @@
+ordinal	column	datatype	pk	comment
+1	EDW_PERS_ID	NUMBER(9,0)	Y	An identification number generated for each person for Enterprise Data Warehouse (EDW) use only. EDW Person ID is used as the key for all references to persons in the EDW.
+2	EMPEE_EFF_DT	DATE	Y	The date the details for the employee record became effective in the corresponding source system.
+3	EMPEE_EXP_DT	DATE		Indicates when the employee information is no longer valid. If the information is current, then the value is set to 12/31/9999.
+4	EMPEE_CUR_INFO_IND	VARCHAR2(1)		Indicates whether the record is the most recent.
+5	TERMN_REASON_CD	VARCHAR2(2)		Code used to identify the reason of termination.
+6	TERMN_REASON_DESC	VARCHAR2(30)		A textual description of the reason of termination.
+7	EMPEE_TERMN_DT	DATE		Termination date of the employee.
+8	COA_CD	VARCHAR2(1)		Chart of Accounts code as defined by the BANNER Finance system. This is the C in C-FOAPAL.
+9	CAMPUS_LEVEL_1_CD	VARCHAR2(6)		The highest-level ancestor of this Organization Code in the hierarchy.
+10	ADMIN_LEVEL_2_CD	VARCHAR2(6)		The second-level ancestor of this Organization Code in the hierarchy. If this Organization Code is a Level 1 code, Administrative Level 2 Code will be null.
+11	COLL_LEVEL_3_CD	VARCHAR2(6)		The third-level ancestor of this Organization Code in the hierarchy. If this Organization Code is a Level 2 code or higher, College Level 3 Code will be null.
+12	SCHOOL_SUB_COLL_LEVEL_4_CD	VARCHAR2(6)		The fourth-level ancestor of this Organization Code in the hierarchy. If this Organization Code is a Level 3 code or higher, School Sub College Level 4 Code will be null.
+13	DEPT_LEVEL_5_CD	VARCHAR2(6)		The fifth-level ancestor of this Organization Code in the hierarchy. If this Organization Code is a Level 4 code or higher, Department Level 5 Code will be null.
+14	DEPT_SUB_ORG_LEVEL_6_CD	VARCHAR2(6)		The sixth-level ancestor of this Organization Code in the hierarchy. If this Organization Code is a Level 5 code or higher, Department Sub Org Level 6 Code will be null.
+15	DEPT_SUB_ORG_LEVEL_7_CD	VARCHAR2(6)		The seventh-level ancestor of this Organization Code in the hierarchy. If this Organization Code is a Level 6 code or higher, Department Sub Org Level 7 Code will be null.
+16	DEPT_SUB_ORG_LEVEL_8_CD	VARCHAR2(6)		The seventh-level ancestor of this Organization Code in the hierarchy. If this Organization Code is a Level 6 code or higher, Department Sub Org Level 7 Code will be null. [Cookbook comment appears copied from level 7; presumably the eighth-level ancestor]
+17	EMPEE_5_POST_DT	DATE		Date when the record was inserted or last modified in the EDW.
+18	EMPEE_DATA_STATUS_DESC	VARCHAR2(10)		A description that categorizes the status of records as current, no longer effective (i.e., expired), effective in the future or deleted for University Business.
+19	EMPEE_DATA_EXP_DT	DATE		The last date on which the data in this record is effective for University Business.
+20	SURS_ANNUITANT_AFFECT_DT	DATE		This date will be populated when an employee becomes a SURS affected annuitant.
+21	SURS_LAST_HR_REVW_DT	DATE		Date the SURS information was last reviewed by HR.
+22	SURS_MAX_ANNL_EARNS_AMT	NUMBER		The annuitant's highest annual rate of earnings received prior to retirement
+23	SURS_FORTY_PCT_THRSHLD_AMT	NUMBER		The value should be 40% of the SURS highest annual earnings.
+24	SURS_LAST_UPDATE_CHG_ID	VARCHAR2(30)		The netid of the Banner user updating the SURS SDE fields.
+25	SURS_ENTR_EDW_PERS_ID	NUMBER(9,0)		The EDW Pers ID of the Banner user updating the SURS SDE fields.
+26	SURS_ENTR_FULL_NAME	VARCHAR2(180)		The full name of the Banner user updating the SURS SDE fields.
+27	SURS_UPDATE_NOTE_TXT	VARCHAR2(60)		Notes entered by Banner user updating the SURS SDE fields.

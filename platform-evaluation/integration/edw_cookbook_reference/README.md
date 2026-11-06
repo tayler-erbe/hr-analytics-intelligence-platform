@@ -8,7 +8,7 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 |---|---:|---|
 | T_JOB_DETL_HIST | 79 | Verified 2026-11-06 |
 | T_EMPEE_HIST | 71 | Verified 2026-11-06 |
-| T_EMPEE_HIST_5 | ? | Exists (secured; termination code, description, date); columns pending |
+| T_EMPEE_HIST_5 | 27 | Verified 2026-11-06 (secured) |
 | T_PERS_HIST, position history, payroll accounting detail, reference tables (org, E-Class, P-Class/job class) | — | Pending |
 
 ## Conventions confirmed by T_JOB_DETL_HIST
@@ -26,7 +26,7 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 ## Conventions confirmed by T_EMPEE_HIST
 
 - Primary key: EDW_PERS_ID + EMPEE_EFF_DT. `EMPEE_EXP_DT` inclusive, 12/31/9999 open end; `EMPEE_CUR_INFO_IND` Y/N/D; `EMPEE_POST_DT`, `EMPEE_DATA_STATUS_DESC`, `EMPEE_DATA_EXP_DT` as in job detail.
-- Termination lives here: `TERMN_REASON_CD`/`DESC` (VARCHAR2(2)), `EMPEE_TERMN_DT`. Retirement flag `EMPEE_RET_IND` is derived: 'Y' when termination reason is TR or TF, or E-Class is TR. `T_EMPEE_HIST_5` also exists (Cookbook comment: "THIS SECURED TABLE CONTAINS THE TERMINATION CODE, DESCRIPTION AND DATE FOR AN EMPLOYEE."); its columns are not yet transcribed. Use T_EMPEE_HIST for termination where access allows; T_EMPEE_HIST_5 is the secured source and may be what restricted roles must use.
+- Termination lives here: `TERMN_REASON_CD`/`DESC` (VARCHAR2(2)), `EMPEE_TERMN_DT`. Retirement flag `EMPEE_RET_IND` is derived: 'Y' when termination reason is TR or TF, or E-Class is TR. `T_EMPEE_HIST_5` also exists (Cookbook comment: "THIS SECURED TABLE CONTAINS THE TERMINATION CODE, DESCRIPTION AND DATE FOR AN EMPLOYEE."); Use T_EMPEE_HIST for termination where access allows; T_EMPEE_HIST_5 is the secured source and may be what restricted roles must use.
 - `EMPEE_STATUS_CD` examples: A Active, B Leave without pay with benefits, F Leave with pay with benefits (full list still to confirm; terminated status letter not listed).
 - `EMPEE_GROUP_CD` is VARCHAR2(4) here ("higher level grouping of employee classes") but VARCHAR2(1) on job detail (first character of E-Class). Treat them as different fields.
 - Person-level rollups: `EMPEE_FTE` (sum of FTE across current active jobs) and `EMPEE_ANNL_SAL` (sum of salary, excluding job suffix CE and job number C63998, adjusted by appointment percent).
@@ -34,3 +34,10 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 - Leave of absence: EMPEE_LEAVE_REASON_CD/DESC, EMPEE_LOA_FROM_DT, EMPEE_LOA_TO_DT.
 - SURS annuitant fields exist (affected date, max annual earnings, 40% threshold) but there is no SURS tier or service-credit field; retirement eligibility still needs another source.
 - Sensitive or operational fields to exclude from analytics extracts and never synthesize as realistic values: E_VERIFY_CASE_NBR, CASE_NBR_ENTRY_USER_ID, HIRETOUCH_ID, SURS_LAST_UPDATE_CHG_ID, SURS_ENTR_FULL_NAME, SURS_UPDATE_NOTE_TXT, EMPEE_USER_ID. Synthetic samples keep these columns NULL.
+
+## Conventions confirmed by T_EMPEE_HIST_5 (secured)
+
+- Same key and dating as T_EMPEE_HIST (EDW_PERS_ID + EMPEE_EFF_DT; EMPEE_EXP_DT open end 12/31/9999; EMPEE_CUR_INFO_IND), with its own post date `EMPEE_5_POST_DT`.
+- Carries termination (TERMN_REASON_CD/DESC, EMPEE_TERMN_DT) and the SURS annuitant fields, plus the full org-hierarchy ancestor path of the employee's organization: CAMPUS_LEVEL_1_CD, ADMIN_LEVEL_2_CD, COLL_LEVEL_3_CD, SCHOOL_SUB_COLL_LEVEL_4_CD, DEPT_LEVEL_5_CD, DEPT_SUB_ORG_LEVEL_6/7/8_CD. These names reveal the EDW org-hierarchy levels (1 campus, 2 admin, 3 college, 4 school/sub-college, 5 department, 6–8 sub-org).
+- Termination fields duplicate T_EMPEE_HIST; use whichever the access role permits. For the models, prefer T_EMPEE_HIST and reconcile against _5 where both are readable.
+- The SURS user/name/note fields are operational and stay NULL in synthetic data.
