@@ -1,6 +1,6 @@
 {
- "contract_version": "1.0",
- "built_at_utc": "2026-11-06T07:00:16.126460+00:00",
+ "contract_version": "1.1",
+ "built_at_utc": "2026-11-06T08:41:17.877707+00:00",
  "tables": {
   "onet_occupation": {
    "rows": 1016,
@@ -236,7 +236,7 @@
   },
   "onet_alternate_title": {
    "rows": 54269,
-   "bytes": 514742,
+   "bytes": 514894,
    "source_id": "onet_db_31_0",
    "source_vintage": "O*NET 31.0",
    "columns": [
@@ -416,7 +416,7 @@
   },
   "ipeds_institution": {
    "rows": 6072,
-   "bytes": 279483,
+   "bytes": 278949,
    "source_id": "ipeds",
    "source_vintage": "HD2024",
    "columns": [
@@ -572,7 +572,7 @@
   },
   "ipeds_instructional_staff": {
    "rows": 1911960,
-   "bytes": 4847194,
+   "bytes": 4775224,
    "source_id": "ipeds",
    "source_vintage": "S2023_IS (Fall 2023)",
    "columns": [
@@ -640,7 +640,7 @@
   },
   "ipeds_new_hires": {
    "rows": 1234230,
-   "bytes": 2030296,
+   "bytes": 2070504,
    "source_id": "ipeds",
    "source_vintage": "S2023_NH (Fall 2023)",
    "columns": [
@@ -700,7 +700,7 @@
   },
   "ipeds_salary_instructional": {
    "rows": 45928,
-   "bytes": 457818,
+   "bytes": 461318,
    "source_id": "ipeds",
    "source_vintage": "SAL2023_IS (2023-24)",
    "columns": [
@@ -816,7 +816,7 @@
   },
   "ipeds_employees_by_position": {
    "rows": 288192,
-   "bytes": 1162823,
+   "bytes": 1209248,
    "source_id": "ipeds",
    "source_vintage": "EAP2023 (Fall 2023)",
    "columns": [
@@ -880,7 +880,7 @@
   },
   "ipeds_enrollment_12mo": {
    "rows": 115026,
-   "bytes": 860354,
+   "bytes": 858984,
    "source_id": "ipeds",
    "source_vintage": "EFFY2024 (2023-24)",
    "columns": [

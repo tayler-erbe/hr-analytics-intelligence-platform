@@ -162,6 +162,18 @@ class ContractInvariants(unittest.TestCase):
                      max(CASE WHEN eapcat_code = '10000' THEN total_employees END) t
               FROM c_ipeds_employees_by_position GROUP BY 1) WHERE t IS NOT NULL AND s <> t""", "EAP partition")
 
+    def test_instructional_and_new_hire_partitions(self):
+        self.zero("""SELECT count(*) FROM (SELECT unitid,
+                     sum(CASE WHEN NOT is_category_total THEN headcount END) s,
+                     max(CASE WHEN siscat_code = '1' THEN headcount END) t
+              FROM c_ipeds_instructional_staff WHERE sex = 'Total' AND race_ethnicity = 'Total'
+              GROUP BY 1) WHERE t IS NOT NULL AND coalesce(s, 0) <> t""", "instructional partition")
+        self.zero("""SELECT count(*) FROM (SELECT unitid,
+                     sum(CASE WHEN NOT is_category_total THEN headcount END) s,
+                     max(CASE WHEN snhcat_code = '10000' THEN headcount END) t
+              FROM c_ipeds_new_hires WHERE sex = 'Total' AND race_ethnicity = 'Total'
+              GROUP BY 1) WHERE t IS NOT NULL AND coalesce(s, 0) <> t""", "new-hire partition")
+
     def test_qcew_suppressed_is_null(self):
         self.zero("SELECT count(*) FROM c_qcew_industry WHERE disclosure_code = 'N' AND month3_emplvl IS NOT NULL",
                   "suppressed QCEW value leaked")

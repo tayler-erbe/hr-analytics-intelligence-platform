@@ -1,4 +1,4 @@
-# Lake contract v1.0
+# Lake contract v1.1
 
 The contract layer (`data/lake/contract/<table>.parquet`, built by `scripts/lake_contract.py`) is the **one input** the Snowflake kit, the Databricks kit and the custom stack load. Silver tables mirror each publisher's file layout. The contract fixes table names, grains and column names so the same business question means the same thing on every platform.
 
@@ -39,7 +39,7 @@ Not yet published (kits skip them and log a limitation): `bls_oews`, `bls_projec
 1. **Provenance.** Every table has `source_id` and `source_vintage`. Carry them into results.
 2. **Codes are strings.** UNITID, FIPS, NAICS, SOC, O*NET-SOC, SUCSS class codes and QWI demographic codes keep leading zeros.
 3. **IPEDS totals.** The long IPEDS HR tables include published total rows: `sex = 'Total' AND race_ethnicity = 'Total'`. Detail rows sum exactly to them.
-4. **No double counting across categories.** In `ipeds_staff_by_occupation` and `ipeds_employees_by_position`, rows with `is_category_total = false` form an exact partition of the institution total. This was verified for every institution (17,192 staff totals and 5,924 position totals, 0 mismatches). Filter on it before summing across categories. `ipeds_staff_by_occupation.category_level` distinguishes `total`, `group`, `detail`, `subdetail` and `graduate_assistant`. Graduate assistants are outside the IPEDS grand total.
+4. **No double counting across categories.** In `ipeds_staff_by_occupation`, `ipeds_employees_by_position`, `ipeds_instructional_staff` (rank detail 101–106 plus 500, without faculty status) and `ipeds_new_hires` (faculty-status detail plus occupation groups), rows with `is_category_total = false` form an exact partition of the institution total. This was verified for every institution (17,192 staff totals, 5,924 position totals, 3,552 instructional totals and 3,324 new-hire totals, 0 mismatches). Contract 1.1 corrected the instructional-staff and new-hire flags, which in 1.0 did not form a partition. Filter on it before summing across categories. `ipeds_staff_by_occupation.category_level` distinguishes `total`, `group`, `detail`, `subdetail` and `graduate_assistant`. Graduate assistants are outside the IPEDS grand total.
 5. **Salary tables are pre-partitioned.** `ipeds_salary_noninstructional` excludes the all-occupations row; `ipeds_salary_instructional` excludes the all-ranks row. Summing `staff_count` and `salary_outlays` over categories reproduces the published institution totals exactly. Average salary = outlays ÷ count, computed only where count > 0.
 6. **Suppression stays NULL.** QCEW cells with `disclosure_code = 'N'` have NULL measures. QWI status flags (`s_*`) are kept. Never coalesce suppressed values to zero.
 7. **QCEW overlap.** `qcew_area` (county files, all industries) contains the county rows for NAICS 611310 that also appear in `qcew_industry`. Exclude `industry_code = '611310'` from `qcew_area` when unioning them.
