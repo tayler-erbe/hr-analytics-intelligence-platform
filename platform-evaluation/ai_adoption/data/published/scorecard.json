@@ -1,0 +1,4332 @@
+{
+ "behavior": {
+  "by_applied_badge": [
+   {
+    "group": "Entry tier only",
+    "hi": 17.2,
+    "lo": 15.0,
+    "mean": 16.1,
+    "n": 527
+   },
+   {
+    "group": "Entry + applied badge",
+    "hi": 24.6,
+    "lo": 20.3,
+    "mean": 22.5,
+    "n": 147
+   }
+  ],
+  "by_track": {
+   "all": [
+    {
+     "hi": 30.7,
+     "lo": 29.8,
+     "mean": 30.2,
+     "n": 2874,
+     "wave": "baseline"
+    },
+    {
+     "hi": 46.2,
+     "lo": 44.8,
+     "mean": 45.5,
+     "n": 1348,
+     "wave": "d30"
+    },
+    {
+     "hi": 49.2,
+     "lo": 47.7,
+     "mean": 48.5,
+     "n": 1146,
+     "wave": "d60"
+    },
+    {
+     "hi": 49.7,
+     "lo": 47.9,
+     "mean": 48.8,
+     "n": 934,
+     "wave": "d90"
+    }
+   ],
+   "leader": [
+    {
+     "hi": 31.2,
+     "lo": 28.6,
+     "mean": 29.9,
+     "n": 333,
+     "wave": "baseline"
+    },
+    {
+     "hi": 45.9,
+     "lo": 42.0,
+     "mean": 43.9,
+     "n": 145,
+     "wave": "d30"
+    },
+    {
+     "hi": 49.5,
+     "lo": 45.1,
+     "mean": 47.3,
+     "n": 113,
+     "wave": "d60"
+    },
+    {
+     "hi": 48.6,
+     "lo": 43.9,
+     "mean": 46.2,
+     "n": 109,
+     "wave": "d90"
+    }
+   ],
+   "staff": [
+    {
+     "hi": 30.7,
+     "lo": 29.7,
+     "mean": 30.2,
+     "n": 2541,
+     "wave": "baseline"
+    },
+    {
+     "hi": 46.4,
+     "lo": 45.0,
+     "mean": 45.7,
+     "n": 1203,
+     "wave": "d30"
+    },
+    {
+     "hi": 49.5,
+     "lo": 47.8,
+     "mean": 48.6,
+     "n": 1033,
+     "wave": "d60"
+    },
+    {
+     "hi": 50.1,
+     "lo": 48.2,
+     "mean": 49.1,
+     "n": 825,
+     "wave": "d90"
+    }
+   ]
+  },
+  "components": {
+   "hitl": [
+    {
+     "hi": 1.62,
+     "lo": 1.55,
+     "mean": 1.59,
+     "n": 2874,
+     "wave": "baseline"
+    },
+    {
+     "hi": 2.64,
+     "lo": 2.54,
+     "mean": 2.59,
+     "n": 1348,
+     "wave": "d30"
+    },
+    {
+     "hi": 2.74,
+     "lo": 2.63,
+     "mean": 2.69,
+     "n": 1146,
+     "wave": "d60"
+    },
+    {
+     "hi": 2.78,
+     "lo": 2.66,
+     "mean": 2.72,
+     "n": 934,
+     "wave": "d90"
+    }
+   ],
+   "prompt_soph_self": [
+    {
+     "hi": 2.1,
+     "lo": 2.05,
+     "mean": 2.07,
+     "n": 2874,
+     "wave": "baseline"
+    },
+    {
+     "hi": 2.76,
+     "lo": 2.68,
+     "mean": 2.72,
+     "n": 1348,
+     "wave": "d30"
+    },
+    {
+     "hi": 2.9,
+     "lo": 2.81,
+     "mean": 2.86,
+     "n": 1146,
+     "wave": "d60"
+    },
+    {
+     "hi": 2.93,
+     "lo": 2.83,
+     "mean": 2.88,
+     "n": 934,
+     "wave": "d90"
+    }
+   ],
+   "tasks": [
+    {
+     "hi": 1.99,
+     "lo": 1.87,
+     "mean": 1.93,
+     "n": 2874,
+     "wave": "baseline"
+    },
+    {
+     "hi": 2.62,
+     "lo": 2.43,
+     "mean": 2.52,
+     "n": 1348,
+     "wave": "d30"
+    },
+    {
+     "hi": 2.88,
+     "lo": 2.67,
+     "mean": 2.77,
+     "n": 1146,
+     "wave": "d60"
+    },
+    {
+     "hi": 2.88,
+     "lo": 2.63,
+     "mean": 2.76,
+     "n": 934,
+     "wave": "d90"
+    }
+   ],
+   "use_days": [
+    {
+     "hi": 1.54,
+     "lo": 1.47,
+     "mean": 1.51,
+     "n": 2874,
+     "wave": "baseline"
+    },
+    {
+     "hi": 2.19,
+     "lo": 2.08,
+     "mean": 2.14,
+     "n": 1348,
+     "wave": "d30"
+    },
+    {
+     "hi": 2.34,
+     "lo": 2.23,
+     "mean": 2.29,
+     "n": 1146,
+     "wave": "d60"
+    },
+    {
+     "hi": 2.35,
+     "lo": 2.23,
+     "mean": 2.29,
+     "n": 934,
+     "wave": "d90"
+    }
+   ]
+  },
+  "definition": "Behavior Change Index (0-100) = mean of four 0-1 scaled items: approved-tool use days/5, tasks augmented (capped at 8)/8, (self-rated prompt sophistication-1)/4, human-in-the-loop practices/4. Paired change = same person's index at d30/d60/d90 minus their baseline (entry tier only).",
+  "paired_change": {
+   "all": [
+    {
+     "hi": 14.5,
+     "lo": 12.8,
+     "mean": 13.7,
+     "n": 953,
+     "wave": "d30"
+    },
+    {
+     "hi": 17.5,
+     "lo": 15.7,
+     "mean": 16.5,
+     "n": 829,
+     "wave": "d60"
+    },
+    {
+     "hi": 18.5,
+     "lo": 16.5,
+     "mean": 17.5,
+     "n": 674,
+     "wave": "d90"
+    }
+   ],
+   "leader": [
+    {
+     "hi": 15.0,
+     "lo": 10.4,
+     "mean": 12.7,
+     "n": 106,
+     "wave": "d30"
+    },
+    {
+     "hi": 18.6,
+     "lo": 13.2,
+     "mean": 15.9,
+     "n": 84,
+     "wave": "d60"
+    },
+    {
+     "hi": 18.9,
+     "lo": 13.8,
+     "mean": 16.4,
+     "n": 83,
+     "wave": "d90"
+    }
+   ],
+   "staff": [
+    {
+     "hi": 14.7,
+     "lo": 12.9,
+     "mean": 13.8,
+     "n": 847,
+     "wave": "d30"
+    },
+    {
+     "hi": 17.6,
+     "lo": 15.7,
+     "mean": 16.6,
+     "n": 745,
+     "wave": "d60"
+    },
+    {
+     "hi": 18.7,
+     "lo": 16.7,
+     "mean": 17.7,
+     "n": 591,
+     "wave": "d90"
+    }
+   ]
+  },
+  "self_vs_observed": {
+   "gap": {
+    "hi": -0.06,
+    "lo": -0.24,
+    "mean": -0.15,
+    "n": 354
+   },
+   "note": "People with both a facilitator observation and a d60/d90 self-rating. Positive gap = self-rating above observed.",
+   "observed": {
+    "hi": 3.16,
+    "lo": 3.02,
+    "mean": 3.09,
+    "n": 354
+   },
+   "self": {
+    "hi": 3.0,
+    "lo": 2.87,
+    "mean": 2.93,
+    "n": 354
+   }
+  },
+  "waves": [
+   "baseline",
+   "d30",
+   "d60",
+   "d90"
+  ]
+ },
+ "did": {
+  "caveat": "NOT a causal estimate. People chose when to enrol, so early and later groups differ in interest and in how fast their AI use was already growing. A non-zero placebo (pre-period) gap means parallel trends fails; the trend-adjusted figure assumes the pre-period gap continues linearly, which is itself an assumption. Only a randomized or lottery-based rollout of seats would support a causal claim. Pulse respondents are a self-selected ~1/3 sample.",
+  "dates": {
+   "P2025_06": "2025-06-16",
+   "P2025_09": "2025-09-15",
+   "P2026_01": "2026-01-20",
+   "P2026_04": "2026-04-20",
+   "P2026_07": "2026-07-20",
+   "P2026_10": "2026-10-15"
+  },
+  "design": "Staggered adoption with not-yet-trained comparison. Early = completed the entry tier (AI Explorer / AI Ready Leaders) in Oct-Dec 2025 (waves W1-W2). Later = completed it in Apr-Jun 2026 (W4-W5), so they were not yet trained at the Jan 2026 pulse.",
+  "did": {
+   "early_n": 176,
+   "estimate": 0.556,
+   "hi": 0.966,
+   "later_n": 47,
+   "lo": 0.149,
+   "n": 223
+  },
+  "naive_pre_post_early": 0.85,
+  "outcome": "Campus AI pulse: approved-tool use, workdays per week (0-5)",
+  "placebo_pre": "P2025_06",
+  "placebo_pre_trend": {
+   "early_n": 194,
+   "estimate": 0.055,
+   "hi": 0.41,
+   "later_n": 55,
+   "lo": -0.285,
+   "n": 249
+  },
+  "post": "P2026_01",
+  "pre": "P2025_09",
+  "synthetic_validation": {
+   "label": "SYNTHETIC DATA ONLY: the true effect is known because we generated it. Real data has no such answer key.",
+   "note": "Average built-in training effect on true weekly tool-use days for entry-tier completers trained by Dec 2025, evaluated at the Jan 2026 campus pulse (before measurement noise and 0-5 clipping). Known only because the data are synthetic.",
+   "true_effect": 0.435
+  },
+  "trend": {
+   "early": [
+    {
+     "hi": 1.51,
+     "lo": 1.25,
+     "mean": 1.38,
+     "n": 194,
+     "wave": "P2025_06"
+    },
+    {
+     "hi": 1.63,
+     "lo": 1.38,
+     "mean": 1.5,
+     "n": 201,
+     "wave": "P2025_09"
+    },
+    {
+     "hi": 2.49,
+     "lo": 2.19,
+     "mean": 2.35,
+     "n": 176,
+     "wave": "P2026_01"
+    },
+    {
+     "hi": 2.74,
+     "lo": 2.46,
+     "mean": 2.6,
+     "n": 173,
+     "wave": "P2026_04"
+    },
+    {
+     "hi": 2.78,
+     "lo": 2.49,
+     "mean": 2.64,
+     "n": 209,
+     "wave": "P2026_07"
+    },
+    {
+     "hi": 3.12,
+     "lo": 2.81,
+     "mean": 2.96,
+     "n": 177,
+     "wave": "P2026_10"
+    }
+   ],
+   "later": [
+    {
+     "hi": 1.38,
+     "lo": 0.93,
+     "mean": 1.15,
+     "n": 55,
+     "wave": "P2025_06"
+    },
+    {
+     "hi": 1.43,
+     "lo": 0.98,
+     "mean": 1.22,
+     "n": 60,
+     "wave": "P2025_09"
+    },
+    {
+     "hi": 1.81,
+     "lo": 1.23,
+     "mean": 1.51,
+     "n": 47,
+     "wave": "P2026_01"
+    },
+    {
+     "hi": 2.05,
+     "lo": 1.55,
+     "mean": 1.8,
+     "n": 55,
+     "wave": "P2026_04"
+    },
+    {
+     "hi": 2.39,
+     "lo": 1.84,
+     "mean": 2.12,
+     "n": 49,
+     "wave": "P2026_07"
+    },
+    {
+     "hi": 2.7,
+     "lo": 2.23,
+     "mean": 2.46,
+     "n": 56,
+     "wave": "P2026_10"
+    }
+   ],
+   "not_registered": [
+    {
+     "hi": 0.95,
+     "lo": 0.84,
+     "mean": 0.89,
+     "n": 1033,
+     "wave": "P2025_06"
+    },
+    {
+     "hi": 1.02,
+     "lo": 0.91,
+     "mean": 0.97,
+     "n": 993,
+     "wave": "P2025_09"
+    },
+    {
+     "hi": 1.23,
+     "lo": 1.11,
+     "mean": 1.17,
+     "n": 978,
+     "wave": "P2026_01"
+    },
+    {
+     "hi": 1.31,
+     "lo": 1.2,
+     "mean": 1.26,
+     "n": 1057,
+     "wave": "P2026_04"
+    },
+    {
+     "hi": 1.44,
+     "lo": 1.31,
+     "mean": 1.38,
+     "n": 976,
+     "wave": "P2026_07"
+    },
+    {
+     "hi": 1.56,
+     "lo": 1.44,
+     "mean": 1.5,
+     "n": 1013,
+     "wave": "P2026_10"
+    }
+   ]
+  },
+  "trend_adjusted_did": 0.479
+ },
+ "enabling": {
+  "behavior_change_by_manager_support": [
+   {
+    "band": "Low (1-2)",
+    "hi": 18.1,
+    "lo": 14.0,
+    "mean": 16.0,
+    "n": 125
+   },
+   {
+    "band": "Neutral (3)",
+    "hi": 19.0,
+    "lo": 15.4,
+    "mean": 17.2,
+    "n": 241
+   },
+   {
+    "band": "High (4-5)",
+    "hi": 19.8,
+    "lo": 16.9,
+    "mean": 18.4,
+    "n": 308
+   }
+  ],
+  "favorable_trend": {
+   "manager_support": [
+    {
+     "n": 1645,
+     "num_n": 644,
+     "rate": 0.3915,
+     "wave": "P2025_06"
+    },
+    {
+     "n": 1635,
+     "num_n": 681,
+     "rate": 0.4165,
+     "wave": "P2025_09"
+    },
+    {
+     "n": 1584,
+     "num_n": 615,
+     "rate": 0.3883,
+     "wave": "P2026_01"
+    },
+    {
+     "n": 1653,
+     "num_n": 623,
+     "rate": 0.3769,
+     "wave": "P2026_04"
+    },
+    {
+     "n": 1623,
+     "num_n": 649,
+     "rate": 0.3999,
+     "wave": "P2026_07"
+    },
+    {
+     "n": 1601,
+     "num_n": 614,
+     "rate": 0.3835,
+     "wave": "P2026_10"
+    }
+   ],
+   "psych_safety": [
+    {
+     "n": 1645,
+     "num_n": 757,
+     "rate": 0.4602,
+     "wave": "P2025_06"
+    },
+    {
+     "n": 1635,
+     "num_n": 761,
+     "rate": 0.4654,
+     "wave": "P2025_09"
+    },
+    {
+     "n": 1584,
+     "num_n": 761,
+     "rate": 0.4804,
+     "wave": "P2026_01"
+    },
+    {
+     "n": 1653,
+     "num_n": 788,
+     "rate": 0.4767,
+     "wave": "P2026_04"
+    },
+    {
+     "n": 1623,
+     "num_n": 787,
+     "rate": 0.4849,
+     "wave": "P2026_07"
+    },
+    {
+     "n": 1601,
+     "num_n": 767,
+     "rate": 0.4791,
+     "wave": "P2026_10"
+    }
+   ],
+   "trust_ai": [
+    {
+     "n": 1645,
+     "num_n": 538,
+     "rate": 0.3271,
+     "wave": "P2025_06"
+    },
+    {
+     "n": 1635,
+     "num_n": 530,
+     "rate": 0.3242,
+     "wave": "P2025_09"
+    },
+    {
+     "n": 1584,
+     "num_n": 528,
+     "rate": 0.3333,
+     "wave": "P2026_01"
+    },
+    {
+     "n": 1653,
+     "num_n": 579,
+     "rate": 0.3503,
+     "wave": "P2026_04"
+    },
+    {
+     "n": 1623,
+     "num_n": 590,
+     "rate": 0.3635,
+     "wave": "P2026_07"
+    },
+    {
+     "n": 1601,
+     "num_n": 540,
+     "rate": 0.3373,
+     "wave": "P2026_10"
+    }
+   ]
+  },
+  "note": "Manager-support band from the person's baseline follow-up. Differences are associations, not effects of manager support."
+ },
+ "funnel": {
+  "all": [
+   {
+    "label": "Eligible workforce (headcount)",
+    "n": 12905,
+    "pct_of_prev": null,
+    "pct_of_registered": null,
+    "stage": "eligible"
+   },
+   {
+    "label": "Registered for a badge tier",
+    "n": 4006,
+    "pct_of_prev": 0.3104,
+    "pct_of_registered": 1.0,
+    "stage": "registered"
+   },
+   {
+    "label": "Started (attended a session or opened a module)",
+    "n": 3044,
+    "pct_of_prev": 0.7599,
+    "pct_of_registered": 0.7599,
+    "stage": "started"
+   },
+   {
+    "label": "Completed the entry tier and earned its badge (AI Explorer / AI Ready Leaders)",
+    "n": 2103,
+    "pct_of_prev": 0.6909,
+    "pct_of_registered": 0.525,
+    "stage": "badge_any"
+   },
+   {
+    "label": "Earned an applied badge (AI Catalyst / AI Adaptive Leaders)",
+    "n": 616,
+    "pct_of_prev": 0.2929,
+    "pct_of_registered": 0.1538,
+    "stage": "badge_applied"
+   },
+   {
+    "label": "Earned the top badge (AI Practitioner / AI Forward Strategies)",
+    "n": 145,
+    "pct_of_prev": 0.2354,
+    "pct_of_registered": 0.0362,
+    "stage": "badge_top"
+   }
+  ],
+  "leader": [
+   {
+    "label": "Eligible workforce (headcount)",
+    "n": 918,
+    "pct_of_prev": null,
+    "pct_of_registered": null,
+    "stage": "eligible"
+   },
+   {
+    "label": "Registered for a badge tier",
+    "n": 453,
+    "pct_of_prev": 0.4935,
+    "pct_of_registered": 1.0,
+    "stage": "registered"
+   },
+   {
+    "label": "Started (attended a session or opened a module)",
+    "n": 344,
+    "pct_of_prev": 0.7594,
+    "pct_of_registered": 0.7594,
+    "stage": "started"
+   },
+   {
+    "label": "Completed the entry tier and earned its badge (AI Explorer / AI Ready Leaders)",
+    "n": 242,
+    "pct_of_prev": 0.7035,
+    "pct_of_registered": 0.5342,
+    "stage": "badge_any"
+   },
+   {
+    "label": "Earned an applied badge (AI Catalyst / AI Adaptive Leaders)",
+    "n": 64,
+    "pct_of_prev": 0.2645,
+    "pct_of_registered": 0.1413,
+    "stage": "badge_applied"
+   },
+   {
+    "label": "Earned the top badge (AI Practitioner / AI Forward Strategies)",
+    "n": 15,
+    "pct_of_prev": 0.2344,
+    "pct_of_registered": 0.0331,
+    "stage": "badge_top"
+   }
+  ],
+  "staff": [
+   {
+    "label": "Eligible workforce (headcount)",
+    "n": 11987,
+    "pct_of_prev": null,
+    "pct_of_registered": null,
+    "stage": "eligible"
+   },
+   {
+    "label": "Registered for a badge tier",
+    "n": 3553,
+    "pct_of_prev": 0.2964,
+    "pct_of_registered": 1.0,
+    "stage": "registered"
+   },
+   {
+    "label": "Started (attended a session or opened a module)",
+    "n": 2700,
+    "pct_of_prev": 0.7599,
+    "pct_of_registered": 0.7599,
+    "stage": "started"
+   },
+   {
+    "label": "Completed the entry tier and earned its badge (AI Explorer / AI Ready Leaders)",
+    "n": 1861,
+    "pct_of_prev": 0.6893,
+    "pct_of_registered": 0.5238,
+    "stage": "badge_any"
+   },
+   {
+    "label": "Earned an applied badge (AI Catalyst / AI Adaptive Leaders)",
+    "n": 552,
+    "pct_of_prev": 0.2966,
+    "pct_of_registered": 0.1554,
+    "stage": "badge_applied"
+   },
+   {
+    "label": "Earned the top badge (AI Practitioner / AI Forward Strategies)",
+    "n": 130,
+    "pct_of_prev": 0.2355,
+    "pct_of_registered": 0.0366,
+    "stage": "badge_top"
+   }
+  ]
+ },
+ "heatmap": {
+  "columns": [
+   {
+    "key": "reach",
+    "kind": "rate",
+    "label": "Reach: % of headcount registered"
+   },
+   {
+    "key": "entry_complete",
+    "kind": "rate",
+    "label": "Entry tier completed (% of registrants)"
+   },
+   {
+    "key": "applied_badge",
+    "kind": "rate",
+    "label": "Applied badge (Catalyst / Adaptive or higher), % of registrants"
+   },
+   {
+    "key": "bci_change_d90",
+    "kind": "mean",
+    "label": "Behavior index change, d90 (pts)"
+   },
+   {
+    "key": "trust_ai",
+    "kind": "mean",
+    "label": "Trust in AI (1-5)"
+   },
+   {
+    "key": "psych_safety",
+    "kind": "mean",
+    "label": "Psychological safety (1-5)"
+   },
+   {
+    "key": "manager_support",
+    "kind": "mean",
+    "label": "Manager support (1-5)"
+   },
+   {
+    "key": "use_cases",
+    "kind": "count",
+    "label": "Use cases submitted"
+   },
+   {
+    "key": "copilot_active",
+    "kind": "rate",
+    "label": "Copilot Chat monthly active (2026-10)"
+   },
+   {
+    "key": "copilot_repeat",
+    "kind": "rate",
+    "label": "Copilot Chat repeat users (% of active)"
+   }
+  ],
+  "rows": [
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 656,
+      "num_n": 98,
+      "rate": 0.1494
+     },
+     "bci_change_d90": {
+      "mean": 16.3,
+      "n": 136
+     },
+     "copilot_active": {
+      "n": 2000,
+      "num_n": 709,
+      "rate": 0.3545
+     },
+     "copilot_repeat": {
+      "n": 709,
+      "num_n": 347,
+      "rate": 0.4894
+     },
+     "entry_complete": {
+      "n": 656,
+      "num_n": 317,
+      "rate": 0.4832
+     },
+     "manager_support": {
+      "mean": 2.62,
+      "n": 483
+     },
+     "psych_safety": {
+      "mean": 3.42,
+      "n": 483
+     },
+     "reach": {
+      "n": 2000,
+      "num_n": 656,
+      "rate": 0.328
+     },
+     "trust_ai": {
+      "mean": 3.43,
+      "n": 483
+     },
+     "use_cases": {
+      "n": 19
+     }
+    },
+    "headcount_n": 2000,
+    "label": "Academic college: large STEM",
+    "unit_id": "U01",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 727,
+      "num_n": 118,
+      "rate": 0.1623
+     },
+     "bci_change_d90": {
+      "mean": 19.4,
+      "n": 130
+     },
+     "copilot_active": {
+      "n": 2211,
+      "num_n": 701,
+      "rate": 0.3171
+     },
+     "copilot_repeat": {
+      "n": 701,
+      "num_n": 298,
+      "rate": 0.4251
+     },
+     "entry_complete": {
+      "n": 727,
+      "num_n": 401,
+      "rate": 0.5516
+     },
+     "manager_support": {
+      "mean": 3.83,
+      "n": 505
+     },
+     "psych_safety": {
+      "mean": 3.72,
+      "n": 505
+     },
+     "reach": {
+      "n": 2211,
+      "num_n": 727,
+      "rate": 0.3288
+     },
+     "trust_ai": {
+      "mean": 3.18,
+      "n": 505
+     },
+     "use_cases": {
+      "n": 18
+     }
+    },
+    "headcount_n": 2211,
+    "label": "Academic college: large arts & sciences",
+    "unit_id": "U02",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 318,
+      "num_n": 44,
+      "rate": 0.1384
+     },
+     "bci_change_d90": {
+      "mean": 17.4,
+      "n": 48
+     },
+     "copilot_active": {
+      "n": 1158,
+      "num_n": 361,
+      "rate": 0.3117
+     },
+     "copilot_repeat": {
+      "n": 361,
+      "num_n": 161,
+      "rate": 0.446
+     },
+     "entry_complete": {
+      "n": 318,
+      "num_n": 178,
+      "rate": 0.5597
+     },
+     "manager_support": {
+      "mean": 3.25,
+      "n": 266
+     },
+     "psych_safety": {
+      "mean": 3.73,
+      "n": 266
+     },
+     "reach": {
+      "n": 1158,
+      "num_n": 318,
+      "rate": 0.2746
+     },
+     "trust_ai": {
+      "mean": 3.1,
+      "n": 266
+     },
+     "use_cases": {
+      "n": 13
+     }
+    },
+    "headcount_n": 1158,
+    "label": "Academic college: agriculture & environment",
+    "unit_id": "U03",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 151,
+      "num_n": 27,
+      "rate": 0.1788
+     },
+     "bci_change_d90": {
+      "mean": 17.0,
+      "n": 22
+     },
+     "copilot_active": {
+      "n": 474,
+      "num_n": 168,
+      "rate": 0.3544
+     },
+     "copilot_repeat": {
+      "n": 168,
+      "num_n": 67,
+      "rate": 0.3988
+     },
+     "entry_complete": {
+      "n": 151,
+      "num_n": 83,
+      "rate": 0.5497
+     },
+     "manager_support": {
+      "mean": 2.91,
+      "n": 122
+     },
+     "psych_safety": {
+      "mean": 3.14,
+      "n": 122
+     },
+     "reach": {
+      "n": 474,
+      "num_n": 151,
+      "rate": 0.3186
+     },
+     "trust_ai": {
+      "mean": 3.01,
+      "n": 122
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 474,
+    "label": "Academic college: business",
+    "unit_id": "U04",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 114,
+      "num_n": 21,
+      "rate": 0.1842
+     },
+     "bci_change_d90": {
+      "mean": 13.7,
+      "n": 18
+     },
+     "copilot_active": {
+      "n": 316,
+      "num_n": 117,
+      "rate": 0.3703
+     },
+     "copilot_repeat": {
+      "n": 117,
+      "num_n": 60,
+      "rate": 0.5128
+     },
+     "entry_complete": {
+      "n": 114,
+      "num_n": 59,
+      "rate": 0.5175
+     },
+     "manager_support": {
+      "mean": 3.23,
+      "n": 62
+     },
+     "psych_safety": {
+      "mean": 3.64,
+      "n": 62
+     },
+     "reach": {
+      "n": 316,
+      "num_n": 114,
+      "rate": 0.3608
+     },
+     "trust_ai": {
+      "mean": 3.13,
+      "n": 62
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 316,
+    "label": "Academic college: education",
+    "unit_id": "U05",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 170,
+      "num_n": 31,
+      "rate": 0.1824
+     },
+     "bci_change_d90": {
+      "mean": 19.1,
+      "n": 27
+     },
+     "copilot_active": {
+      "n": 548,
+      "num_n": 190,
+      "rate": 0.3467
+     },
+     "copilot_repeat": {
+      "n": 190,
+      "num_n": 73,
+      "rate": 0.3842
+     },
+     "entry_complete": {
+      "n": 170,
+      "num_n": 91,
+      "rate": 0.5353
+     },
+     "manager_support": {
+      "mean": 3.21,
+      "n": 132
+     },
+     "psych_safety": {
+      "mean": 3.17,
+      "n": 132
+     },
+     "reach": {
+      "n": 548,
+      "num_n": 170,
+      "rate": 0.3102
+     },
+     "trust_ai": {
+      "mean": 3.04,
+      "n": 132
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 548,
+    "label": "Academic college: fine & applied arts",
+    "unit_id": "U06",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 72,
+      "num_n": null,
+      "rate": null
+     },
+     "bci_change_d90": {
+      "mean": 15.2,
+      "n": 15
+     },
+     "copilot_active": {
+      "n": 169,
+      "num_n": 57,
+      "rate": 0.3373
+     },
+     "copilot_repeat": {
+      "n": 57,
+      "num_n": 17,
+      "rate": 0.2982
+     },
+     "entry_complete": {
+      "n": 72,
+      "num_n": 39,
+      "rate": 0.5417
+     },
+     "manager_support": {
+      "mean": 4.24,
+      "n": 36
+     },
+     "psych_safety": {
+      "mean": 3.94,
+      "n": 36
+     },
+     "reach": {
+      "n": 169,
+      "num_n": 72,
+      "rate": 0.426
+     },
+     "trust_ai": {
+      "mean": 2.78,
+      "n": 36
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 169,
+    "label": "Academic college: media",
+    "unit_id": "U07",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 27,
+      "num_n": null,
+      "rate": null
+     },
+     "bci_change_d90": {
+      "mean": null,
+      "n": null
+     },
+     "copilot_active": {
+      "n": 100,
+      "num_n": 38,
+      "rate": 0.38
+     },
+     "copilot_repeat": {
+      "n": 38,
+      "num_n": 17,
+      "rate": 0.4474
+     },
+     "entry_complete": {
+      "n": 27,
+      "num_n": 18,
+      "rate": 0.6667
+     },
+     "manager_support": {
+      "mean": 3.8,
+      "n": 25
+     },
+     "psych_safety": {
+      "mean": 2.88,
+      "n": 25
+     },
+     "reach": {
+      "n": 100,
+      "num_n": 27,
+      "rate": 0.27
+     },
+     "trust_ai": {
+      "mean": 3.26,
+      "n": 25
+     },
+     "use_cases": {
+      "n": 0
+     }
+    },
+    "headcount_n": 100,
+    "label": "Academic school: social work",
+    "unit_id": "U08",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 112,
+      "num_n": 18,
+      "rate": 0.1607
+     },
+     "bci_change_d90": {
+      "mean": 18.0,
+      "n": 22
+     },
+     "copilot_active": {
+      "n": 295,
+      "num_n": 123,
+      "rate": 0.4169
+     },
+     "copilot_repeat": {
+      "n": 123,
+      "num_n": 54,
+      "rate": 0.439
+     },
+     "entry_complete": {
+      "n": 112,
+      "num_n": 64,
+      "rate": 0.5714
+     },
+     "manager_support": {
+      "mean": 3.16,
+      "n": 79
+     },
+     "psych_safety": {
+      "mean": 3.44,
+      "n": 79
+     },
+     "reach": {
+      "n": 295,
+      "num_n": 112,
+      "rate": 0.3797
+     },
+     "trust_ai": {
+      "mean": 3.25,
+      "n": 79
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 295,
+    "label": "Library",
+    "unit_id": "U09",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 158,
+      "num_n": 31,
+      "rate": 0.1962
+     },
+     "bci_change_d90": {
+      "mean": 17.5,
+      "n": 24
+     },
+     "copilot_active": {
+      "n": 400,
+      "num_n": 136,
+      "rate": 0.34
+     },
+     "copilot_repeat": {
+      "n": 136,
+      "num_n": 60,
+      "rate": 0.4412
+     },
+     "entry_complete": {
+      "n": 158,
+      "num_n": 82,
+      "rate": 0.519
+     },
+     "manager_support": {
+      "mean": 3.92,
+      "n": 97
+     },
+     "psych_safety": {
+      "mean": 3.42,
+      "n": 97
+     },
+     "reach": {
+      "n": 400,
+      "num_n": 158,
+      "rate": 0.395
+     },
+     "trust_ai": {
+      "mean": 2.96,
+      "n": 97
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 400,
+    "label": "Academic college: medicine",
+    "unit_id": "U10",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 196,
+      "num_n": 19,
+      "rate": 0.0969
+     },
+     "bci_change_d90": {
+      "mean": 21.8,
+      "n": 29
+     },
+     "copilot_active": {
+      "n": 737,
+      "num_n": 226,
+      "rate": 0.3066
+     },
+     "copilot_repeat": {
+      "n": 226,
+      "num_n": 101,
+      "rate": 0.4469
+     },
+     "entry_complete": {
+      "n": 196,
+      "num_n": 95,
+      "rate": 0.4847
+     },
+     "manager_support": {
+      "mean": 3.16,
+      "n": 174
+     },
+     "psych_safety": {
+      "mean": 2.96,
+      "n": 174
+     },
+     "reach": {
+      "n": 737,
+      "num_n": 196,
+      "rate": 0.2659
+     },
+     "trust_ai": {
+      "mean": 3.05,
+      "n": 174
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 737,
+    "label": "Academic college: veterinary",
+    "unit_id": "U11",
+    "unit_type": "academic"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 340,
+      "num_n": 66,
+      "rate": 0.1941
+     },
+     "bci_change_d90": {
+      "mean": 18.2,
+      "n": 65
+     },
+     "copilot_active": {
+      "n": 948,
+      "num_n": 338,
+      "rate": 0.3565
+     },
+     "copilot_repeat": {
+      "n": 338,
+      "num_n": 171,
+      "rate": 0.5059
+     },
+     "entry_complete": {
+      "n": 340,
+      "num_n": 195,
+      "rate": 0.5735
+     },
+     "manager_support": {
+      "mean": 3.26,
+      "n": 235
+     },
+     "psych_safety": {
+      "mean": 2.94,
+      "n": 235
+     },
+     "reach": {
+      "n": 948,
+      "num_n": 340,
+      "rate": 0.3586
+     },
+     "trust_ai": {
+      "mean": 3.11,
+      "n": 235
+     },
+     "use_cases": {
+      "n": 16
+     }
+    },
+    "headcount_n": 948,
+    "label": "Research institutes",
+    "unit_id": "U12",
+    "unit_type": "research"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 195,
+      "num_n": 25,
+      "rate": 0.1282
+     },
+     "bci_change_d90": {
+      "mean": 21.8,
+      "n": 20
+     },
+     "copilot_active": {
+      "n": 684,
+      "num_n": 190,
+      "rate": 0.2778
+     },
+     "copilot_repeat": {
+      "n": 190,
+      "num_n": 81,
+      "rate": 0.4263
+     },
+     "entry_complete": {
+      "n": 195,
+      "num_n": 87,
+      "rate": 0.4462
+     },
+     "manager_support": {
+      "mean": 3.28,
+      "n": 135
+     },
+     "psych_safety": {
+      "mean": 3.35,
+      "n": 135
+     },
+     "reach": {
+      "n": 684,
+      "num_n": 195,
+      "rate": 0.2851
+     },
+     "trust_ai": {
+      "mean": 2.72,
+      "n": 135
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 684,
+    "label": "Student affairs",
+    "unit_id": "U13",
+    "unit_type": "admin"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 266,
+      "num_n": 30,
+      "rate": 0.1128
+     },
+     "bci_change_d90": {
+      "mean": 15.1,
+      "n": 30
+     },
+     "copilot_active": {
+      "n": 1211,
+      "num_n": 312,
+      "rate": 0.2576
+     },
+     "copilot_repeat": {
+      "n": 312,
+      "num_n": 113,
+      "rate": 0.3622
+     },
+     "entry_complete": {
+      "n": 266,
+      "num_n": 122,
+      "rate": 0.4586
+     },
+     "manager_support": {
+      "mean": 3.26,
+      "n": 271
+     },
+     "psych_safety": {
+      "mean": 3.52,
+      "n": 271
+     },
+     "reach": {
+      "n": 1211,
+      "num_n": 266,
+      "rate": 0.2197
+     },
+     "trust_ai": {
+      "mean": 3.16,
+      "n": 271
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 1211,
+    "label": "Facilities & services",
+    "unit_id": "U14",
+    "unit_type": "operations"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 103,
+      "num_n": 16,
+      "rate": 0.1553
+     },
+     "bci_change_d90": {
+      "mean": 16.0,
+      "n": 19
+     },
+     "copilot_active": {
+      "n": 442,
+      "num_n": 129,
+      "rate": 0.2919
+     },
+     "copilot_repeat": {
+      "n": 129,
+      "num_n": 60,
+      "rate": 0.4651
+     },
+     "entry_complete": {
+      "n": 103,
+      "num_n": 55,
+      "rate": 0.534
+     },
+     "manager_support": {
+      "mean": 2.74,
+      "n": 93
+     },
+     "psych_safety": {
+      "mean": 3.49,
+      "n": 93
+     },
+     "reach": {
+      "n": 442,
+      "num_n": 103,
+      "rate": 0.233
+     },
+     "trust_ai": {
+      "mean": 3.49,
+      "n": 93
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 442,
+    "label": "Technology services",
+    "unit_id": "U15",
+    "unit_type": "admin"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 45,
+      "num_n": null,
+      "rate": null
+     },
+     "bci_change_d90": {
+      "mean": null,
+      "n": null
+     },
+     "copilot_active": {
+      "n": 147,
+      "num_n": 47,
+      "rate": 0.3197
+     },
+     "copilot_repeat": {
+      "n": 47,
+      "num_n": 19,
+      "rate": 0.4043
+     },
+     "entry_complete": {
+      "n": 45,
+      "num_n": 23,
+      "rate": 0.5111
+     },
+     "manager_support": {
+      "mean": 2.48,
+      "n": 41
+     },
+     "psych_safety": {
+      "mean": 4.3,
+      "n": 41
+     },
+     "reach": {
+      "n": 147,
+      "num_n": 45,
+      "rate": 0.3061
+     },
+     "trust_ai": {
+      "mean": 3.1,
+      "n": 41
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 147,
+    "label": "Human resources",
+    "unit_id": "U16",
+    "unit_type": "admin"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 109,
+      "num_n": 16,
+      "rate": 0.1468
+     },
+     "bci_change_d90": {
+      "mean": 14.3,
+      "n": 17
+     },
+     "copilot_active": {
+      "n": 274,
+      "num_n": 107,
+      "rate": 0.3905
+     },
+     "copilot_repeat": {
+      "n": 107,
+      "num_n": 46,
+      "rate": 0.4299
+     },
+     "entry_complete": {
+      "n": 109,
+      "num_n": 59,
+      "rate": 0.5413
+     },
+     "manager_support": {
+      "mean": 2.88,
+      "n": 71
+     },
+     "psych_safety": {
+      "mean": 3.7,
+      "n": 71
+     },
+     "reach": {
+      "n": 274,
+      "num_n": 109,
+      "rate": 0.3978
+     },
+     "trust_ai": {
+      "mean": 3.46,
+      "n": 71
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 274,
+    "label": "Business & finance",
+    "unit_id": "U17",
+    "unit_type": "admin"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 117,
+      "num_n": 21,
+      "rate": 0.1795
+     },
+     "bci_change_d90": {
+      "mean": 16.9,
+      "n": 22
+     },
+     "copilot_active": {
+      "n": 242,
+      "num_n": 85,
+      "rate": 0.3512
+     },
+     "copilot_repeat": {
+      "n": 85,
+      "num_n": 45,
+      "rate": 0.5294
+     },
+     "entry_complete": {
+      "n": 117,
+      "num_n": 70,
+      "rate": 0.5983
+     },
+     "manager_support": {
+      "mean": 3.37,
+      "n": 65
+     },
+     "psych_safety": {
+      "mean": 3.36,
+      "n": 65
+     },
+     "reach": {
+      "n": 242,
+      "num_n": 117,
+      "rate": 0.4835
+     },
+     "trust_ai": {
+      "mean": 3.35,
+      "n": 65
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 242,
+    "label": "Provost & central administration",
+    "unit_id": "U18",
+    "unit_type": "admin"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 89,
+      "num_n": null,
+      "rate": null
+     },
+     "bci_change_d90": {
+      "mean": null,
+      "n": null
+     },
+     "copilot_active": {
+      "n": 316,
+      "num_n": 83,
+      "rate": 0.2627
+     },
+     "copilot_repeat": {
+      "n": 83,
+      "num_n": 26,
+      "rate": 0.3133
+     },
+     "entry_complete": {
+      "n": 89,
+      "num_n": 39,
+      "rate": 0.4382
+     },
+     "manager_support": {
+      "mean": 3.99,
+      "n": 68
+     },
+     "psych_safety": {
+      "mean": 3.82,
+      "n": 68
+     },
+     "reach": {
+      "n": 316,
+      "num_n": 89,
+      "rate": 0.2816
+     },
+     "trust_ai": {
+      "mean": 3.1,
+      "n": 68
+     },
+     "use_cases": {
+      "n": null
+     }
+    },
+    "headcount_n": 316,
+    "label": "Athletics",
+    "unit_id": "U19",
+    "unit_type": "operations"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": 26,
+      "num_n": 10,
+      "rate": 0.3846
+     },
+     "bci_change_d90": {
+      "mean": null,
+      "n": null
+     },
+     "copilot_active": {
+      "n": 168,
+      "num_n": 51,
+      "rate": 0.3036
+     },
+     "copilot_repeat": {
+      "n": 51,
+      "num_n": 22,
+      "rate": 0.4314
+     },
+     "entry_complete": {
+      "n": 26,
+      "num_n": 18,
+      "rate": 0.6923
+     },
+     "manager_support": {
+      "mean": 2.69,
+      "n": 36
+     },
+     "psych_safety": {
+      "mean": 3.44,
+      "n": 36
+     },
+     "reach": {
+      "n": 168,
+      "num_n": 26,
+      "rate": 0.1548
+     },
+     "trust_ai": {
+      "mean": 2.1,
+      "n": 36
+     },
+     "use_cases": {
+      "n": 0
+     }
+    },
+    "headcount_n": 168,
+    "label": "Public safety",
+    "unit_id": "U20",
+    "unit_type": "operations"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": null,
+      "num_n": null,
+      "rate": null
+     },
+     "bci_change_d90": {
+      "mean": null,
+      "n": null
+     },
+     "copilot_active": {
+      "n": 40,
+      "num_n": 10,
+      "rate": 0.25
+     },
+     "copilot_repeat": {
+      "n": 10,
+      "num_n": null,
+      "rate": null
+     },
+     "entry_complete": {
+      "n": null,
+      "num_n": null,
+      "rate": null
+     },
+     "manager_support": {
+      "mean": 3.25,
+      "n": 16
+     },
+     "psych_safety": {
+      "mean": 3.0,
+      "n": 16
+     },
+     "reach": {
+      "n": 40,
+      "num_n": null,
+      "rate": null
+     },
+     "trust_ai": {
+      "mean": 3.5,
+      "n": 16
+     },
+     "use_cases": {
+      "n": 0
+     }
+    },
+    "headcount_n": 40,
+    "label": "Small advisory office",
+    "unit_id": "U21",
+    "unit_type": "admin"
+   },
+   {
+    "cells": {
+     "applied_badge": {
+      "n": null,
+      "num_n": null,
+      "rate": null
+     },
+     "bci_change_d90": {
+      "mean": null,
+      "n": null
+     },
+     "copilot_active": {
+      "n": 25,
+      "num_n": null,
+      "rate": null
+     },
+     "copilot_repeat": {
+      "n": null,
+      "num_n": null,
+      "rate": null
+     },
+     "entry_complete": {
+      "n": null,
+      "num_n": null,
+      "rate": null
+     },
+     "manager_support": {
+      "mean": null,
+      "n": null
+     },
+     "psych_safety": {
+      "mean": null,
+      "n": null
+     },
+     "reach": {
+      "n": 25,
+      "num_n": null,
+      "rate": null
+     },
+     "trust_ai": {
+      "mean": null,
+      "n": null
+     },
+     "use_cases": {
+      "n": 0
+     }
+    },
+    "headcount_n": 25,
+    "label": "Small compliance office",
+    "unit_id": "U22",
+    "unit_type": "admin"
+   }
+  ],
+  "unit_by_role": {
+   "cell_flags": [
+    [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "c",
+     "p",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "p",
+     "c"
+    ],
+    [
+     "",
+     "",
+     "",
+     "p",
+     "c"
+    ],
+    [
+     "p",
+     "p",
+     "p",
+     "",
+     "p"
+    ],
+    [
+     "",
+     "",
+     "c",
+     "p",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "p",
+     "c"
+    ],
+    [
+     "",
+     "",
+     "c",
+     "p",
+     ""
+    ],
+    [
+     "p",
+     "",
+     "",
+     "c",
+     ""
+    ],
+    [
+     "p",
+     "",
+     "",
+     "",
+     "p"
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "p",
+     "p"
+    ],
+    [
+     "p",
+     "",
+     "",
+     "p",
+     "p"
+    ],
+    [
+     "",
+     "",
+     "",
+     "p",
+     "p"
+    ],
+    [
+     "p",
+     "",
+     "",
+     "c",
+     ""
+    ],
+    [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    [
+     "",
+     "p",
+     "p",
+     "",
+     ""
+    ],
+    [
+     "",
+     "p",
+     "p",
+     "p",
+     ""
+    ],
+    [
+     "",
+     "p",
+     "p",
+     "p",
+     ""
+    ]
+   ],
+   "cells": [
+    [
+     193,
+     189,
+     111,
+     27,
+     136
+    ],
+    [
+     225,
+     210,
+     147,
+     30,
+     115
+    ],
+    [
+     104,
+     88,
+     61,
+     11,
+     54
+    ],
+    [
+     47,
+     42,
+     null,
+     null,
+     28
+    ],
+    [
+     33,
+     40,
+     16,
+     10,
+     15
+    ],
+    [
+     53,
+     50,
+     31,
+     null,
+     null
+    ],
+    [
+     22,
+     25,
+     12,
+     null,
+     null
+    ],
+    [
+     null,
+     null,
+     null,
+     0,
+     null
+    ],
+    [
+     35,
+     33,
+     null,
+     null,
+     22
+    ],
+    [
+     53,
+     52,
+     29,
+     null,
+     null
+    ],
+    [
+     62,
+     58,
+     null,
+     null,
+     37
+    ],
+    [
+     null,
+     125,
+     32,
+     null,
+     149
+    ],
+    [
+     null,
+     91,
+     81,
+     17,
+     null
+    ],
+    [
+     0,
+     64,
+     62,
+     140,
+     0
+    ],
+    [
+     0,
+     51,
+     41,
+     null,
+     null
+    ],
+    [
+     null,
+     28,
+     12,
+     null,
+     null
+    ],
+    [
+     0,
+     51,
+     45,
+     null,
+     null
+    ],
+    [
+     null,
+     62,
+     36,
+     null,
+     0
+    ],
+    [
+     0,
+     16,
+     13,
+     60,
+     0
+    ],
+    [
+     0,
+     null,
+     null,
+     14,
+     0
+    ],
+    [
+     0,
+     null,
+     null,
+     null,
+     0
+    ],
+    [
+     0,
+     null,
+     null,
+     null,
+     0
+    ]
+   ],
+   "col_labels": [
+    "Faculty",
+    "Academic professional",
+    "Civil service: office & admin",
+    "Civil service: technical, trades & service",
+    "Research staff & postdocs"
+   ],
+   "col_totals": [
+    847,
+    1300,
+    824,
+    409,
+    626
+   ],
+   "cols": [
+    "FAC",
+    "AP",
+    "CS_ADM",
+    "CS_TECH",
+    "RES"
+   ],
+   "complementary_suppressed": 10,
+   "grand": 4006,
+   "note": "Registrants (any badge tier) by unit and role family. '<10' = primary suppression (1-9); '\u00b7' = complementary suppression so the hidden cell cannot be recovered from the totals.",
+   "primary_suppressed": 29,
+   "row_labels": [
+    "Academic college: large STEM",
+    "Academic college: large arts & sciences",
+    "Academic college: agriculture & environment",
+    "Academic college: business",
+    "Academic college: education",
+    "Academic college: fine & applied arts",
+    "Academic college: media",
+    "Academic school: social work",
+    "Library",
+    "Academic college: medicine",
+    "Academic college: veterinary",
+    "Research institutes",
+    "Student affairs",
+    "Facilities & services",
+    "Technology services",
+    "Human resources",
+    "Business & finance",
+    "Provost & central administration",
+    "Athletics",
+    "Public safety",
+    "Small advisory office",
+    "Small compliance office"
+   ],
+   "row_totals": [
+    656,
+    727,
+    318,
+    151,
+    114,
+    170,
+    72,
+    27,
+    112,
+    158,
+    196,
+    340,
+    195,
+    266,
+    103,
+    45,
+    109,
+    117,
+    89,
+    26,
+    null,
+    null
+   ],
+   "rows": [
+    "U01",
+    "U02",
+    "U03",
+    "U04",
+    "U05",
+    "U06",
+    "U07",
+    "U08",
+    "U09",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U18",
+    "U19",
+    "U20",
+    "U21",
+    "U22"
+   ]
+  }
+ },
+ "meta": {
+  "as_of": "2026-10-31",
+  "bootstrap": {
+   "method": "percentile, resampling people",
+   "reps": 2000,
+   "seed": 7
+  },
+  "contract_version": "0.1-draft",
+  "data_label": "SYNTHETIC: generated by ai_adoption/synthesize.py. No real people, units or responses.",
+  "data_quality": {
+   "badges_above_entry_without_lower_badge": 0,
+   "badges_without_required_completion": 0
+  },
+  "input_rows": {
+   "ai_skill_demand": 18,
+   "assessment_score": 3364,
+   "attendance": 13557,
+   "badge": 2864,
+   "mobility_event": 2405,
+   "pulse_response": 86576,
+   "registration": 6939,
+   "tool_usage_unit_month": 1056,
+   "use_case": 131,
+   "workforce_denominator": 184
+  },
+  "k_min_cell": 10,
+  "suppressed_values": 69,
+  "synthetic": true,
+  "talent_included": true,
+  "telemetry_included": true,
+  "title": "AI Adoption Impact Scorecard"
+ },
+ "not_shown": [
+  "Any individual's participation, scores, survey answers or tool use. Every figure is a group of at least 10 people; smaller groups show \"<10\".",
+  "Causal impact. The early-vs-later comparison is a difference-in-differences on self-selected groups with one short pre-period; it is descriptive, not proof that training caused the change.",
+  "Work quality or accuracy of AI-assisted output. Hours returned are self-estimates for adopted use cases, partly validated, and are capacity, not budget savings.",
+  "People who never answered a follow-up. Engaged people answer more often and response falls by day 90 (see cohort retention), so follow-up results are likely optimistic.",
+  "Use of non-approved AI tools, or approved-tool use outside the three admin reports. Telemetry counts accounts active in a month, not tasks or time saved.",
+  "Whether a unit or role family is 'behind'. Units differ in role mix, computer access and work content; heat-map colors compare a unit to other units, not to a target.",
+  "Job or headcount effects. Nothing here estimates AI replacement of roles; it measures learning and applied use.",
+  "Sensitive-data compliance. Use-case data classification and human-in-the-loop checklists are self-reported at intake.",
+  "Who should be hired, promoted or named a successor. The talent view is aggregate and associational; badge holders already moved more before they earned the badge."
+ ],
+ "proficiency": {
+  "by_tier": [
+   {
+    "criteria": {
+     "output_verification": 2.14,
+     "responsible_use": 2.46,
+     "task_framing": 2.38,
+     "workflow_integration": 1.97
+    },
+    "label": "AI Catalyst",
+    "n": 501,
+    "proficient": {
+     "n": 501,
+     "num_n": 184,
+     "rate": 0.3673
+    },
+    "tier": "AI_CATALYST",
+    "track": "staff"
+   },
+   {
+    "criteria": {
+     "output_verification": 2.53,
+     "responsible_use": 2.77,
+     "task_framing": 2.72,
+     "workflow_integration": 2.3
+    },
+    "label": "AI Practitioner",
+    "n": 104,
+    "proficient": {
+     "n": 104,
+     "num_n": 65,
+     "rate": 0.625
+    },
+    "tier": "AI_PRACTITIONER",
+    "track": "staff"
+   },
+   {
+    "criteria": {
+     "output_verification": 2.2,
+     "responsible_use": 2.56,
+     "task_framing": 2.36,
+     "workflow_integration": 1.99
+    },
+    "label": "AI Adaptive Leaders",
+    "n": 56,
+    "proficient": {
+     "n": 56,
+     "num_n": 24,
+     "rate": 0.4286
+    },
+    "tier": "AI_ADAPTIVE_LEADERS",
+    "track": "leader"
+   },
+   {
+    "criteria": {
+     "output_verification": 2.5,
+     "responsible_use": 2.5,
+     "task_framing": 2.38,
+     "workflow_integration": 2.23
+    },
+    "label": "AI Forward Strategies",
+    "n": 13,
+    "proficient": {
+     "n": 13,
+     "num_n": null,
+     "rate": null
+    },
+    "tier": "AI_FORWARD_STRATEGIES",
+    "track": "leader"
+   }
+  ],
+  "inter_rater": [
+   {
+    "adjacent_agreement": 0.97,
+    "criterion": "task_framing",
+    "description": "Frames the task, context, constraints and audience in the prompt",
+    "exact_agreement": 0.491,
+    "n": 167,
+    "quadratic_weighted_kappa": 0.389
+   },
+   {
+    "adjacent_agreement": 0.964,
+    "criterion": "output_verification",
+    "description": "Checks output for accuracy, bias and fit; cites what was verified",
+    "exact_agreement": 0.467,
+    "n": 167,
+    "quadratic_weighted_kappa": 0.433
+   },
+   {
+    "adjacent_agreement": 0.958,
+    "criterion": "responsible_use",
+    "description": "Applies data classification, approved-tool and disclosure rules",
+    "exact_agreement": 0.539,
+    "n": 167,
+    "quadratic_weighted_kappa": 0.38
+   },
+   {
+    "adjacent_agreement": 0.952,
+    "criterion": "workflow_integration",
+    "description": "Integrates the tool into a repeatable work process with a human decision point",
+    "exact_agreement": 0.539,
+    "n": 167,
+    "quadratic_weighted_kappa": 0.446
+   }
+  ],
+  "note": "Human-scored rubric (1-4) on the applied-component artifact (AI Catalyst role scenario, cohort capstones); ~25% double-scored by two raters. Proficient = artifact mean >= 2.5 with no criterion below 2. Rater identities are never published."
+ },
+ "reaction": {
+  "by_tier": [
+   {
+    "confidence_to_apply": 3.79,
+    "label": "AI Explorer",
+    "n": 1695,
+    "nps": 12,
+    "relevance": 3.87,
+    "satisfaction": 4.08,
+    "tier": "AI_EXPLORER",
+    "track": "staff"
+   },
+   {
+    "confidence_to_apply": 4.01,
+    "label": "AI Catalyst",
+    "n": 507,
+    "nps": 17,
+    "relevance": 4.05,
+    "satisfaction": 4.19,
+    "tier": "AI_CATALYST",
+    "track": "staff"
+   },
+   {
+    "confidence_to_apply": 4.15,
+    "label": "AI Practitioner",
+    "n": 143,
+    "nps": 22,
+    "relevance": 4.1,
+    "satisfaction": 4.19,
+    "tier": "AI_PRACTITIONER",
+    "track": "staff"
+   },
+   {
+    "confidence_to_apply": 3.72,
+    "label": "AI Ready Leaders",
+    "n": 203,
+    "nps": 15,
+    "relevance": 3.88,
+    "satisfaction": 3.94,
+    "tier": "AI_READY_LEADERS",
+    "track": "leader"
+   },
+   {
+    "confidence_to_apply": 3.97,
+    "label": "AI Adaptive Leaders",
+    "n": 67,
+    "nps": 15,
+    "relevance": 3.93,
+    "satisfaction": 4.16,
+    "tier": "AI_ADAPTIVE_LEADERS",
+    "track": "leader"
+   },
+   {
+    "confidence_to_apply": 3.88,
+    "label": "AI Forward Strategies",
+    "n": 16,
+    "nps": -25,
+    "relevance": 3.94,
+    "satisfaction": 4.25,
+    "tier": "AI_FORWARD_STRATEGIES",
+    "track": "leader"
+   }
+  ],
+  "relevance_by_role": [
+   {
+    "label": "Faculty",
+    "mean": 4.0,
+    "n": 580,
+    "role_family": "FAC"
+   },
+   {
+    "label": "Academic professional",
+    "mean": 3.95,
+    "n": 887,
+    "role_family": "AP"
+   },
+   {
+    "label": "Civil service: office & admin",
+    "mean": 3.97,
+    "n": 501,
+    "role_family": "CS_ADM"
+   },
+   {
+    "label": "Civil service: technical, trades & service",
+    "mean": 3.51,
+    "n": 273,
+    "role_family": "CS_TECH"
+   },
+   {
+    "label": "Research staff & postdocs",
+    "mean": 3.94,
+    "n": 390,
+    "role_family": "RES"
+   }
+  ]
+ },
+ "retention": [
+  {
+   "applied_badge": {
+    "n": 1492,
+    "num_n": 278,
+    "rate": 0.1863
+   },
+   "applied_use_d90": {
+    "n": 406,
+    "num_n": 201,
+    "rate": 0.4951
+   },
+   "entry_badge": {
+    "n": 1492,
+    "num_n": 805,
+    "rate": 0.5395
+   },
+   "entry_complete": {
+    "n": 1492,
+    "num_n": 805,
+    "rate": 0.5395
+   },
+   "registered_n": 1492,
+   "responded_d30": {
+    "n": 805,
+    "num_n": 560,
+    "rate": 0.6957
+   },
+   "responded_d60": {
+    "n": 805,
+    "num_n": 505,
+    "rate": 0.6273
+   },
+   "responded_d90": {
+    "n": 805,
+    "num_n": 406,
+    "rate": 0.5043
+   },
+   "started": {
+    "n": 1492,
+    "num_n": 1152,
+    "rate": 0.7721
+   },
+   "wave": "W1"
+  },
+  {
+   "applied_badge": {
+    "n": 877,
+    "num_n": 153,
+    "rate": 0.1745
+   },
+   "applied_use_d90": {
+    "n": 232,
+    "num_n": 107,
+    "rate": 0.4612
+   },
+   "entry_badge": {
+    "n": 877,
+    "num_n": 467,
+    "rate": 0.5325
+   },
+   "entry_complete": {
+    "n": 877,
+    "num_n": 467,
+    "rate": 0.5325
+   },
+   "registered_n": 877,
+   "responded_d30": {
+    "n": 467,
+    "num_n": 299,
+    "rate": 0.6403
+   },
+   "responded_d60": {
+    "n": 467,
+    "num_n": 265,
+    "rate": 0.5675
+   },
+   "responded_d90": {
+    "n": 467,
+    "num_n": 232,
+    "rate": 0.4968
+   },
+   "started": {
+    "n": 877,
+    "num_n": 667,
+    "rate": 0.7605
+   },
+   "wave": "W2"
+  },
+  {
+   "applied_badge": {
+    "n": 513,
+    "num_n": 85,
+    "rate": 0.1657
+   },
+   "applied_use_d90": {
+    "n": 125,
+    "num_n": 60,
+    "rate": 0.48
+   },
+   "entry_badge": {
+    "n": 513,
+    "num_n": 265,
+    "rate": 0.5166
+   },
+   "entry_complete": {
+    "n": 513,
+    "num_n": 265,
+    "rate": 0.5166
+   },
+   "registered_n": 513,
+   "responded_d30": {
+    "n": 265,
+    "num_n": 167,
+    "rate": 0.6302
+   },
+   "responded_d60": {
+    "n": 265,
+    "num_n": 154,
+    "rate": 0.5811
+   },
+   "responded_d90": {
+    "n": 265,
+    "num_n": 125,
+    "rate": 0.4717
+   },
+   "started": {
+    "n": 513,
+    "num_n": 397,
+    "rate": 0.7739
+   },
+   "wave": "W3"
+  },
+  {
+   "applied_badge": {
+    "n": 418,
+    "num_n": 58,
+    "rate": 0.1388
+   },
+   "applied_use_d90": {
+    "n": 85,
+    "num_n": 29,
+    "rate": 0.3412
+   },
+   "entry_badge": {
+    "n": 418,
+    "num_n": 212,
+    "rate": 0.5072
+   },
+   "entry_complete": {
+    "n": 418,
+    "num_n": 212,
+    "rate": 0.5072
+   },
+   "registered_n": 418,
+   "responded_d30": {
+    "n": 212,
+    "num_n": 127,
+    "rate": 0.5991
+   },
+   "responded_d60": {
+    "n": 212,
+    "num_n": 115,
+    "rate": 0.5425
+   },
+   "responded_d90": {
+    "n": 212,
+    "num_n": 85,
+    "rate": 0.4009
+   },
+   "started": {
+    "n": 418,
+    "num_n": 319,
+    "rate": 0.7632
+   },
+   "wave": "W4"
+  },
+  {
+   "applied_badge": {
+    "n": 349,
+    "num_n": 42,
+    "rate": 0.1203
+   },
+   "applied_use_d90": {
+    "n": 86,
+    "num_n": 42,
+    "rate": 0.4884
+   },
+   "entry_badge": {
+    "n": 349,
+    "num_n": 177,
+    "rate": 0.5072
+   },
+   "entry_complete": {
+    "n": 349,
+    "num_n": 177,
+    "rate": 0.5072
+   },
+   "registered_n": 349,
+   "responded_d30": {
+    "n": 177,
+    "num_n": 102,
+    "rate": 0.5763
+   },
+   "responded_d60": {
+    "n": 177,
+    "num_n": 107,
+    "rate": 0.6045
+   },
+   "responded_d90": {
+    "n": 177,
+    "num_n": 86,
+    "rate": 0.4859
+   },
+   "started": {
+    "n": 349,
+    "num_n": 248,
+    "rate": 0.7106
+   },
+   "wave": "W5"
+  },
+  {
+   "applied_badge": {
+    "n": 0,
+    "not_yet_observable": true,
+    "num_n": null,
+    "rate": null
+   },
+   "applied_use_d90": {
+    "n": 0,
+    "not_yet_observable": true,
+    "num_n": null,
+    "rate": null
+   },
+   "entry_badge": {
+    "n": 357,
+    "num_n": 177,
+    "rate": 0.4958
+   },
+   "entry_complete": {
+    "n": 357,
+    "num_n": 177,
+    "rate": 0.4958
+   },
+   "registered_n": 357,
+   "responded_d30": {
+    "n": 177,
+    "num_n": 93,
+    "rate": 0.5254
+   },
+   "responded_d60": {
+    "n": 0,
+    "not_yet_observable": true,
+    "num_n": null,
+    "rate": null
+   },
+   "responded_d90": {
+    "n": 0,
+    "not_yet_observable": true,
+    "num_n": null,
+    "rate": null
+   },
+   "started": {
+    "n": 357,
+    "num_n": 261,
+    "rate": 0.7311
+   },
+   "wave": "W6"
+  }
+ ],
+ "summary": {
+  "applied_badge_holders": {
+   "n": 616,
+   "rate": 0.1538
+  },
+  "applied_use_d90": {
+   "n": 934,
+   "num_n": 439,
+   "rate": 0.47
+  },
+  "badge_holders": {
+   "n": 2103,
+   "rate": 0.525
+  },
+  "bci_change_d90": {
+   "hi": 18.5,
+   "lo": 16.5,
+   "mean": 17.5,
+   "n": 674,
+   "wave": "d90"
+  },
+  "copilot_active": {
+   "first": {
+    "n": 12905,
+    "num_n": 2669,
+    "rate": 0.2068
+   },
+   "first_month": "2025-07",
+   "last": {
+    "n": 12905,
+    "num_n": 4187,
+    "rate": 0.3244
+   },
+   "last_month": "2026-10"
+  },
+  "hours": {
+   "adjusted": null,
+   "est": 142,
+   "n": 17
+  },
+  "registered": {
+   "n": 4006,
+   "rate": 0.3104
+  },
+  "super_ai_users": {
+   "n": 145
+  },
+  "trust_favorable": {
+   "n": 1601,
+   "num_n": 540,
+   "rate": 0.3373,
+   "wave": "P2026_10"
+  },
+  "unit_training": {
+   "attended_n": 430,
+   "note": "Unit Training sessions are requested by a unit for its own staff. They count toward reach, not toward a badge tier.",
+   "registered_n": 512,
+   "units": 8
+  },
+  "use_cases": {
+   "adopted_n": 17,
+   "n": 131
+  }
+ },
+ "talent": {
+  "access_by_role": [
+   {
+    "applied_badge": {
+     "n": 3277,
+     "num_n": 145,
+     "rate": 0.0442
+    },
+    "headcount_n": 3277,
+    "label": "Faculty",
+    "role_family": "FAC",
+    "top_badge": {
+     "n": 3277,
+     "num_n": 38,
+     "rate": 0.0116
+    }
+   },
+   {
+    "applied_badge": {
+     "n": 3209,
+     "num_n": 187,
+     "rate": 0.0583
+    },
+    "headcount_n": 3209,
+    "label": "Academic professional",
+    "role_family": "AP",
+    "top_badge": {
+     "n": 3209,
+     "num_n": 43,
+     "rate": 0.0134
+    }
+   },
+   {
+    "applied_badge": {
+     "n": 2259,
+     "num_n": 118,
+     "rate": 0.0522
+    },
+    "headcount_n": 2259,
+    "label": "Civil service: office & admin",
+    "role_family": "CS_ADM",
+    "top_badge": {
+     "n": 2259,
+     "num_n": 22,
+     "rate": 0.0097
+    }
+   },
+   {
+    "applied_badge": {
+     "n": 2192,
+     "num_n": 59,
+     "rate": 0.0269
+    },
+    "headcount_n": 2192,
+    "label": "Civil service: technical, trades & service",
+    "role_family": "CS_TECH",
+    "top_badge": {
+     "n": 2192,
+     "num_n": 15,
+     "rate": 0.0068
+    }
+   },
+   {
+    "applied_badge": {
+     "n": 1968,
+     "num_n": 107,
+     "rate": 0.0544
+    },
+    "headcount_n": 1968,
+    "label": "Research staff & postdocs",
+    "role_family": "RES",
+    "top_badge": {
+     "n": 1968,
+     "num_n": 27,
+     "rate": 0.0137
+    }
+   }
+  ],
+  "access_ratio_max_min": 2.17,
+  "demand_included": true,
+  "events": [
+   {
+    "event_type": "internal_application",
+    "groups": {
+     "after_applied_badge": {
+      "events_n": 44,
+      "hi": 15.96,
+      "lo": 8.84,
+      "n": 616,
+      "per_100_py": 11.88
+     },
+     "before_applied_badge": {
+      "events_n": 31,
+      "hi": 14.82,
+      "lo": 7.33,
+      "n": 616,
+      "per_100_py": 10.43
+     },
+     "not_registered": {
+      "events_n": 780,
+      "hi": 8.69,
+      "lo": 7.56,
+      "n": 8899,
+      "per_100_py": 8.1
+     },
+     "participants_no_applied_badge": {
+      "events_n": 367,
+      "hi": 11.06,
+      "lo": 9.01,
+      "n": 3390,
+      "per_100_py": 9.99
+     }
+    },
+    "label": "Applied to an internal posting"
+   },
+   {
+    "event_type": "internal_transfer",
+    "groups": {
+     "after_applied_badge": {
+      "events_n": 14,
+      "hi": 6.38,
+      "lo": 2.24,
+      "n": 616,
+      "per_100_py": 3.78
+     },
+     "before_applied_badge": {
+      "events_n": null,
+      "hi": null,
+      "lo": null,
+      "n": 616,
+      "per_100_py": null
+     },
+     "not_registered": {
+      "events_n": 238,
+      "hi": 2.81,
+      "lo": 2.18,
+      "n": 8899,
+      "per_100_py": 2.47
+     },
+     "participants_no_applied_badge": {
+      "events_n": 85,
+      "hi": 2.86,
+      "lo": 1.87,
+      "n": 3390,
+      "per_100_py": 2.31
+     }
+    },
+    "label": "Internal transfer"
+   },
+   {
+    "event_type": "promotion",
+    "groups": {
+     "after_applied_badge": {
+      "events_n": 21,
+      "hi": 8.69,
+      "lo": 3.7,
+      "n": 616,
+      "per_100_py": 5.67
+     },
+     "before_applied_badge": {
+      "events_n": 14,
+      "hi": 7.95,
+      "lo": 2.79,
+      "n": 616,
+      "per_100_py": 4.71
+     },
+     "not_registered": {
+      "events_n": 310,
+      "hi": 3.6,
+      "lo": 2.88,
+      "n": 8899,
+      "per_100_py": 3.22
+     },
+     "participants_no_applied_badge": {
+      "events_n": 130,
+      "hi": 4.2,
+      "lo": 2.98,
+      "n": 3390,
+      "per_100_py": 3.54
+     }
+    },
+    "label": "Promotion"
+   },
+   {
+    "event_type": "successor_nomination",
+    "groups": {
+     "after_applied_badge": {
+      "events_n": 18,
+      "hi": 7.71,
+      "lo": 3.06,
+      "n": 616,
+      "per_100_py": 4.86
+     },
+     "before_applied_badge": {
+      "events_n": 10,
+      "hi": 6.25,
+      "lo": 1.81,
+      "n": 616,
+      "per_100_py": 3.36
+     },
+     "not_registered": {
+      "events_n": null,
+      "hi": null,
+      "lo": null,
+      "n": null,
+      "not_comparable": true,
+      "per_100_py": null
+     },
+     "participants_no_applied_badge": {
+      "events_n": 128,
+      "hi": 4.14,
+      "lo": 2.93,
+      "n": 3390,
+      "per_100_py": 3.48
+     }
+    },
+    "label": "Named on a successor slate"
+   }
+  ],
+  "goal": "Series goal (public goals page): badges should guide internal talent marketplace opportunities and inform workforce planning and succession strategies, and should develop 'super AI users'.",
+  "group_labels": {
+   "after_applied_badge": "Applied-badge holders, after the badge",
+   "before_applied_badge": "Same people, before the badge",
+   "not_registered": "Did not register (comparison)",
+   "participants_no_applied_badge": "Registrants without an applied badge"
+  },
+  "guardrails": [
+   "Aggregate only. No list of badge holders goes to hiring managers or succession committees from this scorecard.",
+   "Badges are voluntary and access is uneven by role family (see access ratio). Using a badge as a screening or ranking criterion could create disparate impact; treat it as an opt-in signal the employee chooses to share in the talent marketplace.",
+   "If any automated tool uses badges to rank or screen candidates, Illinois HB 3773 notice and anti-discrimination duties apply; civil-service and bargaining-unit rules may also limit use. Legal and labor-relations review first.",
+   "Higher talent-event rates after a badge are associations. The same people already had higher rates before the badge (self-selection); compare 'before' with 'after' before reading anything into it."
+  ],
+  "succession": {
+   "eligible_pool": {
+    "n": 6747,
+    "num_n": 349,
+    "rate": 0.0517
+   },
+   "nominees": {
+    "n": 364,
+    "num_n": 18,
+    "rate": 0.0495
+   },
+   "note": "Share of distinct people named on successor slates who held an applied badge when named, vs the share of the eligible pool (leaders, academic professionals, faculty) holding one."
+  },
+  "super_ai_user_definition": "Holder of the top badge on either track (AI Practitioner or AI Forward Strategies).",
+  "supply_vs_demand": [
+   {
+    "applied_badge_n": 145,
+    "coverage": 0.9,
+    "label": "Faculty",
+    "positions_flagged_n": 162,
+    "role_family": "FAC",
+    "super_users_n": 38
+   },
+   {
+    "applied_badge_n": 187,
+    "coverage": 0.29,
+    "label": "Academic professional",
+    "positions_flagged_n": 642,
+    "role_family": "AP",
+    "super_users_n": 43
+   },
+   {
+    "applied_badge_n": 118,
+    "coverage": 0.37,
+    "label": "Civil service: office & admin",
+    "positions_flagged_n": 321,
+    "role_family": "CS_ADM",
+    "super_users_n": 22
+   },
+   {
+    "applied_badge_n": 59,
+    "coverage": 0.67,
+    "label": "Civil service: technical, trades & service",
+    "positions_flagged_n": 88,
+    "role_family": "CS_TECH",
+    "super_users_n": 15
+   },
+   {
+    "applied_badge_n": 107,
+    "coverage": 0.44,
+    "label": "Research staff & postdocs",
+    "positions_flagged_n": 241,
+    "role_family": "RES",
+    "super_users_n": 27
+   }
+  ]
+ },
+ "telemetry": {
+  "note": "Unit-month aggregates from admin reports. Active and repeat users cannot be de-duplicated across tools, so tools are shown separately. Licensed population differs by tool (ChatGPT Edu is seat-based).",
+  "series": [
+   {
+    "active": {
+     "n": null,
+     "num_n": null,
+     "rate": null
+    },
+    "licensed_n": 0,
+    "month": "2025-07",
+    "repeat": {
+     "n": null,
+     "num_n": null,
+     "rate": null
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 2669,
+     "rate": 0.2068
+    },
+    "licensed_n": 12905,
+    "month": "2025-07",
+    "repeat": {
+     "n": 2669,
+     "num_n": 826,
+     "rate": 0.3095
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 857,
+     "rate": 0.0664
+    },
+    "licensed_n": 12905,
+    "month": "2025-07",
+    "repeat": {
+     "n": 857,
+     "num_n": 160,
+     "rate": 0.1867
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": null,
+     "num_n": null,
+     "rate": null
+    },
+    "licensed_n": 0,
+    "month": "2025-08",
+    "repeat": {
+     "n": null,
+     "num_n": null,
+     "rate": null
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 2842,
+     "rate": 0.2202
+    },
+    "licensed_n": 12905,
+    "month": "2025-08",
+    "repeat": {
+     "n": 2842,
+     "num_n": 951,
+     "rate": 0.3346
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 889,
+     "rate": 0.0689
+    },
+    "licensed_n": 12905,
+    "month": "2025-08",
+    "repeat": {
+     "n": 889,
+     "num_n": 160,
+     "rate": 0.18
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 993,
+     "rate": 0.2776
+    },
+    "licensed_n": 3577,
+    "month": "2025-09",
+    "repeat": {
+     "n": 993,
+     "num_n": 368,
+     "rate": 0.3706
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 2781,
+     "rate": 0.2155
+    },
+    "licensed_n": 12905,
+    "month": "2025-09",
+    "repeat": {
+     "n": 2781,
+     "num_n": 967,
+     "rate": 0.3477
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 863,
+     "rate": 0.0669
+    },
+    "licensed_n": 12905,
+    "month": "2025-09",
+    "repeat": {
+     "n": 863,
+     "num_n": 161,
+     "rate": 0.1866
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 990,
+     "rate": 0.2768
+    },
+    "licensed_n": 3577,
+    "month": "2025-10",
+    "repeat": {
+     "n": 990,
+     "num_n": 369,
+     "rate": 0.3727
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3015,
+     "rate": 0.2336
+    },
+    "licensed_n": 12905,
+    "month": "2025-10",
+    "repeat": {
+     "n": 3015,
+     "num_n": 1006,
+     "rate": 0.3337
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 952,
+     "rate": 0.0738
+    },
+    "licensed_n": 12905,
+    "month": "2025-10",
+    "repeat": {
+     "n": 952,
+     "num_n": 167,
+     "rate": 0.1754
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1052,
+     "rate": 0.2941
+    },
+    "licensed_n": 3577,
+    "month": "2025-11",
+    "repeat": {
+     "n": 1052,
+     "num_n": 399,
+     "rate": 0.3793
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3167,
+     "rate": 0.2454
+    },
+    "licensed_n": 12905,
+    "month": "2025-11",
+    "repeat": {
+     "n": 3167,
+     "num_n": 1119,
+     "rate": 0.3533
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 973,
+     "rate": 0.0754
+    },
+    "licensed_n": 12905,
+    "month": "2025-11",
+    "repeat": {
+     "n": 973,
+     "num_n": 206,
+     "rate": 0.2117
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1097,
+     "rate": 0.3067
+    },
+    "licensed_n": 3577,
+    "month": "2025-12",
+    "repeat": {
+     "n": 1097,
+     "num_n": 454,
+     "rate": 0.4139
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3276,
+     "rate": 0.2539
+    },
+    "licensed_n": 12905,
+    "month": "2025-12",
+    "repeat": {
+     "n": 3276,
+     "num_n": 1197,
+     "rate": 0.3654
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1049,
+     "rate": 0.0813
+    },
+    "licensed_n": 12905,
+    "month": "2025-12",
+    "repeat": {
+     "n": 1049,
+     "num_n": 211,
+     "rate": 0.2011
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1109,
+     "rate": 0.31
+    },
+    "licensed_n": 3577,
+    "month": "2026-01",
+    "repeat": {
+     "n": 1109,
+     "num_n": 450,
+     "rate": 0.4058
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3406,
+     "rate": 0.2639
+    },
+    "licensed_n": 12905,
+    "month": "2026-01",
+    "repeat": {
+     "n": 3406,
+     "num_n": 1272,
+     "rate": 0.3735
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1107,
+     "rate": 0.0858
+    },
+    "licensed_n": 12905,
+    "month": "2026-01",
+    "repeat": {
+     "n": 1107,
+     "num_n": 228,
+     "rate": 0.206
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1135,
+     "rate": 0.3173
+    },
+    "licensed_n": 3577,
+    "month": "2026-02",
+    "repeat": {
+     "n": 1135,
+     "num_n": 502,
+     "rate": 0.4423
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3396,
+     "rate": 0.2632
+    },
+    "licensed_n": 12905,
+    "month": "2026-02",
+    "repeat": {
+     "n": 3396,
+     "num_n": 1284,
+     "rate": 0.3781
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1089,
+     "rate": 0.0844
+    },
+    "licensed_n": 12905,
+    "month": "2026-02",
+    "repeat": {
+     "n": 1089,
+     "num_n": 234,
+     "rate": 0.2149
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1222,
+     "rate": 0.3416
+    },
+    "licensed_n": 3577,
+    "month": "2026-03",
+    "repeat": {
+     "n": 1222,
+     "num_n": 558,
+     "rate": 0.4566
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3436,
+     "rate": 0.2663
+    },
+    "licensed_n": 12905,
+    "month": "2026-03",
+    "repeat": {
+     "n": 3436,
+     "num_n": 1359,
+     "rate": 0.3955
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1149,
+     "rate": 0.089
+    },
+    "licensed_n": 12905,
+    "month": "2026-03",
+    "repeat": {
+     "n": 1149,
+     "num_n": 262,
+     "rate": 0.228
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1192,
+     "rate": 0.3332
+    },
+    "licensed_n": 3577,
+    "month": "2026-04",
+    "repeat": {
+     "n": 1192,
+     "num_n": 525,
+     "rate": 0.4404
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3570,
+     "rate": 0.2766
+    },
+    "licensed_n": 12905,
+    "month": "2026-04",
+    "repeat": {
+     "n": 3570,
+     "num_n": 1382,
+     "rate": 0.3871
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1151,
+     "rate": 0.0892
+    },
+    "licensed_n": 12905,
+    "month": "2026-04",
+    "repeat": {
+     "n": 1151,
+     "num_n": 256,
+     "rate": 0.2224
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1232,
+     "rate": 0.3444
+    },
+    "licensed_n": 3577,
+    "month": "2026-05",
+    "repeat": {
+     "n": 1232,
+     "num_n": 570,
+     "rate": 0.4627
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3681,
+     "rate": 0.2852
+    },
+    "licensed_n": 12905,
+    "month": "2026-05",
+    "repeat": {
+     "n": 3681,
+     "num_n": 1493,
+     "rate": 0.4056
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1165,
+     "rate": 0.0903
+    },
+    "licensed_n": 12905,
+    "month": "2026-05",
+    "repeat": {
+     "n": 1165,
+     "num_n": 254,
+     "rate": 0.218
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1234,
+     "rate": 0.345
+    },
+    "licensed_n": 3577,
+    "month": "2026-06",
+    "repeat": {
+     "n": 1234,
+     "num_n": 582,
+     "rate": 0.4716
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3737,
+     "rate": 0.2896
+    },
+    "licensed_n": 12905,
+    "month": "2026-06",
+    "repeat": {
+     "n": 3737,
+     "num_n": 1519,
+     "rate": 0.4065
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1195,
+     "rate": 0.0926
+    },
+    "licensed_n": 12905,
+    "month": "2026-06",
+    "repeat": {
+     "n": 1195,
+     "num_n": 305,
+     "rate": 0.2552
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1300,
+     "rate": 0.3634
+    },
+    "licensed_n": 3577,
+    "month": "2026-07",
+    "repeat": {
+     "n": 1300,
+     "num_n": 598,
+     "rate": 0.46
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3911,
+     "rate": 0.3031
+    },
+    "licensed_n": 12905,
+    "month": "2026-07",
+    "repeat": {
+     "n": 3911,
+     "num_n": 1677,
+     "rate": 0.4288
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1197,
+     "rate": 0.0928
+    },
+    "licensed_n": 12905,
+    "month": "2026-07",
+    "repeat": {
+     "n": 1197,
+     "num_n": 273,
+     "rate": 0.2281
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1331,
+     "rate": 0.3721
+    },
+    "licensed_n": 3577,
+    "month": "2026-08",
+    "repeat": {
+     "n": 1331,
+     "num_n": 626,
+     "rate": 0.4703
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 3927,
+     "rate": 0.3043
+    },
+    "licensed_n": 12905,
+    "month": "2026-08",
+    "repeat": {
+     "n": 3927,
+     "num_n": 1665,
+     "rate": 0.424
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1272,
+     "rate": 0.0986
+    },
+    "licensed_n": 12905,
+    "month": "2026-08",
+    "repeat": {
+     "n": 1272,
+     "num_n": 316,
+     "rate": 0.2484
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1356,
+     "rate": 0.3791
+    },
+    "licensed_n": 3577,
+    "month": "2026-09",
+    "repeat": {
+     "n": 1356,
+     "num_n": 666,
+     "rate": 0.4912
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 4107,
+     "rate": 0.3182
+    },
+    "licensed_n": 12905,
+    "month": "2026-09",
+    "repeat": {
+     "n": 4107,
+     "num_n": 1799,
+     "rate": 0.438
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1286,
+     "rate": 0.0997
+    },
+    "licensed_n": 12905,
+    "month": "2026-09",
+    "repeat": {
+     "n": 1286,
+     "num_n": 336,
+     "rate": 0.2613
+    },
+    "tool": "illinois_chat"
+   },
+   {
+    "active": {
+     "n": 3577,
+     "num_n": 1392,
+     "rate": 0.3892
+    },
+    "licensed_n": 3577,
+    "month": "2026-10",
+    "repeat": {
+     "n": 1392,
+     "num_n": 699,
+     "rate": 0.5022
+    },
+    "tool": "chatgpt_edu"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 4187,
+     "rate": 0.3244
+    },
+    "licensed_n": 12905,
+    "month": "2026-10",
+    "repeat": {
+     "n": 4187,
+     "num_n": 1848,
+     "rate": 0.4414
+    },
+    "tool": "copilot_chat"
+   },
+   {
+    "active": {
+     "n": 12905,
+     "num_n": 1298,
+     "rate": 0.1006
+    },
+    "licensed_n": 12905,
+    "month": "2026-10",
+    "repeat": {
+     "n": 1298,
+     "num_n": 350,
+     "rate": 0.2696
+    },
+    "tool": "illinois_chat"
+   }
+  ]
+ },
+ "tier_catalog": {
+  "AI_ADAPTIVE_LEADERS": {
+   "delivery": "Leader workshop + leader cohort",
+   "label": "AI Adaptive Leaders",
+   "level": 2,
+   "track": "leader"
+  },
+  "AI_CATALYST": {
+   "delivery": "Tool deep-dive workshop + role-scenario session",
+   "label": "AI Catalyst",
+   "level": 2,
+   "track": "staff"
+  },
+  "AI_EXPLORER": {
+   "delivery": "Self-directed modules in Canvas",
+   "label": "AI Explorer",
+   "level": 1,
+   "track": "staff"
+  },
+  "AI_FORWARD_STRATEGIES": {
+   "delivery": "Strategy workshop + leader cohort",
+   "label": "AI Forward Strategies",
+   "level": 3,
+   "track": "leader"
+  },
+  "AI_PRACTITIONER": {
+   "delivery": "Intermediate tool workshop + role-aligned cohort",
+   "label": "AI Practitioner",
+   "level": 3,
+   "track": "staff"
+  },
+  "AI_READY_LEADERS": {
+   "delivery": "E-learning (modules include AI fluency and responsible AI leadership)",
+   "label": "AI Ready Leaders",
+   "level": 1,
+   "track": "leader"
+  }
+ },
+ "tiers": {
+  "note": "Progression = share of badge holders (badge issued at least 90 days before the as-of date) who registered for the next tier.",
+  "tiers": [
+   {
+    "applied_enrolled_n": 0,
+    "applied_n": 0,
+    "badge_rate": {
+     "n": 3553,
+     "num_n": 1861,
+     "rate": 0.5238
+    },
+    "badged_n": 1861,
+    "core_n": 1861,
+    "delivery": "Self-directed modules in Canvas",
+    "first_wave": "W1",
+    "has_applied": false,
+    "label": "AI Explorer",
+    "level": 1,
+    "registered_n": 3553,
+    "started_n": 2700,
+    "tier": "AI_EXPLORER",
+    "track": "staff"
+   },
+   {
+    "applied_enrolled_n": 630,
+    "applied_n": 552,
+    "badge_rate": {
+     "n": 1069,
+     "num_n": 552,
+     "rate": 0.5164
+    },
+    "badged_n": 552,
+    "core_n": 813,
+    "delivery": "Tool deep-dive workshop + role-scenario session",
+    "first_wave": "W1",
+    "has_applied": true,
+    "label": "AI Catalyst",
+    "level": 2,
+    "registered_n": 1069,
+    "started_n": 813,
+    "tier": "AI_CATALYST",
+    "track": "staff"
+   },
+   {
+    "applied_enrolled_n": 155,
+    "applied_n": 141,
+    "badge_rate": {
+     "n": 306,
+     "num_n": 130,
+     "rate": 0.4248
+    },
+    "badged_n": 130,
+    "core_n": 199,
+    "delivery": "Intermediate tool workshop + role-aligned cohort",
+    "first_wave": "W3",
+    "has_applied": true,
+    "label": "AI Practitioner",
+    "level": 3,
+    "registered_n": 306,
+    "started_n": 229,
+    "tier": "AI_PRACTITIONER",
+    "track": "staff"
+   },
+   {
+    "applied_enrolled_n": 0,
+    "applied_n": 0,
+    "badge_rate": {
+     "n": 453,
+     "num_n": 242,
+     "rate": 0.5342
+    },
+    "badged_n": 242,
+    "core_n": 242,
+    "delivery": "E-learning (modules include AI fluency and responsible AI leadership)",
+    "first_wave": "W1",
+    "has_applied": false,
+    "label": "AI Ready Leaders",
+    "level": 1,
+    "registered_n": 453,
+    "started_n": 344,
+    "tier": "AI_READY_LEADERS",
+    "track": "leader"
+   },
+   {
+    "applied_enrolled_n": 71,
+    "applied_n": 67,
+    "badge_rate": {
+     "n": 140,
+     "num_n": 64,
+     "rate": 0.4571
+    },
+    "badged_n": 64,
+    "core_n": 92,
+    "delivery": "Leader workshop + leader cohort",
+    "first_wave": "W2",
+    "has_applied": true,
+    "label": "AI Adaptive Leaders",
+    "level": 2,
+    "registered_n": 140,
+    "started_n": 106,
+    "tier": "AI_ADAPTIVE_LEADERS",
+    "track": "leader"
+   },
+   {
+    "applied_enrolled_n": 17,
+    "applied_n": 15,
+    "badge_rate": {
+     "n": 33,
+     "num_n": 15,
+     "rate": 0.4545
+    },
+    "badged_n": 15,
+    "core_n": 22,
+    "delivery": "Strategy workshop + leader cohort",
+    "first_wave": "W4",
+    "has_applied": true,
+    "label": "AI Forward Strategies",
+    "level": 3,
+    "registered_n": 33,
+    "started_n": 24,
+    "tier": "AI_FORWARD_STRATEGIES",
+    "track": "leader"
+   }
+  ],
+  "transitions": [
+   {
+    "from": "AI_EXPLORER",
+    "from_label": "AI Explorer",
+    "median_days_to_next": 24,
+    "n": 1705,
+    "num_n": 1069,
+    "rate": 0.627,
+    "to": "AI_CATALYST",
+    "to_label": "AI Catalyst",
+    "track": "staff"
+   },
+   {
+    "from": "AI_CATALYST",
+    "from_label": "AI Catalyst",
+    "median_days_to_next": 32,
+    "n": 496,
+    "num_n": 306,
+    "rate": 0.6169,
+    "to": "AI_PRACTITIONER",
+    "to_label": "AI Practitioner",
+    "track": "staff"
+   },
+   {
+    "from": "AI_READY_LEADERS",
+    "from_label": "AI Ready Leaders",
+    "median_days_to_next": 25,
+    "n": 221,
+    "num_n": 140,
+    "rate": 0.6335,
+    "to": "AI_ADAPTIVE_LEADERS",
+    "to_label": "AI Adaptive Leaders",
+    "track": "leader"
+   },
+   {
+    "from": "AI_ADAPTIVE_LEADERS",
+    "from_label": "AI Adaptive Leaders",
+    "median_days_to_next": 56,
+    "n": 55,
+    "num_n": 32,
+    "rate": 0.5818,
+    "to": "AI_FORWARD_STRATEGIES",
+    "to_label": "AI Forward Strategies",
+    "track": "leader"
+   }
+  ],
+  "unit_training": {
+   "attended_n": 430,
+   "note": "Unit Training sessions are requested by a unit for its own staff. They count toward reach, not toward a badge tier.",
+   "registered_n": 512,
+   "units": 8
+  }
+ },
+ "use_cases": {
+  "by_category": [
+   {
+    "adopted_n": null,
+    "category": "Drafting & communications",
+    "submitted_n": 30
+   },
+   {
+    "adopted_n": null,
+    "category": "Student / customer service",
+    "submitted_n": 25
+   },
+   {
+    "adopted_n": null,
+    "category": "Data summarization & reporting",
+    "submitted_n": 23
+   },
+   {
+    "adopted_n": null,
+    "category": "Process documentation",
+    "submitted_n": 22
+   },
+   {
+    "adopted_n": null,
+    "category": "Research support",
+    "submitted_n": 16
+   },
+   {
+    "adopted_n": null,
+    "category": "Scripts & automation",
+    "submitted_n": 15
+   }
+  ],
+  "by_quarter": [
+   {
+    "n": null,
+    "quarter": "2025-Q3"
+   },
+   {
+    "n": 22,
+    "quarter": "2025-Q4"
+   },
+   {
+    "n": 30,
+    "quarter": "2026-Q1"
+   },
+   {
+    "n": 26,
+    "quarter": "2026-Q2"
+   },
+   {
+    "n": 38,
+    "quarter": "2026-Q3"
+   },
+   {
+    "n": 12,
+    "quarter": "2026-Q4"
+   }
+  ],
+  "by_unit_type": [
+   {
+    "adopted_n": 10,
+    "submitted_n": 83,
+    "unit_type": "academic"
+   },
+   {
+    "adopted_n": null,
+    "submitted_n": 16,
+    "unit_type": "research"
+   },
+   {
+    "adopted_n": null,
+    "submitted_n": 22,
+    "unit_type": "admin"
+   },
+   {
+    "adopted_n": null,
+    "submitted_n": 10,
+    "unit_type": "operations"
+   }
+  ],
+  "from_applied_badge_holders": {
+   "n": 131,
+   "num_n": 78,
+   "rate": 0.5954
+  },
+  "hitl_checklist": {
+   "n": 131,
+   "num_n": 110,
+   "rate": 0.8397
+  },
+  "hours": {
+   "adjusted_hours_per_month_total": null,
+   "est_hours_per_month_median": 6.8,
+   "est_hours_per_month_total": 142,
+   "n": 17,
+   "note": "Hours are the submitter's estimate for ADOPTED use cases only. Where the innovation team validated a use case with a time study, validated hours ran at the median ratio shown; the adjusted total applies that ratio. Hours returned are capacity, not budget savings.",
+   "validated_n": null,
+   "validated_to_estimate_ratio_median": null
+  },
+  "reuse_units_total": null,
+  "sensitive_data": {
+   "n": 131,
+   "num_n": 16,
+   "rate": 0.1221
+  },
+  "stages": [
+   {
+    "n": 131,
+    "stage": "Submitted"
+   },
+   {
+    "n": 111,
+    "stage": "Triaged"
+   },
+   {
+    "n": 39,
+    "stage": "Piloting"
+   },
+   {
+    "n": 17,
+    "stage": "Adopted"
+   },
+   {
+    "n": null,
+    "stage": "Reused in another unit"
+   }
+  ],
+  "total_n": 131
+ }
+}

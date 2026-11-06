@@ -1,0 +1,3 @@
+# Regenerable synthetic event tables (person-level, synthetic). Published aggregates are kept.
+data/synthetic/
+__pycache__/
