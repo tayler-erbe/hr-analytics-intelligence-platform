@@ -99,6 +99,23 @@ status codes, separation reason groups, SURS indicator, public class source) are
 
 Keep the real-name mapping wherever the steward-approved metadata rule in the handoff says it may live.
 
+### Data Cookbook mapping (v3)
+
+`edw_mapping_cookbook.yaml` maps the same concepts to the six tables transcribed from the Data Cookbook
+(`edw_cookbook_reference/`: T_JOB_DETL_HIST, T_EMPEE_HIST, T_EMPEE_HIST_5, T_POSN_HIST, T_PERS_HIST, T_PAYR_ACCTG_DETL;
+`provenance: verified_dictionary`). It runs on `sample_datasets/v3_cookbook` (see its README for the proof against v2).
+Loader features it uses:
+
+- `recorded_time.mode: lineage_next`. There is no recorded-end column, so known_to is the next
+  `JOB_DETL_HIST_EFF_DT` in the primary-key lineage, and deleted (`D`) rows end at their post date.
+- `recorded_time.mode: post_date`. For tables updated in place.
+- Field `derive`. Used for the SUCSS bridge: `T_POSN_HIST.PAPE_CIV_SVC_ID` first, the synthetic P-Class crosswalk
+  as fallback.
+- Role `restricted_fairness_only`. These demographics are never exposed in canonical views.
+
+The Cookbook's T_POSN_HIST has no org column, so `build_integrated.py` derives a position's org from its jobs.
+`bench_funding_mix_role_family_campus` is built when payroll carries a funding source.
+
 ## Confidence of each bridge
 
 | Bridge | Status | Confidence |

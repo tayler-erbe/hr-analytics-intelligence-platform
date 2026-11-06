@@ -1,0 +1,330 @@
+# Canonical concept -> EDW table.column mapping using the University of Illinois DATA COOKBOOK names.
+#
+# Same concepts as edw_mapping.yaml / edw_mapping_public.yaml. Physical names for the six tables transcribed
+# from the Data Cookbook (integration/edw_cookbook_reference/*.tsv, verified 2026-11-06) carry
+# provenance: verified_dictionary. Tables not yet transcribed (job class, org, role family, E-Class reference)
+# keep the v2 names with provenance: assumed_synthetic_layout and the finer public_* keys of
+# edw_mapping_public.yaml. Runs on the synthetic v3 pack (sample_datasets/v3_cookbook):
+#
+#   cd platform-evaluation
+#   HR_DATA_SOURCE=edw HR_EDW_MAPPING=integration/edw_mapping_cookbook.yaml \
+#   HR_SAMPLE_PACK_PATH=sample_datasets/v3_cookbook python integration/build_integrated.py --set longitudinal
+#   (or HR_EDW_DATA=sample_datasets/v3_cookbook/CLEAN/sample.duckdb ... --set CLEAN)
+#
+# Keys per field
+#   provenance     verified_dictionary   the table.column is in the Data Cookbook transcription (name, type);
+#                                        the VALUES may still be unconfirmed: see value_note
+#                  assumed_synthetic_layout  not in a transcribed table, or the canonical value depends on a
+#                                        synthetic rule (e.g. the P-Class -> SUCSS bridge)
+#   cookbook       the Cookbook table.column (verified fields)
+#   value_note     what about the values is still unconfirmed
+#   public_*       as in edw_mapping_public.yaml, for non-verified tables
+#   role           key | restricted (never exposed) | restricted_fairness_only (never exposed in canonical
+#                  views; read only by an approved fairness audit directly from the restricted source)
+# mapping.py ignores keys it does not use.
+#
+# As-known (transaction-time) logic. The Cookbook tables have no recorded-end column:
+#   T_JOB_DETL_HIST  recorded_time.mode = lineage_next: known_from = JOB_DETL_HIST_EFF_DT; known_to = the next
+#                    JOB_DETL_HIST_EFF_DT of the same primary-key lineage (EDW_PERS_ID, POSN_NBR, JOB_SUFFIX,
+#                    JOB_DETL_EFF_DT); a row with JOB_DETL_CUR_INFO_IND = 'D' is known until its
+#                    JOB_DETL_HIST_POST_DT (when EDW recorded the deletion).
+#   T_EMPEE_HIST, T_POSN_HIST, T_PERS_HIST  mode = post_date: rows are updated in place; a row is known from
+#                    its post date; deleted ('D') rows are known from their effective date to their post date.
+# Interpretation of JOB_DETL_HIST_EFF_DT as the source "version" date is ours (value_note), to confirm on data.
+
+mapping_version: "1.0-cookbook"
+source: edw
+default_provenance: verified_dictionary
+
+data:
+  pack_path: sample_datasets/v3_cookbook   # override with HR_SAMPLE_PACK_PATH, or HR_EDW_DATA for one set
+  storage: duckdb
+  duckdb_file: sample.duckdb
+  sets:
+    longitudinal: longitudinal
+    CLEAN: CLEAN
+
+conventions:
+  effective_end: inclusive                # verified: *_EXP_DT is the last effective date (Cookbook comment)
+  recorded_end: exclusive                 # derived known_to is the first day a version is no longer current
+  open_end: "9999-12-31"                  # verified: current records use 12/31/9999
+  provenance: verified_dictionary
+  cookbook_notes:
+    current_info_indicator: "*_CUR_INFO_IND: Y current, N no longer current, D deleted in source (Cookbook)."
+    data_status: "*_DATA_STATUS_DESC / PERS_DSD: Current, Expired, Future, Deleted (Cookbook categories; exact spelling to confirm)."
+    fte: "JOB_DETL_FTE NUMBER(6,3) is described as a percentage; v3 stores a fraction (1.000). Actual FTE = JOB_DETL_FTE * JOB_DETL_APPT_PCT/100 (v3 APPT_PCT = 100 everywhere). If real data stores 100.000, set fte transform: percent_to_fraction."
+    position_org: "T_POSN_HIST has no organization column. build_integrated derives a position's org from its job records (latest job effective on or before the as-of date, else the earliest known job), else the campus of the position's COA_CD."
+    sucss_bridge: "Primary: T_POSN_HIST.PAPE_CIV_SVC_ID when it is a 4-digit Civil Service Identifier (VALUE FORMAT TO CONFIRM). Fallback: REF_PCLS_SUCSS_XWALK (synthetic, unresolved). Local academic P-Classes map to themselves."
+    separation_source: "T_EMPEE_HIST (TERMN_REASON_CD, EMPEE_TERMN_DT, EMPEE_RET_IND). T_EMPEE_HIST_5 is the secured alternative for restricted roles: concept separation_secured below; swap by renaming it to separation."
+    payroll: "Salary analysis uses expense rows (PAYR_ACCTG_EXPS_AMT) and nets voids (V) and adjustments (J). Link to jobs on EDW_PERS_ID + POSN_NBR + JOB_SUFFIX and the job version effective in the pay period; never sum after joining to every job history row."
+    sponsored_funding_join: "sponsored_funding/hr_join_design.sql hr_labor_dist binds to payroll_line: coa_cd=chart_code, fund_cd=fund_code, grant (fin_fund_grant) = grant_code, funding source = funding_source, posn_nbr/posn_suff = position_id/job_suffix."
+
+code_values:
+  appointment_status_active: {values: ["Active"], provenance: verified_dictionary, value_note: "JOB_DETL_STATUS_DESC; rc2009 rule 'not Terminated'; leave descriptions to confirm"}
+  appointment_status_terminated: {values: ["Terminated"], provenance: verified_dictionary}
+  position_status_active: {values: ["A"], provenance: verified_dictionary, value_note: "POSN_STATUS_CD A/C/F/I (Cookbook)"}
+  employment_status_active: {values: ["A"], provenance: verified_dictionary, value_note: "A Active; B/F leave with benefits (Cookbook); terminated letter not listed (v3 uses synthetic T)"}
+  surs_retirement_yes: {values: ["Y"], provenance: verified_dictionary, value_note: "EMPEE_RET_IND = Y iff TERMN_REASON_CD in (TR, TF) or E-Class TR (Cookbook derivation)"}
+  separation_reason_group:
+    provenance: assumed_synthetic_layout
+    public_provenance: inferred_from_public_pattern
+    public_source: kb120385
+    map: {TR: retirement, TF: retirement, TQ: resignation, TE: end_of_appointment, TS: end_of_appointment,
+          TT: end_of_appointment, TJ: end_of_appointment, TN: end_of_appointment, TK: involuntary, TL: involuntary,
+          TM: involuntary, TP: involuntary, TV: involuntary, TX: involuntary, TY: involuntary, TD: death}
+  class_source_public_sucss: {values: ["SUCSS"], provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+  job_change_reason_labels:
+    provenance: assumed_synthetic_layout
+    value_note: "Codes from kb120563 except SA001/JB001/PR001/RA001 (synthetic). Label source for transition and promotion models; real codes must be confirmed."
+    map: {HR001: hire, HR002: rehire, OT010: promotion, FA002: promotion, PR001: promotion, RC001: reclassification,
+          RC003: reassignment, OT009: transfer_campus, OT012: transfer_lateral, OT013: org_change, SA001: pay_change,
+          FT001: fte_change, EJ001: job_end, EJ002: separation_resignation, SP003: separation_retirement,
+          JB001: add_job, RA001: reactivation}
+
+concepts:
+  person:
+    table: T_PERS_HIST
+    grain: person x effective row
+    recorded_time: {mode: post_date, deleted_field: current_info_ind, deleted_values: ["D"], deleted_end_field: post_date}
+    fields:
+      person_id:        {column: EDW_PERS_ID, type: varchar, role: key, cookbook: T_PERS_HIST.EDW_PERS_ID}
+      eff_date:         {column: PERS_HIST_EFF_DT, type: date, cookbook: T_PERS_HIST.PERS_HIST_EFF_DT}
+      exp_date:         {column: PERS_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", cookbook: T_PERS_HIST.PERS_EXP_DT}
+      birth_date:       {column: BIRTH_DT, type: date, role: restricted, cookbook: T_PERS_HIST.BIRTH_DT, value_note: "model input only as an age band"}
+      age:              {column: AGE, type: integer, optional: true, cookbook: T_PERS_HIST.AGE, value_note: "current rows only"}
+      current_info_ind: {column: PERS_CUR_INFO_IND, type: varchar, cookbook: T_PERS_HIST.PERS_CUR_INFO_IND}
+      post_date:        {column: PERS_HIST_POST_DT, type: date, cookbook: T_PERS_HIST.PERS_HIST_POST_DT}
+      data_status:      {column: PERS_DSD, type: varchar, optional: true, cookbook: T_PERS_HIST.PERS_DSD}
+      confidentiality_ind: {column: PERS_CONFIDENTIALITY_IND, type: varchar, optional: true, cookbook: T_PERS_HIST.PERS_CONFIDENTIALITY_IND, value_note: "Y rows need strict handling; exclude from small published aggregates"}
+      sex_code:         {column: SEX_CD, type: varchar, optional: true, role: restricted_fairness_only, cookbook: T_PERS_HIST.SEX_CD}
+      gender_code:      {column: GENDER_CD, type: varchar, optional: true, role: restricted_fairness_only, cookbook: T_PERS_HIST.GENDER_CD}
+      race_eth_rpt_code: {column: RACE_ETH_RPT_CD, type: varchar, optional: true, role: restricted_fairness_only, cookbook: T_PERS_HIST.RACE_ETH_RPT_CD}
+      ipeds_race_eth:   {column: IPEDS_RACE_ETH_CATGRY, type: varchar, optional: true, role: restricted_fairness_only, cookbook: T_PERS_HIST.IPEDS_RACE_ETH_CATGRY}
+      citizenship_group: {column: PERS_CITZN_TYPE_GROUP, type: varchar, optional: true, role: restricted_fairness_only, cookbook: T_PERS_HIST.PERS_CITZN_TYPE_GROUP}
+      veteran_class:    {column: VETERAN_CLS_CD, type: varchar, optional: true, role: restricted_fairness_only, cookbook: T_PERS_HIST.VETERAN_CLS_CD}
+
+  employment:
+    table: T_EMPEE_HIST
+    grain: person x employee effective row
+    recorded_time: {mode: post_date, deleted_field: current_info_ind, deleted_values: ["D"], deleted_end_field: post_date}
+    fields:
+      person_id:           {column: EDW_PERS_ID, type: varchar, role: key, cookbook: T_EMPEE_HIST.EDW_PERS_ID}
+      eff_date:            {column: EMPEE_EFF_DT, type: date, cookbook: T_EMPEE_HIST.EMPEE_EFF_DT}
+      exp_date:            {column: EMPEE_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", cookbook: T_EMPEE_HIST.EMPEE_EXP_DT}
+      status_code:         {column: EMPEE_STATUS_CD, type: varchar, cookbook: T_EMPEE_HIST.EMPEE_STATUS_CD, value_note: "A/B/F listed; terminated letter unconfirmed (v3: T)"}
+      employee_class_code: {column: EMPEE_CLS_CD, type: varchar, cookbook: T_EMPEE_HIST.EMPEE_CLS_CD}
+      first_hire_date:     {column: FIRST_HIRE_DT, type: date, cookbook: T_EMPEE_HIST.FIRST_HIRE_DT}
+      current_hire_date:   {column: CUR_HIRE_DT, type: date, cookbook: T_EMPEE_HIST.CUR_HIRE_DT}
+      adj_service_date:    {column: ADJ_SVC_DT, type: date, optional: true, cookbook: T_EMPEE_HIST.ADJ_SVC_DT}
+      univ_seniority_date: {column: UNIV_SNRTY_DT, type: date, optional: true, cookbook: T_EMPEE_HIST.UNIV_SNRTY_DT}
+      first_work_date:     {column: FIRST_WORK_DT, type: date, optional: true, cookbook: T_EMPEE_HIST.FIRST_WORK_DT}
+      last_work_date:      {column: LAST_WORK_DT, type: date, optional: true, cookbook: T_EMPEE_HIST.LAST_WORK_DT}
+      home_org_code:       {column: ORG_CD, type: varchar, optional: true, cookbook: T_EMPEE_HIST.ORG_CD}
+      campus_code:         {column: HR_CAMPUS_CD, type: varchar, optional: true, cookbook: T_EMPEE_HIST.HR_CAMPUS_CD, value_note: "values synthetic (U0-U3)"}
+      chart_code:          {column: COA_CD, type: varchar, optional: true, cookbook: T_EMPEE_HIST.COA_CD}
+      current_info_ind:    {column: EMPEE_CUR_INFO_IND, type: varchar, cookbook: T_EMPEE_HIST.EMPEE_CUR_INFO_IND}
+      active_employee_ind: {column: ACTIVE_EMPEE_IND, type: varchar, optional: true, cookbook: T_EMPEE_HIST.ACTIVE_EMPEE_IND}
+      post_date:           {column: EMPEE_POST_DT, type: date, cookbook: T_EMPEE_HIST.EMPEE_POST_DT}
+      data_status:         {column: EMPEE_DATA_STATUS_DESC, type: varchar, optional: true, cookbook: T_EMPEE_HIST.EMPEE_DATA_STATUS_DESC}
+      employee_group_code: {column: EMPEE_GROUP_CD, type: varchar, optional: true, cookbook: T_EMPEE_HIST.EMPEE_GROUP_CD, value_note: "VARCHAR2(4); a different field from JOB_DETL_EMPEE_GROUP_CD; values synthetic"}
+      fte:                 {column: EMPEE_FTE, type: double, optional: true, cookbook: T_EMPEE_HIST.EMPEE_FTE}
+      annual_salary:       {column: EMPEE_ANNL_SAL, type: double, optional: true, cookbook: T_EMPEE_HIST.EMPEE_ANNL_SAL}
+      leave_reason_code:   {column: EMPEE_LEAVE_REASON_CD, type: varchar, optional: true, cookbook: T_EMPEE_HIST.EMPEE_LEAVE_REASON_CD, value_note: "codes synthetic"}
+      loa_from_date:       {column: EMPEE_LOA_FROM_DT, type: date, optional: true, cookbook: T_EMPEE_HIST.EMPEE_LOA_FROM_DT}
+      loa_to_date:         {column: EMPEE_LOA_TO_DT, type: date, optional: true, cookbook: T_EMPEE_HIST.EMPEE_LOA_TO_DT}
+      retired_ind:         {column: EMPEE_RET_IND, type: varchar, optional: true, cookbook: T_EMPEE_HIST.EMPEE_RET_IND}
+
+  appointment:
+    table: T_JOB_DETL_HIST
+    grain: person x position x job suffix x effective row x history version
+    recorded_time: {mode: lineage_next, lineage: [person_id, position_id, job_suffix, eff_date],
+                    deleted_field: current_info_ind, deleted_values: ["D"], deleted_end_field: post_date}
+    fields:
+      person_id:            {column: EDW_PERS_ID, type: varchar, role: key, cookbook: T_JOB_DETL_HIST.EDW_PERS_ID}
+      position_id:          {column: POSN_NBR, type: varchar, role: key, cookbook: T_JOB_DETL_HIST.POSN_NBR}
+      job_suffix:           {column: JOB_SUFFIX, type: varchar, role: key, cookbook: T_JOB_DETL_HIST.JOB_SUFFIX}
+      eff_date:             {column: JOB_DETL_EFF_DT, type: date, cookbook: T_JOB_DETL_HIST.JOB_DETL_EFF_DT}
+      exp_date:             {column: JOB_DETL_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", cookbook: T_JOB_DETL_HIST.JOB_DETL_EXP_DT}
+      recorded_start:       {column: JOB_DETL_HIST_EFF_DT, type: date, cookbook: T_JOB_DETL_HIST.JOB_DETL_HIST_EFF_DT, value_note: "read as the date the history version took effect in the source; to confirm"}
+      post_date:            {column: JOB_DETL_HIST_POST_DT, type: date, cookbook: T_JOB_DETL_HIST.JOB_DETL_HIST_POST_DT}
+      current_info_ind:     {column: JOB_DETL_CUR_INFO_IND, type: varchar, cookbook: T_JOB_DETL_HIST.JOB_DETL_CUR_INFO_IND}
+      data_status:          {column: JOB_DETL_DATA_STATUS_DESC, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_DATA_STATUS_DESC}
+      data_exp_date:        {column: JOB_DETL_DATA_EXP_DT, type: date, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_DATA_EXP_DT}
+      contract_type_code:   {column: JOB_CONTRACT_TYPE_CD, type: varchar, optional: true, provenance: assumed_synthetic_layout, value_note: "job type P/O is not on T_JOB_DETL_HIST; v3 keeps it in X_JOB_CONTRACT_TYPE; absent here"}
+      status_code:          {column: JOB_DETL_STATUS_DESC, type: varchar, cookbook: T_JOB_DETL_HIST.JOB_DETL_STATUS_DESC, value_note: "status is a description; values Active/Terminated used, leave descriptions to confirm"}
+      status_desc:          {column: JOB_DETL_STATUS_DESC, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_STATUS_DESC}
+      fte:                  {column: JOB_DETL_FTE, type: double, transform: none, cookbook: T_JOB_DETL_HIST.JOB_DETL_FTE, value_note: "fraction vs percent UNCONFIRMED"}
+      appointment_pct:      {column: JOB_DETL_APPT_PCT, type: double, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_APPT_PCT}
+      annual_salary:        {column: JOB_DETL_ANNL_SAL, type: double, cookbook: T_JOB_DETL_HIST.JOB_DETL_ANNL_SAL}
+      pay_period_salary:    {column: JOB_DETL_PAY_PERD_SAL, type: double, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_PAY_PERD_SAL}
+      annual_pay_count:     {column: JOB_DETL_ANNL_PAY_COUNT, type: double, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_ANNL_PAY_COUNT}
+      regular_rate:         {column: JOB_DETL_REGULAR_RT, type: double, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_REGULAR_RT}
+      job_class_code:
+        column: JOB_DETL_POSN_CLS_CD
+        type: varchar
+        provenance: assumed_synthetic_layout
+        cookbook: T_JOB_DETL_HIST.JOB_DETL_POSN_CLS_CD
+        value_note: "canonical class key = SUCSS code via the position's PAPE_CIV_SVC_ID (value format to confirm), else the synthetic crosswalk, else the P-Class itself (local academic classes)"
+        derive:
+          - lookup: {table: T_POSN_HIST, key: POSN_CLS_CD, value: PAPE_CIV_SVC_ID, when_matches: "[0-9]{4}"}
+          - lookup: {table: REF_PCLS_SUCSS_XWALK, key: JOB_DETL_POSN_CLS_CD, value: POSN_CLS_CD}
+        fallback_to_column: true
+      p_class_code:         {column: JOB_DETL_POSN_CLS_CD, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_POSN_CLS_CD}
+      employee_class_code:  {column: JOB_DETL_EMPEE_CLS_CD, type: varchar, cookbook: T_JOB_DETL_HIST.JOB_DETL_EMPEE_CLS_CD}
+      employee_group_code:  {column: JOB_DETL_EMPEE_GROUP_CD, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_EMPEE_GROUP_CD, value_note: "first character of the E-Class (Cookbook)"}
+      civil_service_ind:    {column: JOB_DETL_CIV_SVC_IND, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_CIV_SVC_IND}
+      org_code:             {column: ORG_CD, type: varchar, cookbook: T_JOB_DETL_HIST.ORG_CD}
+      chart_code:           {column: COA_CD, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.COA_CD}
+      campus_code:          {column: JOB_DETL_CAMPUS_CD, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_CAMPUS_CD, value_note: "values synthetic"}
+      college_code:         {column: JOB_DETL_COLL_CD, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_COLL_CD}
+      department_code:      {column: JOB_DETL_DEPT_CD, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_DEPT_CD}
+      admin_level_2_code:   {column: JOB_DETL_ADMIN_LEVEL_2_CD, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_ADMIN_LEVEL_2_CD}
+      supervisor_person_id: {column: SUPV_EDW_PERS_ID, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.SUPV_EDW_PERS_ID}
+      supervisor_position_id: {column: SUPV_POSN_NBR, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.SUPV_POSN_NBR}
+      supervisor_job_suffix: {column: SUPV_JOB_SUFFIX, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.SUPV_JOB_SUFFIX}
+      change_reason_code:   {column: JOB_DETL_CHG_REASON_CD, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_CHG_REASON_CD, value_note: "label source for transition/promotion models; real code list to confirm (code_values.job_change_reason_labels)"}
+      change_reason_desc:   {column: JOB_DETL_CHG_REASON_DESC, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_CHG_REASON_DESC}
+      title:                {column: JOB_DETL_TITLE, type: varchar, optional: true, cookbook: T_JOB_DETL_HIST.JOB_DETL_TITLE}
+
+  position:
+    table: T_POSN_HIST
+    grain: position x effective row
+    recorded_time: {mode: post_date, deleted_field: current_info_ind, deleted_values: ["D"], deleted_end_field: post_date}
+    fields:
+      position_id:    {column: POSN_NBR, type: varchar, role: key, cookbook: T_POSN_HIST.POSN_NBR}
+      eff_date:       {column: POSN_HIST_EFF_DT, type: date, cookbook: T_POSN_HIST.POSN_HIST_EFF_DT}
+      exp_date:       {column: POSN_HIST_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", cookbook: T_POSN_HIST.POSN_HIST_EXP_DT}
+      current_info_ind: {column: POSN_HIST_CUR_INFO_IND, type: varchar, cookbook: T_POSN_HIST.POSN_HIST_CUR_INFO_IND}
+      post_date:      {column: POSN_HIST_POST_DT, type: date, cookbook: T_POSN_HIST.POSN_HIST_POST_DT}
+      data_status:    {column: POSN_DATA_STATUS_DESC, type: varchar, optional: true, cookbook: T_POSN_HIST.POSN_DATA_STATUS_DESC}
+      status_code:    {column: POSN_STATUS_CD, type: varchar, cookbook: T_POSN_HIST.POSN_STATUS_CD}
+      status_desc:    {column: POSN_STATUS_DESC, type: varchar, optional: true, cookbook: T_POSN_HIST.POSN_STATUS_DESC}
+      job_class_code:
+        column: POSN_CLS_CD
+        type: varchar
+        provenance: assumed_synthetic_layout
+        cookbook: T_POSN_HIST.POSN_CLS_CD
+        value_note: "SUCSS bridge: PAPE_CIV_SVC_ID when 4-digit (VALUE FORMAT TO CONFIRM), else synthetic crosswalk, else the P-Class"
+        derive:
+          - column: PAPE_CIV_SVC_ID
+            when_matches: "[0-9]{4}"
+          - lookup: {table: REF_PCLS_SUCSS_XWALK, key: JOB_DETL_POSN_CLS_CD, value: POSN_CLS_CD}
+        fallback_to_column: true
+      p_class_code:   {column: POSN_CLS_CD, type: varchar, optional: true, cookbook: T_POSN_HIST.POSN_CLS_CD}
+      pape_civ_svc_id: {column: PAPE_CIV_SVC_ID, type: varchar, optional: true, cookbook: T_POSN_HIST.PAPE_CIV_SVC_ID, value_note: "PAPE code or Civil Service Identifier; value format to confirm"}
+      employee_class_code: {column: POSN_EMPEE_CLS_CD, type: varchar, optional: true, cookbook: T_POSN_HIST.POSN_EMPEE_CLS_CD}
+      org_code:       {column: POSN_ORG_CD, type: varchar, optional: true, provenance: assumed_synthetic_layout, value_note: "NOT a Cookbook column: T_POSN_HIST has no org. Absent; build_integrated derives the org from jobs"}
+      chart_code:     {column: COA_CD, type: varchar, optional: true, cookbook: T_POSN_HIST.COA_CD}
+      budget_fte:     {column: POSN_APPT_PCT, type: double, transform: none, cookbook: T_POSN_HIST.POSN_APPT_PCT, value_note: "NUMBER(5,4) fraction; there is no separate budgeted FTE column"}
+      title:          {column: POSN_TITLE, type: varchar, optional: true, cookbook: T_POSN_HIST.POSN_TITLE}
+      range_min:      {column: POSN_MIN_SAL, type: double, optional: true, cookbook: T_POSN_HIST.POSN_MIN_SAL}
+      range_mid:      {column: POSN_MIDPT_SAL, type: double, optional: true, cookbook: T_POSN_HIST.POSN_MIDPT_SAL}
+      range_max:      {column: POSN_MAX_SAL, type: double, optional: true, cookbook: T_POSN_HIST.POSN_MAX_SAL}
+      open_position_ind: {column: OPEN_POSN_IND, type: varchar, optional: true, cookbook: T_POSN_HIST.OPEN_POSN_IND}
+      begin_date:     {column: POSN_BGN_DT, type: date, optional: true, cookbook: T_POSN_HIST.POSN_BGN_DT}
+      end_date:       {column: POSN_END_DT, type: date, optional: true, cookbook: T_POSN_HIST.POSN_END_DT}
+      job_progression_code: {column: POSN_JOB_PRGS_CD, type: varchar, optional: true, cookbook: T_POSN_HIST.POSN_JOB_PRGS_CD, value_note: "career-ladder group; values synthetic"}
+      supervisor_position_id: {column: SUPV_POSN_NBR, type: varchar, optional: true, cookbook: T_POSN_HIST.SUPV_POSN_NBR}
+      desc_update_date: {column: POSN_DESC_UPDATE_DT, type: date, optional: true, cookbook: T_POSN_HIST.POSN_DESC_UPDATE_DT}
+
+  separation:
+    table: T_EMPEE_HIST
+    grain: "employee effective row; rows with EMPEE_TERMN_DT are termination events (flows use DISTINCT person, date, reason)"
+    recorded_time: {mode: post_date, deleted_field: current_info_ind, deleted_values: ["D"], deleted_end_field: post_date}
+    fields:
+      person_id:           {column: EDW_PERS_ID, type: varchar, role: key, cookbook: T_EMPEE_HIST.EDW_PERS_ID}
+      eff_date:            {column: EMPEE_EFF_DT, type: date, cookbook: T_EMPEE_HIST.EMPEE_EFF_DT}
+      term_date:           {column: EMPEE_TERMN_DT, type: date, cookbook: T_EMPEE_HIST.EMPEE_TERMN_DT}
+      term_reason_code:    {column: TERMN_REASON_CD, type: varchar, cookbook: T_EMPEE_HIST.TERMN_REASON_CD}
+      term_reason_desc:    {column: TERMN_REASON_DESC, type: varchar, optional: true, cookbook: T_EMPEE_HIST.TERMN_REASON_DESC}
+      surs_retirement_ind: {column: EMPEE_RET_IND, type: varchar, cookbook: T_EMPEE_HIST.EMPEE_RET_IND, value_note: "Cookbook-derived retirement flag (TR/TF or E-Class TR); not a SURS tier or eligibility"}
+      current_info_ind:    {column: EMPEE_CUR_INFO_IND, type: varchar, cookbook: T_EMPEE_HIST.EMPEE_CUR_INFO_IND}
+      post_date:           {column: EMPEE_POST_DT, type: date, cookbook: T_EMPEE_HIST.EMPEE_POST_DT}
+
+  separation_secured:       # alternative separation source for restricted roles (not read by build_integrated)
+    table: T_EMPEE_HIST_5
+    optional: true
+    grain: "termination record (secured table); no retirement flag: derive it from TERMN_REASON_CD in (TR, TF) as the Cookbook rule for EMPEE_RET_IND"
+    recorded_time: {mode: post_date, deleted_field: current_info_ind, deleted_values: ["D"], deleted_end_field: post_date}
+    fields:
+      person_id:           {column: EDW_PERS_ID, type: varchar, role: key, cookbook: T_EMPEE_HIST_5.EDW_PERS_ID}
+      eff_date:            {column: EMPEE_EFF_DT, type: date, cookbook: T_EMPEE_HIST_5.EMPEE_EFF_DT}
+      term_date:           {column: EMPEE_TERMN_DT, type: date, cookbook: T_EMPEE_HIST_5.EMPEE_TERMN_DT}
+      term_reason_code:    {column: TERMN_REASON_CD, type: varchar, cookbook: T_EMPEE_HIST_5.TERMN_REASON_CD}
+      term_reason_desc:    {column: TERMN_REASON_DESC, type: varchar, optional: true, cookbook: T_EMPEE_HIST_5.TERMN_REASON_DESC}
+      current_info_ind:    {column: EMPEE_CUR_INFO_IND, type: varchar, cookbook: T_EMPEE_HIST_5.EMPEE_CUR_INFO_IND}
+      post_date:           {column: EMPEE_5_POST_DT, type: date, cookbook: T_EMPEE_HIST_5.EMPEE_5_POST_DT}
+      campus_level_1_code: {column: CAMPUS_LEVEL_1_CD, type: varchar, optional: true, cookbook: T_EMPEE_HIST_5.CAMPUS_LEVEL_1_CD}
+      college_level_3_code: {column: COLL_LEVEL_3_CD, type: varchar, optional: true, cookbook: T_EMPEE_HIST_5.COLL_LEVEL_3_CD}
+      dept_level_5_code:   {column: DEPT_LEVEL_5_CD, type: varchar, optional: true, cookbook: T_EMPEE_HIST_5.DEPT_LEVEL_5_CD}
+
+  payroll_line:
+    table: T_PAYR_ACCTG_DETL
+    optional: true                      # absent from the longitudinal set (as in v1/v2)
+    grain: payroll accounting transaction (PAYR_ACCTG_TRAN_NBR)
+    fields:
+      transaction_id:      {column: PAYR_ACCTG_TRAN_NBR, type: bigint, role: key, cookbook: T_PAYR_ACCTG_DETL.PAYR_ACCTG_TRAN_NBR}
+      person_id:           {column: EDW_PERS_ID, type: varchar, cookbook: T_PAYR_ACCTG_DETL.EDW_PERS_ID}
+      position_id:         {column: POSN_NBR, type: varchar, cookbook: T_PAYR_ACCTG_DETL.POSN_NBR}
+      job_suffix:          {column: JOB_SUFFIX, type: varchar, cookbook: T_PAYR_ACCTG_DETL.JOB_SUFFIX}
+      pay_period_end_date: {column: PAYR_ACCTG_EFF_DT, type: date, cookbook: T_PAYR_ACCTG_DETL.PAYR_ACCTG_EFF_DT, value_note: "meaning UNCONFIRMED (Cookbook comment copied from a leave field); v3 sets it to the pay-period end"}
+      payroll_year:        {column: PAYR_YR, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.PAYR_YR}
+      payroll_id:          {column: PAYR_ID, type: varchar, cookbook: T_PAYR_ACCTG_DETL.PAYR_ID}
+      payroll_nbr:         {column: PAYR_NBR, type: integer, optional: true, cookbook: T_PAYR_ACCTG_DETL.PAYR_NBR}
+      payroll_seq:         {column: PAYR_SEQ_NBR, type: bigint, cookbook: T_PAYR_ACCTG_DETL.PAYR_SEQ_NBR}
+      earn_code:           {column: PAYR_ACCTG_EARNS_CD, type: varchar, cookbook: T_PAYR_ACCTG_DETL.PAYR_ACCTG_EARNS_CD, value_note: "REG unconfirmed"}
+      pay_amount:          {column: PAYR_ACCTG_EXPS_AMT, type: double, cookbook: T_PAYR_ACCTG_DETL.PAYR_ACCTG_EXPS_AMT, value_note: "expense amount; NULL for encumbrance rows"}
+      transaction_amount:  {column: PAYR_ACCTG_AMT, type: double, optional: true, cookbook: T_PAYR_ACCTG_DETL.PAYR_ACCTG_AMT}
+      encumbrance_amount:  {column: PAYR_ACCTG_ENC_AMT, type: double, optional: true, cookbook: T_PAYR_ACCTG_DETL.PAYR_ACCTG_ENC_AMT}
+      event_type:          {column: PAYR_EVENT_TYPE_CD, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.PAYR_EVENT_TYPE_CD}
+      category_code:       {column: PAYR_ACCTG_CATGRY_CD, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.PAYR_ACCTG_CATGRY_CD, value_note: "letters unconfirmed"}
+      fiscal_year:         {column: FY_CD, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.FY_CD}
+      chart_code:          {column: COA_CD, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.COA_CD}
+      fund_code:           {column: FIN_FUND_CD, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.FIN_FUND_CD}
+      org_code:            {column: ORG_CD, type: varchar, cookbook: T_PAYR_ACCTG_DETL.ORG_CD}
+      account_code:        {column: FIN_ACCT_CD, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.FIN_ACCT_CD}
+      grant_code:          {column: GRANT_CD, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.GRANT_CD}
+      funding_source:      {column: PAYR_ACCTG_FUNDING_SRC_DESC, type: varchar, optional: true, cookbook: T_PAYR_ACCTG_DETL.PAYR_ACCTG_FUNDING_SRC_DESC}
+      security_vpd_nbr:    {column: EDW_VPD_NBR, type: integer, optional: true, cookbook: T_PAYR_ACCTG_DETL.EDW_VPD_NBR}
+
+  job_class:
+    table: T_POSN_CLS_HIST
+    provenance_note: "not yet transcribed from the Cookbook; v2 names and values (class key = SUCSS 4-digit code or local P-Class)"
+    grain: job class code
+    fields:
+      job_class_code:    {column: POSN_CLS_CD, type: varchar, role: key, provenance: assumed_synthetic_layout, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      class_source:      {column: CLS_SOURCE, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      class_title:       {column: POSN_CLS_DESC, type: varchar, provenance: assumed_synthetic_layout, public_provenance: public_documentation, public_source: rc2009, public_confidence: high}
+      min_annual_amount: {column: MIN_ANNUAL_AMT, type: double, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      max_annual_amount: {column: MAX_ANNUAL_AMT, type: double, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+
+  org:
+    table: REF_ORG
+    grain: "org unit (synthetic tree; Cookbook levels 1 campus, 2 admin, 3 college, 5 department; U00 root rolls up the campuses)"
+    fields:
+      org_code:        {column: ORG_CD, type: varchar, role: key, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      parent_org_code: {column: PARENT_ORG_CD, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      status_code:     {column: ORG_STATUS_CD, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      org_title:       {column: ORG_TITLE, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      org_level:       {column: ORG_HIER_LEVEL_NBR, type: integer, optional: true, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook, value_note: "level numbers from the T_EMPEE_HIST_5 ancestor columns"}
+      chart_code:      {column: COA_CD, type: varchar, optional: true, provenance: assumed_synthetic_layout, public_provenance: public_documentation, public_source: kb118751}
+
+  role_family:
+    table: REF_ROLE_FAMILY
+    optional: true                      # longitudinal only
+    grain: job class code
+    fields:
+      job_class_code: {column: CLS_CD, type: varchar, role: key, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      role_family:    {column: ROLE_FAMILY, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      role_level:     {column: ROLE_LEVEL, type: integer, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      critical_ind:   {column: CRITICAL_IND, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+
+  employee_class:
+    table: REF_EMPEE_CLS
+    optional: true                      # CLEAN only
+    grain: employee class code
+    fields:
+      employee_class_code: {column: ECLS_CD, type: varchar, role: key, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      description:         {column: ECLS_DESC, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      class_group:         {column: ECLS_GROUP, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+      pay_basis:           {column: PAY_BASIS, type: varchar, provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}

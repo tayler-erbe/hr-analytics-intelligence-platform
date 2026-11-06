@@ -1,0 +1,87 @@
+{
+ "extract_date": "2027-01-31",
+ "notes": {
+  "empee_rows_deleted_planted": 10,
+  "empee_superseded_versions_dropped": 1475,
+  "job_rows": 36811,
+  "job_rows_deleted_planted": 112,
+  "leave_of_absence_people": 48,
+  "progression_groups": 11
+ },
+ "set": "longitudinal",
+ "source": "sample_datasets/v2_public_schema/longitudinal",
+ "synthetic": true,
+ "tables": {
+  "REF_ECLS_PUBLIC": {
+   "content_sha256": "723e2ba5464f1a36bd67bddc885f7ba8788fbcdf64452479477f2e899e4e2637",
+   "cookbook_verified": false,
+   "rows": 68,
+   "v2_rows": 68
+  },
+  "REF_ORG": {
+   "content_sha256": "c06299ed76b7c48a814bc2feed727a5e468868f42e3c137513c74b098dffcada",
+   "cookbook_verified": false,
+   "rows": 58,
+   "v2_rows": 52
+  },
+  "REF_PCLS_SUCSS_XWALK": {
+   "content_sha256": "1d2fbd28c372854adebe740e22b0a4d6c7ce316efa48065d567b6c3d4db47e93",
+   "cookbook_verified": false,
+   "rows": 38,
+   "v2_rows": null
+  },
+  "REF_ROLE_FAMILY": {
+   "content_sha256": "fb5f45603883d1fbdbc544cbf310a84afce66440b9dfe90cefd0694495291f3a",
+   "cookbook_verified": false,
+   "rows": 38,
+   "v2_rows": 38
+  },
+  "T_EMPEE_HIST": {
+   "content_sha256": "438fabd948d71757120053c6c407dacfc6b5b244e012c0971e9caf41c28de3f3",
+   "cookbook_verified": true,
+   "rows": 3888,
+   "v2_rows": 5257
+  },
+  "T_EMPEE_HIST_5": {
+   "content_sha256": "b0180cb535ad2ae4631f7bcb710588cc1275bde99a78f8791c1d3af289d5c89f",
+   "cookbook_verified": true,
+   "rows": 1480,
+   "v2_rows": 1480
+  },
+  "T_JOB_DETL_HIST": {
+   "content_sha256": "cebf0509e198e6406c89bf256e6055a82128874f800b02b398294643d3deb041",
+   "cookbook_verified": true,
+   "rows": 36811,
+   "v2_rows": 36699
+  },
+  "T_PERS_HIST": {
+   "content_sha256": "5b778d8c3f1498c180a2eb9cd9baab6bb3632952152b49fabf66a50ff14cb155",
+   "cookbook_verified": true,
+   "rows": 2302,
+   "v2_rows": 2302
+  },
+  "T_POSN_CLS_HIST": {
+   "content_sha256": "03951b69df9a91a0deeacae5a92896ac4fd318d26c603fbd19765e5753200d5e",
+   "cookbook_verified": false,
+   "rows": 38,
+   "v2_rows": 38
+  },
+  "T_POSN_HIST": {
+   "content_sha256": "1c539f0f4687268cc6116ac4dc88ed5a14830195f75c271879eb53ab986fec59",
+   "cookbook_verified": true,
+   "rows": 1256,
+   "v2_rows": 1256
+  },
+  "X_JOB_CONTRACT_TYPE": {
+   "content_sha256": "172b69b667fd55084a80e0f22b2852799a1b3128ffb5337dc2e895e29f80edb8",
+   "cookbook_verified": false,
+   "rows": 3764,
+   "v2_rows": null
+  }
+ },
+ "views": [
+  "V_EMPEE_HIST_1",
+  "V_EMPEE_PERS_HIST_1",
+  "V_JOB_DETL_HIST_1"
+ ]
+}

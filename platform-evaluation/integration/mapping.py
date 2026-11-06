@@ -17,6 +17,26 @@ Canonical columns added by the loader
 valid_from, valid_to   inclusive effective interval; open end normalized to 9999-12-31
 known_from, known_to   recorded (transaction-time) interval, half-open [known_from, known_to);
                        0001-01-01 / 9999-12-31 when the source has no recorded-version columns
+
+Recorded-time modes (concept key `recorded_time.mode`; default `interval`)
+----------------------------------------------------------------------------
+interval      recorded_start/recorded_end columns (v1/v2 ROW_REC_START_DT/ROW_REC_END_DT).
+lineage_next  Data Cookbook pattern for history tables with a history-effective date in the key
+              (T_JOB_DETL_HIST: JOB_DETL_HIST_EFF_DT). known_from = recorded_start; known_to = the next
+              recorded_start in the same primary-key lineage (`lineage`: the key without the history
+              date), or the open end. A row whose `deleted_field` holds a `deleted_values` code ('D') is
+              known until its `deleted_end_field` (the post date: when EDW recorded the deletion).
+post_date     Tables updated in place with only a post date (T_EMPEE_HIST, T_POSN_HIST, T_PERS_HIST):
+              known_from = post_date (when the row now stored was written); deleted rows are known from
+              their effective date until their post date. Earlier versions of an updated row are not
+              recoverable from such a table.
+
+Derived fields (field key `derive`, list tried in order; first non-NULL wins, then the column itself
+when `fallback_to_column: true`)
+  - {column: X, when_matches: '<regex>'}                      another column of the same row
+  - {lookup: {table, key, value, when_matches?}}              value from a reference table, joined on
+                                                              key = this field's column; the key must be
+                                                              unique (checked) so rows never multiply
 """
 from __future__ import annotations
 
@@ -34,6 +54,9 @@ MIN_DATE = "0001-01-01"
 PROVENANCE_VALUES = {"assumed_synthetic_layout", "verified_dictionary"}
 SQL_TYPES = {"varchar": "VARCHAR", "date": "DATE", "double": "DOUBLE", "integer": "INTEGER", "bigint": "BIGINT"}
 TRANSFORMS = {"none", "percent_to_fraction", "trim", "yyyymmdd_to_date"}
+# Roles whose fields are validated but never exposed in canonical views.
+RESTRICTED_ROLES = {"restricted", "restricted_fairness_only"}
+RECORDED_MODES = {"interval", "lineage_next", "post_date"}
 # Concepts whose effective interval the loader normalizes (eff_date/exp_date -> valid_from/valid_to).
 DATED = {"person", "employment", "appointment", "position"}
 
@@ -115,6 +138,22 @@ def _check_structure(m: dict) -> None:
                 raise MappingError(f"{cname}.{fname}: unknown transform {f.get('transform')}")
             if f.get("convention") not in (None, "inclusive", "exclusive"):
                 raise MappingError(f"{cname}.{fname}: convention must be inclusive|exclusive")
+            for d in f.get("derive", []) or []:
+                if not (("column" in d) ^ ("lookup" in d)):
+                    raise MappingError(f"{cname}.{fname}: each derive entry needs exactly one of column|lookup")
+                if "lookup" in d and not {"table", "key", "value"} <= set(d["lookup"]):
+                    raise MappingError(f"{cname}.{fname}: lookup needs table, key and value")
+        rt = c.get("recorded_time")
+        if rt is not None:
+            mode = rt.get("mode", "interval")
+            if mode not in RECORDED_MODES:
+                raise MappingError(f"{cname}: recorded_time.mode must be one of {sorted(RECORDED_MODES)}")
+            need = {"lineage_next": ["recorded_start"], "post_date": ["post_date"]}.get(mode, [])
+            for fn in need + list(rt.get("lineage", [])) + ([rt["deleted_field"]] if rt.get("deleted_field") else []):
+                if fn not in c["fields"]:
+                    raise MappingError(f"{cname}: recorded_time refers to unknown field {fn}")
+            if mode == "lineage_next" and not rt.get("lineage"):
+                raise MappingError(f"{cname}: lineage_next needs a lineage (key fields without the history date)")
 
 
 def set_location(m: dict, set_name: str) -> tuple[Path, str]:
@@ -191,7 +230,7 @@ def _expr(col: str, f: dict) -> str:
     """Canonical SQL expression for one physical column."""
     t = SQL_TYPES[f.get("type", "varchar")]
     tr = f.get("transform", "none")
-    src = _qi(col)
+    src = "s." + _qi(col)
     if tr == "trim":
         src = f"trim(CAST({src} AS VARCHAR))"
     if tr == "yyyymmdd_to_date":
@@ -203,12 +242,82 @@ def _expr(col: str, f: dict) -> str:
     return f"TRY_CAST({src} AS {t})"
 
 
+def _derive(con, loc: Path, storage: str, cols: dict, col: str, f: dict, fname: str, n_joins: int):
+    """SQL for a derived field: COALESCE over same-row columns and reference-table lookups."""
+    parts, joins, problems, rep = [], [], [], []
+    for i, d in enumerate(f["derive"]):
+        if "column" in d:
+            other = d["column"]
+            if other not in cols:
+                rep.append({"column": other, "status": "absent"})
+                continue
+            e = f"CAST(s.{_qi(other)} AS VARCHAR)"
+            if d.get("when_matches"):
+                e = f"CASE WHEN regexp_full_match({e}, {_ql(d['when_matches'])}) THEN {e} END"
+            parts.append(e)
+            rep.append({"column": other, "status": "resolved", "when_matches": d.get("when_matches")})
+            continue
+        lk = d["lookup"]
+        lref = _source_ref(con, loc, storage, lk["table"])
+        if lref is None:
+            rep.append({"lookup": lk["table"], "status": "absent"})
+            continue
+        lcols = _columns(con, lref)
+        if lk["key"] not in lcols or lk["value"] not in lcols:
+            problems.append(f"lookup {lk['table']} lacks {lk['key']} or {lk['value']}")
+            continue
+        k, v = _qi(lk["key"]), _qi(lk["value"])
+        where = f"WHERE regexp_full_match(CAST({v} AS VARCHAR), {_ql(lk['when_matches'])})" if lk.get("when_matches") else \
+            f"WHERE {v} IS NOT NULL"
+        sub = (f"SELECT CAST({k} AS VARCHAR) AS k, min(CAST({v} AS VARCHAR)) AS v, count(DISTINCT {v}) AS n "
+               f"FROM {lref} {where} GROUP BY 1")
+        nmax = con.execute(f"SELECT coalesce(max(n), 0) FROM ({sub})").fetchone()[0]
+        if nmax > 1:
+            problems.append(f"lookup {lk['table']}.{lk['key']} -> {lk['value']} is not unique (max {nmax} values per key)")
+        alias = f"lk{n_joins + len(joins)}"
+        joins.append(f"LEFT JOIN ({sub}) AS {alias} ON {alias}.k = CAST(s.{_qi(col)} AS VARCHAR)")
+        parts.append(f"{alias}.v")
+        rep.append({"lookup": lk["table"], "key": lk["key"], "value": lk["value"], "status": "resolved",
+                    "when_matches": lk.get("when_matches")})
+    if f.get("fallback_to_column", True):
+        parts.append(f"CAST(s.{_qi(col)} AS VARCHAR)")
+    expr = f"coalesce({', '.join(parts)})" if parts else "CAST(NULL AS VARCHAR)"
+    t = SQL_TYPES[f.get("type", "varchar")]
+    if t != "VARCHAR":
+        expr = f"TRY_CAST({expr} AS {t})"
+    return expr, joins, problems, rep
+
+
+def _recorded_exprs(sel: dict, c: dict, rt: dict, mode: str, rep: dict) -> list[str]:
+    """known_from / known_to for the lineage_next and post_date modes (see module docstring)."""
+    deleted = "FALSE"
+    if rt.get("deleted_field") and rt["deleted_field"] in sel:
+        vals = ", ".join(_ql(v) for v in rt.get("deleted_values", ["D"]))
+        deleted = f"coalesce({sel[rt['deleted_field']]} IN ({vals}), FALSE)"
+    end_field = rt.get("deleted_end_field", "post_date")
+    del_end = sel.get(end_field, f"DATE '{OPEN_END}'")
+    if mode == "lineage_next":
+        start = sel["recorded_start"]
+        part = ", ".join(sel[k] for k in rt["lineage"])
+        nxt = f"lead({start}) OVER (PARTITION BY {part} ORDER BY {start})"
+        rep["has_recorded_time"] = True
+        rep["recorded_lineage"] = list(rt["lineage"])
+        return [f"COALESCE({start}, DATE '{MIN_DATE}') AS known_from",
+                f"CASE WHEN {deleted} THEN {del_end} ELSE COALESCE({nxt}, DATE '{OPEN_END}') END AS known_to"]
+    post = sel["post_date"]
+    eff = sel.get("eff_date", f"DATE '{MIN_DATE}'")
+    rep["has_recorded_time"] = True
+    return [f"CASE WHEN {deleted} THEN COALESCE({eff}, DATE '{MIN_DATE}') ELSE COALESCE({post}, DATE '{MIN_DATE}') END AS known_from",
+            f"CASE WHEN {deleted} THEN {del_end} ELSE DATE '{OPEN_END}' END AS known_to"]
+
+
 def resolve(con, m: dict, set_name: str, strict: bool = True) -> Resolution:
     """Validate the mapping against the physical schema of one set and register canonical views.
 
     Creates DuckDB views `c_<concept>` for every resolved concept. Required concepts/fields that do
     not resolve are reported in `Resolution.problems`; with strict=True that raises MappingError.
-    Restricted fields (role: restricted) are validated but never exposed in canonical views.
+    Restricted fields (role: restricted | restricted_fairness_only) are validated but never exposed in
+    canonical views.
     """
     loc, storage = set_location(m, set_name)
     res = Resolution(set_name=set_name, location=str(loc), storage=storage)
@@ -234,6 +343,7 @@ def resolve(con, m: dict, set_name: str, strict: bool = True) -> Resolution:
             continue
         cols = _columns(con, ref)
         select = []
+        joins: list[str] = []
         missing_required = []
         for fname, f in c["fields"].items():
             col = f["column"]
@@ -241,11 +351,19 @@ def resolve(con, m: dict, set_name: str, strict: bool = True) -> Resolution:
             if col in cols:
                 fr["status"] = "resolved"
                 fr["physical_type"] = cols[col]
-                if f.get("role") != "restricted":
+                if f.get("derive"):
+                    dexpr, djoins, dprob, drep = _derive(con, loc, storage, cols, col, f, fname, len(joins))
+                    joins += djoins
+                    fr["derive"] = drep
+                    if dprob:
+                        res.problems += [f"{cname}.{fname}: {p}" for p in dprob]
+                    if f.get("role") not in RESTRICTED_ROLES:
+                        select.append((fname, dexpr))
+                elif f.get("role") not in RESTRICTED_ROLES:
                     select.append((fname, _expr(col, f)))
             elif f.get("optional"):
                 fr["status"] = "absent_optional"
-                if f.get("role") != "restricted":
+                if f.get("role") not in RESTRICTED_ROLES:
                     select.append((fname, f"CAST(NULL AS {SQL_TYPES[f.get('type', 'varchar')]})"))
             else:
                 fr["status"] = "missing_required"
@@ -271,7 +389,13 @@ def resolve(con, m: dict, set_name: str, strict: bool = True) -> Resolution:
             exprs.append(f"{dict(select)['eff_date']} AS valid_from")
             exprs.append(f"{norm} AS valid_to")
             rep["effective_end_convention"] = exp_conv
-        if "recorded_start" in names:
+        rt = c.get("recorded_time") or {}
+        mode = rt.get("mode", "interval")
+        if mode != "interval":
+            rep["recorded_time_mode"] = mode
+            ex = _recorded_exprs(dict(select), c, rt, mode, rep)
+            exprs += ex
+        elif "recorded_start" in names:
             fs, fe = c["fields"].get("recorded_start", {}), c["fields"].get("recorded_end", {})
             has_rec = rep["fields"]["recorded_start"]["status"] == "resolved" and \
                 rep["fields"].get("recorded_end", {}).get("status") == "resolved"
@@ -288,7 +412,7 @@ def resolve(con, m: dict, set_name: str, strict: bool = True) -> Resolution:
                 exprs.append(f"DATE '{MIN_DATE}' AS known_from")
                 exprs.append(f"DATE '{OPEN_END}' AS known_to")
             _ = fs
-        con.execute(f"CREATE OR REPLACE TEMP VIEW c_{cname} AS SELECT {', '.join(exprs)} FROM {ref}")
+        con.execute(f"CREATE OR REPLACE TEMP VIEW c_{cname} AS SELECT {', '.join(exprs)} FROM {ref} AS s {' '.join(joins)}")
         res.concepts[cname] = rep
     if strict and res.problems:
         raise MappingError(f"mapping {m['_path']} does not resolve on {set_name}: {res.problems}")

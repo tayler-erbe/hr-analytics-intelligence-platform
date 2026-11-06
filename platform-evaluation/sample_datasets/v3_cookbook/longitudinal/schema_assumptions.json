@@ -1,0 +1,2863 @@
+{
+ "REF_ECLS_PUBLIC": [
+  {
+   "name": "EMPEE_CLS_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "EMPEE_CLS_DESC",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "EMPEE_CLS_GROUP",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "JOB_END_DATE_RULE",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "LEAVE_CATGRY_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "SOURCE_KEY",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  }
+ ],
+ "REF_ORG": [
+  {
+   "name": "ORG_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "PARENT_ORG_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "ORG_STATUS_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "ORG_TITLE",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "ORG_HIER_LEVEL_NBR",
+   "type": "INTEGER",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "COA_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  }
+ ],
+ "REF_PCLS_SUCSS_XWALK": [
+  {
+   "name": "JOB_DETL_POSN_CLS_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "POSN_CLS_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "SUCSS_CLS_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "CLS_SOURCE",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "XWALK_STATUS",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "POSN_JOB_PRGS_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "JOB_PRGS_LEVEL_NBR",
+   "type": "INTEGER",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  }
+ ],
+ "REF_ROLE_FAMILY": [
+  {
+   "name": "CLS_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "ROLE_FAMILY",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "ROLE_LEVEL",
+   "type": "INTEGER",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "CRITICAL_IND",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  }
+ ],
+ "T_EMPEE_HIST": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(9,0)",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic"
+  },
+  {
+   "name": "EMPEE_EFF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_CUR_INFO_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "ACTIVE_EMPEE_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "FIRST_HIRE_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "CUR_HIRE_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "ADJ_SVC_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "FIRST_WORK_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "LAST_WORK_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "ORIG_STATUS_HIRE_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_STATUS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed(A,B,F);T_synthetic_unconfirmed"
+  },
+  {
+   "name": "EMPEE_STATUS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed;T_synthetic"
+  },
+  {
+   "name": "EMPEE_CLS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "EMPEE_CLS_LONG_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "EMPEE_GROUP_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(4)",
+   "max_length": 4,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_GROUP_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "TERMN_REASON_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "TERMN_REASON_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "EMPEE_TERMN_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_LEAVE_CATGRY_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "EMPEE_LEAVE_CATGRY_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "BNFT_CATGRY_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "BNFT_CATGRY_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "BNFT_ELIG_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived"
+  },
+  {
+   "name": "HR_CAMPUS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(3)",
+   "max_length": 3,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "HR_CAMPUS_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "FLSA_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "COA_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "ORG_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_CAMPUS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_CAMPUS_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_COLL_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_COLL_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_DEPT_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_DEPT_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "WORK_PERD_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(4)",
+   "max_length": 4,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "WORK_PERD_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "EMPEE_POST_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_DATA_STATUS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(10)",
+   "max_length": 10,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "EMPEE_DATA_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_RET_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived(cookbook rule)"
+  },
+  {
+   "name": "EMPEE_ORG_TITLE",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "UNIV_SNRTY_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_SUB_DEPT_LEVEL_6_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_SUB_DEPT_LEVEL_6_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "EMPEE_SUB_DEPT_LEVEL_7_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_SUB_DEPT_LEVEL_7_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "EMPEE_LAST_PD_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_FTE",
+   "type": "DECIMAL(7,3)",
+   "oracle_type": "NUMBER(7,3)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived(sum of active job FTE)"
+  },
+  {
+   "name": "EMPEE_ANNL_SAL",
+   "type": "DECIMAL(12,2)",
+   "oracle_type": "NUMBER(12,2)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived(sum of active job salary x appt pct)"
+  },
+  {
+   "name": "EMPEE_ADMIN_LEVEL_2_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_ADMIN_LEVEL_2_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "E_VERIFY_CASE_NBR",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(20)",
+   "max_length": 20,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "CASE_NBR_ENTRY_USER_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "CASE_NBR_ENTRY_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "HIRETOUCH_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(50)",
+   "max_length": 50,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "E_VERIFY_EFF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "SURS_ANNUITANT_AFFECT_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "SURS_LAST_HR_REVW_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "SURS_MAX_ANNL_EARNS_AMT",
+   "type": "DOUBLE",
+   "oracle_type": "NUMBER",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic(TR rows: max job salary)"
+  },
+  {
+   "name": "SURS_FORTY_PCT_THRSHLD_AMT",
+   "type": "DOUBLE",
+   "oracle_type": "NUMBER",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived(40%)"
+  },
+  {
+   "name": "SURS_LAST_UPDATE_CHG_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "SURS_ENTR_EDW_PERS_ID",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(9,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "SURS_ENTR_FULL_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(180)",
+   "max_length": 180,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "EMPEE_LEAVE_REASON_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_LEAVE_REASON_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "EMPEE_LOA_FROM_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_LOA_TO_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "EMPEE_USER_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "SURS_UPDATE_NOTE_TXT",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  }
+ ],
+ "T_EMPEE_HIST_5": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(9,0)",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "EMPEE_EFF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "EMPEE_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "EMPEE_CUR_INFO_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "TERMN_REASON_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "TERMN_REASON_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "EMPEE_TERMN_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "COA_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "CAMPUS_LEVEL_1_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "ADMIN_LEVEL_2_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "COLL_LEVEL_3_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SCHOOL_SUB_COLL_LEVEL_4_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized(no level 4 in the synthetic tree)",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "DEPT_LEVEL_5_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "DEPT_SUB_ORG_LEVEL_6_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "DEPT_SUB_ORG_LEVEL_7_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "DEPT_SUB_ORG_LEVEL_8_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "EMPEE_5_POST_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "EMPEE_DATA_STATUS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(10)",
+   "max_length": 10,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "EMPEE_DATA_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SURS_ANNUITANT_AFFECT_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SURS_LAST_HR_REVW_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SURS_MAX_ANNL_EARNS_AMT",
+   "type": "DOUBLE",
+   "oracle_type": "NUMBER",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SURS_FORTY_PCT_THRSHLD_AMT",
+   "type": "DOUBLE",
+   "oracle_type": "NUMBER",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SURS_LAST_UPDATE_CHG_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SURS_ENTR_EDW_PERS_ID",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(9,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SURS_ENTR_FULL_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(180)",
+   "max_length": 180,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  },
+  {
+   "name": "SURS_UPDATE_NOTE_TXT",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited",
+   "note": "secured table; columns verified 2026-11-06; rows derived from T_EMPEE_HIST termination fields"
+  }
+ ],
+ "T_JOB_DETL_HIST": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(9,0)",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic"
+  },
+  {
+   "name": "POSN_NBR",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic"
+  },
+  {
+   "name": "JOB_SUFFIX",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_EFF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_HIST_EFF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_PAYR_CALC_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "JOB_DETL_CUR_INFO_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "JOB_DETL_STATUS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "JOB_DETL_TITLE",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(120)",
+   "max_length": 120,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_sucss_title_or_synthetic"
+  },
+  {
+   "name": "JOB_DETL_EMPEE_CLS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "JOB_DETL_EMPEE_CLS_LONG_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "JOB_DETL_PAYR_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "JOB_DETL_PAYR_ID_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "COA_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "ORG_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_CAMPUS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_CAMPUS_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_COLL_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_COLL_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_DEPT_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_DEPT_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_SAL_TBL_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "JOB_DETL_SAL_GRADE_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(5)",
+   "max_length": 5,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_SAL_STEP_NBR",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(3,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "JOB_DETL_FTE",
+   "type": "DECIMAL(6,3)",
+   "oracle_type": "NUMBER(6,3)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value(fraction 1.000; fraction vs percent UNCONFIRMED)",
+   "note": "JOB_DETL_FTE stored as a fraction (1.000 = full time). The Cookbook calls it a percentage; fraction vs percent is UNCONFIRMED."
+  },
+  {
+   "name": "JOB_DETL_DAY_HOURS",
+   "type": "DECIMAL(6,2)",
+   "oracle_type": "NUMBER(6,2)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_PAY_HOURS",
+   "type": "DECIMAL(6,2)",
+   "oracle_type": "NUMBER(6,2)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_REGULAR_RT",
+   "type": "DECIMAL(11,6)",
+   "oracle_type": "NUMBER(11,6)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_PAY_PERD_SAL",
+   "type": "DECIMAL(11,2)",
+   "oracle_type": "NUMBER(11,2)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_ANNL_PAY_COUNT",
+   "type": "DECIMAL(8,6)",
+   "oracle_type": "NUMBER(8,6)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "JOB_DETL_ANNL_SAL",
+   "type": "DECIMAL(11,2)",
+   "oracle_type": "NUMBER(11,2)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_CHG_REASON_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(5)",
+   "max_length": 5,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain_partly_synthetic(SA001,JB001,PR001,RA001)"
+  },
+  {
+   "name": "JOB_DETL_CHG_REASON_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain_partly_synthetic"
+  },
+  {
+   "name": "JOB_DETL_SAL_GROUP_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_SAL_GROUP_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_PRSNL_EFF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_CNTRCT_NBR",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(8)",
+   "max_length": 8,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "JOB_DETL_TIME_ENTRY_TYPE_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "JOB_DETL_PREM_PAY_CATGRY_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(4)",
+   "max_length": 4,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "JOB_DETL_PREM_PAY_CATGRY_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "JOB_DETL_ONE_TIME_PMT_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_HIST_POST_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_UNIV_AFFL_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_APPT_PCT",
+   "type": "DECIMAL(5,2)",
+   "oracle_type": "NUMBER(5,2)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic(100 on every row)"
+  },
+  {
+   "name": "JOB_DETL_DATA_STATUS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(10)",
+   "max_length": 10,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "JOB_DETL_DATA_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_SAL_RT_TYPE_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(20)",
+   "max_length": 20,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "JOB_DETL_ANNL_BUDG_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived"
+  },
+  {
+   "name": "JOB_DETL_LEAVE_CATGRY_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "JOB_DETL_LEAVE_CATGRY_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_ORG_TITLE",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_EEO_SKILL_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed_partly_synthetic(30,40)"
+  },
+  {
+   "name": "JOB_DETL_EEO_SKILL_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed_partly_synthetic(30,40)"
+  },
+  {
+   "name": "JOB_DETL_EEO_JOB_GROUP_TITLE",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(45)",
+   "max_length": 45,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "TIME_ENTRY_METHOD_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "TIME_ENTRY_METHOD_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(15)",
+   "max_length": 15,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "JOB_DETL_PAYS_YR",
+   "type": "DECIMAL(8,6)",
+   "oracle_type": "NUMBER(8,6)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "JOB_DETL_SUB_DEPT_LEVEL_6_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "JOB_DETL_SUB_DEPT_LEVEL_6_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "JOB_DETL_SUB_DEPT_LEVEL_7_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "JOB_DETL_SUB_DEPT_LEVEL_7_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "JOB_DETL_POSN_CLS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(5)",
+   "max_length": 5,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic_for_sucss_classes;public_rules_for_local"
+  },
+  {
+   "name": "JOB_DETL_POSN_CLS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(120)",
+   "max_length": 120,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_CIV_SVC_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived"
+  },
+  {
+   "name": "SUPV_EDW_PERS_ID",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(9,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic"
+  },
+  {
+   "name": "SUPV_POSN_NBR",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic"
+  },
+  {
+   "name": "SUPV_JOB_SUFFIX",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "JOB_DETL_ADMIN_LEVEL_2_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_ADMIN_LEVEL_2_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(35)",
+   "max_length": 35,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "JOB_DETL_EMPEE_GROUP_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived"
+  },
+  {
+   "name": "JOB_DETL_EMPEE_GROUP_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed_partly_public(G)"
+  },
+  {
+   "name": "JOB_DETL_USER_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "JOB_DETL_HRFE_TRAN_ID",
+   "type": "DECIMAL(38,0)",
+   "oracle_type": "NUMBER(38,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "JOB_DETL_HRFE_COMPNT_ID",
+   "type": "DECIMAL(38,0)",
+   "oracle_type": "NUMBER(38,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "JOB_DETL_WORK_LOCN_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "JOB_DETL_WORK_LOCN_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed_partly_synthetic(2,5)"
+  },
+  {
+   "name": "JOB_DETL_LEAVE_RPT_METHOD_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "JOB_DETL_LEAVE_RPT_METHOD_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(50)",
+   "max_length": 50,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  }
+ ],
+ "T_PERS_HIST": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(9,0)",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic"
+  },
+  {
+   "name": "PERS_HIST_EFF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "PERS_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "PERS_CUR_INFO_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "UIN",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(9)",
+   "max_length": 9,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "SSN",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(15)",
+   "max_length": 15,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_FNAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_MNAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_LNAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_NAME_SUFFIX",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(20)",
+   "max_length": 20,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "BIRTH_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "SEX_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic(restricted_fairness_only)"
+  },
+  {
+   "name": "SEX_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(15)",
+   "max_length": 15,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "PERS_MARITAL_STATUS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_MARITAL_STATUS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_CITZN_TYPE_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed(AS,NR,RA,UC);CZ,PR synthetic"
+  },
+  {
+   "name": "PERS_CITZN_TYPE_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "PERS_CITZN_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "VETERAN_CLS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "VETERAN_CLS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(45)",
+   "max_length": 45,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "SPECIAL_DISABLED_VETERAN_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "SEARCH_FNAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "SEARCH_MNAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "SEARCH_LNAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_HIST_POST_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "NON_UIN_UNIQUE_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(9)",
+   "max_length": 9,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_PREFERRED_FNAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_NAME_PREFIX",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(20)",
+   "max_length": 20,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "LEGACY_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "LEGACY_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_CONFIDENTIALITY_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic(1% Y)"
+  },
+  {
+   "name": "BIRTH_CITY",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(50)",
+   "max_length": 50,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "BIRTH_STATE_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(3)",
+   "max_length": 3,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "BIRTH_STATE_NAME",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "PERS_CITZN_TYPE_GROUP",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(40)",
+   "max_length": 40,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "AGE",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(5,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived(current rows only)"
+  },
+  {
+   "name": "AGE_AT_DEATH",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(5,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "IPEDS_RACE_ETH_CATGRY",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic(restricted_fairness_only)"
+  },
+  {
+   "name": "IPEDS_RACE_ETH_CATGRY_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "PERS_DSD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(10)",
+   "max_length": 10,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "HISPANIC_ETH_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "AIAN_RACE_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "ASIAN_RACE_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "BLACK_RACE_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "NHPI_RACE_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "WHITE_RACE_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "RACE_VERF_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "RACE_VERF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "MULT_RACE_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "VISUAL_VERF_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "VERIFIER_EDW_PERS_ID",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(9,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "VISUAL_VERF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "VERIFY_ETH_CHG_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "VERIFY_RACE_CHG_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_prohibited"
+  },
+  {
+   "name": "ARMED_FORCES_SVC_MEDAL_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "RACE_ETH_RPT_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed(restricted_fairness_only)"
+  },
+  {
+   "name": "RACE_ETH_RPT_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "VETERAN_ACTIVE_DUTY_SEPRTN_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "GENDER_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(4)",
+   "max_length": 4,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic(restricted_fairness_only)"
+  },
+  {
+   "name": "GENDER_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "PERS_PRONOUN_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(4)",
+   "max_length": 4,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "PERS_PRONOUN_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  }
+ ],
+ "T_POSN_CLS_HIST": [
+  {
+   "name": "POSN_CLS_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "CLS_SOURCE",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "POSN_CLS_DESC",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "MIN_ANNUAL_AMT",
+   "type": "DECIMAL(12,2)",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "MAX_ANNUAL_AMT",
+   "type": "DECIMAL(12,2)",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  }
+ ],
+ "T_POSN_HIST": [
+  {
+   "name": "POSN_NBR",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic"
+  },
+  {
+   "name": "POSN_HIST_EFF_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": true,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_HIST_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_HIST_CUR_INFO_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "POSN_CLS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(5)",
+   "max_length": 5,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic_for_sucss_classes;public_rules_for_local"
+  },
+  {
+   "name": "POSN_STATUS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "POSN_TITLE",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(120)",
+   "max_length": 120,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_BGN_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_END_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived(term positions)"
+  },
+  {
+   "name": "POSN_TYPE_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "POSN_EMPEE_CLS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "POSN_EMPEE_CLS_LONG_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_SAL_TBL_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_code_domain"
+  },
+  {
+   "name": "CIPC_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "CIPC_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "COA_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_SAL_GROUP_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_SAL_GROUP_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_GROUP_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(4)",
+   "max_length": 4,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "POSN_GROUP_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "WORK_SCHED_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(4)",
+   "max_length": 4,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "WORK_SCHED_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "PAPE_CIV_SVC_ID",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic(SUCSS code for CS; 49901-49920 public PAPE list for AP) VALUE FORMAT TO CONFIRM"
+  },
+  {
+   "name": "PAPE_CIV_SVC_ID_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "public_sucss_title_or_synthetic"
+  },
+  {
+   "name": "OCCUP_TITLE_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(11)",
+   "max_length": 11,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "OCCUP_TITLE_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(60)",
+   "max_length": 60,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_EXEMPT_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_BRGN_UNIT_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(2)",
+   "max_length": 2,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "POSN_BRGN_UNIT_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_ACCRUE_SNRTY_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_JOB_PRGS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(5)",
+   "max_length": 5,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "POSN_JOB_PRGS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "OPEN_POSN_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "derived(job history)"
+  },
+  {
+   "name": "POSN_ONE_TIME_PMT_IND",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_HIST_POST_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_MIN_SAL",
+   "type": "DECIMAL(13,4)",
+   "oracle_type": "NUMBER(13,4)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_MIDPT_SAL",
+   "type": "DECIMAL(13,4)",
+   "oracle_type": "NUMBER(13,4)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_MAX_SAL",
+   "type": "DECIMAL(13,4)",
+   "oracle_type": "NUMBER(13,4)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_SAL_RANGE_TYPE_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(10)",
+   "max_length": 10,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "POSN_DATA_STATUS_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(10)",
+   "max_length": 10,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_DATA_EXP_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_SAL_RT_TYPE_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(20)",
+   "max_length": 20,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "POSN_BUDG_PRFL_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "POSN_BUDG_PRFL_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_ROLL_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "POSN_ROLL_DESC",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(30)",
+   "max_length": 30,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_STATUS_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(1)",
+   "max_length": 1,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "cookbook_listed"
+  },
+  {
+   "name": "POSN_SAL_GRADE_CD",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(5)",
+   "max_length": 5,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value"
+  },
+  {
+   "name": "POSN_SAL_STEP_NBR",
+   "type": "INTEGER",
+   "oracle_type": "NUMBER(3,0)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "null_not_synthesized"
+  },
+  {
+   "name": "POSN_APPT_PCT",
+   "type": "DECIMAL(5,4)",
+   "oracle_type": "NUMBER(5,4)",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "free_value(fraction)"
+  },
+  {
+   "name": "POSN_DESC_UPDATE_DT",
+   "type": "DATE",
+   "oracle_type": "DATE",
+   "max_length": null,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "synthetic"
+  },
+  {
+   "name": "SUPV_POSN_NBR",
+   "type": "VARCHAR",
+   "oracle_type": "VARCHAR2(6)",
+   "max_length": 6,
+   "pk": false,
+   "provenance": "verified_dictionary",
+   "value_status": "identifier_synthetic"
+  }
+ ],
+ "X_JOB_CONTRACT_TYPE": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "INTEGER",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "POSN_NBR",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "JOB_SUFFIX",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  },
+  {
+   "name": "JOB_CONTRACT_TYPE_CD",
+   "type": "VARCHAR",
+   "provenance": "assumed_synthetic_layout",
+   "value_status": "v2_values"
+  }
+ ]
+}

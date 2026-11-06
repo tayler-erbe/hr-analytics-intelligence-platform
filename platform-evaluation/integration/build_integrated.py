@@ -342,7 +342,35 @@ def snapshot_dates(con, as_of: list[str] | None, known: str) -> list[tuple[str, 
     return pairs
 
 
-def build_snapshots(con, m: dict, pairs: list[tuple[str, str]], bridges: dict) -> None:
+def position_org_sql(res: M.Resolution) -> str:
+    """Org of each snapshot position. Positions carry an org column in v1/v2; the Data Cookbook's T_POSN_HIST
+    has none, so the org is derived from the position's job records as known at known_as_of: the latest
+    job effective on or before the as-of date, else the earliest job, else the campus org of the position's
+    chart (COA_CD), else NULL. Returns a SELECT over snap_posn_raw yielding (as_of_date, known_as_of,
+    position_id, org_code, org_source)."""
+    if res.has_field("position", "org_code"):
+        return """SELECT as_of_date, known_as_of, position_id, org_code,
+                         CASE WHEN org_code IS NOT NULL THEN 'position_record' END AS org_source FROM snap_posn_raw"""
+    chart = ("LEFT JOIN (SELECT chart_code, min(org_code) AS campus_org FROM c_org o "
+             "WHERE o.parent_org_code IS NULL OR o.parent_org_code IN (SELECT org_code FROM c_org WHERE parent_org_code IS NULL) "
+             "GROUP BY 1) ch ON ch.chart_code = p.chart_code") if res.has_field("position", "chart_code") and res.has_field("org", "chart_code") \
+        else "LEFT JOIN (SELECT NULL::VARCHAR AS campus_org) ch ON FALSE"
+    return f"""WITH j AS (
+            SELECT p.as_of_date, p.known_as_of, p.position_id, a.org_code, a.valid_from,
+                   row_number() OVER (PARTITION BY p.as_of_date, p.known_as_of, p.position_id
+                                      ORDER BY CASE WHEN a.valid_from <= p.as_of_date THEN 0 ELSE 1 END,
+                                               CASE WHEN a.valid_from <= p.as_of_date THEN -epoch(a.valid_from) ELSE epoch(a.valid_from) END,
+                                               a.fte DESC NULLS LAST, a.person_id, a.job_suffix) AS rn
+            FROM snap_posn_raw p JOIN c_appointment a ON a.position_id = p.position_id
+             AND a.known_from <= p.known_as_of AND a.known_to > p.known_as_of)
+        SELECT p.as_of_date, p.known_as_of, p.position_id, coalesce(j.org_code, ch.campus_org) AS org_code,
+               CASE WHEN j.org_code IS NOT NULL THEN 'derived_from_jobs' WHEN ch.campus_org IS NOT NULL THEN 'campus_of_position_chart' END AS org_source
+        FROM snap_posn_raw p LEFT JOIN j ON j.as_of_date = p.as_of_date AND j.known_as_of = p.known_as_of
+             AND j.position_id = p.position_id AND j.rn = 1
+        {chart}"""
+
+
+def build_snapshots(con, m: dict, pairs: list[tuple[str, str]], bridges: dict, res: M.Resolution | None = None) -> None:
     year = int(bridges["by_id"]["soc_to_bls_oews"]["params"]["primary_year"])
     act = in_list(M.code_values(m, "appointment_status_active"))
     pact = in_list(M.code_values(m, "position_status_active"))
@@ -355,7 +383,7 @@ def build_snapshots(con, m: dict, pairs: list[tuple[str, str]], bridges: dict) -
           ON a.valid_from <= s.as_of_date AND a.valid_to >= s.as_of_date
          AND a.known_from <= s.known_as_of AND a.known_to > s.known_as_of
         WHERE a.status_code IN {act}""")
-    con.execute(f"""CREATE OR REPLACE TEMP TABLE snap_posn AS
+    con.execute(f"""CREATE OR REPLACE TEMP TABLE snap_posn_raw AS
         SELECT * FROM (
             SELECT s.as_of_date, s.known_as_of, p.*,
                    row_number() OVER (PARTITION BY s.as_of_date, s.known_as_of, p.position_id
@@ -365,6 +393,12 @@ def build_snapshots(con, m: dict, pairs: list[tuple[str, str]], bridges: dict) -
               ON p.valid_from <= s.as_of_date AND p.valid_to >= s.as_of_date
              AND p.known_from <= s.known_as_of AND p.known_to > s.known_as_of)
         WHERE rn = 1""")
+    if res is not None and not res.has_field("position", "org_code"):
+        con.execute(f"""CREATE OR REPLACE TEMP TABLE snap_posn AS
+            SELECT r.* REPLACE (o.org_code AS org_code) FROM snap_posn_raw r
+            JOIN ({position_org_sql(res)}) o USING (as_of_date, known_as_of, position_id)""")
+    else:
+        con.execute("CREATE OR REPLACE TEMP TABLE snap_posn AS SELECT * FROM snap_posn_raw")
     con.execute(f"""CREATE OR REPLACE TABLE fact_position_snapshot AS
         WITH inc AS (
             SELECT as_of_date, known_as_of, position_id,
@@ -674,6 +708,36 @@ def build_benchmarks(con, flow_info: dict) -> dict:
     return {"benchmark_window": [w0, w1], "latest_snapshot": str(latest), "last_complete_year": last_complete}
 
 
+def build_funding_mix(con, res: M.Resolution) -> bool:
+    """Share of salary expense by funding source, role family and campus (payroll sets with a funding source).
+
+    Each payroll line is linked to the single job version in force at its pay-period end (as known today), so
+    payroll is never multiplied by job history rows. Expense amounts net voids and adjustments by summation.
+    Returns False (no table) when the mapping has no payroll funding source."""
+    if not (res.available("payroll_line") and res.has_field("payroll_line", "funding_source")):
+        return False
+    K = LATEST_KNOWLEDGE
+    con.execute(f"""CREATE OR REPLACE TABLE bench_funding_mix_role_family_campus AS
+        WITH p AS (SELECT * FROM c_payroll_line WHERE pay_amount IS NOT NULL),
+        j AS (SELECT p.transaction_id, a.job_class_code,
+                     row_number() OVER (PARTITION BY p.transaction_id ORDER BY a.valid_from DESC, a.known_from DESC) AS rn
+              FROM p JOIN c_appointment a ON a.person_id = p.person_id AND a.position_id = p.position_id
+               AND a.job_suffix = p.job_suffix AND a.valid_from <= p.pay_period_end_date AND a.valid_to >= p.pay_period_end_date
+               AND a.known_from <= DATE '{K}' AND a.known_to > DATE '{K}'),
+        x AS (SELECT coalesce(c.role_family, 'Unassigned') AS role_family, o.campus_org_code,
+                     coalesce(p.funding_source, 'Unknown') AS funding_source, p.pay_amount
+              FROM p LEFT JOIN j ON j.transaction_id = p.transaction_id AND j.rn = 1
+              LEFT JOIN dim_job_class_internal c ON c.job_class_code = j.job_class_code
+              LEFT JOIN dim_org_external o ON o.org_code = p.org_code)
+        SELECT role_family, campus_org_code, funding_source, round(sum(pay_amount), 2) AS salary_expense,
+               round(sum(pay_amount) / nullif(sum(sum(pay_amount)) OVER (PARTITION BY role_family, campus_org_code), 0), 4) AS share_of_salary,
+               count(*) AS payroll_lines, any_value(period_from) AS period_from, any_value(period_to) AS period_to,
+               'internal payroll (synthetic); funding source as recorded on the payroll line' AS note
+        FROM x CROSS JOIN (SELECT min(pay_period_end_date) AS period_from, max(pay_period_end_date) AS period_to FROM p) r
+        GROUP BY role_family, campus_org_code, funding_source""")
+    return True
+
+
 def materialize_canonical(con, res: M.Resolution) -> None:
     for c, rep in res.concepts.items():
         if rep.get("status") == "resolved":
@@ -709,10 +773,13 @@ def build(set_name: str = "longitudinal", out_root: Path | None = None, mapping_
     build_class_bridges(con, m, bridges)
     build_class_external(con, bridges)
     pairs = [tuple(p) for p in snapshot_pairs] if snapshot_pairs else snapshot_dates(con, as_of, known)
-    build_snapshots(con, m, pairs, bridges)
+    build_snapshots(con, m, pairs, bridges, res)
     build_headcount(con)
     flow_info = build_flows(con, m, flow_years)
     bench_info = build_benchmarks(con, flow_info)
+    export = dict(EXPORT)
+    if build_funding_mix(con, res):
+        export["bench_funding_mix_role_family_campus"] = "role_family, campus_org_code, funding_source"
     materialize_canonical(con, res)
     con.execute("CREATE OR REPLACE TABLE meta_bridges AS SELECT * FROM (VALUES " + ", ".join(
         f"({lit(b['id'])}, {lit(b['from'])}, {lit(b['to'])}, {lit(b['method'] if isinstance(b['method'], str) else str(b['method']))}, "
@@ -730,7 +797,7 @@ def build(set_name: str = "longitudinal", out_root: Path | None = None, mapping_
         if pq_dir.exists():
             shutil.rmtree(pq_dir)
         pq_dir.mkdir(parents=True)
-    for t, order in EXPORT.items():
+    for t, order in export.items():
         n = con.execute(f"SELECT count(*) FROM {t}").fetchall()[0][0]
         manifest["tables"][t] = {"rows": n, "content_sha256": table_hash(con, t, order)}
         if write_parquet:
