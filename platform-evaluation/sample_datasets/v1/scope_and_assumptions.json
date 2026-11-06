@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "edw_calibrated": false,
+  "proposal_scope_hours": 236,
+  "sources_used": "Proposal requirements and existing synthetic generator contracts; no real EDW profiles.",
+  "supported_sample_needs": [
+    "Effective-dated employment and appointment history",
+    "Role/class transitions",
+    "Separations and retirement-coded events",
+    "Org and position relationships",
+    "FTE and pay ranges",
+    "Late-recorded row versions",
+    "Clean-versus-defective quality examples",
+    "Role-family reference mapping"
+  ],
+  "excluded_or_unverified": [
+    "Actual university field names and code domains",
+    "Real employment or demographic distributions",
+    "Verified SURS participation or service credits",
+    "Employee skills/proficiency",
+    "JDX job descriptions",
+    "Learning records",
+    "Real promotion labels",
+    "Causal retention effects",
+    "Power BI dashboards or model outputs"
+  ],
+  "conventions": {
+    "effective_end": "inclusive, generator assumption",
+    "recorded_end": "exclusive",
+    "open_end": "9999-12-31",
+    "current_view": "synthetic derived view only"
+  },
+  "interpretation": "Synthetic model results test implementation, not real employee behavior or real-data model accuracy."
+}

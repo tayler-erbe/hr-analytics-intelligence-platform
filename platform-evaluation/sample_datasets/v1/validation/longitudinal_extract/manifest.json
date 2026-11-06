@@ -1,0 +1,17 @@
+{
+  "extract_date": "2026-10-31",
+  "history_start": "2004-01-01",
+  "row_counts": {
+    "REF_JOB_CLASS": 38,
+    "REF_ORG": 52,
+    "REF_ROLE_FAMILY": 38,
+    "T_EMPEE_HIST": 5257,
+    "T_EMPEE_HIST_5": 1480,
+    "T_JOB_DETL_HIST": 36699,
+    "T_PERS_HIST": 2302,
+    "T_POSN_HIST": 1256,
+    "X_PROTECTED_ATTR": 2302
+  },
+  "source": "WORKSPACE\\data\\local\\esgc_sample_pack_v1\\longitudinal",
+  "synthetic": true
+}

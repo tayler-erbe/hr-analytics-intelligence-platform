@@ -1,0 +1,38 @@
+{"CLS_CD": "0010", "CRITICAL_IND": "N", "ROLE_FAMILY": "Accountant", "ROLE_LEVEL": 1}
+{"CLS_CD": "0011", "CRITICAL_IND": "N", "ROLE_FAMILY": "Accountant", "ROLE_LEVEL": 2}
+{"CLS_CD": "0012", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Accountant", "ROLE_LEVEL": 3}
+{"CLS_CD": "0036", "CRITICAL_IND": "N", "ROLE_FAMILY": "Food Service Administrator", "ROLE_LEVEL": 1}
+{"CLS_CD": "0037", "CRITICAL_IND": "N", "ROLE_FAMILY": "Food Service Administrator", "ROLE_LEVEL": 2}
+{"CLS_CD": "0038", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Food Service Administrator", "ROLE_LEVEL": 3}
+{"CLS_CD": "0039", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Food Service Administrator", "ROLE_LEVEL": 4}
+{"CLS_CD": "0041", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Health Care Administrator", "ROLE_LEVEL": 2}
+{"CLS_CD": "0042", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Health Care Administrator", "ROLE_LEVEL": 3}
+{"CLS_CD": "1474", "CRITICAL_IND": "N", "ROLE_FAMILY": "Institutional Compliance Examiner", "ROLE_LEVEL": 1}
+{"CLS_CD": "1475", "CRITICAL_IND": "N", "ROLE_FAMILY": "Institutional Compliance Examiner", "ROLE_LEVEL": 2}
+{"CLS_CD": "1476", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Institutional Compliance Examiner", "ROLE_LEVEL": 3}
+{"CLS_CD": "1477", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Institutional Compliance Examiner", "ROLE_LEVEL": 4}
+{"CLS_CD": "3317", "CRITICAL_IND": "N", "ROLE_FAMILY": "Storekeeper", "ROLE_LEVEL": 1}
+{"CLS_CD": "3318", "CRITICAL_IND": "N", "ROLE_FAMILY": "Storekeeper", "ROLE_LEVEL": 2}
+{"CLS_CD": "3319", "CRITICAL_IND": "N", "ROLE_FAMILY": "Storekeeper", "ROLE_LEVEL": 3}
+{"CLS_CD": "3988", "CRITICAL_IND": "N", "ROLE_FAMILY": "Environmental Health & Safety Technician", "ROLE_LEVEL": 1}
+{"CLS_CD": "3989", "CRITICAL_IND": "N", "ROLE_FAMILY": "Environmental Health & Safety Technician", "ROLE_LEVEL": 2}
+{"CLS_CD": "3990", "CRITICAL_IND": "N", "ROLE_FAMILY": "Environmental Health & Safety Technician", "ROLE_LEVEL": 3}
+{"CLS_CD": "4065", "CRITICAL_IND": "N", "ROLE_FAMILY": "Payroll Specialist", "ROLE_LEVEL": 1}
+{"CLS_CD": "4066", "CRITICAL_IND": "N", "ROLE_FAMILY": "Payroll Specialist", "ROLE_LEVEL": 2}
+{"CLS_CD": "4067", "CRITICAL_IND": "N", "ROLE_FAMILY": "Payroll Specialist", "ROLE_LEVEL": 3}
+{"CLS_CD": "4095", "CRITICAL_IND": "N", "ROLE_FAMILY": "Medical Technologist", "ROLE_LEVEL": 1}
+{"CLS_CD": "4096", "CRITICAL_IND": "N", "ROLE_FAMILY": "Medical Technologist", "ROLE_LEVEL": 2}
+{"CLS_CD": "4097", "CRITICAL_IND": "N", "ROLE_FAMILY": "Medical Technologist", "ROLE_LEVEL": 3}
+{"CLS_CD": "4697", "CRITICAL_IND": "N", "ROLE_FAMILY": "Client Relations Representative", "ROLE_LEVEL": 1}
+{"CLS_CD": "4698", "CRITICAL_IND": "N", "ROLE_FAMILY": "Client Relations Representative", "ROLE_LEVEL": 2}
+{"CLS_CD": "4699", "CRITICAL_IND": "N", "ROLE_FAMILY": "Client Relations Representative", "ROLE_LEVEL": 3}
+{"CLS_CD": "4700", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Client Relations Representative", "ROLE_LEVEL": 4}
+{"CLS_CD": "4752", "CRITICAL_IND": "N", "ROLE_FAMILY": "Health Care Administrator", "ROLE_LEVEL": 1}
+{"CLS_CD": "4990", "CRITICAL_IND": "N", "ROLE_FAMILY": "Steam and Power Plant", "ROLE_LEVEL": 1}
+{"CLS_CD": "4991", "CRITICAL_IND": "N", "ROLE_FAMILY": "Steam and Power Plant", "ROLE_LEVEL": 2}
+{"CLS_CD": "4992", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Steam and Power Plant", "ROLE_LEVEL": 3}
+{"CLS_CD": "4993", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Steam and Power Plant", "ROLE_LEVEL": 4}
+{"CLS_CD": "AP02", "CRITICAL_IND": "N", "ROLE_FAMILY": "Academic Professional (synthetic)", "ROLE_LEVEL": 1}
+{"CLS_CD": "AP04", "CRITICAL_IND": "N", "ROLE_FAMILY": "Academic Professional (synthetic)", "ROLE_LEVEL": 2}
+{"CLS_CD": "AP06", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Academic Professional (synthetic)", "ROLE_LEVEL": 3}
+{"CLS_CD": "AP08", "CRITICAL_IND": "Y", "ROLE_FAMILY": "Academic Professional (synthetic)", "ROLE_LEVEL": 4}

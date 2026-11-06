@@ -1,0 +1,333 @@
+{
+  "REF_JOB_CLASS": [
+    {
+      "name": "CLS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "CLS_SOURCE",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "CLS_TITLE",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "MIN_ANNUAL_AMT",
+      "type": "decimal128(12, 2)",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "MAX_ANNUAL_AMT",
+      "type": "decimal128(12, 2)",
+      "status": "synthetic layout assumption; not EDW-verified"
+    }
+  ],
+  "REF_ORG": [
+    {
+      "name": "ORG_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "PARENT_ORG_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ORG_STATUS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ORG_TITLE",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    }
+  ],
+  "REF_ROLE_FAMILY": [
+    {
+      "name": "CLS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROLE_FAMILY",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROLE_LEVEL",
+      "type": "int32",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "CRITICAL_IND",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    }
+  ],
+  "T_EMPEE_HIST": [
+    {
+      "name": "EDW_PERS_ID",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "EMPEE_EFF_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "EMPEE_EXP_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "EMPEE_STATUS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "EMPEE_CLS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "FIRST_HIRE_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "CUR_HIRE_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "HOME_ORG_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "CAMPUS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_START_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_END_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    }
+  ],
+  "T_EMPEE_HIST_5": [
+    {
+      "name": "EDW_PERS_ID",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "TERM_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "TERM_REASON_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "SURS_RETIR_IND",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_START_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_END_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    }
+  ],
+  "T_JOB_DETL_HIST": [
+    {
+      "name": "EDW_PERS_ID",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "POSN_NBR",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_SUFFIX",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_DETL_EFF_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_DETL_EXP_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_CONTRACT_TYPE_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_STATUS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_FTE",
+      "type": "decimal128(6, 3)",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_ANNUAL_SAL_AMT",
+      "type": "decimal128(12, 2)",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_CLS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_ECLS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "JOB_ORG_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "SUPERVISOR_PERS_ID",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_START_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_END_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    }
+  ],
+  "T_PERS_HIST": [
+    {
+      "name": "EDW_PERS_ID",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "PERS_EFF_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "PERS_EXP_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "BIRTH_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "SEX_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "RACE_ETH_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_START_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_END_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    }
+  ],
+  "T_POSN_HIST": [
+    {
+      "name": "POSN_NBR",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "POSN_EFF_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "POSN_EXP_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "POSN_STATUS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "POSN_CLS_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "POSN_ORG_CD",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "POSN_BUDGET_FTE",
+      "type": "decimal128(6, 3)",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "POSN_TITLE",
+      "type": "string",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_START_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    },
+    {
+      "name": "ROW_REC_END_DT",
+      "type": "date32[day]",
+      "status": "synthetic layout assumption; not EDW-verified"
+    }
+  ]
+}

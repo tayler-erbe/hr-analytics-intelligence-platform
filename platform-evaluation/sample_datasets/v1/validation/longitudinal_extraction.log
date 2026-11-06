@@ -1,0 +1,9 @@
+extract: {'T_PERS_HIST': 2302, 'X_PROTECTED_ATTR': 2302, 'T_EMPEE_HIST': 5257, 'T_EMPEE_HIST_5': 1480, 'T_JOB_DETL_HIST': 36699, 'T_POSN_HIST': 1256, 'REF_JOB_CLASS': 38, 'REF_ORG': 52, 'REF_ROLE_FAMILY': 38}
+  PASS G1_required_columns: all required files and columns present
+  PASS G2_no_identity_columns: no name / national-ID / address / ZIP columns extracted
+  PASS G3_interval_order: 0 of 36699 job rows have EFF_DT > EXP_DT (tolerance 0.1%)
+  PASS G4_row_versions: 0 versions with REC_START >= REC_END; 0 keys with >1 current version
+  INFO I1_retro_keying_rate: 6.8% of job rows were first recorded >30 days after their effective date
+  PASS G5_history_depth: 49.2 years of job history (need >= 8 for a 5-origin backtest)
+  PASS G6_role_family_coverage: 100.0% of open primary job rows map to a role family (need 95%)
+  PASS G7_one_primary_job: 0.00% of persons hold >1 open primary position (tolerance 1%)

@@ -1,0 +1,20 @@
+{
+  "extract_date": "2026-10-31",
+  "generator_version": "1.0",
+  "history_start": "2004-01-01",
+  "note": "SYNTHETIC data. No real person, ID, salary or demographic. SUCSS class codes/titles are public; pay ranges, org codes and all people are invented.",
+  "reused_from": "erp_readiness/generate_synthetic.py (World.build_reference, SCHEMAS) by import; not modified",
+  "row_counts": {
+    "REF_JOB_CLASS": 38,
+    "REF_ORG": 52,
+    "REF_ROLE_FAMILY": 38,
+    "T_EMPEE_HIST": 5257,
+    "T_EMPEE_HIST_5": 1480,
+    "T_JOB_DETL_HIST": 36699,
+    "T_PERS_HIST": 2302,
+    "T_POSN_HIST": 1256
+  },
+  "scale": 0.2,
+  "seed": 20261106,
+  "synthetic": true
+}

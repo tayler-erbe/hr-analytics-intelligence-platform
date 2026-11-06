@@ -1,0 +1,38 @@
+{"CLS_CD": "0010", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Accountant I", "MAX_ANNUAL_AMT": "57750.00", "MIN_ANNUAL_AMT": "35000.00"}
+{"CLS_CD": "0011", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Accountant II", "MAX_ANNUAL_AMT": "62700.00", "MIN_ANNUAL_AMT": "38000.00"}
+{"CLS_CD": "0012", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Accountant III", "MAX_ANNUAL_AMT": "113850.00", "MIN_ANNUAL_AMT": "69000.00"}
+{"CLS_CD": "0036", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Food Service Administrator I", "MAX_ANNUAL_AMT": "52800.00", "MIN_ANNUAL_AMT": "32000.00"}
+{"CLS_CD": "0037", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Food Service Administrator II", "MAX_ANNUAL_AMT": "75900.00", "MIN_ANNUAL_AMT": "46000.00"}
+{"CLS_CD": "0038", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Food Service Administrator III", "MAX_ANNUAL_AMT": "107250.00", "MIN_ANNUAL_AMT": "65000.00"}
+{"CLS_CD": "0039", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Food Service Administrator IV", "MAX_ANNUAL_AMT": "57750.00", "MIN_ANNUAL_AMT": "35000.00"}
+{"CLS_CD": "0041", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Health Care Administrator II", "MAX_ANNUAL_AMT": "57750.00", "MIN_ANNUAL_AMT": "35000.00"}
+{"CLS_CD": "0042", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Health Care Administrator III", "MAX_ANNUAL_AMT": "110550.00", "MIN_ANNUAL_AMT": "67000.00"}
+{"CLS_CD": "1474", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Institutional Compliance Examiner I", "MAX_ANNUAL_AMT": "70950.00", "MIN_ANNUAL_AMT": "43000.00"}
+{"CLS_CD": "1475", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Institutional Compliance Examiner II", "MAX_ANNUAL_AMT": "85800.00", "MIN_ANNUAL_AMT": "52000.00"}
+{"CLS_CD": "1476", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Institutional Compliance Examiner III", "MAX_ANNUAL_AMT": "66000.00", "MIN_ANNUAL_AMT": "40000.00"}
+{"CLS_CD": "1477", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Institutional Compliance Examiner IV", "MAX_ANNUAL_AMT": "118800.00", "MIN_ANNUAL_AMT": "72000.00"}
+{"CLS_CD": "3317", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Storekeeper I", "MAX_ANNUAL_AMT": "127050.00", "MIN_ANNUAL_AMT": "77000.00"}
+{"CLS_CD": "3318", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Storekeeper II", "MAX_ANNUAL_AMT": "72600.00", "MIN_ANNUAL_AMT": "44000.00"}
+{"CLS_CD": "3319", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Storekeeper III", "MAX_ANNUAL_AMT": "79200.00", "MIN_ANNUAL_AMT": "48000.00"}
+{"CLS_CD": "3988", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Environmental Health & Safety Technician I", "MAX_ANNUAL_AMT": "84150.00", "MIN_ANNUAL_AMT": "51000.00"}
+{"CLS_CD": "3989", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Environmental Health & Safety Technician II", "MAX_ANNUAL_AMT": "118800.00", "MIN_ANNUAL_AMT": "72000.00"}
+{"CLS_CD": "3990", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Environmental Health & Safety Technician III", "MAX_ANNUAL_AMT": "125400.00", "MIN_ANNUAL_AMT": "76000.00"}
+{"CLS_CD": "4065", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Payroll Specialist I", "MAX_ANNUAL_AMT": "99000.00", "MIN_ANNUAL_AMT": "60000.00"}
+{"CLS_CD": "4066", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Payroll Specialist II", "MAX_ANNUAL_AMT": "112200.00", "MIN_ANNUAL_AMT": "68000.00"}
+{"CLS_CD": "4067", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Payroll Specialist III", "MAX_ANNUAL_AMT": "113850.00", "MIN_ANNUAL_AMT": "69000.00"}
+{"CLS_CD": "4095", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Medical Technologist I", "MAX_ANNUAL_AMT": "79200.00", "MIN_ANNUAL_AMT": "48000.00"}
+{"CLS_CD": "4096", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Medical Technologist II", "MAX_ANNUAL_AMT": "74250.00", "MIN_ANNUAL_AMT": "45000.00"}
+{"CLS_CD": "4097", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Medical Technologist III", "MAX_ANNUAL_AMT": "123750.00", "MIN_ANNUAL_AMT": "75000.00"}
+{"CLS_CD": "4697", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Client Relations Representative I", "MAX_ANNUAL_AMT": "54450.00", "MIN_ANNUAL_AMT": "33000.00"}
+{"CLS_CD": "4698", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Client Relations Representative II", "MAX_ANNUAL_AMT": "112200.00", "MIN_ANNUAL_AMT": "68000.00"}
+{"CLS_CD": "4699", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Client Relations Representative III", "MAX_ANNUAL_AMT": "61050.00", "MIN_ANNUAL_AMT": "37000.00"}
+{"CLS_CD": "4700", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Client Relations Representative IV", "MAX_ANNUAL_AMT": "117150.00", "MIN_ANNUAL_AMT": "71000.00"}
+{"CLS_CD": "4752", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Health Care Administrator I", "MAX_ANNUAL_AMT": "113850.00", "MIN_ANNUAL_AMT": "69000.00"}
+{"CLS_CD": "4990", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Steam and Power Plant I", "MAX_ANNUAL_AMT": "123750.00", "MIN_ANNUAL_AMT": "75000.00"}
+{"CLS_CD": "4991", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Steam and Power Plant II", "MAX_ANNUAL_AMT": "127050.00", "MIN_ANNUAL_AMT": "77000.00"}
+{"CLS_CD": "4992", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Steam and Power Plant III", "MAX_ANNUAL_AMT": "69300.00", "MIN_ANNUAL_AMT": "42000.00"}
+{"CLS_CD": "4993", "CLS_SOURCE": "SUCSS", "CLS_TITLE": "Steam and Power Plant IV", "MAX_ANNUAL_AMT": "82500.00", "MIN_ANNUAL_AMT": "50000.00"}
+{"CLS_CD": "AP02", "CLS_SOURCE": "LOCAL", "CLS_TITLE": "Academic Professional Title 2 (synthetic)", "MAX_ANNUAL_AMT": "110000.00", "MIN_ANNUAL_AMT": "64000.00"}
+{"CLS_CD": "AP04", "CLS_SOURCE": "LOCAL", "CLS_TITLE": "Academic Professional Title 4 (synthetic)", "MAX_ANNUAL_AMT": "128000.00", "MIN_ANNUAL_AMT": "76000.00"}
+{"CLS_CD": "AP06", "CLS_SOURCE": "LOCAL", "CLS_TITLE": "Academic Professional Title 6 (synthetic)", "MAX_ANNUAL_AMT": "146000.00", "MIN_ANNUAL_AMT": "88000.00"}
+{"CLS_CD": "AP08", "CLS_SOURCE": "LOCAL", "CLS_TITLE": "Academic Professional Title 8 (synthetic)", "MAX_ANNUAL_AMT": "164000.00", "MIN_ANNUAL_AMT": "100000.00"}

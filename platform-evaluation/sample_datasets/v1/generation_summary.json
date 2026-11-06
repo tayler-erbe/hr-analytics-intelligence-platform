@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "source_commit": "e8d541420594ef39d0b97d6b9aa0fb19e86e9420",
+  "seed": 20261106,
+  "quality_people": 1500,
+  "history_scale": 0.2,
+  "longitudinal_events": {
+    "abolished": 197,
+    "external_hires": 1928,
+    "internal_moves": 1467,
+    "positions_created_by_moves": 685,
+    "separations": 1480
+  }
+}

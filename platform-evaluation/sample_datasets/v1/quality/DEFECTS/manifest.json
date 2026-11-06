@@ -1,0 +1,2106 @@
+{
+  "as_of": "2026-10-31",
+  "defect_scale": 1.0,
+  "expected": {
+    "C01": [
+      "SP000129|R001665|00",
+      "SP000371|R001335|00",
+      "SP000950|R000191|00",
+      "SP001041|R001498|00",
+      "SP001255|R000712|00",
+      "SP001484|R001202|00"
+    ],
+    "C02": [
+      "SP000195|R000388|00",
+      "SP000231|R001206|00",
+      "SP000473|R000046|00",
+      "SP000802|R001233|00",
+      "SP001128|R001487|00",
+      "SP001371|R000453|00"
+    ],
+    "C03": [
+      "SP000726|R001251|00",
+      "SP001301|R001171|00",
+      "SP001324|R001179|00"
+    ],
+    "C04": [
+      "SP000696|R001410|00",
+      "SP000698|R000724|00",
+      "SP001185|R001770|00"
+    ],
+    "E01": [
+      "SP000291",
+      "SP000353",
+      "SP000521",
+      "SP000610"
+    ],
+    "E02": [
+      "SP000594",
+      "SP000626",
+      "SP000874",
+      "SP001330"
+    ],
+    "E03": [
+      "SP000005",
+      "SP000083",
+      "SP000947",
+      "SP001261",
+      "SP001275"
+    ],
+    "E04": [
+      "SP000012",
+      "SP000559",
+      "SP000565",
+      "SP000855"
+    ],
+    "E05": [
+      "SP000239",
+      "SP000741",
+      "SP001250"
+    ],
+    "E06": [
+      "SP000168",
+      "SP000470",
+      "SP000622",
+      "SP000815"
+    ],
+    "E07": [
+      "SP000166",
+      "SP001366",
+      "SP001420"
+    ],
+    "E08": [
+      "SP000786",
+      "SP001271"
+    ],
+    "J01": [
+      "SP000085|R001048|00",
+      "SP000156|R000150|00",
+      "SP000309|R001349|00",
+      "SP000490|R000100|00",
+      "SP000742|R000283|00",
+      "SP001135|R000471|00",
+      "SP001176|R000800|00",
+      "SP001329|R001370|00"
+    ],
+    "J02": [
+      "SP000123|R000895|00",
+      "SP000214|R000934|00",
+      "SP000286|R000433|00",
+      "SP000543|R000654|00",
+      "SP000563|R000488|00",
+      "SP000841|R001235|00",
+      "SP000871|O001134|01",
+      "SP000880|R000913|00",
+      "SP000955|R000229|00",
+      "SP001285|R001147|00",
+      "SP001469|R000660|00"
+    ],
+    "J03": [
+      "SP000123|R000895|00",
+      "SP000841|R001235|00",
+      "SP000871|O001134|01"
+    ],
+    "J04": [
+      "SP000134",
+      "SP000211",
+      "SP001007",
+      "SP001238",
+      "SP001429"
+    ],
+    "J05": [
+      "SP000203",
+      "SP000435",
+      "SP001056",
+      "SP001131"
+    ],
+    "J06": [
+      "SP000084|R001169|00",
+      "SP000367|R001261|00",
+      "SP000845|R001834|00",
+      "SP001087|R000767|00"
+    ],
+    "J07": [
+      "SP000084",
+      "SP000367",
+      "SP000448",
+      "SP000845",
+      "SP001087",
+      "SP001090",
+      "SP001389",
+      "SP001446"
+    ],
+    "J08": [
+      "SP000086|R000201|00",
+      "SP000522|R001345|00",
+      "SP000773|R001814|00",
+      "SP000858|R001752|00"
+    ],
+    "O01": [
+      "SP000153",
+      "SP000213",
+      "SP000974",
+      "SP001182",
+      "SP001228",
+      "SP001344"
+    ],
+    "O02": [
+      "SP000232",
+      "SP000385",
+      "SP000966",
+      "SP000994"
+    ],
+    "O03": [
+      "SP000174",
+      "SP000314",
+      "SP000605",
+      "SP000775"
+    ],
+    "O04": [
+      "SP000179",
+      "SP000753"
+    ],
+    "O05": [
+      "U122",
+      "U343"
+    ],
+    "O06": [
+      "Q90",
+      "U341"
+    ],
+    "P01": [
+      "SD000089",
+      "SD000177",
+      "SD001282",
+      "SD001352",
+      "SP000089",
+      "SP000177",
+      "SP001282",
+      "SP001352"
+    ],
+    "P02": [
+      "SF000321",
+      "SF000346",
+      "SF001408",
+      "SP000321",
+      "SP000346",
+      "SP001408"
+    ],
+    "P03": [
+      "SP000001",
+      "SP001150",
+      "SP001221"
+    ],
+    "P04": [
+      "SP000047",
+      "SP000329",
+      "SP000960",
+      "SP001037",
+      "SP001216"
+    ],
+    "P05": [
+      "SP000301",
+      "SP000876"
+    ],
+    "S01": [
+      "R001916",
+      "R001917",
+      "R001918",
+      "R001919",
+      "R001920",
+      "R001921",
+      "R001922",
+      "R001923",
+      "R001924",
+      "R001925",
+      "R001926",
+      "R001927"
+    ],
+    "S02": [
+      "R000326",
+      "R000767",
+      "R001169",
+      "R001261",
+      "R001407",
+      "R001632",
+      "R001834",
+      "R001854"
+    ],
+    "S03": [
+      "R000942",
+      "R000971",
+      "R001284"
+    ],
+    "S04": [
+      "SP000498|R000285|00",
+      "SP000517|R001869|00",
+      "SP000905|R000894|00",
+      "SP001224|R001253|00"
+    ],
+    "S05": [
+      "SP000008|R001306|00",
+      "SP000315|R001011|00",
+      "SP000438|R001356|00"
+    ],
+    "S06": [
+      "SP000068|R001808|00",
+      "SP000290|R000493|00",
+      "SP000366|R001765|00",
+      "SP001042|R000043|00",
+      "SP001169|R000843|00",
+      "SP001239|R001697|00"
+    ],
+    "S07": [
+      "SP000446|R001792|00",
+      "SP000569|R000027|00",
+      "SP000878|R000763|00",
+      "SP001286|R000160|00",
+      "SP001471|R000462|00"
+    ],
+    "Y01": [
+      "SP000028|R001477|00|2026-08-31",
+      "SP000241|R000182|00|2026-08-31",
+      "SP000425|R000492|00|2026-08-31",
+      "SP001189|X900000|00|2026-09-30",
+      "SP001257|X900001|00|2026-09-30"
+    ],
+    "Y02": [
+      "SP000396|R001543|00|2026-05-31",
+      "SP000480|R001755|00|2026-04-30",
+      "SP001328|R001182|00|2026-04-30",
+      "SP001342|R000615|00|2026-05-31"
+    ],
+    "Y03": [
+      "SP000498|R000285|00|2024-11-30",
+      "SP000498|R000285|00|2024-12-31",
+      "SP000498|R000285|00|2025-01-31",
+      "SP000498|R000285|00|2025-02-28",
+      "SP000498|R000285|00|2025-03-31",
+      "SP000498|R000285|00|2025-04-30",
+      "SP000498|R000285|00|2025-05-31",
+      "SP000498|R000285|00|2025-06-30",
+      "SP000498|R000285|00|2025-07-31",
+      "SP000498|R000285|00|2025-08-31",
+      "SP000498|R000285|00|2025-09-30",
+      "SP000498|R000285|00|2025-10-31",
+      "SP000498|R000285|00|2025-11-30",
+      "SP000498|R000285|00|2025-12-31",
+      "SP000498|R000285|00|2026-01-31",
+      "SP000498|R000285|00|2026-02-28",
+      "SP000498|R000285|00|2026-03-31",
+      "SP000498|R000285|00|2026-04-30",
+      "SP000498|R000285|00|2026-05-31",
+      "SP000498|R000285|00|2026-06-30",
+      "SP000498|R000285|00|2026-07-31",
+      "SP000498|R000285|00|2026-08-31",
+      "SP000498|R000285|00|2026-09-30",
+      "SP000498|R000285|00|2026-10-31",
+      "SP000517|R001869|00|2026-05-31",
+      "SP000517|R001869|00|2026-06-30",
+      "SP000517|R001869|00|2026-07-31",
+      "SP000517|R001869|00|2026-08-31",
+      "SP000517|R001869|00|2026-09-30",
+      "SP000517|R001869|00|2026-10-31",
+      "SP000905|R000894|00|2024-11-30",
+      "SP000905|R000894|00|2024-12-31",
+      "SP000905|R000894|00|2025-01-31",
+      "SP000905|R000894|00|2025-02-28",
+      "SP000905|R000894|00|2025-03-31",
+      "SP000905|R000894|00|2025-04-30",
+      "SP000905|R000894|00|2025-05-31",
+      "SP000905|R000894|00|2025-06-30",
+      "SP000905|R000894|00|2025-07-31",
+      "SP000905|R000894|00|2025-08-31",
+      "SP000905|R000894|00|2025-09-30",
+      "SP000905|R000894|00|2025-10-31",
+      "SP000905|R000894|00|2025-11-30",
+      "SP000905|R000894|00|2025-12-31",
+      "SP000905|R000894|00|2026-01-31",
+      "SP000905|R000894|00|2026-02-28",
+      "SP000905|R000894|00|2026-03-31",
+      "SP000905|R000894|00|2026-04-30",
+      "SP000905|R000894|00|2026-05-31",
+      "SP000905|R000894|00|2026-06-30",
+      "SP000905|R000894|00|2026-07-31",
+      "SP000905|R000894|00|2026-08-31",
+      "SP000905|R000894|00|2026-09-30",
+      "SP000905|R000894|00|2026-10-31",
+      "SP001189|X900000|00|2026-09-30",
+      "SP001224|R001253|00|2024-11-30",
+      "SP001224|R001253|00|2024-12-31",
+      "SP001224|R001253|00|2025-01-31",
+      "SP001224|R001253|00|2025-02-28",
+      "SP001224|R001253|00|2025-03-31",
+      "SP001224|R001253|00|2025-04-30",
+      "SP001224|R001253|00|2025-05-31",
+      "SP001224|R001253|00|2025-06-30",
+      "SP001224|R001253|00|2025-07-31",
+      "SP001224|R001253|00|2025-08-31",
+      "SP001224|R001253|00|2025-09-30",
+      "SP001224|R001253|00|2025-10-31",
+      "SP001224|R001253|00|2025-11-30",
+      "SP001224|R001253|00|2025-12-31",
+      "SP001224|R001253|00|2026-01-31",
+      "SP001224|R001253|00|2026-02-28",
+      "SP001224|R001253|00|2026-03-31",
+      "SP001224|R001253|00|2026-04-30",
+      "SP001224|R001253|00|2026-05-31",
+      "SP001224|R001253|00|2026-06-30",
+      "SP001224|R001253|00|2026-07-31",
+      "SP001224|R001253|00|2026-08-31",
+      "SP001224|R001253|00|2026-09-30",
+      "SP001224|R001253|00|2026-10-31",
+      "SP001257|X900001|00|2026-09-30"
+    ],
+    "Y04": [
+      "SP000114|2026-07-31",
+      "SP000487|2026-07-31",
+      "SP001210|2026-07-31"
+    ],
+    "Y05": [
+      "SP000342|R001007|00|2026-06-30",
+      "SP000352|R000861|00|2026-06-30",
+      "SP001107|R001589|00|2026-06-30",
+      "SP001148|R000198|00|2026-06-30",
+      "SP001298|R001021|00|2026-06-30"
+    ]
+  },
+  "generator_version": "0.1",
+  "injections": [
+    {
+      "defect": "dup_person_exact",
+      "expected": {
+        "P01": [
+          "SD001352",
+          "SP001352"
+        ]
+      },
+      "note": "rehire keyed under a new person ID"
+    },
+    {
+      "defect": "dup_person_exact",
+      "expected": {
+        "P01": [
+          "SD001282",
+          "SP001282"
+        ]
+      },
+      "note": "rehire keyed under a new person ID"
+    },
+    {
+      "defect": "dup_person_exact",
+      "expected": {
+        "P01": [
+          "SD000089",
+          "SP000089"
+        ]
+      },
+      "note": "rehire keyed under a new person ID"
+    },
+    {
+      "defect": "dup_person_exact",
+      "expected": {
+        "P01": [
+          "SD000177",
+          "SP000177"
+        ]
+      },
+      "note": "rehire keyed under a new person ID"
+    },
+    {
+      "defect": "dup_person_fuzzy",
+      "expected": {
+        "P02": [
+          "SF001408",
+          "SP001408"
+        ]
+      },
+      "note": "same name/birth date, mistyped national ID"
+    },
+    {
+      "defect": "dup_person_fuzzy",
+      "expected": {
+        "P02": [
+          "SF000346",
+          "SP000346"
+        ]
+      },
+      "note": "same name/birth date, mistyped national ID"
+    },
+    {
+      "defect": "dup_person_fuzzy",
+      "expected": {
+        "P02": [
+          "SF000321",
+          "SP000321"
+        ]
+      },
+      "note": "same name/birth date, mistyped national ID"
+    },
+    {
+      "defect": "person_overlap",
+      "expected": {
+        "P03": [
+          "SP001150"
+        ]
+      },
+      "note": "name-change version overlaps prior version by 10 days"
+    },
+    {
+      "defect": "person_overlap",
+      "expected": {
+        "P03": [
+          "SP001221"
+        ]
+      },
+      "note": "name-change version overlaps prior version by 10 days"
+    },
+    {
+      "defect": "person_overlap",
+      "expected": {
+        "P03": [
+          "SP000001"
+        ]
+      },
+      "note": "name-change version overlaps prior version by 10 days"
+    },
+    {
+      "defect": "missing_birth",
+      "expected": {
+        "P04": [
+          "SP000960"
+        ]
+      },
+      "note": "birth date blank on active worker"
+    },
+    {
+      "defect": "missing_birth",
+      "expected": {
+        "P04": [
+          "SP001037"
+        ]
+      },
+      "note": "birth date blank on active worker"
+    },
+    {
+      "defect": "missing_birth",
+      "expected": {
+        "P04": [
+          "SP001216"
+        ]
+      },
+      "note": "birth date blank on active worker"
+    },
+    {
+      "defect": "missing_birth",
+      "expected": {
+        "P04": [
+          "SP000329"
+        ]
+      },
+      "note": "birth date blank on active worker"
+    },
+    {
+      "defect": "missing_birth",
+      "expected": {
+        "P04": [
+          "SP000047"
+        ]
+      },
+      "note": "birth date blank on active worker"
+    },
+    {
+      "defect": "employee_without_person",
+      "expected": {
+        "P05": [
+          "SP000876"
+        ]
+      },
+      "note": "person rows purged, employee rows remain"
+    },
+    {
+      "defect": "employee_without_person",
+      "expected": {
+        "P05": [
+          "SP000301"
+        ]
+      },
+      "note": "person rows purged, employee rows remain"
+    },
+    {
+      "defect": "emp_overlap",
+      "expected": {
+        "E01": [
+          "SP000353"
+        ]
+      },
+      "note": "active spell extended 10 days into terminated status"
+    },
+    {
+      "defect": "emp_overlap",
+      "expected": {
+        "E01": [
+          "SP000291"
+        ]
+      },
+      "note": "active spell extended 10 days into terminated status"
+    },
+    {
+      "defect": "emp_overlap",
+      "expected": {
+        "E01": [
+          "SP000610"
+        ]
+      },
+      "note": "active spell extended 10 days into terminated status"
+    },
+    {
+      "defect": "emp_overlap",
+      "expected": {
+        "E01": [
+          "SP000521"
+        ]
+      },
+      "note": "active spell extended 10 days into terminated status"
+    },
+    {
+      "defect": "emp_gap",
+      "expected": {
+        "E02": [
+          "SP001330"
+        ]
+      },
+      "note": "15-day hole before the termination row"
+    },
+    {
+      "defect": "emp_gap",
+      "expected": {
+        "E02": [
+          "SP000626"
+        ]
+      },
+      "note": "15-day hole before the termination row"
+    },
+    {
+      "defect": "emp_gap",
+      "expected": {
+        "E02": [
+          "SP000874"
+        ]
+      },
+      "note": "15-day hole before the termination row"
+    },
+    {
+      "defect": "emp_gap",
+      "expected": {
+        "E02": [
+          "SP000594"
+        ]
+      },
+      "note": "15-day hole before the termination row"
+    },
+    {
+      "defect": "term_with_active_job",
+      "expected": {
+        "E03": [
+          "SP000947"
+        ]
+      },
+      "note": "job termination never keyed after employee termination"
+    },
+    {
+      "defect": "term_with_active_job",
+      "expected": {
+        "E03": [
+          "SP001261"
+        ]
+      },
+      "note": "job termination never keyed after employee termination"
+    },
+    {
+      "defect": "term_with_active_job",
+      "expected": {
+        "E03": [
+          "SP001275"
+        ]
+      },
+      "note": "job termination never keyed after employee termination"
+    },
+    {
+      "defect": "term_with_active_job",
+      "expected": {
+        "E03": [
+          "SP000083"
+        ]
+      },
+      "note": "job termination never keyed after employee termination"
+    },
+    {
+      "defect": "term_with_active_job",
+      "expected": {
+        "E03": [
+          "SP000005"
+        ]
+      },
+      "note": "job termination never keyed after employee termination"
+    },
+    {
+      "defect": "term_record_active",
+      "expected": {
+        "E04": [
+          "SP000012"
+        ]
+      },
+      "note": "stray termination record, status still active"
+    },
+    {
+      "defect": "term_record_active",
+      "expected": {
+        "E04": [
+          "SP000565"
+        ]
+      },
+      "note": "stray termination record, status still active"
+    },
+    {
+      "defect": "term_record_active",
+      "expected": {
+        "E04": [
+          "SP000855"
+        ]
+      },
+      "note": "stray termination record, status still active"
+    },
+    {
+      "defect": "term_record_active",
+      "expected": {
+        "E04": [
+          "SP000559"
+        ]
+      },
+      "note": "stray termination record, status still active"
+    },
+    {
+      "defect": "hire_date_order",
+      "expected": {
+        "E05": [
+          "SP000239"
+        ]
+      },
+      "note": "first hire date keyed after current hire date"
+    },
+    {
+      "defect": "hire_date_order",
+      "expected": {
+        "E05": [
+          "SP001250"
+        ]
+      },
+      "note": "first hire date keyed after current hire date"
+    },
+    {
+      "defect": "hire_date_order",
+      "expected": {
+        "E05": [
+          "SP000741"
+        ]
+      },
+      "note": "first hire date keyed after current hire date"
+    },
+    {
+      "defect": "active_no_job",
+      "expected": {
+        "E06": [
+          "SP000622"
+        ]
+      },
+      "note": "job ended in HRFE, employee record left active (pay stopped)"
+    },
+    {
+      "defect": "active_no_job",
+      "expected": {
+        "E06": [
+          "SP000168"
+        ]
+      },
+      "note": "job ended in HRFE, employee record left active (pay stopped)"
+    },
+    {
+      "defect": "active_no_job",
+      "expected": {
+        "E06": [
+          "SP000470"
+        ]
+      },
+      "note": "job ended in HRFE, employee record left active (pay stopped)"
+    },
+    {
+      "defect": "active_no_job",
+      "expected": {
+        "E06": [
+          "SP000815"
+        ]
+      },
+      "note": "job ended in HRFE, employee record left active (pay stopped)"
+    },
+    {
+      "defect": "bad_eclass",
+      "expected": {
+        "E07": [
+          "SP000166"
+        ]
+      },
+      "note": "retired employee class code still on active record"
+    },
+    {
+      "defect": "bad_eclass",
+      "expected": {
+        "E07": [
+          "SP001366"
+        ]
+      },
+      "note": "retired employee class code still on active record"
+    },
+    {
+      "defect": "bad_eclass",
+      "expected": {
+        "E07": [
+          "SP001420"
+        ]
+      },
+      "note": "retired employee class code still on active record"
+    },
+    {
+      "defect": "future_emp_row",
+      "expected": {
+        "E08": [
+          "SP001271"
+        ]
+      },
+      "note": "2062 typed for 2026"
+    },
+    {
+      "defect": "future_emp_row",
+      "expected": {
+        "E08": [
+          "SP000786"
+        ]
+      },
+      "note": "2062 typed for 2026"
+    },
+    {
+      "defect": "job_overlap",
+      "expected": {
+        "J01": [
+          "SP000490|R000100|00"
+        ]
+      },
+      "note": "salary row extended 30 days past next row start"
+    },
+    {
+      "defect": "job_overlap",
+      "expected": {
+        "J01": [
+          "SP000309|R001349|00"
+        ]
+      },
+      "note": "salary row extended 30 days past next row start"
+    },
+    {
+      "defect": "job_overlap",
+      "expected": {
+        "J01": [
+          "SP000085|R001048|00"
+        ]
+      },
+      "note": "salary row extended 30 days past next row start"
+    },
+    {
+      "defect": "job_overlap",
+      "expected": {
+        "J01": [
+          "SP000742|R000283|00"
+        ]
+      },
+      "note": "salary row extended 30 days past next row start"
+    },
+    {
+      "defect": "job_overlap",
+      "expected": {
+        "J01": [
+          "SP001176|R000800|00"
+        ]
+      },
+      "note": "salary row extended 30 days past next row start"
+    },
+    {
+      "defect": "job_overlap",
+      "expected": {
+        "J01": [
+          "SP001329|R001370|00"
+        ]
+      },
+      "note": "salary row extended 30 days past next row start"
+    },
+    {
+      "defect": "job_overlap",
+      "expected": {
+        "J01": [
+          "SP001135|R000471|00"
+        ]
+      },
+      "note": "salary row extended 30 days past next row start"
+    },
+    {
+      "defect": "job_overlap",
+      "expected": {
+        "J01": [
+          "SP000156|R000150|00"
+        ]
+      },
+      "note": "salary row extended 30 days past next row start"
+    },
+    {
+      "defect": "job_gap",
+      "expected": {
+        "J02": [
+          "SP000543|R000654|00"
+        ]
+      },
+      "note": "20-day hole between job rows"
+    },
+    {
+      "defect": "job_gap",
+      "expected": {
+        "J02": [
+          "SP000955|R000229|00"
+        ]
+      },
+      "note": "20-day hole between job rows"
+    },
+    {
+      "defect": "job_gap",
+      "expected": {
+        "J02": [
+          "SP000214|R000934|00"
+        ]
+      },
+      "note": "20-day hole between job rows"
+    },
+    {
+      "defect": "job_gap",
+      "expected": {
+        "J02": [
+          "SP000563|R000488|00"
+        ]
+      },
+      "note": "20-day hole between job rows"
+    },
+    {
+      "defect": "job_gap",
+      "expected": {
+        "J02": [
+          "SP000286|R000433|00"
+        ]
+      },
+      "note": "20-day hole between job rows"
+    },
+    {
+      "defect": "job_gap",
+      "expected": {
+        "J02": [
+          "SP001469|R000660|00"
+        ]
+      },
+      "note": "20-day hole between job rows"
+    },
+    {
+      "defect": "job_gap",
+      "expected": {
+        "J02": [
+          "SP001285|R001147|00"
+        ]
+      },
+      "note": "20-day hole between job rows"
+    },
+    {
+      "defect": "job_gap",
+      "expected": {
+        "J02": [
+          "SP000880|R000913|00"
+        ]
+      },
+      "note": "20-day hole between job rows"
+    },
+    {
+      "defect": "job_inverted",
+      "expected": {
+        "J02": [
+          "SP000841|R001235|00"
+        ],
+        "J03": [
+          "SP000841|R001235|00"
+        ]
+      },
+      "note": "expiry before effective date; collateral J02 gap because the row's span disappears"
+    },
+    {
+      "defect": "job_inverted",
+      "expected": {
+        "J02": [
+          "SP000123|R000895|00"
+        ],
+        "J03": [
+          "SP000123|R000895|00"
+        ]
+      },
+      "note": "expiry before effective date; collateral J02 gap because the row's span disappears"
+    },
+    {
+      "defect": "job_inverted",
+      "expected": {
+        "J02": [
+          "SP000871|O001134|01"
+        ],
+        "J03": [
+          "SP000871|O001134|01"
+        ]
+      },
+      "note": "expiry before effective date; collateral J02 gap because the row's span disappears"
+    },
+    {
+      "defect": "multi_primary",
+      "expected": {
+        "J04": [
+          "SP000211"
+        ]
+      },
+      "note": "secondary job re-typed as primary"
+    },
+    {
+      "defect": "multi_primary",
+      "expected": {
+        "J04": [
+          "SP001007"
+        ]
+      },
+      "note": "secondary job re-typed as primary"
+    },
+    {
+      "defect": "multi_primary",
+      "expected": {
+        "J04": [
+          "SP001238"
+        ]
+      },
+      "note": "secondary job re-typed as primary"
+    },
+    {
+      "defect": "multi_primary",
+      "expected": {
+        "J04": [
+          "SP000134"
+        ]
+      },
+      "note": "secondary job re-typed as primary"
+    },
+    {
+      "defect": "multi_primary",
+      "expected": {
+        "J04": [
+          "SP001429"
+        ]
+      },
+      "note": "secondary job re-typed as primary"
+    },
+    {
+      "defect": "no_primary",
+      "expected": {
+        "J05": [
+          "SP000435"
+        ]
+      },
+      "note": "only job typed secondary"
+    },
+    {
+      "defect": "no_primary",
+      "expected": {
+        "J05": [
+          "SP001131"
+        ]
+      },
+      "note": "only job typed secondary"
+    },
+    {
+      "defect": "no_primary",
+      "expected": {
+        "J05": [
+          "SP001056"
+        ]
+      },
+      "note": "only job typed secondary"
+    },
+    {
+      "defect": "no_primary",
+      "expected": {
+        "J05": [
+          "SP000203"
+        ]
+      },
+      "note": "only job typed secondary"
+    },
+    {
+      "defect": "job_fte_gt1",
+      "expected": {
+        "J06": [
+          "SP000367|R001261|00"
+        ],
+        "J07": [
+          "SP000367"
+        ],
+        "S02": [
+          "R001261"
+        ]
+      },
+      "note": "FTE 1.25 keyed; collateral person FTE > 1 and position over-filled"
+    },
+    {
+      "defect": "job_fte_gt1",
+      "expected": {
+        "J06": [
+          "SP001087|R000767|00"
+        ],
+        "J07": [
+          "SP001087"
+        ],
+        "S02": [
+          "R000767"
+        ]
+      },
+      "note": "FTE 1.25 keyed; collateral person FTE > 1 and position over-filled"
+    },
+    {
+      "defect": "job_fte_gt1",
+      "expected": {
+        "J06": [
+          "SP000084|R001169|00"
+        ],
+        "J07": [
+          "SP000084"
+        ],
+        "S02": [
+          "R001169"
+        ]
+      },
+      "note": "FTE 1.25 keyed; collateral person FTE > 1 and position over-filled"
+    },
+    {
+      "defect": "job_fte_gt1",
+      "expected": {
+        "J06": [
+          "SP000845|R001834|00"
+        ],
+        "J07": [
+          "SP000845"
+        ],
+        "S02": [
+          "R001834"
+        ]
+      },
+      "note": "FTE 1.25 keyed; collateral person FTE > 1 and position over-filled"
+    },
+    {
+      "defect": "person_fte_gt1",
+      "expected": {
+        "J07": [
+          "SP001090"
+        ]
+      },
+      "note": "primary raised to 1.0 FTE while secondary job continues"
+    },
+    {
+      "defect": "person_fte_gt1",
+      "expected": {
+        "J07": [
+          "SP001389"
+        ]
+      },
+      "note": "primary raised to 1.0 FTE while secondary job continues"
+    },
+    {
+      "defect": "person_fte_gt1",
+      "expected": {
+        "J07": [
+          "SP001446"
+        ]
+      },
+      "note": "primary raised to 1.0 FTE while secondary job continues"
+    },
+    {
+      "defect": "person_fte_gt1",
+      "expected": {
+        "J07": [
+          "SP000448"
+        ]
+      },
+      "note": "primary raised to 1.0 FTE while secondary job continues"
+    },
+    {
+      "defect": "future_job_row",
+      "expected": {
+        "J08": [
+          "SP000773|R001814|00"
+        ]
+      },
+      "note": "salary change keyed for 2062"
+    },
+    {
+      "defect": "future_job_row",
+      "expected": {
+        "J08": [
+          "SP000858|R001752|00"
+        ]
+      },
+      "note": "salary change keyed for 2062"
+    },
+    {
+      "defect": "future_job_row",
+      "expected": {
+        "J08": [
+          "SP000522|R001345|00"
+        ]
+      },
+      "note": "salary change keyed for 2062"
+    },
+    {
+      "defect": "future_job_row",
+      "expected": {
+        "J08": [
+          "SP000086|R000201|00"
+        ]
+      },
+      "note": "salary change keyed for 2062"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001916"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001917"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001918"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001919"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001920"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001921"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001922"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001923"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001924"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001925"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001926"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "orphan_position",
+      "expected": {
+        "S01": [
+          "R001927"
+        ]
+      },
+      "note": "position created years ago, never filled, still active"
+    },
+    {
+      "defect": "overfilled_position",
+      "expected": {
+        "S02": [
+          "R001854"
+        ]
+      },
+      "note": "budget FTE cut to 0.5, incumbent at 1.0"
+    },
+    {
+      "defect": "overfilled_position",
+      "expected": {
+        "S02": [
+          "R001407"
+        ]
+      },
+      "note": "budget FTE cut to 0.5, incumbent at 1.0"
+    },
+    {
+      "defect": "overfilled_position",
+      "expected": {
+        "S02": [
+          "R001632"
+        ]
+      },
+      "note": "budget FTE cut to 0.5, incumbent at 1.0"
+    },
+    {
+      "defect": "overfilled_position",
+      "expected": {
+        "S02": [
+          "R000326"
+        ]
+      },
+      "note": "budget FTE cut to 0.5, incumbent at 1.0"
+    },
+    {
+      "defect": "position_overlap",
+      "expected": {
+        "S03": [
+          "R000942"
+        ]
+      },
+      "note": "active version overlaps inactivation by 10 days"
+    },
+    {
+      "defect": "position_overlap",
+      "expected": {
+        "S03": [
+          "R000971"
+        ]
+      },
+      "note": "active version overlaps inactivation by 10 days"
+    },
+    {
+      "defect": "position_overlap",
+      "expected": {
+        "S03": [
+          "R001284"
+        ]
+      },
+      "note": "active version overlaps inactivation by 10 days"
+    },
+    {
+      "defect": "job_without_position",
+      "expected": {
+        "S04": [
+          "SP001224|R001253|00"
+        ],
+        "Y03": [
+          "SP001224|R001253|00|2024-11-30",
+          "SP001224|R001253|00|2024-12-31",
+          "SP001224|R001253|00|2025-01-31",
+          "SP001224|R001253|00|2025-02-28",
+          "SP001224|R001253|00|2025-03-31",
+          "SP001224|R001253|00|2025-04-30",
+          "SP001224|R001253|00|2025-05-31",
+          "SP001224|R001253|00|2025-06-30",
+          "SP001224|R001253|00|2025-07-31",
+          "SP001224|R001253|00|2025-08-31",
+          "SP001224|R001253|00|2025-09-30",
+          "SP001224|R001253|00|2025-10-31",
+          "SP001224|R001253|00|2025-11-30",
+          "SP001224|R001253|00|2025-12-31",
+          "SP001224|R001253|00|2026-01-31",
+          "SP001224|R001253|00|2026-02-28",
+          "SP001224|R001253|00|2026-03-31",
+          "SP001224|R001253|00|2026-04-30",
+          "SP001224|R001253|00|2026-05-31",
+          "SP001224|R001253|00|2026-06-30",
+          "SP001224|R001253|00|2026-07-31",
+          "SP001224|R001253|00|2026-08-31",
+          "SP001224|R001253|00|2026-09-30",
+          "SP001224|R001253|00|2026-10-31"
+        ]
+      },
+      "note": "position purged from position control; collateral Y03 for its pay rows"
+    },
+    {
+      "defect": "job_without_position",
+      "expected": {
+        "S04": [
+          "SP000905|R000894|00"
+        ],
+        "Y03": [
+          "SP000905|R000894|00|2024-11-30",
+          "SP000905|R000894|00|2024-12-31",
+          "SP000905|R000894|00|2025-01-31",
+          "SP000905|R000894|00|2025-02-28",
+          "SP000905|R000894|00|2025-03-31",
+          "SP000905|R000894|00|2025-04-30",
+          "SP000905|R000894|00|2025-05-31",
+          "SP000905|R000894|00|2025-06-30",
+          "SP000905|R000894|00|2025-07-31",
+          "SP000905|R000894|00|2025-08-31",
+          "SP000905|R000894|00|2025-09-30",
+          "SP000905|R000894|00|2025-10-31",
+          "SP000905|R000894|00|2025-11-30",
+          "SP000905|R000894|00|2025-12-31",
+          "SP000905|R000894|00|2026-01-31",
+          "SP000905|R000894|00|2026-02-28",
+          "SP000905|R000894|00|2026-03-31",
+          "SP000905|R000894|00|2026-04-30",
+          "SP000905|R000894|00|2026-05-31",
+          "SP000905|R000894|00|2026-06-30",
+          "SP000905|R000894|00|2026-07-31",
+          "SP000905|R000894|00|2026-08-31",
+          "SP000905|R000894|00|2026-09-30",
+          "SP000905|R000894|00|2026-10-31"
+        ]
+      },
+      "note": "position purged from position control; collateral Y03 for its pay rows"
+    },
+    {
+      "defect": "job_without_position",
+      "expected": {
+        "S04": [
+          "SP000498|R000285|00"
+        ],
+        "Y03": [
+          "SP000498|R000285|00|2024-11-30",
+          "SP000498|R000285|00|2024-12-31",
+          "SP000498|R000285|00|2025-01-31",
+          "SP000498|R000285|00|2025-02-28",
+          "SP000498|R000285|00|2025-03-31",
+          "SP000498|R000285|00|2025-04-30",
+          "SP000498|R000285|00|2025-05-31",
+          "SP000498|R000285|00|2025-06-30",
+          "SP000498|R000285|00|2025-07-31",
+          "SP000498|R000285|00|2025-08-31",
+          "SP000498|R000285|00|2025-09-30",
+          "SP000498|R000285|00|2025-10-31",
+          "SP000498|R000285|00|2025-11-30",
+          "SP000498|R000285|00|2025-12-31",
+          "SP000498|R000285|00|2026-01-31",
+          "SP000498|R000285|00|2026-02-28",
+          "SP000498|R000285|00|2026-03-31",
+          "SP000498|R000285|00|2026-04-30",
+          "SP000498|R000285|00|2026-05-31",
+          "SP000498|R000285|00|2026-06-30",
+          "SP000498|R000285|00|2026-07-31",
+          "SP000498|R000285|00|2026-08-31",
+          "SP000498|R000285|00|2026-09-30",
+          "SP000498|R000285|00|2026-10-31"
+        ]
+      },
+      "note": "position purged from position control; collateral Y03 for its pay rows"
+    },
+    {
+      "defect": "job_without_position",
+      "expected": {
+        "S04": [
+          "SP000517|R001869|00"
+        ],
+        "Y03": [
+          "SP000517|R001869|00|2026-05-31",
+          "SP000517|R001869|00|2026-06-30",
+          "SP000517|R001869|00|2026-07-31",
+          "SP000517|R001869|00|2026-08-31",
+          "SP000517|R001869|00|2026-09-30",
+          "SP000517|R001869|00|2026-10-31"
+        ]
+      },
+      "note": "position purged from position control; collateral Y03 for its pay rows"
+    },
+    {
+      "defect": "job_on_inactive_position",
+      "expected": {
+        "S05": [
+          "SP000008|R001306|00"
+        ]
+      },
+      "note": "position inactivated under an incumbent"
+    },
+    {
+      "defect": "job_on_inactive_position",
+      "expected": {
+        "S05": [
+          "SP000438|R001356|00"
+        ]
+      },
+      "note": "position inactivated under an incumbent"
+    },
+    {
+      "defect": "job_on_inactive_position",
+      "expected": {
+        "S05": [
+          "SP000315|R001011|00"
+        ]
+      },
+      "note": "position inactivated under an incumbent"
+    },
+    {
+      "defect": "org_mismatch",
+      "expected": {
+        "S06": [
+          "SP001169|R000843|00"
+        ]
+      },
+      "note": "job moved to another org without moving the position"
+    },
+    {
+      "defect": "org_mismatch",
+      "expected": {
+        "S06": [
+          "SP001239|R001697|00"
+        ]
+      },
+      "note": "job moved to another org without moving the position"
+    },
+    {
+      "defect": "org_mismatch",
+      "expected": {
+        "S06": [
+          "SP000290|R000493|00"
+        ]
+      },
+      "note": "job moved to another org without moving the position"
+    },
+    {
+      "defect": "org_mismatch",
+      "expected": {
+        "S06": [
+          "SP000366|R001765|00"
+        ]
+      },
+      "note": "job moved to another org without moving the position"
+    },
+    {
+      "defect": "org_mismatch",
+      "expected": {
+        "S06": [
+          "SP001042|R000043|00"
+        ]
+      },
+      "note": "job moved to another org without moving the position"
+    },
+    {
+      "defect": "org_mismatch",
+      "expected": {
+        "S06": [
+          "SP000068|R001808|00"
+        ]
+      },
+      "note": "job moved to another org without moving the position"
+    },
+    {
+      "defect": "class_mismatch",
+      "expected": {
+        "S07": [
+          "SP001471|R000462|00"
+        ]
+      },
+      "note": "position reclassified, job class not updated"
+    },
+    {
+      "defect": "class_mismatch",
+      "expected": {
+        "S07": [
+          "SP000569|R000027|00"
+        ]
+      },
+      "note": "position reclassified, job class not updated"
+    },
+    {
+      "defect": "class_mismatch",
+      "expected": {
+        "S07": [
+          "SP000878|R000763|00"
+        ]
+      },
+      "note": "position reclassified, job class not updated"
+    },
+    {
+      "defect": "class_mismatch",
+      "expected": {
+        "S07": [
+          "SP000446|R001792|00"
+        ]
+      },
+      "note": "position reclassified, job class not updated"
+    },
+    {
+      "defect": "class_mismatch",
+      "expected": {
+        "S07": [
+          "SP001286|R000160|00"
+        ]
+      },
+      "note": "position reclassified, job class not updated"
+    },
+    {
+      "defect": "class_not_sucss",
+      "expected": {
+        "C01": [
+          "SP000129|R001665|00"
+        ]
+      },
+      "note": "class 7999 not in SUCSS catalog (job and position)"
+    },
+    {
+      "defect": "class_not_sucss",
+      "expected": {
+        "C01": [
+          "SP001255|R000712|00"
+        ]
+      },
+      "note": "class 9901 not in SUCSS catalog (job and position)"
+    },
+    {
+      "defect": "class_not_sucss",
+      "expected": {
+        "C01": [
+          "SP001484|R001202|00"
+        ]
+      },
+      "note": "class 9902 not in SUCSS catalog (job and position)"
+    },
+    {
+      "defect": "class_not_sucss",
+      "expected": {
+        "C01": [
+          "SP000371|R001335|00"
+        ]
+      },
+      "note": "class 9903 not in SUCSS catalog (job and position)"
+    },
+    {
+      "defect": "class_not_sucss",
+      "expected": {
+        "C01": [
+          "SP000950|R000191|00"
+        ]
+      },
+      "note": "class 9904 not in SUCSS catalog (job and position)"
+    },
+    {
+      "defect": "class_not_sucss",
+      "expected": {
+        "C01": [
+          "SP001041|R001498|00"
+        ]
+      },
+      "note": "class 9905 not in SUCSS catalog (job and position)"
+    },
+    {
+      "defect": "pay_below_min",
+      "expected": {
+        "C02": [
+          "SP000231|R001206|00"
+        ]
+      },
+      "note": "salary 15 % below class minimum"
+    },
+    {
+      "defect": "pay_below_min",
+      "expected": {
+        "C02": [
+          "SP000473|R000046|00"
+        ]
+      },
+      "note": "salary 15 % below class minimum"
+    },
+    {
+      "defect": "pay_below_min",
+      "expected": {
+        "C02": [
+          "SP000195|R000388|00"
+        ]
+      },
+      "note": "salary 15 % below class minimum"
+    },
+    {
+      "defect": "pay_below_min",
+      "expected": {
+        "C02": [
+          "SP001128|R001487|00"
+        ]
+      },
+      "note": "salary 15 % below class minimum"
+    },
+    {
+      "defect": "pay_below_min",
+      "expected": {
+        "C02": [
+          "SP001371|R000453|00"
+        ]
+      },
+      "note": "salary 15 % below class minimum"
+    },
+    {
+      "defect": "pay_below_min",
+      "expected": {
+        "C02": [
+          "SP000802|R001233|00"
+        ]
+      },
+      "note": "salary 15 % below class minimum"
+    },
+    {
+      "defect": "pay_above_max",
+      "expected": {
+        "C03": [
+          "SP000726|R001251|00"
+        ]
+      },
+      "note": "salary 20 % above class maximum"
+    },
+    {
+      "defect": "pay_above_max",
+      "expected": {
+        "C03": [
+          "SP001324|R001179|00"
+        ]
+      },
+      "note": "salary 20 % above class maximum"
+    },
+    {
+      "defect": "pay_above_max",
+      "expected": {
+        "C03": [
+          "SP001301|R001171|00"
+        ]
+      },
+      "note": "salary 20 % above class maximum"
+    },
+    {
+      "defect": "missing_class",
+      "expected": {
+        "C04": [
+          "SP001185|R001770|00"
+        ]
+      },
+      "note": "AP/faculty title code never keyed"
+    },
+    {
+      "defect": "missing_class",
+      "expected": {
+        "C04": [
+          "SP000698|R000724|00"
+        ]
+      },
+      "note": "AP/faculty title code never keyed"
+    },
+    {
+      "defect": "missing_class",
+      "expected": {
+        "C04": [
+          "SP000696|R001410|00"
+        ]
+      },
+      "note": "AP/faculty title code never keyed"
+    },
+    {
+      "defect": "missing_supervisor",
+      "expected": {
+        "O01": [
+          "SP001228"
+        ]
+      },
+      "note": "supervisor blank on primary job"
+    },
+    {
+      "defect": "missing_supervisor",
+      "expected": {
+        "O01": [
+          "SP000153"
+        ]
+      },
+      "note": "supervisor blank on primary job"
+    },
+    {
+      "defect": "missing_supervisor",
+      "expected": {
+        "O01": [
+          "SP001182"
+        ]
+      },
+      "note": "supervisor blank on primary job"
+    },
+    {
+      "defect": "missing_supervisor",
+      "expected": {
+        "O01": [
+          "SP000974"
+        ]
+      },
+      "note": "supervisor blank on primary job"
+    },
+    {
+      "defect": "missing_supervisor",
+      "expected": {
+        "O01": [
+          "SP001344"
+        ]
+      },
+      "note": "supervisor blank on primary job"
+    },
+    {
+      "defect": "missing_supervisor",
+      "expected": {
+        "O01": [
+          "SP000213"
+        ]
+      },
+      "note": "supervisor blank on primary job"
+    },
+    {
+      "defect": "inactive_supervisor",
+      "expected": {
+        "O02": [
+          "SP000966"
+        ]
+      },
+      "note": "supervisor left the university"
+    },
+    {
+      "defect": "inactive_supervisor",
+      "expected": {
+        "O02": [
+          "SP000232"
+        ]
+      },
+      "note": "supervisor left the university"
+    },
+    {
+      "defect": "inactive_supervisor",
+      "expected": {
+        "O02": [
+          "SP000385"
+        ]
+      },
+      "note": "supervisor left the university"
+    },
+    {
+      "defect": "inactive_supervisor",
+      "expected": {
+        "O02": [
+          "SP000994"
+        ]
+      },
+      "note": "supervisor left the university"
+    },
+    {
+      "defect": "reporting_cycle",
+      "expected": {
+        "O03": [
+          "SP000174",
+          "SP000314"
+        ]
+      },
+      "note": "manager's supervisor set to their own report"
+    },
+    {
+      "defect": "reporting_cycle",
+      "expected": {
+        "O03": [
+          "SP000605",
+          "SP000775"
+        ]
+      },
+      "note": "manager's supervisor set to their own report"
+    },
+    {
+      "defect": "self_supervisor",
+      "expected": {
+        "O04": [
+          "SP000753"
+        ]
+      },
+      "note": "supervisor set to self"
+    },
+    {
+      "defect": "self_supervisor",
+      "expected": {
+        "O04": [
+          "SP000179"
+        ]
+      },
+      "note": "supervisor set to self"
+    },
+    {
+      "defect": "org_parent_missing",
+      "expected": {
+        "O05": [
+          "U122"
+        ]
+      },
+      "note": "parent org code retired from hierarchy"
+    },
+    {
+      "defect": "org_parent_missing",
+      "expected": {
+        "O05": [
+          "U343"
+        ]
+      },
+      "note": "parent org code retired from hierarchy"
+    },
+    {
+      "defect": "org_inactive_used",
+      "expected": {
+        "O06": [
+          "U341"
+        ]
+      },
+      "note": "org inactivated while staff still assigned"
+    },
+    {
+      "defect": "org_unknown_used",
+      "expected": {
+        "O06": [
+          "Q90"
+        ]
+      },
+      "note": "org code not in hierarchy on job and position"
+    },
+    {
+      "defect": "pay_without_job",
+      "expected": {
+        "Y01": [
+          "SP000028|R001477|00|2026-08-31"
+        ]
+      },
+      "note": "payroll charged to a position the person never held"
+    },
+    {
+      "defect": "pay_without_job",
+      "expected": {
+        "Y01": [
+          "SP000425|R000492|00|2026-08-31"
+        ]
+      },
+      "note": "payroll charged to a position the person never held"
+    },
+    {
+      "defect": "pay_without_job",
+      "expected": {
+        "Y01": [
+          "SP000241|R000182|00|2026-08-31"
+        ]
+      },
+      "note": "payroll charged to a position the person never held"
+    },
+    {
+      "defect": "pay_after_term",
+      "expected": {
+        "Y02": [
+          "SP001342|R000615|00|2026-05-31"
+        ]
+      },
+      "note": "paid the month after termination"
+    },
+    {
+      "defect": "pay_after_term",
+      "expected": {
+        "Y02": [
+          "SP000396|R001543|00|2026-05-31"
+        ]
+      },
+      "note": "paid the month after termination"
+    },
+    {
+      "defect": "pay_after_term",
+      "expected": {
+        "Y02": [
+          "SP000480|R001755|00|2026-04-30"
+        ]
+      },
+      "note": "paid the month after termination"
+    },
+    {
+      "defect": "pay_after_term",
+      "expected": {
+        "Y02": [
+          "SP001328|R001182|00|2026-04-30"
+        ]
+      },
+      "note": "paid the month after termination"
+    },
+    {
+      "defect": "pay_unknown_position",
+      "expected": {
+        "Y01": [
+          "SP001189|X900000|00|2026-09-30"
+        ],
+        "Y03": [
+          "SP001189|X900000|00|2026-09-30"
+        ]
+      },
+      "note": "payroll charged to a non-existent position; collateral Y01 (no job either)"
+    },
+    {
+      "defect": "pay_unknown_position",
+      "expected": {
+        "Y01": [
+          "SP001257|X900001|00|2026-09-30"
+        ],
+        "Y03": [
+          "SP001257|X900001|00|2026-09-30"
+        ]
+      },
+      "note": "payroll charged to a non-existent position; collateral Y01 (no job either)"
+    },
+    {
+      "defect": "negative_pay",
+      "expected": {
+        "Y04": [
+          "SP000487|2026-07-31"
+        ]
+      },
+      "note": "reversal keyed twice"
+    },
+    {
+      "defect": "negative_pay",
+      "expected": {
+        "Y04": [
+          "SP001210|2026-07-31"
+        ]
+      },
+      "note": "reversal keyed twice"
+    },
+    {
+      "defect": "negative_pay",
+      "expected": {
+        "Y04": [
+          "SP000114|2026-07-31"
+        ]
+      },
+      "note": "reversal keyed twice"
+    },
+    {
+      "defect": "duplicate_pay",
+      "expected": {
+        "Y05": [
+          "SP000352|R000861|00|2026-06-30"
+        ]
+      },
+      "note": "same payroll accounting row loaded twice"
+    },
+    {
+      "defect": "duplicate_pay",
+      "expected": {
+        "Y05": [
+          "SP001148|R000198|00|2026-06-30"
+        ]
+      },
+      "note": "same payroll accounting row loaded twice"
+    },
+    {
+      "defect": "duplicate_pay",
+      "expected": {
+        "Y05": [
+          "SP001107|R001589|00|2026-06-30"
+        ]
+      },
+      "note": "same payroll accounting row loaded twice"
+    },
+    {
+      "defect": "duplicate_pay",
+      "expected": {
+        "Y05": [
+          "SP001298|R001021|00|2026-06-30"
+        ]
+      },
+      "note": "same payroll accounting row loaded twice"
+    },
+    {
+      "defect": "duplicate_pay",
+      "expected": {
+        "Y05": [
+          "SP000342|R001007|00|2026-06-30"
+        ]
+      },
+      "note": "same payroll accounting row loaded twice"
+    }
+  ],
+  "label": "DEFECTS",
+  "n_persons": 1500,
+  "note": "SYNTHETIC data. No real person, ID or salary. SUCSS codes/titles are public; pay ranges are invented.",
+  "row_counts": {
+    "REF_EMPEE_CLS": 4,
+    "REF_HIERARCHY_ROOT": 1,
+    "REF_JOB_CLASS": 899,
+    "REF_ORG": 52,
+    "T_EMPEE_HIST": 2270,
+    "T_EMPEE_HIST_5": 616,
+    "T_JOB_DETL_HIST": 17774,
+    "T_PAYR_ACCTG_DETL": 25560,
+    "T_PERS_HIST": 1956,
+    "T_POSN_HIST": 2716
+  },
+  "seed": 20261106,
+  "synthetic": true
+}

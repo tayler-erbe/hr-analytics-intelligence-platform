@@ -228,3 +228,6 @@ HR Stakeholder: [Luanne Mayorga](https://www.linkedin.com/in/luannemayorga/), As
 The [platform-evaluation workspace](platform-evaluation/README.md) contains the Snowflake/Databricks/custom evaluation rubric, synthetic benchmark fixtures and reference SQL, blank scorecards, public O*NET and SUCSS reference data, and an offline role-evolution demo.
 
 Start with the [evaluation rubric](platform-evaluation/PLATFORM_EVALUATION_RUBRIC.md) and [benchmark guide](platform-evaluation/benchmark/README.md). All platform scorecards remain ungraded. Internal org charts, employee exports, and local databases are excluded.
+
+
+The [downloadable synthetic workforce samples](platform-evaluation/sample_datasets/README.md) include clean and defective quality fixtures plus longitudinal history, validation evidence and reproduction instructions.

@@ -1,0 +1,44 @@
+rule_id,name,domain,severity,owner,population,population_n,failing,failure_rate,rule_score,status,example_ids
+P01,Same national-ID hash on more than one person ID,person,critical,IHR HR Records (identity steward) with AITS Identity,persons,1505,8,0.005316,0.0,fail,SD000089; SD000177; SD001282; SD001352; SP000089
+P02,"Probable duplicate person (same name and birth date, different national-ID hash)",person,high,IHR HR Records (identity steward),persons,1505,6,0.003987,0.0,fail,SF000321; SF000346; SF001408; SP000321; SP000346
+P03,Overlapping person history rows,person,high,AITS Decision Support (EDW history load),persons,1505,3,0.001993,0.0,fail,SP000001; SP001150; SP001221
+P04,Active worker with no birth date,person,medium,IHR HR Records,active_employees,1031,5,0.00485,0.0301,warn,SP000047; SP000329; SP000960; SP001037; SP001216
+P05,Employee history with no person record,person,critical,AITS Decision Support (EDW),employees,1500,2,0.001333,0.0,fail,SP000301; SP000876
+E01,Overlapping employee status intervals,employment,critical,AITS Decision Support (EDW) with IHR HR Records,employees,1500,4,0.002667,0.0,fail,SP000291; SP000353; SP000521; SP000610
+E02,Gap in employee history,employment,high,AITS Decision Support (EDW),employees,1500,4,0.002667,0.0,fail,SP000594; SP000626; SP000874; SP001330
+E03,Terminated employee with an active job,employment,critical,Unit HR via HR Front End; IHR HR Records,active_jobs,1077,5,0.004643,0.0,fail,SP000005; SP000083; SP000947; SP001261; SP001275
+E04,Termination record but employee still active,employment,high,IHR HR Records,active_employees,1031,4,0.00388,0.0,fail,SP000012; SP000559; SP000565; SP000855
+E05,First hire date after current hire date,employment,medium,IHR HR Records,employees,1500,3,0.002,0.6,warn,SP000239; SP000741; SP001250
+E06,Active employee with no active job,employment,high,Unit HR via HR Front End,active_employees,1031,4,0.00388,0.0,fail,SP000168; SP000470; SP000622; SP000815
+E07,Employee class not in the employee-class reference (PTRECLS),employment,high,IHR HRIS (code tables),active_employees,1031,3,0.00291,0.0,fail,SP000166; SP001366; SP001420
+E08,Employee row dated beyond the pending-action horizon,employment,medium,Unit HR via HR Front End,employees,1500,2,0.001333,0.7333,warn,SP000786; SP001271
+J01,Overlapping job detail intervals,job_history,critical,AITS Decision Support (EDW) with IHR HR Records,job_keys,1905,8,0.004199,0.0,fail,SP000085|R001048|00; SP000156|R000150|00; SP000309|R001349|00; SP000490|R000100|00; SP000742|R000283|00
+J02,Gap in job detail history,job_history,high,AITS Decision Support (EDW),job_keys,1905,11,0.005774,0.0,fail,SP000123|R000895|00; SP000214|R000934|00; SP000286|R000433|00; SP000543|R000654|00; SP000563|R000488|00
+J03,Job row expires before it starts,job_history,critical,AITS Decision Support (EDW),job_keys,1905,3,0.001575,0.0,fail,SP000123|R000895|00; SP000841|R001235|00; SP000871|O001134|01
+J04,More than one active primary job,job_history,critical,Unit HR via HR Front End,active_employees,1031,5,0.00485,0.0,fail,SP000134; SP000211; SP001007; SP001238; SP001429
+J05,Active secondary/overload job without a primary job,job_history,high,Unit HR via HR Front End,active_employees,1031,4,0.00388,0.0,fail,SP000203; SP000435; SP001056; SP001131
+J06,Single job FTE above 1.0,job_history,critical,Unit HR via HR Front End,active_jobs,1077,4,0.003714,0.0,fail,SP000084|R001169|00; SP000367|R001261|00; SP000845|R001834|00; SP001087|R000767|00
+J07,Person's total active FTE above 1.0,job_history,high,Unit HR; IHR Policy (concurrent appointments),active_employees,1031,8,0.007759,0.0,fail,SP000084; SP000367; SP000448; SP000845; SP001087
+J08,Job row dated beyond the pending-action horizon,job_history,medium,Unit HR via HR Front End,job_keys,1905,4,0.0021,0.5801,warn,SP000086|R000201|00; SP000522|R001345|00; SP000773|R001814|00; SP000858|R001752|00
+S01,"Orphan position (active, older than 24 months, no incumbent in 24 months)",position,medium,IHR Position Control with unit HR,positions,1923,12,0.00624,0.0,fail,R001916; R001917; R001918; R001919; R001920
+S02,Position over-filled (incumbent FTE above budgeted FTE),position,high,IHR Position Control,positions,1923,8,0.00416,0.0,fail,R000326; R000767; R001169; R001261; R001407
+S03,Overlapping position history rows,position,high,AITS Decision Support (EDW),positions,1923,3,0.00156,0.0,fail,R000942; R000971; R001284
+S04,Job references a position missing from position control,position,critical,IHR Position Control,job_keys,1905,4,0.0021,0.0,fail,SP000498|R000285|00; SP000517|R001869|00; SP000905|R000894|00; SP001224|R001253|00
+S05,Active job on an inactive position,position,high,IHR Position Control,active_jobs,1077,3,0.002786,0.0,fail,SP000008|R001306|00; SP000315|R001011|00; SP000438|R001356|00
+S06,Job org differs from its position's org,position,medium,Unit HR with IHR Position Control,active_jobs,1077,6,0.005571,0.0,fail,SP000068|R001808|00; SP000290|R000493|00; SP000366|R001765|00; SP001042|R000043|00; SP001169|R000843|00
+S07,Job class differs from its position's class,position,medium,IHR Classification,active_jobs,1077,5,0.004643,0.0715,warn,SP000446|R001792|00; SP000569|R000027|00; SP000878|R000763|00; SP001286|R000160|00; SP001471|R000462|00
+C01,Civil-service job class not in the SUCSS catalog,classification,critical,IHR Classification (SUCSS liaison),active_jobs,1077,6,0.005571,0.0,fail,SP000129|R001665|00; SP000371|R001335|00; SP000950|R000191|00; SP001041|R001498|00; SP001255|R000712|00
+C02,Salary below the class range minimum (full-time equivalent),classification,high,IHR Compensation,active_jobs,1077,6,0.005571,0.0,fail,SP000195|R000388|00; SP000231|R001206|00; SP000473|R000046|00; SP000802|R001233|00; SP001128|R001487|00
+C03,Salary above the class range maximum (full-time equivalent),classification,medium,IHR Compensation,active_jobs,1077,3,0.002786,0.4429,warn,SP000726|R001251|00; SP001301|R001171|00; SP001324|R001179|00
+C04,Active job with no class code,classification,high,IHR Classification,active_jobs,1077,3,0.002786,0.0,fail,SP000696|R001410|00; SP000698|R000724|00; SP001185|R001770|00
+O01,Active primary job with no supervisor,org_supervisory,critical,Unit HR; IHR HRIS,active_primary_jobs,1033,6,0.005808,0.0,fail,SP000153; SP000213; SP000974; SP001182; SP001228
+O02,Supervisor is not an active worker,org_supervisory,high,Unit HR,active_primary_jobs,1033,4,0.003872,0.0,fail,SP000232; SP000385; SP000966; SP000994
+O03,Cycle in reporting lines,org_supervisory,critical,IHR HRIS,active_primary_jobs,1033,4,0.003872,0.0,fail,SP000174; SP000314; SP000605; SP000775
+O04,Person supervises themselves,org_supervisory,high,Unit HR,active_primary_jobs,1033,2,0.001936,0.0,fail,SP000179; SP000753
+O05,Org whose parent org does not exist,org_supervisory,medium,University Accounting (org hierarchy) with IHR,orgs,52,2,0.038462,0.0,fail,U122; U343
+O06,Active job or position uses an unknown or inactive org,org_supervisory,high,University Accounting with unit HR,orgs,52,2,0.038462,0.0,fail,Q90; U341
+Y01,"Pay with no job record for the same person, position and suffix",payroll,high,University Payroll with AITS Decision Support,pay_keys,25552,5,0.000196,0.8043,warn,SP000028|R001477|00|2026-08-31; SP000241|R000182|00|2026-08-31; SP000425|R000492|00|2026-08-31; SP001189|X900000|00|2026-09-30; SP001257|X900001|00|2026-09-30
+Y02,Pay after termination without rehire,payroll,critical,University Payroll,pay_keys,25552,4,0.000157,0.0,fail,SP000396|R001543|00|2026-05-31; SP000480|R001755|00|2026-04-30; SP001328|R001182|00|2026-04-30; SP001342|R000615|00|2026-05-31
+Y03,Pay charged to a position missing from position control,payroll,high,University Payroll with IHR Position Control,pay_keys,25552,80,0.003131,0.0,fail,SP000498|R000285|00|2024-11-30; SP000498|R000285|00|2024-12-31; SP000498|R000285|00|2025-01-31; SP000498|R000285|00|2025-02-28; SP000498|R000285|00|2025-03-31
+Y04,Negative net pay for a person and period,payroll,medium,University Payroll,pay_keys,25552,3,0.000117,0.9765,warn,SP000114|2026-07-31; SP000487|2026-07-31; SP001210|2026-07-31
+Y05,Duplicate pay accounting rows,payroll,high,University Payroll with AITS Decision Support,pay_keys,25552,5,0.000196,0.8043,warn,SP000342|R001007|00|2026-06-30; SP000352|R000861|00|2026-06-30; SP001107|R001589|00|2026-06-30; SP001148|R000198|00|2026-06-30; SP001298|R001021|00|2026-06-30
