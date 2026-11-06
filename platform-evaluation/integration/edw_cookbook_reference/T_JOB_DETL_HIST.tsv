@@ -1,0 +1,80 @@
+ordinal	column	datatype	pk	comment
+1	EDW_PERS_ID	NUMBER(9,0)	Y	An identification number generated for each person for Enterprise Data Warehouse (EDW) use only. EDW Person ID is used as the key for all references to persons in the EDW.
+2	POSN_NBR	VARCHAR2(6)	Y	Position
+3	JOB_SUFFIX	VARCHAR2(2)	Y	Job Number
+4	JOB_DETL_EFF_DT	DATE	Y	The date the details for the job record became effective in the corresponding source system.
+5	JOB_DETL_HIST_EFF_DT	DATE	Y	The date the details for the job detail history record became effective in the corresponding source system.
+6	JOB_DETL_EXP_DT	DATE		For records no longer in effect, this is the day before the record expired in the EDW (i.e., the last effective date). For current records, expiration date is set to 12/31/9999.
+7	JOB_DETL_PAYR_CALC_IND	VARCHAR2(1)		When the value is 'Y', this indicates the record is considered to contain current, effective information when associated with the payroll job earnings. The value of 'N' indicates that the record is no longer considered to contain current information.
+8	JOB_DETL_CUR_INFO_IND	VARCHAR2(1)		When the value is 'Y', this indicates the record is considered to contain current, effective information. The value of 'N' indicates that the record is no longer considered to contain current information. The value of 'D' indicates that the record has been deleted from the source system.
+9	JOB_DETL_STATUS_DESC	VARCHAR2(30)		The status code indicates whether an employee is active, terminated or on leave, with or without benefits.
+10	JOB_DETL_TITLE	VARCHAR2(120)		The job title.
+11	JOB_DETL_EMPEE_CLS_CD	VARCHAR2(2)		The employee class is a high level grouping of employees and details that are associated with this grouping. Details from the employee class default to the position class unless otherwise changed.
+12	JOB_DETL_EMPEE_CLS_LONG_DESC	VARCHAR2(30)		The full description or title for the associated Employee Class.
+13	JOB_DETL_PAYR_ID	VARCHAR2(2)		Identifies the pay schedule to which a job belongs.
+14	JOB_DETL_PAYR_ID_DESC	VARCHAR2(30)		A description of the payroll schedule.
+15	COA_CD	VARCHAR2(1)		Chart of Accounts code as defined by the BANNER Finance system. This is the C in C-FOAPAL.
+16	ORG_CD	VARCHAR2(6)		The organization to which the time sheet for this job will be sent.
+17	JOB_DETL_CAMPUS_CD	VARCHAR2(1)		A code identifying the campus associated with the job detail record.
+18	JOB_DETL_CAMPUS_NAME	VARCHAR2(35)		The campus name associated with the job detail record.
+19	JOB_DETL_COLL_CD	VARCHAR2(6)		A code identifying the college associated with the job detail record.
+20	JOB_DETL_COLL_NAME	VARCHAR2(35)		The college name associated with the job detail record.
+21	JOB_DETL_DEPT_CD	VARCHAR2(6)		A code identifying the department associated with the job detail record.
+22	JOB_DETL_DEPT_NAME	VARCHAR2(35)		A description for the code identifying the department associated with the job detail record.
+23	JOB_DETL_SAL_TBL_CD	VARCHAR2(2)		Table divides the salary groups into smaller groups that are related. For instance you might have one for each union.
+24	JOB_DETL_SAL_GRADE_CD	VARCHAR2(5)		Each salary table must have at least one grade to be usable and there is no maximum. Each Group/Table/Grade combination created indicates whether it is hourly or salaried, as well as the low, minimum, and high salary, and rate.
+25	JOB_DETL_SAL_STEP_NBR	NUMBER(3,0)		Salary Steps are tied to a grade and are not required. In general these are used with the type of union or other job where the schedule dictates an automatic increase to another higher step after a certain period of longevity.
+26	JOB_DETL_FTE	NUMBER(6,3)		The full time equivalency percentage assigned to this job.
+27	JOB_DETL_DAY_HOURS	NUMBER(6,2)		The number of hours an employee filling this job normally works in a day.
+28	JOB_DETL_PAY_HOURS	NUMBER(6,2)		The number of hours an employee filling this job normally works in a pay period.
+29	JOB_DETL_REGULAR_RT	NUMBER(11,6)		The regular hourly rate for this job. If this field is entered or defaulted from the Salary/Rate Rule Form, the Assign Salary is system calculated.
+30	JOB_DETL_PAY_PERD_SAL	NUMBER(11,2)		The salary to be paid each pay period. If the Assignment Salary is entered, the Annual Salary is calculated based on the factor and vice versa.
+31	JOB_DETL_ANNL_PAY_COUNT	NUMBER(8,6)		The number of pays per calendar year.
+32	JOB_DETL_ANNL_SAL	NUMBER(11,2)		The annual salary for the job based on the calendar year. If the Annual Salary is entered, the Assignment Salary is system calculated based the factor and vice versa.
+33	JOB_DETL_CHG_REASON_CD	VARCHAR2(5)		A code which contains the reason an employee changed jobs.
+34	JOB_DETL_CHG_REASON_DESC	VARCHAR2(30)		A description of the reason an employee changed jobs.
+35	JOB_DETL_SAL_GROUP_CD	VARCHAR2(6)		The Salary group is a grouping of salary tables and salary grades.
+36	JOB_DETL_SAL_GROUP_DESC	VARCHAR2(30)		The Salary group is a grouping of salary tables and salary grades.
+37	JOB_DETL_PRSNL_EFF_DT	DATE		Date the change became effective, regardless of payroll.
+38	JOB_DETL_CNTRCT_NBR	VARCHAR2(8)		Job contract number.
+39	JOB_DETL_TIME_ENTRY_TYPE_DESC	VARCHAR2(30)		Indicates the time entry method. Valid values include 'TimeSheet', 'Exception Time Only' or 'None'.
+40	JOB_DETL_PREM_PAY_CATGRY_CD	VARCHAR2(4)		A code indicating the type of premium pay associated with the job.
+41	JOB_DETL_PREM_PAY_CATGRY_DESC	VARCHAR2(30)		A description of the code indicating the type of premium pay associated with the job.
+42	JOB_DETL_ONE_TIME_PMT_IND	VARCHAR2(1)		Indicates whether the job is temporary and paid only once or whether it is a permanent job.
+43	JOB_DETL_HIST_POST_DT	DATE		Date when the record was inserted or last modified in the EDW.
+44	JOB_DETL_UNIV_AFFL_IND	VARCHAR2(1)		Indicates whether a staff member is affliated with the University.
+45	JOB_DETL_APPT_PCT	NUMBER(5,2)		This field is used to determine actual FTE worked (Job FTE * Appointment Percent).
+46	JOB_DETL_DATA_STATUS_DESC	VARCHAR2(10)		A description that categorizes the status of records as current, no longer effective (i.e., expired), effective in the future or deleted for University Business.
+47	JOB_DETL_DATA_EXP_DT	DATE		The Data Expiration Date (DED) is the implied end date of a particular record. The DED Creates an effective data range for a particular record when used with the Effective Date.
+48	JOB_DETL_SAL_RT_TYPE_DESC	VARCHAR2(20)		Indicates whether this job is an Open Range, Established, Prevailing, or Negotiated job.
+49	JOB_DETL_ANNL_BUDG_IND	VARCHAR2(1)		An indicator (Y/N) that indicates if the change in the job record was due to the Salary Planner upload
+50	JOB_DETL_LEAVE_CATGRY_CD	VARCHAR2(2)		A code identifying which types of leave an employee in this job is eligible for.
+51	JOB_DETL_LEAVE_CATGRY_DESC	VARCHAR2(30)		A full description or title of the leave category code for which an employee in this job is eligible.
+52	JOB_DETL_ORG_TITLE	VARCHAR2(35)		A description for the code identifying the organization associated with the job detail record.
+53	JOB_DETL_EEO_SKILL_CD	VARCHAR2(2)		The EEO Skill Code identifies the expertise that a particular job needs. Valid values include 12 - Execute/Admin and Managerial, 22 - Faculty, 23 - Other Academics, etc.
+54	JOB_DETL_EEO_SKILL_DESC	VARCHAR2(30)		The EEO Skill Description decodes the EEO Skill Code. Valid values include 12 - Execute/Admin and Managerial, 22 - Faculty, 23 - Other Academics, etc.
+55	JOB_DETL_EEO_JOB_GROUP_TITLE	VARCHAR2(45)		The EEO Job Group Title is a decode of the P-Class Code. Valid values include B = Athletics/Recreation, C = Business and Finance, D = Communications/Public Relations/Advancement, E = Community/Human Services, etc.
+56	TIME_ENTRY_METHOD_CD	VARCHAR2(1)		Identifies how time is entered for each job. Valid values for this column are: P = Payroll, W = Web, D = Departmental, T = Third Party
+57	TIME_ENTRY_METHOD_DESC	VARCHAR2(15)		A description of Time Entry Method Code.
+58	JOB_DETL_PAYS_YR	NUMBER(8,6)		The number of pays per year.
+59	JOB_DETL_SUB_DEPT_LEVEL_6_CD	VARCHAR2(6)		A code identifying the sub department associated with the job detail record.
+60	JOB_DETL_SUB_DEPT_LEVEL_6_NAME	VARCHAR2(35)		A description for the code identifying the sub department associated with the job detail record.
+61	JOB_DETL_SUB_DEPT_LEVEL_7_CD	VARCHAR2(6)		A code identifying the sub department associated with the job detail record.
+62	JOB_DETL_SUB_DEPT_LEVEL_7_NAME	VARCHAR2(35)		A description for the code identifying the sub department associated with the job detail record.
+63	JOB_DETL_POSN_CLS_CD	VARCHAR2(5)		A code which identifies a Position Class which can then be assigned to a Position. Example valid values are NAAAA = DIR, NFPCA = DIR ASST RSSPT PJCOR, etc
+64	JOB_DETL_POSN_CLS_DESC	VARCHAR2(120)		The employee class is a high level grouping of employees and details that are associated with this grouping. Details from the employee class default to the position class unless otherwise changed.
+65	JOB_DETL_CIV_SVC_IND	VARCHAR2(1)		A Y/N Flag that identifies if a job is a Civil Service position (Y) or not (N). It uses the Job E-Class Code to identify Civil Service Positions.
+66	SUPV_EDW_PERS_ID	NUMBER(9,0)		For the Position Number - Job Suffix combination, this is the Supervisor's EDW Pers ID.
+67	SUPV_POSN_NBR	VARCHAR2(6)		For the Position Number - Job Suffix combination, this is the Supervisor's Position Number.
+68	SUPV_JOB_SUFFIX	VARCHAR2(2)		For the Position Number - Job Suffix combination, this is the Supervisor's Job Suffix.
+69	JOB_DETL_ADMIN_LEVEL_2_CD	VARCHAR2(6)		The two digit Job Detail Admin Code identifies the Vice Chancellor that a person would report to.
+70	JOB_DETL_ADMIN_LEVEL_2_NAME	VARCHAR2(35)		The Job Detail Admin Name is the title associated with the Job Detail Admin Code.
+71	JOB_DETL_EMPEE_GROUP_CD	VARCHAR2(1)		The Employee Group Code is the first character of the employee Class Code. For example, A - Faculty, B - Academic Professional, C - Civil Service, etc.
+72	JOB_DETL_EMPEE_GROUP_DESC	VARCHAR2(30)		The employee group description is the decode of the employee group code. For example, A - Faculty, B - Academic Professional, C - Civil Service, etc.
+73	JOB_DETL_USER_ID	VARCHAR2(30)		The user ID of the person or process which updated the job detail record.
+74	JOB_DETL_HRFE_TRAN_ID	NUMBER(38,0)		The HRFE transaction number which updated the job detail record.
+75	JOB_DETL_HRFE_COMPNT_ID	NUMBER(38,0)		The HRFE component number which updated the job detail record.
+76	JOB_DETL_WORK_LOCN_CD	VARCHAR2(6)		Code that identifies an employee's remote working status - valid values are 1 - 5.
+77	JOB_DETL_WORK_LOCN_DESC	VARCHAR2(30)		Description tied to the code identifying an employee's remote working status. Examples of valid values are No Remote (1), All Remote Out of State (3), Hybrid in State (4), etc.
+78	JOB_DETL_LEAVE_RPT_METHOD_CD	VARCHAR2(1)		Indicates the leave report method code attached to the job. Valid values are P (None), W (Leave Report on the Web), D (Departmental Leave Report), T (Third Party Leave Report).
+79	JOB_DETL_LEAVE_RPT_METHOD_DESC	VARCHAR2(50)		Indicates the leave report method description attached to the job. Valid values are None, Leave Report on the Web, Departmental Leave Report, Third Party Leave Report.
