@@ -1,0 +1,48 @@
+ordinal	column	datatype	pk	comment
+1	PAYR_ACCTG_TRAN_NBR	NUMBER(15,0)	Y	Internal sequence number from the source system.
+2	EDW_PERS_ID	NUMBER(9,0)		EDW person key.
+3	POSN_NBR	VARCHAR2(6)		Position
+4	JOB_SUFFIX	VARCHAR2(2)		Job Number
+5	PAYR_YR	VARCHAR2(4)		Calendar year in which the pay period falls
+6	PAYR_ID	VARCHAR2(2)		Pay schedule
+7	PAYR_ACCTG_PAYR_ID_DESC	VARCHAR2(30)		Payroll schedule description
+8	PAYR_NBR	NUMBER(3,0)		Pay of the year (monthly 1-12; bi-weekly 1-26).
+9	PAYR_SEQ_NBR	NUMBER(2,0)		Sequence number of the payroll event.
+10	PAYR_ACCTG_EARNS_CD	VARCHAR2(3)		Earnings Code
+11	PAYR_ACCTG_EARNS_LONG_DESC	VARCHAR2(30)		Earnings code description
+12	PAYR_ACCTG_BNFT_DED_CD	VARCHAR2(3)		Benefit deduction code
+13	PAYR_ACCTG_BNFT_DED_LONG_DESC	VARCHAR2(30)		Benefit/deduction description
+14	PAYR_ACCTG_EVENT_DESC	VARCHAR2(30)		Pay event type (Manual, Void, Redistribution etc).
+15	PAYR_ACCTG_TRAN_SRC_DESC	VARCHAR2(10)		Ties transaction to its source (earn code, deduction/benefit code, position ID for budget).
+16	PAYR_ACCTG_CATGRY_CD	VARCHAR2(1)		Finance interface transaction type (Earnings, Employee deductions, Net Pay, Budget Adjustment, Encumbrance etc.).
+17	PAYR_ACCTG_CATGRY_DESC	VARCHAR2(40)		Category description
+18	FY_CD	VARCHAR2(4)		Fiscal year to which the transaction has been applied.
+19	PAYR_ACCTG_RULE_CLS_CD	VARCHAR2(4)		Rule class code (financial document sub-type).
+20	PAYR_ACCTG_RULE_CLS_DESC	VARCHAR2(35)		Rule class description
+21	COA_CD	VARCHAR2(1)		Chart of Accounts (C in C-FOAPAL).
+22	FIN_FUND_CD	VARCHAR2(6)		Fund (F in C-FOAPAL).
+23	ORG_CD	VARCHAR2(6)		Organization (O in C-FOAPAL).
+24	FIN_ACCT_CD	VARCHAR2(6)		Account (first A in C-FOAPAL).
+25	FIN_PGM_CD	VARCHAR2(6)		Program (P in C-FOAPAL).
+26	FIN_ACTV_CD	VARCHAR2(6)		Activity (second A in C-FOAPAL).
+27	LOCN_CD	VARCHAR2(6)		Location (L in C-FOAPAL).
+28	GRANT_CD	VARCHAR2(9)		Whether this funding line is tied to a grant on the finance side (grant code).
+29	PAYR_ACCTG_FUNDING_SRC_DESC	VARCHAR2(30)		Source of funds: grant, federal appropriation, local funds or state appropriations.
+30	PAYR_ACCTG_TRAN_SIGN_CD	VARCHAR2(1)		Positive or negative cash flow.
+31	PAYR_ACCTG_TRAN_DT	DATE		Date recorded to the ledger (finance posted period).
+32	PAYR_ACCTG_AMT	NUMBER(11,2)		Transaction amount.
+33	PAYR_ACCTG_HOURS	NUMBER(6,2)		Hours.
+34	PAYR_ACCTG_EMPEE_CLS_CD	VARCHAR2(2)		Employee class (E-Class).
+35	PAYR_ACCTG_EMPEE_CLS_LONG_DESC	VARCHAR2(30)		E-Class description.
+36	PAYR_ACCTG_EFF_DT	DATE		Cookbook comment reads 'Ending date of the leave of absence.' (appears copied in error; meaning to confirm).
+37	PAYR_ACCTG_POST_DT	DATE		Inserted or last modified in the EDW.
+38	PAYR_EVENT_TYPE_CD	VARCHAR2(1)		C original action, V void, M manual, I reissued, J adjusted, R redistribute.
+39	PAYR_EVENT_TYPE_DESC	VARCHAR2(20)		Event type description.
+40	PAYR_ACCTG_DED_TYPE_DESC	VARCHAR2(35)		Deduction type (Charity, Union, Medical, Transit, Miscellaneous, Retirement, Secured Miscellaneous, Life & Disability, Tax).
+41	PAYR_ACCTG_EXPS_AMT	NUMBER(11,2)		Expense amount (NULL for non-expense).
+42	PAYR_ACCTG_ENC_AMT	NUMBER(11,2)		Encumbrance amount, sign applied (NULL otherwise).
+43	EDW_VPD_NBR	NUMBER(2,0)		Row-level security number.
+44	EDW_FIN_DOC_ID	NUMBER(9,0)		EDW financial document ID of the expense/liability.
+45	ENC_EDW_FIN_DOC_ID	NUMBER(9,0)		EDW financial document ID of the affected encumbrance.
+46	ENC_LINE_ITEM	NUMBER(4,0)		Encumbrance line.
+47	ENC_SEQ_NBR	NUMBER(4,0)		C-FOAPAL sequence for the accounting detail pay record.

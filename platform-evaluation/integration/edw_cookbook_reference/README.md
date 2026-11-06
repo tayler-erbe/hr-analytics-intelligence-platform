@@ -11,7 +11,8 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 | T_EMPEE_HIST_5 | 27 | Verified 2026-11-06 (secured) |
 | T_POSN_HIST | 52 | Verified 2026-11-06 |
 | T_PERS_HIST | 62 | Verified 2026-11-06 (comments condensed; restricted columns flagged below) |
-| Payroll accounting detail, reference tables (org, E-Class, P-Class/job class) | — | Pending |
+| T_PAYR_ACCTG_DETL | 47 | Verified 2026-11-06 (comments condensed) |
+| reference tables (org, E-Class, P-Class/job class) | — | Pending |
 
 ## Conventions confirmed by T_JOB_DETL_HIST
 
@@ -65,3 +66,13 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 - **Model inputs allowed:** EDW_PERS_ID, dates, current indicator, and an age band derived from BIRTH_DT/AGE (AGE is populated only on current rows).
 - **Restricted, fairness audit only (never model features):** SEX_CD/DESC, GENDER_CD/DESC, RACE_ETH_RPT_CD (the University's derived reporting code: U, 9, H, M, 1–5), IPEDS_RACE_ETH_CATGRY, the race/ethnicity indicators, citizenship type group, veteran fields. PERS_CONFIDENTIALITY_IND = 'Y' rows require strict handling and must be excluded from any published aggregate below the approved threshold.
 - Race/ethnicity derivation references T_PERS_RACE_ETH_HIST and T_RACE_ETH_IPEDS_CD_HIST; T_PERS (DEATH_IND) also exists.
+
+## Conventions confirmed by T_PAYR_ACCTG_DETL (payroll C-FOAPAL distribution)
+
+- Primary key is a single source sequence, `PAYR_ACCTG_TRAN_NBR`. Link to jobs by EDW_PERS_ID + POSN_NBR + JOB_SUFFIX with the pay period (PAYR_YR, PAYR_ID, PAYR_NBR, PAYR_SEQ_NBR) — never sum payroll after joining to every job history row; pick the job version effective in the pay period.
+- Full C-FOAPAL: COA_CD, FIN_FUND_CD, ORG_CD, FIN_ACCT_CD, FIN_PGM_CD, FIN_ACTV_CD, LOCN_CD, plus FY_CD.
+- Funding: `GRANT_CD` and `PAYR_ACCTG_FUNDING_SRC_DESC` (grant, federal appropriation, local funds, state appropriations). This is the internal side of the sponsored-funding join (positions at risk when grants end).
+- Transaction semantics: `PAYR_ACCTG_CATGRY_CD` (earnings, deductions, net pay, budget adjustment, encumbrance), `PAYR_EVENT_TYPE_CD` (C original, V void, M manual, I reissued, J adjusted, R redistribute), sign code, expense vs encumbrance amounts. Salary analysis should use earnings/expense rows and net out voids and adjustments.
+- Row-level security via `EDW_VPD_NBR` (virtual private database): what a user sees depends on their access.
+- `PAYR_ACCTG_EFF_DT` meaning is unconfirmed (Cookbook comment appears copied from a leave field).
+- Deduction rows (benefits, union, retirement, tax) are personal financial data: exclude from analytics extracts; synthetic samples generate earnings/expense and encumbrance rows only.
