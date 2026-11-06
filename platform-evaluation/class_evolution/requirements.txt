@@ -1,0 +1,7 @@
+# Python 3.13
+duckdb==2.0.0
+pyarrow==26.0.1
+numpy==2.4.6
+scikit-learn==1.9.1
+pypdf==6.17.0        # fallback text extractor when poppler's pdftotext is not installed
+# system (preferred extractor): poppler-utils (pdftotext 'layout' mode)

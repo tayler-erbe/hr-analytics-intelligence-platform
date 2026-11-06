@@ -1,0 +1,875 @@
+class_code,class_title,job_family,status,years_since_last_revision,open_process,open_process_stage,series_peer_activity_2y,notice_last_2y,recent_rescission,national_change_pctile,onet_top1_code,model_prob_3y,risk_index,horizon,mode,rank
+4821,Member Service Representative III,Management & administration,active,17.23,True,preliminary,1,0,False,0.754,41-9031.00,0.2719,89.0,2026-11-06 to 2029-11-06,descriptive_risk_index,1
+2704,Charge Nurse,Health & medical,active,18.98,False,,1,1,True,0.616,29-1141.00,0.6609,88.2,2026-11-06 to 2029-11-06,descriptive_risk_index,2
+0865,Clinical Nursing Consultant I,Health & medical,active,18.89,False,,1,1,True,0.616,29-1141.00,0.6928,88.0,2026-11-06 to 2029-11-06,descriptive_risk_index,3
+0066,Nurse Administrator,Health & medical,active,18.98,False,,1,1,True,0.581,11-9111.00,0.6457,87.3,2026-11-06 to 2029-11-06,descriptive_risk_index,4
+2128,Horticulturist,"Facilities, grounds & custodial",active,16.93,True,preliminary,0,1,False,0.712,45-2092.00,0.586,87.1,2026-11-06 to 2029-11-06,descriptive_risk_index,5
+2701,Administrative Nurse II,Health & medical,active,18.89,False,,1,1,True,0.581,11-9111.00,0.5797,87.1,2026-11-06 to 2029-11-06,descriptive_risk_index,6
+2702,Administrative Nurse III,Health & medical,active,18.89,False,,1,1,True,0.581,11-9111.00,0.5797,87.1,2026-11-06 to 2029-11-06,descriptive_risk_index,7
+2703,Clinic Nurse,Health & medical,active,18.98,False,,1,1,True,0.566,29-2061.00,0.5791,86.9,2026-11-06 to 2029-11-06,descriptive_risk_index,8
+2735,Licensed Practical Nurse I,Health & medical,active,18.81,False,,1,1,True,0.566,29-2061.00,0.5768,86.3,2026-11-06 to 2029-11-06,descriptive_risk_index,9
+2736,Licensed Practical Nurse II,Health & medical,active,18.81,False,,1,1,True,0.566,29-2061.00,0.5768,86.3,2026-11-06 to 2029-11-06,descriptive_risk_index,10
+0041,Health Care Administrator II,Health & medical,active,18.35,True,proposal,1,1,False,0.581,11-9111.00,0.6176,86.2,2026-11-06 to 2029-11-06,descriptive_risk_index,11
+0042,Health Care Administrator III,Health & medical,active,18.35,True,proposal,1,1,False,0.581,11-9111.00,0.6176,86.2,2026-11-06 to 2029-11-06,descriptive_risk_index,12
+4752,Health Care Administrator I,Health & medical,active,18.35,True,proposal,1,1,False,0.581,11-9111.00,0.6176,86.2,2026-11-06 to 2029-11-06,descriptive_risk_index,13
+0866,Clinical Nursing Consultant II,Health & medical,active,18.89,False,,1,1,True,0.535,29-1141.04,0.6165,86.0,2026-11-06 to 2029-11-06,descriptive_risk_index,14
+2700,Administrative Nurse I,Health & medical,active,18.89,False,,1,1,True,0.535,29-1141.04,0.55,86.0,2026-11-06 to 2029-11-06,descriptive_risk_index,15
+2742,Research Nurse,Health & medical,active,18.76,False,,0,1,True,0.537,11-9121.01,0.6577,85.4,2026-11-06 to 2029-11-06,descriptive_risk_index,16
+2740,Staff Nurse I,Health & medical,active,18.89,False,,1,1,True,0.499,29-1141.03,0.5566,85.1,2026-11-06 to 2029-11-06,descriptive_risk_index,17
+2741,Staff Nurse II,Health & medical,active,18.89,False,,1,1,True,0.499,29-1141.03,0.5566,85.1,2026-11-06 to 2029-11-06,descriptive_risk_index,18
+1367,Instrument and Efficiency Engineer,Science & research support,active,17.56,False,,1,1,True,0.587,17-2161.00,0.5065,85.0,2026-11-06 to 2029-11-06,descriptive_risk_index,19
+2705,Certified Clinic Nurse,Health & medical,active,18.81,False,,0,1,True,0.499,29-1141.03,0.7028,84.7,2026-11-06 to 2029-11-06,descriptive_risk_index,20
+1035,Deputy Director,Management & administration,active,16.81,True,proposal,0,1,False,0.565,11-1011.00,0.5062,83.2,2026-11-06 to 2029-11-06,descriptive_risk_index,21
+1368,Assistant Instrument and Efficiency Engineer,Science & research support,active,17.56,False,,1,1,True,0.499,51-8013.00,0.6782,82.8,2026-11-06 to 2029-11-06,descriptive_risk_index,22
+4842,Member Service Representative IV,Management & administration,active,17.23,True,preliminary,1,0,False,0.498,43-4141.00,0.1154,82.6,2026-11-06 to 2029-11-06,descriptive_risk_index,23
+3050,Clinical Exercise Physiologist,Health & medical,proposed_abolish,13.98,True,preliminary,1,1,False,0.717,29-1128.00,0.4258,82.3,2026-11-06 to 2029-11-06,descriptive_risk_index,24
+4720,Radiation Therapist I,Health & medical,active,16.98,True,proposal,1,1,False,0.504,29-1124.00,0.6568,82.3,2026-11-06 to 2029-11-06,descriptive_risk_index,25
+4721,Radiation Therapist II,Health & medical,active,16.98,True,proposal,1,1,False,0.504,29-1124.00,0.6568,82.3,2026-11-06 to 2029-11-06,descriptive_risk_index,26
+4722,Radiation Therapist III,Health & medical,active,16.98,True,proposal,1,1,False,0.504,29-1124.00,0.6568,82.3,2026-11-06 to 2029-11-06,descriptive_risk_index,27
+3945,Electroencephalographic Technician,Health & medical,active,13.18,True,proposal,1,1,False,0.618,29-2099.01,0.7166,79.1,2026-11-06 to 2029-11-06,descriptive_risk_index,28
+3950,Electroencephalographic Specialist,Health & medical,active,13.18,True,proposal,1,1,False,0.618,29-2099.01,0.7166,79.1,2026-11-06 to 2029-11-06,descriptive_risk_index,29
+3955,Electroencephalographic Supervisor,Health & medical,active,13.18,True,proposal,1,1,False,0.618,29-2099.01,0.7688,79.1,2026-11-06 to 2029-11-06,descriptive_risk_index,30
+4849,Veterinary Technician III,Health & medical,active,12.1,False,,1,0,False,0.66,29-2011.00,0.1018,78.7,2026-11-06 to 2029-11-06,descriptive_risk_index,31
+4213,Security Sergeant,Protective services,active,10.72,True,proposal,1,1,False,0.695,33-9099.02,0.7227,78.0,2026-11-06 to 2029-11-06,descriptive_risk_index,32
+4847,Veterinary Technician I,Health & medical,active,12.1,False,,1,0,False,0.62,29-2056.00,0.2265,77.7,2026-11-06 to 2029-11-06,descriptive_risk_index,33
+4848,Veterinary Technician II,Health & medical,active,12.1,False,,1,0,False,0.62,29-2056.00,0.2265,77.7,2026-11-06 to 2029-11-06,descriptive_risk_index,34
+4592,Pulmonary Function Technologist I,Health & medical,active,9.81,True,preliminary,1,1,False,0.672,29-2031.00,0.5662,76.4,2026-11-06 to 2029-11-06,descriptive_risk_index,35
+4593,Pulmonary Function Technologist II,Health & medical,active,9.81,True,preliminary,1,1,False,0.672,29-2031.00,0.518,76.4,2026-11-06 to 2029-11-06,descriptive_risk_index,36
+4594,Pulmonary Function Technologist III,Health & medical,active,9.81,True,preliminary,1,1,False,0.672,29-2031.00,0.5662,76.4,2026-11-06 to 2029-11-06,descriptive_risk_index,37
+0370,Assistant to Comptroller,Management & administration,active,22.85,False,,0,0,False,0.852,11-3031.00,0.2106,76.3,2026-11-06 to 2029-11-06,descriptive_risk_index,38
+0862,Assistant Comptroller,Management & administration,active,22.85,False,,0,0,False,0.852,11-3031.00,0.2106,76.3,2026-11-06 to 2029-11-06,descriptive_risk_index,39
+0899,Comptroller,Other,active,22.85,False,,0,0,False,0.852,11-3031.00,0.1981,76.3,2026-11-06 to 2029-11-06,descriptive_risk_index,40
+3033,Pharmacist,Health & medical,active,22.85,False,,0,0,False,0.794,31-9095.00,0.3245,74.9,2026-11-06 to 2029-11-06,descriptive_risk_index,41
+0044,Housing Representative,Student & academic services,active,21.68,True,preliminary,0,0,False,0.819,13-1041.04,0.2698,74.5,2026-11-06 to 2029-11-06,descriptive_risk_index,42
+2007,Greens Worker,"Facilities, grounds & custodial",active,5.56,True,preliminary,0,1,False,0.755,37-1012.00,0.4024,73.5,2026-11-06 to 2029-11-06,descriptive_risk_index,43
+0503,Athletic Facilities Supervisor,"Facilities, grounds & custodial",active,11.14,True,preliminary,1,1,False,0.492,45-1011.00,0.4646,73.3,2026-11-06 to 2029-11-06,descriptive_risk_index,44
+4005,Invasive Cardiovascular Technologist,Health & medical,active,6.26,True,proposal,1,1,False,0.672,29-2031.00,0.458,72.9,2026-11-06 to 2029-11-06,descriptive_risk_index,45
+4006,Invasive Cardiovascular Specialist,Health & medical,active,6.26,True,proposal,1,1,False,0.672,29-2031.00,0.458,72.9,2026-11-06 to 2029-11-06,descriptive_risk_index,46
+4007,Invasive Cardiovascular Manager,Health & medical,active,6.26,True,proposal,1,1,False,0.672,29-2031.00,0.2856,72.9,2026-11-06 to 2029-11-06,descriptive_risk_index,47
+1300,Engineer,Other,active,22.85,False,,0,0,False,0.713,13-1081.01,0.3283,72.8,2026-11-06 to 2029-11-06,descriptive_risk_index,48
+1301,Senior Engineer,Other,active,22.85,False,,0,0,False,0.713,13-1081.01,0.3283,72.8,2026-11-06 to 2029-11-06,descriptive_risk_index,49
+4061,Pharmacy Technician Specialist,Health & medical,active,19.27,True,preliminary,0,0,False,0.747,29-1051.00,0.2491,72.2,2026-11-06 to 2029-11-06,descriptive_risk_index,50
+0030,Nursing Consultant,Health & medical,active,20.85,False,,0,0,False,0.719,21-1021.00,0.2589,71.7,2026-11-06 to 2029-11-06,descriptive_risk_index,51
+1127,Director of Purchases,Finance & procurement,active,22.85,False,,0,0,False,0.668,11-3061.00,0.4736,71.7,2026-11-06 to 2029-11-06,descriptive_risk_index,52
+4576,Radiation Safety Technician,Science & research support,active,4.35,True,proposal,0,1,False,0.793,19-4051.02,0.4109,71.7,2026-11-06 to 2029-11-06,descriptive_risk_index,53
+0558,Park Attendant,"Facilities, grounds & custodial",active,4.35,True,preliminary,1,1,False,0.786,39-3091.00,0.3274,71.5,2026-11-06 to 2029-11-06,descriptive_risk_index,54
+1004,Graphic Designer Assistant,"Communications, media & arts",active,17.72,False,,0,0,False,0.83,27-1024.00,0.3166,71.5,2026-11-06 to 2029-11-06,descriptive_risk_index,55
+1005,Graphic Designer Associate,"Communications, media & arts",active,17.72,False,,0,0,False,0.83,27-1024.00,0.3166,71.5,2026-11-06 to 2029-11-06,descriptive_risk_index,56
+1006,Graphic Designer,"Communications, media & arts",active,17.72,False,,0,0,False,0.83,27-1024.00,0.1797,71.5,2026-11-06 to 2029-11-06,descriptive_risk_index,57
+3681,Graphic Design Manager,"Communications, media & arts",active,17.72,False,,0,0,False,0.83,27-1024.00,0.1797,71.5,2026-11-06 to 2029-11-06,descriptive_risk_index,58
+0045,Housing Officer,Student & academic services,active,21.68,True,preliminary,0,0,False,0.695,39-9041.00,0.2311,71.4,2026-11-06 to 2029-11-06,descriptive_risk_index,59
+3570,Pharmacy Supervisor,Health & medical,active,22.85,False,,0,0,False,0.657,29-2052.00,0.5105,71.4,2026-11-06 to 2029-11-06,descriptive_risk_index,60
+4601,Social Work Aide III,Health & medical,active,19.18,False,,0,0,False,0.719,21-1021.00,0.2964,71.4,2026-11-06 to 2029-11-06,descriptive_risk_index,61
+4071,Pre-Press Technician Assistant,"Communications, media & arts",active,17.93,True,proposal,0,0,False,0.804,51-5111.00,0.1413,71.3,2026-11-06 to 2029-11-06,descriptive_risk_index,62
+4791,Pre-Press Technician,"Communications, media & arts",active,17.93,True,proposal,0,0,False,0.804,51-5111.00,0.1413,71.3,2026-11-06 to 2029-11-06,descriptive_risk_index,63
+4613,Equal Opportunity Officer,Management & administration,active,22.85,True,preliminary,0,0,False,0.65,13-1041.03,0.1675,71.2,2026-11-06 to 2029-11-06,descriptive_risk_index,64
+4845,Digital Imaging Specialist I,"Communications, media & arts",active,18.35,False,,0,0,False,0.781,51-9151.00,0.2759,71.2,2026-11-06 to 2029-11-06,descriptive_risk_index,65
+4846,Digital Imaging Specialist II,"Communications, media & arts",active,18.35,False,,0,0,False,0.781,51-9151.00,0.2759,71.2,2026-11-06 to 2029-11-06,descriptive_risk_index,66
+3034,Phlebotomist,Health & medical,active,4.81,True,preliminary,0,1,False,0.699,31-9097.00,0.3454,71.1,2026-11-06 to 2029-11-06,descriptive_risk_index,67
+4002,Interventional Radiology (IR) Technologist,Health & medical,active,6.26,True,proposal,1,1,False,0.599,29-2034.00,0.5111,71.1,2026-11-06 to 2029-11-06,descriptive_risk_index,68
+4003,Interventional Radiology (IR) Specialist,Health & medical,active,6.26,True,proposal,1,1,False,0.599,29-2034.00,0.5111,71.1,2026-11-06 to 2029-11-06,descriptive_risk_index,69
+4004,Interventional Radiology (IR) Manager,Health & medical,active,6.26,True,proposal,1,1,False,0.599,29-2034.00,0.3309,71.1,2026-11-06 to 2029-11-06,descriptive_risk_index,70
+4091,Histology Technologist,Health & medical,active,17.89,False,,0,0,False,0.804,29-2011.04,0.1784,71.0,2026-11-06 to 2029-11-06,descriptive_risk_index,71
+4599,Social Work Aide I,Health & medical,active,19.18,False,,0,0,False,0.7,21-1093.00,0.292,70.9,2026-11-06 to 2029-11-06,descriptive_risk_index,72
+4600,Social Work Aide II,Health & medical,active,19.18,False,,0,0,False,0.7,21-1093.00,0.292,70.9,2026-11-06 to 2029-11-06,descriptive_risk_index,73
+1772,Park Supervisor,"Facilities, grounds & custodial",active,4.35,True,preliminary,1,1,False,0.755,37-1012.00,0.3632,70.8,2026-11-06 to 2029-11-06,descriptive_risk_index,74
+4524,Research Technologist I,Science & research support,active,21.93,False,,0,0,False,0.66,29-2011.00,0.2177,70.8,2026-11-06 to 2029-11-06,descriptive_risk_index,75
+4525,Research Technologist II,Science & research support,active,21.93,False,,0,0,False,0.66,29-2011.00,0.2177,70.8,2026-11-06 to 2029-11-06,descriptive_risk_index,76
+4526,Research Technologist Manager,Science & research support,active,21.93,False,,0,0,False,0.66,29-2011.00,0.2177,70.8,2026-11-06 to 2029-11-06,descriptive_risk_index,77
+1349,Assistant Ethanol Plant Research Engineer,Science & research support,active,19.01,True,preliminary,0,0,False,0.692,19-4021.00,0.2052,70.3,2026-11-06 to 2029-11-06,descriptive_risk_index,78
+4612,Assistant Equal Opportunity Officer,Management & administration,active,21.68,True,preliminary,0,0,False,0.65,13-1041.03,0.1853,70.3,2026-11-06 to 2029-11-06,descriptive_risk_index,79
+4694,Training and Development Specialist II,Human resources,active,18.26,False,,0,0,False,0.756,19-3032.00,0.2519,70.2,2026-11-06 to 2029-11-06,descriptive_risk_index,80
+4096,Medical Technologist II,Health & medical,active,19.14,False,,0,0,False,0.66,29-2011.00,0.3227,69.7,2026-11-06 to 2029-11-06,descriptive_risk_index,81
+4097,Medical Technologist III,Health & medical,active,19.14,False,,0,0,False,0.66,29-2011.00,0.3227,69.7,2026-11-06 to 2029-11-06,descriptive_risk_index,82
+4819,Member Service Representative I,Management & administration,active,4.35,False,,1,1,False,0.71,43-4051.00,0.2563,69.6,2026-11-06 to 2029-11-06,descriptive_risk_index,83
+1684,Garage Foreman,Skilled trades,active,21.52,False,,0,0,False,0.62,47-1011.00,0.2877,69.3,2026-11-06 to 2029-11-06,descriptive_risk_index,84
+0628,Bursar,Finance & procurement,active,19.35,False,,0,0,False,0.623,13-2011.00,0.348,69.2,2026-11-06 to 2029-11-06,descriptive_risk_index,85
+0629,Assistant Bursar,Finance & procurement,active,19.35,False,,0,0,False,0.623,13-2011.00,0.348,69.2,2026-11-06 to 2029-11-06,descriptive_risk_index,86
+1351,Assistant Ethanol Plant Scientific Analyst,Science & research support,active,19.01,True,preliminary,0,0,False,0.646,19-2031.00,0.3001,69.2,2026-11-06 to 2029-11-06,descriptive_risk_index,87
+1352,Ethanol Plant Scientific Analyst,Science & research support,active,19.01,True,preliminary,0,0,False,0.646,19-2031.00,0.3001,69.2,2026-11-06 to 2029-11-06,descriptive_risk_index,88
+0046,Housing Administrator,Student & academic services,active,21.68,True,preliminary,0,0,False,0.578,11-3012.00,0.2589,68.5,2026-11-06 to 2029-11-06,descriptive_risk_index,89
+4095,Medical Technologist I,Health & medical,active,19.14,False,,0,0,False,0.611,29-2099.05,0.3836,68.5,2026-11-06 to 2029-11-06,descriptive_risk_index,90
+1356,Electronics Engineer,Other,active,22.85,False,,0,0,False,0.536,17-2061.00,0.4343,68.4,2026-11-06 to 2029-11-06,descriptive_risk_index,91
+4129,Occupational Therapy Specialist,Health & medical,active,15.14,False,,0,0,False,0.845,31-2012.00,0.2052,68.2,2026-11-06 to 2029-11-06,descriptive_risk_index,92
+4572,Health Care Utilization Review Coordinator,Health & medical,active,17.6,False,,0,0,False,0.709,15-1211.01,0.3043,68.2,2026-11-06 to 2029-11-06,descriptive_risk_index,93
+4824,Radiation Oncology Physicist,Science & research support,active,14.89,False,,0,0,False,0.885,29-2036.00,0.1531,68.1,2026-11-06 to 2029-11-06,descriptive_risk_index,94
+1474,Institutional Compliance Examiner I,Protective services,active,4.35,True,proposal,1,1,False,0.638,13-2061.00,0.4671,67.9,2026-11-06 to 2029-11-06,descriptive_risk_index,95
+1475,Institutional Compliance Examiner II,Protective services,active,4.35,True,proposal,1,1,False,0.638,13-2061.00,0.4671,67.9,2026-11-06 to 2029-11-06,descriptive_risk_index,96
+1476,Institutional Compliance Examiner III,Protective services,active,4.35,True,proposal,1,1,False,0.638,13-2061.00,0.4671,67.9,2026-11-06 to 2029-11-06,descriptive_risk_index,97
+1477,Institutional Compliance Examiner IV,Protective services,active,4.35,True,proposal,1,1,False,0.638,13-2061.00,0.4671,67.9,2026-11-06 to 2029-11-06,descriptive_risk_index,98
+1333,Chief Engineer,Management & administration,active,22.85,False,,0,0,False,0.507,33-1021.00,0.3498,67.7,2026-11-06 to 2029-11-06,descriptive_risk_index,99
+4546,Development Officer,Management & administration,active,21.72,False,,0,0,False,0.535,13-1131.00,0.168,67.5,2026-11-06 to 2029-11-06,descriptive_risk_index,100
+1259,Technical Editor,"Communications, media & arts",active,16.93,False,,0,0,False,0.721,27-3041.00,0.2257,67.4,2026-11-06 to 2029-11-06,descriptive_risk_index,101
+0811,Statistical Clerk,Clerical & office support,active,14.89,False,,0,0,False,0.85,43-9111.00,0.1798,67.2,2026-11-06 to 2029-11-06,descriptive_risk_index,102
+0896,Speech and Hearing Consultant,Other,active,21.27,False,,0,0,False,0.539,29-1127.00,0.1808,67.2,2026-11-06 to 2029-11-06,descriptive_risk_index,103
+1350,Ethanol Plant Research Engineer,Science & research support,active,19.01,True,preliminary,0,0,False,0.559,17-2031.00,0.2351,67.0,2026-11-06 to 2029-11-06,descriptive_risk_index,104
+3100,Nurse Practitioner,Health & medical,active,18.31,False,,0,0,False,0.616,29-1141.00,0.227,66.8,2026-11-06 to 2029-11-06,descriptive_risk_index,105
+4798,Graduate School Specialist,Management & administration,active,18.6,False,,0,0,False,0.596,11-9033.00,0.1163,66.8,2026-11-06 to 2029-11-06,descriptive_risk_index,106
+4820,Member Service Representative II,Management & administration,active,4.35,False,,1,0,False,0.598,43-3071.00,0.0481,66.8,2026-11-06 to 2029-11-06,descriptive_risk_index,107
+1256,Publications Editor,"Communications, media & arts",active,15.72,False,,0,0,False,0.721,27-3041.00,0.1704,66.7,2026-11-06 to 2029-11-06,descriptive_risk_index,108
+4803,Publications Manager,"Communications, media & arts",active,15.72,False,,0,0,False,0.721,27-3041.00,0.1343,66.7,2026-11-06 to 2029-11-06,descriptive_risk_index,109
+1560,Agricultural Gardener Foreman,Skilled trades,active,16.39,False,,0,0,False,0.712,45-2092.00,0.2413,66.6,2026-11-06 to 2029-11-06,descriptive_risk_index,110
+2771,Graduate Placement Officer,Management & administration,active,18.6,False,,0,0,False,0.588,21-1012.00,0.2127,66.6,2026-11-06 to 2029-11-06,descriptive_risk_index,111
+0346,Physician's Assistant in Medicine,Health & medical,active,17.77,False,,0,0,False,0.628,29-1071.00,0.3482,66.5,2026-11-06 to 2029-11-06,descriptive_risk_index,112
+4300,Aesthetician,Other,active,16.98,True,proposal,0,0,False,0.654,39-5094.00,0.1328,66.1,2026-11-06 to 2029-11-06,descriptive_risk_index,113
+4401,Ethanol Plant Operating Technician,Science & research support,active,17.56,True,preliminary,0,0,False,0.626,51-8099.01,0.3453,66.0,2026-11-06 to 2029-11-06,descriptive_risk_index,114
+4402,Ethanol Plant Operating Coordinator,Management & administration,active,17.56,True,preliminary,0,0,False,0.626,51-8099.01,0.3217,66.0,2026-11-06 to 2029-11-06,descriptive_risk_index,115
+4629,Museum Instructor/Educator,"Library, museum & archives",active,16.76,False,,0,0,False,0.679,39-7011.00,0.2939,66.0,2026-11-06 to 2029-11-06,descriptive_risk_index,116
+4693,Training and Development Specialist I,Human resources,active,18.26,False,,0,0,False,0.587,13-1151.00,0.3193,66.0,2026-11-06 to 2029-11-06,descriptive_risk_index,117
+3885,Central Sterile Supply Technician,Health & medical,active,15.18,False,,0,0,False,0.746,31-9093.00,0.2053,65.8,2026-11-06 to 2029-11-06,descriptive_risk_index,118
+4805,Infection Prevention and Control Coordinator,Management & administration,active,15.69,False,,0,0,False,0.681,19-1041.00,0.1336,65.5,2026-11-06 to 2029-11-06,descriptive_risk_index,119
+1704,Ironworker Foreman,Skilled trades,active,17.14,False,,0,0,False,0.62,47-1011.00,0.2418,65.3,2026-11-06 to 2029-11-06,descriptive_risk_index,120
+4043,Nursing Technician,Health & medical,active,17.89,False,,0,0,False,0.577,31-1131.00,0.2873,65.3,2026-11-06 to 2029-11-06,descriptive_risk_index,121
+2738,Psychiatric and Mental Health Nurse,Health & medical,active,18.76,False,,0,0,False,0.53,29-1141.02,0.2633,65.2,2026-11-06 to 2029-11-06,descriptive_risk_index,122
+4560,Institutional Research Data Specialist,"IT, data & security",active,14.89,False,,0,0,False,0.761,15-2031.00,0.3013,65.0,2026-11-06 to 2029-11-06,descriptive_risk_index,123
+4573,Chief Health Care Utilization Review Coordinator,Health & medical,active,17.6,False,,0,0,False,0.583,29-9021.00,0.2251,65.0,2026-11-06 to 2029-11-06,descriptive_risk_index,124
+2035,Media Technical Services Manager,"Communications, media & arts",active,16.76,False,,0,0,False,0.637,11-3021.00,0.2703,64.9,2026-11-06 to 2029-11-06,descriptive_risk_index,125
+3914,Dental X-Ray Technician I,Health & medical,active,16.98,False,,0,0,False,0.599,29-2034.00,0.3959,64.7,2026-11-06 to 2029-11-06,descriptive_risk_index,126
+3915,Dental X-Ray Technician II,Health & medical,active,16.98,False,,0,0,False,0.599,29-2034.00,0.3959,64.7,2026-11-06 to 2029-11-06,descriptive_risk_index,127
+4814,Manager of Institutional Audits,Finance & procurement,active,4.35,True,proposal,1,1,False,0.51,11-9199.02,0.354,64.7,2026-11-06 to 2029-11-06,descriptive_risk_index,128
+4792,Press Technician Assistant,"Communications, media & arts",active,17.93,True,proposal,0,0,False,0.528,51-5112.00,0.2384,64.4,2026-11-06 to 2029-11-06,descriptive_risk_index,129
+4793,Press Technician,"Communications, media & arts",active,17.93,True,proposal,0,0,False,0.528,51-5112.00,0.2384,64.4,2026-11-06 to 2029-11-06,descriptive_risk_index,130
+2463,Benefits Manager,Human resources,active,18.1,False,,0,0,False,0.521,11-3111.00,0.1585,64.3,2026-11-06 to 2029-11-06,descriptive_risk_index,131
+2592,Farm Mechanic,Skilled trades,active,16.48,False,,0,0,False,0.62,49-3041.00,0.2739,64.3,2026-11-06 to 2029-11-06,descriptive_risk_index,132
+4549,Biomedical Engineering Technician I,Health & medical,active,15.31,False,,0,0,False,0.667,49-9062.00,0.3825,64.3,2026-11-06 to 2029-11-06,descriptive_risk_index,133
+4550,Biomedical Engineering Technician II,Health & medical,active,15.31,False,,0,0,False,0.667,49-9062.00,0.3825,64.3,2026-11-06 to 2029-11-06,descriptive_risk_index,134
+4551,Biomedical Engineering Technician III,Health & medical,active,15.31,False,,0,0,False,0.667,49-9062.00,0.3825,64.3,2026-11-06 to 2029-11-06,descriptive_risk_index,135
+0017,Chief Accountant,Finance & procurement,active,15.69,False,,0,0,False,0.623,13-2011.00,0.3427,64.0,2026-11-06 to 2029-11-06,descriptive_risk_index,136
+0023,Assistant Chief Accountant,Finance & procurement,active,15.69,False,,0,0,False,0.624,43-3031.00,0.2899,64.0,2026-11-06 to 2029-11-06,descriptive_risk_index,137
+1462,Estimator,Other,active,16.76,False,,0,0,False,0.599,13-1032.00,0.1771,64.0,2026-11-06 to 2029-11-06,descriptive_risk_index,138
+4997,Clinical Actor,Health & medical,active,15.18,False,,0,0,False,0.672,21-1014.00,0.2759,64.0,2026-11-06 to 2029-11-06,descriptive_risk_index,139
+3289,Instructional Development Specialist,Student & academic services,active,16.14,False,,0,0,False,0.603,25-9031.00,0.1244,63.8,2026-11-06 to 2029-11-06,descriptive_risk_index,140
+0929,Extension Program Coordinator,Management & administration,active,15.48,True,proposal,0,0,False,0.64,11-9151.00,0.1489,63.7,2026-11-06 to 2029-11-06,descriptive_risk_index,141
+3730,Assistant Supervisor of Medical Social Services,Health & medical,active,14.94,True,preliminary,0,0,False,0.7,21-1093.00,0.1663,63.7,2026-11-06 to 2029-11-06,descriptive_risk_index,142
+4504,Hemodialysis Technician,Science & research support,active,15.52,False,,0,0,False,0.616,29-1141.00,0.3061,63.6,2026-11-06 to 2029-11-06,descriptive_risk_index,143
+4506,Chief Hemodialysis Technologist,Science & research support,active,15.52,False,,0,0,False,0.616,29-1141.00,0.3061,63.6,2026-11-06 to 2029-11-06,descriptive_risk_index,144
+0898,Teaching Consultant,Other,active,17.16,False,,0,0,False,0.544,27-1019.00,0.125,63.5,2026-11-06 to 2029-11-06,descriptive_risk_index,145
+4609,Prosthodontic Technician,Health & medical,active,16.93,False,,0,0,False,0.553,51-9081.00,0.3561,63.2,2026-11-06 to 2029-11-06,descriptive_risk_index,146
+4610,Prosthodontic Technician Supervisor,Health & medical,active,16.93,False,,0,0,False,0.553,51-9081.00,0.3561,63.2,2026-11-06 to 2029-11-06,descriptive_risk_index,147
+4628,Hemodialysis Technologist,Science & research support,active,15.52,False,,0,0,False,0.599,29-2034.00,0.2409,63.2,2026-11-06 to 2029-11-06,descriptive_risk_index,148
+3650,Supervisor of Building Craftsmen,"Facilities, grounds & custodial",active,15.39,False,,0,0,False,0.62,47-1011.00,0.1442,63.1,2026-11-06 to 2029-11-06,descriptive_risk_index,149
+3300,Statistician,Other,active,14.89,False,,0,0,False,0.681,15-2041.00,0.2198,63.0,2026-11-06 to 2029-11-06,descriptive_risk_index,150
+3301,Statistician Specialist,Management & administration,active,14.89,False,,0,0,False,0.681,15-2041.00,0.2333,63.0,2026-11-06 to 2029-11-06,descriptive_risk_index,151
+0205,Editorial Assistant,"Communications, media & arts",active,14.31,False,,0,0,False,0.721,27-3041.00,0.2815,62.9,2026-11-06 to 2029-11-06,descriptive_risk_index,152
+4289,Editorial Writer,"Communications, media & arts",active,14.31,False,,0,0,False,0.721,27-3041.00,0.2815,62.9,2026-11-06 to 2029-11-06,descriptive_risk_index,153
+4136,Coordinator of Physical Therapy Services,Health & medical,active,14.98,False,,0,0,False,0.654,31-2022.00,0.2344,62.8,2026-11-06 to 2029-11-06,descriptive_risk_index,154
+4141,Physical Therapy Specialist,Health & medical,active,14.98,False,,0,0,False,0.654,31-2022.00,0.2344,62.8,2026-11-06 to 2029-11-06,descriptive_risk_index,155
+4995,Instrument Technician,Science & research support,active,13.35,False,,0,0,False,0.751,49-9012.00,0.1632,62.8,2026-11-06 to 2029-11-06,descriptive_risk_index,156
+0303,Program Administrative Assistant,Management & administration,active,15.7,False,,0,0,False,0.544,13-1199.00,0.2642,62.1,2026-11-06 to 2029-11-06,descriptive_risk_index,157
+1493,Desktop Publisher/Coordinator,Management & administration,active,14.14,False,,0,0,False,0.703,43-9031.00,0.1464,62.1,2026-11-06 to 2029-11-06,descriptive_risk_index,158
+4538,Health Education Coordinator,Health & medical,active,14.64,False,,0,0,False,0.68,21-1091.00,0.1839,62.1,2026-11-06 to 2029-11-06,descriptive_risk_index,159
+4975,Organizational Quality Coordinator,Management & administration,active,12.97,False,,0,0,False,0.756,19-3032.00,0.1138,62.1,2026-11-06 to 2029-11-06,descriptive_risk_index,160
+1632,Electrical and Electronic Instruments and Controls Mechanic Foreman,Science & research support,active,15.31,False,,0,0,False,0.573,49-2094.00,0.1865,61.9,2026-11-06 to 2029-11-06,descriptive_risk_index,161
+2582,Electrical and Electronic Instruments and Controls Mechanic,Science & research support,active,15.31,False,,0,0,False,0.573,49-2094.00,0.1865,61.9,2026-11-06 to 2029-11-06,descriptive_risk_index,162
+4988,Power Plant Mechanic Supervisor,Skilled trades,active,13.35,False,,0,0,False,0.715,11-3051.06,0.3553,61.9,2026-11-06 to 2029-11-06,descriptive_risk_index,163
+4804,Infection Prevention and Control Professional,Other,active,15.69,False,,0,0,False,0.535,29-1141.04,0.1421,61.8,2026-11-06 to 2029-11-06,descriptive_risk_index,164
+1119,Assistant Director of Physical Plant,Science & research support,active,14.89,True,proposal,0,0,False,0.632,11-3051.04,0.0988,61.7,2026-11-06 to 2029-11-06,descriptive_risk_index,165
+0061,Fitness and Aquatics Aide,Other,active,15.06,False,,0,0,False,0.593,39-9031.00,0.172,61.5,2026-11-06 to 2029-11-06,descriptive_risk_index,166
+3892,Instructional Media Systems Technician,Student & academic services,active,15.52,False,,0,0,False,0.531,17-3023.00,0.1808,61.5,2026-11-06 to 2029-11-06,descriptive_risk_index,167
+2291,Driller Assistant,Management & administration,active,14.23,False,,0,0,False,0.668,47-5023.00,0.1727,61.4,2026-11-06 to 2029-11-06,descriptive_risk_index,168
+2292,Driller,"Facilities, grounds & custodial",active,14.23,False,,0,0,False,0.668,47-5023.00,0.2132,61.4,2026-11-06 to 2029-11-06,descriptive_risk_index,169
+4794,Immigration Specialist,Management & administration,active,15.01,False,,0,0,False,0.597,23-1011.00,0.0766,61.4,2026-11-06 to 2029-11-06,descriptive_risk_index,170
+4661,Assistant Director of Clinical Support Operations,Health & medical,active,15.1,False,,0,0,False,0.581,11-9111.00,0.1613,61.3,2026-11-06 to 2029-11-06,descriptive_risk_index,171
+4966,Clinical Practice Data Analyst,"IT, data & security",active,12.97,False,,0,0,False,0.722,15-2051.02,0.161,61.2,2026-11-06 to 2029-11-06,descriptive_risk_index,172
+4967,Clinical Practice Data Analyst Specialist,"IT, data & security",active,12.97,False,,0,0,False,0.722,15-2051.02,0.161,61.2,2026-11-06 to 2029-11-06,descriptive_risk_index,173
+4968,Clinical Practice Data Analyst Coordinator,"IT, data & security",active,12.97,False,,0,0,False,0.722,15-2051.02,0.2025,61.2,2026-11-06 to 2029-11-06,descriptive_risk_index,174
+3057,Plasterer,Skilled trades,active,17.01,False,,0,0,False,0.451,47-3014.00,0.2413,61.1,2026-11-06 to 2029-11-06,descriptive_risk_index,175
+3596,Service Enterprises Manager,Management & administration,active,14.6,False,,0,0,False,0.64,11-9151.00,0.1021,61.1,2026-11-06 to 2029-11-06,descriptive_risk_index,176
+4130,Coordinator of Occupational Therapy Services,Health & medical,active,15.14,False,,0,0,False,0.561,31-2011.00,0.2107,61.1,2026-11-06 to 2029-11-06,descriptive_risk_index,177
+4519,Occupational Therapy Assistant,Health & medical,active,15.14,False,,0,0,False,0.561,31-2011.00,0.2989,61.1,2026-11-06 to 2029-11-06,descriptive_risk_index,178
+0585,Internal Auditor,Finance & procurement,active,14.72,False,,0,0,False,0.623,13-2011.00,0.2869,60.9,2026-11-06 to 2029-11-06,descriptive_risk_index,179
+0586,Internal Auditor Associate,Finance & procurement,active,14.72,False,,0,0,False,0.623,13-2011.00,0.2869,60.9,2026-11-06 to 2029-11-06,descriptive_risk_index,180
+4505,Assistant Chief Hemodialysis Technologist,Science & research support,active,15.52,False,,0,0,False,0.507,33-1021.00,0.2666,60.9,2026-11-06 to 2029-11-06,descriptive_risk_index,181
+4558,Internal Auditor Assistant Manager,Finance & procurement,active,14.72,False,,0,0,False,0.623,13-2011.00,0.2869,60.9,2026-11-06 to 2029-11-06,descriptive_risk_index,182
+4566,Internal Auditor Manager,Finance & procurement,active,14.72,False,,0,0,False,0.623,13-2011.00,0.2869,60.9,2026-11-06 to 2029-11-06,descriptive_risk_index,183
+4522,Institutional Research Data Coordinator,"IT, data & security",active,14.89,False,,0,0,False,0.596,11-9033.00,0.2191,60.8,2026-11-06 to 2029-11-06,descriptive_risk_index,184
+1313,Biomedical Engineer I,Health & medical,active,15.06,False,,0,0,False,0.559,17-2031.00,0.2569,60.7,2026-11-06 to 2029-11-06,descriptive_risk_index,185
+1608,Cement Finisher Foreman,Skilled trades,active,17.23,False,,0,0,False,0.424,47-2051.00,0.2741,60.7,2026-11-06 to 2029-11-06,descriptive_risk_index,186
+3729,Supervisor of Medical Social Services,Health & medical,active,14.94,True,preliminary,0,0,False,0.581,11-9111.00,0.178,60.7,2026-11-06 to 2029-11-06,descriptive_risk_index,187
+4548,Biomedical Engineer II,Health & medical,active,15.06,False,,0,0,False,0.559,17-2031.00,0.2569,60.7,2026-11-06 to 2029-11-06,descriptive_risk_index,188
+0058,Administrative Aide,Management & administration,active,14.06,False,,0,0,False,0.643,43-6011.00,0.2085,60.6,2026-11-06 to 2029-11-06,descriptive_risk_index,189
+0171,Administrative Assistant,Management & administration,active,14.06,False,,0,0,False,0.643,43-6011.00,0.0866,60.6,2026-11-06 to 2029-11-06,descriptive_risk_index,190
+0264,Medical Social Assistant,Health & medical,active,14.94,True,preliminary,0,0,False,0.576,21-1022.00,0.1698,60.6,2026-11-06 to 2029-11-06,descriptive_risk_index,191
+4260,Medical Social Associate,Health & medical,active,14.94,True,preliminary,0,0,False,0.576,21-1022.00,0.1698,60.6,2026-11-06 to 2029-11-06,descriptive_risk_index,192
+0502,Research Facility Attendant,Science & research support,active,4.18,True,preliminary,0,1,False,0.727,37-2011.00,0.3424,60.3,2026-11-06 to 2029-11-06,descriptive_risk_index,193
+0996,Forest Custodian,"Facilities, grounds & custodial",active,4.18,True,preliminary,0,1,False,0.727,37-2011.00,0.378,60.3,2026-11-06 to 2029-11-06,descriptive_risk_index,194
+1828,Pipefitter (Refrigeration Mechanic) Foreman,Skilled trades,active,13.6,False,,0,0,False,0.641,49-1011.00,0.1659,60.3,2026-11-06 to 2029-11-06,descriptive_risk_index,195
+1962,Pipefitter (Refrigeration Mechanic) Sub-Foreman,Skilled trades,active,13.6,False,,0,0,False,0.641,49-1011.00,0.1659,60.3,2026-11-06 to 2029-11-06,descriptive_risk_index,196
+0933,Educational Program Evaluation Coordinator,Management & administration,active,14.6,False,,0,0,False,0.603,25-9031.00,0.1496,60.1,2026-11-06 to 2029-11-06,descriptive_risk_index,197
+3460,Catering Supervisor,Food & domestic services,active,14.89,True,proposal,0,0,False,0.564,11-9051.00,0.0944,60.0,2026-11-06 to 2029-11-06,descriptive_risk_index,198
+4999,Accreditation and Regulatory Specialist,Management & administration,active,15.26,False,,0,0,False,0.51,11-9199.02,0.1464,60.0,2026-11-06 to 2029-11-06,descriptive_risk_index,199
+4101,Nuclear Medicine Technologist,Science & research support,active,12.01,False,,0,0,False,0.718,29-2033.00,0.2404,59.9,2026-11-06 to 2029-11-06,descriptive_risk_index,200
+4614,Anesthesia Assistant,Health & medical,active,15.52,False,,0,0,False,0.466,29-1071.01,0.3178,59.9,2026-11-06 to 2029-11-06,descriptive_risk_index,201
+4735,Anesthesia Technician,Health & medical,active,15.52,False,,0,0,False,0.466,29-1071.01,0.3178,59.9,2026-11-06 to 2029-11-06,descriptive_risk_index,202
+4973,Quality Specialist,Management & administration,active,12.97,False,,0,0,False,0.67,19-4099.01,0.114,59.9,2026-11-06 to 2029-11-06,descriptive_risk_index,203
+4974,Senior Quality Specialist,Management & administration,active,12.97,False,,0,0,False,0.67,19-4099.01,0.114,59.9,2026-11-06 to 2029-11-06,descriptive_risk_index,204
+1065,Assistant Director of Alumni Relations,Management & administration,active,14.23,False,,0,0,False,0.596,11-9033.00,0.0908,59.6,2026-11-06 to 2029-11-06,descriptive_risk_index,205
+2599,Senior Laboratory Mechanic,Science & research support,active,13.6,False,,0,0,False,0.614,19-4043.00,0.1255,59.6,2026-11-06 to 2029-11-06,descriptive_risk_index,206
+4702,Parking Services Agent III,Protective services,active,11.48,False,,0,0,False,0.726,33-3041.00,0.3786,59.4,2026-11-06 to 2029-11-06,descriptive_risk_index,207
+4736,Anesthesia Supervisor,Health & medical,active,15.52,False,,0,0,False,0.443,29-1151.00,0.3449,59.3,2026-11-06 to 2029-11-06,descriptive_risk_index,208
+3606,Stores Supervisor,Transportation & stores,active,13.06,False,,0,0,False,0.638,43-1011.00,0.1434,59.2,2026-11-06 to 2029-11-06,descriptive_risk_index,209
+4146,Physical Therapist,Health & medical,active,14.98,False,,0,0,False,0.51,29-1123.00,0.2011,59.2,2026-11-06 to 2029-11-06,descriptive_risk_index,210
+4987,Power Plant Mechanic,Skilled trades,active,13.35,False,,0,0,False,0.609,51-8013.04,0.392,59.2,2026-11-06 to 2029-11-06,descriptive_risk_index,211
+0172,Administrative Assistant II,Management & administration,active,14.76,False,,0,0,False,0.544,13-1199.00,0.1375,59.0,2026-11-06 to 2029-11-06,descriptive_risk_index,212
+4994,Steam and Power Plant V,Skilled trades,active,13.35,False,,0,0,False,0.602,51-8021.00,0.3821,59.0,2026-11-06 to 2029-11-06,descriptive_risk_index,213
+0293,Physical Therapy Assistant,Health & medical,active,15.1,False,,0,0,False,0.482,31-2021.00,0.2863,58.9,2026-11-06 to 2029-11-06,descriptive_risk_index,214
+1147,Assistant Director of University Student Center,Student & academic services,active,14.98,False,,0,0,False,0.5,,0.1426,58.9,2026-11-06 to 2029-11-06,descriptive_risk_index,215
+4104,Intra-Operative Monitoring Specialist,Management & administration,active,13.1,False,,0,0,False,0.618,29-2099.01,0.2685,58.9,2026-11-06 to 2029-11-06,descriptive_risk_index,216
+4128,Occupational Therapist,Health & medical,active,15.14,False,,0,0,False,0.471,29-1122.00,0.2166,58.8,2026-11-06 to 2029-11-06,descriptive_risk_index,217
+4834,Head Disability Transportation Specialist,Transportation & stores,active,12.56,True,proposal,0,0,False,0.645,19-3099.01,0.2392,58.8,2026-11-06 to 2029-11-06,descriptive_risk_index,218
+3514,Housing Maintenance Supervisor,Student & academic services,active,12.35,False,,0,0,False,0.641,49-1011.00,0.2538,58.6,2026-11-06 to 2029-11-06,descriptive_risk_index,219
+0876,Medical Social Consultant,Health & medical,active,13.39,True,preliminary,0,0,False,0.576,21-1022.00,0.1546,58.5,2026-11-06 to 2029-11-06,descriptive_risk_index,220
+1392,Operating Engineer,Skilled trades,active,10.68,False,,0,0,False,0.715,47-2073.00,0.1834,58.5,2026-11-06 to 2029-11-06,descriptive_risk_index,221
+1393,Assistant Operating Engineer,Skilled trades,active,10.68,False,,0,0,False,0.715,47-2073.00,0.1834,58.5,2026-11-06 to 2029-11-06,descriptive_risk_index,222
+1402,Operative Crane Engineer,Skilled trades,active,10.68,False,,0,0,False,0.715,47-2073.00,0.1834,58.5,2026-11-06 to 2029-11-06,descriptive_risk_index,223
+3920,Dental X-Ray Coordinator,Health & medical,active,13.1,False,,0,0,False,0.599,29-2034.00,0.2764,58.5,2026-11-06 to 2029-11-06,descriptive_risk_index,224
+2792,Emergency Management Coordinator,Protective services,active,13.31,True,proposal,0,0,False,0.575,11-9161.00,0.3284,58.1,2026-11-06 to 2029-11-06,descriptive_risk_index,225
+2173,Housing Maintenance Inspector,Student & academic services,active,12.35,False,,0,0,False,0.614,47-4011.00,0.2507,57.9,2026-11-06 to 2029-11-06,descriptive_risk_index,226
+4211,Security Guard Supervisor,Protective services,active,9.97,False,,0,0,False,0.731,33-1091.00,0.4022,57.9,2026-11-06 to 2029-11-06,descriptive_risk_index,227
+4782,Cardiac Sonographer Specialist,Health & medical,active,8.1,False,,0,0,False,0.769,29-1212.00,0.2041,57.9,2026-11-06 to 2029-11-06,descriptive_risk_index,228
+1048,Study Abroad Assistant Director,Management & administration,active,11.47,False,,0,0,False,0.667,25-1124.00,0.1075,57.8,2026-11-06 to 2029-11-06,descriptive_risk_index,229
+5005,Athletic Communications Associate,"Communications, media & arts",active,7.65,False,,0,0,False,0.797,27-3031.00,0.098,57.8,2026-11-06 to 2029-11-06,descriptive_risk_index,230
+5007,Publicity-Promotion Associate,Management & administration,active,7.65,False,,0,0,False,0.797,27-3031.00,0.0836,57.8,2026-11-06 to 2029-11-06,descriptive_risk_index,231
+2514,Airport Fire Marshall,Protective services,active,14.56,True,preliminary,0,0,False,0.507,33-1021.00,0.4242,57.6,2026-11-06 to 2029-11-06,descriptive_risk_index,232
+0981,Anatomy Curator,Health & medical,active,11.65,False,,0,0,False,0.633,25-1042.00,0.173,57.4,2026-11-06 to 2029-11-06,descriptive_risk_index,233
+0118,Orthopedic Technician,Science & research support,active,12.93,False,,0,0,False,0.579,31-9092.00,0.266,57.3,2026-11-06 to 2029-11-06,descriptive_risk_index,234
+4667,Animal Imaging Specialist,Agriculture & animal care,active,12.27,False,,0,0,False,0.599,29-2034.00,0.3191,57.3,2026-11-06 to 2029-11-06,descriptive_risk_index,235
+5040,Grants and Contracts Associate,Finance & procurement,active,10.1,False,,0,0,False,0.695,11-2033.00,0.2725,57.2,2026-11-06 to 2029-11-06,descriptive_risk_index,236
+3853,Archaeological Technician,Science & research support,active,11.43,False,,0,0,False,0.641,19-3091.00,0.2038,57.1,2026-11-06 to 2029-11-06,descriptive_risk_index,237
+4839,Reimbursement Coding Representative,Management & administration,active,10.98,False,,0,0,False,0.648,29-2072.00,0.1063,57.1,2026-11-06 to 2029-11-06,descriptive_risk_index,238
+4840,Reimbursement Coding Specialist,Management & administration,active,10.98,False,,0,0,False,0.648,29-2072.00,0.1063,57.1,2026-11-06 to 2029-11-06,descriptive_risk_index,239
+3857,Mammography Technologist,Health & medical,active,12.01,False,,0,0,False,0.599,29-2034.00,0.2592,57.0,2026-11-06 to 2029-11-06,descriptive_risk_index,240
+3858,Mammography Specialist,Health & medical,active,12.01,False,,0,0,False,0.599,29-2034.00,0.2592,57.0,2026-11-06 to 2029-11-06,descriptive_risk_index,241
+3859,Mammography Manager,Health & medical,active,12.01,False,,0,0,False,0.599,29-2034.00,0.142,57.0,2026-11-06 to 2029-11-06,descriptive_risk_index,242
+5006,Public Information Associate,"Communications, media & arts",active,7.65,False,,0,0,False,0.764,11-2032.00,0.1013,57.0,2026-11-06 to 2029-11-06,descriptive_risk_index,243
+0308,Procurement Officer,Finance & procurement,active,10.14,False,,0,0,False,0.668,11-3061.00,0.2263,56.7,2026-11-06 to 2029-11-06,descriptive_risk_index,244
+0309,Procurement Officer Specialist,Finance & procurement,active,10.14,False,,0,0,False,0.668,11-3061.00,0.2263,56.7,2026-11-06 to 2029-11-06,descriptive_risk_index,245
+3558,Musical Instrument Specialist,"Communications, media & arts",active,12.35,False,,0,0,False,0.56,49-9063.00,0.1262,56.5,2026-11-06 to 2029-11-06,descriptive_risk_index,246
+4031,Musical Instrument Technician,"Communications, media & arts",active,12.35,False,,0,0,False,0.56,49-9063.00,0.1262,56.5,2026-11-06 to 2029-11-06,descriptive_risk_index,247
+3445,Building Service Supervisor,"Facilities, grounds & custodial",active,9.53,False,,0,0,False,0.674,37-1011.00,0.129,56.2,2026-11-06 to 2029-11-06,descriptive_risk_index,248
+1759,Operating Engineer Foreman,Skilled trades,active,10.68,False,,0,0,False,0.62,47-1011.00,0.1931,56.1,2026-11-06 to 2029-11-06,descriptive_risk_index,249
+4125,Respiratory Care Administrative Director,Health & medical,active,11.69,False,,0,0,False,0.581,11-9111.00,0.1525,56.1,2026-11-06 to 2029-11-06,descriptive_risk_index,250
+2306,Instrument Maker,Science & research support,active,13.6,False,,0,0,False,0.468,51-4041.00,0.1187,56.0,2026-11-06 to 2029-11-06,descriptive_risk_index,251
+4105,Advanced Intra-Operative Monitoring Specialist,Management & administration,active,13.1,False,,0,0,False,0.5,,0.2424,56.0,2026-11-06 to 2029-11-06,descriptive_risk_index,252
+4106,Intra-Operative Monitoring Coordinator,Management & administration,active,13.1,False,,0,0,False,0.5,,0.1669,56.0,2026-11-06 to 2029-11-06,descriptive_risk_index,253
+5001,Program Assistant,Management & administration,active,8.06,False,,0,0,False,0.717,43-6014.00,0.0877,56.0,2026-11-06 to 2029-11-06,descriptive_risk_index,254
+1049,Study Abroad Advisor,Student & academic services,active,11.48,True,proposal,0,0,False,0.588,21-1012.00,0.2345,55.9,2026-11-06 to 2029-11-06,descriptive_risk_index,255
+5000,Accounting Associate,Finance & procurement,active,10.18,False,,0,0,False,0.624,43-3031.00,0.2084,55.9,2026-11-06 to 2029-11-06,descriptive_risk_index,256
+1604,Carpenter Foreman,Skilled trades,active,10.18,False,,0,0,False,0.62,47-1011.00,0.139,55.8,2026-11-06 to 2029-11-06,descriptive_risk_index,257
+1764,Painter Foreman,Skilled trades,active,10.18,True,proposal,0,0,False,0.62,47-1011.00,0.2307,55.8,2026-11-06 to 2029-11-06,descriptive_risk_index,258
+1765,Crafts and Trades General Foreman,Skilled trades,active,10.18,False,,0,0,False,0.62,47-1011.00,0.1857,55.8,2026-11-06 to 2029-11-06,descriptive_risk_index,259
+1055,Television Director-Producer,"Communications, media & arts",active,9.48,False,,0,0,False,0.659,27-2012.00,0.2006,55.7,2026-11-06 to 2029-11-06,descriptive_risk_index,260
+0055,Program/Student Advisor,Student & academic services,active,10.76,False,,0,0,False,0.588,21-1012.00,0.1012,55.4,2026-11-06 to 2029-11-06,descriptive_risk_index,261
+4102,Nuclear Medicine Manager,Management & administration,active,12.01,False,,0,0,False,0.537,29-1224.00,0.1153,55.4,2026-11-06 to 2029-11-06,descriptive_risk_index,262
+4625,Nuclear Medicine Specialist,Management & administration,active,12.01,False,,0,0,False,0.537,29-1224.00,0.216,55.4,2026-11-06 to 2029-11-06,descriptive_risk_index,263
+5004,Marketing Associate,"Communications, media & arts",active,6.91,False,,0,0,False,0.74,13-1161.00,0.0735,55.3,2026-11-06 to 2029-11-06,descriptive_risk_index,264
+0997,Evidence Custodian,Protective services,active,8.18,False,,0,0,False,0.661,33-3021.02,0.2626,55.2,2026-11-06 to 2029-11-06,descriptive_risk_index,265
+4833,Disability Transportation Specialist,Transportation & stores,active,12.56,True,proposal,0,0,False,0.5,,0.2158,55.2,2026-11-06 to 2029-11-06,descriptive_risk_index,266
+4729,Dental Unit Coordinator,Health & medical,active,11.5,False,,0,0,False,0.547,29-1292.00,0.1863,55.1,2026-11-06 to 2029-11-06,descriptive_risk_index,267
+3685,Manager of Sports Facilities,"Facilities, grounds & custodial",active,8.93,False,,0,0,False,0.638,43-1011.00,0.0868,55.0,2026-11-06 to 2029-11-06,descriptive_risk_index,268
+4668,Animal Imaging Coordinator,Agriculture & animal care,active,12.27,False,,0,0,False,0.507,33-1021.00,0.3493,55.0,2026-11-06 to 2029-11-06,descriptive_risk_index,269
+0101,Events Coordinator,Management & administration,active,7.52,False,,0,0,False,0.689,13-1121.00,0.078,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,270
+0102,Senior Events Coordinator,Management & administration,active,7.52,False,,0,0,False,0.689,13-1121.00,0.078,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,271
+0119,Orthopedic Technologist,Science & research support,active,12.93,False,,0,0,False,0.483,29-2091.00,0.2663,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,272
+4616,Medical Sonographer Technologist,Health & medical,active,8.1,False,,0,0,False,0.652,29-2032.00,0.1298,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,273
+4617,Medical Sonographer Specialist,Health & medical,active,8.1,False,,0,0,False,0.652,29-2032.00,0.1298,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,274
+4618,Medical Sonographer Manager,Health & medical,active,8.1,False,,0,0,False,0.652,29-2032.00,0.0659,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,275
+4781,Cardiac Sonographer Technologist,Health & medical,active,8.1,False,,0,0,False,0.652,29-2032.00,0.1924,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,276
+4783,Cardiac Sonographer Manager,Health & medical,active,8.1,False,,0,0,False,0.652,29-2032.00,0.1013,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,277
+4784,Vascular Sonographer Technologist,Health & medical,active,8.1,False,,0,0,False,0.652,29-2032.00,0.2386,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,278
+4785,Vascular Sonographer Specialist,Health & medical,active,8.1,False,,0,0,False,0.652,29-2032.00,0.2386,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,279
+4786,Vascular Sonographer Manager,Health & medical,active,8.1,False,,0,0,False,0.652,29-2032.00,0.1291,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,280
+5009,Events Administrator Associate,Management & administration,active,7.52,False,,0,0,False,0.689,13-1121.00,0.0655,54.9,2026-11-06 to 2029-11-06,descriptive_risk_index,281
+2193,Healthcare Interpreter,Health & medical,active,9.39,False,,0,0,False,0.62,27-3091.00,0.1311,54.6,2026-11-06 to 2029-11-06,descriptive_risk_index,282
+4521,Media Writer/Producer/Announcer I,"Communications, media & arts",active,8.56,False,,0,0,False,0.63,27-3011.00,0.2231,54.6,2026-11-06 to 2029-11-06,descriptive_risk_index,283
+1788,Plumber Foreman,Skilled trades,active,8.88,False,,0,0,False,0.62,47-1011.00,0.1236,54.5,2026-11-06 to 2029-11-06,descriptive_risk_index,284
+0141,Architect II,Other,active,7.24,False,,0,0,False,0.691,17-1011.00,0.0838,54.4,2026-11-06 to 2029-11-06,descriptive_risk_index,285
+0142,Architect III,Other,active,7.24,False,,0,0,False,0.691,17-1011.00,0.0838,54.4,2026-11-06 to 2029-11-06,descriptive_risk_index,286
+1502,Farrier,Other,active,9.43,False,,0,0,False,0.606,39-2021.00,0.1214,54.4,2026-11-06 to 2029-11-06,descriptive_risk_index,287
+3873,Magnetic Resonance Imaging Technologist,Science & research support,active,6.81,False,,0,0,False,0.695,29-2035.00,0.0833,54.1,2026-11-06 to 2029-11-06,descriptive_risk_index,288
+3874,Magnetic Resonance Imaging Specialist,Management & administration,active,6.81,False,,0,0,False,0.695,29-2035.00,0.0755,54.1,2026-11-06 to 2029-11-06,descriptive_risk_index,289
+3875,Magnetic Resonance Imaging Manager,Management & administration,active,6.81,False,,0,0,False,0.695,29-2035.00,0.0372,54.1,2026-11-06 to 2029-11-06,descriptive_risk_index,290
+5002,Program Coordinator,Management & administration,active,8.06,False,,0,0,False,0.64,11-9151.00,0.0667,54.1,2026-11-06 to 2029-11-06,descriptive_risk_index,291
+0763,Dental Clinic Clerk II,Health & medical,active,11.5,False,,0,0,False,0.504,31-9091.00,0.2153,54.0,2026-11-06 to 2029-11-06,descriptive_risk_index,292
+0990,Anatomy Curator Coordinator,Health & medical,active,11.65,False,,0,0,False,0.5,,0.2033,54.0,2026-11-06 to 2029-11-06,descriptive_risk_index,293
+1184,Medical Radiation Dosimetrist I,Health & medical,active,4.35,False,,0,0,False,0.885,29-2036.00,0.167,54.0,2026-11-06 to 2029-11-06,descriptive_risk_index,294
+1185,Medical Radiation Dosimetrist II,Health & medical,active,4.35,False,,0,0,False,0.885,29-2036.00,0.167,54.0,2026-11-06 to 2029-11-06,descriptive_risk_index,295
+5003,Program Director,Management & administration,active,8.06,False,,0,0,False,0.638,11-1021.00,0.0707,54.0,2026-11-06 to 2029-11-06,descriptive_risk_index,296
+0762,Dental Clinic Clerk I,Health & medical,active,11.5,False,,0,0,False,0.5,,0.2012,53.9,2026-11-06 to 2029-11-06,descriptive_risk_index,297
+4841,Reimbursement Coding Coordinator,Management & administration,active,10.98,True,proposal,0,0,False,0.521,11-3111.00,0.0574,53.9,2026-11-06 to 2029-11-06,descriptive_risk_index,298
+4678,Medical Assistant (Credentialed/Certified),Health & medical,active,9.43,False,,0,0,False,0.579,31-9092.00,0.1312,53.7,2026-11-06 to 2029-11-06,descriptive_risk_index,299
+3068,Police Captain,Protective services,active,6.72,False,,0,0,False,0.683,33-3052.00,0.0946,53.6,2026-11-06 to 2029-11-06,descriptive_risk_index,300
+4660,Campus Recreation Coordinator,Management & administration,active,6.1,False,,0,0,False,0.726,11-9179.01,0.0498,53.5,2026-11-06 to 2029-11-06,descriptive_risk_index,301
+4704,Dietitian Nutritionist,Health & medical,active,10.56,False,,0,0,False,0.525,29-1031.00,0.1455,53.5,2026-11-06 to 2029-11-06,descriptive_risk_index,302
+1128,Procurement Officer Supervisor,Finance & procurement,active,10.14,False,,0,0,False,0.535,11-3071.04,0.2076,53.4,2026-11-06 to 2029-11-06,descriptive_risk_index,303
+1165,Police Telecommunicator Supervisor,Protective services,active,7.38,False,,0,0,False,0.638,43-1011.00,0.1797,53.4,2026-11-06 to 2029-11-06,descriptive_risk_index,304
+4787,Financial Analyst/Planner,Finance & procurement,active,5.18,False,,0,0,False,0.78,13-2099.01,0.1543,53.4,2026-11-06 to 2029-11-06,descriptive_risk_index,305
+4788,Financial Analyst/Planner Specialist,Finance & procurement,active,5.18,False,,0,0,False,0.78,13-2099.01,0.1543,53.4,2026-11-06 to 2029-11-06,descriptive_risk_index,306
+4789,Financial Analyst/Planner Supervisor,Finance & procurement,active,5.18,False,,0,0,False,0.78,13-2099.01,0.1543,53.4,2026-11-06 to 2029-11-06,descriptive_risk_index,307
+0307,Procurement Officer Assistant,Finance & procurement,active,10.14,False,,0,0,False,0.531,13-1023.00,0.1996,53.3,2026-11-06 to 2029-11-06,descriptive_risk_index,308
+4684,Healthcare Technician,Health & medical,active,8.6,False,,0,0,False,0.577,31-1131.00,0.1366,53.3,2026-11-06 to 2029-11-06,descriptive_risk_index,309
+4816,Health Care Reimbursement Analyst II,Health & medical,active,4.35,False,,0,0,False,0.852,11-3031.00,0.0757,53.2,2026-11-06 to 2029-11-06,descriptive_risk_index,310
+1164,Police Telecommunicator,Protective services,active,7.38,False,,0,0,False,0.627,43-5031.00,0.316,53.1,2026-11-06 to 2029-11-06,descriptive_risk_index,311
+3984,Instrument and Measurement Technician II,Science & research support,active,4.35,False,,0,0,False,0.838,17-3028.00,0.1728,52.9,2026-11-06 to 2029-11-06,descriptive_risk_index,312
+3985,Instrument and Measurement Technician III,Science & research support,active,4.35,False,,0,0,False,0.838,17-3028.00,0.1728,52.9,2026-11-06 to 2029-11-06,descriptive_risk_index,313
+3999,Computed Tomography (CT) Technologist,Science & research support,active,6.26,False,,0,0,False,0.672,29-2031.00,0.1207,52.9,2026-11-06 to 2029-11-06,descriptive_risk_index,314
+4084,Non-Invasive Cardiovascular Technologist,Health & medical,active,6.26,False,,0,0,False,0.672,29-2031.00,0.1096,52.9,2026-11-06 to 2029-11-06,descriptive_risk_index,315
+4561,Non-Invasive Cardiovascular Specialist,Health & medical,active,6.26,False,,0,0,False,0.672,29-2031.00,0.1096,52.9,2026-11-06 to 2029-11-06,descriptive_risk_index,316
+4771,Non-Invasive Cardiovascular Manager,Health & medical,active,6.26,False,,0,0,False,0.672,29-2031.00,0.1096,52.9,2026-11-06 to 2029-11-06,descriptive_risk_index,317
+2190,Interpreter for the Deaf and Hard of Hearing,Student & academic services,active,7.1,False,,0,0,False,0.62,27-3091.00,0.1637,52.5,2026-11-06 to 2029-11-06,descriptive_risk_index,318
+1365,Chief Instructional Media Systems Engineer,Student & academic services,active,7.31,False,,0,0,False,0.603,25-9031.00,0.1042,52.4,2026-11-06 to 2029-11-06,descriptive_risk_index,319
+5008,Deputy Chief,Management & administration,active,7.52,False,,0,0,False,0.583,33-1012.00,0.0645,52.3,2026-11-06 to 2029-11-06,descriptive_risk_index,320
+3855,Health Information Specialist,Clerical & office support,active,5.35,False,,0,0,False,0.709,15-1211.01,0.1895,52.1,2026-11-06 to 2029-11-06,descriptive_risk_index,321
+1841,Aircraft Shop Sub-Foreman,Skilled trades,active,4.35,False,,0,0,False,0.802,53-6051.01,0.1182,52.0,2026-11-06 to 2029-11-06,descriptive_risk_index,322
+2015,Grounds Worker,"Facilities, grounds & custodial",active,4.06,True,preliminary,0,1,False,0.78,37-3011.00,0.2052,52.0,2026-11-06 to 2029-11-06,descriptive_risk_index,323
+2040,Aircraft Maintenance Mechanic Helper,Skilled trades,active,4.35,False,,0,0,False,0.802,53-6051.01,0.1182,52.0,2026-11-06 to 2029-11-06,descriptive_risk_index,324
+3979,Histology Technician I,Health & medical,active,4.35,False,,0,0,False,0.804,29-2012.01,0.1282,52.0,2026-11-06 to 2029-11-06,descriptive_risk_index,325
+4072,Properties Technician,Science & research support,active,10.01,False,,0,0,False,0.49,51-1011.00,0.1429,52.0,2026-11-06 to 2029-11-06,descriptive_risk_index,326
+4529,Histology Technician II,Health & medical,active,4.35,False,,0,0,False,0.804,29-2012.01,0.1282,52.0,2026-11-06 to 2029-11-06,descriptive_risk_index,327
+3108,Museum Exhibits Preparator,"Library, museum & archives",active,4.35,False,,0,0,False,0.799,25-4013.00,0.111,51.9,2026-11-06 to 2029-11-06,descriptive_risk_index,328
+0262,Medical Laboratory Assistant I,Health & medical,active,4.35,False,,0,0,False,0.797,19-4031.00,0.1139,51.8,2026-11-06 to 2029-11-06,descriptive_risk_index,329
+1316,Broadcasting Engineer,"Communications, media & arts",active,4.65,False,,0,0,False,0.745,27-4012.00,0.0833,51.8,2026-11-06 to 2029-11-06,descriptive_risk_index,330
+1319,Chief Broadcasting Engineer,"Communications, media & arts",active,4.65,False,,0,0,False,0.745,27-4012.00,0.0833,51.8,2026-11-06 to 2029-11-06,descriptive_risk_index,331
+4058,Pharmacy Technician I,Health & medical,active,4.35,False,,0,0,False,0.794,31-9095.00,0.0766,51.8,2026-11-06 to 2029-11-06,descriptive_risk_index,332
+4094,Medical Laboratory Technician III,Health & medical,active,4.35,False,,0,0,False,0.797,19-4031.00,0.1139,51.8,2026-11-06 to 2029-11-06,descriptive_risk_index,333
+1600,Building Service Foreman,Skilled trades,active,9.53,False,,0,0,False,0.49,51-1011.00,0.1504,51.6,2026-11-06 to 2029-11-06,descriptive_risk_index,334
+2210,Construction Laborer,"Facilities, grounds & custodial",active,4.35,False,,0,0,False,0.786,47-2061.00,0.0673,51.6,2026-11-06 to 2029-11-06,descriptive_risk_index,335
+0170,Scientific Artist,"Communications, media & arts",active,4.35,False,,0,0,False,0.783,27-1013.00,0.0925,51.5,2026-11-06 to 2029-11-06,descriptive_risk_index,336
+1031,Assistant Technical Director,Management & administration,active,4.56,False,,0,0,False,0.739,27-2012.05,0.0774,51.4,2026-11-06 to 2029-11-06,descriptive_risk_index,337
+2473,Manager of Photographic Laboratory,"Communications, media & arts",active,4.35,False,,0,0,False,0.781,51-9151.00,0.1093,51.4,2026-11-06 to 2029-11-06,descriptive_risk_index,338
+2787,Police Corporal,Protective services,active,6.72,False,,0,0,False,0.593,33-3051.00,0.1142,51.4,2026-11-06 to 2029-11-06,descriptive_risk_index,339
+3086,Police Officer,Protective services,active,6.72,False,,0,0,False,0.593,33-3051.00,0.1142,51.4,2026-11-06 to 2029-11-06,descriptive_risk_index,340
+2378,Facility Operations Coordinator,"Facilities, grounds & custodial",active,6.02,False,,0,0,False,0.638,11-1021.00,0.0616,51.3,2026-11-06 to 2029-11-06,descriptive_risk_index,341
+4686,Media Writer/Producer/Announcer II,"Communications, media & arts",active,8.56,False,,0,0,False,0.5,,0.1994,51.3,2026-11-06 to 2029-11-06,descriptive_risk_index,342
+4621,Senior Behavioral Interventionist,Other,active,4.43,False,,0,0,False,0.748,31-1133.00,0.0704,51.2,2026-11-06 to 2029-11-06,descriptive_risk_index,343
+4806,Test Specialist,Management & administration,active,4.35,False,,0,0,False,0.772,17-3021.00,0.1052,51.2,2026-11-06 to 2029-11-06,descriptive_risk_index,344
+3076,Police Lieutenant,Protective services,active,6.72,False,,0,0,False,0.583,33-1012.00,0.1018,51.1,2026-11-06 to 2029-11-06,descriptive_risk_index,345
+3081,Police Sergeant,Protective services,active,6.72,False,,0,0,False,0.583,33-1012.00,0.1426,51.1,2026-11-06 to 2029-11-06,descriptive_risk_index,346
+4000,Computed Tomography (CT) Specialist,Management & administration,active,6.26,False,,0,0,False,0.599,29-2034.00,0.1325,51.1,2026-11-06 to 2029-11-06,descriptive_risk_index,347
+4001,Computed Tomography (CT) Manager,Management & administration,active,6.26,False,,0,0,False,0.599,29-2034.00,0.0674,51.1,2026-11-06 to 2029-11-06,descriptive_risk_index,348
+2379,Facility Operations Specialist,"Facilities, grounds & custodial",active,6.02,False,,0,0,False,0.627,41-1011.00,0.0686,51.0,2026-11-06 to 2029-11-06,descriptive_risk_index,349
+2227,Maintenance Laborer,"Facilities, grounds & custodial",active,4.06,True,preliminary,0,1,False,0.738,37-3013.00,0.3353,50.9,2026-11-06 to 2029-11-06,descriptive_risk_index,350
+3969,Emergency Medical Technician,Health & medical,active,4.65,False,,0,0,False,0.704,53-3011.00,0.0749,50.8,2026-11-06 to 2029-11-06,descriptive_risk_index,351
+0982,Curator of Art I,"Library, museum & archives",active,4.35,False,,0,0,False,0.75,25-4012.00,0.1361,50.7,2026-11-06 to 2029-11-06,descriptive_risk_index,352
+0983,Curator of Art II,"Library, museum & archives",active,4.35,False,,0,0,False,0.75,25-4012.00,0.1361,50.7,2026-11-06 to 2029-11-06,descriptive_risk_index,353
+0984,Curator of Art III,"Library, museum & archives",active,4.35,False,,0,0,False,0.75,25-4012.00,0.1361,50.7,2026-11-06 to 2029-11-06,descriptive_risk_index,354
+1342,Assistant Chief Instructional Media Systems Engineer,Student & academic services,active,7.31,False,,0,0,False,0.535,25-9042.00,0.1222,50.7,2026-11-06 to 2029-11-06,descriptive_risk_index,355
+1427,Construction Project Coordinator I,Management & administration,active,5.76,False,,0,0,False,0.635,11-9021.00,0.0521,50.7,2026-11-06 to 2029-11-06,descriptive_risk_index,356
+3983,Instrument and Measurement Technician I,Science & research support,active,4.35,False,,0,0,False,0.751,49-9012.00,0.1051,50.7,2026-11-06 to 2029-11-06,descriptive_risk_index,357
+4631,Curator of Exhibits,"Library, museum & archives",active,4.35,False,,0,0,False,0.75,25-4012.00,0.201,50.7,2026-11-06 to 2029-11-06,descriptive_risk_index,358
+4650,Construction Project Coordinator II,Management & administration,active,5.76,False,,0,0,False,0.635,11-9021.00,0.0451,50.7,2026-11-06 to 2029-11-06,descriptive_risk_index,359
+3856,Health Information Technician,Clerical & office support,active,5.35,False,,0,0,False,0.648,29-2072.00,0.0925,50.6,2026-11-06 to 2029-11-06,descriptive_risk_index,360
+5012,Construction Project Manager,Management & administration,active,5.6,False,,0,0,False,0.635,11-9021.00,0.0391,50.6,2026-11-06 to 2029-11-06,descriptive_risk_index,361
+2997,Television Broadcast Equipment Operator,"Communications, media & arts",active,4.35,False,,0,0,False,0.745,27-4012.00,0.1012,50.5,2026-11-06 to 2029-11-06,descriptive_risk_index,362
+3330,Construction Superintendent,Management & administration,active,5.48,False,,0,0,False,0.635,11-9021.00,0.0292,50.4,2026-11-06 to 2029-11-06,descriptive_risk_index,363
+2560,Airport Mechanic,Skilled trades,active,4.35,False,,0,0,False,0.735,53-2022.00,0.1213,50.3,2026-11-06 to 2029-11-06,descriptive_risk_index,364
+3037,Photographer,"Communications, media & arts",active,4.35,False,,0,0,False,0.735,27-4021.00,0.0716,50.3,2026-11-06 to 2029-11-06,descriptive_risk_index,365
+3038,Senior Photographer,"Communications, media & arts",active,4.35,False,,0,0,False,0.735,27-4021.00,0.0716,50.3,2026-11-06 to 2029-11-06,descriptive_risk_index,366
+3854,Health Information Administrator,Clerical & office support,active,5.35,False,,0,0,False,0.637,11-3021.00,0.1475,50.3,2026-11-06 to 2029-11-06,descriptive_risk_index,367
+4730,Child Care Resource Specialist,Management & administration,active,4.35,False,,0,0,False,0.719,21-1021.00,0.0901,50.3,2026-11-06 to 2029-11-06,descriptive_risk_index,368
+0014,Public Health Response Specialist,Health & medical,active,4.65,False,,0,0,False,0.68,21-1091.00,0.0805,50.2,2026-11-06 to 2029-11-06,descriptive_risk_index,369
+2375,Business Manager,Management & administration,active,5.31,False,,0,0,False,0.638,43-1011.00,0.0427,50.2,2026-11-06 to 2029-11-06,descriptive_risk_index,370
+2558,Junior Airport Mechanic,Skilled trades,active,4.35,False,,0,0,False,0.727,37-2011.00,0.1098,50.1,2026-11-06 to 2029-11-06,descriptive_risk_index,371
+4008,Radiologic Technologist,Health & medical,active,5.97,False,,0,0,False,0.599,29-2034.00,0.1502,50.1,2026-11-06 to 2029-11-06,descriptive_risk_index,372
+4009,Radiologic Technologist Specialist,Health & medical,active,5.97,False,,0,0,False,0.599,29-2034.00,0.1887,50.1,2026-11-06 to 2029-11-06,descriptive_risk_index,373
+4014,Radiologic Technologist Manager,Health & medical,active,5.97,False,,0,0,False,0.599,29-2034.00,0.1502,50.1,2026-11-06 to 2029-11-06,descriptive_risk_index,374
+5010,Business/Administrative Associate,Management & administration,active,5.18,False,,0,0,False,0.643,43-6011.00,0.0508,50.0,2026-11-06 to 2029-11-06,descriptive_risk_index,375
+2791,Radiation Safety Officer,Management & administration,active,4.35,False,,0,0,False,0.718,29-2033.00,0.0631,49.9,2026-11-06 to 2029-11-06,descriptive_risk_index,376
+2793,Safety/Environmental Compliance Specialist,Management & administration,active,7.1,False,,0,0,False,0.518,17-2081.00,0.07,49.9,2026-11-06 to 2029-11-06,descriptive_risk_index,377
+4697,Client Relations Representative I,Management & administration,active,4.35,False,,0,0,False,0.719,21-1021.00,0.09,49.9,2026-11-06 to 2029-11-06,descriptive_risk_index,378
+5013,Safety/Environmental Compliance Associate,Management & administration,active,7.1,False,,0,0,False,0.518,17-2081.00,0.07,49.9,2026-11-06 to 2029-11-06,descriptive_risk_index,379
+4666,Animal Imaging Technologist,Science & research support,active,4.35,False,,0,0,False,0.695,29-2035.00,0.0653,49.7,2026-11-06 to 2029-11-06,descriptive_risk_index,380
+0274,Paralegal Assistant,Management & administration,active,4.35,False,,0,0,False,0.709,23-2011.00,0.1005,49.6,2026-11-06 to 2029-11-06,descriptive_risk_index,381
+4700,Client Relations Representative IV,Management & administration,active,4.35,False,,0,0,False,0.71,43-4051.00,0.0508,49.6,2026-11-06 to 2029-11-06,descriptive_risk_index,382
+4807,Customer Service Assistant,Management & administration,active,4.35,False,,0,0,False,0.71,43-4051.00,0.0792,49.6,2026-11-06 to 2029-11-06,descriptive_risk_index,383
+4808,Customer Service Representative,Management & administration,active,4.35,False,,0,0,False,0.71,43-4051.00,0.0792,49.6,2026-11-06 to 2029-11-06,descriptive_risk_index,384
+4809,Customer Service Specialist,Management & administration,active,4.35,False,,0,0,False,0.71,43-4051.00,0.0792,49.6,2026-11-06 to 2029-11-06,descriptive_risk_index,385
+2753,Admissions and Records Associate,Student & academic services,active,5.56,False,,0,0,False,0.596,11-9033.00,0.0647,49.5,2026-11-06 to 2029-11-06,descriptive_risk_index,386
+4093,Materials Technologist I,Science & research support,active,4.35,False,,0,0,False,0.702,49-9061.00,0.108,49.5,2026-11-06 to 2029-11-06,descriptive_risk_index,387
+1019,Dietitian Nutritionist Specialist,Health & medical,active,6.39,False,,0,0,False,0.525,29-1031.00,0.143,49.4,2026-11-06 to 2029-11-06,descriptive_risk_index,388
+1020,Dietitian Coordinator,Health & medical,active,6.39,False,,0,0,False,0.525,29-1031.00,0.143,49.4,2026-11-06 to 2029-11-06,descriptive_risk_index,389
+2408,Laboratory Manager,Science & research support,active,5.89,False,,0,0,False,0.581,11-9111.00,0.0606,49.4,2026-11-06 to 2029-11-06,descriptive_risk_index,390
+4773,Program Services Aide,Management & administration,active,4.35,False,,0,0,False,0.7,21-1093.00,0.0883,49.4,2026-11-06 to 2029-11-06,descriptive_risk_index,391
+4900,Library Clerk,Clerical & office support,active,4.35,True,proposal,0,0,False,0.701,25-4031.00,0.0286,49.4,2026-11-06 to 2029-11-06,descriptive_risk_index,392
+4901,Library Assistant,Clerical & office support,active,4.35,True,proposal,0,0,False,0.701,25-4031.00,0.0316,49.4,2026-11-06 to 2029-11-06,descriptive_risk_index,393
+4902,Library Specialist,"Library, museum & archives",active,4.35,True,proposal,0,0,False,0.701,25-4031.00,0.0675,49.4,2026-11-06 to 2029-11-06,descriptive_risk_index,394
+4904,Library Operations Associate,"Library, museum & archives",active,4.35,True,proposal,0,0,False,0.701,25-4031.00,0.0743,49.4,2026-11-06 to 2029-11-06,descriptive_risk_index,395
+2219,Transporter I,Health & medical,active,4.35,False,,0,0,False,0.697,31-1132.00,0.1154,49.3,2026-11-06 to 2029-11-06,descriptive_risk_index,396
+2270,Flight Line Attendant I,"Facilities, grounds & custodial",active,4.35,False,,0,0,False,0.697,53-6031.00,0.0896,49.3,2026-11-06 to 2029-11-06,descriptive_risk_index,397
+2271,Flight Line Attendant II,"Facilities, grounds & custodial",active,4.35,False,,0,0,False,0.697,53-6031.00,0.0896,49.3,2026-11-06 to 2029-11-06,descriptive_risk_index,398
+3617,Television Master Control Room Supervisor,"Communications, media & arts",active,4.35,False,,0,0,False,0.695,51-8011.00,0.1476,49.3,2026-11-06 to 2029-11-06,descriptive_risk_index,399
+3851,Accounting Assistant,Finance & procurement,active,4.81,True,preliminary,0,0,False,0.624,43-3031.00,0.0799,49.3,2026-11-06 to 2029-11-06,descriptive_risk_index,400
+4651,Accounting Specialist,Finance & procurement,active,4.81,True,preliminary,0,0,False,0.624,43-3031.00,0.0799,49.3,2026-11-06 to 2029-11-06,descriptive_risk_index,401
+0270,Natural Science Technical Assistant,Science & research support,active,4.35,False,,0,0,False,0.692,19-4021.00,0.0887,49.2,2026-11-06 to 2029-11-06,descriptive_risk_index,402
+0937,Television Program/Operations Coordinator,"Communications, media & arts",active,4.35,False,,0,0,False,0.692,27-2012.03,0.1564,49.2,2026-11-06 to 2029-11-06,descriptive_risk_index,403
+2510,Multimedia Assistant,"Communications, media & arts",active,4.35,False,,0,0,False,0.693,43-4121.00,0.0872,49.2,2026-11-06 to 2029-11-06,descriptive_risk_index,404
+3852,Accounting Officer,Finance & procurement,active,4.81,True,preliminary,0,0,False,0.623,13-2011.00,0.0998,49.2,2026-11-06 to 2029-11-06,descriptive_risk_index,405
+4534,Television Traffic and Continuity Supervisor,"Communications, media & arts",active,4.35,False,,0,0,False,0.692,27-2012.03,0.1564,49.2,2026-11-06 to 2029-11-06,descriptive_risk_index,406
+4671,Broadcast News Specialist,"Communications, media & arts",active,4.35,False,,0,0,False,0.692,27-2012.03,0.1564,49.2,2026-11-06 to 2029-11-06,descriptive_risk_index,407
+0331,Special Education Paraprofessional,Other,active,4.81,False,,0,0,False,0.617,25-2051.00,0.069,49.1,2026-11-06 to 2029-11-06,descriptive_risk_index,408
+2755,Admissions and Records Representative,Student & academic services,active,5.31,False,,0,0,False,0.596,11-9033.00,0.1644,49.1,2026-11-06 to 2029-11-06,descriptive_risk_index,409
+2756,Admissions and Records Officer,Student & academic services,active,5.31,False,,0,0,False,0.596,11-9033.00,0.1644,49.1,2026-11-06 to 2029-11-06,descriptive_risk_index,410
+2757,Admissions and Records Coordinator,Student & academic services,active,5.31,False,,0,0,False,0.596,11-9033.00,0.1097,49.1,2026-11-06 to 2029-11-06,descriptive_risk_index,411
+1007,Interior Decorator I,Other,active,4.35,False,,0,0,False,0.68,27-1025.00,0.0612,48.9,2026-11-06 to 2029-11-06,descriptive_risk_index,412
+1008,Interior Decorator II,Other,active,4.35,False,,0,0,False,0.68,27-1025.00,0.0612,48.9,2026-11-06 to 2029-11-06,descriptive_risk_index,413
+1030,Technical Director,Management & administration,active,4.56,False,,0,0,False,0.637,11-3021.00,0.0803,48.9,2026-11-06 to 2029-11-06,descriptive_risk_index,414
+2374,Senior Business Manager,Management & administration,active,5.31,False,,0,0,False,0.578,11-3012.00,0.0533,48.7,2026-11-06 to 2029-11-06,descriptive_risk_index,415
+3936,Electrocardiographic Technician,Health & medical,active,4.35,False,,0,0,False,0.672,29-2031.00,0.1233,48.7,2026-11-06 to 2029-11-06,descriptive_risk_index,416
+3937,Supervising Electrocardiographic Technician,Health & medical,active,4.35,False,,0,0,False,0.672,29-2031.00,0.1233,48.7,2026-11-06 to 2029-11-06,descriptive_risk_index,417
+4774,Program Services Specialist,Management & administration,active,4.35,False,,0,0,False,0.672,21-1014.00,0.0555,48.7,2026-11-06 to 2029-11-06,descriptive_risk_index,418
+0254,Medical Laboratory Assistant II,Health & medical,active,4.35,False,,0,0,False,0.666,29-2012.00,0.0816,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,419
+0255,Medical Laboratory Technician I,Health & medical,active,4.35,False,,0,0,False,0.666,29-2012.00,0.0816,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,420
+0256,Medical Laboratory Technician II,Health & medical,active,4.35,False,,0,0,False,0.666,29-2012.00,0.0816,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,421
+3990,Environmental Health & Safety Technician III,Health & medical,active,4.35,False,,0,0,False,0.669,19-4042.00,0.2071,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,422
+4511,Equipment Specialist I,Management & administration,active,4.35,False,,0,0,False,0.667,49-9062.00,0.1031,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,423
+4512,Equipment Specialist II,Management & administration,active,4.35,False,,0,0,False,0.667,49-9062.00,0.1031,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,424
+4513,Equipment Specialist III,Management & administration,active,4.35,False,,0,0,False,0.667,49-9062.00,0.1031,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,425
+4533,Medical Laboratory Assistant III,Health & medical,active,4.35,False,,0,0,False,0.666,29-2012.00,0.0816,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,426
+5011,Financial Aid Associate,Finance & procurement,active,6.01,False,,0,0,False,0.537,13-2072.00,0.1238,48.6,2026-11-06 to 2029-11-06,descriptive_risk_index,427
+3574,Radio Station Production Supervisor,"Communications, media & arts",active,4.35,False,,0,0,False,0.659,27-2012.00,0.1365,48.4,2026-11-06 to 2029-11-06,descriptive_risk_index,428
+3666,Supervisor of Clinical Pathology Laboratory,Health & medical,active,4.35,False,,0,0,False,0.66,29-2011.00,0.0749,48.4,2026-11-06 to 2029-11-06,descriptive_risk_index,429
+4734,Materials Technologist II,Science & research support,active,4.35,False,,0,0,False,0.66,29-2011.00,0.0951,48.4,2026-11-06 to 2029-11-06,descriptive_risk_index,430
+1804,Sheet Metal Foreman,Skilled trades,active,4.52,False,,0,0,False,0.62,47-1011.00,0.1811,48.3,2026-11-06 to 2029-11-06,descriptive_risk_index,431
+1938,Sheet Metal Sub-Foreman,Skilled trades,active,4.52,False,,0,0,False,0.62,47-1011.00,0.1811,48.3,2026-11-06 to 2029-11-06,descriptive_risk_index,432
+4059,Pharmacy Technician II,Health & medical,active,4.35,False,,0,0,False,0.657,29-2052.00,0.1526,48.3,2026-11-06 to 2029-11-06,descriptive_risk_index,433
+4060,Pharmacy Technician III,Health & medical,active,4.35,False,,0,0,False,0.657,29-2052.00,0.1526,48.3,2026-11-06 to 2029-11-06,descriptive_risk_index,434
+0099,Physical Therapy Aide,Health & medical,active,4.35,False,,0,0,False,0.654,31-2022.00,0.072,48.2,2026-11-06 to 2029-11-06,descriptive_risk_index,435
+1981,Grounds Gardener,"Facilities, grounds & custodial",active,4.06,True,preliminary,1,1,False,0.712,45-2092.00,0.2483,48.2,2026-11-06 to 2029-11-06,descriptive_risk_index,436
+1982,Assistant Grounds Gardener,"Facilities, grounds & custodial",active,4.06,True,preliminary,1,1,False,0.712,45-2092.00,0.2483,48.2,2026-11-06 to 2029-11-06,descriptive_risk_index,437
+1010,Museum Exhibits Designer,"Library, museum & archives",active,4.35,False,,0,0,False,0.644,27-1027.00,0.2495,48.0,2026-11-06 to 2029-11-06,descriptive_risk_index,438
+5020,Human Resource Associate,Human resources,active,7.27,True,proposal,0,0,False,0.431,11-3121.00,0.1221,48.0,2026-11-06 to 2029-11-06,descriptive_risk_index,439
+1568,Aircraft Shop Foreman,Skilled trades,active,4.35,False,,0,0,False,0.641,49-1011.00,0.1096,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,440
+2503,Multimedia Communications Associate,"Communications, media & arts",active,4.35,False,,0,0,False,0.64,25-4022.00,0.0744,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,441
+2511,Multimedia Operator,"Communications, media & arts",active,4.35,False,,0,0,False,0.64,25-4022.00,0.0889,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,442
+2512,Multimedia Technician,"Communications, media & arts",active,4.35,False,,0,0,False,0.64,25-4022.00,0.0889,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,443
+2513,Multimedia Supervisor,"Communications, media & arts",active,4.35,False,,0,0,False,0.64,25-4022.00,0.0442,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,444
+3619,Technical Service Supervisor,Management & administration,active,4.35,False,,0,0,False,0.641,49-1011.00,0.0992,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,445
+4273,Sheet Metal Worker,Skilled trades,active,4.52,False,,0,0,False,0.6,47-2211.00,0.1511,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,446
+4620,Behavioral Interventionist,Other,active,4.43,False,,0,0,False,0.617,25-2051.00,0.083,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,447
+4675,Curator of Anthropology I,"Library, museum & archives",active,4.35,False,,0,0,False,0.641,19-3091.00,0.1553,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,448
+4676,Curator of Anthropology II,"Library, museum & archives",active,4.35,False,,0,0,False,0.641,19-3091.00,0.1553,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,449
+4677,Curator of Anthropology III,"Library, museum & archives",active,4.35,False,,0,0,False,0.641,19-3091.00,0.1553,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,450
+4903,Senior Library Specialist,"Library, museum & archives",active,4.35,True,proposal,0,0,False,0.64,25-4022.00,0.0935,47.9,2026-11-06 to 2029-11-06,descriptive_risk_index,451
+1620,Construction Laborer Foreman,Skilled trades,active,4.35,False,,0,0,False,0.635,11-9021.00,0.0809,47.8,2026-11-06 to 2029-11-06,descriptive_risk_index,452
+1860,Construction Laborer Sub-Foreman,Skilled trades,active,4.35,False,,0,0,False,0.635,11-9021.00,0.0809,47.8,2026-11-06 to 2029-11-06,descriptive_risk_index,453
+3326,Architectural Superintendent,Management & administration,active,4.35,False,,0,0,False,0.635,11-9021.00,0.0636,47.8,2026-11-06 to 2029-11-06,descriptive_risk_index,454
+3334,Electrical Construction Superintendent,Management & administration,active,4.35,False,,0,0,False,0.635,11-9021.00,0.0636,47.8,2026-11-06 to 2029-11-06,descriptive_risk_index,455
+3338,Mechanical Construction Superintendent,Skilled trades,active,4.35,False,,0,0,False,0.635,11-9021.00,0.0928,47.8,2026-11-06 to 2029-11-06,descriptive_risk_index,456
+4812,Benefits Officer,Human resources,active,4.35,False,,0,0,False,0.638,43-4161.00,0.1125,47.8,2026-11-06 to 2029-11-06,descriptive_risk_index,457
+0070,Nutrition Assistant,Health & medical,active,4.35,False,,0,0,False,0.613,29-2051.00,0.0653,47.7,2026-11-06 to 2029-11-06,descriptive_risk_index,458
+2474,Assistant Manager of Photographic Laboratory,"Communications, media & arts",active,4.35,False,,0,0,False,0.614,19-4043.00,0.1267,47.7,2026-11-06 to 2029-11-06,descriptive_risk_index,459
+3988,Environmental Health & Safety Technician I,Health & medical,active,4.35,False,,0,0,False,0.63,19-5011.00,0.155,47.7,2026-11-06 to 2029-11-06,descriptive_risk_index,460
+4728,University Budget Officer,Finance & procurement,active,4.52,False,,0,0,False,0.596,11-9033.00,0.091,47.7,2026-11-06 to 2029-11-06,descriptive_risk_index,461
+3878,Retail Supervisor,Management & administration,active,4.35,False,,0,0,False,0.627,41-1011.00,0.0818,47.6,2026-11-06 to 2029-11-06,descriptive_risk_index,462
+5014,Cinematographer/Creative Video Producer,Other,active,5.97,False,,0,0,False,0.5,,0.0613,47.6,2026-11-06 to 2029-11-06,descriptive_risk_index,463
+0010,Accountant I,Finance & procurement,active,4.35,False,,0,0,False,0.623,13-2011.00,0.0961,47.5,2026-11-06 to 2029-11-06,descriptive_risk_index,464
+0011,Accountant II,Finance & procurement,active,4.35,False,,0,0,False,0.623,13-2011.00,0.0961,47.5,2026-11-06 to 2029-11-06,descriptive_risk_index,465
+0012,Accountant III,Finance & procurement,active,4.35,False,,0,0,False,0.623,13-2011.00,0.0961,47.5,2026-11-06 to 2029-11-06,descriptive_risk_index,466
+4257,Maintenance Worker,"Facilities, grounds & custodial",active,4.06,True,preliminary,0,1,False,0.683,49-9071.00,0.3143,47.5,2026-11-06 to 2029-11-06,descriptive_risk_index,467
+4280,Maintenance Repair/Worker,"Facilities, grounds & custodial",active,4.06,True,preliminary,1,1,False,0.683,49-9071.00,0.2648,47.5,2026-11-06 to 2029-11-06,descriptive_risk_index,468
+0013,Bone Density Technician,Science & research support,active,4.35,False,,0,0,False,0.599,29-2034.00,0.1085,47.3,2026-11-06 to 2029-11-06,descriptive_risk_index,469
+2135,Human Resource Representative,Human resources,active,4.35,False,,0,0,False,0.618,13-1071.00,0.1324,47.3,2026-11-06 to 2029-11-06,descriptive_risk_index,470
+2136,Human Resource Officer,Human resources,active,4.35,False,,0,0,False,0.618,13-1071.00,0.1671,47.3,2026-11-06 to 2029-11-06,descriptive_risk_index,471
+4665,Animal Imaging Technician,Science & research support,active,4.35,False,,0,0,False,0.599,29-2034.00,0.0708,47.3,2026-11-06 to 2029-11-06,descriptive_risk_index,472
+1188,Draftsman,Other,active,4.35,False,,0,0,False,0.604,17-3011.00,0.0578,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,473
+1194,Architectural Draftsman I,Other,active,4.35,False,,0,0,False,0.604,17-3011.00,0.0578,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,474
+1195,Architectural Draftsman II,Other,active,4.35,False,,0,0,False,0.604,17-3011.00,0.0578,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,475
+1198,Chief Architectural Draftsman,Management & administration,active,4.35,False,,0,0,False,0.604,17-3011.00,0.0622,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,476
+1212,Engineering Draftsman I,Other,active,4.35,False,,0,0,False,0.604,17-3011.00,0.0578,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,477
+1213,Engineering Draftsman II,Other,active,4.35,False,,0,0,False,0.604,17-3011.00,0.0578,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,478
+1216,Chief Engineering Draftsman,Management & administration,active,4.35,False,,0,0,False,0.604,17-3011.00,0.0622,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,479
+4739,Budget Analyst,Finance & procurement,active,4.52,False,,0,0,False,0.565,13-2031.00,0.1613,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,480
+4741,Senior Budget Analyst,Finance & procurement,active,4.52,False,,0,0,False,0.565,13-2031.00,0.1075,47.0,2026-11-06 to 2029-11-06,descriptive_risk_index,481
+4602,Benefits Representative,Human resources,active,4.35,False,,0,0,False,0.601,13-1141.00,0.097,46.9,2026-11-06 to 2029-11-06,descriptive_risk_index,482
+4815,Health Care Reimbursement Analyst I,Health & medical,active,4.35,False,,0,0,False,0.601,13-1141.00,0.0843,46.9,2026-11-06 to 2029-11-06,descriptive_risk_index,483
+3282,Collection Representative,Finance & procurement,active,4.35,False,,0,0,False,0.579,43-3011.00,0.1572,46.4,2026-11-06 to 2029-11-06,descriptive_risk_index,484
+3283,Collection Specialist,Finance & procurement,active,4.35,False,,0,0,False,0.579,43-3011.00,0.1572,46.4,2026-11-06 to 2029-11-06,descriptive_risk_index,485
+4547,Medical Assistant,Health & medical,active,4.35,False,,0,0,False,0.579,31-9092.00,0.0548,46.4,2026-11-06 to 2029-11-06,descriptive_risk_index,486
+0198,Dental Assistant III,Health & medical,active,4.72,False,,0,0,False,0.504,31-9091.00,0.0877,46.0,2026-11-06 to 2029-11-06,descriptive_risk_index,487
+0199,Dental Assistant IV,Health & medical,active,4.72,False,,0,0,False,0.504,31-9091.00,0.0877,46.0,2026-11-06 to 2029-11-06,descriptive_risk_index,488
+2150,Dental Hygienist,Health & medical,active,4.35,False,,0,0,False,0.547,29-1292.00,0.0536,46.0,2026-11-06 to 2029-11-06,descriptive_risk_index,489
+0325,Research Engineering Assistant,Science & research support,active,4.35,False,,0,0,False,0.559,17-2031.00,0.1039,45.9,2026-11-06 to 2029-11-06,descriptive_risk_index,490
+4663,Building Automation Technician I,Science & research support,active,4.35,False,,0,0,False,0.553,17-2199.03,0.1395,45.7,2026-11-06 to 2029-11-06,descriptive_risk_index,491
+4664,Building Automation Technician II,Science & research support,active,4.35,False,,0,0,False,0.553,17-2199.03,0.1395,45.7,2026-11-06 to 2029-11-06,descriptive_risk_index,492
+4517,Teacher Aide,Other,active,4.35,False,,0,0,False,0.535,25-9042.00,0.0881,45.3,2026-11-06 to 2029-11-06,descriptive_risk_index,493
+4698,Client Relations Representative II,Management & administration,active,4.35,False,,0,0,False,0.537,13-2072.00,0.0875,45.3,2026-11-06 to 2029-11-06,descriptive_risk_index,494
+0936,Television Production Coordinator,"Communications, media & arts",active,4.35,False,,0,0,False,0.524,43-5061.00,0.132,45.0,2026-11-06 to 2029-11-06,descriptive_risk_index,495
+4151,Transporter II,Health & medical,active,4.35,False,,0,0,False,0.523,53-3053.00,0.1039,45.0,2026-11-06 to 2029-11-06,descriptive_risk_index,496
+4603,Benefits Counselor,Human resources,active,4.35,False,,0,0,False,0.521,11-3111.00,0.1032,44.9,2026-11-06 to 2029-11-06,descriptive_risk_index,497
+4604,Benefits Service Supervisor,Human resources,active,4.35,False,,0,0,False,0.521,11-3111.00,0.1032,44.9,2026-11-06 to 2029-11-06,descriptive_risk_index,498
+4817,Health Care Reimbursement Analyst III,Health & medical,active,4.35,False,,0,0,False,0.521,11-3111.00,0.0898,44.9,2026-11-06 to 2029-11-06,descriptive_risk_index,499
+2272,Chief Flight Line Attendant,"Facilities, grounds & custodial",active,4.35,False,,0,0,False,0.512,53-2012.00,0.0769,44.7,2026-11-06 to 2029-11-06,descriptive_risk_index,500
+3989,Environmental Health & Safety Technician II,Health & medical,active,4.35,False,,0,0,False,0.51,11-9199.02,0.146,44.7,2026-11-06 to 2029-11-06,descriptive_risk_index,501
+0285,Physical Science Staff Assistant,Science & research support,active,4.35,False,,0,0,False,0.504,25-1054.00,0.0644,44.5,2026-11-06 to 2029-11-06,descriptive_risk_index,502
+0290,Physical Science Technical Assistant,Science & research support,active,4.35,False,,0,0,False,0.504,25-1054.00,0.0849,44.5,2026-11-06 to 2029-11-06,descriptive_risk_index,503
+4699,Client Relations Representative III,Management & administration,active,4.35,False,,0,0,False,0.5,,0.0998,44.4,2026-11-06 to 2029-11-06,descriptive_risk_index,504
+4701,Client Relations Representative V,Management & administration,active,4.35,False,,0,0,False,0.5,,0.0498,44.4,2026-11-06 to 2029-11-06,descriptive_risk_index,505
+4746,Molecular Beam Epitaxy Facility Coordinator,"Facilities, grounds & custodial",active,4.35,False,,0,0,False,0.5,,0.1258,44.4,2026-11-06 to 2029-11-06,descriptive_risk_index,506
+4797,Intercollegiate Athletics Equipment Specialist,Management & administration,active,4.35,False,,0,0,False,0.5,,0.0998,44.4,2026-11-06 to 2029-11-06,descriptive_risk_index,507
+4832,Hemapheresis Technologist,Science & research support,active,4.35,False,,0,0,False,0.5,,0.1097,44.4,2026-11-06 to 2029-11-06,descriptive_risk_index,508
+0728,Executive Chef,Food & domestic services,active,4.35,False,,0,0,False,0.496,35-1011.00,0.0776,44.3,2026-11-06 to 2029-11-06,descriptive_risk_index,509
+2543,Master Aircraft and Aircraft Engine Mechanic,Skilled trades,active,4.35,False,,0,0,False,0.496,49-3011.00,0.1168,44.3,2026-11-06 to 2029-11-06,descriptive_risk_index,510
+2552,Senior Aircraft Maintenance Mechanic,Skilled trades,active,4.35,False,,0,0,False,0.496,49-3011.00,0.1168,44.3,2026-11-06 to 2029-11-06,descriptive_risk_index,511
+4795,Craft Shop Coordinator,Management & administration,active,4.35,False,,0,0,False,0.487,11-9032.00,0.0898,44.1,2026-11-06 to 2029-11-06,descriptive_risk_index,512
+1839,Maintenance Repair Foreperson,"Facilities, grounds & custodial",active,4.06,True,preliminary,1,1,False,0.544,49-9099.00,0.2489,44.0,2026-11-06 to 2029-11-06,descriptive_risk_index,513
+2152,Industrial Hygienist,Other,active,4.35,False,,0,0,False,0.479,17-2111.00,0.0665,43.9,2026-11-06 to 2029-11-06,descriptive_risk_index,514
+2153,Illustrator,Clerical & office support,active,4.19,False,,0,0,False,0.83,27-1024.00,0.093,43.8,2026-11-06 to 2029-11-06,descriptive_risk_index,515
+4120,Activity Therapist,Health & medical,active,4.35,False,,0,0,False,0.457,29-1129.02,0.1029,43.3,2026-11-06 to 2029-11-06,descriptive_risk_index,516
+1000,Cytotechnologist I,Science & research support,active,4.35,False,,0,0,False,0.445,29-2011.02,0.1104,43.0,2026-11-06 to 2029-11-06,descriptive_risk_index,517
+1001,Cytotechnologist II,Science & research support,active,4.35,False,,0,0,False,0.445,29-2011.02,0.1104,43.0,2026-11-06 to 2029-11-06,descriptive_risk_index,518
+0545,Main Desk Attendant,Clerical & office support,active,4.19,False,,0,0,False,0.778,41-2021.00,0.0803,42.5,2026-11-06 to 2029-11-06,descriptive_risk_index,519
+2980,Telephone Operator I,Clerical & office support,active,4.18,False,,0,0,False,0.809,43-2011.00,0.0959,42.3,2026-11-06 to 2029-11-06,descriptive_risk_index,520
+3287,Community Affairs Specialist II,Management & administration,active,4.18,False,,0,0,False,0.797,27-3031.00,0.0492,42.0,2026-11-06 to 2029-11-06,descriptive_risk_index,521
+4709,Image Processing Technician I,Clerical & office support,active,4.18,False,,0,0,False,0.798,43-9022.00,0.0734,42.0,2026-11-06 to 2029-11-06,descriptive_risk_index,522
+0764,Distribution Clerk,Clerical & office support,active,4.19,False,,0,0,False,0.752,43-9051.00,0.0701,41.8,2026-11-06 to 2029-11-06,descriptive_risk_index,523
+0238,Golf Course Pro-Shop Assistant,Clerical & office support,active,4.18,False,,0,0,False,0.786,39-3091.00,0.0771,41.7,2026-11-06 to 2029-11-06,descriptive_risk_index,524
+0500,Assembly Hall Attendant,"Facilities, grounds & custodial",active,3.93,True,preliminary,1,1,False,0.727,37-2011.00,0.2948,41.7,2026-11-06 to 2029-11-06,descriptive_risk_index,525
+3298,Assembly Hall Stagehand,"Communications, media & arts",active,3.93,True,preliminary,1,1,False,0.722,27-4015.00,0.307,41.6,2026-11-06 to 2029-11-06,descriptive_risk_index,526
+0784,Operations Clerk,Clerical & office support,active,4.19,False,,0,0,False,0.726,43-4011.00,0.0877,41.2,2026-11-06 to 2029-11-06,descriptive_risk_index,527
+2191,Senior Interpreter for the Deaf and Hard of Hearing,Student & academic services,active,4.18,False,,0,0,False,0.764,43-2021.00,0.0836,41.2,2026-11-06 to 2029-11-06,descriptive_risk_index,528
+2403,Golf Course Pro-Shop Manager,Management & administration,active,4.18,False,,0,0,False,0.755,37-1012.00,0.0537,41.0,2026-11-06 to 2029-11-06,descriptive_risk_index,529
+2458,Golf Course Grounds Superintendent,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.755,37-1012.00,0.0686,41.0,2026-11-06 to 2029-11-06,descriptive_risk_index,530
+3381,Superintendent of Grounds,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.755,37-1012.00,0.0686,41.0,2026-11-06 to 2029-11-06,descriptive_risk_index,531
+3382,Assistant Superintendent of Grounds,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.755,37-1012.00,0.0686,41.0,2026-11-06 to 2029-11-06,descriptive_risk_index,532
+3447,Buildings and Grounds Supervisor,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.755,37-1012.00,0.0686,41.0,2026-11-06 to 2029-11-06,descriptive_risk_index,533
+3448,Assistant Buildings and Grounds Supervisor,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.755,37-1012.00,0.0686,41.0,2026-11-06 to 2029-11-06,descriptive_risk_index,534
+4835,Assistant Golf Course Grounds Superintendent,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.755,37-1012.00,0.0686,41.0,2026-11-06 to 2029-11-06,descriptive_risk_index,535
+0845,Office Support Assistant,Clerical & office support,active,4.19,False,,0,0,False,0.712,43-9061.00,0.054,40.8,2026-11-06 to 2029-11-06,descriptive_risk_index,536
+1973,Agricultural Gardener,"Facilities, grounds & custodial",active,4.19,False,,0,0,False,0.712,45-2092.00,0.0566,40.8,2026-11-06 to 2029-11-06,descriptive_risk_index,537
+4520,Community Outreach Worker,Clerical & office support,active,4.19,False,,0,0,False,0.702,21-1094.00,0.0477,40.6,2026-11-06 to 2029-11-06,descriptive_risk_index,538
+2194,Survey Interviewer,Clerical & office support,active,4.18,False,,0,0,False,0.735,43-4111.00,0.0848,40.5,2026-11-06 to 2029-11-06,descriptive_risk_index,539
+4719,Recycling Coordinator,Management & administration,active,4.18,False,,0,0,False,0.736,53-1042.01,0.0522,40.5,2026-11-06 to 2029-11-06,descriptive_risk_index,540
+4755,Academic Contract Specialist,Clerical & office support,active,4.18,False,,0,0,False,0.735,25-3011.00,0.0568,40.5,2026-11-06 to 2029-11-06,descriptive_risk_index,541
+4555,Records Management Officer,Clerical & office support,active,4.18,False,,0,0,False,0.731,13-1111.00,0.1027,40.4,2026-11-06 to 2029-11-06,descriptive_risk_index,542
+3746,Campus Parking Manager,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.726,33-3041.00,0.0561,40.2,2026-11-06 to 2029-11-06,descriptive_risk_index,543
+3016,Microfilm Operator/Technician I,Clerical & office support,active,4.19,False,,0,0,False,0.684,43-9071.00,0.0791,40.1,2026-11-06 to 2029-11-06,descriptive_risk_index,544
+0048,Space Administrator I,Clerical & office support,active,4.18,False,,0,0,False,0.717,43-6014.00,0.1121,40.0,2026-11-06 to 2029-11-06,descriptive_risk_index,545
+0846,Office Support Associate,Clerical & office support,active,4.18,False,,0,0,False,0.712,43-9061.00,0.054,39.9,2026-11-06 to 2029-11-06,descriptive_risk_index,546
+1848,Building Service Sub-Foreman,Skilled trades,active,4.19,False,,0,0,False,0.674,37-1011.00,0.0638,39.9,2026-11-06 to 2029-11-06,descriptive_risk_index,547
+1979,Greenhouse Gardener I,Science & research support,active,4.18,False,,0,0,False,0.712,45-2092.00,0.0758,39.9,2026-11-06 to 2029-11-06,descriptive_risk_index,548
+1980,Greenhouse Gardener II,Science & research support,active,4.18,False,,0,0,False,0.712,45-2092.00,0.0758,39.9,2026-11-06 to 2029-11-06,descriptive_risk_index,549
+2758,Nursery Worker,Health & medical,active,4.18,False,,0,0,False,0.712,45-2092.00,0.1051,39.9,2026-11-06 to 2029-11-06,descriptive_risk_index,550
+3898,Crops Testing Technician,Student & academic services,active,4.18,False,,0,0,False,0.712,45-2092.00,0.0791,39.9,2026-11-06 to 2029-11-06,descriptive_risk_index,551
+4653,Crops Testing Specialist,Student & academic services,active,4.18,False,,0,0,False,0.712,45-2092.00,0.0675,39.9,2026-11-06 to 2029-11-06,descriptive_risk_index,552
+0694,Cashier I,Clerical & office support,active,4.18,False,,0,0,False,0.701,41-2011.00,0.0973,39.6,2026-11-06 to 2029-11-06,descriptive_risk_index,553
+0697,Cashier IV,Clerical & office support,active,4.18,False,,0,0,False,0.701,41-2011.00,0.0973,39.6,2026-11-06 to 2029-11-06,descriptive_risk_index,554
+0699,Food Service Cashier,Clerical & office support,active,4.18,False,,0,0,False,0.701,41-2011.00,0.0758,39.6,2026-11-06 to 2029-11-06,descriptive_risk_index,555
+3286,Community Affairs Specialist I,Management & administration,active,4.18,False,,0,0,False,0.702,21-1094.00,0.0443,39.6,2026-11-06 to 2029-11-06,descriptive_risk_index,556
+4710,Image Processing Technician II,Clerical & office support,active,4.18,False,,0,0,False,0.699,43-9021.00,0.1051,39.6,2026-11-06 to 2029-11-06,descriptive_risk_index,557
+2846,Copy Center Operator I,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,558
+2847,Copy Center Operator II,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,559
+2848,Copy Center Operator III,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,560
+2865,Duplicating Machine Operator I,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,561
+2866,Duplicating Machine Operator II,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,562
+2867,Duplicating Machine Operator III,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,563
+3017,Microfilm Operator/Technician II,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,564
+3018,Microfilm Operator/Technician III,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,565
+3491,Assistant Duplicating Service Supervisor,Clerical & office support,active,4.18,False,,0,0,False,0.684,43-9071.00,0.0791,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,566
+4743,Copy Center Operator IV,Other,active,4.18,False,,0,0,False,0.684,43-9071.00,0.044,39.2,2026-11-06 to 2029-11-06,descriptive_risk_index,567
+4769,Medical Education Program Specialist,Clerical & office support,active,4.18,False,,0,0,False,0.68,21-1091.00,0.0522,39.1,2026-11-06 to 2029-11-06,descriptive_risk_index,568
+2213,Senior Agricultural Research Technician,Science & research support,active,4.19,False,,0,0,False,0.638,19-4012.00,0.0818,39.0,2026-11-06 to 2029-11-06,descriptive_risk_index,569
+4844,Image Processing Technician IV,Clerical & office support,active,4.19,False,,0,0,False,0.637,11-3021.00,0.0799,39.0,2026-11-06 to 2029-11-06,descriptive_risk_index,570
+1167,Routing Dispatcher I,Clerical & office support,active,4.18,False,,0,0,False,0.671,43-5032.00,0.0829,38.9,2026-11-06 to 2029-11-06,descriptive_risk_index,571
+1168,Routing Dispatcher II,Clerical & office support,active,4.18,False,,0,0,False,0.671,43-5032.00,0.0829,38.9,2026-11-06 to 2029-11-06,descriptive_risk_index,572
+3346,Superintendent of Building Maintenance,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.674,37-1011.00,0.0649,38.9,2026-11-06 to 2029-11-06,descriptive_risk_index,573
+3349,Superintendent of Building Services,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.674,37-1011.00,0.0649,38.9,2026-11-06 to 2029-11-06,descriptive_risk_index,574
+3350,Assistant Superintendent of Building Services,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.674,37-1011.00,0.0649,38.9,2026-11-06 to 2029-11-06,descriptive_risk_index,575
+3354,Superintendent of Buildings,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.674,37-1011.00,0.0649,38.9,2026-11-06 to 2029-11-06,descriptive_risk_index,576
+3553,Mailing Services Supervisor I,Transportation & stores,active,4.18,False,,0,0,False,0.674,37-1011.00,0.0608,38.9,2026-11-06 to 2029-11-06,descriptive_risk_index,577
+4514,Housekeeping Supervisor,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.674,37-1011.00,0.0982,38.9,2026-11-06 to 2029-11-06,descriptive_risk_index,578
+2996,Telephone Operator II,Clerical & office support,active,4.18,False,,0,0,False,0.667,43-4171.00,0.0682,38.8,2026-11-06 to 2029-11-06,descriptive_risk_index,579
+4960,Medical Office Assistant,Clerical & office support,active,4.18,False,,0,0,False,0.659,43-6013.00,0.0728,38.6,2026-11-06 to 2029-11-06,descriptive_risk_index,580
+4961,Medical Office Associate,Clerical & office support,active,4.18,False,,0,0,False,0.659,43-6013.00,0.0728,38.6,2026-11-06 to 2029-11-06,descriptive_risk_index,581
+0501,Athletic Facilities Attendant,"Facilities, grounds & custodial",active,3.93,True,preliminary,1,1,False,0.612,39-3093.00,0.231,38.5,2026-11-06 to 2029-11-06,descriptive_risk_index,582
+4103,Swimming Pool Tender,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.654,33-9092.00,0.0974,38.4,2026-11-06 to 2029-11-06,descriptive_risk_index,583
+0068,Ticket Sales Specialist,Clerical & office support,active,4.18,False,,0,0,False,0.65,41-2031.00,0.1163,38.3,2026-11-06 to 2029-11-06,descriptive_risk_index,584
+2296,Maid,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.649,37-2012.00,0.0807,38.3,2026-11-06 to 2029-11-06,descriptive_risk_index,585
+3877,Retail Associate,Clerical & office support,active,4.18,False,,0,0,False,0.65,41-2031.00,0.0761,38.3,2026-11-06 to 2029-11-06,descriptive_risk_index,586
+3243,Office Support Specialist,Clerical & office support,active,4.18,False,,0,0,False,0.643,43-6011.00,0.0628,38.2,2026-11-06 to 2029-11-06,descriptive_risk_index,587
+3253,Office Administrator,Clerical & office support,active,4.18,False,,0,0,False,0.643,43-6011.00,0.0628,38.2,2026-11-06 to 2029-11-06,descriptive_risk_index,588
+2504,Multimedia Communications Specialist,"Communications, media & arts",active,4.18,False,,0,0,False,0.64,25-4022.00,0.0721,38.1,2026-11-06 to 2029-11-06,descriptive_risk_index,589
+2505,Multimedia Communications Supervisor,"Communications, media & arts",active,4.18,False,,0,0,False,0.64,25-4022.00,0.0464,38.1,2026-11-06 to 2029-11-06,descriptive_risk_index,590
+0038,Food Service Administrator III,Food & domestic services,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0573,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,591
+0039,Food Service Administrator IV,Food & domestic services,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0573,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,592
+0695,Cashier II,Clerical & office support,active,4.19,False,,0,0,False,0.598,43-3071.00,0.0807,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,593
+2134,Human Resource Assistant,Clerical & office support,active,4.18,False,,0,0,False,0.638,43-4161.00,0.0614,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,594
+2211,Assistant Agricultural Research Technician,Science & research support,active,4.18,False,,0,0,False,0.638,19-4012.00,0.0818,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,595
+2212,Associate Agricultural Research Technician,Science & research support,active,4.18,False,,0,0,False,0.638,19-4012.00,0.0818,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,596
+2419,Mailing Services Manager,Transportation & stores,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0541,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,597
+2459,Vending Services Manager I,Management & administration,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0452,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,598
+2460,Vending Services Manager II,Management & administration,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0452,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,599
+2465,Central Stores Manager II,Transportation & stores,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0541,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,600
+2764,Admitting Officer II,Clerical & office support,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0585,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,601
+3266,Office Manager,Clerical & office support,active,4.18,False,,0,0,False,0.638,11-1021.00,0.0589,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,602
+3284,Collection Assistant Manager,Finance & procurement,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0765,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,603
+3293,Patient Services Specialist,Clerical & office support,active,4.19,False,,0,0,False,0.598,29-2099.08,0.063,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,604
+3401,Superintendent of Operations,Management & administration,active,4.18,False,,0,0,False,0.635,11-9021.00,0.0472,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,605
+3421,Superintendent of Print Shop,Management & administration,active,4.18,False,,0,0,False,0.638,11-1021.00,0.0548,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,606
+3475,Departmental Information Supervisor,Management & administration,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0452,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,607
+3528,Inventory Record Control Supervisor,Clerical & office support,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0755,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,608
+3544,Mail Supervisor,Clerical & office support,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0755,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,609
+3552,Mailing Services Supervisor II,Transportation & stores,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0541,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,610
+3669,Collection Manager,Finance & procurement,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0765,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,611
+3699,Information Services Supervisor,Management & administration,active,4.18,False,,0,0,False,0.637,11-3021.00,0.0479,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,612
+3705,Insurance Risk Manager II,Finance & procurement,active,4.18,False,,0,0,False,0.636,43-9041.00,0.0861,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,613
+4210,Security Guard,Protective services,active,4.19,False,,0,0,False,0.598,33-9032.00,0.1611,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,614
+4581,Medical Insurance Representative,Clerical & office support,active,4.18,False,,0,0,False,0.636,43-9041.00,0.051,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,615
+4582,Medical Insurance Associate,Clerical & office support,active,4.18,False,,0,0,False,0.636,43-9041.00,0.051,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,616
+4583,Medical Insurance Specialist,Clerical & office support,active,4.18,False,,0,0,False,0.636,43-9041.00,0.051,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,617
+4623,Central Stores Manager I,Transportation & stores,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0541,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,618
+4707,Duplicating Services Manager,Management & administration,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0452,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,619
+4775,Medical Staff Services Specialist I,Clerical & office support,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0755,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,620
+4776,Medical Staff Services Specialist II,Clerical & office support,active,4.18,False,,0,0,False,0.638,43-1011.00,0.0755,38.0,2026-11-06 to 2029-11-06,descriptive_risk_index,621
+2754,Admissions and Records Assistant,Student & academic services,active,4.19,False,,0,0,False,0.596,11-9033.00,0.137,37.9,2026-11-06 to 2029-11-06,descriptive_risk_index,622
+3588,Retail Services Supervisor,Management & administration,active,4.18,False,,0,0,False,0.627,41-1011.00,0.0611,37.8,2026-11-06 to 2029-11-06,descriptive_risk_index,623
+3879,Retail Assistant Manager,Management & administration,active,4.18,False,,0,0,False,0.627,41-1011.00,0.0391,37.8,2026-11-06 to 2029-11-06,descriptive_risk_index,624
+3889,Retail Manager,Management & administration,active,4.18,False,,0,0,False,0.627,41-1011.00,0.0391,37.8,2026-11-06 to 2029-11-06,descriptive_risk_index,625
+4556,Assistant Records Management Officer,Clerical & office support,active,4.18,False,,0,0,False,0.624,15-1299.03,0.0899,37.7,2026-11-06 to 2029-11-06,descriptive_risk_index,626
+2985,Telephone Operator III,Clerical & office support,active,4.18,False,,0,0,False,0.619,49-2022.00,0.0809,37.6,2026-11-06 to 2029-11-06,descriptive_risk_index,627
+4690,Labor Relations Specialist,Human resources,active,4.18,False,,0,0,False,0.621,13-1075.00,0.0615,37.6,2026-11-06 to 2029-11-06,descriptive_risk_index,628
+2138,Human Resource Manager,Human resources,active,4.18,False,,0,0,False,0.618,13-1071.00,0.084,37.5,2026-11-06 to 2029-11-06,descriptive_risk_index,629
+0575,Tool Room Attendant,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.607,53-7065.00,0.1216,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,630
+0576,Senior Tool Room Attendant,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.607,53-7065.00,0.1216,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,631
+0768,Inventory Clerk,Clerical & office support,active,4.18,False,,0,0,False,0.607,53-7065.00,0.105,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,632
+3291,Inventory Specialist,Clerical & office support,active,4.18,False,,0,0,False,0.607,53-7065.00,0.105,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,633
+3317,Storekeeper I,Transportation & stores,active,4.18,False,,0,0,False,0.607,53-7065.00,0.065,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,634
+3319,Storekeeper III,Transportation & stores,active,4.18,False,,0,0,False,0.607,53-7065.00,0.065,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,635
+4670,Coordinator of Medical Transcription,Health & medical,active,4.18,False,,0,0,False,0.61,31-9094.00,0.0753,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,636
+4715,Medical Transcriptionist I,Clerical & office support,active,4.18,False,,0,0,False,0.61,31-9094.00,0.0812,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,637
+4716,Medical Transcriptionist II,Clerical & office support,active,4.18,False,,0,0,False,0.61,31-9094.00,0.0812,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,638
+4717,Medical Transcriptionist III,Clerical & office support,active,4.18,False,,0,0,False,0.61,31-9094.00,0.0812,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,639
+4718,Medical Transcriptionist IV,Health & medical,active,4.18,False,,0,0,False,0.61,31-9094.00,0.0753,37.3,2026-11-06 to 2029-11-06,descriptive_risk_index,640
+0050,Space Administrator III,Management & administration,active,4.18,False,,0,0,False,0.603,25-9031.00,0.0383,37.2,2026-11-06 to 2029-11-06,descriptive_risk_index,641
+3612,Survey Interviewer Supervisor,Clerical & office support,active,4.18,False,,0,0,False,0.606,19-3022.00,0.0981,37.2,2026-11-06 to 2029-11-06,descriptive_risk_index,642
+4770,Medical Education Program Coordinator,Health & medical,active,4.18,False,,0,0,False,0.603,25-9031.00,0.0382,37.2,2026-11-06 to 2029-11-06,descriptive_risk_index,643
+0696,Cashier III,Clerical & office support,active,4.18,False,,0,0,False,0.598,43-3071.00,0.0807,37.0,2026-11-06 to 2029-11-06,descriptive_risk_index,644
+2763,Admitting Officer I,Clerical & office support,active,4.18,False,,0,0,False,0.598,29-2099.08,0.0486,37.0,2026-11-06 to 2029-11-06,descriptive_risk_index,645
+4763,Academic Contract Supervisor,Clerical & office support,active,4.18,False,,0,0,False,0.588,21-1012.00,0.0759,36.8,2026-11-06 to 2029-11-06,descriptive_risk_index,646
+0049,Space Administrator II,Clerical & office support,active,4.18,False,,0,0,False,0.581,11-9111.00,0.0879,36.6,2026-11-06 to 2029-11-06,descriptive_risk_index,647
+2066,Driver,Transportation & stores,active,2.19,True,preliminary,1,1,False,0.622,53-3033.00,0.097,36.6,2026-11-06 to 2029-11-06,descriptive_risk_index,648
+4564,Health Center Administrator,Health & medical,active,4.18,False,,0,0,False,0.581,11-9111.00,0.0816,36.6,2026-11-06 to 2029-11-06,descriptive_risk_index,649
+4777,Medical Staff Services Coordinator,Health & medical,active,4.18,False,,0,0,False,0.581,11-9111.00,0.0816,36.6,2026-11-06 to 2029-11-06,descriptive_risk_index,650
+3347,Assistant Superintendent of Building Maintenance,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.576,11-9141.00,0.0566,36.5,2026-11-06 to 2029-11-06,descriptive_risk_index,651
+3360,Superintendent of Buildings and Grounds,"Facilities, grounds & custodial",active,4.18,False,,0,0,False,0.576,11-9141.00,0.0566,36.5,2026-11-06 to 2029-11-06,descriptive_risk_index,652
+2390,Food Production Manager,Food & domestic services,active,4.18,False,,0,0,False,0.564,11-9051.00,0.0538,36.2,2026-11-06 to 2029-11-06,descriptive_risk_index,653
+2392,Assistant Food Production Manager,Food & domestic services,active,4.18,False,,0,0,False,0.564,11-9051.00,0.0538,36.2,2026-11-06 to 2029-11-06,descriptive_risk_index,654
+3706,Insurance Risk Manager I,Finance & procurement,active,4.18,False,,0,0,False,0.563,41-3021.00,0.1027,36.2,2026-11-06 to 2029-11-06,descriptive_risk_index,655
+2399,Assistant Food Service Manager,Food & domestic services,active,4.18,False,,0,0,False,0.56,11-9131.00,0.0674,36.1,2026-11-06 to 2029-11-06,descriptive_risk_index,656
+4212,Security Officer,Protective services,active,0.35,False,,1,1,False,0.636,33-9093.00,0.161,36.1,2026-11-06 to 2029-11-06,descriptive_risk_index,657
+3437,Assembly Hall Physical Facilities Supervisor,Science & research support,active,3.93,True,preliminary,1,1,False,0.5,,0.3266,36.0,2026-11-06 to 2029-11-06,descriptive_risk_index,658
+4080,Veterinary Care Generalist,Health & medical,active,0.85,False,,0,1,False,0.62,29-2056.00,0.2262,36.0,2026-11-06 to 2029-11-06,descriptive_risk_index,659
+0792,Payroll Clerk,Clerical & office support,active,4.18,False,,0,0,False,0.554,43-3051.00,0.0836,35.9,2026-11-06 to 2029-11-06,descriptive_risk_index,660
+4065,Payroll Specialist I,Clerical & office support,active,4.18,False,,0,0,False,0.554,43-3051.00,0.0836,35.9,2026-11-06 to 2029-11-06,descriptive_risk_index,661
+4066,Payroll Specialist II,Clerical & office support,active,4.18,False,,0,0,False,0.554,43-3051.00,0.0836,35.9,2026-11-06 to 2029-11-06,descriptive_risk_index,662
+4067,Payroll Specialist III,Clerical & office support,active,4.18,False,,0,0,False,0.554,43-3051.00,0.0836,35.9,2026-11-06 to 2029-11-06,descriptive_risk_index,663
+4068,Assistant Payroll Manager,Finance & procurement,active,4.18,False,,0,0,False,0.554,43-3051.00,0.1085,35.9,2026-11-06 to 2029-11-06,descriptive_risk_index,664
+4069,Payroll Manager,Finance & procurement,active,4.18,False,,0,0,False,0.554,43-3051.00,0.1085,35.9,2026-11-06 to 2029-11-06,descriptive_risk_index,665
+0678,Animal Caretaker 1,Agriculture & animal care,active,0.85,False,,1,1,False,0.606,39-2021.00,0.1299,35.7,2026-11-06 to 2029-11-06,descriptive_risk_index,666
+0679,Animal Caretaker 2,Agriculture & animal care,active,0.85,False,,1,1,False,0.606,39-2021.00,0.1299,35.7,2026-11-06 to 2029-11-06,descriptive_risk_index,667
+0680,Animal Caretaker 3,Agriculture & animal care,active,0.85,False,,1,1,False,0.606,39-2021.00,0.1445,35.7,2026-11-06 to 2029-11-06,descriptive_risk_index,668
+3710,Animal Caretaker 4,Agriculture & animal care,active,0.85,False,,1,1,False,0.606,39-2021.00,0.0972,35.7,2026-11-06 to 2029-11-06,descriptive_risk_index,669
+2461,Manager of Agricultural Sciences Facilities,Science & research support,active,4.18,False,,0,0,False,0.54,25-1041.00,0.0534,35.6,2026-11-06 to 2029-11-06,descriptive_risk_index,670
+0052,Financial Aid Representative,Clerical & office support,active,4.18,False,,0,0,False,0.537,13-2072.00,0.0391,35.5,2026-11-06 to 2029-11-06,descriptive_risk_index,671
+2328,Automotive Parts Manager,Transportation & stores,active,4.18,False,,0,0,False,0.535,11-3071.04,0.0562,35.5,2026-11-06 to 2029-11-06,descriptive_risk_index,672
+0815,Transportation Clerk,Clerical & office support,active,4.18,False,,0,0,False,0.523,53-3053.00,0.0719,35.2,2026-11-06 to 2029-11-06,descriptive_risk_index,673
+1169,Routing Dispatcher III,Clerical & office support,active,4.18,False,,0,0,False,0.524,43-5061.00,0.0915,35.2,2026-11-06 to 2029-11-06,descriptive_risk_index,674
+1236,Heavy Driver,Transportation & stores,active,2.19,True,preliminary,1,1,False,0.551,53-3032.00,0.1022,34.8,2026-11-06 to 2029-11-06,descriptive_risk_index,675
+2779,Health Care Compliance Officer,Health & medical,active,4.18,False,,0,0,False,0.51,11-9199.02,0.0561,34.8,2026-11-06 to 2029-11-06,descriptive_risk_index,676
+3621,Transportation Manager,Transportation & stores,active,4.18,False,,0,0,False,0.509,11-3071.00,0.0585,34.8,2026-11-06 to 2029-11-06,descriptive_risk_index,677
+1121,Associate Director of Publications,"Communications, media & arts",active,4.18,False,,0,0,False,0.5,,0.0569,34.6,2026-11-06 to 2029-11-06,descriptive_risk_index,678
+1160,Central Receiving Station Dispatcher,Transportation & stores,active,4.18,False,,0,0,False,0.5,,0.0877,34.6,2026-11-06 to 2029-11-06,descriptive_risk_index,679
+2502,Manager of University Cashiering Operations,Finance & procurement,active,4.18,False,,0,0,False,0.5,,0.1044,34.6,2026-11-06 to 2029-11-06,descriptive_risk_index,680
+3318,Storekeeper II,Transportation & stores,active,4.18,False,,0,0,False,0.5,,0.0492,34.6,2026-11-06 to 2029-11-06,descriptive_risk_index,681
+3838,Night Supervisor of University Union,Management & administration,active,4.18,False,,0,0,False,0.5,,0.0482,34.6,2026-11-06 to 2029-11-06,descriptive_risk_index,682
+4711,Image Processing Technician III,Clerical & office support,active,4.18,False,,0,0,False,0.5,,0.0804,34.6,2026-11-06 to 2029-11-06,descriptive_risk_index,683
+0036,Food Service Administrator I,Food & domestic services,active,4.18,False,,0,0,False,0.49,35-1012.00,0.064,34.3,2026-11-06 to 2029-11-06,descriptive_risk_index,684
+0037,Food Service Administrator II,Food & domestic services,active,4.18,False,,0,0,False,0.49,35-1012.00,0.064,34.3,2026-11-06 to 2029-11-06,descriptive_risk_index,685
+0577,Tool Room Supervisor,Management & administration,active,4.18,False,,0,0,False,0.49,51-1011.00,0.0796,34.3,2026-11-06 to 2029-11-06,descriptive_risk_index,686
+2398,Food Service Manager,Food & domestic services,active,4.18,False,,0,0,False,0.49,35-1012.00,0.064,34.3,2026-11-06 to 2029-11-06,descriptive_risk_index,687
+3490,Duplicating Service Supervisor,Clerical & office support,active,4.18,False,,0,0,False,0.49,51-1011.00,0.0868,34.3,2026-11-06 to 2029-11-06,descriptive_risk_index,688
+3498,Food Service Supervisor,Food & domestic services,active,4.18,False,,0,0,False,0.49,35-1012.00,0.064,34.3,2026-11-06 to 2029-11-06,descriptive_risk_index,689
+3587,Research Laboratory Shop Supervisor,Science & research support,active,4.18,False,,0,0,False,0.49,51-1011.00,0.0577,34.3,2026-11-06 to 2029-11-06,descriptive_risk_index,690
+3658,Distribution Services Supervisor,Management & administration,active,4.18,False,,0,0,False,0.481,53-1043.00,0.0728,34.1,2026-11-06 to 2029-11-06,descriptive_risk_index,691
+3660,Assistant Distribution Services Supervisor,Management & administration,active,4.18,False,,0,0,False,0.481,53-1043.00,0.0728,34.1,2026-11-06 to 2029-11-06,descriptive_risk_index,692
+4662,Transportation Assistant Manager,Transportation & stores,active,4.18,False,,0,0,False,0.481,53-1043.00,0.057,34.1,2026-11-06 to 2029-11-06,descriptive_risk_index,693
+1844,Driver Sub-Foreperson,Transportation & stores,active,2.19,True,preliminary,1,1,False,0.5,,0.1036,33.6,2026-11-06 to 2029-11-06,descriptive_risk_index,694
+0801,Shipping/Receiving Clerk,Clerical & office support,active,4.18,False,,0,0,False,0.442,43-5071.00,0.1001,33.1,2026-11-06 to 2029-11-06,descriptive_risk_index,695
+1576,Driver Foreperson,Transportation & stores,active,2.19,True,preliminary,1,1,False,0.481,53-1043.00,0.1025,33.1,2026-11-06 to 2029-11-06,descriptive_risk_index,696
+2137,Human Resource Assistant Manager,Human resources,active,4.18,False,,0,0,False,0.431,11-3121.00,0.0915,32.9,2026-11-06 to 2029-11-06,descriptive_risk_index,697
+0497,Child Development Associate,Student & academic services,active,0.03,False,,1,1,False,0.466,25-2011.00,0.0631,31.8,2026-11-06 to 2029-11-06,descriptive_risk_index,698
+3474,Child Development Supervisor,Student & academic services,active,0.03,False,,1,1,False,0.466,25-2011.00,0.0631,31.8,2026-11-06 to 2029-11-06,descriptive_risk_index,699
+5050,Glass Blower,Skilled trades,active,4.06,False,,0,0,False,0.764,51-9195.04,0.0616,31.5,2026-11-06 to 2029-11-06,descriptive_risk_index,700
+2610,Pneumatic Instrument and Controls Mechanic,Science & research support,active,4.06,False,,0,0,False,0.751,49-9012.00,0.0587,31.2,2026-11-06 to 2029-11-06,descriptive_risk_index,701
+4156,Tree Surgeon,Skilled trades,active,4.06,False,,0,0,False,0.738,37-3013.00,0.0583,30.9,2026-11-06 to 2029-11-06,descriptive_risk_index,702
+4158,Assistant Tree Surgeon,Management & administration,active,4.06,False,,0,0,False,0.738,37-3013.00,0.0395,30.9,2026-11-06 to 2029-11-06,descriptive_risk_index,703
+0560,Residence Hall Attendant,Protective services,active,4.06,False,,0,0,False,0.695,39-9041.00,0.1205,29.8,2026-11-06 to 2029-11-06,descriptive_risk_index,704
+0683,Carpenter,Skilled trades,active,4.06,False,,0,0,False,0.687,47-3012.00,0.0493,29.6,2026-11-06 to 2029-11-06,descriptive_risk_index,705
+0903,Pest Controller,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.768,37-2021.00,0.0588,29.6,2026-11-06 to 2029-11-06,descriptive_risk_index,706
+1852,Carpenter Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.687,47-3012.00,0.0493,29.6,2026-11-06 to 2029-11-06,descriptive_risk_index,707
+3027,Painter,Skilled trades,active,4.06,False,,0,0,False,0.676,47-2141.00,0.0513,29.4,2026-11-06 to 2029-11-06,descriptive_risk_index,708
+1690,Grounds Foreman,Skilled trades,active,4.06,False,,0,0,False,0.755,37-1012.00,0.0756,29.3,2026-11-06 to 2029-11-06,descriptive_risk_index,709
+1884,Grounds Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.755,37-1012.00,0.0756,29.3,2026-11-06 to 2029-11-06,descriptive_risk_index,710
+1930,Plumber Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.672,47-3015.00,0.0527,29.3,2026-11-06 to 2029-11-06,descriptive_risk_index,711
+3060,Plumber,Skilled trades,active,4.06,False,,0,0,False,0.672,47-3015.00,0.0527,29.3,2026-11-06 to 2029-11-06,descriptive_risk_index,712
+2604,Parking Meter Mechanic II,Skilled trades,active,4.06,False,,0,0,False,0.751,49-9012.00,0.0779,29.2,2026-11-06 to 2029-11-06,descriptive_risk_index,713
+3281,Parking Meter Mechanic I,Skilled trades,active,4.06,False,,0,0,False,0.751,49-9012.00,0.0779,29.2,2026-11-06 to 2029-11-06,descriptive_risk_index,714
+2597,Assistant Laboratory Mechanic,Science & research support,active,4.06,False,,0,0,False,0.736,19-4013.00,0.0309,28.8,2026-11-06 to 2029-11-06,descriptive_risk_index,715
+0559,Parking Services Agent I,Protective services,active,4.06,False,,0,0,False,0.726,33-3041.00,0.1244,28.5,2026-11-06 to 2029-11-06,descriptive_risk_index,716
+0949,Coordinator of Parking and Traffic,Protective services,active,4.06,False,,0,0,False,0.726,33-3041.00,0.1471,28.5,2026-11-06 to 2029-11-06,descriptive_risk_index,717
+1264,Electrician Foreman,Skilled trades,active,4.06,False,,0,0,False,0.641,49-1011.00,0.0435,28.5,2026-11-06 to 2029-11-06,descriptive_risk_index,718
+1644,Elevator Mechanic Foreman,Skilled trades,active,4.06,False,,0,0,False,0.641,49-1011.00,0.0587,28.5,2026-11-06 to 2029-11-06,descriptive_risk_index,719
+4507,Assistant Coordinator of Parking and Traffic,Protective services,active,4.06,False,,0,0,False,0.726,33-3041.00,0.1471,28.5,2026-11-06 to 2029-11-06,descriptive_risk_index,720
+4689,Parking Services Agent II,Protective services,active,4.06,False,,0,0,False,0.726,33-3041.00,0.1471,28.5,2026-11-06 to 2029-11-06,descriptive_risk_index,721
+3484,Dishroom Supervisor,Management & administration,active,4.06,False,,0,0,False,0.719,35-9021.00,0.0606,28.4,2026-11-06 to 2029-11-06,descriptive_risk_index,722
+2900,Maintenance Equipment Operator,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.715,47-2073.00,0.0719,28.3,2026-11-06 to 2029-11-06,descriptive_risk_index,723
+4079,Veterinary Assistant,Health & medical,active,4.06,False,,0,0,False,0.632,31-9096.00,0.0564,28.3,2026-11-06 to 2029-11-06,descriptive_risk_index,724
+1836,Water Station Foreman,Skilled trades,active,4.06,False,,0,0,False,0.62,47-1011.00,0.0731,28.0,2026-11-06 to 2029-11-06,descriptive_risk_index,725
+1829,Temperature Control Foreman,Skilled trades,active,4.06,False,,0,0,False,0.612,51-9061.00,0.0889,27.8,2026-11-06 to 2029-11-06,descriptive_risk_index,726
+1966,Temperature Control Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.612,51-9061.00,0.0889,27.8,2026-11-06 to 2029-11-06,descriptive_risk_index,727
+2596,Laboratory Mechanic,Science & research support,active,4.06,False,,0,0,False,0.695,49-9044.00,0.0347,27.8,2026-11-06 to 2029-11-06,descriptive_risk_index,728
+2640,Temperature Control Mechanic,Skilled trades,active,4.06,False,,0,0,False,0.612,51-9061.00,0.0889,27.8,2026-11-06 to 2029-11-06,descriptive_risk_index,729
+2095,Laboratory Helper,Science & research support,active,4.06,False,,0,0,False,0.692,19-4021.00,0.0408,27.7,2026-11-06 to 2029-11-06,descriptive_risk_index,730
+0516,Food Court/Snack Bar Attendant,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.683,35-2011.00,0.0507,27.5,2026-11-06 to 2029-11-06,descriptive_risk_index,731
+1328,Building Operating Engineer,Skilled trades,active,4.06,False,,0,0,False,0.683,49-9071.00,0.0824,27.5,2026-11-06 to 2029-11-06,descriptive_risk_index,732
+1329,Assistant Chief Building Operating Engineer,Skilled trades,active,4.06,False,,0,0,False,0.683,49-9071.00,0.0824,27.5,2026-11-06 to 2029-11-06,descriptive_risk_index,733
+1330,Chief Building Operating Engineer,Skilled trades,active,4.06,False,,0,0,False,0.683,49-9071.00,0.0824,27.5,2026-11-06 to 2029-11-06,descriptive_risk_index,734
+1598,Building Mechanic Foreman,Skilled trades,active,4.06,False,,0,0,False,0.683,49-9071.00,0.0824,27.5,2026-11-06 to 2029-11-06,descriptive_risk_index,735
+2576,Building Mechanic,Skilled trades,active,4.06,False,,0,0,False,0.683,49-9071.00,0.0824,27.5,2026-11-06 to 2029-11-06,descriptive_risk_index,736
+0965,Costumer,Food & domestic services,active,4.06,False,,0,0,False,0.681,39-3092.00,0.0658,27.4,2026-11-06 to 2029-11-06,descriptive_risk_index,737
+1263,Electrician Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.598,47-3013.00,0.0456,27.4,2026-11-06 to 2029-11-06,descriptive_risk_index,738
+2196,Ironworker,Skilled trades,active,4.06,False,,0,0,False,0.596,47-2221.00,0.0468,27.4,2026-11-06 to 2029-11-06,descriptive_risk_index,739
+3003,Water Station Operator,Skilled trades,active,4.06,False,,0,0,False,0.598,51-8031.00,0.0706,27.4,2026-11-06 to 2029-11-06,descriptive_risk_index,740
+3314,Theatrical Stitcher,"Communications, media & arts",active,4.06,False,,0,0,False,0.681,39-3092.00,0.0613,27.4,2026-11-06 to 2029-11-06,descriptive_risk_index,741
+1012,Senior Floral Designer,Food & domestic services,active,4.06,False,,0,0,False,0.667,27-1023.00,0.0717,27.1,2026-11-06 to 2029-11-06,descriptive_risk_index,742
+2290,Driller Laborer,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.668,47-5023.00,0.0544,27.1,2026-11-06 to 2029-11-06,descriptive_risk_index,743
+4762,Floral Designer,Food & domestic services,active,4.06,False,,0,0,False,0.667,27-1023.00,0.0717,27.1,2026-11-06 to 2029-11-06,descriptive_risk_index,744
+0510,Equipment Attendant,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.663,51-4021.00,0.0744,27.0,2026-11-06 to 2029-11-06,descriptive_risk_index,745
+3481,Dining Room Supervisor,Food & domestic services,active,4.06,False,,0,0,False,0.663,35-9011.00,0.0727,27.0,2026-11-06 to 2029-11-06,descriptive_risk_index,746
+2584,Elevator Mechanic,Skilled trades,active,4.06,False,,0,0,False,0.57,47-4021.00,0.0551,26.7,2026-11-06 to 2029-11-06,descriptive_risk_index,747
+2678,Mill Worker,Skilled trades,active,4.06,False,,0,0,False,0.654,51-7011.00,0.0889,26.7,2026-11-06 to 2029-11-06,descriptive_risk_index,748
+4962,Medical Office Specialist,Clerical & office support,active,4.06,False,,0,0,False,0.648,29-2072.00,0.057,26.6,2026-11-06 to 2029-11-06,descriptive_risk_index,749
+1733,Locksmith Foreman,Skilled trades,active,4.06,False,,0,0,False,0.644,49-9094.00,0.0874,26.5,2026-11-06 to 2029-11-06,descriptive_risk_index,750
+1969,Water Station Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.562,17-2051.02,0.0635,26.5,2026-11-06 to 2029-11-06,descriptive_risk_index,751
+2278,Locksmith,Skilled trades,active,4.06,False,,0,0,False,0.644,49-9094.00,0.0874,26.5,2026-11-06 to 2029-11-06,descriptive_risk_index,752
+2279,Locksmith Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.644,49-9094.00,0.0874,26.5,2026-11-06 to 2029-11-06,descriptive_risk_index,753
+2314,Model Maker,Skilled trades,active,4.06,False,,0,0,False,0.643,51-4061.00,0.0952,26.5,2026-11-06 to 2029-11-06,descriptive_risk_index,754
+1876,Garage Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.641,49-1011.00,0.0523,26.4,2026-11-06 to 2029-11-06,descriptive_risk_index,755
+4591,Crash-Rescue and Security Coordinator,Protective services,active,4.06,False,,0,0,False,0.641,49-1011.00,0.135,26.4,2026-11-06 to 2029-11-06,descriptive_risk_index,756
+0069,Ticket Sales Supervisor,Management & administration,active,4.06,False,,0,0,False,0.638,43-1011.00,0.0339,26.3,2026-11-06 to 2029-11-06,descriptive_risk_index,757
+2350,Bowling and Billiard Center Manager,Management & administration,active,4.06,False,,0,0,False,0.638,43-1011.00,0.0521,26.3,2026-11-06 to 2029-11-06,descriptive_risk_index,758
+2424,Medical Insurance Manager,Health & medical,active,4.06,False,,0,0,False,0.636,43-9041.00,0.0382,26.3,2026-11-06 to 2029-11-06,descriptive_risk_index,759
+2765,Admitting Officer III,Clerical & office support,active,4.06,False,,0,0,False,0.638,43-1011.00,0.0474,26.3,2026-11-06 to 2029-11-06,descriptive_risk_index,760
+4535,Admitting Officer IV,Clerical & office support,active,4.06,False,,0,0,False,0.638,43-1011.00,0.0474,26.3,2026-11-06 to 2029-11-06,descriptive_risk_index,761
+4584,Medical Insurance Assistant Manager,Health & medical,active,4.06,False,,0,0,False,0.636,43-9041.00,0.0382,26.3,2026-11-06 to 2029-11-06,descriptive_risk_index,762
+3899,Cryogenic Technician I,Science & research support,active,4.06,False,,0,0,False,0.63,17-2141.00,0.0713,26.1,2026-11-06 to 2029-11-06,descriptive_risk_index,763
+3900,Cryogenic Technician II,Science & research support,active,4.06,False,,0,0,False,0.63,17-2141.00,0.0595,26.1,2026-11-06 to 2029-11-06,descriptive_risk_index,764
+0623,Brickmason,Skilled trades,active,4.06,False,,0,0,False,0.623,47-2021.00,0.0872,26.0,2026-11-06 to 2029-11-06,descriptive_risk_index,765
+1584,Bindery Worker Foreman,Skilled trades,active,4.06,False,,0,0,False,0.62,47-1011.00,0.0874,25.9,2026-11-06 to 2029-11-06,descriptive_risk_index,766
+1596,Brickmason Foreman,Skilled trades,active,4.06,False,,0,0,False,0.62,47-1011.00,0.0874,25.9,2026-11-06 to 2029-11-06,descriptive_risk_index,767
+1740,Machinist Foreman,Skilled trades,active,4.06,False,,0,0,False,0.62,47-1011.00,0.0874,25.9,2026-11-06 to 2029-11-06,descriptive_risk_index,768
+1756,Mill Worker Foreman,Skilled trades,active,4.06,False,,0,0,False,0.62,47-1011.00,0.0874,25.9,2026-11-06 to 2029-11-06,descriptive_risk_index,769
+2593,Grounds Equipment Mechanic,Skilled trades,active,4.06,False,,0,0,False,0.62,49-3042.00,0.0825,25.9,2026-11-06 to 2029-11-06,descriptive_risk_index,770
+3562,Offset Printing Supervisor I,"Communications, media & arts",active,4.06,False,,0,0,False,0.528,51-5112.00,0.0688,25.7,2026-11-06 to 2029-11-06,descriptive_risk_index,771
+4045,Offset Press Technician,"Communications, media & arts",active,4.06,False,,0,0,False,0.528,51-5112.00,0.0688,25.7,2026-11-06 to 2029-11-06,descriptive_risk_index,772
+0299,Printing Production Assistant,"Communications, media & arts",active,4.06,False,,0,0,False,0.524,43-5061.00,0.0624,25.6,2026-11-06 to 2029-11-06,descriptive_risk_index,773
+0925,Printing Production Coordinator,"Communications, media & arts",active,4.06,False,,0,0,False,0.524,43-5061.00,0.0624,25.6,2026-11-06 to 2029-11-06,descriptive_risk_index,774
+2972,Assistant Steam Distribution Operator,Skilled trades,active,4.06,False,,0,0,False,0.602,51-8021.00,0.086,25.4,2026-11-06 to 2029-11-06,descriptive_risk_index,775
+3280,Equipment Service Worker,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.602,51-8021.00,0.075,25.4,2026-11-06 to 2029-11-06,descriptive_risk_index,776
+4990,Steam and Power Plant I,Skilled trades,active,4.06,False,,0,0,False,0.602,51-8021.00,0.086,25.4,2026-11-06 to 2029-11-06,descriptive_risk_index,777
+4991,Steam and Power Plant II,Skilled trades,active,4.06,False,,0,0,False,0.602,51-8021.00,0.086,25.4,2026-11-06 to 2029-11-06,descriptive_risk_index,778
+4992,Steam and Power Plant III,Skilled trades,active,4.06,False,,0,0,False,0.602,51-8021.00,0.086,25.4,2026-11-06 to 2029-11-06,descriptive_risk_index,779
+2969,Sewage Treatment Plant Operator,Skilled trades,active,4.06,False,,0,0,False,0.598,51-8031.00,0.0706,25.3,2026-11-06 to 2029-11-06,descriptive_risk_index,780
+3309,Pipefitter (Refrigeration Mechanic),Skilled trades,active,4.06,False,,0,0,False,0.514,49-9021.00,0.0506,25.3,2026-11-06 to 2029-11-06,descriptive_risk_index,781
+3190,Furniture Restorer,Skilled trades,active,4.06,False,,0,0,False,0.579,51-7021.00,0.0883,24.9,2026-11-06 to 2029-11-06,descriptive_risk_index,782
+4963,Medical Office Coordinator,Health & medical,active,4.06,False,,0,0,False,0.581,11-9111.00,0.0618,24.9,2026-11-06 to 2029-11-06,descriptive_risk_index,783
+0180,Bindery Worker I,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.577,51-5113.00,0.0718,24.8,2026-11-06 to 2029-11-06,descriptive_risk_index,784
+4241,Bindery Worker II,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.577,51-5113.00,0.0718,24.8,2026-11-06 to 2029-11-06,descriptive_risk_index,785
+3506,Food Court/Snack Bar Supervisor,Food & domestic services,active,4.06,False,,0,0,False,0.49,35-1012.00,0.0614,24.7,2026-11-06 to 2029-11-06,descriptive_risk_index,786
+0025,Food Service Stores-Laborer,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.564,11-9051.00,0.0625,24.5,2026-11-06 to 2029-11-06,descriptive_risk_index,787
+1262,Electrician,Skilled trades,active,4.06,False,,0,0,False,0.482,47-2111.00,0.0322,24.5,2026-11-06 to 2029-11-06,descriptive_risk_index,788
+2825,Central Systems Control Operator,Skilled trades,active,4.06,False,,0,0,False,0.553,17-2199.03,0.1044,24.2,2026-11-06 to 2029-11-06,descriptive_risk_index,789
+0714,Cement Finisher,Skilled trades,active,4.06,False,,0,0,False,0.544,47-3019.00,0.0553,24.0,2026-11-06 to 2029-11-06,descriptive_risk_index,790
+2648,Tool and Instrument Mechanic,Science & research support,active,4.06,False,,0,0,False,0.544,49-9069.00,0.0575,24.0,2026-11-06 to 2029-11-06,descriptive_risk_index,791
+2898,Mailing Equipment Operator/Expediter II,Transportation & stores,active,4.06,False,,0,0,False,0.544,43-2099.00,0.0622,24.0,2026-11-06 to 2029-11-06,descriptive_risk_index,792
+0195,Child Care Assistant,Management & administration,active,4.06,False,,0,0,False,0.542,39-9011.00,0.0415,23.9,2026-11-06 to 2029-11-06,descriptive_risk_index,793
+3868,Culinary Worker III,Food & domestic services,active,4.06,False,,0,0,False,0.54,35-2012.00,0.0701,23.9,2026-11-06 to 2029-11-06,descriptive_risk_index,794
+3870,Culinary Worker V,Food & domestic services,active,4.06,False,,0,0,False,0.54,35-2012.00,0.0701,23.9,2026-11-06 to 2029-11-06,descriptive_risk_index,795
+0053,Financial Aid Coordinator,Finance & procurement,active,4.06,False,,0,0,False,0.537,13-2072.00,0.0447,23.8,2026-11-06 to 2029-11-06,descriptive_risk_index,796
+0054,Financial Aid Manager,Finance & procurement,active,4.06,False,,0,0,False,0.537,13-2072.00,0.0447,23.8,2026-11-06 to 2029-11-06,descriptive_risk_index,797
+1922,Painter Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.451,47-3014.00,0.0735,23.7,2026-11-06 to 2029-11-06,descriptive_risk_index,798
+3422,Assistant Superintendent of Print Shop,Management & administration,active,4.06,False,,0,0,False,0.528,51-5112.00,0.0584,23.6,2026-11-06 to 2029-11-06,descriptive_risk_index,799
+3563,Offset Printing Supervisor II,"Communications, media & arts",active,4.06,False,,0,0,False,0.528,51-5112.00,0.0688,23.6,2026-11-06 to 2029-11-06,descriptive_risk_index,800
+3865,Arena Technician,Science & research support,active,4.06,False,,0,0,False,0.531,17-3023.00,0.0507,23.6,2026-11-06 to 2029-11-06,descriptive_risk_index,801
+1820,Steam Distribution Foreman,Skilled trades,active,4.06,False,,0,0,False,0.521,51-8012.00,0.077,23.4,2026-11-06 to 2029-11-06,descriptive_risk_index,802
+1954,Steam Distribution Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.521,51-8012.00,0.077,23.4,2026-11-06 to 2029-11-06,descriptive_risk_index,803
+2971,Steam Distribution Operator,Skilled trades,active,4.06,False,,0,0,False,0.521,51-8012.00,0.077,23.4,2026-11-06 to 2029-11-06,descriptive_risk_index,804
+3182,Automotive Body Repair Technician,Science & research support,active,4.06,False,,0,0,False,0.516,49-3021.00,0.0427,23.3,2026-11-06 to 2029-11-06,descriptive_risk_index,805
+3222,Roofer,Skilled trades,active,4.06,False,,0,0,False,0.424,47-3016.00,0.0874,23.1,2026-11-06 to 2029-11-06,descriptive_risk_index,806
+0266,Natural Science Laboratory Assistant I,Science & research support,active,4.06,False,,0,0,False,0.5,,0.0614,22.9,2026-11-06 to 2029-11-06,descriptive_risk_index,807
+0267,Natural Science Laboratory Assistant II,Science & research support,active,4.06,False,,0,0,False,0.5,,0.0614,22.9,2026-11-06 to 2029-11-06,descriptive_risk_index,808
+0268,Natural Science Laboratory Assistant III,Science & research support,active,4.06,False,,0,0,False,0.5,,0.0614,22.9,2026-11-06 to 2029-11-06,descriptive_risk_index,809
+1748,Mailing Equipment Operator/Expediter III,Transportation & stores,active,4.06,False,,0,0,False,0.5,,0.0664,22.9,2026-11-06 to 2029-11-06,descriptive_risk_index,810
+3015,Mailing Equipment Operator/Expediter I,Transportation & stores,active,4.06,False,,0,0,False,0.5,,0.0664,22.9,2026-11-06 to 2029-11-06,descriptive_risk_index,811
+3029,Work Program Participant,Management & administration,active,4.06,False,,0,0,False,0.5,,0.0776,22.9,2026-11-06 to 2029-11-06,descriptive_risk_index,812
+3288,Crash-Rescue and Security Specialist,Protective services,active,4.06,False,,0,0,False,0.5,,0.1357,22.9,2026-11-06 to 2029-11-06,descriptive_risk_index,813
+3751,Athletic Turf Specialist,Management & administration,active,4.06,False,,0,0,False,0.5,,0.0556,22.9,2026-11-06 to 2029-11-06,descriptive_risk_index,814
+0730,Food Service Chef,Food & domestic services,active,4.06,False,,0,0,False,0.496,35-1011.00,0.0387,22.8,2026-11-06 to 2029-11-06,descriptive_risk_index,815
+0731,Pastry Chef,Food & domestic services,active,4.06,False,,0,0,False,0.496,35-1011.00,0.0666,22.8,2026-11-06 to 2029-11-06,descriptive_risk_index,816
+4836,Assistant Pastry Chef,Food & domestic services,active,4.06,False,,0,0,False,0.496,35-1011.00,0.0666,22.8,2026-11-06 to 2029-11-06,descriptive_risk_index,817
+2568,Automotive Technician,Science & research support,active,4.06,False,,0,0,False,0.488,49-3023.00,0.0506,22.6,2026-11-06 to 2029-11-06,descriptive_risk_index,818
+3438,Sports Equipment Supervisor,Management & administration,active,4.06,False,,0,0,False,0.49,51-1011.00,0.0602,22.6,2026-11-06 to 2029-11-06,descriptive_risk_index,819
+3493,Equipment Service Supervisor,Management & administration,active,4.06,False,,0,0,False,0.49,51-1011.00,0.0602,22.6,2026-11-06 to 2029-11-06,descriptive_risk_index,820
+3500,Food Service Area Supervisor,Food & domestic services,active,4.06,False,,0,0,False,0.49,35-1012.00,0.0736,22.6,2026-11-06 to 2029-11-06,descriptive_risk_index,821
+3869,Culinary Worker IV,Food & domestic services,active,4.06,False,,0,0,False,0.49,35-1012.00,0.0736,22.6,2026-11-06 to 2029-11-06,descriptive_risk_index,822
+4993,Steam and Power Plant IV,Skilled trades,active,4.06,False,,0,0,False,0.49,51-1011.00,0.088,22.6,2026-11-06 to 2029-11-06,descriptive_risk_index,823
+0420,Assistant to Director of University Union,Management & administration,active,3.93,False,,0,0,False,0.764,11-2032.00,0.0484,22.3,2026-11-06 to 2029-11-06,descriptive_risk_index,824
+4191,Waiter/Waitress,Food & domestic services,active,4.06,False,,0,0,False,0.473,35-3031.00,0.0705,22.2,2026-11-06 to 2029-11-06,descriptive_risk_index,825
+1914,Machinist Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.468,51-4041.00,0.0837,22.1,2026-11-06 to 2029-11-06,descriptive_risk_index,826
+2288,Machinist,Skilled trades,active,4.06,False,,0,0,False,0.468,51-4041.00,0.0837,22.1,2026-11-06 to 2029-11-06,descriptive_risk_index,827
+3512,Gymnasium and Facilities Supervisor,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.47,27-2022.00,0.0646,22.1,2026-11-06 to 2029-11-06,descriptive_risk_index,828
+4218,Machinist Welder,Skilled trades,active,4.06,False,,0,0,False,0.468,51-4041.00,0.07,22.1,2026-11-06 to 2029-11-06,descriptive_risk_index,829
+4220,Senior Machinist Welder,Skilled trades,active,4.06,False,,0,0,False,0.468,51-4041.00,0.07,22.1,2026-11-06 to 2029-11-06,descriptive_risk_index,830
+0024,Food Service Sanitation Laborer,"Facilities, grounds & custodial",active,4.06,False,,0,0,False,0.431,35-2021.00,0.0726,21.2,2026-11-06 to 2029-11-06,descriptive_risk_index,831
+3866,Culinary Worker I,Food & domestic services,active,4.06,False,,0,0,False,0.431,35-2021.00,0.072,21.2,2026-11-06 to 2029-11-06,descriptive_risk_index,832
+3867,Culinary Worker II,Food & domestic services,active,4.06,False,,0,0,False,0.431,35-2021.00,0.072,21.2,2026-11-06 to 2029-11-06,descriptive_risk_index,833
+1796,Roofer Foreman,Skilled trades,active,4.06,False,,0,0,False,0.424,47-3016.00,0.0873,21.0,2026-11-06 to 2029-11-06,descriptive_risk_index,834
+1936,Roofer Sub-Foreman,Skilled trades,active,4.06,False,,0,0,False,0.424,47-3016.00,0.0873,21.0,2026-11-06 to 2029-11-06,descriptive_risk_index,835
+1725,Laborer-Electrician Foreman,Skilled trades,active,3.93,False,,0,0,False,0.704,53-1042.00,0.0849,20.8,2026-11-06 to 2029-11-06,descriptive_risk_index,836
+2046,Automotive Technician Assistant,Science & research support,active,3.93,False,,0,0,False,0.697,53-6031.00,0.0518,20.6,2026-11-06 to 2029-11-06,descriptive_risk_index,837
+3806,Coordinator of Residence Hall Attendant Program,Protective services,active,3.93,False,,0,0,False,0.695,39-9041.00,0.1341,20.6,2026-11-06 to 2029-11-06,descriptive_risk_index,838
+3807,Supervisor of Residence Hall Attendants,Protective services,active,3.93,False,,0,0,False,0.695,39-9041.00,0.1583,20.6,2026-11-06 to 2029-11-06,descriptive_risk_index,839
+5031,Information Technology Technical Associate,"IT, data & security",active,3.6,False,,0,0,False,0.739,15-1232.00,0.0636,20.5,2026-11-06 to 2029-11-06,descriptive_risk_index,840
+3590,Routing Supervisor,Clerical & office support,active,3.93,False,,0,0,False,0.671,43-5032.00,0.0788,20.0,2026-11-06 to 2029-11-06,descriptive_risk_index,841
+1069,Assistant Director of Auditorium,Finance & procurement,active,3.93,False,,0,0,False,0.669,39-3031.00,0.1012,19.9,2026-11-06 to 2029-11-06,descriptive_risk_index,842
+3021,Peer Support Assistant,Clerical & office support,active,3.89,False,,0,0,False,0.7,21-1093.00,0.0517,19.8,2026-11-06 to 2029-11-06,descriptive_risk_index,843
+3022,Peer Support Specialist,Clerical & office support,active,3.89,False,,0,0,False,0.7,21-1093.00,0.0517,19.8,2026-11-06 to 2029-11-06,descriptive_risk_index,844
+3023,Peer Support Supervisor,Management & administration,active,3.89,False,,0,0,False,0.7,21-1093.00,0.0306,19.8,2026-11-06 to 2029-11-06,descriptive_risk_index,845
+2185,Live Captioner,Other,active,2.52,False,,0,0,False,0.726,27-3092.00,0.0484,19.7,2026-11-06 to 2029-11-06,descriptive_risk_index,846
+3495,Field House Facilities Supervisor,"Facilities, grounds & custodial",active,3.93,False,,0,0,False,0.638,43-1011.00,0.1095,19.5,2026-11-06 to 2029-11-06,descriptive_risk_index,847
+2133,Housekeeper,"Facilities, grounds & custodial",active,3.93,False,,0,0,False,0.649,37-2012.00,0.0767,19.4,2026-11-06 to 2029-11-06,descriptive_risk_index,848
+3260,Executive Assistant,Clerical & office support,active,3.93,False,,0,0,False,0.643,43-6011.00,0.092,19.3,2026-11-06 to 2029-11-06,descriptive_risk_index,849
+4502,Building Service Worker,"Facilities, grounds & custodial",active,2.11,False,,0,0,False,0.727,37-2011.00,0.0245,18.9,2026-11-06 to 2029-11-06,descriptive_risk_index,850
+4123,Respiratory Care Therapy Specialist,Health & medical,active,3.52,False,,0,0,False,0.676,29-1126.00,0.0956,18.8,2026-11-06 to 2029-11-06,descriptive_risk_index,851
+4147,Respiratory Care Therapy Technologist,Health & medical,active,3.52,False,,0,0,False,0.676,29-1126.00,0.0956,18.8,2026-11-06 to 2029-11-06,descriptive_risk_index,852
+4527,Continuing Education Community Coordinator,Management & administration,active,3.93,False,,0,0,False,0.617,25-1072.00,0.0748,18.6,2026-11-06 to 2029-11-06,descriptive_risk_index,853
+2240,Laborer-Electrician,Skilled trades,active,3.93,False,,0,0,False,0.598,47-3013.00,0.0826,18.5,2026-11-06 to 2029-11-06,descriptive_risk_index,854
+5030,Information Technology Manager/Administrative Coordinator,"IT, data & security",active,3.6,False,,0,0,False,0.637,11-3021.00,0.0383,17.9,2026-11-06 to 2029-11-06,descriptive_risk_index,855
+4046,Surgical Technologist,Health & medical,active,2.56,False,,0,0,False,0.625,29-2055.00,0.0397,17.3,2026-11-06 to 2029-11-06,descriptive_risk_index,856
+4760,Ophthalmic Technician,Science & research support,active,2.52,False,,0,0,False,0.611,29-2099.05,0.0619,16.9,2026-11-06 to 2029-11-06,descriptive_risk_index,857
+4761,Ophthalmic Medical Technologist,Health & medical,active,2.52,False,,0,0,False,0.611,29-2099.05,0.0862,16.9,2026-11-06 to 2029-11-06,descriptive_risk_index,858
+4765,Ophthalmic Photographer,"Communications, media & arts",active,2.52,True,preliminary,0,0,False,0.611,29-2099.05,0.066,16.9,2026-11-06 to 2029-11-06,descriptive_risk_index,859
+4766,Principal Ophthalmic Photographer,"Communications, media & arts",active,2.52,True,preliminary,0,0,False,0.611,29-2099.05,0.066,16.9,2026-11-06 to 2029-11-06,descriptive_risk_index,860
+4047,Ophthalmic Assistant,Management & administration,active,2.52,False,,0,0,False,0.609,29-2057.00,0.0539,16.8,2026-11-06 to 2029-11-06,descriptive_risk_index,861
+3032,Speech Pathologist,Health & medical,active,3.93,False,,0,0,False,0.539,29-1127.00,0.068,16.7,2026-11-06 to 2029-11-06,descriptive_risk_index,862
+3902,Communications Technician,"Communications, media & arts",active,2.48,False,,0,0,False,0.619,49-2022.00,0.0344,16.7,2026-11-06 to 2029-11-06,descriptive_risk_index,863
+3903,Senior Communications Technician,"Communications, media & arts",active,2.48,False,,0,0,False,0.619,49-2022.00,0.0344,16.7,2026-11-06 to 2029-11-06,descriptive_risk_index,864
+5032,Information Technology Support Associate,"IT, data & security",active,3.35,False,,0,0,False,0.59,15-1231.00,0.0444,16.5,2026-11-06 to 2029-11-06,descriptive_risk_index,865
+2663,Mail Messenger,Clerical & office support,active,3.93,False,,0,0,False,0.527,43-5052.00,0.1203,16.4,2026-11-06 to 2029-11-06,descriptive_risk_index,866
+4124,Respiratory Care Therapy Manager,Health & medical,active,3.52,False,,0,0,False,0.581,11-9111.00,0.0549,16.4,2026-11-06 to 2029-11-06,descriptive_risk_index,867
+1053,University Food Service Director,Food & domestic services,active,3.93,False,,0,0,False,0.49,35-1012.00,0.0608,15.5,2026-11-06 to 2029-11-06,descriptive_risk_index,868
+0828,Tumor Registrar I,Health & medical,active,1.48,False,,0,0,False,0.583,29-9021.00,0.0305,15.2,2026-11-06 to 2029-11-06,descriptive_risk_index,869
+0829,Tumor Registrar II,Health & medical,active,1.48,False,,0,0,False,0.583,29-9021.00,0.0305,15.2,2026-11-06 to 2029-11-06,descriptive_risk_index,870
+3056,Building Heat and Frost Insulator,Skilled trades,active,2.18,False,,0,0,False,0.566,47-2132.00,0.0377,15.0,2026-11-06 to 2029-11-06,descriptive_risk_index,871
+0197,Dental Assistant I,Health & medical,active,3.73,False,,0,0,False,0.504,31-9091.00,0.0559,14.7,2026-11-06 to 2029-11-06,descriptive_risk_index,872
+4528,Dental Assistant II,Health & medical,active,3.73,False,,0,0,False,0.504,31-9091.00,0.0507,14.7,2026-11-06 to 2029-11-06,descriptive_risk_index,873
+3061,Building Heat and Frost Insulator Foreperson,Skilled trades,active,2.18,False,,0,0,False,0.5,,0.0506,13.3,2026-11-06 to 2029-11-06,descriptive_risk_index,874

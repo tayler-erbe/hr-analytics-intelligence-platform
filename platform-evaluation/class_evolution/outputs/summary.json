@@ -1,0 +1,897 @@
+{
+ "build_version": "class_evolution_v1",
+ "as_of": "2026-11-06",
+ "built_at_utc": "2026-11-06T15:39:01+00:00",
+ "acquisition": {
+  "csn_numbers_requested": 2662,
+  "csn_range": [
+   1,
+   3423
+  ],
+  "pdfs": 2322,
+  "status_counts": {
+   "200_not_pdf": 340,
+   "200": 2322
+  },
+  "bytes_pdf_total": 884133759,
+  "first_retrieved": "2026-11-06T14:08:23+00:00",
+  "last_retrieved": "2026-11-06T15:31:18+00:00"
+ },
+ "parsing": {
+  "unique_documents": 1557,
+  "duplicate_pdfs": 765,
+  "by_kind": {
+   "notice": 906,
+   "spec_document": 590,
+   "no_text_layer": 5,
+   "other": 47,
+   "draft_attachment": 9
+  },
+  "by_stage": {
+   "job_description_request": 10,
+   "notice_other": 27,
+   "meeting": 26,
+   "spec_document": 590,
+   "no_text_layer": 5,
+   "final": 505,
+   "other": 7,
+   "proposal": 269,
+   "preliminary": 107,
+   "rescission": 2,
+   "draft": 9
+  },
+  "dated_docs": 1124,
+  "date_sources": {
+   "memo_date": 905,
+   "spec_effective_date": 187,
+   "null": 406,
+   "header_long_date": 58,
+   "signature_date": 1
+  },
+  "docs_with_class_codes": 1006,
+  "doc_year_range": [
+   "2003",
+   "2026"
+  ],
+  "docs_by_year": {
+   "2003": 6,
+   "2004": 59,
+   "2005": 21,
+   "2006": 26,
+   "2007": 46,
+   "2008": 56,
+   "2009": 84,
+   "2010": 50,
+   "2011": 115,
+   "2012": 64,
+   "2013": 54,
+   "2014": 33,
+   "2015": 52,
+   "2016": 41,
+   "2017": 23,
+   "2018": 22,
+   "2019": 50,
+   "2020": 39,
+   "2021": 54,
+   "2022": 49,
+   "2023": 28,
+   "2024": 60,
+   "2025": 9,
+   "2026": 83
+  },
+  "csn_class_events": 3087,
+  "csn_events_by_action": {
+   "other": 301,
+   "exam_change": 180,
+   "revise_spec": 2068,
+   "abolish": 243,
+   "title_change": 26,
+   "successor_or_target": 154,
+   "new_class": 71,
+   "rescind": 16,
+   "discontinue": 23,
+   "pay_note": 2,
+   "reinstate": 1,
+   "qualification_change": 2
+  },
+  "csn_events_by_stage": {
+   "spec_document": 455,
+   "proposal": 327,
+   "final": 1721,
+   "preliminary": 479,
+   "notice_other": 48,
+   "rescission": 16,
+   "draft": 5,
+   "meeting": 28,
+   "job_description_request": 4,
+   "other": 4
+  },
+  "series_page_events": 948
+ },
+ "classes": {
+  "universe": 1223,
+  "by_status": {
+   "not_in_current_catalog": 174,
+   "active": 873,
+   "abolished": 150,
+   "proposed_abolish": 18,
+   "abolished_pending_catalog_update": 8
+  },
+  "with_onet_candidate": 852
+ },
+ "validation": {
+  "spec_dates_2016_2019": {
+   "classes": 80,
+   "with_matching_notice": 76,
+   "recall": 0.95
+  },
+  "spec_dates_2020_2022": {
+   "classes": 496,
+   "with_matching_notice": 481,
+   "recall": 0.97
+  },
+  "spec_dates_2023_2026": {
+   "classes": 29,
+   "with_matching_notice": 24,
+   "recall": 0.828
+  },
+  "ocr_events": 290,
+  "ocr_events_known_code_share": 0.752,
+  "note": "recall = share of current spec effective dates preceded (within 18 months, or followed within 3) by a parsed notice naming the class; low values mean notices missing, unparsed, or naming the series only"
+ },
+ "analytics": {
+  "created_by_family": {
+   "Health & medical": 24,
+   "Facilities, grounds & custodial": 7,
+   "Student & academic services": 6,
+   "Clerical & office support": 12,
+   "Management & administration": 26,
+   "Science & research support": 15,
+   "Communications, media & arts": 7,
+   "Protective services": 8,
+   "Skilled trades": 12,
+   "Other": 4,
+   "Finance & procurement": 3,
+   "Food & domestic services": 5,
+   "Library, museum & archives": 1,
+   "IT, data & security": 3
+  },
+  "abolished_by_family": {
+   "Health & medical": 13,
+   "Other": 42,
+   "IT, data & security": 41,
+   "Management & administration": 12,
+   "Science & research support": 11,
+   "Facilities, grounds & custodial": 7,
+   "Communications, media & arts": 9,
+   "Skilled trades": 7,
+   "Transportation & stores": 5,
+   "Food & domestic services": 4,
+   "Finance & procurement": 3,
+   "Student & academic services": 3,
+   "Protective services": 1
+  },
+  "created_by_year": {
+   "1977": 1,
+   "2004": 3,
+   "2005": 3,
+   "2006": 4,
+   "2007": 8,
+   "2009": 2,
+   "2010": 3,
+   "2011": 2,
+   "2012": 9,
+   "2013": 20,
+   "2014": 3,
+   "2015": 8,
+   "2016": 13,
+   "2017": 11,
+   "2018": 5,
+   "2019": 8,
+   "2020": 14,
+   "2021": 6,
+   "2022": 6,
+   "2024": 4
+  },
+  "abolished_by_year": {
+   "2005": 2,
+   "2006": 3,
+   "2007": 3,
+   "2008": 3,
+   "2010": 3,
+   "2012": 2,
+   "2013": 3,
+   "2015": 33,
+   "2016": 1,
+   "2019": 2,
+   "2020": 5,
+   "2021": 7,
+   "2022": 23,
+   "2023": 9,
+   "2024": 42,
+   "2026": 17
+  },
+  "status_counts": {
+   "not_in_current_catalog": 174,
+   "active": 873,
+   "abolished": 150,
+   "proposed_abolish": 18,
+   "abolished_pending_catalog_update": 8
+  },
+  "title_change_patterns_final": {
+   "flagged_change_in_title_same_title": 28,
+   "title_change_in_place": 80,
+   "retitled_shared_words": 68,
+   "retitled_new_words": 108,
+   "level_renumbered": 9,
+   "code_change_title_unknown": 5,
+   "merged_into_other_class": 11
+  },
+  "n_successor_pairs_final": 201,
+  "top_consolidation_targets": [
+   {
+    "to_code": "5031",
+    "to_title": "Information Technology Technical Associate",
+    "n_from_classes": 37,
+    "first_final": "2023-06-29"
+   },
+   {
+    "to_code": "5030",
+    "to_title": "Information Technology Manager/Administrative Coordinator",
+    "n_from_classes": 14,
+    "first_final": "2023-06-29"
+   },
+   {
+    "to_code": "4992",
+    "to_title": "Steam and Power Plant III",
+    "n_from_classes": 7,
+    "first_final": "2013-05-16"
+   },
+   {
+    "to_code": "5032",
+    "to_title": "Information Technology Support Associate",
+    "n_from_classes": 6,
+    "first_final": "2023-06-29"
+   },
+   {
+    "to_code": "4990",
+    "to_title": "Steam and Power Plant I",
+    "n_from_classes": 5,
+    "first_final": "2013-05-16"
+   },
+   {
+    "to_code": "3868",
+    "to_title": "Culinary Worker III",
+    "n_from_classes": 4,
+    "first_final": "2016-03-01"
+   },
+   {
+    "to_code": "2211",
+    "to_title": "Assistant Agricultural Research Technician",
+    "n_from_classes": 4,
+    "first_final": "2010-01-19"
+   },
+   {
+    "to_code": "3866",
+    "to_title": "Culinary Worker I",
+    "n_from_classes": 4,
+    "first_final": "2016-03-01"
+   },
+   {
+    "to_code": "2007",
+    "to_title": "Greens Worker",
+    "n_from_classes": 4,
+    "first_final": "2007-01-23"
+   },
+   {
+    "to_code": "4993",
+    "to_title": "Steam and Power Plant IV",
+    "n_from_classes": 4,
+    "first_final": "2013-05-16"
+   }
+  ],
+  "spec_age_years": {
+   "n": 860,
+   "median": 4.35,
+   "p90": 16.76,
+   "n_over_10y": 232,
+   "n_over_15y": 125,
+   "n_over_20y": 11
+  },
+  "lag_flagged": 137,
+  "onet_link_status": {
+   "no_candidate": 341,
+   "unreviewed_candidate": 852,
+   "abstained": 30
+  },
+  "class_level_spearman": {
+   "hot_tech_share": {
+    "rho": -0.07,
+    "n": 823
+   },
+   "emerging_task_rate": {
+    "rho": 0.058,
+    "n": 823
+   },
+   "aei_observed_exposure": {
+    "rho": 0.12,
+    "n": 785
+   },
+   "aei_task_coverage": {
+    "rho": 0.162,
+    "n": 823
+   },
+   "nat_task_churn_10y": {
+    "rho": 0.064,
+    "n": 823
+   },
+   "nat_tech_hot_added_10y": {
+    "rho": 0.057,
+    "n": 823
+   }
+  },
+  "class_level_spearman_note": "Spearman rho between national signal and years since last SUCSS revision for active classes with an unreviewed O*NET top-1 candidate (n=823). Negative rho = higher national change goes with more recent revision."
+ },
+ "model": {
+  "archive_window": [
+   "2004-01-01",
+   "2026-11-06"
+  ],
+  "horizon_years": 3,
+  "backtest": [
+   {
+    "cutoff": "2007-07-01",
+    "n": 911,
+    "positives": 132,
+    "base_rate": 0.1449,
+    "evaluated": false,
+    "reason": "insufficient earlier labelled windows or no positives"
+   },
+   {
+    "cutoff": "2008-07-01",
+    "n": 910,
+    "positives": 132,
+    "base_rate": 0.1451,
+    "evaluated": false,
+    "reason": "insufficient earlier labelled windows or no positives"
+   },
+   {
+    "cutoff": "2009-07-01",
+    "n": 912,
+    "positives": 157,
+    "base_rate": 0.1721,
+    "evaluated": false,
+    "reason": "insufficient earlier labelled windows or no positives"
+   },
+   {
+    "cutoff": "2010-07-01",
+    "window_end": "2013-07-01",
+    "n": 912,
+    "positives": 120,
+    "base_rate": 0.1316,
+    "n_train": 911,
+    "evaluated": true,
+    "auc_model": 0.5824,
+    "auc_age_only": 0.5872,
+    "auc_family_rate": 0.5029,
+    "auc_risk_index": 0.6614,
+    "precision_at_k_risk_index": 0.2747,
+    "ap_model": 0.2032,
+    "ap_age_only": 0.1973,
+    "top_decile_k": 91,
+    "precision_at_k_model": 0.2747,
+    "precision_at_k_age_only": 0.1868
+   },
+   {
+    "cutoff": "2011-07-01",
+    "window_end": "2014-07-01",
+    "n": 912,
+    "positives": 118,
+    "base_rate": 0.1294,
+    "n_train": 1821,
+    "evaluated": true,
+    "auc_model": 0.6609,
+    "auc_age_only": 0.5197,
+    "auc_family_rate": 0.5622,
+    "auc_risk_index": 0.6021,
+    "precision_at_k_risk_index": 0.2857,
+    "ap_model": 0.3157,
+    "ap_age_only": 0.1393,
+    "top_decile_k": 91,
+    "precision_at_k_model": 0.3956,
+    "precision_at_k_age_only": 0.1538
+   },
+   {
+    "cutoff": "2012-07-01",
+    "window_end": "2015-07-01",
+    "n": 916,
+    "positives": 115,
+    "base_rate": 0.1255,
+    "n_train": 2733,
+    "evaluated": true,
+    "auc_model": 0.5493,
+    "auc_age_only": 0.5489,
+    "auc_family_rate": 0.509,
+    "auc_risk_index": 0.498,
+    "precision_at_k_risk_index": 0.1868,
+    "ap_model": 0.148,
+    "ap_age_only": 0.1181,
+    "top_decile_k": 91,
+    "precision_at_k_model": 0.2198,
+    "precision_at_k_age_only": 0.0769
+   },
+   {
+    "cutoff": "2013-07-01",
+    "window_end": "2016-07-01",
+    "n": 926,
+    "positives": 117,
+    "base_rate": 0.1263,
+    "n_train": 3645,
+    "evaluated": true,
+    "auc_model": 0.5524,
+    "auc_age_only": 0.5694,
+    "auc_family_rate": 0.5146,
+    "auc_risk_index": 0.5067,
+    "precision_at_k_risk_index": 0.1522,
+    "ap_model": 0.1666,
+    "ap_age_only": 0.1152,
+    "top_decile_k": 92,
+    "precision_at_k_model": 0.2609,
+    "precision_at_k_age_only": 0.0652
+   },
+   {
+    "cutoff": "2014-07-01",
+    "window_end": "2017-07-01",
+    "n": 938,
+    "positives": 118,
+    "base_rate": 0.1258,
+    "n_train": 4557,
+    "evaluated": true,
+    "auc_model": 0.5613,
+    "auc_age_only": 0.5079,
+    "auc_family_rate": 0.5581,
+    "auc_risk_index": 0.4535,
+    "precision_at_k_risk_index": 0.043,
+    "ap_model": 0.1596,
+    "ap_age_only": 0.1117,
+    "top_decile_k": 93,
+    "precision_at_k_model": 0.2258,
+    "precision_at_k_age_only": 0.086
+   },
+   {
+    "cutoff": "2015-07-01",
+    "window_end": "2018-07-01",
+    "n": 913,
+    "positives": 53,
+    "base_rate": 0.0581,
+    "n_train": 5473,
+    "evaluated": true,
+    "auc_model": 0.5591,
+    "auc_age_only": 0.5179,
+    "auc_family_rate": 0.5529,
+    "auc_risk_index": 0.5227,
+    "precision_at_k_risk_index": 0.0769,
+    "ap_model": 0.1062,
+    "ap_age_only": 0.0696,
+    "top_decile_k": 91,
+    "precision_at_k_model": 0.1429,
+    "precision_at_k_age_only": 0.0769
+   },
+   {
+    "cutoff": "2016-07-01",
+    "window_end": "2019-07-01",
+    "n": 921,
+    "positives": 50,
+    "base_rate": 0.0543,
+    "n_train": 6399,
+    "evaluated": true,
+    "auc_model": 0.5785,
+    "auc_age_only": 0.4609,
+    "auc_family_rate": 0.605,
+    "auc_risk_index": 0.505,
+    "precision_at_k_risk_index": 0.0435,
+    "ap_model": 0.1067,
+    "ap_age_only": 0.0559,
+    "top_decile_k": 92,
+    "precision_at_k_model": 0.1413,
+    "precision_at_k_age_only": 0.0652
+   },
+   {
+    "cutoff": "2017-07-01",
+    "window_end": "2020-07-01",
+    "n": 936,
+    "positives": 70,
+    "base_rate": 0.0748,
+    "n_train": 7337,
+    "evaluated": true,
+    "auc_model": 0.4265,
+    "auc_age_only": 0.4134,
+    "auc_family_rate": 0.516,
+    "auc_risk_index": 0.4446,
+    "precision_at_k_risk_index": 0.043,
+    "ap_model": 0.0779,
+    "ap_age_only": 0.0745,
+    "top_decile_k": 93,
+    "precision_at_k_model": 0.1075,
+    "precision_at_k_age_only": 0.0753
+   },
+   {
+    "cutoff": "2018-07-01",
+    "window_end": "2021-07-01",
+    "n": 938,
+    "positives": 69,
+    "base_rate": 0.0736,
+    "n_train": 8250,
+    "evaluated": true,
+    "auc_model": 0.424,
+    "auc_age_only": 0.3999,
+    "auc_family_rate": 0.5263,
+    "auc_risk_index": 0.4348,
+    "precision_at_k_risk_index": 0.086,
+    "ap_model": 0.0755,
+    "ap_age_only": 0.0718,
+    "top_decile_k": 93,
+    "precision_at_k_model": 0.129,
+    "precision_at_k_age_only": 0.0753
+   },
+   {
+    "cutoff": "2019-07-01",
+    "window_end": "2022-07-01",
+    "n": 949,
+    "positives": 277,
+    "base_rate": 0.2919,
+    "n_train": 9171,
+    "evaluated": true,
+    "auc_model": 0.6441,
+    "auc_age_only": 0.5871,
+    "auc_family_rate": 0.5175,
+    "auc_risk_index": 0.5828,
+    "precision_at_k_risk_index": 0.4255,
+    "ap_model": 0.4096,
+    "ap_age_only": 0.338,
+    "top_decile_k": 94,
+    "precision_at_k_model": 0.4894,
+    "precision_at_k_age_only": 0.3298
+   },
+   {
+    "cutoff": "2020-07-01",
+    "window_end": "2023-07-01",
+    "n": 945,
+    "positives": 625,
+    "base_rate": 0.6614,
+    "n_train": 10107,
+    "evaluated": true,
+    "auc_model": 0.6159,
+    "auc_age_only": 0.7978,
+    "auc_family_rate": 0.2976,
+    "auc_risk_index": 0.7955,
+    "precision_at_k_risk_index": 0.8511,
+    "ap_model": 0.7177,
+    "ap_age_only": 0.8655,
+    "top_decile_k": 94,
+    "precision_at_k_model": 0.6596,
+    "precision_at_k_age_only": 0.9043
+   },
+   {
+    "cutoff": "2021-07-01",
+    "window_end": "2024-07-01",
+    "n": 959,
+    "positives": 617,
+    "base_rate": 0.6434,
+    "n_train": 11045,
+    "evaluated": true,
+    "auc_model": 0.5329,
+    "auc_age_only": 0.821,
+    "auc_family_rate": 0.292,
+    "auc_risk_index": 0.8125,
+    "precision_at_k_risk_index": 0.8632,
+    "ap_model": 0.657,
+    "ap_age_only": 0.8683,
+    "top_decile_k": 95,
+    "precision_at_k_model": 0.6632,
+    "precision_at_k_age_only": 0.8947
+   },
+   {
+    "cutoff": "2022-07-01",
+    "window_end": "2025-07-01",
+    "n": 933,
+    "positives": 557,
+    "base_rate": 0.597,
+    "n_train": 11994,
+    "evaluated": true,
+    "auc_model": 0.5022,
+    "auc_age_only": 0.5935,
+    "auc_family_rate": 0.2991,
+    "auc_risk_index": 0.739,
+    "precision_at_k_risk_index": 0.7742,
+    "ap_model": 0.602,
+    "ap_age_only": 0.7362,
+    "top_decile_k": 93,
+    "precision_at_k_model": 0.6022,
+    "precision_at_k_age_only": 0.7742
+   },
+   {
+    "cutoff": "2023-07-01",
+    "window_end": "2026-07-01",
+    "n": 930,
+    "positives": 68,
+    "base_rate": 0.0731,
+    "n_train": 12939,
+    "evaluated": true,
+    "auc_model": 0.1949,
+    "auc_age_only": 0.2348,
+    "auc_family_rate": 0.4676,
+    "auc_risk_index": 0.1676,
+    "precision_at_k_risk_index": 0.0215,
+    "ap_model": 0.0438,
+    "ap_age_only": 0.0481,
+    "top_decile_k": 93,
+    "precision_at_k_model": 0.0,
+    "precision_at_k_age_only": 0.0323
+   }
+  ],
+  "backtest_overview": {
+   "n_cutoffs_evaluated": 14,
+   "cutoffs": [
+    "2010-07-01",
+    "2011-07-01",
+    "2012-07-01",
+    "2013-07-01",
+    "2014-07-01",
+    "2015-07-01",
+    "2016-07-01",
+    "2017-07-01",
+    "2018-07-01",
+    "2019-07-01",
+    "2020-07-01",
+    "2021-07-01",
+    "2022-07-01",
+    "2023-07-01"
+   ],
+   "mean_auc_model": 0.5275,
+   "mean_auc_age_only": 0.54,
+   "mean_auc_family_rate": 0.4801,
+   "mean_auc_risk_index": 0.5519,
+   "mean_ap_model": 0.2707,
+   "mean_base_rate": 0.2262
+  },
+  "mode": "descriptive_risk_index",
+  "mode_reason": "14 evaluated cutoffs; mean AUC 0.5275",
+  "train_rows": 15761,
+  "train_positives": 3395,
+  "coefficients": [
+   {
+    "feature": "log_age",
+    "std_coef": 0.7578
+   },
+   {
+    "feature": "notice_last_2y",
+    "std_coef": 0.7463
+   },
+   {
+    "feature": "n_notices_before",
+    "std_coef": -0.3818
+   },
+   {
+    "feature": "nat_tech_hot_5y",
+    "std_coef": 0.3639
+   },
+   {
+    "feature": "occ=semiprof",
+    "std_coef": 0.1915
+   },
+   {
+    "feature": "occ=unknown",
+    "std_coef": 0.1714
+   },
+   {
+    "feature": "series_peer_activity_2y",
+    "std_coef": -0.1583
+   },
+   {
+    "feature": "fam=Protective services",
+    "std_coef": 0.1511
+   },
+   {
+    "feature": "nat_task_churn_5y",
+    "std_coef": -0.1444
+   },
+   {
+    "feature": "fam=Finance & procurement",
+    "std_coef": 0.1243
+   },
+   {
+    "feature": "fam=Clerical & office support",
+    "std_coef": 0.1185
+   },
+   {
+    "feature": "occ=clerical",
+    "std_coef": -0.1113
+   },
+   {
+    "feature": "aei_task_coverage",
+    "std_coef": -0.1061
+   },
+   {
+    "feature": "occ=managerial",
+    "std_coef": -0.1013
+   },
+   {
+    "feature": "fam=Health & medical",
+    "std_coef": 0.0855
+   },
+   {
+    "feature": "age_censored",
+    "std_coef": -0.0846
+   },
+   {
+    "feature": "fam=Management & administration",
+    "std_coef": -0.0787
+   },
+   {
+    "feature": "occ=trades_services",
+    "std_coef": 0.0779
+   },
+   {
+    "feature": "fam=Other",
+    "std_coef": -0.0778
+   },
+   {
+    "feature": "aei_observed_exposure",
+    "std_coef": 0.0569
+   },
+   {
+    "feature": "fam=Library, museum & archives",
+    "std_coef": 0.0531
+   },
+   {
+    "feature": "fam=Skilled trades",
+    "std_coef": 0.0526
+   },
+   {
+    "feature": "fam=Human resources",
+    "std_coef": 0.0448
+   },
+   {
+    "feature": "fam=Agriculture & animal care",
+    "std_coef": 0.04
+   },
+   {
+    "feature": "fam=Science & research support",
+    "std_coef": -0.0365
+   },
+   {
+    "feature": "fam=Student & academic services",
+    "std_coef": 0.0293
+   },
+   {
+    "feature": "onet_missing",
+    "std_coef": -0.0221
+   },
+   {
+    "feature": "fam=Communications, media & arts",
+    "std_coef": -0.0153
+   },
+   {
+    "feature": "fam=Transportation & stores",
+    "std_coef": -0.008
+   },
+   {
+    "feature": "emerging_task_rate",
+    "std_coef": -0.0062
+   },
+   {
+    "feature": "fam=Facilities, grounds & custodial",
+    "std_coef": 0.0058
+   },
+   {
+    "feature": "hot_tech_share",
+    "std_coef": 0.0049
+   },
+   {
+    "feature": "fam=Food & domestic services",
+    "std_coef": 0.0024
+   }
+  ],
+  "ranking_key": "risk_index",
+  "n_scored": 874,
+  "top_families_in_top50": {
+   "Health & medical": 35,
+   "Management & administration": 5,
+   "Facilities, grounds & custodial": 3,
+   "Other": 3,
+   "Science & research support": 2,
+   "Protective services": 1,
+   "Student & academic services": 1
+  }
+ },
+ "job_evolution_reference": {
+  "path": "job_evolution/artifacts/transitions.parquet",
+  "sha256": "becc63d0fda44d4f4a17bdc5fd61c8e49c78a19f3509913c9dfb3f65ceb56a65",
+  "releases": [
+   [
+    "13.0",
+    "2008-06"
+   ],
+   [
+    "14.0",
+    "2009-06"
+   ],
+   [
+    "15.0",
+    "2010-07"
+   ],
+   [
+    "15.1",
+    "2011-02"
+   ],
+   [
+    "16.0",
+    "2011-07"
+   ],
+   [
+    "17.0",
+    "2012-07"
+   ],
+   [
+    "18.0",
+    "2013-07"
+   ],
+   [
+    "19.0",
+    "2014-07"
+   ],
+   [
+    "20.0",
+    "2015-08"
+   ],
+   [
+    "21.0",
+    "2016-08"
+   ],
+   [
+    "22.0",
+    "2017-08"
+   ],
+   [
+    "23.0",
+    "2018-08"
+   ],
+   [
+    "24.0",
+    "2019-08"
+   ],
+   [
+    "25.0",
+    "2020-08"
+   ],
+   [
+    "26.0",
+    "2021-08"
+   ],
+   [
+    "27.0",
+    "2022-08"
+   ],
+   [
+    "28.0",
+    "2023-08"
+   ],
+   [
+    "29.0",
+    "2024-08"
+   ],
+   [
+    "30.0",
+    "2025-08"
+   ],
+   [
+    "31.0",
+    "2026-08"
+   ]
+  ],
+  "n_codes": 1016,
+  "n_transitions": 20164
+ },
+ "licensing": "No SUCSS text is written to outputs: only CSN numbers, URLs, hashes, dates, class codes, class titles (public identifiers), categorical labels, counts and derived features."
+}

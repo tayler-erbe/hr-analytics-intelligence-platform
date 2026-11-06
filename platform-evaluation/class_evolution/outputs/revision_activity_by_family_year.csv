@@ -1,0 +1,662 @@
+job_family,year,measure,n_classes,family_active_classes_2026,share_of_current_family
+Agriculture & animal care,2010,any_notice,3,6,0.5
+Agriculture & animal care,2010,final_revise_spec,3,6,0.5
+Agriculture & animal care,2012,any_notice,2,6,0.3333
+Agriculture & animal care,2014,any_notice,2,6,0.3333
+Agriculture & animal care,2014,final_revise_spec,2,6,0.3333
+Agriculture & animal care,2014,spec_in_force,2,6,0.3333
+Agriculture & animal care,2021,any_notice,4,6,0.6667
+Agriculture & animal care,2021,final_revise_spec,4,6,0.6667
+Agriculture & animal care,2022,any_notice,4,6,0.6667
+Agriculture & animal care,2022,final_revise_spec,4,6,0.6667
+Agriculture & animal care,2025,any_notice,4,6,0.6667
+Agriculture & animal care,2025,final_revise_spec,4,6,0.6667
+Agriculture & animal care,2026,spec_in_force,4,6,0.6667
+Clerical & office support,1977,spec_in_force,1,87,0.0115
+Clerical & office support,1984,spec_in_force,1,87,0.0115
+Clerical & office support,1988,spec_in_force,2,87,0.023
+Clerical & office support,1996,spec_in_force,1,87,0.0115
+Clerical & office support,1997,spec_in_force,1,87,0.0115
+Clerical & office support,2004,any_notice,2,87,0.023
+Clerical & office support,2005,any_notice,2,87,0.023
+Clerical & office support,2008,any_notice,6,87,0.069
+Clerical & office support,2008,final_revise_spec,6,87,0.069
+Clerical & office support,2011,any_notice,2,87,0.023
+Clerical & office support,2011,final_revise_spec,1,87,0.0115
+Clerical & office support,2011,spec_in_force,1,87,0.0115
+Clerical & office support,2012,any_notice,6,87,0.069
+Clerical & office support,2012,final_revise_spec,6,87,0.069
+Clerical & office support,2015,any_notice,3,87,0.0345
+Clerical & office support,2015,final_new_class,1,87,0.0115
+Clerical & office support,2015,final_revise_spec,1,87,0.0115
+Clerical & office support,2016,any_notice,1,87,0.0115
+Clerical & office support,2017,any_notice,3,87,0.0345
+Clerical & office support,2017,final_new_class,1,87,0.0115
+Clerical & office support,2017,final_title_change,2,87,0.023
+Clerical & office support,2019,any_notice,5,87,0.0575
+Clerical & office support,2019,final_revise_spec,5,87,0.0575
+Clerical & office support,2019,spec_in_force,1,87,0.0115
+Clerical & office support,2020,any_notice,5,87,0.0575
+Clerical & office support,2020,final_revise_spec,5,87,0.0575
+Clerical & office support,2021,any_notice,4,87,0.046
+Clerical & office support,2021,final_new_class,1,87,0.0115
+Clerical & office support,2021,final_revise_spec,1,87,0.0115
+Clerical & office support,2021,spec_in_force,4,87,0.046
+Clerical & office support,2022,any_notice,82,87,0.9425
+Clerical & office support,2022,final_new_class,2,87,0.023
+Clerical & office support,2022,final_revise_spec,80,87,0.9195
+Clerical & office support,2022,spec_in_force,75,87,0.8621
+Clerical & office support,2024,any_notice,2,87,0.023
+"Communications, media & arts",1989,spec_in_force,1,60,0.0167
+"Communications, media & arts",1992,spec_in_force,1,60,0.0167
+"Communications, media & arts",1994,spec_in_force,2,60,0.0333
+"Communications, media & arts",2007,any_notice,3,60,0.05
+"Communications, media & arts",2007,final_revise_spec,3,60,0.05
+"Communications, media & arts",2008,any_notice,11,60,0.1833
+"Communications, media & arts",2008,final_revise_spec,11,60,0.1833
+"Communications, media & arts",2008,spec_in_force,6,60,0.1
+"Communications, media & arts",2009,any_notice,5,60,0.0833
+"Communications, media & arts",2009,final_revise_spec,5,60,0.0833
+"Communications, media & arts",2009,spec_in_force,5,60,0.0833
+"Communications, media & arts",2010,any_notice,9,60,0.15
+"Communications, media & arts",2010,final_revise_spec,2,60,0.0333
+"Communications, media & arts",2010,spec_in_force,1,60,0.0167
+"Communications, media & arts",2011,spec_in_force,2,60,0.0333
+"Communications, media & arts",2012,any_notice,8,60,0.1333
+"Communications, media & arts",2012,final_revise_spec,8,60,0.1333
+"Communications, media & arts",2012,spec_in_force,2,60,0.0333
+"Communications, media & arts",2014,any_notice,2,60,0.0333
+"Communications, media & arts",2014,final_revise_spec,2,60,0.0333
+"Communications, media & arts",2014,spec_in_force,2,60,0.0333
+"Communications, media & arts",2015,any_notice,3,60,0.05
+"Communications, media & arts",2015,final_abolish,3,60,0.05
+"Communications, media & arts",2017,any_notice,4,60,0.0667
+"Communications, media & arts",2017,final_new_class,2,60,0.0333
+"Communications, media & arts",2017,final_title_change,1,60,0.0167
+"Communications, media & arts",2017,spec_in_force,3,60,0.05
+"Communications, media & arts",2018,any_notice,2,60,0.0333
+"Communications, media & arts",2018,final_revise_spec,2,60,0.0333
+"Communications, media & arts",2018,spec_in_force,2,60,0.0333
+"Communications, media & arts",2019,any_notice,3,60,0.05
+"Communications, media & arts",2019,final_revise_spec,3,60,0.05
+"Communications, media & arts",2019,spec_in_force,3,60,0.05
+"Communications, media & arts",2020,any_notice,3,60,0.05
+"Communications, media & arts",2022,any_notice,32,60,0.5333
+"Communications, media & arts",2022,final_revise_spec,32,60,0.5333
+"Communications, media & arts",2022,spec_in_force,25,60,0.4167
+"Communications, media & arts",2023,any_notice,6,60,0.1
+"Communications, media & arts",2023,final_revise_spec,3,60,0.05
+"Communications, media & arts",2024,any_notice,8,60,0.1333
+"Communications, media & arts",2024,final_abolish,3,60,0.05
+"Communications, media & arts",2024,final_revise_spec,3,60,0.05
+"Communications, media & arts",2024,spec_in_force,4,60,0.0667
+"Communications, media & arts",2026,any_notice,4,60,0.0667
+"Communications, media & arts",2026,final_abolish,3,60,0.05
+"Facilities, grounds & custodial",1992,spec_in_force,2,59,0.0339
+"Facilities, grounds & custodial",1997,spec_in_force,1,59,0.0169
+"Facilities, grounds & custodial",2004,any_notice,5,59,0.0847
+"Facilities, grounds & custodial",2005,any_notice,3,59,0.0508
+"Facilities, grounds & custodial",2005,final_revise_spec,3,59,0.0508
+"Facilities, grounds & custodial",2007,any_notice,4,59,0.0678
+"Facilities, grounds & custodial",2007,final_revise_spec,4,59,0.0678
+"Facilities, grounds & custodial",2008,any_notice,1,59,0.0169
+"Facilities, grounds & custodial",2009,any_notice,2,59,0.0339
+"Facilities, grounds & custodial",2009,final_revise_spec,2,59,0.0339
+"Facilities, grounds & custodial",2009,spec_in_force,1,59,0.0169
+"Facilities, grounds & custodial",2010,any_notice,5,59,0.0847
+"Facilities, grounds & custodial",2010,final_revise_spec,5,59,0.0847
+"Facilities, grounds & custodial",2010,spec_in_force,1,59,0.0169
+"Facilities, grounds & custodial",2011,any_notice,3,59,0.0508
+"Facilities, grounds & custodial",2011,final_revise_spec,1,59,0.0169
+"Facilities, grounds & custodial",2011,spec_in_force,1,59,0.0169
+"Facilities, grounds & custodial",2012,any_notice,3,59,0.0508
+"Facilities, grounds & custodial",2012,final_abolish,1,59,0.0169
+"Facilities, grounds & custodial",2012,final_new_class,2,59,0.0339
+"Facilities, grounds & custodial",2012,spec_in_force,1,59,0.0169
+"Facilities, grounds & custodial",2013,any_notice,1,59,0.0169
+"Facilities, grounds & custodial",2013,final_revise_spec,1,59,0.0169
+"Facilities, grounds & custodial",2015,any_notice,3,59,0.0508
+"Facilities, grounds & custodial",2015,final_abolish,1,59,0.0169
+"Facilities, grounds & custodial",2015,final_revise_spec,2,59,0.0339
+"Facilities, grounds & custodial",2015,spec_in_force,1,59,0.0169
+"Facilities, grounds & custodial",2016,any_notice,1,59,0.0169
+"Facilities, grounds & custodial",2016,final_revise_spec,1,59,0.0169
+"Facilities, grounds & custodial",2017,any_notice,4,59,0.0678
+"Facilities, grounds & custodial",2017,final_new_class,2,59,0.0339
+"Facilities, grounds & custodial",2017,final_revise_spec,2,59,0.0339
+"Facilities, grounds & custodial",2017,spec_in_force,3,59,0.0508
+"Facilities, grounds & custodial",2018,any_notice,1,59,0.0169
+"Facilities, grounds & custodial",2018,final_revise_spec,1,59,0.0169
+"Facilities, grounds & custodial",2018,spec_in_force,1,59,0.0169
+"Facilities, grounds & custodial",2019,any_notice,2,59,0.0339
+"Facilities, grounds & custodial",2019,final_revise_spec,2,59,0.0339
+"Facilities, grounds & custodial",2019,spec_in_force,2,59,0.0339
+"Facilities, grounds & custodial",2020,any_notice,2,59,0.0339
+"Facilities, grounds & custodial",2020,final_revise_spec,2,59,0.0339
+"Facilities, grounds & custodial",2021,any_notice,1,59,0.0169
+"Facilities, grounds & custodial",2021,final_revise_spec,1,59,0.0169
+"Facilities, grounds & custodial",2021,spec_in_force,1,59,0.0169
+"Facilities, grounds & custodial",2022,any_notice,54,59,0.9153
+"Facilities, grounds & custodial",2022,final_revise_spec,54,59,0.9153
+"Facilities, grounds & custodial",2022,spec_in_force,44,59,0.7458
+"Facilities, grounds & custodial",2023,any_notice,1,59,0.0169
+"Facilities, grounds & custodial",2023,final_abolish,1,59,0.0169
+"Facilities, grounds & custodial",2024,any_notice,1,59,0.0169
+"Facilities, grounds & custodial",2024,final_revise_spec,1,59,0.0169
+"Facilities, grounds & custodial",2026,any_notice,19,59,0.322
+"Facilities, grounds & custodial",2026,final_abolish,4,59,0.0678
+Finance & procurement,2004,any_notice,2,42,0.0476
+Finance & procurement,2006,any_notice,2,42,0.0476
+Finance & procurement,2006,final_revise_spec,2,42,0.0476
+Finance & procurement,2007,any_notice,8,42,0.1905
+Finance & procurement,2007,final_revise_spec,3,42,0.0714
+Finance & procurement,2007,spec_in_force,2,42,0.0476
+Finance & procurement,2010,any_notice,5,42,0.119
+Finance & procurement,2010,final_revise_spec,3,42,0.0714
+Finance & procurement,2010,final_title_change,2,42,0.0476
+Finance & procurement,2011,any_notice,8,42,0.1905
+Finance & procurement,2011,final_revise_spec,6,42,0.1429
+Finance & procurement,2011,spec_in_force,2,42,0.0476
+Finance & procurement,2012,any_notice,11,42,0.2619
+Finance & procurement,2012,final_revise_spec,11,42,0.2619
+Finance & procurement,2012,spec_in_force,4,42,0.0952
+Finance & procurement,2015,any_notice,3,42,0.0714
+Finance & procurement,2015,final_revise_spec,3,42,0.0714
+Finance & procurement,2016,any_notice,8,42,0.1905
+Finance & procurement,2016,final_revise_spec,8,42,0.1905
+Finance & procurement,2016,spec_in_force,6,42,0.1429
+Finance & procurement,2017,any_notice,1,42,0.0238
+Finance & procurement,2017,final_new_class,1,42,0.0238
+Finance & procurement,2017,final_title_change,1,42,0.0238
+Finance & procurement,2020,any_notice,9,42,0.2143
+Finance & procurement,2020,final_new_class,1,42,0.0238
+Finance & procurement,2020,final_revise_spec,2,42,0.0476
+Finance & procurement,2020,spec_in_force,1,42,0.0238
+Finance & procurement,2021,any_notice,3,42,0.0714
+Finance & procurement,2021,final_revise_spec,3,42,0.0714
+Finance & procurement,2021,spec_in_force,3,42,0.0714
+Finance & procurement,2022,any_notice,25,42,0.5952
+Finance & procurement,2022,final_abolish,3,42,0.0714
+Finance & procurement,2022,final_revise_spec,22,42,0.5238
+Finance & procurement,2022,spec_in_force,22,42,0.5238
+Finance & procurement,2024,any_notice,2,42,0.0476
+Finance & procurement,2024,final_abolish,2,42,0.0476
+Finance & procurement,2026,any_notice,1,42,0.0238
+Food & domestic services,2011,any_notice,1,28,0.0357
+Food & domestic services,2011,final_revise_spec,1,28,0.0357
+Food & domestic services,2011,spec_in_force,1,28,0.0357
+Food & domestic services,2016,any_notice,14,28,0.5
+Food & domestic services,2016,final_revise_spec,14,28,0.5
+Food & domestic services,2016,spec_in_force,1,28,0.0357
+Food & domestic services,2017,any_notice,1,28,0.0357
+Food & domestic services,2017,final_revise_spec,1,28,0.0357
+Food & domestic services,2019,any_notice,1,28,0.0357
+Food & domestic services,2019,final_revise_spec,1,28,0.0357
+Food & domestic services,2020,any_notice,4,28,0.1429
+Food & domestic services,2020,final_abolish,3,28,0.1071
+Food & domestic services,2021,any_notice,2,28,0.0714
+Food & domestic services,2021,final_abolish,2,28,0.0714
+Food & domestic services,2021,spec_in_force,1,28,0.0357
+Food & domestic services,2022,any_notice,27,28,0.9643
+Food & domestic services,2022,final_revise_spec,27,28,0.9643
+Food & domestic services,2022,spec_in_force,25,28,0.8929
+Health & medical,2004,any_notice,2,170,0.0118
+Health & medical,2004,final_revise_spec,2,170,0.0118
+Health & medical,2004,spec_in_force,2,170,0.0118
+Health & medical,2005,any_notice,12,170,0.0706
+Health & medical,2005,final_abolish,3,170,0.0176
+Health & medical,2005,final_revise_spec,9,170,0.0529
+Health & medical,2006,spec_in_force,1,170,0.0059
+Health & medical,2007,any_notice,29,170,0.1706
+Health & medical,2007,final_abolish,3,170,0.0176
+Health & medical,2007,final_revise_spec,24,170,0.1412
+Health & medical,2007,spec_in_force,17,170,0.1
+Health & medical,2008,any_notice,13,170,0.0765
+Health & medical,2008,final_abolish,3,170,0.0176
+Health & medical,2008,final_revise_spec,10,170,0.0588
+Health & medical,2008,spec_in_force,11,170,0.0647
+Health & medical,2009,any_notice,19,170,0.1118
+Health & medical,2009,final_revise_spec,18,170,0.1059
+Health & medical,2009,final_title_change,1,170,0.0059
+Health & medical,2009,spec_in_force,9,170,0.0529
+Health & medical,2010,any_notice,3,170,0.0176
+Health & medical,2011,any_notice,32,170,0.1882
+Health & medical,2011,final_new_class,1,170,0.0059
+Health & medical,2011,final_revise_spec,30,170,0.1765
+Health & medical,2011,spec_in_force,21,170,0.1235
+Health & medical,2012,any_notice,8,170,0.0471
+Health & medical,2012,final_new_class,1,170,0.0059
+Health & medical,2012,final_revise_spec,5,170,0.0294
+Health & medical,2012,spec_in_force,3,170,0.0176
+Health & medical,2013,any_notice,10,170,0.0588
+Health & medical,2013,final_revise_spec,5,170,0.0294
+Health & medical,2013,spec_in_force,6,170,0.0353
+Health & medical,2014,any_notice,12,170,0.0706
+Health & medical,2014,final_exam_change,3,170,0.0176
+Health & medical,2014,final_revise_spec,10,170,0.0588
+Health & medical,2014,spec_in_force,6,170,0.0353
+Health & medical,2015,any_notice,11,170,0.0647
+Health & medical,2015,final_abolish,2,170,0.0118
+Health & medical,2015,final_revise_spec,9,170,0.0529
+Health & medical,2015,spec_in_force,6,170,0.0353
+Health & medical,2016,any_notice,8,170,0.0471
+Health & medical,2016,final_revise_spec,8,170,0.0471
+Health & medical,2016,spec_in_force,1,170,0.0059
+Health & medical,2017,any_notice,2,170,0.0118
+Health & medical,2017,final_revise_spec,2,170,0.0118
+Health & medical,2017,spec_in_force,5,170,0.0294
+Health & medical,2018,any_notice,10,170,0.0588
+Health & medical,2018,final_exam_change,1,170,0.0059
+Health & medical,2018,final_revise_spec,9,170,0.0529
+Health & medical,2018,spec_in_force,10,170,0.0588
+Health & medical,2020,any_notice,13,170,0.0765
+Health & medical,2020,final_new_class,8,170,0.0471
+Health & medical,2020,final_revise_spec,5,170,0.0294
+Health & medical,2020,spec_in_force,14,170,0.0824
+Health & medical,2021,any_notice,4,170,0.0235
+Health & medical,2021,final_revise_spec,1,170,0.0059
+Health & medical,2022,any_notice,45,170,0.2647
+Health & medical,2022,final_revise_spec,45,170,0.2647
+Health & medical,2022,spec_in_force,45,170,0.2647
+Health & medical,2023,any_notice,17,170,0.1
+Health & medical,2023,final_abolish,1,170,0.0059
+Health & medical,2023,final_revise_spec,5,170,0.0294
+Health & medical,2023,spec_in_force,3,170,0.0176
+Health & medical,2024,any_notice,2,170,0.0118
+Health & medical,2024,final_revise_spec,1,170,0.0059
+Health & medical,2024,spec_in_force,2,170,0.0118
+Health & medical,2025,any_notice,4,170,0.0235
+Health & medical,2025,final_revise_spec,1,170,0.0059
+Health & medical,2025,spec_in_force,2,170,0.0118
+Health & medical,2026,any_notice,32,170,0.1882
+Health & medical,2026,final_abolish,1,170,0.0059
+Health & medical,2026,spec_in_force,1,170,0.0059
+Human resources,2006,any_notice,1,13,0.0769
+Human resources,2008,any_notice,7,13,0.5385
+Human resources,2008,final_revise_spec,7,13,0.5385
+Human resources,2008,spec_in_force,3,13,0.2308
+Human resources,2015,any_notice,1,13,0.0769
+Human resources,2015,final_revise_spec,1,13,0.0769
+Human resources,2019,any_notice,1,13,0.0769
+Human resources,2019,final_revise_spec,1,13,0.0769
+Human resources,2019,spec_in_force,1,13,0.0769
+Human resources,2021,any_notice,4,13,0.3077
+Human resources,2022,any_notice,9,13,0.6923
+Human resources,2022,final_revise_spec,9,13,0.6923
+Human resources,2022,spec_in_force,9,13,0.6923
+"IT, data & security",2004,any_notice,5,11,0.4545
+"IT, data & security",2007,any_notice,1,11,0.0909
+"IT, data & security",2007,final_revise_spec,1,11,0.0909
+"IT, data & security",2011,any_notice,2,11,0.1818
+"IT, data & security",2011,final_revise_spec,2,11,0.1818
+"IT, data & security",2011,spec_in_force,2,11,0.1818
+"IT, data & security",2012,any_notice,3,11,0.2727
+"IT, data & security",2012,final_revise_spec,3,11,0.2727
+"IT, data & security",2013,any_notice,3,11,0.2727
+"IT, data & security",2013,final_new_class,3,11,0.2727
+"IT, data & security",2013,spec_in_force,3,11,0.2727
+"IT, data & security",2014,any_notice,1,11,0.0909
+"IT, data & security",2014,final_revise_spec,1,11,0.0909
+"IT, data & security",2015,any_notice,20,11,1.8182
+"IT, data & security",2015,final_abolish,16,11,1.4545
+"IT, data & security",2015,final_revise_spec,1,11,0.0909
+"IT, data & security",2017,any_notice,1,11,0.0909
+"IT, data & security",2017,final_revise_spec,1,11,0.0909
+"IT, data & security",2018,any_notice,1,11,0.0909
+"IT, data & security",2018,final_exam_change,1,11,0.0909
+"IT, data & security",2018,final_revise_spec,1,11,0.0909
+"IT, data & security",2019,any_notice,1,11,0.0909
+"IT, data & security",2019,final_revise_spec,1,11,0.0909
+"IT, data & security",2020,any_notice,1,11,0.0909
+"IT, data & security",2020,final_revise_spec,1,11,0.0909
+"IT, data & security",2022,any_notice,2,11,0.1818
+"IT, data & security",2022,final_revise_spec,1,11,0.0909
+"IT, data & security",2023,any_notice,34,11,3.0909
+"IT, data & security",2023,final_discontinue,4,11,0.3636
+"IT, data & security",2023,final_revise_spec,30,11,2.7273
+"IT, data & security",2023,spec_in_force,3,11,0.2727
+"IT, data & security",2024,any_notice,24,11,2.1818
+"IT, data & security",2024,final_abolish,24,11,2.1818
+"IT, data & security",2026,any_notice,1,11,0.0909
+"IT, data & security",2026,final_abolish,1,11,0.0909
+"Library, museum & archives",2004,any_notice,3,13,0.2308
+"Library, museum & archives",2005,any_notice,15,13,1.1538
+"Library, museum & archives",2009,any_notice,3,13,0.2308
+"Library, museum & archives",2009,final_revise_spec,3,13,0.2308
+"Library, museum & archives",2010,spec_in_force,1,13,0.0769
+"Library, museum & archives",2014,any_notice,3,13,0.2308
+"Library, museum & archives",2014,final_revise_spec,3,13,0.2308
+"Library, museum & archives",2015,any_notice,3,13,0.2308
+"Library, museum & archives",2015,final_new_class,1,13,0.0769
+"Library, museum & archives",2022,any_notice,12,13,0.9231
+"Library, museum & archives",2022,final_revise_spec,12,13,0.9231
+"Library, museum & archives",2022,spec_in_force,12,13,0.9231
+"Library, museum & archives",2024,any_notice,3,13,0.2308
+Management & administration,1989,spec_in_force,1,130,0.0077
+Management & administration,2004,any_notice,3,130,0.0231
+Management & administration,2005,any_notice,6,130,0.0462
+Management & administration,2005,final_abolish,2,130,0.0154
+Management & administration,2005,final_revise_spec,4,130,0.0308
+Management & administration,2005,spec_in_force,1,130,0.0077
+Management & administration,2006,any_notice,4,130,0.0308
+Management & administration,2006,final_revise_spec,4,130,0.0308
+Management & administration,2008,any_notice,3,130,0.0231
+Management & administration,2008,final_revise_spec,3,130,0.0231
+Management & administration,2008,spec_in_force,2,130,0.0154
+Management & administration,2009,any_notice,4,130,0.0308
+Management & administration,2009,final_revise_spec,3,130,0.0231
+Management & administration,2009,spec_in_force,3,130,0.0231
+Management & administration,2010,any_notice,6,130,0.0462
+Management & administration,2010,final_revise_spec,6,130,0.0462
+Management & administration,2010,spec_in_force,2,130,0.0154
+Management & administration,2011,any_notice,17,130,0.1308
+Management & administration,2011,final_new_class,1,130,0.0077
+Management & administration,2011,final_revise_spec,5,130,0.0385
+Management & administration,2011,spec_in_force,5,130,0.0385
+Management & administration,2012,any_notice,16,130,0.1231
+Management & administration,2012,final_new_class,1,130,0.0077
+Management & administration,2012,final_revise_spec,14,130,0.1077
+Management & administration,2012,spec_in_force,7,130,0.0538
+Management & administration,2013,any_notice,6,130,0.0462
+Management & administration,2013,final_new_class,6,130,0.0462
+Management & administration,2013,spec_in_force,6,130,0.0462
+Management & administration,2014,any_notice,8,130,0.0615
+Management & administration,2014,final_exam_change,2,130,0.0154
+Management & administration,2014,final_revise_spec,4,130,0.0308
+Management & administration,2014,spec_in_force,2,130,0.0154
+Management & administration,2015,any_notice,7,130,0.0538
+Management & administration,2015,final_abolish,4,130,0.0308
+Management & administration,2015,final_new_class,2,130,0.0154
+Management & administration,2015,final_revise_spec,1,130,0.0077
+Management & administration,2015,spec_in_force,4,130,0.0308
+Management & administration,2016,any_notice,9,130,0.0692
+Management & administration,2016,final_revise_spec,3,130,0.0231
+Management & administration,2017,any_notice,3,130,0.0231
+Management & administration,2017,final_title_change,2,130,0.0154
+Management & administration,2018,any_notice,3,130,0.0231
+Management & administration,2018,final_exam_change,3,130,0.0231
+Management & administration,2018,final_revise_spec,3,130,0.0231
+Management & administration,2018,spec_in_force,3,130,0.0231
+Management & administration,2019,any_notice,14,130,0.1077
+Management & administration,2019,final_exam_change,1,130,0.0077
+Management & administration,2019,final_revise_spec,9,130,0.0692
+Management & administration,2019,spec_in_force,7,130,0.0538
+Management & administration,2020,any_notice,10,130,0.0769
+Management & administration,2020,final_revise_spec,6,130,0.0462
+Management & administration,2020,spec_in_force,5,130,0.0385
+Management & administration,2021,any_notice,10,130,0.0769
+Management & administration,2021,final_new_class,2,130,0.0154
+Management & administration,2021,final_revise_spec,5,130,0.0385
+Management & administration,2021,spec_in_force,7,130,0.0538
+Management & administration,2022,any_notice,67,130,0.5154
+Management & administration,2022,final_new_class,1,130,0.0077
+Management & administration,2022,final_revise_spec,66,130,0.5077
+Management & administration,2022,spec_in_force,61,130,0.4692
+Management & administration,2023,any_notice,1,130,0.0077
+Management & administration,2023,final_abolish,1,130,0.0077
+Management & administration,2024,spec_in_force,1,130,0.0077
+Management & administration,2026,any_notice,9,130,0.0692
+Management & administration,2026,final_abolish,5,130,0.0385
+Management & administration,2026,final_revise_spec,2,130,0.0154
+Other,2004,any_notice,2,32,0.0625
+Other,2005,any_notice,3,32,0.0938
+Other,2005,final_revise_spec,2,32,0.0625
+Other,2005,spec_in_force,1,32,0.0312
+Other,2009,any_notice,3,32,0.0938
+Other,2009,final_revise_spec,2,32,0.0625
+Other,2009,spec_in_force,1,32,0.0312
+Other,2010,any_notice,2,32,0.0625
+Other,2010,final_revise_spec,2,32,0.0625
+Other,2010,spec_in_force,1,32,0.0312
+Other,2011,any_notice,9,32,0.2812
+Other,2011,final_revise_spec,8,32,0.25
+Other,2011,spec_in_force,3,32,0.0938
+Other,2012,any_notice,3,32,0.0938
+Other,2012,final_abolish,1,32,0.0312
+Other,2012,final_revise_spec,2,32,0.0625
+Other,2013,any_notice,3,32,0.0938
+Other,2013,final_abolish,2,32,0.0625
+Other,2013,final_revise_spec,1,32,0.0312
+Other,2014,any_notice,1,32,0.0312
+Other,2014,final_revise_spec,1,32,0.0312
+Other,2015,any_notice,5,32,0.1562
+Other,2015,final_abolish,5,32,0.1562
+Other,2016,any_notice,3,32,0.0938
+Other,2016,final_revise_spec,1,32,0.0312
+Other,2017,any_notice,3,32,0.0938
+Other,2017,final_new_class,1,32,0.0312
+Other,2017,final_revise_spec,1,32,0.0312
+Other,2017,final_title_change,1,32,0.0312
+Other,2017,spec_in_force,1,32,0.0312
+Other,2019,any_notice,8,32,0.25
+Other,2019,final_abolish,2,32,0.0625
+Other,2019,final_discontinue,3,32,0.0938
+Other,2019,final_revise_spec,3,32,0.0938
+Other,2020,any_notice,4,32,0.125
+Other,2020,final_abolish,1,32,0.0312
+Other,2020,final_new_class,2,32,0.0625
+Other,2020,final_revise_spec,1,32,0.0312
+Other,2020,spec_in_force,1,32,0.0312
+Other,2021,any_notice,7,32,0.2188
+Other,2021,final_abolish,6,32,0.1875
+Other,2021,final_revise_spec,1,32,0.0312
+Other,2022,any_notice,33,32,1.0312
+Other,2022,final_abolish,20,32,0.625
+Other,2022,final_revise_spec,13,32,0.4062
+Other,2022,spec_in_force,13,32,0.4062
+Other,2023,any_notice,5,32,0.1562
+Other,2023,final_abolish,2,32,0.0625
+Other,2023,final_revise_spec,3,32,0.0938
+Other,2024,any_notice,5,32,0.1562
+Other,2024,final_abolish,3,32,0.0938
+Other,2024,final_new_class,1,32,0.0312
+Other,2024,spec_in_force,1,32,0.0312
+Protective services,2008,any_notice,2,29,0.069
+Protective services,2008,final_revise_spec,2,29,0.069
+Protective services,2010,any_notice,6,29,0.2069
+Protective services,2010,final_revise_spec,6,29,0.2069
+Protective services,2010,spec_in_force,4,29,0.1379
+Protective services,2011,any_notice,5,29,0.1724
+Protective services,2011,final_revise_spec,4,29,0.1379
+Protective services,2012,any_notice,1,29,0.0345
+Protective services,2012,spec_in_force,1,29,0.0345
+Protective services,2013,any_notice,12,29,0.4138
+Protective services,2013,final_new_class,1,29,0.0345
+Protective services,2013,final_revise_spec,9,29,0.3103
+Protective services,2013,spec_in_force,2,29,0.069
+Protective services,2015,any_notice,8,29,0.2759
+Protective services,2015,final_discontinue,1,29,0.0345
+Protective services,2015,final_new_class,2,29,0.069
+Protective services,2015,final_revise_spec,6,29,0.2069
+Protective services,2015,final_title_change,1,29,0.0345
+Protective services,2015,spec_in_force,1,29,0.0345
+Protective services,2016,any_notice,6,29,0.2069
+Protective services,2016,final_exam_change,2,29,0.069
+Protective services,2016,final_new_class,2,29,0.069
+Protective services,2016,final_reinstate,1,29,0.0345
+Protective services,2016,final_revise_spec,1,29,0.0345
+Protective services,2016,spec_in_force,3,29,0.1034
+Protective services,2018,any_notice,1,29,0.0345
+Protective services,2018,final_exam_change,1,29,0.0345
+Protective services,2018,spec_in_force,1,29,0.0345
+Protective services,2019,any_notice,5,29,0.1724
+Protective services,2019,final_revise_spec,5,29,0.1724
+Protective services,2019,spec_in_force,2,29,0.069
+Protective services,2020,any_notice,6,29,0.2069
+Protective services,2020,final_revise_spec,6,29,0.2069
+Protective services,2020,spec_in_force,1,29,0.0345
+Protective services,2022,any_notice,15,29,0.5172
+Protective services,2022,final_revise_spec,15,29,0.5172
+Protective services,2022,spec_in_force,13,29,0.4483
+Protective services,2025,any_notice,2,29,0.069
+Protective services,2026,any_notice,6,29,0.2069
+Protective services,2026,final_abolish,1,29,0.0345
+Protective services,2026,final_revise_spec,1,29,0.0345
+Protective services,2026,spec_in_force,1,29,0.0345
+Science & research support,1990,spec_in_force,1,73,0.0137
+Science & research support,2001,spec_in_force,1,73,0.0137
+Science & research support,2004,any_notice,6,73,0.0822
+Science & research support,2004,final_revise_spec,3,73,0.0411
+Science & research support,2004,spec_in_force,3,73,0.0411
+Science & research support,2005,any_notice,3,73,0.0411
+Science & research support,2005,final_revise_spec,3,73,0.0411
+Science & research support,2005,spec_in_force,1,73,0.0137
+Science & research support,2006,any_notice,1,73,0.0137
+Science & research support,2006,final_revise_spec,1,73,0.0137
+Science & research support,2007,any_notice,4,73,0.0548
+Science & research support,2007,spec_in_force,4,73,0.0548
+Science & research support,2008,any_notice,2,73,0.0274
+Science & research support,2008,final_revise_spec,2,73,0.0274
+Science & research support,2009,any_notice,12,73,0.1644
+Science & research support,2009,final_revise_spec,7,73,0.0959
+Science & research support,2009,spec_in_force,3,73,0.0411
+Science & research support,2010,any_notice,2,73,0.0274
+Science & research support,2010,final_revise_spec,2,73,0.0274
+Science & research support,2010,spec_in_force,1,73,0.0137
+Science & research support,2011,any_notice,7,73,0.0959
+Science & research support,2011,final_revise_spec,6,73,0.0822
+Science & research support,2011,final_title_change,1,73,0.0137
+Science & research support,2011,spec_in_force,8,73,0.1096
+Science & research support,2012,any_notice,6,73,0.0822
+Science & research support,2013,any_notice,7,73,0.0959
+Science & research support,2013,final_revise_spec,7,73,0.0959
+Science & research support,2013,spec_in_force,5,73,0.0685
+Science & research support,2014,any_notice,4,73,0.0548
+Science & research support,2014,final_exam_change,1,73,0.0137
+Science & research support,2014,final_revise_spec,4,73,0.0548
+Science & research support,2014,spec_in_force,3,73,0.0411
+Science & research support,2015,any_notice,4,73,0.0548
+Science & research support,2015,final_abolish,2,73,0.0274
+Science & research support,2015,final_revise_spec,2,73,0.0274
+Science & research support,2015,spec_in_force,1,73,0.0137
+Science & research support,2016,any_notice,3,73,0.0411
+Science & research support,2016,final_new_class,1,73,0.0137
+Science & research support,2016,spec_in_force,1,73,0.0137
+Science & research support,2019,any_notice,1,73,0.0137
+Science & research support,2019,final_revise_spec,1,73,0.0137
+Science & research support,2020,any_notice,3,73,0.0411
+Science & research support,2020,final_revise_spec,3,73,0.0411
+Science & research support,2020,spec_in_force,3,73,0.0411
+Science & research support,2021,any_notice,1,73,0.0137
+Science & research support,2022,any_notice,47,73,0.6438
+Science & research support,2022,final_revise_spec,47,73,0.6438
+Science & research support,2022,spec_in_force,35,73,0.4795
+Science & research support,2023,any_notice,7,73,0.0959
+Science & research support,2023,final_abolish,1,73,0.0137
+Science & research support,2023,final_revise_spec,6,73,0.0822
+Science & research support,2024,any_notice,6,73,0.0822
+Science & research support,2024,final_abolish,6,73,0.0822
+Science & research support,2024,spec_in_force,1,73,0.0137
+Science & research support,2026,any_notice,7,73,0.0959
+Science & research support,2026,final_abolish,2,73,0.0274
+Skilled trades,1985,spec_in_force,1,100,0.01
+Skilled trades,1987,spec_in_force,2,100,0.02
+Skilled trades,1992,spec_in_force,4,100,0.04
+Skilled trades,2004,any_notice,2,100,0.02
+Skilled trades,2004,spec_in_force,1,100,0.01
+Skilled trades,2005,any_notice,2,100,0.02
+Skilled trades,2005,final_revise_spec,2,100,0.02
+Skilled trades,2005,spec_in_force,1,100,0.01
+Skilled trades,2006,any_notice,6,100,0.06
+Skilled trades,2007,any_notice,12,100,0.12
+Skilled trades,2007,final_revise_spec,9,100,0.09
+Skilled trades,2007,spec_in_force,1,100,0.01
+Skilled trades,2008,any_notice,3,100,0.03
+Skilled trades,2009,any_notice,13,100,0.13
+Skilled trades,2009,final_revise_spec,7,100,0.07
+Skilled trades,2009,spec_in_force,4,100,0.04
+Skilled trades,2010,any_notice,20,100,0.2
+Skilled trades,2010,final_abolish,3,100,0.03
+Skilled trades,2010,final_revise_spec,16,100,0.16
+Skilled trades,2010,spec_in_force,5,100,0.05
+Skilled trades,2011,any_notice,7,100,0.07
+Skilled trades,2011,final_revise_spec,4,100,0.04
+Skilled trades,2013,any_notice,19,100,0.19
+Skilled trades,2013,final_abolish,1,100,0.01
+Skilled trades,2013,final_revise_spec,18,100,0.18
+Skilled trades,2013,spec_in_force,6,100,0.06
+Skilled trades,2015,any_notice,10,100,0.1
+Skilled trades,2015,final_revise_spec,4,100,0.04
+Skilled trades,2016,any_notice,11,100,0.11
+Skilled trades,2016,final_abolish,1,100,0.01
+Skilled trades,2016,final_new_class,4,100,0.04
+Skilled trades,2016,final_revise_spec,7,100,0.07
+Skilled trades,2016,spec_in_force,12,100,0.12
+Skilled trades,2017,any_notice,5,100,0.05
+Skilled trades,2017,final_revise_spec,5,100,0.05
+Skilled trades,2017,spec_in_force,5,100,0.05
+Skilled trades,2019,any_notice,3,100,0.03
+Skilled trades,2019,final_revise_spec,3,100,0.03
+Skilled trades,2019,spec_in_force,2,100,0.02
+Skilled trades,2020,any_notice,1,100,0.01
+Skilled trades,2020,final_abolish,1,100,0.01
+Skilled trades,2022,any_notice,75,100,0.75
+Skilled trades,2022,final_revise_spec,75,100,0.75
+Skilled trades,2022,spec_in_force,53,100,0.53
+Skilled trades,2023,any_notice,1,100,0.01
+Skilled trades,2023,final_abolish,1,100,0.01
+Skilled trades,2024,any_notice,2,100,0.02
+Skilled trades,2024,final_new_class,1,100,0.01
+Skilled trades,2024,final_revise_spec,1,100,0.01
+Skilled trades,2024,spec_in_force,2,100,0.02
+Student & academic services,2004,any_notice,4,24,0.1667
+Student & academic services,2005,spec_in_force,3,24,0.125
+Student & academic services,2006,any_notice,5,24,0.2083
+Student & academic services,2006,final_revise_spec,3,24,0.125
+Student & academic services,2007,any_notice,2,24,0.0833
+Student & academic services,2007,final_revise_spec,2,24,0.0833
+Student & academic services,2007,spec_in_force,2,24,0.0833
+Student & academic services,2009,any_notice,1,24,0.0417
+Student & academic services,2010,any_notice,4,24,0.1667
+Student & academic services,2010,final_revise_spec,3,24,0.125
+Student & academic services,2010,final_title_change,1,24,0.0417
+Student & academic services,2010,spec_in_force,1,24,0.0417
+Student & academic services,2011,any_notice,4,24,0.1667
+Student & academic services,2011,final_revise_spec,4,24,0.1667
+Student & academic services,2011,spec_in_force,2,24,0.0833
+Student & academic services,2012,any_notice,6,24,0.25
+Student & academic services,2012,final_revise_spec,6,24,0.25
+Student & academic services,2013,any_notice,3,24,0.125
+Student & academic services,2013,final_revise_spec,3,24,0.125
+Student & academic services,2014,any_notice,3,24,0.125
+Student & academic services,2014,final_revise_spec,2,24,0.0833
+Student & academic services,2014,spec_in_force,2,24,0.0833
+Student & academic services,2015,any_notice,2,24,0.0833
+Student & academic services,2015,final_new_class,1,24,0.0417
+Student & academic services,2015,spec_in_force,1,24,0.0417
+Student & academic services,2016,spec_in_force,1,24,0.0417
+Student & academic services,2018,any_notice,2,24,0.0833
+Student & academic services,2018,final_revise_spec,2,24,0.0833
+Student & academic services,2019,any_notice,2,24,0.0833
+Student & academic services,2019,final_revise_spec,2,24,0.0833
+Student & academic services,2019,spec_in_force,3,24,0.125
+Student & academic services,2021,any_notice,3,24,0.125
+Student & academic services,2021,final_new_class,1,24,0.0417
+Student & academic services,2021,final_revise_spec,2,24,0.0833
+Student & academic services,2021,spec_in_force,5,24,0.2083
+Student & academic services,2022,any_notice,6,24,0.25
+Student & academic services,2022,final_revise_spec,4,24,0.1667
+Student & academic services,2022,spec_in_force,3,24,0.125
+Student & academic services,2023,any_notice,1,24,0.0417
+Student & academic services,2023,final_abolish,1,24,0.0417
+Student & academic services,2024,any_notice,2,24,0.0833
+Student & academic services,2024,final_abolish,2,24,0.0833
+Student & academic services,2026,any_notice,2,24,0.0833
+Student & academic services,2026,final_revise_spec,2,24,0.0833
+Transportation & stores,2013,any_notice,5,22,0.2273
+Transportation & stores,2013,final_revise_spec,5,22,0.2273
+Transportation & stores,2013,spec_in_force,1,22,0.0455
+Transportation & stores,2014,any_notice,2,22,0.0909
+Transportation & stores,2014,spec_in_force,2,22,0.0909
+Transportation & stores,2015,any_notice,2,22,0.0909
+Transportation & stores,2015,final_revise_spec,2,22,0.0909
+Transportation & stores,2022,any_notice,22,22,1.0
+Transportation & stores,2022,final_revise_spec,22,22,1.0
+Transportation & stores,2022,spec_in_force,15,22,0.6818
+Transportation & stores,2023,any_notice,9,22,0.4091
+Transportation & stores,2023,final_abolish,1,22,0.0455
+Transportation & stores,2023,spec_in_force,4,22,0.1818
+Transportation & stores,2024,any_notice,8,22,0.3636
+Transportation & stores,2024,final_abolish,4,22,0.1818
+Transportation & stores,2024,final_title_change,4,22,0.1818
+Transportation & stores,2026,any_notice,4,22,0.1818

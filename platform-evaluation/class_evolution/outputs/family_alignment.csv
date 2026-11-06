@@ -1,0 +1,18 @@
+job_family,n_classes_all,n_active,n_abolished,n_created,share_revised_last_5y,share_any_churn_last_5y,median_spec_age_years,n_linked_onet,mean_hot_tech_share,mean_emerging_task_rate,mean_aei_exposure,mean_aei_task_coverage,mean_nat_task_churn_10y,share_nat_task_update_10y,mean_hot_tech_share_pctile,mean_emerging_task_rate_pctile,mean_aei_exposure_pctile,mean_nat_task_churn_10y_pctile,national_change_index,local_churn_pctile,alignment
+Agriculture & animal care,9,9,0,0,0.4444,0.4444,12.27,6,0.3332,0.0717,0.0,0.0581,0.0211,1.0,0.294,1.0,0.059,0.059,0.353,0.294,aligned_stable
+Clerical & office support,91,91,0,12,0.9121,0.9121,4.18,86,0.4004,0.006,0.1891,0.2615,0.0256,0.8721,0.647,0.176,0.824,0.294,0.485,1.0,diverges_local_churn_national_quiet
+"Communications, media & arts",76,69,7,7,0.5217,0.5263,4.65,57,0.4056,0.0136,0.1404,0.2011,0.069,0.8772,0.765,0.529,0.647,1.0,0.735,0.529,aligned_high_change
+"Facilities, grounds & custodial",72,65,7,7,0.7692,0.8056,4.18,57,0.5358,0.0089,0.0435,0.0709,0.0349,0.8947,1.0,0.353,0.353,0.647,0.588,0.882,aligned_high_change
+Finance & procurement,51,49,2,3,0.449,0.4902,5.18,41,0.2493,0.0101,0.2299,0.3026,0.0565,0.9512,0.059,0.412,0.941,0.941,0.588,0.412,diverges_national_change_local_quiet
+Food & domestic services,44,41,3,5,0.6585,0.6136,4.18,28,0.2835,0.0123,0.0294,0.1225,0.0303,0.8571,0.176,0.471,0.176,0.471,0.324,0.765,diverges_local_churn_national_quiet
+Health & medical,186,174,12,24,0.3218,0.4892,10.56,168,0.3822,0.0169,0.0583,0.1568,0.037,0.8929,0.529,0.647,0.412,0.706,0.574,0.353,diverges_national_change_local_quiet
+Human resources,13,13,0,0,0.6923,0.6923,4.35,13,0.259,0.0062,0.1628,0.3052,0.0233,1.0,0.118,0.235,0.765,0.235,0.338,0.824,diverges_local_churn_national_quiet
+"IT, data & security",62,21,41,3,0.4762,0.5645,3.6,8,0.3538,0.0,0.3482,0.4461,0.0232,0.375,0.412,0.059,1.0,0.176,0.412,0.588,diverges_local_churn_national_quiet
+"Library, museum & archives",27,27,0,1,0.4444,0.4444,4.35,13,0.4476,0.0191,0.1972,0.327,0.0316,1.0,0.882,0.882,0.882,0.529,0.794,0.294,diverges_national_change_local_quiet
+Management & administration,163,153,10,26,0.4314,0.4417,5.48,114,0.36,0.019,0.1594,0.2312,0.0301,0.8421,0.471,0.824,0.706,0.412,0.603,0.176,diverges_national_change_local_quiet
+Other,107,65,42,4,0.2308,0.3738,9.43,27,0.3874,0.0415,0.0637,0.2049,0.0523,0.963,0.588,0.941,0.471,0.882,0.72,0.118,diverges_national_change_local_quiet
+Protective services,33,33,0,8,0.4848,0.5152,6.72,28,0.4605,0.0158,0.0388,0.1035,0.0273,0.8571,0.941,0.588,0.235,0.353,0.529,0.471,diverges_national_change_local_quiet
+Science & research support,93,82,11,15,0.5122,0.5699,4.35,65,0.4051,0.017,0.0428,0.1717,0.0391,0.8923,0.706,0.706,0.294,0.765,0.618,0.647,aligned_high_change
+Skilled trades,132,125,7,12,0.632,0.6061,4.06,97,0.4321,0.0178,0.0211,0.0716,0.0217,0.9897,0.824,0.765,0.118,0.118,0.456,0.706,diverges_local_churn_national_quiet
+Student & academic services,35,32,3,6,0.1875,0.2571,11.48,22,0.3196,0.0074,0.095,0.2393,0.051,0.9545,0.235,0.294,0.588,0.824,0.485,0.059,aligned_stable
+Transportation & stores,29,24,5,0,0.8333,0.8621,4.18,15,0.3344,0.0022,0.092,0.2016,0.0348,0.6667,0.353,0.118,0.529,0.588,0.397,0.941,diverges_local_churn_national_quiet

@@ -1,0 +1,415 @@
+csn,event_date,stage,from_code,from_title,to_code,to_title,action,pattern,job_family
+1589,2010-12-23,final,0017,Chief Accountant,,Chief Accountant,title_change,flagged_change_in_title_same_title,Finance & procurement
+1589,2010-12-23,final,0023,Accountant IV/ Assistant Chief Accountant R,,Assistant Chief Accountant,title_change,title_change_in_place,Finance & procurement
+1311,2004-12-10,preliminary,0043,Housing Administrator I,0044,Housing Representative,abolish,merged_into_other_class,Student & academic services
+1927,2012-08-24,final,0051,Financial Aid Adviser I,0052,Financial Aid Representative,revise_spec,retitled_shared_words,Finance & procurement
+1927,2012-08-24,final,0052,Financial Aid Adviser II,0053,Financial Aid Coordinator,revise_spec,retitled_shared_words,Clerical & office support
+1927,2012-08-24,final,0053,Financial Aid Adviser III,,Financial Aid Coordinator,revise_spec,title_change_in_place,Finance & procurement
+1927,2012-08-24,final,0054,Financial Aid Adviser IV,,Financial Aid Manager,revise_spec,title_change_in_place,Finance & procurement
+2029,2013-08-21,final,0055,Program Adviser,,Program/Student Advisor,revise_spec,title_change_in_place,Student & academic services
+1761,2011-08-09,final,0061,Aquatics Aide,,Fitness and Aquatics Aide,revise_spec,title_change_in_place,Other
+3150,2023-03-07,preliminary,0062,Systems Administrator I,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0062,Systems Administrator I,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0063,Systems Administrator II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0063,Systems Administrator II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0064,Systems Administrator III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0064,Systems Administrator III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0065,Systems Administrator IV,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0065,Systems Administrator IV,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0065,Systems Administrator IV,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0065,Systems Administrator IV,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+1417,2009-12-07,final,0081,Meteorological Aide I,0082,Meteorological Aide II,revise_spec,level_renumbered,Science & research support
+1712,2011-06-17,preliminary,0098,Outdoor 99 Program Aide,4905,Chief Utility Plant Operating Engineer,revise_spec,retitled_new_words,Management & administration
+1714,2011-06-17,preliminary,0098,Outdoor 99 Program Aide,4906,,revise_spec,code_change_title_unknown,Management & administration
+3150,2023-03-07,preliminary,0103,Applications Programmer III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0103,Applications Programmer III,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0103,Applications Programmer III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0103,Applications Programmer III,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0104,Applications Analyst,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0104,Applications Analyst,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0105,Senior Applications Analyst,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0105,Senior Applications Analyst,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0105,Senior Applications Analyst,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0105,Senior Applications Analyst,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0116,Applications Programmer I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0116,Applications Programmer I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,0117,Applications Programmer II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,0117,Applications Programmer II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+1901,2012-08-13,final,0171,Administrative Assistant I,,Administrative Assistant,revise_spec,title_change_in_place,Management & administration
+3150,2023-03-07,preliminary,0215,(Scientific) Electronics Engineer Assistant,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3166,2023-06-29,final,0215,(Scientific) Electronics Engineer Assistant,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+1320,2005-07-07,preliminary,0258,Library Preservation/ Conservation Assistant,4903,Senior Library Specialist,revise_spec,retitled_shared_words,"Library, museum & archives"
+1320,2005-07-07,preliminary,0259,Library Technical Assistant I,4902,Library Specialist,revise_spec,retitled_shared_words,"Library, museum & archives"
+1320,2005-07-07,preliminary,0260,Library Technical Assistant II,4902,Library Specialist,revise_spec,retitled_shared_words,"Library, museum & archives"
+1320,2005-07-07,preliminary,0261,Library Technical Specialist,4903,Senior Library Specialist,revise_spec,retitled_shared_words,"Library, museum & archives"
+1858,2012-03-05,final,0265,Video Production Assistant,2503,Multimedia Communications Associate,revise_spec,retitled_new_words,Management & administration
+2347,2016-08-15,final,0307,Purchasing,,Procurement Officer Assistant,revise_spec,title_change_in_place,Finance & procurement
+2347,2016-08-15,final,0308,Purchasing Officer II,,Procurement Officer,revise_spec,title_change_in_place,Finance & procurement
+2347,2016-08-15,final,0309,Purchasing,,Procurement Officer Specialist,revise_spec,title_change_in_place,Finance & procurement
+1712,2011-06-17,preliminary,0340,,4905,Chief Utility Plant Operating Engineer,revise_spec,code_change_title_unknown,Other
+1714,2011-06-17,preliminary,0340,,4906,,revise_spec,code_change_title_unknown,Other
+3099,2022-11-30,final,0420,Assistant to Director of Student Center,,Assistant to Director of University Union,revise_spec,title_change_in_place,Management & administration
+3099,2022-11-30,final,0500,Arena Attendant,,Assembly Hall Attendant,revise_spec,title_change_in_place,"Facilities, grounds & custodial"
+2287,2016-03-01,final,0516,Snack Bar 18,,Food Court/Snack Bar Attendant,revise_spec,title_change_in_place,"Facilities, grounds & custodial"
+1320,2005-07-07,preliminary,0535,Library Attendant,4900,Library Clerk,revise_spec,retitled_shared_words,"Library, museum & archives"
+1320,2005-07-07,preliminary,0535,Library Attendant,0591,,revise_spec,code_change_title_unknown,"Library, museum & archives"
+1821,2011-12-19,final,0584,Internal Auditor I,0585,Internal Auditor,revise_spec,level_renumbered,Finance & procurement
+1821,2011-12-19,final,0585,Internal Auditor II,,Internal Auditor,revise_spec,title_change_in_place,Finance & procurement
+1821,2011-12-19,final,0586,Internal Auditor III,,Internal Auditor Associate,revise_spec,title_change_in_place,Finance & procurement
+2290,2016-03-01,final,0603,Baker III 24,3869,Culinary Worker IV,revise_spec,retitled_new_words,Food & domestic services
+2290,2016-03-01,final,0605,Baker II 24,3868,Culinary Worker III,revise_spec,retitled_new_words,Food & domestic services
+2687,2021-09-13,final,0678,Laboratory,,Animal Caretaker 1,revise_spec,title_change_in_place,Agriculture & animal care
+2687,2021-09-13,final,0679,Laboratory,,Animal Caretaker 2,revise_spec,title_change_in_place,Agriculture & animal care
+2687,2021-09-13,final,0680,Laboratory,,Animal Caretaker 3,revise_spec,title_change_in_place,Agriculture & animal care
+2376,2017-01-31,final,0699,Food Service Cashier,3877,Retail Associate,new_class,retitled_new_words,Clerical & office support
+2376,2017-01-31,final,0752,387,3877,Retail Associate,new_class,retitled_new_words,Other
+2376,2017-01-31,final,0753,Clerk I,3877,Retail Associate,title_change,retitled_new_words,Clerical & office support
+1320,2005-07-07,preliminary,0771,Library Clerk I,4900,Library Clerk,revise_spec,level_renumbered,"Library, museum & archives"
+1320,2005-07-07,preliminary,0772,Library Clerk II,4900,Library Clerk,revise_spec,level_renumbered,"Library, museum & archives"
+1320,2005-07-07,preliminary,0773,Library Clerk III,4901,Library Assistant,revise_spec,retitled_shared_words,"Library, museum & archives"
+1320,2005-07-07,preliminary,0774,Chief Library Clerk Current A,4901,Library Assistant,revise_spec,retitled_shared_words,"Library, museum & archives"
+1846,2012-05-21,final,0788,Patient Unit Clerk I,4960,Medical Office Assistant,revise_spec,retitled_new_words,Clerical & office support
+1846,2012-05-21,final,0789,Patient Unit Clerk II,4961,Medical Office Associate,revise_spec,retitled_new_words,Clerical & office support
+1364,2008-02-29,final,0845,Office Support Assistant,3222,Roofer,revise_spec,retitled_new_words,Clerical & office support
+1364,2008-02-29,final,0846,Office Support Associate,3222,Roofer,revise_spec,retitled_new_words,Clerical & office support
+1691,2011-09-29,final,0876,Medical Social Consultant,,Medical Social Consultant,revise_spec,flagged_change_in_title_same_title,Health & medical
+1323,2005-11-17,final,0883,Nursing Consultant II,0030,Nursing Consultant,revise_spec,level_renumbered,Health & medical
+2289,2016-03-01,final,0904,Cook 54 55,3868,Culinary Worker III,revise_spec,retitled_new_words,Food & domestic services
+2291,2016-03-01,final,0906,First Cook 55 193,3868,Culinary Worker III,revise_spec,retitled_new_words,Food & domestic services
+2289,2016-03-01,final,0913,Head Cook 54 55,3869,Culinary Worker IV,revise_spec,retitled_new_words,Food & domestic services
+2395,2017-07-13,final,0925,Printing Estimator,,Printing Production Coordinator,title_change,title_change_in_place,"Communications, media & arts"
+1712,2011-06-17,preliminary,0926,Program 242 Coordinator,4906,,revise_spec,code_change_title_unknown,Management & administration
+1714,2011-06-17,preliminary,0926,Program 242 Coordinator,4907,,revise_spec,code_change_title_unknown,Management & administration
+1712,2011-06-17,preliminary,0927,Assistant 242 Program Coordinator,4905,Chief Utility Plant Operating Engineer,revise_spec,retitled_new_words,Management & administration
+1714,2011-06-17,preliminary,0927,Assistant 242 Program Coordinator,4906,,revise_spec,code_change_title_unknown,Management & administration
+3161,2023-03-07,notice_other,1036,Information Technology Associate Director,5030,Information Technology Manager/Administrative Coordinator,discontinue,retitled_shared_words,"IT, data & security"
+3182,2023-06-29,final,1036,Information Technology Associate Director,5030,Information Technology Manager/Administrative Coordinator,discontinue,retitled_shared_words,"IT, data & security"
+3253,2024-07-30,preliminary,1036,Information Technology Associate Director,5030,Information Technology Manager/Administrative Coordinator,abolish,merged_into_other_class,"IT, data & security"
+3161,2023-03-07,notice_other,1037,Information Technology Director,5030,Information Technology Manager/Administrative Coordinator,discontinue,retitled_shared_words,"IT, data & security"
+3182,2023-06-29,final,1037,Information Technology Director,5030,Information Technology Manager/Administrative Coordinator,discontinue,retitled_shared_words,"IT, data & security"
+3253,2024-07-30,preliminary,1037,Information Technology Director,5030,Information Technology Manager/Administrative Coordinator,abolish,merged_into_other_class,"IT, data & security"
+3099,2022-11-30,final,1053,Associate Director for Illini Union/Housing Food Services,,University Food Service Director,revise_spec,title_change_in_place,Food & domestic services
+3099,2022-11-30,final,1069,Assistant Director of Arena,,Assistant Director of Auditorium,revise_spec,title_change_in_place,Finance & procurement
+2315,2016-06-21,final,1122,Coordinator,,Coordinator,revise_spec,flagged_change_in_title_same_title,Management & administration
+2347,2016-08-15,final,1128,Purchasing,,Procurement Officer Supervisor,revise_spec,title_change_in_place,Finance & procurement
+1658,2011-09-27,final,1147,Assistant Director of University Union/ Assistant Director of Student,,Assistant Director of University Student Center,revise_spec,title_change_in_place,Student & academic services
+3201,2023-09-15,preliminary,1236,Heavy Driver,,Heavy Driver,revise_spec,flagged_change_in_title_same_title,Transportation & stores
+3260,2024-08-28,final,1236,Driver,,Heavy Driver,title_change,title_change_in_place,Transportation & stores
+1416,2009-12-07,final,1260,Museum Educator,4629,Museum Instructor/Educator,revise_spec,retitled_shared_words,"Library, museum & archives"
+2723,2022-02-14,final,1316,Broadcasting Engineer,,Broadcasting Engineer,revise_spec,flagged_change_in_title_same_title,"Communications, media & arts"
+1605,2011-01-07,final,1337,Civil Engineer III,1301,Senior Engineer,revise_spec,retitled_shared_words,Other
+1605,2011-01-07,final,1338,Civil Engineer II,,Civil Engineer II,revise_spec,flagged_change_in_title_same_title,Other
+1605,2011-01-07,final,1339,Civil Engineer I,1300,Engineer,revise_spec,retitled_shared_words,Other
+1605,2011-01-07,final,1347,Electrical Engineer II,1301,Senior Engineer,revise_spec,retitled_shared_words,Other
+1605,2011-01-07,final,1348,Electrical Engineer I,1300,Engineer,revise_spec,retitled_shared_words,Other
+1605,2011-01-07,final,1384,Mechanical Engineer III,1301,Senior Engineer,revise_spec,retitled_shared_words,Skilled trades
+1605,2011-01-07,final,1385,Mechanical Engineer II,,Mechanical Engineer II,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1605,2011-01-07,final,1386,Mechanical Engineer I,1300,Engineer,revise_spec,retitled_shared_words,Skilled trades
+3150,2023-03-07,preliminary,1387,Network Engineer I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,1387,Network Engineer I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,1388,Network Engineer II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,1388,Network Engineer II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,1389,Network Engineer III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,1389,Network Engineer III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,1390,Network Engineer IV,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,1390,Network Engineer IV,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,1390,Network Engineer IV,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,1390,Network Engineer IV,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,1391,Network Engineer V,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,1391,Network Engineer V,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,1391,Network Engineer V,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,1391,Network Engineer V,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+1996,2013-05-16,final,1394,Lead Power Plant Operating Engineer,4993,Steam and Power Plant IV,revise_spec,retitled_shared_words,Skilled trades
+1995,2013-05-16,final,1410,Plant Operating Engineer,4992,Steam and Power Plant III,revise_spec,retitled_shared_words,Skilled trades
+1994,2013-05-16,final,1411,Chief Plant Operating Engineer,4994,Steam and Power Plant V,revise_spec,retitled_shared_words,Skilled trades
+1994,2013-05-16,final,1412,Assistant Chief Plant Operating Engineer,4993,Steam and Power Plant IV,revise_spec,retitled_shared_words,Skilled trades
+1994,2013-05-16,final,1412,Assistant Chief Plant Operating Engineer,4994,Steam and Power Plant V,revise_spec,retitled_shared_words,Skilled trades
+1995,2013-05-16,final,1413,Lead Plant Operating Engineer,4992,Steam and Power Plant III,revise_spec,retitled_shared_words,Skilled trades
+1995,2013-05-16,final,1413,Lead Plant Operating Engineer,4993,Steam and Power Plant IV,revise_spec,retitled_shared_words,Skilled trades
+1996,2013-05-16,final,1422,Power Plant Operating Engineer,4992,Steam and Power Plant III,revise_spec,retitled_shared_words,Skilled trades
+1994,2013-05-16,final,1425,Lead Plant Stationary Engineer,4992,Steam and Power Plant III,revise_spec,retitled_shared_words,Skilled trades
+1994,2013-05-16,final,1425,Lead Plant Stationary Engineer,4993,Steam and Power Plant IV,revise_spec,retitled_shared_words,Skilled trades
+1994,2013-05-16,final,1443,Stationary Engineer,4992,Steam and Power Plant III,revise_spec,retitled_new_words,Skilled trades
+1923,2012-07-26,final,1493,Publications Production Expediter,,Desktop Publisher/Coordinator,revise_spec,title_change_in_place,Management & administration
+1277,2010-01-19,final,1500,Farmer,,Farmer,revise_spec,flagged_change_in_title_same_title,Agriculture & animal care
+1300,2010-01-19,final,1500,Farmer,2211,Assistant Agricultural Research Technician,revise_spec,retitled_new_words,Agriculture & animal care
+1420,2010-01-19,final,1511,Field Worker,,Field Worker,revise_spec,flagged_change_in_title_same_title,Other
+1995,2013-05-16,final,1540,Boiler Room Fireman,4990,Steam and Power Plant I,revise_spec,retitled_new_words,Protective services
+1994,2013-05-16,final,1550,Stationary Fireman,4991,Steam and Power Plant II,revise_spec,retitled_new_words,Protective services
+3201,2023-09-15,preliminary,1576,Driver Foreperson,,Driver Foreperson,revise_spec,flagged_change_in_title_same_title,Transportation & stores
+3259,2024-08-28,final,1576,Automotive Foreman,,Driver Foreperson,title_change,title_change_in_place,Transportation & stores
+1336,2007-01-23,final,1600,Building Service Foreman,2007,Greens Worker,revise_spec,retitled_new_words,Skilled trades
+1336,2007-01-23,final,1600,Building Service Foreman,0026,,revise_spec,code_change_title_unknown,Skilled trades
+1277,2010-01-19,final,1660,Farm Foreman,,Farm Foreman,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1300,2010-01-19,final,1660,Farm Foreman,2212,Associate Agricultural Research Technician,revise_spec,retitled_new_words,Skilled trades
+1277,2010-01-19,final,1668,Supervising Farm Foreman,,Supervising Farm Foreman,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1300,2010-01-19,final,1668,Supervising Farm Foreman,2213,Senior Agricultural Research Technician,revise_spec,retitled_new_words,Skilled trades
+1277,2010-01-19,final,1700,Herder Foreman,,Herder Foreman,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1300,2010-01-19,final,1700,Herder Foreman,2212,Associate Agricultural Research Technician,revise_spec,retitled_new_words,Skilled trades
+3099,2022-11-30,final,1725,Electrician Lamper Foreman,,Laborer-Electrician Foreman,revise_spec,title_change_in_place,Skilled trades
+1261,2010-04-19,final,1772,Park Foreman,,Park Supervisor,revise_spec,title_change_in_place,"Facilities, grounds & custodial"
+2330,2016-08-01,final,1789,Plumber General Foreman,1765,Crafts and Trades General Foreman,revise_spec,retitled_shared_words,Skilled trades
+2338,2016-08-01,final,1789,Plumber General Foreman,,Plumber General Foreman,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1277,2010-01-19,final,1790,Poultry Worker Foreman,,Poultry Worker Foreman,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1300,2010-01-19,final,1790,Poultry Worker Foreman,2212,Associate Agricultural Research Technician,revise_spec,retitled_new_words,Skilled trades
+1957,2013-02-14,final,1795,109,1828,Pipefitter (Refrigeration Mechanic) Foreman,abolish,merged_into_other_class,Other
+3201,2023-09-15,preliminary,1844,Driver Sub-Foreperson,,Driver Sub-Foreperson,revise_spec,flagged_change_in_title_same_title,Transportation & stores
+3259,2024-08-28,final,1844,Automotive Sub- Foreman,,Driver Sub-Foreperson,title_change,title_change_in_place,Transportation & stores
+1336,2007-01-23,final,1848,Building Service Sub- Foreman,2007,Greens Worker,revise_spec,retitled_new_words,Skilled trades
+1336,2007-01-23,final,1848,Building Service Sub- Foreman,0026,,revise_spec,code_change_title_unknown,Skilled trades
+1261,2010-04-19,final,1925,Park Sub- Foreman,,Park Sub- Foreman,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1957,2013-02-14,final,1935,109,1962,Pipefitter (Refrigeration Mechanic) Sub-Foreman,abolish,merged_into_other_class,Other
+2290,2016-03-01,final,2054,Baker I 24,3866,Culinary Worker I,revise_spec,retitled_new_words,Food & domestic services
+2289,2016-03-01,final,2062,Cook',3866,Culinary Worker I,revise_spec,retitled_new_words,Food & domestic services
+3201,2023-09-15,preliminary,2066,Driver,,Driver,revise_spec,flagged_change_in_title_same_title,Transportation & stores
+3243,2023-09-15,preliminary,2066,Driver,2755,Admissions and Records Representative,revise_spec,retitled_new_words,Transportation & stores
+3260,2024-08-28,final,2066,Driver Helper,,Driver,title_change,title_change_in_place,Transportation & stores
+2291,2016-03-01,final,2084,Kitchen 55 56,3866,Culinary Worker I,revise_spec,retitled_new_words,Food & domestic services
+1996,2013-05-16,final,2099,Power Plant Mechanic Helper,4990,Steam and Power Plant I,revise_spec,retitled_shared_words,Skilled trades
+3201,2023-09-15,preliminary,2104,Route Driver Helper,2066,Driver,revise_spec,retitled_shared_words,Transportation & stores
+3243,2023-09-15,preliminary,2104,Route Driver Helper,2755,Admissions and Records Representative,revise_spec,retitled_new_words,Transportation & stores
+3260,2024-08-28,final,2104,Route Driver Helper,2066,Driver,abolish,merged_into_other_class,Transportation & stores
+1994,2013-05-16,final,2110,Stationary Fireman Helper,4990,Steam and Power Plant I,revise_spec,retitled_new_words,Protective services
+1277,2010-01-19,final,2121,Herder,,Herder,revise_spec,flagged_change_in_title_same_title,Other
+1300,2010-01-19,final,2121,Herder,2211,Assistant Agricultural Research Technician,revise_spec,retitled_new_words,Other
+3099,2022-11-30,final,2133,House Attendant,,Housekeeper,revise_spec,title_change_in_place,"Facilities, grounds & custodial"
+1996,2013-05-16,final,2189,Power Plant Instrument Technician,,Power Plant Instrument Technician,revise_spec,flagged_change_in_title_same_title,Science & research support
+1277,2010-01-19,final,2215,Farm Laborer,,Farm Laborer,revise_spec,flagged_change_in_title_same_title,"Facilities, grounds & custodial"
+1300,2010-01-19,final,2215,Farm Laborer,2211,Assistant Agricultural Research Technician,revise_spec,retitled_new_words,"Facilities, grounds & custodial"
+1321,2005-08-16,final,2217,Food Service Laborer,0024,Food Service Sanitation Laborer,revise_spec,retitled_shared_words,"Facilities, grounds & custodial"
+1321,2005-08-16,final,2221,Kitchen Laborer,0024,Food Service Sanitation Laborer,revise_spec,retitled_shared_words,"Facilities, grounds & custodial"
+1321,2005-08-16,final,2222,Kitchen Stores- Laborer,0025,Food Service Stores-Laborer,revise_spec,retitled_new_words,"Facilities, grounds & custodial"
+1995,2013-05-16,final,2235,Utility Laborer,4990,Steam and Power Plant I,revise_spec,retitled_new_words,"Facilities, grounds & custodial"
+3099,2022-11-30,final,2240,Electrician Lamper,,Laborer-Electrician,revise_spec,title_change_in_place,Skilled trades
+1712,2011-06-17,preliminary,2242,Outdoor 99 Program Leader,4906,,revise_spec,code_change_title_unknown,Management & administration
+1714,2011-06-17,preliminary,2242,Outdoor 99 Program Leader,4907,,revise_spec,code_change_title_unknown,Management & administration
+2537,2020-05-14,final,2246,Laundry Worker I,4249,Laundry Worker,abolish,merged_into_other_class,Food & domestic services
+2661,2021-07-01,final,2260,,,,revise_spec,title_change_in_place,Other
+1846,2012-05-21,final,2321,Ambulatory Care Manager,4963,Medical Office Coordinator,revise_spec,retitled_new_words,Management & administration
+1837,2012-02-27,final,2325,Audio-Visual Services Manager,2513,Multimedia Supervisor,revise_spec,retitled_new_words,"Communications, media & arts"
+2376,2017-01-31,final,2338,Bookstore Manager,3889,Retail Manager,title_change,retitled_shared_words,Management & administration
+2376,2017-01-31,final,2342,,3879,Retail Assistant Manager,title_change,code_change_title_unknown,Other
+2663,2021-07-15,final,2374,Manager,,Senior Business Manager,revise_spec,title_change_in_place,Management & administration
+2663,2021-07-15,final,2375,Manager,,Business Manager,revise_spec,title_change_in_place,Management & administration
+1277,2010-01-19,final,2382,Farm Manager,,Farm Manager,revise_spec,flagged_change_in_title_same_title,Agriculture & animal care
+1300,2010-01-19,final,2382,Farm Manager,2213,Senior Agricultural Research Technician,revise_spec,retitled_new_words,Agriculture & animal care
+3161,2023-03-07,notice_other,2421,Information Technology Assistant Manager,5030,Information Technology Manager/Administrative Coordinator,discontinue,retitled_shared_words,"IT, data & security"
+3182,2023-06-29,final,2421,Information Technology Assistant Manager,5030,Information Technology Manager/Administrative Coordinator,discontinue,retitled_shared_words,"IT, data & security"
+3253,2024-07-30,preliminary,2421,Information Technology Assistant Manager,5030,Information Technology Manager/Administrative Coordinator,abolish,merged_into_other_class,"IT, data & security"
+3161,2023-03-07,notice_other,2422,Information Technology Manager,5030,Information Technology Manager/Administrative Coordinator,discontinue,retitled_shared_words,"IT, data & security"
+3182,2023-06-29,final,2422,Information Technology Manager,5030,Information Technology Manager/Administrative Coordinator,discontinue,retitled_shared_words,"IT, data & security"
+3253,2024-07-30,preliminary,2422,Information Technology Manager,5030,Information Technology Manager/Administrative Coordinator,abolish,merged_into_other_class,"IT, data & security"
+1846,2012-05-21,final,2450,Patient Unit Manager,4962,Medical Office Specialist,revise_spec,retitled_new_words,Management & administration
+1276,2010-03-29,final,2585,Lead 203 Elevator Mechanic,1644,Elevator Mechanic Foreman,revise_spec,retitled_shared_words,Skilled trades
+1996,2013-05-16,final,2605,Power Plant Mechanic II,,Power Plant Mechanic II,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1996,2013-05-16,final,2614,Power Plant Mechanic I,,Power Plant Mechanic I,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1996,2013-05-16,final,2620,Principal Power Plant Mechanic,,Principal Power Plant Mechanic,revise_spec,flagged_change_in_title_same_title,Skilled trades
+1957,2013-02-14,final,2632,109** Refrigeration 145,3309,Pipefitter (Refrigeration Mechanic),abolish,merged_into_other_class,Skilled trades
+3099,2022-11-30,final,2633,Mail Carrier,2663,Mail Messenger,revise_spec,retitled_shared_words,Transportation & stores
+1320,2005-07-07,preliminary,2655,Book Mender Current Class,4902,Library Specialist,revise_spec,retitled_new_words,Other
+2666,2021-07-15,final,2757,Admissions,,Admissions and Records Coordinator,revise_spec,title_change_in_place,Student & academic services
+2311,2016-07-01,final,2787,Police Corporal CLA,3081,Police Sergeant,reinstate,retitled_shared_words,Protective services
+1996,2013-05-16,final,2802,Power Plant Auxiliary Operator,4992,Steam and Power Plant III,revise_spec,retitled_shared_words,Skilled trades
+2376,2017-01-31,final,2823,Clerk II,3877,Retail Associate,title_change,retitled_new_words,Clerical & office support
+1837,2012-02-27,final,2883,Instructional Communications Technical Operator I,2510,Multimedia Assistant,revise_spec,retitled_new_words,Student & academic services
+1837,2012-02-27,final,2884,Instructional Communications Technical Operator II,2512,Multimedia Technician,revise_spec,retitled_new_words,Student & academic services
+1837,2012-02-27,final,2885,Instructional Communications Technical Operator III,2513,Multimedia Supervisor,revise_spec,retitled_new_words,Student & academic services
+1321,2005-08-16,final,2922,Pot-washing Machine Operator,0025,Food Service Stores-Laborer,revise_spec,retitled_new_words,Other
+3201,2023-09-15,preliminary,2967,Campus,1236,Heavy Driver,revise_spec,retitled_new_words,Transportation & stores
+3260,2024-08-28,final,2967,Campus Transportation Operator,1236,Heavy Driver,abolish,merged_into_other_class,Transportation & stores
+3201,2023-09-15,preliminary,2968,Head Campus,1844,Driver Sub-Foreperson,revise_spec,retitled_new_words,Transportation & stores
+3260,2024-08-28,final,2968,Head Campus Transportation Operator,1844,Driver Sub-Foreperson,abolish,merged_into_other_class,Transportation & stores
+1271,2009-11-25,final,3036,Photographer I,3037,Photographer,revise_spec,level_renumbered,"Communications, media & arts"
+1321,2005-08-16,final,3090,Dish Porter,0024,Food Service Sanitation Laborer,revise_spec,retitled_new_words,Other
+1277,2010-01-19,final,3102,Poultry Worker,,Poultry Worker,revise_spec,flagged_change_in_title_same_title,Agriculture & animal care
+1300,2010-01-19,final,3102,Poultry Worker,2211,Assistant Agricultural Research Technician,revise_spec,retitled_new_words,Agriculture & animal care
+1858,2012-03-05,final,3144,Instructional Communications Programmer I,2503,Multimedia Communications Associate,revise_spec,retitled_shared_words,"IT, data & security"
+1858,2012-03-05,final,3145,Instructional Communications Programmer II,2504,Multimedia Communications Specialist,revise_spec,retitled_shared_words,"IT, data & security"
+1858,2012-03-05,final,3146,Instructional Communications Programmer III,2505,Multimedia Communications Supervisor,revise_spec,retitled_shared_words,"IT, data & security"
+3150,2023-03-07,preliminary,3150,Systems Programmer I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,3150,Systems Programmer I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,3151,Systems Programmer II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,3151,Systems Programmer II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,3152,Systems Programmer III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,3152,Systems Programmer III,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,3152,Systems Programmer III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,3152,Systems Programmer III,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+1994,2013-05-16,final,3205,Utilities and Maintenan,4992,Steam and Power Plant III,revise_spec,retitled_shared_words,Other
+3201,2023-09-15,preliminary,3226,Route Driver,1236,Heavy Driver,revise_spec,retitled_shared_words,Transportation & stores
+3260,2024-08-28,final,3226,Route Driver,1236,Heavy Driver,abolish,merged_into_other_class,Transportation & stores
+3099,2022-11-30,final,3260,Executive Assistant,,Executive Assistant,revise_spec,flagged_change_in_title_same_title,Clerical & office support
+1626,2010-08-02,final,3289,Instructional Development Specialist I,,Instructional Development Specialist,revise_spec,title_change_in_place,Student & academic services
+1858,2012-03-05,final,3290,Instructional Materials Specialist,2505,Multimedia Communications Supervisor,revise_spec,retitled_new_words,Student & academic services
+1858,2012-03-05,final,3292,Musical Instruction Specialist,2504,Multimedia Communications Specialist,revise_spec,retitled_shared_words,"Communications, media & arts"
+1730,2011-10-31,final,3300,Statistician I,,Statistician,revise_spec,title_change_in_place,Other
+1730,2011-10-31,final,3301,Statistician II,,Statistician Specialist,revise_spec,title_change_in_place,Management & administration
+3150,2023-03-07,preliminary,3306,Web Specialist I,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,3306,Web Specialist I,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,3307,Web Specialist II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,3307,Web Specialist II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,3308,Web Specialist III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,3308,Web Specialist III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+1846,2012-05-21,final,3436,Ambulatory Care Supervisor,4963,Medical Office Coordinator,revise_spec,retitled_new_words,Management & administration
+3099,2022-11-30,final,3437,Stage Foreman,,Assembly Hall Physical Facilities Supervisor,revise_spec,title_change_in_place,Science & research support
+2290,2016-03-01,final,3441,Baker IV 24,3870,Culinary Worker V,revise_spec,retitled_new_words,Food & domestic services
+2376,2017-01-31,final,3442,Cashier,3878,Retail Supervisor,title_change,retitled_new_words,Finance & procurement
+1336,2007-01-23,final,3445,Building Service Supervisor,2007,Greens Worker,revise_spec,retitled_new_words,"Facilities, grounds & custodial"
+1336,2007-01-23,final,3445,Building Service Supervisor,0026,,revise_spec,code_change_title_unknown,"Facilities, grounds & custodial"
+2376,2017-01-31,final,3459,Department Supervisor,3878,Retail Supervisor,title_change,retitled_shared_words,Management & administration
+2368,2017-01-17,final,3473,Building Service Supervisor,3445,Building Service Supervisor,revise_spec,level_renumbered,"Facilities, grounds & custodial"
+3099,2022-11-30,final,3495,Arena Facilities Supervisor,,Field House Facilities Supervisor,revise_spec,title_change_in_place,"Facilities, grounds & custodial"
+2287,2016-03-01,final,3506,Snack Bar 18,,Food Court/Snack Bar Supervisor,revise_spec,title_change_in_place,Food & domestic services
+3099,2022-11-30,final,3590,Service Office Supervisor,,Routing Supervisor,revise_spec,title_change_in_place,Clerical & office support
+2031,2013-08-15,final,3607,Assistant Stores Supervisor,3319,Storekeeper III,revise_spec,retitled_new_words,Transportation & stores
+2031,2013-08-15,final,3607,Assistant Stores Supervisor,3606,Stores Supervisor,revise_spec,retitled_shared_words,Transportation & stores
+1322,2005-08-31,final,3620,Ticket Control Supervisor,0069,Ticket Sales Supervisor,revise_spec,retitled_shared_words,Management & administration
+1858,2012-03-05,final,3625,Video Post- Production Supervisor,2505,Multimedia Communications Supervisor,revise_spec,retitled_shared_words,Management & administration
+1914,2012-06-04,final,3668,Collection Specialist IV,3669,Collection Manager,revise_spec,retitled_shared_words,Finance & procurement
+2687,2021-09-13,final,3710,Laboratory Animal Care Supervisor,,Animal Caretaker 4,revise_spec,title_change_in_place,Agriculture & animal care
+2666,2021-07-15,final,3748,Admissions/ Records Specialist I,2754,Admissions and Records Assistant,revise_spec,retitled_shared_words,Student & academic services
+1320,2005-07-07,preliminary,3750,Archives Specialist,4903,Senior Library Specialist,revise_spec,retitled_shared_words,"Library, museum & archives"
+1779,2011-10-19,final,3788,Physical Therapist II,4146,Physical Therapist,revise_spec,level_renumbered,Health & medical
+2661,2021-07-01,final,3856,Medical Records,,Health Information Technician,revise_spec,title_change_in_place,Clerical & office support
+1837,2012-02-27,final,3880,Audio-Visual Aids Technician I,2510,Multimedia Assistant,revise_spec,retitled_new_words,"Communications, media & arts"
+1837,2012-02-27,final,3881,Audio-Visual Aids Technician II,2511,Multimedia Operator,revise_spec,retitled_new_words,"Communications, media & arts"
+1837,2012-02-27,final,3882,Audio-Visual Aids Technician III,2512,Multimedia Technician,revise_spec,retitled_shared_words,"Communications, media & arts"
+3179,2023-03-08,preliminary,3901,Communications Technician I,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3225,2024-04-15,preliminary,3901,Communications Technician I,3902,Communications Technician,revise_spec,level_renumbered,"Communications, media & arts"
+3233,2024-05-14,final,3901,Communications Technician I,3902,Communications Technician,revise_spec,level_renumbered,"Communications, media & arts"
+3179,2023-03-08,preliminary,3902,Communications Technician II,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3179,2023-03-08,preliminary,3902,Communications Technician II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3179,2023-03-08,preliminary,3903,Communications Technician III,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3179,2023-03-08,preliminary,3903,Communications Technician III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+2027,2013-08-14,final,3920,Dental X-ray Technician III,,Dental X-Ray Coordinator,revise_spec,title_change_in_place,Health & medical
+2019,2013-07-19,final,3945,Electroencephalographic Technician I,,Electroencephalographic Technician,revise_spec,title_change_in_place,Health & medical
+2019,2013-07-19,final,3950,Electroencephalographic Technician II,3955,Electroencephalographic Supervisor,revise_spec,retitled_shared_words,Health & medical
+3150,2023-03-07,preliminary,3964,(Scientific) Electronics Technician I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3166,2023-06-29,final,3964,(Scientific) Electronics Technician I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3150,2023-03-07,preliminary,3965,(Scientific) Electronics Technician II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3166,2023-06-29,final,3965,(Scientific) Electronics Technician II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3150,2023-03-07,preliminary,3966,Electronics Technician,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3166,2023-06-29,final,3966,Electronics Technician,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3150,2023-03-07,preliminary,3967,Senior Electronics Technician,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3166,2023-06-29,final,3967,Senior Electronics Technician,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3150,2023-03-07,preliminary,3968,Principal Electronics Technician,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+3166,2023-06-29,final,3968,Principal Electronics Technician,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Science & research support
+1837,2012-02-27,final,3980,Instructional Materials Technician I,2511,Multimedia Operator,revise_spec,retitled_new_words,Student & academic services
+1837,2012-02-27,final,3981,Instructional Materials Technician II,2512,Multimedia Technician,revise_spec,retitled_shared_words,Student & academic services
+2562,2020-11-13,final,4008,Radiographer,,Radiologic Technologist,revise_spec,title_change_in_place,Health & medical
+2562,2020-11-13,final,4014,Radiographer,,Radiologic Technologist Manager,revise_spec,title_change_in_place,Health & medical
+1837,2012-02-27,final,4025,Multimedia Technician,2513,Multimedia Supervisor,revise_spec,retitled_shared_words,"Communications, media & arts"
+2542,2020-06-08,final,4084,Cardiac,,Non-Invasive Cardiovascular Technologist,revise_spec,title_change_in_place,Health & medical
+1700,2011-07-21,final,4128,Occupational Therapist I,,Occupational Therapist,revise_spec,title_change_in_place,Health & medical
+1700,2011-07-21,final,4129,Occupational Therapist II,,Occupational Therapy Specialist,revise_spec,title_change_in_place,Health & medical
+1700,2011-07-21,final,4130,Occupational Therapist III,,Coordinator of Occupational Therapy Services,revise_spec,title_change_in_place,Health & medical
+1779,2011-10-19,final,4136,Physical Therapist IV,,Coordinator of Physical Therapy Services,revise_spec,title_change_in_place,Health & medical
+1779,2011-10-19,final,4141,Physical Therapist III,,Physical Therapy Specialist,revise_spec,title_change_in_place,Health & medical
+1779,2011-10-19,final,4146,Physical Therapist I,,Physical Therapist,revise_spec,title_change_in_place,Health & medical
+1996,2013-05-16,final,4170,Power Plant Utility Operator,4990,Steam and Power Plant I,revise_spec,retitled_shared_words,Skilled trades
+1256,2009-12-29,proposal,4225,Pipefitter Welder Current,3309,Pipefitter (Refrigeration Mechanic),abolish,merged_into_other_class,Skilled trades
+1272,2010-02-01,notice_other,4225,Pipefitter Welder Current,3309,Pipefitter (Refrigeration Mechanic),abolish,merged_into_other_class,Skilled trades
+2288,2016-03-01,final,4243,Food Service 180 Worker I,3866,Culinary Worker I,revise_spec,retitled_shared_words,Food & domestic services
+2288,2016-03-01,final,4244,Food Service 180,3867,Culinary Worker II,revise_spec,retitled_new_words,Food & domestic services
+2288,2016-03-01,final,4245,Food Service 180,3868,Culinary Worker III,revise_spec,retitled_new_words,Food & domestic services
+2288,2016-03-01,final,4246,Food Service 180,3869,Culinary Worker IV,revise_spec,retitled_new_words,Food & domestic services
+1691,2011-09-29,final,4260,Medical Case Worker,,Medical Social Associate,revise_spec,title_change_in_place,Health & medical
+1981,2013-05-01,preliminary,4260,Medical Case Worker,,Medical Social Associate,revise_spec,title_change_in_place,Health & medical
+1336,2007-01-23,final,4502,Building Service Worker,2007,Greens Worker,revise_spec,retitled_shared_words,"Facilities, grounds & custodial"
+1336,2007-01-23,final,4502,Building Service Worker,0026,,revise_spec,code_change_title_unknown,"Facilities, grounds & custodial"
+1766,2011-03-14,final,4504,Hemodialysis Technologist I,,Hemodialysis Technician,revise_spec,title_change_in_place,Science & research support
+1766,2011-03-14,final,4505,Hemodialysis Technologist III,,Assistant Chief Hemodialysis Technologist,revise_spec,title_change_in_place,Science & research support
+1766,2011-03-14,final,4506,Chief Hemodialysis Technologist,,Chief Hemodialysis Technologist,revise_spec,flagged_change_in_title_same_title,Science & research support
+3099,2022-11-30,final,4527,Adult Education Community Coordinator,,Continuing Education Community Coordinator,revise_spec,title_change_in_place,Management & administration
+1623,2010-08-02,final,4540,Instructional Development Specialist II,3289,Instructional Development Specialist,revise_spec,level_renumbered,Student & academic services
+1660,2011-05-27,final,4552,Biomedical,4551,Biomedical Engineering Technician III,revise_spec,retitled_shared_words,Health & medical
+1821,2011-12-19,final,4558,Internal Auditor IV,,Internal Auditor Assistant Manager,revise_spec,title_change_in_place,Finance & procurement
+2542,2020-06-08,final,4561,Cardiac,,Non-Invasive Cardiovascular Specialist,revise_spec,title_change_in_place,Health & medical
+1821,2011-12-19,final,4566,Internal Auditor V,,Internal Auditor Manager,revise_spec,title_change_in_place,Finance & procurement
+1239,2009-02-03,final,4572,Coordinator I,,Health Care Utilization Review Coordinator,title_change,title_change_in_place,Health & medical
+1908,2012-05-07,final,4581,Medical Insurance Specialist I,,Medical Insurance Representative,revise_spec,title_change_in_place,Clerical & office support
+1908,2012-05-07,final,4582,Medical Insurance Specialist II,,Medical Insurance Associate,revise_spec,title_change_in_place,Clerical & office support
+1908,2012-05-07,final,4583,Medical Insurance Specialist III,,Medical Insurance Specialist,revise_spec,title_change_in_place,Clerical & office support
+1908,2012-05-07,final,4584,Medical Insurance Specialist IV,,Medical Insurance Assistant Manager,revise_spec,title_change_in_place,Health & medical
+1329,2006-03-27,final,4595,Events Administrator,0101,Events Coordinator,revise_spec,retitled_shared_words,Management & administration
+1329,2006-03-27,final,4596,Events Administrator (Concessions),0101,Events Coordinator,revise_spec,retitled_shared_words,Management & administration
+1329,2006-03-27,final,4597,Events Administrator (Crowd Control),0101,Events Coordinator,revise_spec,retitled_shared_words,Management & administration
+1329,2006-03-27,final,4598,Events Administrator (Ticket Control),0101,Events Coordinator,revise_spec,retitled_shared_words,Management & administration
+1329,2006-03-27,final,4598,Events Administrator (Ticket Control),0102,Senior Events Coordinator,revise_spec,retitled_shared_words,Management & administration
+1299,2009-09-28,final,4605,Fixed Prosthodontic C Technician I I,4609,Prosthodontic Technician,revise_spec,retitled_shared_words,Science & research support
+1299,2009-09-28,final,4607,Fixed Prosthodontic C Technician III I,4610,Prosthodontic Technician Supervisor,revise_spec,retitled_shared_words,Science & research support
+1299,2009-09-28,final,4608,Removable Prosthodontic C Technician I I,4609,Prosthodontic Technician,revise_spec,retitled_shared_words,Science & research support
+1312,2004-12-10,preliminary,4611,Equal Opportunity Officer I,4612,Assistant Equal Opportunity Officer,abolish,merged_into_other_class,Management & administration
+1740,2011-03-14,final,4614,Anesthesia Assistant I,,Anesthesia Assistant,revise_spec,title_change_in_place,Health & medical
+1846,2012-05-21,final,4619,Patient Support Services Coordinator,4963,Medical Office Coordinator,revise_spec,retitled_shared_words,Management & administration
+1331,2006-06-30,final,4624,Orthopedic Technologist,0119,Orthopedic Technologist,revise_spec,level_renumbered,Science & research support
+1766,2011-03-14,final,4628,Hemodialysis Technologist II,,Hemodialysis Technologist,revise_spec,title_change_in_place,Science & research support
+1416,2009-12-07,final,4630,Museum Education Coordinator,4629,Museum Instructor/Educator,revise_spec,retitled_shared_words,"Library, museum & archives"
+1846,2012-05-21,final,4647,Ambulatory Care Aide I,4960,Medical Office Assistant,revise_spec,retitled_new_words,Other
+1846,2012-05-21,final,4648,Ambulatory Care Aide II,4961,Medical Office Associate,revise_spec,retitled_new_words,Other
+1596,2010-10-15,final,4653,Crops Testing Specialist/Agronomist R,,Crops Testing Specialist,title_change,title_change_in_place,Student & academic services
+1846,2012-05-21,final,4658,Ambulatory Care Assistant,4962,Medical Office Specialist,revise_spec,retitled_new_words,Management & administration
+2661,2021-07-01,final,4659,Medical Record,3855,Health Information Specialist,revise_spec,retitled_new_words,Health & medical
+2387,2017-05-31,final,4678,Certified Medical Assistant,,Medical Assistant (Credentialed/Certified),revise_spec,title_change_in_place,Health & medical
+1320,2005-07-07,preliminary,4695,Library Operations Assistant,4904,Library Operations Associate,revise_spec,retitled_shared_words,"Library, museum & archives"
+2215,2015-03-24,final,4702,Services Agent II,,Parking Services Agent III,title_change,title_change_in_place,Protective services
+1983,2013-03-11,final,4708,Director of Student Judicial Programs,,Director of Student Judicial Programs,revise_spec,flagged_change_in_title_same_title,Student & academic services
+3150,2023-03-07,preliminary,4712,Microcomputer Support Specialist I,5032,Information Technology Support Associate,revise_spec,retitled_shared_words,"IT, data & security"
+3150,2023-03-07,preliminary,4712,Microcomputer Support Specialist I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,4712,Microcomputer Support Specialist I,5032,Information Technology Support Associate,revise_spec,retitled_shared_words,"IT, data & security"
+3166,2023-06-29,final,4712,Microcomputer Support Specialist I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,4713,Microcomputer Support Specialist II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,4713,Microcomputer Support Specialist II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,4714,Microcomputer Specialist III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,4714,Microcomputer Specialist III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,4723,Communications Network Specialist I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,4723,Communications Network Specialist I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,4724,Communications Network Specialist II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,4724,Communications Network Specialist II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,4725,Communications Network Specialist III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,4725,Communications Network Specialist III,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,4725,Communications Network Specialist III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,4725,Communications Network Specialist III,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,"IT, data & security"
+1740,2011-03-14,final,4735,Anesthesia Assistant II,,Anesthesia Technician,revise_spec,title_change_in_place,Health & medical
+1740,2011-03-14,final,4736,Anesthesia Assistant III,,Anesthesia Supervisor,revise_spec,title_change_in_place,Health & medical
+1322,2005-08-31,final,4748,Ticket Specialist I (Athletics),0067,Ticket Sales Assistant,abolish,merged_into_other_class,Management & administration
+1322,2005-08-31,final,4749,Ticket Specialist II (Athletics),0067,Ticket Sales Assistant,revise_spec,retitled_shared_words,Management & administration
+1322,2005-08-31,final,4750,Ticket Specialist III (Athletics),0068,Ticket Sales Specialist,abolish,merged_into_other_class,Management & administration
+1322,2005-08-31,final,4751,Ticket Specialist IV (Athletics),0068,Ticket Sales Specialist,revise_spec,retitled_shared_words,Management & administration
+1983,2013-03-11,final,4764,Student Judicial Programs Advisor,,Student Judicial Programs Advisor,revise_spec,flagged_change_in_title_same_title,Student & academic services
+2542,2020-06-08,final,4771,Cardiac,,Non-Invasive Cardiovascular Manager,revise_spec,title_change_in_place,Health & medical
+1664,2011-07-21,final,4772,Cardiac Technologist IV,,Cardiac Technologist IV,title_change,flagged_change_in_title_same_title,Science & research support
+3150,2023-03-07,preliminary,4778,Communications Services Specialist I,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3150,2023-03-07,preliminary,4778,Communications Services Specialist I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3166,2023-06-29,final,4778,Communications Services Specialist I,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3166,2023-06-29,final,4778,Communications Services Specialist I,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3150,2023-03-07,preliminary,4779,Communications Services Specialist II,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3150,2023-03-07,preliminary,4779,Communications Services Specialist II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3166,2023-06-29,final,4779,Communications Services Specialist II,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3166,2023-06-29,final,4779,Communications Services Specialist II,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3150,2023-03-07,preliminary,4780,Communications Services Specialist III,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3150,2023-03-07,preliminary,4780,Communications Services Specialist III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3166,2023-06-29,final,4780,Communications Services Specialist III,5032,Information Technology Support Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+3166,2023-06-29,final,4780,Communications Services Specialist III,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"Communications, media & arts"
+1838,2012-02-20,final,4787,Financial Analyst/Planner I,,Financial Analyst/Planner,revise_spec,title_change_in_place,Finance & procurement
+1838,2012-02-20,final,4788,Financial Analyst/Planner II,,Financial Analyst/Planner Specialist,revise_spec,title_change_in_place,Finance & procurement
+1838,2012-02-20,final,4789,Financial Analyst/Planner Supervisor,,Financial Analyst/Planner Supervisor,revise_spec,flagged_change_in_title_same_title,Finance & procurement
+2352,2016-08-30,final,4799,Grants and Contracts Development Specialist,5040,Grants and Contracts Associate,revise_spec,retitled_shared_words,Finance & procurement
+2352,2016-08-30,final,4801,Grants and Contracts Administrator I,5040,Grants and Contracts Associate,revise_spec,retitled_shared_words,Finance & procurement
+1599,2010-06-21,final,4807,Customer Service Representative I,,Customer Service Assistant,revise_spec,title_change_in_place,Management & administration
+1599,2010-06-21,final,4808,Customer Service Representative II,,Customer Service Representative,revise_spec,title_change_in_place,Management & administration
+1599,2010-06-21,final,4809,Customer Service Representative III,,Customer Service Specialist,revise_spec,title_change_in_place,Management & administration
+1320,2005-07-07,preliminary,4810,Library Technical Assistant,4902,Library Specialist,revise_spec,retitled_shared_words,"Library, museum & archives"
+3150,2023-03-07,preliminary,4825,Microcomputer Coordinator,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3150,2023-03-07,preliminary,4825,Microcomputer Coordinator,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_shared_words,"IT, data & security"
+3166,2023-06-29,final,4825,Microcomputer Coordinator,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,"IT, data & security"
+3166,2023-06-29,final,4825,Microcomputer Coordinator,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_shared_words,"IT, data & security"
+3150,2023-03-07,preliminary,4826,Local,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Other
+3166,2023-06-29,final,4826,Local,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Other
+3150,2023-03-07,preliminary,4827,Local,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Other
+3166,2023-06-29,final,4827,Local,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Other
+3276,2024-08-29,final,4827,Local,5030,Information Technology Manager/Administrative Coordinator,abolish,merged_into_other_class,Other
+3150,2023-03-07,preliminary,4828,Local,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Other
+3150,2023-03-07,preliminary,4828,Local,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,Other
+3166,2023-06-29,final,4828,Local,5031,Information Technology Technical Associate,revise_spec,retitled_new_words,Other
+3166,2023-06-29,final,4828,Local,5030,Information Technology Manager/Administrative Coordinator,revise_spec,retitled_new_words,Other
+1996,2013-05-16,final,4905,Chief Utility Plant Operating Engineer,4994,Steam and Power Plant V,revise_spec,retitled_shared_words,Skilled trades

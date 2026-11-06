@@ -1,0 +1,1224 @@
+class_code,class_title,job_family,status,onet_top1_code,onet_top1_title,onet_evidence_index,onet_evidence_band,onet_link_status,review_status
+0000,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+0010,Accountant I,Finance & procurement,active,13-2011.00,Accountants and Auditors,72.21,strong,unreviewed_candidate,unreviewed
+0011,Accountant II,Finance & procurement,active,13-2011.00,Accountants and Auditors,63.53,strong,unreviewed_candidate,unreviewed
+0012,Accountant III,Finance & procurement,active,13-2011.00,Accountants and Auditors,59.37,strong,unreviewed_candidate,unreviewed
+0013,Bone Density Technician,Science & research support,active,29-2034.00,Radiologic Technologists and Technicians,31.19,weak,unreviewed_candidate,unreviewed
+0014,Public Health Response Specialist,Health & medical,active,21-1091.00,Health Education Specialists,37.31,weak,unreviewed_candidate,unreviewed
+0015,Surgical Services Supplies and Equipment Worker,Health & medical,abolished,,,,,no_candidate,unreviewed
+0017,Chief Accountant,Finance & procurement,active,13-2011.00,Accountants and Auditors,49.74,moderate,unreviewed_candidate,unreviewed
+0023,Assistant Chief Accountant,Finance & procurement,active,43-3031.00,"Bookkeeping, Accounting, and Auditing Clerks",52.33,moderate,unreviewed_candidate,unreviewed
+0024,Food Service Sanitation Laborer,"Facilities, grounds & custodial",active,35-2021.00,Food Preparation Workers,45.66,moderate,unreviewed_candidate,unreviewed
+0025,Food Service Stores-Laborer,"Facilities, grounds & custodial",active,11-9051.00,Food Service Managers,48.89,moderate,unreviewed_candidate,unreviewed
+0026,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+0030,Nursing Consultant,Health & medical,active,21-1021.00,"Child, Family, and School Social Workers",43.59,moderate,unreviewed_candidate,unreviewed
+0035,Statistician,Other,abolished,,,,,no_candidate,unreviewed
+0036,Food Service Administrator I,Food & domestic services,active,35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,39.76,weak,unreviewed_candidate,unreviewed
+0037,Food Service Administrator II,Food & domestic services,active,35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,45.73,moderate,unreviewed_candidate,unreviewed
+0038,Food Service Administrator III,Food & domestic services,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,43.17,moderate,unreviewed_candidate,unreviewed
+0039,Food Service Administrator IV,Food & domestic services,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,45.77,moderate,unreviewed_candidate,unreviewed
+0041,Health Care Administrator II,Health & medical,active,11-9111.00,Medical and Health Services Managers,50.23,moderate,unreviewed_candidate,unreviewed
+0042,Health Care Administrator III,Health & medical,active,11-9111.00,Medical and Health Services Managers,51.32,moderate,unreviewed_candidate,unreviewed
+0043,Housing Administrator I,Student & academic services,proposed_abolish,,,,,no_candidate,unreviewed
+0044,Housing Representative,Student & academic services,active,13-1041.04,Government Property Inspectors and Investigators,41.62,moderate,unreviewed_candidate,unreviewed
+0045,Housing Officer,Student & academic services,active,39-9041.00,Residential Advisors,40.96,moderate,unreviewed_candidate,unreviewed
+0046,Housing Administrator,Student & academic services,active,11-3012.00,Administrative Services Managers,43.72,moderate,unreviewed_candidate,unreviewed
+0048,Space Administrator I,Clerical & office support,active,43-6014.00,"Secretaries and Administrative Assistants, Except Legal, Medical, and Executive",42.81,moderate,unreviewed_candidate,unreviewed
+0049,Space Administrator II,Clerical & office support,active,11-9111.00,Medical and Health Services Managers,41.09,moderate,unreviewed_candidate,unreviewed
+0050,Space Administrator III,Management & administration,active,25-9031.00,Instructional Coordinators,39.54,weak,unreviewed_candidate,unreviewed
+0051,Financial Aid Adviser I,Finance & procurement,not_in_current_catalog,,,,,no_candidate,unreviewed
+0052,Financial Aid Representative,Clerical & office support,active,13-2072.00,Loan Officers,45.31,moderate,unreviewed_candidate,unreviewed
+0053,Financial Aid Coordinator,Finance & procurement,active,13-2072.00,Loan Officers,59.36,strong,unreviewed_candidate,unreviewed
+0054,Financial Aid Manager,Finance & procurement,active,13-2072.00,Loan Officers,49.61,moderate,unreviewed_candidate,unreviewed
+0055,Program/Student Advisor,Student & academic services,active,21-1012.00,"Educational, Guidance, and Career Counselors and Advisors",52.7,moderate,unreviewed_candidate,unreviewed
+0058,Administrative Aide,Management & administration,active,43-6011.00,Executive Secretaries and Executive Administrative Assistants,53.79,moderate,unreviewed_candidate,unreviewed
+0061,Fitness and Aquatics Aide,Other,active,39-9031.00,Exercise Trainers and Group Fitness Instructors,85.18,strong,unreviewed_candidate,unreviewed
+0062,Systems Administrator I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0063,Systems Administrator II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0064,Systems Administrator III,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0065,Systems Administrator IV,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0066,Nurse Administrator,Health & medical,active,11-9111.00,Medical and Health Services Managers,51.57,moderate,unreviewed_candidate,unreviewed
+0067,Ticket Sales Assistant,Management & administration,abolished,,,,,no_candidate,unreviewed
+0068,Ticket Sales Specialist,Clerical & office support,active,41-2031.00,Retail Salespersons,44.27,moderate,unreviewed_candidate,unreviewed
+0069,Ticket Sales Supervisor,Management & administration,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,44.6,moderate,unreviewed_candidate,unreviewed
+0070,Nutrition Assistant,Health & medical,active,29-2051.00,Dietetic Technicians,65.55,strong,unreviewed_candidate,unreviewed
+0081,Meteorological Aide I,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+0082,Meteorological Aide II,Science & research support,abolished,,,,,no_candidate,unreviewed
+0098,Outdoor 99 Program Aide,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+0099,Physical Therapy Aide,Health & medical,active,31-2022.00,Physical Therapist Aides,92.52,strong,unreviewed_candidate,unreviewed
+0100,Campus Planning Analyst,Management & administration,abolished_pending_catalog_update,19-3051.00,Urban and Regional Planners,37.19,weak,unreviewed_candidate,unreviewed
+0101,Events Coordinator,Management & administration,active,13-1121.00,"Meeting, Convention, and Event Planners",52.28,moderate,unreviewed_candidate,unreviewed
+0102,Senior Events Coordinator,Management & administration,active,13-1121.00,"Meeting, Convention, and Event Planners",56.97,strong,unreviewed_candidate,unreviewed
+0103,Applications Programmer III,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0104,Applications Analyst,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0105,Senior Applications Analyst,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0108,Procedures and Systems Analyst Ill,"IT, data & security",proposed_abolish,,,,,no_candidate,unreviewed
+0116,Applications Programmer I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0117,Applications Programmer II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+0118,Orthopedic Technician,Science & research support,active,31-9092.00,Medical Assistants,50.86,moderate,unreviewed_candidate,unreviewed
+0119,Orthopedic Technologist,Science & research support,active,29-2091.00,Orthotists and Prosthetists,42.6,moderate,unreviewed_candidate,unreviewed
+0140,Architect I,Other,abolished,,,,,no_candidate,unreviewed
+0141,Architect II,Other,active,17-1011.00,"Architects, Except Landscape and Naval",35.0,weak,unreviewed_candidate,unreviewed
+0142,Architect III,Other,active,17-1011.00,"Architects, Except Landscape and Naval",35.0,weak,unreviewed_candidate,unreviewed
+0146,,Other,abolished,,,,,no_candidate,unreviewed
+0159,,Other,abolished,,,,,no_candidate,unreviewed
+0170,Scientific Artist,"Communications, media & arts",active,27-1013.00,"Fine Artists, Including Painters, Sculptors, and Illustrators",56.41,strong,unreviewed_candidate,unreviewed
+0171,Administrative Assistant,Management & administration,active,43-6011.00,Executive Secretaries and Executive Administrative Assistants,56.78,strong,unreviewed_candidate,unreviewed
+0172,Administrative Assistant II,Management & administration,active,13-1199.00,"Business Operations Specialists, All Other",35.0,weak,unreviewed_candidate,unreviewed
+0180,Bindery Worker I,"Facilities, grounds & custodial",active,51-5113.00,Print Binding and Finishing Workers,57.34,strong,unreviewed_candidate,unreviewed
+0185,,Other,abolished,,,,,no_candidate,unreviewed
+0195,Child Care Assistant,Management & administration,active,39-9011.00,Childcare Workers,66.7,strong,unreviewed_candidate,unreviewed
+0197,Dental Assistant I,Health & medical,active,31-9091.00,Dental Assistants,63.59,strong,unreviewed_candidate,unreviewed
+0198,Dental Assistant III,Health & medical,active,31-9091.00,Dental Assistants,51.7,moderate,unreviewed_candidate,unreviewed
+0199,Dental Assistant IV,Health & medical,active,31-9091.00,Dental Assistants,47.4,moderate,unreviewed_candidate,unreviewed
+0205,Editorial Assistant,"Communications, media & arts",active,27-3041.00,Editors,65.8,strong,unreviewed_candidate,unreviewed
+0215,(Scientific) Electronics Engineer Assistant,Science & research support,abolished,,,,,no_candidate,unreviewed
+0236,Foods Laboratory Assistant,Science & research support,abolished,,,,,no_candidate,unreviewed
+0238,Golf Course Pro-Shop Assistant,Clerical & office support,active,39-3091.00,Amusement and Recreation Attendants,44.95,moderate,unreviewed_candidate,unreviewed
+0241,,Other,abolished,,,,,no_candidate,unreviewed
+0242,,Other,abolished,,,,,no_candidate,unreviewed
+0247,Investment,Other,proposed_abolish,,,,,no_candidate,unreviewed
+0248,Investment Analyst II,Management & administration,proposed_abolish,,,,,no_candidate,unreviewed
+0254,Medical Laboratory Assistant II,Health & medical,active,29-2012.00,Medical and Clinical Laboratory Technicians,53.85,moderate,unreviewed_candidate,unreviewed
+0255,Medical Laboratory Technician I,Health & medical,active,29-2012.00,Medical and Clinical Laboratory Technicians,50.6,moderate,unreviewed_candidate,unreviewed
+0256,Medical Laboratory Technician II,Health & medical,active,29-2012.00,Medical and Clinical Laboratory Technicians,62.3,strong,unreviewed_candidate,unreviewed
+0258,Library Preservation/ Conservation Assistant,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0259,Library Technical Assistant I,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0260,Library Technical Assistant II,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0261,Library Technical Assistant III/,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0262,Medical Laboratory Assistant I,Health & medical,active,19-4031.00,Chemical Technicians,46.01,moderate,unreviewed_candidate,unreviewed
+0264,Medical Social Assistant,Health & medical,active,21-1022.00,Healthcare Social Workers,42.1,moderate,unreviewed_candidate,unreviewed
+0265,Video Production Assistant,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+0266,Natural Science Laboratory Assistant I,Science & research support,active,,,35.26,weak,abstained,unreviewed
+0267,Natural Science Laboratory Assistant II,Science & research support,active,,,36.27,weak,abstained,unreviewed
+0268,Natural Science Laboratory Assistant III,Science & research support,active,,,36.89,weak,abstained,unreviewed
+0270,Natural Science Technical Assistant,Science & research support,active,19-4021.00,Biological Technicians,35.38,weak,unreviewed_candidate,unreviewed
+0273,Legal Assistant 1,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+0274,Paralegal Assistant,Management & administration,active,23-2011.00,Paralegals and Legal Assistants,61.18,strong,unreviewed_candidate,unreviewed
+0285,Physical Science Staff Assistant,Science & research support,active,25-1054.00,"Physics Teachers, Postsecondary",38.94,weak,unreviewed_candidate,unreviewed
+0290,Physical Science Technical Assistant,Science & research support,active,25-1054.00,"Physics Teachers, Postsecondary",42.97,moderate,unreviewed_candidate,unreviewed
+0293,Physical Therapy Assistant,Health & medical,active,31-2021.00,Physical Therapist Assistants,94.51,strong,unreviewed_candidate,unreviewed
+0299,Printing Production Assistant,"Communications, media & arts",active,43-5061.00,"Production, Planning, and Expediting Clerks",48.97,moderate,unreviewed_candidate,unreviewed
+0303,Program Administrative Assistant,Management & administration,active,13-1199.00,"Business Operations Specialists, All Other",30.23,weak,unreviewed_candidate,unreviewed
+0307,Procurement Officer Assistant,Finance & procurement,active,13-1023.00,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",59.54,strong,unreviewed_candidate,unreviewed
+0308,Procurement Officer,Finance & procurement,active,11-3061.00,Purchasing Managers,61.56,strong,unreviewed_candidate,unreviewed
+0309,Procurement Officer Specialist,Finance & procurement,active,11-3061.00,Purchasing Managers,57.44,strong,unreviewed_candidate,unreviewed
+0325,Research Engineering Assistant,Science & research support,active,17-2031.00,Bioengineers and Biomedical Engineers,44.61,moderate,unreviewed_candidate,unreviewed
+0331,Special Education Paraprofessional,Other,active,25-2051.00,"Special Education Teachers, Preschool",64.34,strong,unreviewed_candidate,unreviewed
+0335,,Other,abolished,,,,,no_candidate,unreviewed
+0340,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+0346,Physician's Assistant in Medicine,Health & medical,active,29-1071.00,Physician Assistants,29.45,weak,unreviewed_candidate,unreviewed
+0370,Assistant to Comptroller,Management & administration,active,11-3031.00,Financial Managers,28.6,weak,unreviewed_candidate,unreviewed
+0416,,Other,abolished,,,,,no_candidate,unreviewed
+0420,Assistant to Director of University Union,Management & administration,active,11-2032.00,Public Relations Managers,34.49,weak,unreviewed_candidate,unreviewed
+0497,Child Development Associate,Student & academic services,active,25-2011.00,"Preschool Teachers, Except Special Education",49.89,moderate,unreviewed_candidate,unreviewed
+0500,Assembly Hall Attendant,"Facilities, grounds & custodial",active,37-2011.00,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",36.98,weak,unreviewed_candidate,unreviewed
+0501,Athletic Facilities Attendant,"Facilities, grounds & custodial",active,39-3093.00,"Locker Room, Coatroom, and Dressing Room Attendants",57.9,strong,unreviewed_candidate,unreviewed
+0502,Research Facility Attendant,Science & research support,active,37-2011.00,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",41.14,moderate,unreviewed_candidate,unreviewed
+0503,Athletic Facilities Supervisor,"Facilities, grounds & custodial",active,45-1011.00,"First-Line Supervisors of Farming, Fishing, and Forestry Workers",37.81,weak,unreviewed_candidate,unreviewed
+0504,Bowling and Billiard Center Attendant,"Facilities, grounds & custodial",abolished,,,,,no_candidate,unreviewed
+0506,Coin Machine Attendant,"Facilities, grounds & custodial",abolished,,,,,no_candidate,unreviewed
+0507,Dairy and Food Plant Attendant,"Facilities, grounds & custodial",abolished,,,,,no_candidate,unreviewed
+0510,Equipment Attendant,"Facilities, grounds & custodial",active,51-4021.00,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",50.11,moderate,unreviewed_candidate,unreviewed
+0516,Food Court/Snack Bar Attendant,"Facilities, grounds & custodial",active,35-2011.00,"Cooks, Fast Food",56.42,strong,unreviewed_candidate,unreviewed
+0535,Library Attendant,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0545,Main Desk Attendant,Clerical & office support,active,41-2021.00,Counter and Rental Clerks,47.86,moderate,unreviewed_candidate,unreviewed
+0549,Locker Room Attendant,"Facilities, grounds & custodial",abolished,,,,,no_candidate,unreviewed
+0558,Park Attendant,"Facilities, grounds & custodial",active,39-3091.00,Amusement and Recreation Attendants,45.06,moderate,unreviewed_candidate,unreviewed
+0559,Parking Services Agent I,Protective services,active,33-3041.00,Parking Enforcement Workers,50.81,moderate,unreviewed_candidate,unreviewed
+0560,Residence Hall Attendant,Protective services,active,39-9041.00,Residential Advisors,51.88,moderate,unreviewed_candidate,unreviewed
+0563,School Children Attendant,"Facilities, grounds & custodial",abolished,,,,,no_candidate,unreviewed
+0569,,Other,abolished,,,,,no_candidate,unreviewed
+0575,Tool Room Attendant,"Facilities, grounds & custodial",active,53-7065.00,Stockers and Order Fillers,48.09,moderate,unreviewed_candidate,unreviewed
+0576,Senior Tool Room Attendant,"Facilities, grounds & custodial",active,53-7065.00,Stockers and Order Fillers,49.7,moderate,unreviewed_candidate,unreviewed
+0577,Tool Room Supervisor,Management & administration,active,51-1011.00,First-Line Supervisors of Production and Operating Workers,49.6,moderate,unreviewed_candidate,unreviewed
+0584,Internal Auditor I,Finance & procurement,not_in_current_catalog,,,,,no_candidate,unreviewed
+0585,Internal Auditor,Finance & procurement,active,13-2011.00,Accountants and Auditors,71.77,strong,unreviewed_candidate,unreviewed
+0586,Internal Auditor Associate,Finance & procurement,active,13-2011.00,Accountants and Auditors,88.24,strong,unreviewed_candidate,unreviewed
+0591,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+0603,Baker III 24,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+0605,Baker II 24,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+0623,Brickmason,Skilled trades,active,47-2021.00,Brickmasons and Blockmasons,52.13,moderate,unreviewed_candidate,unreviewed
+0628,Bursar,Finance & procurement,active,13-2011.00,Accountants and Auditors,43.74,moderate,unreviewed_candidate,unreviewed
+0629,Assistant Bursar,Finance & procurement,active,13-2011.00,Accountants and Auditors,39.41,weak,unreviewed_candidate,unreviewed
+0678,Animal Caretaker 1,Agriculture & animal care,active,39-2021.00,Animal Caretakers,66.67,strong,unreviewed_candidate,unreviewed
+0679,Animal Caretaker 2,Agriculture & animal care,active,39-2021.00,Animal Caretakers,57.45,strong,unreviewed_candidate,unreviewed
+0680,Animal Caretaker 3,Agriculture & animal care,active,39-2021.00,Animal Caretakers,57.91,strong,unreviewed_candidate,unreviewed
+0683,Carpenter,Skilled trades,active,47-3012.00,Helpers--Carpenters,51.01,moderate,unreviewed_candidate,unreviewed
+0689,Cartographer,"Communications, media & arts",abolished,,,,,no_candidate,unreviewed
+0694,Cashier I,Clerical & office support,active,41-2011.00,Cashiers,70.58,strong,unreviewed_candidate,unreviewed
+0695,Cashier II,Clerical & office support,active,43-3071.00,Tellers,62.92,strong,unreviewed_candidate,unreviewed
+0696,Cashier III,Clerical & office support,active,43-3071.00,Tellers,64.17,strong,unreviewed_candidate,unreviewed
+0697,Cashier IV,Clerical & office support,active,41-2011.00,Cashiers,54.44,moderate,unreviewed_candidate,unreviewed
+0699,Food Service Cashier,Clerical & office support,active,41-2011.00,Cashiers,53.41,moderate,unreviewed_candidate,unreviewed
+0714,Cement Finisher,Skilled trades,active,47-3019.00,"Helpers, Construction Trades, All Other",45.82,moderate,unreviewed_candidate,unreviewed
+0719,Painter Chargeman,Skilled trades,abolished,,,,,no_candidate,unreviewed
+0728,Executive Chef,Food & domestic services,active,35-1011.00,Chefs and Head Cooks,46.93,moderate,unreviewed_candidate,unreviewed
+0730,Food Service Chef,Food & domestic services,active,35-1011.00,Chefs and Head Cooks,68.29,strong,unreviewed_candidate,unreviewed
+0731,Pastry Chef,Food & domestic services,active,35-1011.00,Chefs and Head Cooks,56.53,strong,unreviewed_candidate,unreviewed
+0752,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+0753,Clerk I,Clerical & office support,not_in_current_catalog,,,,,no_candidate,unreviewed
+0762,Dental Clinic Clerk I,Health & medical,active,,,33.19,weak,abstained,unreviewed
+0763,Dental Clinic Clerk II,Health & medical,active,31-9091.00,Dental Assistants,41.23,moderate,unreviewed_candidate,unreviewed
+0764,Distribution Clerk,Clerical & office support,active,43-9051.00,"Mail Clerks and Mail Machine Operators, Except Postal Service",51.62,moderate,unreviewed_candidate,unreviewed
+0768,Inventory Clerk,Clerical & office support,active,53-7065.00,Stockers and Order Fillers,48.43,moderate,unreviewed_candidate,unreviewed
+0771,Library Clerk I,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0772,Library Clerk II,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0773,Library Clerk III,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0774,Chief Library Clerk Current A,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+0784,Operations Clerk,Clerical & office support,active,43-4011.00,Brokerage Clerks,45.76,moderate,unreviewed_candidate,unreviewed
+0788,Patient Unit Clerk I,Clerical & office support,not_in_current_catalog,,,,,no_candidate,unreviewed
+0789,Patient Unit Clerk II,Clerical & office support,not_in_current_catalog,,,,,no_candidate,unreviewed
+0792,Payroll Clerk,Clerical & office support,active,43-3051.00,Payroll and Timekeeping Clerks,62.83,strong,unreviewed_candidate,unreviewed
+0801,Shipping/Receiving Clerk,Clerical & office support,active,43-5071.00,"Shipping, Receiving, and Inventory Clerks",57.64,strong,unreviewed_candidate,unreviewed
+0811,Statistical Clerk,Clerical & office support,active,43-9111.00,Statistical Assistants,99.97,strong,unreviewed_candidate,unreviewed
+0815,Transportation Clerk,Clerical & office support,active,53-3053.00,Shuttle Drivers and Chauffeurs,48.23,moderate,unreviewed_candidate,unreviewed
+0828,Tumor Registrar I,Health & medical,active,29-9021.00,Health Information Technologists and Medical Registrars,68.29,strong,unreviewed_candidate,unreviewed
+0829,Tumor Registrar II,Health & medical,active,29-9021.00,Health Information Technologists and Medical Registrars,52.95,moderate,unreviewed_candidate,unreviewed
+0845,Office Support Assistant,Clerical & office support,active,43-9061.00,"Office Clerks, General",61.87,strong,unreviewed_candidate,unreviewed
+0846,Office Support Associate,Clerical & office support,active,43-9061.00,"Office Clerks, General",52.57,moderate,unreviewed_candidate,unreviewed
+0862,Assistant Comptroller,Management & administration,active,11-3031.00,Financial Managers,29.68,weak,unreviewed_candidate,unreviewed
+0865,Clinical Nursing Consultant I,Health & medical,active,29-1141.00,Registered Nurses,46.73,moderate,unreviewed_candidate,unreviewed
+0866,Clinical Nursing Consultant II,Health & medical,active,29-1141.04,Clinical Nurse Specialists,48.41,moderate,unreviewed_candidate,unreviewed
+0876,Medical Social Consultant,Health & medical,active,21-1022.00,Healthcare Social Workers,54.14,moderate,unreviewed_candidate,unreviewed
+0882,Nursing Consultant I,Health & medical,abolished,,,,,no_candidate,unreviewed
+0883,Nursing Consultant II,Health & medical,not_in_current_catalog,,,,,no_candidate,unreviewed
+0884,Nursing Consultant III,Health & medical,abolished,,,,,no_candidate,unreviewed
+0885,Nursing Consultant IV,Health & medical,abolished,,,,,no_candidate,unreviewed
+0896,Speech and Hearing Consultant,Other,active,29-1127.00,Speech-Language Pathologists,44.94,moderate,unreviewed_candidate,unreviewed
+0898,Teaching Consultant,Other,active,27-1019.00,"Artists and Related Workers, All Other",23.59,weak,unreviewed_candidate,unreviewed
+0899,Comptroller,Other,active,11-3031.00,Financial Managers,35.0,weak,unreviewed_candidate,unreviewed
+0903,Pest Controller,"Facilities, grounds & custodial",active,37-2021.00,Pest Control Workers,69.66,strong,unreviewed_candidate,unreviewed
+0904,Cook 54 55,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+0906,First Cook 55 193,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+0913,Head Cook 54 55,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+0920,Administrative Coordinator for User Services,Management & administration,abolished,,,,,no_candidate,unreviewed
+0923,Campus Planning Coordinator,Management & administration,abolished_pending_catalog_update,11-9033.00,"Education Administrators, Postsecondary",41.73,moderate,unreviewed_candidate,unreviewed
+0925,Printing Production Coordinator,"Communications, media & arts",active,43-5061.00,"Production, Planning, and Expediting Clerks",44.95,moderate,unreviewed_candidate,unreviewed
+0926,Program 242 Coordinator,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+0927,Assistant 242 Program Coordinator,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+0929,Extension Program Coordinator,Management & administration,active,11-9151.00,Social and Community Service Managers,40.49,moderate,unreviewed_candidate,unreviewed
+0933,Educational Program Evaluation Coordinator,Management & administration,active,25-9031.00,Instructional Coordinators,40.5,moderate,unreviewed_candidate,unreviewed
+0936,Television Production Coordinator,"Communications, media & arts",active,43-5061.00,"Production, Planning, and Expediting Clerks",38.2,weak,unreviewed_candidate,unreviewed
+0937,Television Program/Operations Coordinator,"Communications, media & arts",active,27-2012.03,Media Programming Directors,49.49,moderate,unreviewed_candidate,unreviewed
+0947,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+0949,Coordinator of Parking and Traffic,Protective services,active,33-3041.00,Parking Enforcement Workers,42.02,moderate,unreviewed_candidate,unreviewed
+0951,Coordinator of Tenant Union Program,Management & administration,proposed_abolish,,,,,no_candidate,unreviewed
+0965,Costumer,Food & domestic services,active,39-3092.00,Costume Attendants,50.65,moderate,unreviewed_candidate,unreviewed
+0981,Anatomy Curator,Health & medical,active,25-1042.00,"Biological Science Teachers, Postsecondary",34.0,weak,unreviewed_candidate,unreviewed
+0982,Curator of Art I,"Library, museum & archives",active,25-4012.00,Curators,50.97,moderate,unreviewed_candidate,unreviewed
+0983,Curator of Art II,"Library, museum & archives",active,25-4012.00,Curators,56.08,strong,unreviewed_candidate,unreviewed
+0984,Curator of Art III,"Library, museum & archives",active,25-4012.00,Curators,69.5,strong,unreviewed_candidate,unreviewed
+0990,Anatomy Curator Coordinator,Health & medical,active,,,32.16,weak,abstained,unreviewed
+0996,Forest Custodian,"Facilities, grounds & custodial",active,37-2011.00,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",37.14,weak,unreviewed_candidate,unreviewed
+0997,Evidence Custodian,Protective services,active,33-3021.02,Police Identification and Records Officers,57.88,strong,unreviewed_candidate,unreviewed
+1000,Cytotechnologist I,Science & research support,active,29-2011.02,Cytotechnologists,59.17,strong,unreviewed_candidate,unreviewed
+1001,Cytotechnologist II,Science & research support,active,29-2011.02,Cytotechnologists,49.48,moderate,unreviewed_candidate,unreviewed
+1004,Graphic Designer Assistant,"Communications, media & arts",active,27-1024.00,Graphic Designers,51.93,moderate,unreviewed_candidate,unreviewed
+1005,Graphic Designer Associate,"Communications, media & arts",active,27-1024.00,Graphic Designers,49.4,moderate,unreviewed_candidate,unreviewed
+1006,Graphic Designer,"Communications, media & arts",active,27-1024.00,Graphic Designers,47.89,moderate,unreviewed_candidate,unreviewed
+1007,Interior Decorator I,Other,active,27-1025.00,Interior Designers,49.29,moderate,unreviewed_candidate,unreviewed
+1008,Interior Decorator II,Other,active,27-1025.00,Interior Designers,47.31,moderate,unreviewed_candidate,unreviewed
+1010,Museum Exhibits Designer,"Library, museum & archives",active,27-1027.00,Set and Exhibit Designers,55.47,strong,unreviewed_candidate,unreviewed
+1012,Senior Floral Designer,Food & domestic services,active,27-1023.00,Floral Designers,51.38,moderate,unreviewed_candidate,unreviewed
+1019,Dietitian Nutritionist Specialist,Health & medical,active,29-1031.00,Dietitians and Nutritionists,91.0,strong,unreviewed_candidate,unreviewed
+1020,Dietitian Coordinator,Health & medical,active,29-1031.00,Dietitians and Nutritionists,46.07,moderate,unreviewed_candidate,unreviewed
+1030,Technical Director,Management & administration,active,11-3021.00,Computer and Information Systems Managers,51.95,moderate,unreviewed_candidate,unreviewed
+1031,Assistant Technical Director,Management & administration,active,27-2012.05,Media Technical Directors/Managers,43.45,moderate,unreviewed_candidate,unreviewed
+1035,Deputy Director,Management & administration,active,11-1011.00,Chief Executives,42.21,moderate,unreviewed_candidate,unreviewed
+1036,Information Technology Associate Director,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+1037,Information Technology Director,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+1048,Study Abroad Assistant Director,Management & administration,active,25-1124.00,"Foreign Language and Literature Teachers, Postsecondary",62.18,strong,unreviewed_candidate,unreviewed
+1049,Study Abroad Advisor,Student & academic services,active,21-1012.00,"Educational, Guidance, and Career Counselors and Advisors",64.56,strong,unreviewed_candidate,unreviewed
+1050,Television Program Director,"Communications, media & arts",proposed_abolish,,,,,no_candidate,unreviewed
+1053,University Food Service Director,Food & domestic services,active,35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,53.32,moderate,unreviewed_candidate,unreviewed
+1055,Television Director-Producer,"Communications, media & arts",active,27-2012.00,Producers and Directors,87.47,strong,unreviewed_candidate,unreviewed
+1065,Assistant Director of Alumni Relations,Management & administration,active,11-9033.00,"Education Administrators, Postsecondary",34.86,weak,unreviewed_candidate,unreviewed
+1069,Assistant Director of Auditorium,Finance & procurement,active,39-3031.00,"Ushers, Lobby Attendants, and Ticket Takers",34.38,weak,unreviewed_candidate,unreviewed
+1071,,Other,abolished,,,,,no_candidate,unreviewed
+1112,Director of Nursing,Health & medical,abolished,,,,,no_candidate,unreviewed
+1113,Assistant Director of Nursing,Health & medical,abolished,,,,,no_candidate,unreviewed
+1114,Associate Director of Nursing,Health & medical,abolished,,,,,no_candidate,unreviewed
+1119,Assistant Director of Physical Plant,Science & research support,active,11-3051.04,Biomass Power Plant Managers,51.06,moderate,unreviewed_candidate,unreviewed
+1121,Associate Director of Publications,"Communications, media & arts",active,,,37.01,weak,abstained,unreviewed
+1122,Coordinator,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+1127,Director of Purchases,Finance & procurement,active,11-3061.00,Purchasing Managers,24.04,weak,unreviewed_candidate,unreviewed
+1128,Procurement Officer Supervisor,Finance & procurement,active,11-3071.04,Supply Chain Managers,66.37,strong,unreviewed_candidate,unreviewed
+1144,,Other,abolished,,,,,no_candidate,unreviewed
+1147,Assistant Director of University Student Center,Student & academic services,active,,,33.72,weak,abstained,unreviewed
+1160,Central Receiving Station Dispatcher,Transportation & stores,active,,,33.96,weak,abstained,unreviewed
+1164,Police Telecommunicator,Protective services,active,43-5031.00,Public Safety Telecommunicators,59.24,strong,unreviewed_candidate,unreviewed
+1165,Police Telecommunicator Supervisor,Protective services,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,50.31,moderate,unreviewed_candidate,unreviewed
+1167,Routing Dispatcher I,Clerical & office support,active,43-5032.00,"Dispatchers, Except Police, Fire, and Ambulance",44.95,moderate,unreviewed_candidate,unreviewed
+1168,Routing Dispatcher II,Clerical & office support,active,43-5032.00,"Dispatchers, Except Police, Fire, and Ambulance",42.83,moderate,unreviewed_candidate,unreviewed
+1169,Routing Dispatcher III,Clerical & office support,active,43-5061.00,"Production, Planning, and Expediting Clerks",42.3,moderate,unreviewed_candidate,unreviewed
+1184,Medical Radiation Dosimetrist I,Health & medical,active,29-2036.00,Medical Dosimetrists,90.61,strong,unreviewed_candidate,unreviewed
+1185,Medical Radiation Dosimetrist II,Health & medical,active,29-2036.00,Medical Dosimetrists,86.92,strong,unreviewed_candidate,unreviewed
+1188,Draftsman,Other,active,17-3011.00,Architectural and Civil Drafters,63.83,strong,unreviewed_candidate,unreviewed
+1194,Architectural Draftsman I,Other,active,17-3011.00,Architectural and Civil Drafters,64.54,strong,unreviewed_candidate,unreviewed
+1195,Architectural Draftsman II,Other,active,17-3011.00,Architectural and Civil Drafters,55.83,strong,unreviewed_candidate,unreviewed
+1198,Chief Architectural Draftsman,Management & administration,active,17-3011.00,Architectural and Civil Drafters,55.21,strong,unreviewed_candidate,unreviewed
+1212,Engineering Draftsman I,Other,active,17-3011.00,Architectural and Civil Drafters,46.77,moderate,unreviewed_candidate,unreviewed
+1213,Engineering Draftsman II,Other,active,17-3011.00,Architectural and Civil Drafters,43.82,moderate,unreviewed_candidate,unreviewed
+1216,Chief Engineering Draftsman,Management & administration,active,17-3011.00,Architectural and Civil Drafters,41.72,moderate,unreviewed_candidate,unreviewed
+1236,Heavy Driver,Transportation & stores,active,53-3032.00,Heavy and Tractor-Trailer Truck Drivers,50.68,moderate,unreviewed_candidate,unreviewed
+1254,Public,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1256,Publications Editor,"Communications, media & arts",active,27-3041.00,Editors,59.35,strong,unreviewed_candidate,unreviewed
+1259,Technical Editor,"Communications, media & arts",active,27-3041.00,Editors,57.19,strong,unreviewed_candidate,unreviewed
+1260,Museum Educator,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+1262,Electrician,Skilled trades,active,47-2111.00,Electricians,68.45,strong,unreviewed_candidate,unreviewed
+1263,Electrician Sub-Foreman,Skilled trades,active,47-3013.00,Helpers--Electricians,41.53,moderate,unreviewed_candidate,unreviewed
+1264,Electrician Foreman,Skilled trades,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",48.12,moderate,unreviewed_candidate,unreviewed
+1265,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1300,Engineer,Other,active,13-1081.01,Logistics Engineers,35.0,weak,unreviewed_candidate,unreviewed
+1301,Senior Engineer,Other,active,13-1081.01,Logistics Engineers,35.0,weak,unreviewed_candidate,unreviewed
+1313,Biomedical Engineer I,Health & medical,active,17-2031.00,Bioengineers and Biomedical Engineers,56.04,strong,unreviewed_candidate,unreviewed
+1316,Broadcasting Engineer,"Communications, media & arts",active,27-4012.00,Broadcast Technicians,57.09,strong,unreviewed_candidate,unreviewed
+1319,Chief Broadcasting Engineer,"Communications, media & arts",active,27-4012.00,Broadcast Technicians,45.26,moderate,unreviewed_candidate,unreviewed
+1328,Building Operating Engineer,Skilled trades,active,49-9071.00,"Maintenance and Repair Workers, General",54.25,moderate,unreviewed_candidate,unreviewed
+1329,Assistant Chief Building Operating Engineer,Skilled trades,active,49-9071.00,"Maintenance and Repair Workers, General",40.83,moderate,unreviewed_candidate,unreviewed
+1330,Chief Building Operating Engineer,Skilled trades,active,49-9071.00,"Maintenance and Repair Workers, General",41.11,moderate,unreviewed_candidate,unreviewed
+1333,Chief Engineer,Management & administration,active,33-1021.00,First-Line Supervisors of Firefighting and Prevention Workers,26.64,weak,unreviewed_candidate,unreviewed
+1337,Civil Engineer III,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1338,Civil Engineer II,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1339,Civil Engineer I,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1342,Assistant Chief Instructional Media Systems Engineer,Student & academic services,active,25-9042.00,"Teaching Assistants, Preschool, Elementary, Middle, and Secondary School, Except Special Education",34.08,weak,unreviewed_candidate,unreviewed
+1347,Electrical Engineer II,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1348,Electrical Engineer I,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1349,Assistant Ethanol Plant Research Engineer,Science & research support,active,19-4021.00,Biological Technicians,36.97,weak,unreviewed_candidate,unreviewed
+1350,Ethanol Plant Research Engineer,Science & research support,active,17-2031.00,Bioengineers and Biomedical Engineers,37.04,weak,unreviewed_candidate,unreviewed
+1351,Assistant Ethanol Plant Scientific Analyst,Science & research support,active,19-2031.00,Chemists,37.68,weak,unreviewed_candidate,unreviewed
+1352,Ethanol Plant Scientific Analyst,Science & research support,active,19-2031.00,Chemists,36.09,weak,unreviewed_candidate,unreviewed
+1356,Electronics Engineer,Other,active,17-2061.00,Computer Hardware Engineers,35.0,weak,unreviewed_candidate,unreviewed
+1365,Chief Instructional Media Systems Engineer,Student & academic services,active,25-9031.00,Instructional Coordinators,35.74,weak,unreviewed_candidate,unreviewed
+1367,Instrument and Efficiency Engineer,Science & research support,active,17-2161.00,Nuclear Engineers,38.13,weak,unreviewed_candidate,unreviewed
+1368,Assistant Instrument and Efficiency Engineer,Science & research support,active,51-8013.00,Power Plant Operators,38.7,weak,unreviewed_candidate,unreviewed
+1384,Mechanical Engineer III,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1385,Mechanical Engineer II,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1386,Mechanical Engineer I,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1387,Network Engineer I,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+1388,Network Engineer II,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+1389,Network Engineer III,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+1390,Network Engineer IV,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+1391,Network Engineer V,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+1392,Operating Engineer,Skilled trades,active,47-2073.00,Operating Engineers and Other Construction Equipment Operators,54.1,moderate,unreviewed_candidate,unreviewed
+1393,Assistant Operating Engineer,Skilled trades,active,47-2073.00,Operating Engineers and Other Construction Equipment Operators,45.79,moderate,unreviewed_candidate,unreviewed
+1394,Lead Power Plant Operating Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1402,Operative Crane Engineer,Skilled trades,active,47-2073.00,Operating Engineers and Other Construction Equipment Operators,49.4,moderate,unreviewed_candidate,unreviewed
+1410,Plant Operating Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1411,Chief Plant Operating Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1412,Assistant Chief Plant Operating Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1413,Lead Plant Operating Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1422,Power Plant Operating Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1425,Lead Plant Stationary Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1427,Construction Project Coordinator I,Management & administration,active,11-9021.00,Construction Managers,55.4,strong,unreviewed_candidate,unreviewed
+1443,Stationary Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1462,Estimator,Other,active,13-1032.00,"Insurance Appraisers, Auto Damage",57.37,strong,unreviewed_candidate,unreviewed
+1474,Institutional Compliance Examiner I,Protective services,active,13-2061.00,Financial Examiners,43.78,moderate,unreviewed_candidate,unreviewed
+1475,Institutional Compliance Examiner II,Protective services,active,13-2061.00,Financial Examiners,44.59,moderate,unreviewed_candidate,unreviewed
+1476,Institutional Compliance Examiner III,Protective services,active,13-2061.00,Financial Examiners,39.97,weak,unreviewed_candidate,unreviewed
+1477,Institutional Compliance Examiner IV,Protective services,active,13-2061.00,Financial Examiners,40.99,moderate,unreviewed_candidate,unreviewed
+1493,Desktop Publisher/Coordinator,Management & administration,active,43-9031.00,Desktop Publishers,92.83,strong,unreviewed_candidate,unreviewed
+1499,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1500,Farmer,Agriculture & animal care,not_in_current_catalog,,,,,no_candidate,unreviewed
+1502,Farrier,Other,active,39-2021.00,Animal Caretakers,50.36,moderate,unreviewed_candidate,unreviewed
+1511,Field Worker,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1540,Boiler Room Fireman,Protective services,not_in_current_catalog,,,,,no_candidate,unreviewed
+1550,Stationary Fireman,Protective services,not_in_current_catalog,,,,,no_candidate,unreviewed
+1560,Agricultural Gardener Foreman,Skilled trades,active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",49.63,moderate,unreviewed_candidate,unreviewed
+1568,Aircraft Shop Foreman,Skilled trades,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",38.05,weak,unreviewed_candidate,unreviewed
+1576,Driver Foreperson,Transportation & stores,active,53-1043.00,First-Line Supervisors of Material-Moving Machine and Vehicle Operators,33.09,weak,unreviewed_candidate,unreviewed
+1584,Bindery Worker Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,49.46,moderate,unreviewed_candidate,unreviewed
+1596,Brickmason Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,34.85,weak,unreviewed_candidate,unreviewed
+1598,Building Mechanic Foreman,Skilled trades,active,49-9071.00,"Maintenance and Repair Workers, General",47.55,moderate,unreviewed_candidate,unreviewed
+1600,Building Service Foreman,Skilled trades,active,51-1011.00,First-Line Supervisors of Production and Operating Workers,36.77,weak,unreviewed_candidate,unreviewed
+1604,Carpenter Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,50.04,moderate,unreviewed_candidate,unreviewed
+1605,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+1608,Cement Finisher Foreman,Skilled trades,active,47-2051.00,Cement Masons and Concrete Finishers,37.64,weak,unreviewed_candidate,unreviewed
+1620,Construction Laborer Foreman,Skilled trades,active,11-9021.00,Construction Managers,48.68,moderate,unreviewed_candidate,unreviewed
+1632,Electrical and Electronic Instruments and Controls Mechanic Foreman,Science & research support,active,49-2094.00,"Electrical and Electronics Repairers, Commercial and Industrial Equipment",39.8,weak,unreviewed_candidate,unreviewed
+1644,Elevator Mechanic Foreman,Skilled trades,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",83.07,strong,unreviewed_candidate,unreviewed
+1660,Farm Foreman,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1668,Supervising Farm Foreman,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1676,Furniture Restoration Supervisor,Management & administration,abolished,,,,,no_candidate,unreviewed
+1684,Garage Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,44.08,moderate,unreviewed_candidate,unreviewed
+1690,Grounds Foreman,Skilled trades,active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",52.49,moderate,unreviewed_candidate,unreviewed
+1700,Herder Foreman,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1704,Ironworker Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,38.49,weak,unreviewed_candidate,unreviewed
+1725,Laborer-Electrician Foreman,Skilled trades,active,53-1042.00,"First-Line Supervisors of Helpers, Laborers, and Material Movers, Hand",33.64,weak,unreviewed_candidate,unreviewed
+1731,Laundry Foreman,Skilled trades,abolished,,,,,no_candidate,unreviewed
+1733,Locksmith Foreman,Skilled trades,active,49-9094.00,Locksmiths and Safe Repairers,54.2,moderate,unreviewed_candidate,unreviewed
+1740,Machinist Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,40.5,moderate,unreviewed_candidate,unreviewed
+1748,Mailing Equipment Operator/Expediter III,Transportation & stores,active,,,38.42,weak,abstained,unreviewed
+1756,Mill Worker Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,37.95,weak,unreviewed_candidate,unreviewed
+1759,Operating Engineer Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,44.03,moderate,unreviewed_candidate,unreviewed
+1764,Painter Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,41.38,moderate,unreviewed_candidate,unreviewed
+1765,Crafts and Trades General Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,40.46,moderate,unreviewed_candidate,unreviewed
+1772,Park Supervisor,"Facilities, grounds & custodial",active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",55.64,strong,unreviewed_candidate,unreviewed
+1788,Plumber Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,41.44,moderate,unreviewed_candidate,unreviewed
+1789,Plumber General Foreman,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1790,Poultry Worker Foreman,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1795,,Other,abolished,,,,,no_candidate,unreviewed
+1796,Roofer Foreman,Skilled trades,active,47-3016.00,Helpers--Roofers,45.11,moderate,unreviewed_candidate,unreviewed
+1804,Sheet Metal Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,81.63,strong,unreviewed_candidate,unreviewed
+1820,Steam Distribution Foreman,Skilled trades,active,51-8012.00,Power Distributors and Dispatchers,41.56,moderate,unreviewed_candidate,unreviewed
+1828,Pipefitter (Refrigeration Mechanic) Foreman,Skilled trades,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",35.5,weak,unreviewed_candidate,unreviewed
+1829,Temperature Control Foreman,Skilled trades,active,51-9061.00,"Inspectors, Testers, Sorters, Samplers, and Weighers",38.62,weak,unreviewed_candidate,unreviewed
+1836,Water Station Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,32.32,weak,unreviewed_candidate,unreviewed
+1839,Maintenance Repair Foreperson,"Facilities, grounds & custodial",active,49-9099.00,"Installation, Maintenance, and Repair Workers, All Other",42.32,moderate,unreviewed_candidate,unreviewed
+1841,Aircraft Shop Sub-Foreman,Skilled trades,active,53-6051.01,Aviation Inspectors,37.35,weak,unreviewed_candidate,unreviewed
+1844,Driver Sub-Foreperson,Transportation & stores,active,,,32.63,weak,abstained,unreviewed
+1848,Building Service Sub-Foreman,Skilled trades,active,37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,38.87,weak,unreviewed_candidate,unreviewed
+1852,Carpenter Sub-Foreman,Skilled trades,active,47-3012.00,Helpers--Carpenters,45.74,moderate,unreviewed_candidate,unreviewed
+1860,Construction Laborer Sub-Foreman,Skilled trades,active,11-9021.00,Construction Managers,45.4,moderate,unreviewed_candidate,unreviewed
+1876,Garage Sub-Foreman,Skilled trades,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",38.55,weak,unreviewed_candidate,unreviewed
+1884,Grounds Sub-Foreman,Skilled trades,active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",48.71,moderate,unreviewed_candidate,unreviewed
+1914,Machinist Sub-Foreman,Skilled trades,active,51-4041.00,Machinists,36.08,weak,unreviewed_candidate,unreviewed
+1922,Painter Sub-Foreman,Skilled trades,active,47-3014.00,"Helpers--Painters, Paperhangers, Plasterers, and Stucco Masons",36.96,weak,unreviewed_candidate,unreviewed
+1925,Park Sub- Foreman,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+1930,Plumber Sub-Foreman,Skilled trades,active,47-3015.00,"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters",37.77,weak,unreviewed_candidate,unreviewed
+1935,,Other,abolished,,,,,no_candidate,unreviewed
+1936,Roofer Sub-Foreman,Skilled trades,active,47-3016.00,Helpers--Roofers,43.46,moderate,unreviewed_candidate,unreviewed
+1938,Sheet Metal Sub-Foreman,Skilled trades,active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,49.23,moderate,unreviewed_candidate,unreviewed
+1954,Steam Distribution Sub-Foreman,Skilled trades,active,51-8012.00,Power Distributors and Dispatchers,40.82,moderate,unreviewed_candidate,unreviewed
+1962,Pipefitter (Refrigeration Mechanic) Sub-Foreman,Skilled trades,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",35.9,weak,unreviewed_candidate,unreviewed
+1966,Temperature Control Sub-Foreman,Skilled trades,active,51-9061.00,"Inspectors, Testers, Sorters, Samplers, and Weighers",38.64,weak,unreviewed_candidate,unreviewed
+1969,Water Station Sub-Foreman,Skilled trades,active,17-2051.02,Water/Wastewater Engineers,33.7,weak,unreviewed_candidate,unreviewed
+1973,Agricultural Gardener,"Facilities, grounds & custodial",active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",50.39,moderate,unreviewed_candidate,unreviewed
+1979,Greenhouse Gardener I,Science & research support,active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",60.99,strong,unreviewed_candidate,unreviewed
+1980,Greenhouse Gardener II,Science & research support,active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",47.24,moderate,unreviewed_candidate,unreviewed
+1981,Grounds Gardener,"Facilities, grounds & custodial",active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",49.37,moderate,unreviewed_candidate,unreviewed
+1982,Assistant Grounds Gardener,"Facilities, grounds & custodial",active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",46.38,moderate,unreviewed_candidate,unreviewed
+2007,Greens Worker,"Facilities, grounds & custodial",active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",50.96,moderate,unreviewed_candidate,unreviewed
+2015,Grounds Worker,"Facilities, grounds & custodial",active,37-3011.00,Landscaping and Groundskeeping Workers,78.01,strong,unreviewed_candidate,unreviewed
+2035,Media Technical Services Manager,"Communications, media & arts",active,11-3021.00,Computer and Information Systems Managers,42.33,moderate,unreviewed_candidate,unreviewed
+2040,Aircraft Maintenance Mechanic Helper,Skilled trades,active,53-6051.01,Aviation Inspectors,54.18,moderate,unreviewed_candidate,unreviewed
+2046,Automotive Technician Assistant,Science & research support,active,53-6031.00,Automotive and Watercraft Service Attendants,43.42,moderate,unreviewed_candidate,unreviewed
+2054,Baker I 24,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+2062,Cook',Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+2066,Driver,Transportation & stores,active,53-3033.00,Light Truck Drivers,67.22,strong,unreviewed_candidate,unreviewed
+2073,Elevator Mechanic Helper I,Skilled trades,abolished,,,,,no_candidate,unreviewed
+2074,Elevator Mechanic Helper II,Skilled trades,abolished,,,,,no_candidate,unreviewed
+2084,Kitchen 55 56,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+2095,Laboratory Helper,Science & research support,active,19-4021.00,Biological Technicians,37.64,weak,unreviewed_candidate,unreviewed
+2099,Power Plant Mechanic Helper,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+2104,Route Driver Helper,Transportation & stores,abolished,,,,,no_candidate,unreviewed
+2110,Stationary Fireman Helper,Protective services,not_in_current_catalog,,,,,no_candidate,unreviewed
+2121,Herder,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+2128,Horticulturist,"Facilities, grounds & custodial",active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",51.32,moderate,unreviewed_candidate,unreviewed
+2133,Housekeeper,"Facilities, grounds & custodial",active,37-2012.00,Maids and Housekeeping Cleaners,45.96,moderate,unreviewed_candidate,unreviewed
+2134,Human Resource Assistant,Clerical & office support,active,43-4161.00,"Human Resources Assistants, Except Payroll and Timekeeping",44.71,moderate,unreviewed_candidate,unreviewed
+2135,Human Resource Representative,Human resources,active,13-1071.00,Human Resources Specialists,48.79,moderate,unreviewed_candidate,unreviewed
+2136,Human Resource Officer,Human resources,active,13-1071.00,Human Resources Specialists,42.22,moderate,unreviewed_candidate,unreviewed
+2137,Human Resource Assistant Manager,Human resources,active,11-3121.00,Human Resources Managers,50.44,moderate,unreviewed_candidate,unreviewed
+2138,Human Resource Manager,Human resources,active,13-1071.00,Human Resources Specialists,59.9,strong,unreviewed_candidate,unreviewed
+2150,Dental Hygienist,Health & medical,active,29-1292.00,Dental Hygienists,73.12,strong,unreviewed_candidate,unreviewed
+2152,Industrial Hygienist,Other,active,17-2111.00,"Health and Safety Engineers, Except Mining Safety Engineers and Inspectors",78.11,strong,unreviewed_candidate,unreviewed
+2153,Illustrator,Clerical & office support,active,27-1024.00,Graphic Designers,55.89,strong,unreviewed_candidate,unreviewed
+2160,,Other,abolished,,,,,no_candidate,unreviewed
+2161,Building Maintenance,"Facilities, grounds & custodial",abolished,,,,,no_candidate,unreviewed
+2173,Housing Maintenance Inspector,Student & academic services,active,47-4011.00,Construction and Building Inspectors,41.94,moderate,unreviewed_candidate,unreviewed
+2185,Live Captioner,Other,active,27-3092.00,Court Reporters and Simultaneous Captioners,52.73,moderate,unreviewed_candidate,unreviewed
+2189,Power Plant Instrument Technician,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+2190,Interpreter for the Deaf and Hard of Hearing,Student & academic services,active,27-3091.00,Interpreters and Translators,43.14,moderate,unreviewed_candidate,unreviewed
+2191,Senior Interpreter for the Deaf and Hard of Hearing,Student & academic services,active,43-2021.00,Telephone Operators,39.31,weak,unreviewed_candidate,unreviewed
+2193,Healthcare Interpreter,Health & medical,active,27-3091.00,Interpreters and Translators,68.74,strong,unreviewed_candidate,unreviewed
+2194,Survey Interviewer,Clerical & office support,active,43-4111.00,"Interviewers, Except Eligibility and Loan",97.44,strong,unreviewed_candidate,unreviewed
+2196,Ironworker,Skilled trades,active,47-2221.00,Structural Iron and Steel Workers,80.41,strong,unreviewed_candidate,unreviewed
+2210,Construction Laborer,"Facilities, grounds & custodial",active,47-2061.00,Construction Laborers,97.04,strong,unreviewed_candidate,unreviewed
+2211,Assistant Agricultural Research Technician,Science & research support,active,19-4012.00,Agricultural Technicians,54.01,moderate,unreviewed_candidate,unreviewed
+2212,Associate Agricultural Research Technician,Science & research support,active,19-4012.00,Agricultural Technicians,50.63,moderate,unreviewed_candidate,unreviewed
+2213,Senior Agricultural Research Technician,Science & research support,active,19-4012.00,Agricultural Technicians,44.58,moderate,unreviewed_candidate,unreviewed
+2215,Farm Laborer,"Facilities, grounds & custodial",not_in_current_catalog,,,,,no_candidate,unreviewed
+2217,Food Service Laborer,"Facilities, grounds & custodial",not_in_current_catalog,,,,,no_candidate,unreviewed
+2219,Transporter I,Health & medical,active,31-1132.00,Orderlies,74.18,strong,unreviewed_candidate,unreviewed
+2221,Kitchen Laborer,"Facilities, grounds & custodial",not_in_current_catalog,,,,,no_candidate,unreviewed
+2222,Kitchen Stores- Laborer,"Facilities, grounds & custodial",not_in_current_catalog,,,,,no_candidate,unreviewed
+2227,Maintenance Laborer,"Facilities, grounds & custodial",active,37-3013.00,Tree Trimmers and Pruners,47.04,moderate,unreviewed_candidate,unreviewed
+2235,Utility Laborer,"Facilities, grounds & custodial",not_in_current_catalog,,,,,no_candidate,unreviewed
+2240,Laborer-Electrician,Skilled trades,active,47-3013.00,Helpers--Electricians,35.03,weak,unreviewed_candidate,unreviewed
+2242,Outdoor 99 Program Leader,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+2246,Laundry Worker I,Food & domestic services,abolished,,,,,no_candidate,unreviewed
+2247,Laundry Worker II,Food & domestic services,abolished,,,,,no_candidate,unreviewed
+2251,Laundry Worker III,Food & domestic services,abolished,,,,,no_candidate,unreviewed
+2260,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+2270,Flight Line Attendant I,"Facilities, grounds & custodial",active,53-6031.00,Automotive and Watercraft Service Attendants,47.12,moderate,unreviewed_candidate,unreviewed
+2271,Flight Line Attendant II,"Facilities, grounds & custodial",active,53-6031.00,Automotive and Watercraft Service Attendants,48.37,moderate,unreviewed_candidate,unreviewed
+2272,Chief Flight Line Attendant,"Facilities, grounds & custodial",active,53-2012.00,Commercial Pilots,43.77,moderate,unreviewed_candidate,unreviewed
+2278,Locksmith,Skilled trades,active,49-9094.00,Locksmiths and Safe Repairers,82.68,strong,unreviewed_candidate,unreviewed
+2279,Locksmith Sub-Foreman,Skilled trades,active,49-9094.00,Locksmiths and Safe Repairers,66.25,strong,unreviewed_candidate,unreviewed
+2288,Machinist,Skilled trades,active,51-4041.00,Machinists,59.99,strong,unreviewed_candidate,unreviewed
+2290,Driller Laborer,"Facilities, grounds & custodial",active,47-5023.00,"Earth Drillers, Except Oil and Gas",49.17,moderate,unreviewed_candidate,unreviewed
+2291,Driller Assistant,Management & administration,active,47-5023.00,"Earth Drillers, Except Oil and Gas",45.03,moderate,unreviewed_candidate,unreviewed
+2292,Driller,"Facilities, grounds & custodial",active,47-5023.00,"Earth Drillers, Except Oil and Gas",54.72,moderate,unreviewed_candidate,unreviewed
+2296,Maid,"Facilities, grounds & custodial",active,37-2012.00,Maids and Housekeeping Cleaners,60.31,strong,unreviewed_candidate,unreviewed
+2299,,Other,abolished,,,,,no_candidate,unreviewed
+2306,Instrument Maker,Science & research support,active,51-4041.00,Machinists,49.31,moderate,unreviewed_candidate,unreviewed
+2314,Model Maker,Skilled trades,active,51-4061.00,"Model Makers, Metal and Plastic",49.52,moderate,unreviewed_candidate,unreviewed
+2321,Ambulatory Care Manager,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+2325,Audio-Visual Services Manager,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+2328,Automotive Parts Manager,Transportation & stores,active,11-3071.04,Supply Chain Managers,40.74,moderate,unreviewed_candidate,unreviewed
+2338,Bookstore Manager,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+2342,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+2350,Bowling and Billiard Center Manager,Management & administration,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,31.32,weak,unreviewed_candidate,unreviewed
+2374,Senior Business Manager,Management & administration,active,11-3012.00,Administrative Services Managers,56.05,strong,unreviewed_candidate,unreviewed
+2375,Business Manager,Management & administration,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,53.98,moderate,unreviewed_candidate,unreviewed
+2378,Facility Operations Coordinator,"Facilities, grounds & custodial",active,11-1021.00,General and Operations Managers,53.76,moderate,unreviewed_candidate,unreviewed
+2379,Facility Operations Specialist,"Facilities, grounds & custodial",active,41-1011.00,First-Line Supervisors of Retail Sales Workers,47.14,moderate,unreviewed_candidate,unreviewed
+2382,Farm Manager,Agriculture & animal care,not_in_current_catalog,,,,,no_candidate,unreviewed
+2385,Feed Mill Plant Manager,Management & administration,abolished,,,,,no_candidate,unreviewed
+2390,Food Production Manager,Food & domestic services,active,11-9051.00,Food Service Managers,62.83,strong,unreviewed_candidate,unreviewed
+2392,Assistant Food Production Manager,Food & domestic services,active,11-9051.00,Food Service Managers,53.7,moderate,unreviewed_candidate,unreviewed
+2398,Food Service Manager,Food & domestic services,active,35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,53.93,moderate,unreviewed_candidate,unreviewed
+2399,Assistant Food Service Manager,Food & domestic services,active,11-9131.00,Postmasters and Mail Superintendents,53.41,moderate,unreviewed_candidate,unreviewed
+2403,Golf Course Pro-Shop Manager,Management & administration,active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",49.91,moderate,unreviewed_candidate,unreviewed
+2408,Laboratory Manager,Science & research support,active,11-9111.00,Medical and Health Services Managers,43.56,moderate,unreviewed_candidate,unreviewed
+2419,Mailing Services Manager,Transportation & stores,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,43.0,moderate,unreviewed_candidate,unreviewed
+2421,Information Technology Assistant Manager,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+2422,Information Technology Manager,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+2424,Medical Insurance Manager,Health & medical,active,43-9041.00,Insurance Claims and Policy Processing Clerks,44.34,moderate,unreviewed_candidate,unreviewed
+2450,Patient Unit Manager,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+2457,Traffic Manager,Management & administration,abolished,,,,,no_candidate,unreviewed
+2458,Golf Course Grounds Superintendent,"Facilities, grounds & custodial",active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",55.83,strong,unreviewed_candidate,unreviewed
+2459,Vending Services Manager I,Management & administration,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,43.43,moderate,unreviewed_candidate,unreviewed
+2460,Vending Services Manager II,Management & administration,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,43.07,moderate,unreviewed_candidate,unreviewed
+2461,Manager of Agricultural Sciences Facilities,Science & research support,active,25-1041.00,"Agricultural Sciences Teachers, Postsecondary",43.7,moderate,unreviewed_candidate,unreviewed
+2463,Benefits Manager,Human resources,active,11-3111.00,Compensation and Benefits Managers,52.86,moderate,unreviewed_candidate,unreviewed
+2465,Central Stores Manager II,Transportation & stores,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,38.35,weak,unreviewed_candidate,unreviewed
+2473,Manager of Photographic Laboratory,"Communications, media & arts",active,51-9151.00,Photographic Process Workers and Processing Machine Operators,36.25,weak,unreviewed_candidate,unreviewed
+2474,Assistant Manager of Photographic Laboratory,"Communications, media & arts",active,19-4043.00,"Geological Technicians, Except Hydrologic Technicians",33.68,weak,unreviewed_candidate,unreviewed
+2502,Manager of University Cashiering Operations,Finance & procurement,active,,,32.1,weak,abstained,unreviewed
+2503,Multimedia Communications Associate,"Communications, media & arts",active,25-4022.00,Librarians and Media Collections Specialists,38.32,weak,unreviewed_candidate,unreviewed
+2504,Multimedia Communications Specialist,"Communications, media & arts",active,25-4022.00,Librarians and Media Collections Specialists,43.45,moderate,unreviewed_candidate,unreviewed
+2505,Multimedia Communications Supervisor,"Communications, media & arts",active,25-4022.00,Librarians and Media Collections Specialists,49.77,moderate,unreviewed_candidate,unreviewed
+2510,Multimedia Assistant,"Communications, media & arts",active,43-4121.00,"Library Assistants, Clerical",47.64,moderate,unreviewed_candidate,unreviewed
+2511,Multimedia Operator,"Communications, media & arts",active,25-4022.00,Librarians and Media Collections Specialists,46.39,moderate,unreviewed_candidate,unreviewed
+2512,Multimedia Technician,"Communications, media & arts",active,25-4022.00,Librarians and Media Collections Specialists,42.93,moderate,unreviewed_candidate,unreviewed
+2513,Multimedia Supervisor,"Communications, media & arts",active,25-4022.00,Librarians and Media Collections Specialists,40.19,moderate,unreviewed_candidate,unreviewed
+2514,Airport Fire Marshall,Protective services,active,33-1021.00,First-Line Supervisors of Firefighting and Prevention Workers,76.1,strong,unreviewed_candidate,unreviewed
+2543,Master Aircraft and Aircraft Engine Mechanic,Skilled trades,active,49-3011.00,Aircraft Mechanics and Service Technicians,49.47,moderate,unreviewed_candidate,unreviewed
+2552,Senior Aircraft Maintenance Mechanic,Skilled trades,active,49-3011.00,Aircraft Mechanics and Service Technicians,57.01,strong,unreviewed_candidate,unreviewed
+2558,Junior Airport Mechanic,Skilled trades,active,37-2011.00,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",40.68,moderate,unreviewed_candidate,unreviewed
+2560,Airport Mechanic,Skilled trades,active,53-2022.00,Airfield Operations Specialists,45.6,moderate,unreviewed_candidate,unreviewed
+2568,Automotive Technician,Science & research support,active,49-3023.00,Automotive Service Technicians and Mechanics,52.23,moderate,unreviewed_candidate,unreviewed
+2576,Building Mechanic,Skilled trades,active,49-9071.00,"Maintenance and Repair Workers, General",51.98,moderate,unreviewed_candidate,unreviewed
+2582,Electrical and Electronic Instruments and Controls Mechanic,Science & research support,active,49-2094.00,"Electrical and Electronics Repairers, Commercial and Industrial Equipment",35.96,weak,unreviewed_candidate,unreviewed
+2584,Elevator Mechanic,Skilled trades,active,47-4021.00,Elevator and Escalator Installers and Repairers,100.0,strong,unreviewed_candidate,unreviewed
+2585,Lead 203 Elevator Mechanic,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+2592,Farm Mechanic,Skilled trades,active,49-3041.00,Farm Equipment Mechanics and Service Technicians,47.52,moderate,unreviewed_candidate,unreviewed
+2593,Grounds Equipment Mechanic,Skilled trades,active,49-3042.00,"Mobile Heavy Equipment Mechanics, Except Engines",52.29,moderate,unreviewed_candidate,unreviewed
+2596,Laboratory Mechanic,Science & research support,active,49-9044.00,Millwrights,35.68,weak,unreviewed_candidate,unreviewed
+2597,Assistant Laboratory Mechanic,Science & research support,active,19-4013.00,Food Science Technicians,43.61,moderate,unreviewed_candidate,unreviewed
+2599,Senior Laboratory Mechanic,Science & research support,active,19-4043.00,"Geological Technicians, Except Hydrologic Technicians",38.03,weak,unreviewed_candidate,unreviewed
+2604,Parking Meter Mechanic II,Skilled trades,active,49-9012.00,"Control and Valve Installers and Repairers, Except Mechanical Door",45.88,moderate,unreviewed_candidate,unreviewed
+2605,Power Plant Mechanic II,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+2610,Pneumatic Instrument and Controls Mechanic,Science & research support,active,49-9012.00,"Control and Valve Installers and Repairers, Except Mechanical Door",38.53,weak,unreviewed_candidate,unreviewed
+2614,Power Plant Mechanic I,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+2620,Principal Power Plant Mechanic,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+2632,109** Refrigeration 145,Skilled trades,abolished,,,,,no_candidate,unreviewed
+2633,Mail Carrier,Transportation & stores,not_in_current_catalog,,,,,no_candidate,unreviewed
+2640,Temperature Control Mechanic,Skilled trades,active,51-9061.00,"Inspectors, Testers, Sorters, Samplers, and Weighers",37.66,weak,unreviewed_candidate,unreviewed
+2648,Tool and Instrument Mechanic,Science & research support,active,49-9069.00,"Precision Instrument and Equipment Repairers, All Other",51.91,moderate,unreviewed_candidate,unreviewed
+2655,Book Mender Current Class,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+2663,Mail Messenger,Clerical & office support,active,43-5052.00,Postal Service Mail Carriers,62.4,strong,unreviewed_candidate,unreviewed
+2678,Mill Worker,Skilled trades,active,51-7011.00,Cabinetmakers and Bench Carpenters,57.95,strong,unreviewed_candidate,unreviewed
+2698,Naturalist,Other,abolished,,,,,no_candidate,unreviewed
+2700,Administrative Nurse I,Health & medical,active,29-1141.04,Clinical Nurse Specialists,50.86,moderate,unreviewed_candidate,unreviewed
+2701,Administrative Nurse II,Health & medical,active,11-9111.00,Medical and Health Services Managers,44.39,moderate,unreviewed_candidate,unreviewed
+2702,Administrative Nurse III,Health & medical,active,11-9111.00,Medical and Health Services Managers,47.61,moderate,unreviewed_candidate,unreviewed
+2703,Clinic Nurse,Health & medical,active,29-2061.00,Licensed Practical and Licensed Vocational Nurses,55.76,strong,unreviewed_candidate,unreviewed
+2704,Charge Nurse,Health & medical,active,29-1141.00,Registered Nurses,57.96,strong,unreviewed_candidate,unreviewed
+2705,Certified Clinic Nurse,Health & medical,active,29-1141.03,Critical Care Nurses,46.76,moderate,unreviewed_candidate,unreviewed
+2725,Health Service Nurse,Health & medical,abolished,,,,,no_candidate,unreviewed
+2730,Head Health Service Nurse,Health & medical,abolished,,,,,no_candidate,unreviewed
+2735,Licensed Practical Nurse I,Health & medical,active,29-2061.00,Licensed Practical and Licensed Vocational Nurses,55.32,strong,unreviewed_candidate,unreviewed
+2736,Licensed Practical Nurse II,Health & medical,active,29-2061.00,Licensed Practical and Licensed Vocational Nurses,48.25,moderate,unreviewed_candidate,unreviewed
+2738,Psychiatric and Mental Health Nurse,Health & medical,active,29-1141.02,Advanced Practice Psychiatric Nurses,64.33,strong,unreviewed_candidate,unreviewed
+2740,Staff Nurse I,Health & medical,active,29-1141.03,Critical Care Nurses,65.23,strong,unreviewed_candidate,unreviewed
+2741,Staff Nurse II,Health & medical,active,29-1141.03,Critical Care Nurses,68.26,strong,unreviewed_candidate,unreviewed
+2742,Research Nurse,Health & medical,active,11-9121.01,Clinical Research Coordinators,53.05,moderate,unreviewed_candidate,unreviewed
+2753,Admissions and Records Associate,Student & academic services,active,11-9033.00,"Education Administrators, Postsecondary",44.68,moderate,unreviewed_candidate,unreviewed
+2754,Admissions and Records Assistant,Student & academic services,active,11-9033.00,"Education Administrators, Postsecondary",40.75,moderate,unreviewed_candidate,unreviewed
+2755,Admissions and Records Representative,Student & academic services,active,11-9033.00,"Education Administrators, Postsecondary",43.27,moderate,unreviewed_candidate,unreviewed
+2756,Admissions and Records Officer,Student & academic services,active,11-9033.00,"Education Administrators, Postsecondary",50.67,moderate,unreviewed_candidate,unreviewed
+2757,Admissions and Records Coordinator,Student & academic services,active,11-9033.00,"Education Administrators, Postsecondary",57.63,strong,unreviewed_candidate,unreviewed
+2758,Nursery Worker,Health & medical,active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",62.19,strong,unreviewed_candidate,unreviewed
+2763,Admitting Officer I,Clerical & office support,active,29-2099.08,Patient Representatives,43.61,moderate,unreviewed_candidate,unreviewed
+2764,Admitting Officer II,Clerical & office support,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,46.02,moderate,unreviewed_candidate,unreviewed
+2765,Admitting Officer III,Clerical & office support,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,44.59,moderate,unreviewed_candidate,unreviewed
+2766,,Other,abolished,,,,,no_candidate,unreviewed
+2771,Graduate Placement Officer,Management & administration,active,21-1012.00,"Educational, Guidance, and Career Counselors and Advisors",39.31,weak,unreviewed_candidate,unreviewed
+2776,Loan Service Officer I,Finance & procurement,abolished_pending_catalog_update,13-2072.00,Loan Officers,35.0,weak,unreviewed_candidate,unreviewed
+2777,Loan Service Officer II,Finance & procurement,abolished,,,,,no_candidate,unreviewed
+2778,Loan Service Officer III,Finance & procurement,abolished,,,,,no_candidate,unreviewed
+2779,Health Care Compliance Officer,Health & medical,active,11-9199.02,Compliance Managers,41.33,moderate,unreviewed_candidate,unreviewed
+2787,Police Corporal,Protective services,active,33-3051.00,Police and Sheriff's Patrol Officers,54.17,moderate,unreviewed_candidate,unreviewed
+2788,Police Major/Deputy Chief Spe,Protective services,not_in_current_catalog,,,,,no_candidate,unreviewed
+2791,Radiation Safety Officer,Management & administration,active,29-2033.00,Nuclear Medicine Technologists,61.72,strong,unreviewed_candidate,unreviewed
+2792,Emergency Management Coordinator,Protective services,active,11-9161.00,Emergency Management Directors,75.52,strong,unreviewed_candidate,unreviewed
+2793,Safety/Environmental Compliance Specialist,Management & administration,active,17-2081.00,Environmental Engineers,48.67,moderate,unreviewed_candidate,unreviewed
+2802,Power Plant Auxiliary Operator,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+2823,Clerk II,Clerical & office support,not_in_current_catalog,,,,,no_candidate,unreviewed
+2825,Central Systems Control Operator,Skilled trades,active,17-2199.03,"Energy Engineers, Except Wind and Solar",34.5,weak,unreviewed_candidate,unreviewed
+2846,Copy Center Operator I,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",57.23,strong,unreviewed_candidate,unreviewed
+2847,Copy Center Operator II,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",57.51,strong,unreviewed_candidate,unreviewed
+2848,Copy Center Operator III,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",51.76,moderate,unreviewed_candidate,unreviewed
+2853,Digital Computer,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+2854,Digital Computer Operator II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+2855,Digital Computer,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+2865,Duplicating Machine Operator I,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",61.47,strong,unreviewed_candidate,unreviewed
+2866,Duplicating Machine Operator II,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",54.99,moderate,unreviewed_candidate,unreviewed
+2867,Duplicating Machine Operator III,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",59.37,strong,unreviewed_candidate,unreviewed
+2870,Elevator Operator,Skilled trades,abolished,,,,,no_candidate,unreviewed
+2883,Instructional Communications Technical Operator I,Student & academic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+2884,Instructional Communications Technical Operator II,Student & academic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+2885,Instructional Communications Technical Operator III,Student & academic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+2898,Mailing Equipment Operator/Expediter II,Transportation & stores,active,43-2099.00,"Communications Equipment Operators, All Other",38.22,weak,unreviewed_candidate,unreviewed
+2900,Maintenance Equipment Operator,"Facilities, grounds & custodial",active,47-2073.00,Operating Engineers and Other Construction Equipment Operators,44.17,moderate,unreviewed_candidate,unreviewed
+2922,Pot-washing Machine Operator,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+2967,Campus Transportation Operator,Transportation & stores,abolished,,,,,no_candidate,unreviewed
+2968,Head Campus Transportation Operator,Transportation & stores,abolished,,,,,no_candidate,unreviewed
+2969,Sewage Treatment Plant Operator,Skilled trades,active,51-8031.00,Water and Wastewater Treatment Plant and System Operators,54.35,moderate,unreviewed_candidate,unreviewed
+2971,Steam Distribution Operator,Skilled trades,active,51-8012.00,Power Distributors and Dispatchers,46.67,moderate,unreviewed_candidate,unreviewed
+2972,Assistant Steam Distribution Operator,Skilled trades,active,51-8021.00,Stationary Engineers and Boiler Operators,39.56,weak,unreviewed_candidate,unreviewed
+2980,Telephone Operator I,Clerical & office support,active,43-2011.00,"Switchboard Operators, Including Answering Service",65.93,strong,unreviewed_candidate,unreviewed
+2985,Telephone Operator III,Clerical & office support,active,49-2022.00,"Telecommunications Equipment Installers and Repairers, Except Line Installers",44.78,moderate,unreviewed_candidate,unreviewed
+2996,Telephone Operator II,Clerical & office support,active,43-4171.00,Receptionists and Information Clerks,42.27,moderate,unreviewed_candidate,unreviewed
+2997,Television Broadcast Equipment Operator,"Communications, media & arts",active,27-4012.00,Broadcast Technicians,48.83,moderate,unreviewed_candidate,unreviewed
+3003,Water Station Operator,Skilled trades,active,51-8031.00,Water and Wastewater Treatment Plant and System Operators,46.37,moderate,unreviewed_candidate,unreviewed
+3011,Motor Vehicle Operator and Mechanic,Skilled trades,abolished,,,,,no_candidate,unreviewed
+3015,Mailing Equipment Operator/Expediter I,Transportation & stores,active,,,37.9,weak,abstained,unreviewed
+3016,Microfilm Operator/Technician I,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",46.95,moderate,unreviewed_candidate,unreviewed
+3017,Microfilm Operator/Technician II,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",48.08,moderate,unreviewed_candidate,unreviewed
+3018,Microfilm Operator/Technician III,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",41.54,moderate,unreviewed_candidate,unreviewed
+3021,Peer Support Assistant,Clerical & office support,active,21-1093.00,Social and Human Service Assistants,36.02,weak,unreviewed_candidate,unreviewed
+3022,Peer Support Specialist,Clerical & office support,active,21-1093.00,Social and Human Service Assistants,53.15,moderate,unreviewed_candidate,unreviewed
+3023,Peer Support Supervisor,Management & administration,active,21-1093.00,Social and Human Service Assistants,35.74,weak,unreviewed_candidate,unreviewed
+3024,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+3027,Painter,Skilled trades,active,47-2141.00,"Painters, Construction and Maintenance",72.79,strong,unreviewed_candidate,unreviewed
+3029,Work Program Participant,Management & administration,active,,,28.66,weak,abstained,unreviewed
+3032,Speech Pathologist,Health & medical,active,29-1127.00,Speech-Language Pathologists,48.75,moderate,unreviewed_candidate,unreviewed
+3033,Pharmacist,Health & medical,active,31-9095.00,Pharmacy Aides,31.58,weak,unreviewed_candidate,unreviewed
+3034,Phlebotomist,Health & medical,active,31-9097.00,Phlebotomists,50.82,moderate,unreviewed_candidate,unreviewed
+3036,Photographer I,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+3037,Photographer,"Communications, media & arts",active,27-4021.00,Photographers,57.19,strong,unreviewed_candidate,unreviewed
+3038,Senior Photographer,"Communications, media & arts",active,27-4021.00,Photographers,59.45,strong,unreviewed_candidate,unreviewed
+3041,,Other,abolished,,,,,no_candidate,unreviewed
+3045,,Other,abolished,,,,,no_candidate,unreviewed
+3049,Technician I,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+3050,Clinical Exercise Physiologist,Health & medical,proposed_abolish,29-1128.00,Exercise Physiologists,100.0,strong,unreviewed_candidate,unreviewed
+3052,,Other,abolished,,,,,no_candidate,unreviewed
+3053,Procedures and Systems Analyst I,"IT, data & security",proposed_abolish,,,,,no_candidate,unreviewed
+3054,Procedures and Systems Analyst II,"IT, data & security",proposed_abolish,,,,,no_candidate,unreviewed
+3056,Building Heat and Frost Insulator,Skilled trades,active,47-2132.00,"Insulation Workers, Mechanical",56.98,strong,unreviewed_candidate,unreviewed
+3057,Plasterer,Skilled trades,active,47-3014.00,"Helpers--Painters, Paperhangers, Plasterers, and Stucco Masons",50.76,moderate,unreviewed_candidate,unreviewed
+3058,Clinical Exercise Physiologist Supervisor,Health & medical,abolished_pending_catalog_update,29-1128.00,Exercise Physiologists,77.08,strong,unreviewed_candidate,unreviewed
+3060,Plumber,Skilled trades,active,47-3015.00,"Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters",46.71,moderate,unreviewed_candidate,unreviewed
+3061,Building Heat and Frost Insulator Foreperson,Skilled trades,active,,,33.17,weak,abstained,unreviewed
+3068,Police Captain,Protective services,active,33-3052.00,Transit and Railroad Police,48.73,moderate,unreviewed_candidate,unreviewed
+3076,Police Lieutenant,Protective services,active,33-1012.00,First-Line Supervisors of Police and Detectives,53.82,moderate,unreviewed_candidate,unreviewed
+3081,Police Sergeant,Protective services,active,33-1012.00,First-Line Supervisors of Police and Detectives,98.5,strong,unreviewed_candidate,unreviewed
+3086,Police Officer,Protective services,active,33-3051.00,Police and Sheriff's Patrol Officers,65.0,strong,unreviewed_candidate,unreviewed
+3090,Dish Porter,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+3099,Family Planning Nurse Practitioner,Health & medical,abolished,,,,,no_candidate,unreviewed
+3100,Nurse Practitioner,Health & medical,active,29-1141.00,Registered Nurses,58.28,strong,unreviewed_candidate,unreviewed
+3102,Poultry Worker,Agriculture & animal care,not_in_current_catalog,,,,,no_candidate,unreviewed
+3108,Museum Exhibits Preparator,"Library, museum & archives",active,25-4013.00,Museum Technicians and Conservators,54.0,moderate,unreviewed_candidate,unreviewed
+3123,Press Technician I,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+3144,Instructional Communications Programmer I,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+3145,Instructional Communications Programmer II,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+3146,Instructional Communications Programmer III,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+3150,Systems Programmer I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3151,Systems Programmer II,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+3152,Systems Programmer III,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3160,Trauma Registrar,Student & academic services,abolished,,,,,no_candidate,unreviewed
+3182,Automotive Body Repair Technician,Science & research support,active,49-3021.00,Automotive Body and Related Repairers,62.05,strong,unreviewed_candidate,unreviewed
+3190,Furniture Restorer,Skilled trades,active,51-7021.00,Furniture Finishers,52.51,moderate,unreviewed_candidate,unreviewed
+3205,Utilities and Maintenan,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+3222,Roofer,Skilled trades,active,47-3016.00,Helpers--Roofers,59.77,strong,unreviewed_candidate,unreviewed
+3226,Route Driver,Transportation & stores,abolished,,,,,no_candidate,unreviewed
+3243,Office Support Specialist,Clerical & office support,active,43-6011.00,Executive Secretaries and Executive Administrative Assistants,47.01,moderate,unreviewed_candidate,unreviewed
+3253,Office Administrator,Clerical & office support,active,43-6011.00,Executive Secretaries and Executive Administrative Assistants,53.03,moderate,unreviewed_candidate,unreviewed
+3260,Executive Assistant,Clerical & office support,active,43-6011.00,Executive Secretaries and Executive Administrative Assistants,54.12,moderate,unreviewed_candidate,unreviewed
+3266,Office Manager,Clerical & office support,active,11-1021.00,General and Operations Managers,48.75,moderate,unreviewed_candidate,unreviewed
+3280,Equipment Service Worker,"Facilities, grounds & custodial",active,51-8021.00,Stationary Engineers and Boiler Operators,40.39,moderate,unreviewed_candidate,unreviewed
+3281,Parking Meter Mechanic I,Skilled trades,active,49-9012.00,"Control and Valve Installers and Repairers, Except Mechanical Door",50.59,moderate,unreviewed_candidate,unreviewed
+3282,Collection Representative,Finance & procurement,active,43-3011.00,Bill and Account Collectors,53.45,moderate,unreviewed_candidate,unreviewed
+3283,Collection Specialist,Finance & procurement,active,43-3011.00,Bill and Account Collectors,58.03,strong,unreviewed_candidate,unreviewed
+3284,Collection Assistant Manager,Finance & procurement,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,44.25,moderate,unreviewed_candidate,unreviewed
+3286,Community Affairs Specialist I,Management & administration,active,21-1094.00,Community Health Workers,37.6,weak,unreviewed_candidate,unreviewed
+3287,Community Affairs Specialist II,Management & administration,active,27-3031.00,Public Relations Specialists,36.87,weak,unreviewed_candidate,unreviewed
+3288,Crash-Rescue and Security Specialist,Protective services,active,,,30.53,weak,abstained,unreviewed
+3289,Instructional Development Specialist,Student & academic services,active,25-9031.00,Instructional Coordinators,50.43,moderate,unreviewed_candidate,unreviewed
+3290,Instructional Materials Specialist,Student & academic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+3291,Inventory Specialist,Clerical & office support,active,53-7065.00,Stockers and Order Fillers,44.62,moderate,unreviewed_candidate,unreviewed
+3292,Musical Instruction Specialist,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+3293,Patient Services Specialist,Clerical & office support,active,29-2099.08,Patient Representatives,51.18,moderate,unreviewed_candidate,unreviewed
+3294,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+3296,Securities Specialist Di,Management & administration,proposed_abolish,,,,,no_candidate,unreviewed
+3298,Assembly Hall Stagehand,"Communications, media & arts",active,27-4015.00,Lighting Technicians,43.25,moderate,unreviewed_candidate,unreviewed
+3300,Statistician,Other,active,15-2041.00,Statisticians,97.86,strong,unreviewed_candidate,unreviewed
+3301,Statistician Specialist,Management & administration,active,15-2041.00,Statisticians,94.49,strong,unreviewed_candidate,unreviewed
+3302,,Other,abolished,,,,,no_candidate,unreviewed
+3303,,Other,abolished,,,,,no_candidate,unreviewed
+3304,,Other,abolished,,,,,no_candidate,unreviewed
+3305,Technical Support,Other,abolished,,,,,no_candidate,unreviewed
+3306,Web Specialist I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3307,Web Specialist II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3308,Web Specialist III,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3309,Pipefitter (Refrigeration Mechanic),Skilled trades,active,49-9021.00,"Heating, Air Conditioning, and Refrigeration Mechanics and Installers",39.69,weak,unreviewed_candidate,unreviewed
+3314,Theatrical Stitcher,"Communications, media & arts",active,39-3092.00,Costume Attendants,38.4,weak,unreviewed_candidate,unreviewed
+3317,Storekeeper I,Transportation & stores,active,53-7065.00,Stockers and Order Fillers,81.42,strong,unreviewed_candidate,unreviewed
+3318,Storekeeper II,Transportation & stores,active,,,35.17,weak,abstained,unreviewed
+3319,Storekeeper III,Transportation & stores,active,53-7065.00,Stockers and Order Fillers,38.61,weak,unreviewed_candidate,unreviewed
+3320,Operations Support,Other,abolished,,,,,no_candidate,unreviewed
+3321,Operations Support,Other,abolished,,,,,no_candidate,unreviewed
+3322,Operations Support Service Specialist III,Management & administration,abolished,,,,,no_candidate,unreviewed
+3323,Operations Support Service Specialist IV,Management & administration,abolished,,,,,no_candidate,unreviewed
+3326,Architectural Superintendent,Management & administration,active,11-9021.00,Construction Managers,40.74,moderate,unreviewed_candidate,unreviewed
+3330,Construction Superintendent,Management & administration,active,11-9021.00,Construction Managers,59.42,strong,unreviewed_candidate,unreviewed
+3334,Electrical Construction Superintendent,Management & administration,active,11-9021.00,Construction Managers,51.94,moderate,unreviewed_candidate,unreviewed
+3338,Mechanical Construction Superintendent,Skilled trades,active,11-9021.00,Construction Managers,46.89,moderate,unreviewed_candidate,unreviewed
+3346,Superintendent of Building Maintenance,"Facilities, grounds & custodial",active,37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,47.55,moderate,unreviewed_candidate,unreviewed
+3347,Assistant Superintendent of Building Maintenance,"Facilities, grounds & custodial",active,11-9141.00,"Property, Real Estate, and Community Association Managers",50.63,moderate,unreviewed_candidate,unreviewed
+3349,Superintendent of Building Services,"Facilities, grounds & custodial",active,37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,44.46,moderate,unreviewed_candidate,unreviewed
+3350,Assistant Superintendent of Building Services,"Facilities, grounds & custodial",active,37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,43.64,moderate,unreviewed_candidate,unreviewed
+3354,Superintendent of Buildings,"Facilities, grounds & custodial",active,37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,50.98,moderate,unreviewed_candidate,unreviewed
+3360,Superintendent of Buildings and Grounds,"Facilities, grounds & custodial",active,11-9141.00,"Property, Real Estate, and Community Association Managers",46.03,moderate,unreviewed_candidate,unreviewed
+3381,Superintendent of Grounds,"Facilities, grounds & custodial",active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",59.2,strong,unreviewed_candidate,unreviewed
+3382,Assistant Superintendent of Grounds,"Facilities, grounds & custodial",active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",45.43,moderate,unreviewed_candidate,unreviewed
+3401,Superintendent of Operations,Management & administration,active,11-9021.00,Construction Managers,45.64,moderate,unreviewed_candidate,unreviewed
+3421,Superintendent of Print Shop,Management & administration,active,11-1021.00,General and Operations Managers,39.53,weak,unreviewed_candidate,unreviewed
+3422,Assistant Superintendent of Print Shop,Management & administration,active,51-5112.00,Printing Press Operators,48.94,moderate,unreviewed_candidate,unreviewed
+3435,,Other,abolished,,,,,no_candidate,unreviewed
+3436,Ambulatory Care Supervisor,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+3437,Assembly Hall Physical Facilities Supervisor,Science & research support,active,,,30.79,weak,abstained,unreviewed
+3438,Sports Equipment Supervisor,Management & administration,active,51-1011.00,First-Line Supervisors of Production and Operating Workers,43.27,moderate,unreviewed_candidate,unreviewed
+3439,Auxiliary Computer Operations Supervisor,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3441,Baker IV 24,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+3442,Cashier,Finance & procurement,not_in_current_catalog,,,,,no_candidate,unreviewed
+3445,Building Service Supervisor,"Facilities, grounds & custodial",active,37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,50.37,moderate,unreviewed_candidate,unreviewed
+3447,Buildings and Grounds Supervisor,"Facilities, grounds & custodial",active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",56.95,strong,unreviewed_candidate,unreviewed
+3448,Assistant Buildings and Grounds Supervisor,"Facilities, grounds & custodial",active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",52.15,moderate,unreviewed_candidate,unreviewed
+3459,Department Supervisor,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+3460,Catering Supervisor,Food & domestic services,active,11-9051.00,Food Service Managers,50.59,moderate,unreviewed_candidate,unreviewed
+3473,Building Service Supervisor,"Facilities, grounds & custodial",not_in_current_catalog,,,,,no_candidate,unreviewed
+3474,Child Development Supervisor,Student & academic services,active,25-2011.00,"Preschool Teachers, Except Special Education",45.59,moderate,unreviewed_candidate,unreviewed
+3475,Departmental Information Supervisor,Management & administration,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,43.18,moderate,unreviewed_candidate,unreviewed
+3477,Digital Computer Supervisor,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3481,Dining Room Supervisor,Food & domestic services,active,35-9011.00,Dining Room and Cafeteria Attendants and Bartender Helpers,64.12,strong,unreviewed_candidate,unreviewed
+3484,Dishroom Supervisor,Management & administration,active,35-9021.00,Dishwashers,69.89,strong,unreviewed_candidate,unreviewed
+3490,Duplicating Service Supervisor,Clerical & office support,active,51-1011.00,First-Line Supervisors of Production and Operating Workers,44.12,moderate,unreviewed_candidate,unreviewed
+3491,Assistant Duplicating Service Supervisor,Clerical & office support,active,43-9071.00,"Office Machine Operators, Except Computer",36.27,weak,unreviewed_candidate,unreviewed
+3493,Equipment Service Supervisor,Management & administration,active,51-1011.00,First-Line Supervisors of Production and Operating Workers,50.41,moderate,unreviewed_candidate,unreviewed
+3495,Field House Facilities Supervisor,"Facilities, grounds & custodial",active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,35.46,weak,unreviewed_candidate,unreviewed
+3498,Food Service Supervisor,Food & domestic services,active,35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,73.24,strong,unreviewed_candidate,unreviewed
+3500,Food Service Area Supervisor,Food & domestic services,active,35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,51.75,moderate,unreviewed_candidate,unreviewed
+3506,Food Court/Snack Bar Supervisor,Food & domestic services,active,35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,47.11,moderate,unreviewed_candidate,unreviewed
+3510,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+3512,Gymnasium and Facilities Supervisor,"Facilities, grounds & custodial",active,27-2022.00,Coaches and Scouts,33.45,weak,unreviewed_candidate,unreviewed
+3514,Housing Maintenance Supervisor,Student & academic services,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",65.98,strong,unreviewed_candidate,unreviewed
+3528,Inventory Record Control Supervisor,Clerical & office support,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,45.83,moderate,unreviewed_candidate,unreviewed
+3544,Mail Supervisor,Clerical & office support,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,50.41,moderate,unreviewed_candidate,unreviewed
+3552,Mailing Services Supervisor II,Transportation & stores,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,43.79,moderate,unreviewed_candidate,unreviewed
+3553,Mailing Services Supervisor I,Transportation & stores,active,37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,41.89,moderate,unreviewed_candidate,unreviewed
+3558,Musical Instrument Specialist,"Communications, media & arts",active,49-9063.00,Musical Instrument Repairers and Tuners,43.08,moderate,unreviewed_candidate,unreviewed
+3562,Offset Printing Supervisor I,"Communications, media & arts",active,51-5112.00,Printing Press Operators,51.05,moderate,unreviewed_candidate,unreviewed
+3563,Offset Printing Supervisor II,"Communications, media & arts",active,51-5112.00,Printing Press Operators,47.65,moderate,unreviewed_candidate,unreviewed
+3570,Pharmacy Supervisor,Health & medical,active,29-2052.00,Pharmacy Technicians,25.96,weak,unreviewed_candidate,unreviewed
+3574,Radio Station Production Supervisor,"Communications, media & arts",active,27-2012.00,Producers and Directors,50.85,moderate,unreviewed_candidate,unreviewed
+3587,Research Laboratory Shop Supervisor,Science & research support,active,51-1011.00,First-Line Supervisors of Production and Operating Workers,39.74,weak,unreviewed_candidate,unreviewed
+3588,Retail Services Supervisor,Management & administration,active,41-1011.00,First-Line Supervisors of Retail Sales Workers,48.0,moderate,unreviewed_candidate,unreviewed
+3590,Routing Supervisor,Clerical & office support,active,43-5032.00,"Dispatchers, Except Police, Fire, and Ambulance",41.42,moderate,unreviewed_candidate,unreviewed
+3596,Service Enterprises Manager,Management & administration,active,11-9151.00,Social and Community Service Managers,70.36,strong,unreviewed_candidate,unreviewed
+3606,Stores Supervisor,Transportation & stores,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,38.47,weak,unreviewed_candidate,unreviewed
+3607,Assistant Stores Supervisor,Transportation & stores,not_in_current_catalog,,,,,no_candidate,unreviewed
+3610,Studio Supervisor,Management & administration,proposed_abolish,,,,,no_candidate,unreviewed
+3612,Survey Interviewer Supervisor,Clerical & office support,active,19-3022.00,Survey Researchers,60.75,strong,unreviewed_candidate,unreviewed
+3617,Television Master Control Room Supervisor,"Communications, media & arts",active,51-8011.00,Nuclear Power Reactor Operators,40.82,moderate,unreviewed_candidate,unreviewed
+3619,Technical Service Supervisor,Management & administration,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",39.96,weak,unreviewed_candidate,unreviewed
+3620,Ticket Control Supervisor,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+3621,Transportation Manager,Transportation & stores,active,11-3071.00,"Transportation, Storage, and Distribution Managers",54.48,moderate,unreviewed_candidate,unreviewed
+3625,Video Post- Production Supervisor,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+3650,Supervisor of Building Craftsmen,"Facilities, grounds & custodial",active,47-1011.00,First-Line Supervisors of Construction Trades and Extraction Workers,39.61,weak,unreviewed_candidate,unreviewed
+3658,Distribution Services Supervisor,Management & administration,active,53-1043.00,First-Line Supervisors of Material-Moving Machine and Vehicle Operators,49.7,moderate,unreviewed_candidate,unreviewed
+3660,Assistant Distribution Services Supervisor,Management & administration,active,53-1043.00,First-Line Supervisors of Material-Moving Machine and Vehicle Operators,43.73,moderate,unreviewed_candidate,unreviewed
+3666,Supervisor of Clinical Pathology Laboratory,Health & medical,active,29-2011.00,Medical and Clinical Laboratory Technologists,43.69,moderate,unreviewed_candidate,unreviewed
+3668,Collection Specialist IV,Finance & procurement,not_in_current_catalog,,,,,no_candidate,unreviewed
+3669,Collection Manager,Finance & procurement,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,44.88,moderate,unreviewed_candidate,unreviewed
+3681,Graphic Design Manager,"Communications, media & arts",active,27-1024.00,Graphic Designers,39.5,weak,unreviewed_candidate,unreviewed
+3685,Manager of Sports Facilities,"Facilities, grounds & custodial",active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,41.07,moderate,unreviewed_candidate,unreviewed
+3699,Information Services Supervisor,Management & administration,active,11-3021.00,Computer and Information Systems Managers,37.0,weak,unreviewed_candidate,unreviewed
+3705,Insurance Risk Manager II,Finance & procurement,active,43-9041.00,Insurance Claims and Policy Processing Clerks,58.62,strong,unreviewed_candidate,unreviewed
+3706,Insurance Risk Manager I,Finance & procurement,active,41-3021.00,Insurance Sales Agents,46.45,moderate,unreviewed_candidate,unreviewed
+3710,Animal Caretaker 4,Agriculture & animal care,active,39-2021.00,Animal Caretakers,51.66,moderate,unreviewed_candidate,unreviewed
+3729,Supervisor of Medical Social Services,Health & medical,active,11-9111.00,Medical and Health Services Managers,24.66,weak,unreviewed_candidate,unreviewed
+3730,Assistant Supervisor of Medical Social Services,Health & medical,active,21-1093.00,Social and Human Service Assistants,27.29,weak,unreviewed_candidate,unreviewed
+3746,Campus Parking Manager,"Facilities, grounds & custodial",active,33-3041.00,Parking Enforcement Workers,45.1,moderate,unreviewed_candidate,unreviewed
+3748,Admissions/ Records Specialist I,Student & academic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+3750,Archives Specialist,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+3751,Athletic Turf Specialist,Management & administration,active,,,33.33,weak,abstained,unreviewed
+3754,Broadcast Music Specialist,"Communications, media & arts",abolished_pending_catalog_update,27-3011.00,Broadcast Announcers and Radio Disc Jockeys,50.19,moderate,unreviewed_candidate,unreviewed
+3788,Physical Therapist II,Health & medical,not_in_current_catalog,,,,,no_candidate,unreviewed
+3802,Supervisor of Rehabilitation Equipment & Facilities,"Facilities, grounds & custodial",abolished,,,,,no_candidate,unreviewed
+3805,,Other,abolished,,,,,no_candidate,unreviewed
+3806,Coordinator of Residence Hall Attendant Program,Protective services,active,39-9041.00,Residential Advisors,49.53,moderate,unreviewed_candidate,unreviewed
+3807,Supervisor of Residence Hall Attendants,Protective services,active,39-9041.00,Residential Advisors,60.9,strong,unreviewed_candidate,unreviewed
+3838,Night Supervisor of University Union,Management & administration,active,,,32.03,weak,abstained,unreviewed
+3840,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+3851,Accounting Assistant,Finance & procurement,active,43-3031.00,"Bookkeeping, Accounting, and Auditing Clerks",58.28,strong,unreviewed_candidate,unreviewed
+3852,Accounting Officer,Finance & procurement,active,13-2011.00,Accountants and Auditors,57.38,strong,unreviewed_candidate,unreviewed
+3853,Archaeological Technician,Science & research support,active,19-3091.00,Anthropologists and Archeologists,42.94,moderate,unreviewed_candidate,unreviewed
+3854,Health Information Administrator,Clerical & office support,active,11-3021.00,Computer and Information Systems Managers,51.38,moderate,unreviewed_candidate,unreviewed
+3855,Health Information Specialist,Clerical & office support,active,15-1211.01,Health Informatics Specialists,50.74,moderate,unreviewed_candidate,unreviewed
+3856,Health Information Technician,Clerical & office support,active,29-2072.00,Medical Records Specialists,50.06,moderate,unreviewed_candidate,unreviewed
+3857,Mammography Technologist,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,75.29,strong,unreviewed_candidate,unreviewed
+3858,Mammography Specialist,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,44.19,moderate,unreviewed_candidate,unreviewed
+3859,Mammography Manager,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,44.55,moderate,unreviewed_candidate,unreviewed
+3865,Arena Technician,Science & research support,active,17-3023.00,Electrical and Electronic Engineering Technologists and Technicians,34.18,weak,unreviewed_candidate,unreviewed
+3866,Culinary Worker I,Food & domestic services,active,35-2021.00,Food Preparation Workers,81.83,strong,unreviewed_candidate,unreviewed
+3867,Culinary Worker II,Food & domestic services,active,35-2021.00,Food Preparation Workers,95.34,strong,unreviewed_candidate,unreviewed
+3868,Culinary Worker III,Food & domestic services,active,35-2012.00,"Cooks, Institution and Cafeteria",90.75,strong,unreviewed_candidate,unreviewed
+3869,Culinary Worker IV,Food & domestic services,active,35-1012.00,First-Line Supervisors of Food Preparation and Serving Workers,71.23,strong,unreviewed_candidate,unreviewed
+3870,Culinary Worker V,Food & domestic services,active,35-2012.00,"Cooks, Institution and Cafeteria",63.93,strong,unreviewed_candidate,unreviewed
+3873,Magnetic Resonance Imaging Technologist,Science & research support,active,29-2035.00,Magnetic Resonance Imaging Technologists,62.85,strong,unreviewed_candidate,unreviewed
+3874,Magnetic Resonance Imaging Specialist,Management & administration,active,29-2035.00,Magnetic Resonance Imaging Technologists,60.86,strong,unreviewed_candidate,unreviewed
+3875,Magnetic Resonance Imaging Manager,Management & administration,active,29-2035.00,Magnetic Resonance Imaging Technologists,47.76,moderate,unreviewed_candidate,unreviewed
+3877,Retail Associate,Clerical & office support,active,41-2031.00,Retail Salespersons,65.4,strong,unreviewed_candidate,unreviewed
+3878,Retail Supervisor,Management & administration,active,41-1011.00,First-Line Supervisors of Retail Sales Workers,52.68,moderate,unreviewed_candidate,unreviewed
+3879,Retail Assistant Manager,Management & administration,active,41-1011.00,First-Line Supervisors of Retail Sales Workers,49.66,moderate,unreviewed_candidate,unreviewed
+3880,Audio-Visual Aids Technician I,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+3881,Audio-Visual Aids Technician II,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+3882,Audio-Visual Aids Technician III,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+3884,Cardiovascular,Health & medical,abolished,,,,,no_candidate,unreviewed
+3885,Central Sterile Supply Technician,Health & medical,active,31-9093.00,Medical Equipment Preparers,93.57,strong,unreviewed_candidate,unreviewed
+3889,Retail Manager,Management & administration,active,41-1011.00,First-Line Supervisors of Retail Sales Workers,58.92,strong,unreviewed_candidate,unreviewed
+3892,Instructional Media Systems Technician,Student & academic services,active,17-3023.00,Electrical and Electronic Engineering Technologists and Technicians,39.12,weak,unreviewed_candidate,unreviewed
+3898,Crops Testing Technician,Student & academic services,active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",40.93,moderate,unreviewed_candidate,unreviewed
+3899,Cryogenic Technician I,Science & research support,active,17-2141.00,Mechanical Engineers,35.83,weak,unreviewed_candidate,unreviewed
+3900,Cryogenic Technician II,Science & research support,active,17-2141.00,Mechanical Engineers,40.5,moderate,unreviewed_candidate,unreviewed
+3901,Communications Technician I,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+3902,Communications Technician,"Communications, media & arts",active,49-2022.00,"Telecommunications Equipment Installers and Repairers, Except Line Installers",54.84,moderate,unreviewed_candidate,unreviewed
+3903,Senior Communications Technician,"Communications, media & arts",active,49-2022.00,"Telecommunications Equipment Installers and Repairers, Except Line Installers",50.34,moderate,unreviewed_candidate,unreviewed
+3907,Data Processing Equipment Technician I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3908,Data Processing Equipment Technician II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3909,Data Processing Equipment Technician III,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+3914,Dental X-Ray Technician I,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,50.56,moderate,unreviewed_candidate,unreviewed
+3915,Dental X-Ray Technician II,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,42.4,moderate,unreviewed_candidate,unreviewed
+3920,Dental X-Ray Coordinator,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,37.88,weak,unreviewed_candidate,unreviewed
+3936,Electrocardiographic Technician,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,56.4,strong,unreviewed_candidate,unreviewed
+3937,Supervising Electrocardiographic Technician,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,43.62,moderate,unreviewed_candidate,unreviewed
+3945,Electroencephalographic Technician,Health & medical,active,29-2099.01,Neurodiagnostic Technologists,53.43,moderate,unreviewed_candidate,unreviewed
+3950,Electroencephalographic Specialist,Health & medical,active,29-2099.01,Neurodiagnostic Technologists,39.4,weak,unreviewed_candidate,unreviewed
+3955,Electroencephalographic Supervisor,Health & medical,active,29-2099.01,Neurodiagnostic Technologists,35.9,weak,unreviewed_candidate,unreviewed
+3964,(Scientific) Electronics Technician I,Science & research support,abolished,,,,,no_candidate,unreviewed
+3965,(Scientific) Electronics Technician II,Science & research support,abolished,,,,,no_candidate,unreviewed
+3966,Electronics Technician,Science & research support,abolished,,,,,no_candidate,unreviewed
+3967,Senior Electronics Technician,Science & research support,abolished,,,,,no_candidate,unreviewed
+3968,Principal Electronics Technician,Science & research support,abolished,,,,,no_candidate,unreviewed
+3969,Emergency Medical Technician,Health & medical,active,53-3011.00,"Ambulance Drivers and Attendants, Except Emergency Medical Technicians",61.32,strong,unreviewed_candidate,unreviewed
+3970,Engineering,Other,abolished,,,,,no_candidate,unreviewed
+3971,Engineering Technician II,Science & research support,abolished,,,,,no_candidate,unreviewed
+3979,Histology Technician I,Health & medical,active,29-2012.01,Histology Technicians,69.0,strong,unreviewed_candidate,unreviewed
+3980,Instructional Materials Technician I,Student & academic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+3981,Instructional Materials Technician II,Student & academic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+3983,Instrument and Measurement Technician I,Science & research support,active,49-9012.00,"Control and Valve Installers and Repairers, Except Mechanical Door",40.09,moderate,unreviewed_candidate,unreviewed
+3984,Instrument and Measurement Technician II,Science & research support,active,17-3028.00,Calibration Technologists and Technicians,39.6,weak,unreviewed_candidate,unreviewed
+3985,Instrument and Measurement Technician III,Science & research support,active,17-3028.00,Calibration Technologists and Technicians,41.26,moderate,unreviewed_candidate,unreviewed
+3988,Environmental Health & Safety Technician I,Health & medical,active,19-5011.00,Occupational Health and Safety Specialists,50.98,moderate,unreviewed_candidate,unreviewed
+3989,Environmental Health & Safety Technician II,Health & medical,active,11-9199.02,Compliance Managers,50.35,moderate,unreviewed_candidate,unreviewed
+3990,Environmental Health & Safety Technician III,Health & medical,active,19-4042.00,"Environmental Science and Protection Technicians, Including Health",48.35,moderate,unreviewed_candidate,unreviewed
+3999,Computed Tomography (CT) Technologist,Science & research support,active,29-2031.00,Cardiovascular Technologists and Technicians,52.83,moderate,unreviewed_candidate,unreviewed
+4000,Computed Tomography (CT) Specialist,Management & administration,active,29-2034.00,Radiologic Technologists and Technicians,45.06,moderate,unreviewed_candidate,unreviewed
+4001,Computed Tomography (CT) Manager,Management & administration,active,29-2034.00,Radiologic Technologists and Technicians,34.18,weak,unreviewed_candidate,unreviewed
+4002,Interventional Radiology (IR) Technologist,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,53.06,moderate,unreviewed_candidate,unreviewed
+4003,Interventional Radiology (IR) Specialist,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,47.68,moderate,unreviewed_candidate,unreviewed
+4004,Interventional Radiology (IR) Manager,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,37.35,weak,unreviewed_candidate,unreviewed
+4005,Invasive Cardiovascular Technologist,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,58.66,strong,unreviewed_candidate,unreviewed
+4006,Invasive Cardiovascular Specialist,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,52.21,moderate,unreviewed_candidate,unreviewed
+4007,Invasive Cardiovascular Manager,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,39.97,weak,unreviewed_candidate,unreviewed
+4008,Radiologic Technologist,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,56.42,strong,unreviewed_candidate,unreviewed
+4009,Radiologic Technologist Specialist,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,53.11,moderate,unreviewed_candidate,unreviewed
+4014,Radiologic Technologist Manager,Health & medical,active,29-2034.00,Radiologic Technologists and Technicians,42.21,moderate,unreviewed_candidate,unreviewed
+4021,Morgue Technician I,Science & research support,proposed_abolish,,,,,no_candidate,unreviewed
+4022,Morgue Technician II,Science & research support,proposed_abolish,,,,,no_candidate,unreviewed
+4025,Multimedia Technician,"Communications, media & arts",not_in_current_catalog,,,,,no_candidate,unreviewed
+4031,Musical Instrument Technician,"Communications, media & arts",active,49-9063.00,Musical Instrument Repairers and Tuners,68.26,strong,unreviewed_candidate,unreviewed
+4043,Nursing Technician,Health & medical,active,31-1131.00,Nursing Assistants,62.1,strong,unreviewed_candidate,unreviewed
+4045,Offset Press Technician,"Communications, media & arts",active,51-5112.00,Printing Press Operators,62.1,strong,unreviewed_candidate,unreviewed
+4046,Surgical Technologist,Health & medical,active,29-2055.00,Surgical Technologists,74.78,strong,unreviewed_candidate,unreviewed
+4047,Ophthalmic Assistant,Management & administration,active,29-2057.00,Ophthalmic Medical Technicians,78.98,strong,unreviewed_candidate,unreviewed
+4058,Pharmacy Technician I,Health & medical,active,31-9095.00,Pharmacy Aides,58.62,strong,unreviewed_candidate,unreviewed
+4059,Pharmacy Technician II,Health & medical,active,29-2052.00,Pharmacy Technicians,49.2,moderate,unreviewed_candidate,unreviewed
+4060,Pharmacy Technician III,Health & medical,active,29-2052.00,Pharmacy Technicians,46.37,moderate,unreviewed_candidate,unreviewed
+4061,Pharmacy Technician Specialist,Health & medical,active,29-1051.00,Pharmacists,42.33,moderate,unreviewed_candidate,unreviewed
+4062,Photographic Technician I,"Communications, media & arts",abolished,,,,,no_candidate,unreviewed
+4063,Photographic Technician II,"Communications, media & arts",abolished,,,,,no_candidate,unreviewed
+4064,Photographic Technician Ill,"Communications, media & arts",abolished,,,,,no_candidate,unreviewed
+4065,Payroll Specialist I,Clerical & office support,active,43-3051.00,Payroll and Timekeeping Clerks,62.74,strong,unreviewed_candidate,unreviewed
+4066,Payroll Specialist II,Clerical & office support,active,43-3051.00,Payroll and Timekeeping Clerks,64.82,strong,unreviewed_candidate,unreviewed
+4067,Payroll Specialist III,Clerical & office support,active,43-3051.00,Payroll and Timekeeping Clerks,55.04,strong,unreviewed_candidate,unreviewed
+4068,Assistant Payroll Manager,Finance & procurement,active,43-3051.00,Payroll and Timekeeping Clerks,51.91,moderate,unreviewed_candidate,unreviewed
+4069,Payroll Manager,Finance & procurement,active,43-3051.00,Payroll and Timekeeping Clerks,50.67,moderate,unreviewed_candidate,unreviewed
+4071,Pre-Press Technician Assistant,"Communications, media & arts",active,51-5111.00,Prepress Technicians and Workers,91.21,strong,unreviewed_candidate,unreviewed
+4072,Properties Technician,Science & research support,active,51-1011.00,First-Line Supervisors of Production and Operating Workers,37.67,weak,unreviewed_candidate,unreviewed
+4079,Veterinary Assistant,Health & medical,active,31-9096.00,Veterinary Assistants and Laboratory Animal Caretakers,53.68,moderate,unreviewed_candidate,unreviewed
+4080,Veterinary Care Generalist,Health & medical,active,29-2056.00,Veterinary Technologists and Technicians,48.97,moderate,unreviewed_candidate,unreviewed
+4084,Non-Invasive Cardiovascular Technologist,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,52.24,moderate,unreviewed_candidate,unreviewed
+4087,,Other,abolished,,,,,no_candidate,unreviewed
+4091,Histology Technologist,Health & medical,active,29-2011.04,Histotechnologists,64.03,strong,unreviewed_candidate,unreviewed
+4093,Materials Technologist I,Science & research support,active,49-9061.00,Camera and Photographic Equipment Repairers,38.52,weak,unreviewed_candidate,unreviewed
+4094,Medical Laboratory Technician III,Health & medical,active,19-4031.00,Chemical Technicians,47.88,moderate,unreviewed_candidate,unreviewed
+4095,Medical Technologist I,Health & medical,active,29-2099.05,Ophthalmic Medical Technologists,48.0,moderate,unreviewed_candidate,unreviewed
+4096,Medical Technologist II,Health & medical,active,29-2011.00,Medical and Clinical Laboratory Technologists,51.39,moderate,unreviewed_candidate,unreviewed
+4097,Medical Technologist III,Health & medical,active,29-2011.00,Medical and Clinical Laboratory Technologists,48.2,moderate,unreviewed_candidate,unreviewed
+4100,Valet Parking Attendant,Protective services,abolished_pending_catalog_update,53-6021.00,Parking Attendants,96.52,strong,unreviewed_candidate,unreviewed
+4101,Nuclear Medicine Technologist,Science & research support,active,29-2033.00,Nuclear Medicine Technologists,97.67,strong,unreviewed_candidate,unreviewed
+4102,Nuclear Medicine Manager,Management & administration,active,29-1224.00,Radiologists,55.57,strong,unreviewed_candidate,unreviewed
+4103,Swimming Pool Tender,"Facilities, grounds & custodial",active,33-9092.00,"Lifeguards, Ski Patrol, and Other Recreational Protective Service Workers",39.83,weak,unreviewed_candidate,unreviewed
+4104,Intra-Operative Monitoring Specialist,Management & administration,active,29-2099.01,Neurodiagnostic Technologists,39.35,weak,unreviewed_candidate,unreviewed
+4105,Advanced Intra-Operative Monitoring Specialist,Management & administration,active,,,28.11,weak,abstained,unreviewed
+4106,Intra-Operative Monitoring Coordinator,Management & administration,active,,,29.56,weak,abstained,unreviewed
+4120,Activity Therapist,Health & medical,active,29-1129.02,Music Therapists,54.51,moderate,unreviewed_candidate,unreviewed
+4123,Respiratory Care Therapy Specialist,Health & medical,active,29-1126.00,Respiratory Therapists,58.76,strong,unreviewed_candidate,unreviewed
+4124,Respiratory Care Therapy Manager,Health & medical,active,11-9111.00,Medical and Health Services Managers,41.99,moderate,unreviewed_candidate,unreviewed
+4125,Respiratory Care Administrative Director,Health & medical,active,11-9111.00,Medical and Health Services Managers,39.35,weak,unreviewed_candidate,unreviewed
+4128,Occupational Therapist,Health & medical,active,29-1122.00,Occupational Therapists,89.4,strong,unreviewed_candidate,unreviewed
+4129,Occupational Therapy Specialist,Health & medical,active,31-2012.00,Occupational Therapy Aides,60.78,strong,unreviewed_candidate,unreviewed
+4130,Coordinator of Occupational Therapy Services,Health & medical,active,31-2011.00,Occupational Therapy Assistants,69.57,strong,unreviewed_candidate,unreviewed
+4136,Coordinator of Physical Therapy Services,Health & medical,active,31-2022.00,Physical Therapist Aides,46.69,moderate,unreviewed_candidate,unreviewed
+4141,Physical Therapy Specialist,Health & medical,active,31-2022.00,Physical Therapist Aides,41.9,moderate,unreviewed_candidate,unreviewed
+4146,Physical Therapist,Health & medical,active,29-1123.00,Physical Therapists,51.36,moderate,unreviewed_candidate,unreviewed
+4147,Respiratory Care Therapy Technologist,Health & medical,active,29-1126.00,Respiratory Therapists,44.03,moderate,unreviewed_candidate,unreviewed
+4151,Transporter II,Health & medical,active,53-3053.00,Shuttle Drivers and Chauffeurs,46.52,moderate,unreviewed_candidate,unreviewed
+4156,Tree Surgeon,Skilled trades,active,37-3013.00,Tree Trimmers and Pruners,80.11,strong,unreviewed_candidate,unreviewed
+4158,Assistant Tree Surgeon,Management & administration,active,37-3013.00,Tree Trimmers and Pruners,78.08,strong,unreviewed_candidate,unreviewed
+4170,Power Plant Utility Operator,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+4191,Waiter/Waitress,Food & domestic services,active,35-3031.00,Waiters and Waitresses,56.66,strong,unreviewed_candidate,unreviewed
+4195,Webmaster,Other,abolished,,,,,no_candidate,unreviewed
+4210,Security Guard,Protective services,active,33-9032.00,Security Guards,83.73,strong,unreviewed_candidate,unreviewed
+4211,Security Guard Supervisor,Protective services,active,33-1091.00,First-Line Supervisors of Security Workers,64.87,strong,unreviewed_candidate,unreviewed
+4212,Security Officer,Protective services,active,33-9093.00,Transportation Security Screeners,52.77,moderate,unreviewed_candidate,unreviewed
+4213,Security Sergeant,Protective services,active,33-9099.02,Retail Loss Prevention Specialists,54.76,moderate,unreviewed_candidate,unreviewed
+4217,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+4218,Machinist Welder,Skilled trades,active,51-4041.00,Machinists,50.9,moderate,unreviewed_candidate,unreviewed
+4220,Senior Machinist Welder,Skilled trades,active,51-4041.00,Machinists,50.44,moderate,unreviewed_candidate,unreviewed
+4225,Pipefitter Welder Current,Skilled trades,proposed_abolish,,,,,no_candidate,unreviewed
+4241,Bindery Worker II,"Facilities, grounds & custodial",active,51-5113.00,Print Binding and Finishing Workers,60.66,strong,unreviewed_candidate,unreviewed
+4242,Experimental Field Worker,Other,abolished,,,,,no_candidate,unreviewed
+4243,Food Service 180 Worker I,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+4244,Food Service 180,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+4245,Food Service 180,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+4246,Food Service 180,Food & domestic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+4249,Laundry Worker,Food & domestic services,abolished_pending_catalog_update,51-6011.00,Laundry and Dry-Cleaning Workers,66.07,strong,unreviewed_candidate,unreviewed
+4257,Maintenance Worker,"Facilities, grounds & custodial",active,49-9071.00,"Maintenance and Repair Workers, General",54.09,moderate,unreviewed_candidate,unreviewed
+4260,Medical Social Associate,Health & medical,active,21-1022.00,Healthcare Social Workers,46.47,moderate,unreviewed_candidate,unreviewed
+4273,Sheet Metal Worker,Skilled trades,active,47-2211.00,Sheet Metal Workers,62.1,strong,unreviewed_candidate,unreviewed
+4280,Maintenance Repair/Worker,"Facilities, grounds & custodial",active,49-9071.00,"Maintenance and Repair Workers, General",44.3,moderate,unreviewed_candidate,unreviewed
+4289,Editorial Writer,"Communications, media & arts",active,27-3041.00,Editors,52.54,moderate,unreviewed_candidate,unreviewed
+4300,Aesthetician,Other,active,39-5094.00,Skincare Specialists,83.42,strong,unreviewed_candidate,unreviewed
+4401,Ethanol Plant Operating Technician,Science & research support,active,51-8099.01,Biofuels Processing Technicians,42.28,moderate,unreviewed_candidate,unreviewed
+4402,Ethanol Plant Operating Coordinator,Management & administration,active,51-8099.01,Biofuels Processing Technicians,39.53,weak,unreviewed_candidate,unreviewed
+4502,Building Service Worker,"Facilities, grounds & custodial",active,37-2011.00,"Janitors and Cleaners, Except Maids and Housekeeping Cleaners",64.29,strong,unreviewed_candidate,unreviewed
+4504,Hemodialysis Technician,Science & research support,active,29-1141.00,Registered Nurses,39.3,weak,unreviewed_candidate,unreviewed
+4505,Assistant Chief Hemodialysis Technologist,Science & research support,active,33-1021.00,First-Line Supervisors of Firefighting and Prevention Workers,30.59,weak,unreviewed_candidate,unreviewed
+4506,Chief Hemodialysis Technologist,Science & research support,active,29-1141.00,Registered Nurses,35.46,weak,unreviewed_candidate,unreviewed
+4507,Assistant Coordinator of Parking and Traffic,Protective services,active,33-3041.00,Parking Enforcement Workers,39.85,weak,unreviewed_candidate,unreviewed
+4511,Equipment Specialist I,Management & administration,active,49-9062.00,Medical Equipment Repairers,54.39,moderate,unreviewed_candidate,unreviewed
+4512,Equipment Specialist II,Management & administration,active,49-9062.00,Medical Equipment Repairers,51.32,moderate,unreviewed_candidate,unreviewed
+4513,Equipment Specialist III,Management & administration,active,49-9062.00,Medical Equipment Repairers,50.16,moderate,unreviewed_candidate,unreviewed
+4514,Housekeeping Supervisor,"Facilities, grounds & custodial",active,37-1011.00,First-Line Supervisors of Housekeeping and Janitorial Workers,62.41,strong,unreviewed_candidate,unreviewed
+4517,Teacher Aide,Other,active,25-9042.00,"Teaching Assistants, Preschool, Elementary, Middle, and Secondary School, Except Special Education",82.89,strong,unreviewed_candidate,unreviewed
+4519,Occupational Therapy Assistant,Health & medical,active,31-2011.00,Occupational Therapy Assistants,85.64,strong,unreviewed_candidate,unreviewed
+4520,Community Outreach Worker,Clerical & office support,active,21-1094.00,Community Health Workers,52.37,moderate,unreviewed_candidate,unreviewed
+4521,Media Writer/Producer/Announcer I,"Communications, media & arts",active,27-3011.00,Broadcast Announcers and Radio Disc Jockeys,39.84,weak,unreviewed_candidate,unreviewed
+4522,Institutional Research Data Coordinator,"IT, data & security",active,11-9033.00,"Education Administrators, Postsecondary",38.11,weak,unreviewed_candidate,unreviewed
+4524,Research Technologist I,Science & research support,active,29-2011.00,Medical and Clinical Laboratory Technologists,58.82,strong,unreviewed_candidate,unreviewed
+4525,Research Technologist II,Science & research support,active,29-2011.00,Medical and Clinical Laboratory Technologists,51.34,moderate,unreviewed_candidate,unreviewed
+4526,Research Technologist Manager,Science & research support,active,29-2011.00,Medical and Clinical Laboratory Technologists,43.03,moderate,unreviewed_candidate,unreviewed
+4527,Continuing Education Community Coordinator,Management & administration,active,25-1072.00,"Nursing Instructors and Teachers, Postsecondary",43.62,moderate,unreviewed_candidate,unreviewed
+4528,Dental Assistant II,Health & medical,active,31-9091.00,Dental Assistants,69.58,strong,unreviewed_candidate,unreviewed
+4529,Histology Technician II,Health & medical,active,29-2012.01,Histology Technicians,69.71,strong,unreviewed_candidate,unreviewed
+4533,Medical Laboratory Assistant III,Health & medical,active,29-2012.00,Medical and Clinical Laboratory Technicians,48.3,moderate,unreviewed_candidate,unreviewed
+4534,Television Traffic and Continuity Supervisor,"Communications, media & arts",active,27-2012.03,Media Programming Directors,43.61,moderate,unreviewed_candidate,unreviewed
+4535,Admitting Officer IV,Clerical & office support,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,52.24,moderate,unreviewed_candidate,unreviewed
+4538,Health Education Coordinator,Health & medical,active,21-1091.00,Health Education Specialists,61.39,strong,unreviewed_candidate,unreviewed
+4540,Instructional Development Specialist II,Student & academic services,not_in_current_catalog,,,,,no_candidate,unreviewed
+4546,Development Officer,Management & administration,active,13-1131.00,Fundraisers,35.0,weak,unreviewed_candidate,unreviewed
+4547,Medical Assistant,Health & medical,active,31-9092.00,Medical Assistants,58.16,strong,unreviewed_candidate,unreviewed
+4548,Biomedical Engineer II,Health & medical,active,17-2031.00,Bioengineers and Biomedical Engineers,55.17,strong,unreviewed_candidate,unreviewed
+4549,Biomedical Engineering Technician I,Health & medical,active,49-9062.00,Medical Equipment Repairers,51.92,moderate,unreviewed_candidate,unreviewed
+4550,Biomedical Engineering Technician II,Health & medical,active,49-9062.00,Medical Equipment Repairers,57.54,strong,unreviewed_candidate,unreviewed
+4551,Biomedical Engineering Technician III,Health & medical,active,49-9062.00,Medical Equipment Repairers,53.68,moderate,unreviewed_candidate,unreviewed
+4552,Biomedical,Health & medical,not_in_current_catalog,,,,,no_candidate,unreviewed
+4555,Records Management Officer,Clerical & office support,active,13-1111.00,Management Analysts,43.29,moderate,unreviewed_candidate,unreviewed
+4556,Assistant Records Management Officer,Clerical & office support,active,15-1299.03,Document Management Specialists,45.03,moderate,unreviewed_candidate,unreviewed
+4558,Internal Auditor Assistant Manager,Finance & procurement,active,13-2011.00,Accountants and Auditors,50.42,moderate,unreviewed_candidate,unreviewed
+4560,Institutional Research Data Specialist,"IT, data & security",active,15-2031.00,Operations Research Analysts,55.29,strong,unreviewed_candidate,unreviewed
+4561,Non-Invasive Cardiovascular Specialist,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,47.51,moderate,unreviewed_candidate,unreviewed
+4564,Health Center Administrator,Health & medical,active,11-9111.00,Medical and Health Services Managers,50.43,moderate,unreviewed_candidate,unreviewed
+4565,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+4566,Internal Auditor Manager,Finance & procurement,active,13-2011.00,Accountants and Auditors,77.29,strong,unreviewed_candidate,unreviewed
+4572,Health Care Utilization Review Coordinator,Health & medical,active,15-1211.01,Health Informatics Specialists,44.49,moderate,unreviewed_candidate,unreviewed
+4573,Chief Health Care Utilization Review Coordinator,Health & medical,active,29-9021.00,Health Information Technologists and Medical Registrars,40.3,moderate,unreviewed_candidate,unreviewed
+4576,Radiation Safety Technician,Science & research support,active,19-4051.02,Nuclear Monitoring Technicians,50.03,moderate,unreviewed_candidate,unreviewed
+4581,Medical Insurance Representative,Clerical & office support,active,43-9041.00,Insurance Claims and Policy Processing Clerks,45.36,moderate,unreviewed_candidate,unreviewed
+4582,Medical Insurance Associate,Clerical & office support,active,43-9041.00,Insurance Claims and Policy Processing Clerks,52.18,moderate,unreviewed_candidate,unreviewed
+4583,Medical Insurance Specialist,Clerical & office support,active,43-9041.00,Insurance Claims and Policy Processing Clerks,49.69,moderate,unreviewed_candidate,unreviewed
+4584,Medical Insurance Assistant Manager,Health & medical,active,43-9041.00,Insurance Claims and Policy Processing Clerks,40.31,moderate,unreviewed_candidate,unreviewed
+4588,Archaeological Assistant,Science & research support,abolished,,,,,no_candidate,unreviewed
+4589,Patient Care Evaluation Specialist I,Management & administration,proposed_abolish,,,,,no_candidate,unreviewed
+4590,Patient Care,Other,proposed_abolish,,,,,no_candidate,unreviewed
+4591,Crash-Rescue and Security Coordinator,Protective services,active,49-1011.00,"First-Line Supervisors of Mechanics, Installers, and Repairers",34.7,weak,unreviewed_candidate,unreviewed
+4592,Pulmonary Function Technologist I,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,57.9,strong,unreviewed_candidate,unreviewed
+4593,Pulmonary Function Technologist II,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,61.11,strong,unreviewed_candidate,unreviewed
+4594,Pulmonary Function Technologist III,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,56.66,strong,unreviewed_candidate,unreviewed
+4595,Events Administrator,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4596,Events Administrator (Concessions),Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4597,Events Administrator (Crowd Control),Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4598,Events Administrator (Ticket Control),Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4599,Social Work Aide I,Health & medical,active,21-1093.00,Social and Human Service Assistants,45.37,moderate,unreviewed_candidate,unreviewed
+4600,Social Work Aide II,Health & medical,active,21-1093.00,Social and Human Service Assistants,49.33,moderate,unreviewed_candidate,unreviewed
+4601,Social Work Aide III,Health & medical,active,21-1021.00,"Child, Family, and School Social Workers",47.63,moderate,unreviewed_candidate,unreviewed
+4602,Benefits Representative,Human resources,active,13-1141.00,"Compensation, Benefits, and Job Analysis Specialists",44.64,moderate,unreviewed_candidate,unreviewed
+4603,Benefits Counselor,Human resources,active,11-3111.00,Compensation and Benefits Managers,46.57,moderate,unreviewed_candidate,unreviewed
+4604,Benefits Service Supervisor,Human resources,active,11-3111.00,Compensation and Benefits Managers,50.05,moderate,unreviewed_candidate,unreviewed
+4605,Fixed Prosthodontic C Technician I I,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+4606,Fixed Prosthodontic C Technician II I,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+4607,Fixed Prosthodontic C Technician III I,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+4608,Removable Prosthodontic C Technician I I,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+4609,Prosthodontic Technician,Health & medical,active,51-9081.00,Dental Laboratory Technicians,60.93,strong,unreviewed_candidate,unreviewed
+4610,Prosthodontic Technician Supervisor,Health & medical,active,51-9081.00,Dental Laboratory Technicians,44.98,moderate,unreviewed_candidate,unreviewed
+4611,Equal Opportunity Officer I,Management & administration,proposed_abolish,,,,,no_candidate,unreviewed
+4612,Assistant Equal Opportunity Officer,Management & administration,active,13-1041.03,Equal Opportunity Representatives and Officers,46.12,moderate,unreviewed_candidate,unreviewed
+4613,Equal Opportunity Officer,Management & administration,active,13-1041.03,Equal Opportunity Representatives and Officers,29.37,weak,unreviewed_candidate,unreviewed
+4614,Anesthesia Assistant,Health & medical,active,29-1071.01,Anesthesiologist Assistants,54.12,moderate,unreviewed_candidate,unreviewed
+4616,Medical Sonographer Technologist,Health & medical,active,29-2032.00,Diagnostic Medical Sonographers,56.59,strong,unreviewed_candidate,unreviewed
+4617,Medical Sonographer Specialist,Health & medical,active,29-2032.00,Diagnostic Medical Sonographers,50.09,moderate,unreviewed_candidate,unreviewed
+4618,Medical Sonographer Manager,Health & medical,active,29-2032.00,Diagnostic Medical Sonographers,48.54,moderate,unreviewed_candidate,unreviewed
+4619,Patient Support Services Coordinator,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4620,Behavioral Interventionist,Other,active,25-2051.00,"Special Education Teachers, Preschool",52.23,moderate,unreviewed_candidate,unreviewed
+4621,Senior Behavioral Interventionist,Other,active,31-1133.00,Psychiatric Aides,49.02,moderate,unreviewed_candidate,unreviewed
+4623,Central Stores Manager I,Transportation & stores,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,42.67,moderate,unreviewed_candidate,unreviewed
+4624,Orthopedic Technologist,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+4625,Nuclear Medicine Specialist,Management & administration,active,29-1224.00,Radiologists,60.13,strong,unreviewed_candidate,unreviewed
+4627,Engineering Technician Ill,Science & research support,abolished,,,,,no_candidate,unreviewed
+4628,Hemodialysis Technologist,Science & research support,active,29-2034.00,Radiologic Technologists and Technicians,33.88,weak,unreviewed_candidate,unreviewed
+4629,Museum Instructor/Educator,"Library, museum & archives",active,39-7011.00,Tour Guides and Escorts,46.56,moderate,unreviewed_candidate,unreviewed
+4630,Museum Education Coordinator,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+4631,Curator of Exhibits,"Library, museum & archives",active,25-4012.00,Curators,54.03,moderate,unreviewed_candidate,unreviewed
+4639,Computer System Operations Specialist I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4640,Computer System Operations Specialist II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4641,Computer System Operations Specialist III,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4642,Computer System Operations Specialist IV,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4643,,Other,abolished,,,,,no_candidate,unreviewed
+4644,,Other,abolished,,,,,no_candidate,unreviewed
+4645,,Other,abolished,,,,,no_candidate,unreviewed
+4647,Ambulatory Care Aide I,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+4648,Ambulatory Care Aide II,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+4649,,Other,abolished,,,,,no_candidate,unreviewed
+4650,Construction Project Coordinator II,Management & administration,active,11-9021.00,Construction Managers,49.7,moderate,unreviewed_candidate,unreviewed
+4651,Accounting Specialist,Finance & procurement,active,43-3031.00,"Bookkeeping, Accounting, and Auditing Clerks",49.57,moderate,unreviewed_candidate,unreviewed
+4653,Crops Testing Specialist,Student & academic services,active,45-2092.00,"Farmworkers and Laborers, Crop, Nursery, and Greenhouse",47.25,moderate,unreviewed_candidate,unreviewed
+4658,Ambulatory Care Assistant,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4659,Medical Record,Health & medical,not_in_current_catalog,,,,,no_candidate,unreviewed
+4660,Campus Recreation Coordinator,Management & administration,active,11-9179.01,Fitness and Wellness Coordinators,57.58,strong,unreviewed_candidate,unreviewed
+4661,Assistant Director of Clinical Support Operations,Health & medical,active,11-9111.00,Medical and Health Services Managers,85.31,strong,unreviewed_candidate,unreviewed
+4662,Transportation Assistant Manager,Transportation & stores,active,53-1043.00,First-Line Supervisors of Material-Moving Machine and Vehicle Operators,53.64,moderate,unreviewed_candidate,unreviewed
+4663,Building Automation Technician I,Science & research support,active,17-2199.03,"Energy Engineers, Except Wind and Solar",52.39,moderate,unreviewed_candidate,unreviewed
+4664,Building Automation Technician II,Science & research support,active,17-2199.03,"Energy Engineers, Except Wind and Solar",51.49,moderate,unreviewed_candidate,unreviewed
+4665,Animal Imaging Technician,Science & research support,active,29-2034.00,Radiologic Technologists and Technicians,58.61,strong,unreviewed_candidate,unreviewed
+4666,Animal Imaging Technologist,Science & research support,active,29-2035.00,Magnetic Resonance Imaging Technologists,48.78,moderate,unreviewed_candidate,unreviewed
+4667,Animal Imaging Specialist,Agriculture & animal care,active,29-2034.00,Radiologic Technologists and Technicians,40.01,moderate,unreviewed_candidate,unreviewed
+4668,Animal Imaging Coordinator,Agriculture & animal care,active,33-1021.00,First-Line Supervisors of Firefighting and Prevention Workers,34.65,weak,unreviewed_candidate,unreviewed
+4670,Coordinator of Medical Transcription,Health & medical,active,31-9094.00,Medical Transcriptionists,34.19,weak,unreviewed_candidate,unreviewed
+4671,Broadcast News Specialist,"Communications, media & arts",active,27-2012.03,Media Programming Directors,54.24,moderate,unreviewed_candidate,unreviewed
+4673,,Other,abolished,,,,,no_candidate,unreviewed
+4675,Curator of Anthropology I,"Library, museum & archives",active,19-3091.00,Anthropologists and Archeologists,39.26,weak,unreviewed_candidate,unreviewed
+4676,Curator of Anthropology II,"Library, museum & archives",active,19-3091.00,Anthropologists and Archeologists,38.62,weak,unreviewed_candidate,unreviewed
+4677,Curator of Anthropology III,"Library, museum & archives",active,19-3091.00,Anthropologists and Archeologists,38.11,weak,unreviewed_candidate,unreviewed
+4678,Medical Assistant (Credentialed/Certified),Health & medical,active,31-9092.00,Medical Assistants,43.19,moderate,unreviewed_candidate,unreviewed
+4684,Healthcare Technician,Health & medical,active,31-1131.00,Nursing Assistants,51.36,moderate,unreviewed_candidate,unreviewed
+4686,Media Writer/Producer/Announcer II,"Communications, media & arts",active,,,36.82,weak,abstained,unreviewed
+4687,,Other,abolished,,,,,no_candidate,unreviewed
+4689,Parking Services Agent II,Protective services,active,33-3041.00,Parking Enforcement Workers,50.91,moderate,unreviewed_candidate,unreviewed
+4690,Labor Relations Specialist,Human resources,active,13-1075.00,Labor Relations Specialists,82.3,strong,unreviewed_candidate,unreviewed
+4693,Training and Development Specialist I,Human resources,active,13-1151.00,Training and Development Specialists,56.08,strong,unreviewed_candidate,unreviewed
+4694,Training and Development Specialist II,Human resources,active,19-3032.00,Industrial-Organizational Psychologists,57.75,strong,unreviewed_candidate,unreviewed
+4695,Library Operations Assistant,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+4696,,Other,abolished,,,,,no_candidate,unreviewed
+4697,Client Relations Representative I,Management & administration,active,21-1021.00,"Child, Family, and School Social Workers",42.6,moderate,unreviewed_candidate,unreviewed
+4698,Client Relations Representative II,Management & administration,active,13-2072.00,Loan Officers,40.75,moderate,unreviewed_candidate,unreviewed
+4699,Client Relations Representative III,Management & administration,active,,,35.91,weak,abstained,unreviewed
+4700,Client Relations Representative IV,Management & administration,active,43-4051.00,Customer Service Representatives,34.01,weak,unreviewed_candidate,unreviewed
+4701,Client Relations Representative V,Management & administration,active,,,33.4,weak,abstained,unreviewed
+4702,Parking Services Agent III,Protective services,active,33-3041.00,Parking Enforcement Workers,45.2,moderate,unreviewed_candidate,unreviewed
+4704,Dietitian Nutritionist,Health & medical,active,29-1031.00,Dietitians and Nutritionists,68.88,strong,unreviewed_candidate,unreviewed
+4705,Data Processing,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4707,Duplicating Services Manager,Management & administration,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,41.65,moderate,unreviewed_candidate,unreviewed
+4708,Director of Student Judicial Programs,Student & academic services,abolished,,,,,no_candidate,unreviewed
+4709,Image Processing Technician I,Clerical & office support,active,43-9022.00,Word Processors and Typists,43.08,moderate,unreviewed_candidate,unreviewed
+4710,Image Processing Technician II,Clerical & office support,active,43-9021.00,Data Entry Keyers,50.59,moderate,unreviewed_candidate,unreviewed
+4711,Image Processing Technician III,Clerical & office support,active,,,36.95,weak,abstained,unreviewed
+4712,Microcomputer Support Specialist I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4713,Microcomputer Support Specialist II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4714,Microcomputer Support Specialist III,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4715,Medical Transcriptionist I,Clerical & office support,active,31-9094.00,Medical Transcriptionists,57.64,strong,unreviewed_candidate,unreviewed
+4716,Medical Transcriptionist II,Clerical & office support,active,31-9094.00,Medical Transcriptionists,61.4,strong,unreviewed_candidate,unreviewed
+4717,Medical Transcriptionist III,Clerical & office support,active,31-9094.00,Medical Transcriptionists,47.56,moderate,unreviewed_candidate,unreviewed
+4718,Medical Transcriptionist IV,Health & medical,active,31-9094.00,Medical Transcriptionists,42.94,moderate,unreviewed_candidate,unreviewed
+4719,Recycling Coordinator,Management & administration,active,53-1042.01,Recycling Coordinators,66.58,strong,unreviewed_candidate,unreviewed
+4720,Radiation Therapist I,Health & medical,active,29-1124.00,Radiation Therapists,71.66,strong,unreviewed_candidate,unreviewed
+4721,Radiation Therapist II,Health & medical,active,29-1124.00,Radiation Therapists,61.56,strong,unreviewed_candidate,unreviewed
+4722,Radiation Therapist III,Health & medical,active,29-1124.00,Radiation Therapists,75.2,strong,unreviewed_candidate,unreviewed
+4723,Communications Network Specialist I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4724,Communications Network Specialist II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4725,Communications Network Specialist III,"IT, data & security",not_in_current_catalog,,,,,no_candidate,unreviewed
+4728,University Budget Officer,Finance & procurement,active,11-9033.00,"Education Administrators, Postsecondary",37.45,weak,unreviewed_candidate,unreviewed
+4729,Dental Unit Coordinator,Health & medical,active,29-1292.00,Dental Hygienists,41.42,moderate,unreviewed_candidate,unreviewed
+4730,Child Care Resource Specialist,Management & administration,active,21-1021.00,"Child, Family, and School Social Workers",43.1,moderate,unreviewed_candidate,unreviewed
+4732,Direct Mail Manager,Transportation & stores,abolished,,,,,no_candidate,unreviewed
+4733,Assistant,Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4734,Materials Technologist II,Science & research support,active,29-2011.00,Medical and Clinical Laboratory Technologists,37.68,weak,unreviewed_candidate,unreviewed
+4735,Anesthesia Technician,Health & medical,active,29-1071.01,Anesthesiologist Assistants,67.73,strong,unreviewed_candidate,unreviewed
+4736,Anesthesia Supervisor,Health & medical,active,29-1151.00,Nurse Anesthetists,50.1,moderate,unreviewed_candidate,unreviewed
+4739,Budget Analyst,Finance & procurement,active,13-2031.00,Budget Analysts,57.59,strong,unreviewed_candidate,unreviewed
+4741,Senior Budget Analyst,Finance & procurement,active,13-2031.00,Budget Analysts,51.15,moderate,unreviewed_candidate,unreviewed
+4743,Copy Center Operator IV,Other,active,43-9071.00,"Office Machine Operators, Except Computer",55.39,strong,unreviewed_candidate,unreviewed
+4746,Molecular Beam Epitaxy Facility Coordinator,"Facilities, grounds & custodial",active,,,28.19,weak,abstained,unreviewed
+4748,Ticket Specialist I (Athletics),Management & administration,abolished,,,,,no_candidate,unreviewed
+4749,Ticket Specialist II (Athletics),Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4750,Ticket Specialist III (Athletics),Management & administration,abolished,,,,,no_candidate,unreviewed
+4751,Ticket Specialist IV (Athletics),Management & administration,not_in_current_catalog,,,,,no_candidate,unreviewed
+4752,Health Care Administrator I,Health & medical,active,11-9111.00,Medical and Health Services Managers,51.47,moderate,unreviewed_candidate,unreviewed
+4755,Academic Contract Specialist,Clerical & office support,active,25-3011.00,"Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors",44.26,moderate,unreviewed_candidate,unreviewed
+4760,Ophthalmic Technician,Science & research support,active,29-2099.05,Ophthalmic Medical Technologists,76.42,strong,unreviewed_candidate,unreviewed
+4761,Ophthalmic Medical Technologist,Health & medical,active,29-2099.05,Ophthalmic Medical Technologists,47.88,moderate,unreviewed_candidate,unreviewed
+4762,Floral Designer,Food & domestic services,active,27-1023.00,Floral Designers,62.3,strong,unreviewed_candidate,unreviewed
+4763,Academic Contract Supervisor,Clerical & office support,active,21-1012.00,"Educational, Guidance, and Career Counselors and Advisors",36.98,weak,unreviewed_candidate,unreviewed
+4764,Student Judicial Programs Advisor,Student & academic services,abolished,,,,,no_candidate,unreviewed
+4765,Ophthalmic Photographer,"Communications, media & arts",active,29-2099.05,Ophthalmic Medical Technologists,60.07,strong,unreviewed_candidate,unreviewed
+4766,Principal Ophthalmic Photographer,"Communications, media & arts",active,29-2099.05,Ophthalmic Medical Technologists,60.96,strong,unreviewed_candidate,unreviewed
+4768,Medical Education Program Specialist I,Health & medical,abolished,,,,,no_candidate,unreviewed
+4769,Medical Education Program Specialist,Clerical & office support,active,21-1091.00,Health Education Specialists,42.53,moderate,unreviewed_candidate,unreviewed
+4770,Medical Education Program Coordinator,Health & medical,active,25-9031.00,Instructional Coordinators,44.39,moderate,unreviewed_candidate,unreviewed
+4771,Non-Invasive Cardiovascular Manager,Health & medical,active,29-2031.00,Cardiovascular Technologists and Technicians,35.14,weak,unreviewed_candidate,unreviewed
+4772,Cardiac Technologist IV,Science & research support,not_in_current_catalog,,,,,no_candidate,unreviewed
+4773,Program Services Aide,Management & administration,active,21-1093.00,Social and Human Service Assistants,38.17,weak,unreviewed_candidate,unreviewed
+4774,Program Services Specialist,Management & administration,active,21-1014.00,Mental Health Counselors,41.41,moderate,unreviewed_candidate,unreviewed
+4775,Medical Staff Services Specialist I,Clerical & office support,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,31.76,weak,unreviewed_candidate,unreviewed
+4776,Medical Staff Services Specialist II,Clerical & office support,active,43-1011.00,First-Line Supervisors of Office and Administrative Support Workers,33.05,weak,unreviewed_candidate,unreviewed
+4777,Medical Staff Services Coordinator,Health & medical,active,11-9111.00,Medical and Health Services Managers,35.12,weak,unreviewed_candidate,unreviewed
+4778,Communications Services Specialist I,"Communications, media & arts",abolished,,,,,no_candidate,unreviewed
+4779,Communications Services Specialist II,"Communications, media & arts",abolished,,,,,no_candidate,unreviewed
+4780,Communications Services Specialist III,"Communications, media & arts",abolished,,,,,no_candidate,unreviewed
+4781,Cardiac Sonographer Technologist,Health & medical,active,29-2032.00,Diagnostic Medical Sonographers,63.66,strong,unreviewed_candidate,unreviewed
+4782,Cardiac Sonographer Specialist,Health & medical,active,29-1212.00,Cardiologists,40.18,moderate,unreviewed_candidate,unreviewed
+4783,Cardiac Sonographer Manager,Health & medical,active,29-2032.00,Diagnostic Medical Sonographers,37.69,weak,unreviewed_candidate,unreviewed
+4784,Vascular Sonographer Technologist,Health & medical,active,29-2032.00,Diagnostic Medical Sonographers,52.02,moderate,unreviewed_candidate,unreviewed
+4785,Vascular Sonographer Specialist,Health & medical,active,29-2032.00,Diagnostic Medical Sonographers,42.84,moderate,unreviewed_candidate,unreviewed
+4786,Vascular Sonographer Manager,Health & medical,active,29-2032.00,Diagnostic Medical Sonographers,39.99,weak,unreviewed_candidate,unreviewed
+4787,Financial Analyst/Planner,Finance & procurement,active,13-2099.01,Financial Quantitative Analysts,42.09,moderate,unreviewed_candidate,unreviewed
+4788,Financial Analyst/Planner Specialist,Finance & procurement,active,13-2099.01,Financial Quantitative Analysts,40.77,moderate,unreviewed_candidate,unreviewed
+4789,Financial Analyst/Planner Supervisor,Finance & procurement,active,13-2099.01,Financial Quantitative Analysts,44.59,moderate,unreviewed_candidate,unreviewed
+4790,Broadcast Music Specialist (Jazz),"Communications, media & arts",abolished_pending_catalog_update,27-3011.00,Broadcast Announcers and Radio Disc Jockeys,47.91,moderate,unreviewed_candidate,unreviewed
+4791,Pre-Press Technician,"Communications, media & arts",active,51-5111.00,Prepress Technicians and Workers,63.35,strong,unreviewed_candidate,unreviewed
+4792,Press Technician Assistant,"Communications, media & arts",active,51-5112.00,Printing Press Operators,55.09,strong,unreviewed_candidate,unreviewed
+4793,Press Technician,"Communications, media & arts",active,51-5112.00,Printing Press Operators,64.8,strong,unreviewed_candidate,unreviewed
+4794,Immigration Specialist,Management & administration,active,23-1011.00,Lawyers,46.91,moderate,unreviewed_candidate,unreviewed
+4795,Craft Shop Coordinator,Management & administration,active,11-9032.00,"Education Administrators, Kindergarten through Secondary",36.22,weak,unreviewed_candidate,unreviewed
+4797,Intercollegiate Athletics Equipment Specialist,Management & administration,active,,,28.93,weak,abstained,unreviewed
+4798,Graduate School Specialist,Management & administration,active,11-9033.00,"Education Administrators, Postsecondary",47.12,moderate,unreviewed_candidate,unreviewed
+4799,Grants and Contracts Development Specialist,Finance & procurement,not_in_current_catalog,,,,,no_candidate,unreviewed
+4801,Grants and Contracts Administrator I,Finance & procurement,not_in_current_catalog,,,,,no_candidate,unreviewed
+4802,Grants and Contracts Administrator II,Finance & procurement,not_in_current_catalog,,,,,no_candidate,unreviewed
+4803,Publications Manager,"Communications, media & arts",active,27-3041.00,Editors,44.77,moderate,unreviewed_candidate,unreviewed
+4804,Infection Prevention and Control Professional,Other,active,29-1141.04,Clinical Nurse Specialists,47.1,moderate,unreviewed_candidate,unreviewed
+4805,Infection Prevention and Control Coordinator,Management & administration,active,19-1041.00,Epidemiologists,48.0,moderate,unreviewed_candidate,unreviewed
+4806,Test Specialist,Management & administration,active,17-3021.00,Aerospace Engineering and Operations Technologists and Technicians,47.32,moderate,unreviewed_candidate,unreviewed
+4807,Customer Service Assistant,Management & administration,active,43-4051.00,Customer Service Representatives,58.15,strong,unreviewed_candidate,unreviewed
+4808,Customer Service Representative,Management & administration,active,43-4051.00,Customer Service Representatives,63.22,strong,unreviewed_candidate,unreviewed
+4809,Customer Service Specialist,Management & administration,active,43-4051.00,Customer Service Representatives,48.62,moderate,unreviewed_candidate,unreviewed
+4810,Library Technical Assistant,"Library, museum & archives",not_in_current_catalog,,,,,no_candidate,unreviewed
+4812,Benefits Officer,Human resources,active,43-4161.00,"Human Resources Assistants, Except Payroll and Timekeeping",54.34,moderate,unreviewed_candidate,unreviewed
+4813,Computer Laboratory Coordinator,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4814,Manager of Institutional Audits,Finance & procurement,active,11-9199.02,Compliance Managers,37.2,weak,unreviewed_candidate,unreviewed
+4815,Health Care Reimbursement Analyst I,Health & medical,active,13-1141.00,"Compensation, Benefits, and Job Analysis Specialists",37.08,weak,unreviewed_candidate,unreviewed
+4816,Health Care Reimbursement Analyst II,Health & medical,active,11-3031.00,Financial Managers,43.45,moderate,unreviewed_candidate,unreviewed
+4817,Health Care Reimbursement Analyst III,Health & medical,active,11-3111.00,Compensation and Benefits Managers,40.11,moderate,unreviewed_candidate,unreviewed
+4819,Member Service Representative I,Management & administration,active,43-4051.00,Customer Service Representatives,43.98,moderate,unreviewed_candidate,unreviewed
+4820,Member Service Representative II,Management & administration,active,43-3071.00,Tellers,42.37,moderate,unreviewed_candidate,unreviewed
+4821,Member Service Representative III,Management & administration,active,41-9031.00,Sales Engineers,44.79,moderate,unreviewed_candidate,unreviewed
+4822,Motorcycle Safety Specialist,Management & administration,abolished,,,,,no_candidate,unreviewed
+4824,Radiation Oncology Physicist,Science & research support,active,29-2036.00,Medical Dosimetrists,61.09,strong,unreviewed_candidate,unreviewed
+4825,Microcomputer Coordinator,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4826,Local,Other,abolished,,,,,no_candidate,unreviewed
+4827,Local,Other,abolished,,,,,no_candidate,unreviewed
+4828,Local,Other,proposed_abolish,,,,,no_candidate,unreviewed
+4829,Network Specialist I,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4830,Network Specialist II,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4831,Network Specialist,"IT, data & security",abolished,,,,,no_candidate,unreviewed
+4832,Hemapheresis Technologist,Science & research support,active,,,30.92,weak,abstained,unreviewed
+4833,Disability Transportation Specialist,Transportation & stores,active,,,35.9,weak,abstained,unreviewed
+4834,Head Disability Transportation Specialist,Transportation & stores,active,19-3099.01,Transportation Planners,41.51,moderate,unreviewed_candidate,unreviewed
+4835,Assistant Golf Course Grounds Superintendent,"Facilities, grounds & custodial",active,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",46.33,moderate,unreviewed_candidate,unreviewed
+4836,Assistant Pastry Chef,Food & domestic services,active,35-1011.00,Chefs and Head Cooks,53.29,moderate,unreviewed_candidate,unreviewed
+4839,Reimbursement Coding Representative,Management & administration,active,29-2072.00,Medical Records Specialists,40.12,moderate,unreviewed_candidate,unreviewed
+4840,Reimbursement Coding Specialist,Management & administration,active,29-2072.00,Medical Records Specialists,48.67,moderate,unreviewed_candidate,unreviewed
+4841,Reimbursement Coding Coordinator,Management & administration,active,11-3111.00,Compensation and Benefits Managers,37.81,weak,unreviewed_candidate,unreviewed
+4842,Member Service Representative IV,Management & administration,active,43-4141.00,New Accounts Clerks,40.63,moderate,unreviewed_candidate,unreviewed
+4844,Image Processing Technician IV,Clerical & office support,active,11-3021.00,Computer and Information Systems Managers,36.99,weak,unreviewed_candidate,unreviewed
+4845,Digital Imaging Specialist I,"Communications, media & arts",active,51-9151.00,Photographic Process Workers and Processing Machine Operators,56.6,strong,unreviewed_candidate,unreviewed
+4846,Digital Imaging Specialist II,"Communications, media & arts",active,51-9151.00,Photographic Process Workers and Processing Machine Operators,51.68,moderate,unreviewed_candidate,unreviewed
+4847,Veterinary Technician I,Health & medical,active,29-2056.00,Veterinary Technologists and Technicians,49.67,moderate,unreviewed_candidate,unreviewed
+4848,Veterinary Technician II,Health & medical,active,29-2056.00,Veterinary Technologists and Technicians,48.68,moderate,unreviewed_candidate,unreviewed
+4849,Veterinary Technician III,Health & medical,active,29-2011.00,Medical and Clinical Laboratory Technologists,49.85,moderate,unreviewed_candidate,unreviewed
+4900,Library Clerk,Clerical & office support,active,25-4031.00,Library Technicians,65.42,strong,unreviewed_candidate,unreviewed
+4901,Library Assistant,Clerical & office support,active,25-4031.00,Library Technicians,59.0,strong,unreviewed_candidate,unreviewed
+4902,Library Specialist,"Library, museum & archives",active,25-4031.00,Library Technicians,61.29,strong,unreviewed_candidate,unreviewed
+4903,Senior Library Specialist,"Library, museum & archives",active,25-4022.00,Librarians and Media Collections Specialists,54.9,moderate,unreviewed_candidate,unreviewed
+4904,Library Operations Associate,"Library, museum & archives",active,25-4031.00,Library Technicians,47.41,moderate,unreviewed_candidate,unreviewed
+4905,Chief Utility Plant Operating Engineer,Skilled trades,not_in_current_catalog,,,,,no_candidate,unreviewed
+4906,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+4907,,Other,not_in_current_catalog,,,,,no_candidate,unreviewed
+4960,Medical Office Assistant,Clerical & office support,active,43-6013.00,Medical Secretaries and Administrative Assistants,86.04,strong,unreviewed_candidate,unreviewed
+4961,Medical Office Associate,Clerical & office support,active,43-6013.00,Medical Secretaries and Administrative Assistants,62.9,strong,unreviewed_candidate,unreviewed
+4962,Medical Office Specialist,Clerical & office support,active,29-2072.00,Medical Records Specialists,50.61,moderate,unreviewed_candidate,unreviewed
+4963,Medical Office Coordinator,Health & medical,active,11-9111.00,Medical and Health Services Managers,61.81,strong,unreviewed_candidate,unreviewed
+4966,Clinical Practice Data Analyst,"IT, data & security",active,15-2051.02,Clinical Data Managers,49.61,moderate,unreviewed_candidate,unreviewed
+4967,Clinical Practice Data Analyst Specialist,"IT, data & security",active,15-2051.02,Clinical Data Managers,49.13,moderate,unreviewed_candidate,unreviewed
+4968,Clinical Practice Data Analyst Coordinator,"IT, data & security",active,15-2051.02,Clinical Data Managers,47.11,moderate,unreviewed_candidate,unreviewed
+4973,Quality Specialist,Management & administration,active,19-4099.01,Quality Control Analysts,45.23,moderate,unreviewed_candidate,unreviewed
+4974,Senior Quality Specialist,Management & administration,active,19-4099.01,Quality Control Analysts,46.33,moderate,unreviewed_candidate,unreviewed
+4975,Organizational Quality Coordinator,Management & administration,active,19-3032.00,Industrial-Organizational Psychologists,39.49,weak,unreviewed_candidate,unreviewed
+4987,Power Plant Mechanic,Skilled trades,active,51-8013.04,Hydroelectric Plant Technicians,62.29,strong,unreviewed_candidate,unreviewed
+4988,Power Plant Mechanic Supervisor,Skilled trades,active,11-3051.06,Hydroelectric Production Managers,48.36,moderate,unreviewed_candidate,unreviewed
+4990,Steam and Power Plant I,Skilled trades,active,51-8021.00,Stationary Engineers and Boiler Operators,47.33,moderate,unreviewed_candidate,unreviewed
+4991,Steam and Power Plant II,Skilled trades,active,51-8021.00,Stationary Engineers and Boiler Operators,71.03,strong,unreviewed_candidate,unreviewed
+4992,Steam and Power Plant III,Skilled trades,active,51-8021.00,Stationary Engineers and Boiler Operators,83.64,strong,unreviewed_candidate,unreviewed
+4993,Steam and Power Plant IV,Skilled trades,active,51-1011.00,First-Line Supervisors of Production and Operating Workers,54.64,moderate,unreviewed_candidate,unreviewed
+4994,Steam and Power Plant V,Skilled trades,active,51-8021.00,Stationary Engineers and Boiler Operators,46.01,moderate,unreviewed_candidate,unreviewed
+4995,Instrument Technician,Science & research support,active,49-9012.00,"Control and Valve Installers and Repairers, Except Mechanical Door",53.01,moderate,unreviewed_candidate,unreviewed
+4997,Clinical Actor,Health & medical,active,21-1014.00,Mental Health Counselors,35.44,weak,unreviewed_candidate,unreviewed
+4999,Accreditation and Regulatory Specialist,Management & administration,active,11-9199.02,Compliance Managers,50.34,moderate,unreviewed_candidate,unreviewed
+5000,Accounting Associate,Finance & procurement,active,43-3031.00,"Bookkeeping, Accounting, and Auditing Clerks",49.67,moderate,unreviewed_candidate,unreviewed
+5001,Program Assistant,Management & administration,active,43-6014.00,"Secretaries and Administrative Assistants, Except Legal, Medical, and Executive",44.52,moderate,unreviewed_candidate,unreviewed
+5002,Program Coordinator,Management & administration,active,11-9151.00,Social and Community Service Managers,49.06,moderate,unreviewed_candidate,unreviewed
+5003,Program Director,Management & administration,active,11-1021.00,General and Operations Managers,47.64,moderate,unreviewed_candidate,unreviewed
+5004,Marketing Associate,"Communications, media & arts",active,13-1161.00,Market Research Analysts and Marketing Specialists,47.81,moderate,unreviewed_candidate,unreviewed
+5005,Athletic Communications Associate,"Communications, media & arts",active,27-3031.00,Public Relations Specialists,49.37,moderate,unreviewed_candidate,unreviewed
+5006,Public Information Associate,"Communications, media & arts",active,11-2032.00,Public Relations Managers,55.4,strong,unreviewed_candidate,unreviewed
+5007,Publicity-Promotion Associate,Management & administration,active,27-3031.00,Public Relations Specialists,54.85,moderate,unreviewed_candidate,unreviewed
+5008,Deputy Chief,Management & administration,active,33-1012.00,First-Line Supervisors of Police and Detectives,54.76,moderate,unreviewed_candidate,unreviewed
+5009,Events Administrator Associate,Management & administration,active,13-1121.00,"Meeting, Convention, and Event Planners",46.55,moderate,unreviewed_candidate,unreviewed
+5010,Business/Administrative Associate,Management & administration,active,43-6011.00,Executive Secretaries and Executive Administrative Assistants,45.01,moderate,unreviewed_candidate,unreviewed
+5011,Financial Aid Associate,Finance & procurement,active,13-2072.00,Loan Officers,43.06,moderate,unreviewed_candidate,unreviewed
+5012,Construction Project Manager,Management & administration,active,11-9021.00,Construction Managers,56.79,strong,unreviewed_candidate,unreviewed
+5013,Safety/Environmental Compliance Associate,Management & administration,active,17-2081.00,Environmental Engineers,45.74,moderate,unreviewed_candidate,unreviewed
+5014,Cinematographer/Creative Video Producer,Other,active,,,38.59,weak,abstained,unreviewed
+5020,Human Resource Associate,Human resources,active,11-3121.00,Human Resources Managers,50.36,moderate,unreviewed_candidate,unreviewed
+5030,Information Technology Manager/Administrative Coordinator,"IT, data & security",active,11-3021.00,Computer and Information Systems Managers,42.17,moderate,unreviewed_candidate,unreviewed
+5031,Information Technology Technical Associate,"IT, data & security",active,15-1232.00,Computer User Support Specialists,45.82,moderate,unreviewed_candidate,unreviewed
+5032,Information Technology Support Associate,"IT, data & security",active,15-1231.00,Computer Network Support Specialists,48.95,moderate,unreviewed_candidate,unreviewed
+5040,Grants and Contracts Associate,Finance & procurement,active,11-2033.00,Fundraising Managers,34.81,weak,unreviewed_candidate,unreviewed
+5050,Glass Blower,Skilled trades,active,51-9195.04,"Glass Blowers, Molders, Benders, and Finishers",55.26,strong,unreviewed_candidate,unreviewed

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SUCSS Class Evolution</title>
+<style>
+:root{--bg:#f7f6f2;--panel:#fff;--ink:#1c2230;--muted:#5b6474;--line:#e2dfd7;--grid:#ece9e2;--accent:#13294b;--chip:#eef1f6;
+--warn-bg:#fff4d6;--warn-ink:#5c4210;
+--a-revise:#2a78d6;--a-abolish:#e34948;--a-new:#1baf7a;--a-title:#6250d6;--a-exam:#eda100;--a-other:#8a8f98;
+--s0:#f1f4f9;--s1:#cde2fb;--s2:#9ec5f4;--s3:#6da7ec;--s4:#3987e5;--s5:#256abf;--s6:#184f95;--s7:#0d366b;--on-dark:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141b;--panel:#171d27;--ink:#e6e9ef;--muted:#9aa3b2;--line:#2a3240;--grid:#222a36;--accent:#a9c1e8;--chip:#222a37;
+--warn-bg:#33290f;--warn-ink:#f4dc9b;--a-revise:#3987e5;--a-abolish:#e66767;--a-new:#199e70;--a-title:#9085e9;--a-exam:#c98500;--a-other:#7b818b;
+--s0:#1b2230;--s1:#13294a;--s2:#104281;--s3:#184f95;--s4:#256abf;--s5:#3987e5;--s6:#6da7ec;--s7:#b7d3f6}}
+:root[data-theme="dark"]{--bg:#10141b;--panel:#171d27;--ink:#e6e9ef;--muted:#9aa3b2;--line:#2a3240;--grid:#222a36;--accent:#a9c1e8;--chip:#222a37;
+--warn-bg:#33290f;--warn-ink:#f4dc9b;--a-revise:#3987e5;--a-abolish:#e66767;--a-new:#199e70;--a-title:#9085e9;--a-exam:#c98500;--a-other:#7b818b;
+--s0:#1b2230;--s1:#13294a;--s2:#104281;--s3:#184f95;--s4:#256abf;--s5:#3987e5;--s6:#6da7ec;--s7:#b7d3f6}
+a{color:var(--accent)}*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:20px 16px 6px;max-width:1240px;margin:0 auto}
+h1{font-size:23px;margin:0;color:var(--accent)}h2{font-size:17px;margin:0 0 8px}h3{font-size:13px;margin:14px 0 6px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.sub{color:var(--muted);margin:4px 0 0;max-width:920px}
+.warn{background:var(--warn-bg);color:var(--warn-ink);border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:13.5px}
+nav{display:flex;gap:6px;flex-wrap:wrap;max-width:1240px;margin:12px auto 0;padding:0 16px}
+nav button,.tbtn{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:5px 12px;border-radius:999px;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+main{max-width:1240px;margin:0 auto;padding:14px 16px 60px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;max-width:1240px;margin:12px auto 0;padding:0 16px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.kpi b{display:block;font-size:22px;color:var(--accent);font-variant-numeric:tabular-nums}.kpi span{font-size:12.5px;color:var(--muted)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+input,select{font:inherit;font-size:14px;max-width:100%;min-width:0;padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.tw{overflow-x:auto;max-width:100%}.scroll{max-height:480px;overflow:auto}.tw table{min-width:560px}td.n{white-space:nowrap}
+table{border-collapse:collapse;width:100%;font-size:13.5px}th,td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:12.5px;white-space:nowrap;cursor:pointer}td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 8px;font-size:12px;margin:1px 2px 1px 0;white-space:nowrap}
+.muted{color:var(--muted)}.small{font-size:12.5px}
+svg text{fill:var(--muted);font-size:11px}svg .ink{fill:var(--ink)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin:6px 0}
+.sw{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+#tip{position:fixed;pointer-events:none;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12.5px;box-shadow:0 4px 14px rgba(0,0,0,.15);display:none;max-width:300px;z-index:9}
+.bar{height:8px;border-radius:4px;background:var(--s4)}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}h1{font-size:20px}.hide-sm{display:none}}
+.tab{display:none}.tab.on{display:block}
+.lane{cursor:pointer}.lane:hover rect.bg{fill:var(--chip)}
+</style></head>
+<body>
+<header>
+  <div class="row" style="justify-content:space-between;margin:0"><h1>How Illinois civil-service job classes have evolved</h1>
+  <button class="tbtn" id="theme" aria-label="Toggle light or dark theme">Theme</button></div>
+  <p class="sub" id="lede"></p>
+  <div class="warn"><b>Read this first.</b> Built from SUCSS Civil Service Notices (CSN PDFs) and the cached SUCSS series pages. Codes, dates and actions are machine-parsed and can be wrong; O*NET links are <b>unreviewed candidates</b>; national signals come from O*NET 31.0, the Anthropic Economic Index and the job_evolution O*NET release panel, linked through unreviewed candidates. No SUCSS text is reproduced here: each event links to the source notice.</div>
+</header>
+<div class="kpis" id="kpis"></div>
+<nav role="tablist" id="nav"></nav>
+<main>
+<section class="tab" id="t-archive"></section>
+<section class="tab" id="t-timeline"></section>
+<section class="tab" id="t-heat"></section>
+<section class="tab" id="t-stale"></section>
+<section class="tab" id="t-newab"></section>
+<section class="tab" id="t-titles"></section>
+<section class="tab" id="t-align"></section>
+<section class="tab" id="t-risk"></section>
+<section class="tab" id="t-method"></section>
+</main>
+<div id="tip" role="tooltip"></div>
+<script>
+const D=/*__DATA__*/null;
+const S=D.summary;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=(v,d=0)=>v==null||v===''?'—':(typeof v==='number'?v.toLocaleString(undefined,{maximumFractionDigits:d,minimumFractionDigits:d}):esc(v));
+const CSN=n=>`https://www.sucss.illinois.gov/documents/csn/${n}.pdf`;
+const SER=n=>`https://www.sucss.illinois.gov/pages/classspec/ViewSeries.aspx?tblCS_SeriesID=${n}`;
+const classes=D.classes.map(r=>Object.fromEntries(D.tl_fields.map((f,i)=>[f,r[i]])));
+const byCode=Object.fromEntries(classes.map(c=>[c.class_code,c]));
+const events=D.events.map(r=>Object.fromEntries(D.ev_fields.map((f,i)=>[f,r[i]])));
+const evBy={};events.forEach(e=>(evBy[e.class_code]=evBy[e.class_code]||[]).push(e));
+const ACT={revise_spec:['Revised spec','--a-revise'],abolish:['Abolished / deleted','--a-abolish'],new_class:['New class','--a-new'],title_change:['Title change','--a-title'],exam_change:['Exam change','--a-exam'],rescind:['Rescinded','--a-other'],discontinue:['Discontinued','--a-abolish'],successor_or_target:['Named as successor','--a-other'],other:['Other','--a-other'],edit:['Edited','--a-other'],reinstate:['Reinstated','--a-new'],qualification_change:['Qualification change','--a-exam'],pay_note:['Pay note','--a-other']};
+const actColor=a=>`var(${(ACT[a]||ACT.other)[1]})`;
+const tip=$('#tip');
+function showTip(ev,html){tip.innerHTML=html;tip.style.display='block';const x=Math.min(ev.clientX+12,innerWidth-310);tip.style.left=x+'px';tip.style.top=(ev.clientY+14)+'px'}
+function hideTip(){tip.style.display='none'}
+document.addEventListener('scroll',hideTip,{passive:true});
+// theme
+(function(){let t=null;try{t=localStorage.getItem('ce-theme')}catch(e){}if(t)document.documentElement.dataset.theme=t;
+$('#theme').onclick=()=>{const cur=document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');const n=cur==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('ce-theme',n)}catch(e){}}})();
+
+const P=S.parsing,A=S.acquisition,AN=S.analytics,M=S.model;
+$('#lede').textContent=`${fmt(A.pdfs)} notice PDFs (${fmt(P.unique_documents)} unique documents after removing duplicate postings; CSN numbers probed ${A.csn_range?A.csn_range.join('–'):''}) parsed into ${fmt(P.csn_class_events)} class-level notice events, combined with ${fmt(P.series_page_events)} effective-date events from ${fmt(classes.filter(c=>c.series_id).length)} classes on SUCSS series pages. As of ${S.as_of}.`;
+const kp=[[P.unique_documents,`unique documents (${A.pdfs.toLocaleString()} PDFs)`],[P.dated_docs,'dated documents'],[P.doc_year_range?P.doc_year_range.join('–'):'—','notice years covered'],[classes.length,'class codes seen'],[(AN.status_counts.abolished||0)+(AN.status_counts.abolished_pending_catalog_update||0),'abolished (final notice)'],[Object.values(AN.created_by_year||{}).reduce((a,b)=>a+b,0),'created (dated)'],[AN.spec_age_years.median,'median spec age, yrs']];
+$('#kpis').innerHTML=kp.map(([v,l])=>`<div class="kpi"><b>${typeof v==='number'?fmt(v,v%1?1:0):esc(v)}</b><span>${l}</span></div>`).join('');
+
+const TABS=[['archive','Archive'],['timeline','Class timelines'],['heat','Family heatmap'],['stale','Stale-spec watchlist'],['newab','New & abolished'],['titles','Title changes'],['align','National alignment'],['risk','Revision outlook'],['method','Method & licensing']];
+$('#nav').innerHTML=TABS.map(([k,l])=>`<button role="tab" data-k="${k}">${l}</button>`).join('');
+const drawn={};
+function go(k){document.querySelectorAll('nav button').forEach(b=>b.setAttribute('aria-selected',b.dataset.k===k));document.querySelectorAll('.tab').forEach(s=>s.classList.toggle('on',s.id==='t-'+k));if(!drawn[k]){drawn[k]=1;R[k]()}try{localStorage.setItem('ce-tab',k)}catch(e){}hideTip()}
+$('#nav').onclick=e=>{if(e.target.dataset.k)go(e.target.dataset.k)};
+
+function legend(keys){return `<div class="legend">${keys.map(k=>`<span><span class="sw" style="background:${actColor(k)}"></span>${(ACT[k]||[k])[0]}</span>`).join('')}</div>`}
+function sortable(tbl,rows,cols,render){let key=null,dir=1;const head=`<tr>${cols.map((c,i)=>`<th data-i="${i}" class="${c.n?'n':''}">${c.l}</th>`).join('')}</tr>`;
+ function draw(){let r=rows.slice();if(key!=null){const c=cols[key];r.sort((a,b)=>{const x=c.v(a),y=c.v(b);return (x==null)-(y==null)||(x<y?-1:x>y?1:0)*dir})}tbl.innerHTML=head+r.map(render).join('');tbl.querySelectorAll('th').forEach(th=>th.onclick=()=>{const i=+th.dataset.i;dir=key===i?-dir:(cols[i].n?-1:1);key=i;draw()})}draw()}
+
+const R={};
+// ---------- archive
+const yrange=ks=>{const n=ks.map(Number).filter(y=>y>=1980);if(!n.length)return[];const o=[];for(let y=Math.min(...n);y<=Math.max(...n);y++)o.push(String(y));return o};
+R.archive=function(){const el=$('#t-archive');const years=yrange(Object.keys(D.docs_year));
+ const stages=['final','preliminary','proposal','rescission','draft','spec_document','meeting','notice_other','other'];
+ const sc={final:'--s6',preliminary:'--s4',proposal:'--s3',rescission:'--a-abolish',draft:'--s2',spec_document:'--s1',meeting:'--a-exam',notice_other:'--a-other',other:'--a-other'};
+ // events per year by action (csn, affected, final)
+ const evY={};events.filter(e=>e.source==='csn'&&e.role==='affected'&&e.event_date).forEach(e=>{const y=e.event_date.slice(0,4);(evY[y]=evY[y]||{})[e.action]=(evY[y][e.action]||0)+1});
+ el.innerHTML=`<div class="card"><h2>Notice documents per year, by stage</h2><p class="muted small">Every PDF found under /documents/csn/ with a parsable date. "Draft" and "spec document" are attachments (draft or adopted specifications) that travel with notices.</p><div id="docchart"></div><div class="legend">${stages.map(s=>`<span><span class="sw" style="background:var(${sc[s]})"></span>${s.replace('_',' ')}</span>`).join('')}</div></div>
+ <div class="card"><h2>Class-level notice events per year, by action</h2><p class="muted small">One event = one class code named as affected in one notice (all stages). A revision typically appears 2–4 times (proposal, preliminary, final).</p><div id="evchart"></div>${legend(['revise_spec','abolish','new_class','title_change','rescind','other'])}</div>
+ <div class="card"><h2>Coverage</h2><div class="tw"><table id="covtbl"></table></div></div>`;
+ stackBars($('#docchart'),years,stages,y=>D.docs_year[y]||{},s=>`var(${sc[s]})`,s=>s.replace('_',' '));
+ const acts=['revise_spec','abolish','new_class','title_change','rescind','other'];
+ const ey=yrange(Object.keys(evY));
+ stackBars($('#evchart'),ey,acts,y=>{const o={...(evY[y]||{})};let other=0;Object.keys(o).forEach(k=>{if(!acts.includes(k)){other+=o[k];delete o[k]}});o.other=(o.other||0)+other;return o},a=>actColor(a),a=>(ACT[a]||[a])[0]);
+ const cov=[['CSN numbers requested',A.csn_numbers_requested],['PDFs',A.pdfs],['Not a PDF / missing',(A.status_counts['200_not_pdf']||0)+(A.status_counts['404']||0)],['Dated documents',P.dated_docs],['Documents naming ≥1 class code',P.docs_with_class_codes],['No text layer (scanned; not OCRed)',P.by_kind.no_text_layer||0],['Class events from notices',P.csn_class_events],['Effective-date events from series pages',P.series_page_events]];
+ $('#covtbl').innerHTML=cov.map(([k,v])=>`<tr><td>${k}</td><td class="n">${fmt(v)}</td></tr>`).join('');
+};
+function stackBars(host,cats,keys,get,color,label){const W=Math.max(320,host.clientWidth||700),H=220,m={l:34,r:8,t:8,b:26};const iw=W-m.l-m.r,ih=H-m.t-m.b;
+ const tot=cats.map(c=>keys.reduce((a,k)=>a+(get(c)[k]||0),0));const mx=Math.max(1,...tot);const bw=iw/cats.length;const nice=niceMax(mx);
+ let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="stacked bar chart">`;
+ for(let i=0;i<=4;i++){const v=nice*i/4,y=m.t+ih-ih*v/nice;s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${m.l-4}" y="${y+3}" text-anchor="end">${Math.round(v)}</text>`}
+ cats.forEach((c,i)=>{let y0=m.t+ih;const x=m.l+i*bw+Math.max(1,bw*.12),w=Math.max(1,bw*.76);const g=get(c);
+  keys.forEach(k=>{const v=g[k]||0;if(!v)return;const h=ih*v/nice;y0-=h;s+=`<rect x="${x}" y="${y0}" width="${w}" height="${Math.max(0,h-(h>3?1:0))}" fill="${color(k)}" data-t="${esc(c)} · ${esc(label(k))}: ${v}"/>`});
+  s+=`<rect x="${m.l+i*bw}" y="${m.t}" width="${bw}" height="${ih}" fill="transparent" data-t="<b>${esc(c)}</b><br>${keys.filter(k=>g[k]).map(k=>esc(label(k))+': '+g[k]).join('<br>')||'none'}"/>`;
+  const step=Math.ceil(cats.length/(iw/34));if(i%step===0)s+=`<text x="${m.l+i*bw+bw/2}" y="${H-8}" text-anchor="middle">${esc(c)}</text>`});
+ host.innerHTML=s+'</svg>';host.querySelectorAll('[data-t]').forEach(r=>{r.onmousemove=e=>showTip(e,r.dataset.t);r.onmouseleave=hideTip})}
+function niceMax(v){const p=Math.pow(10,Math.floor(Math.log10(v)));for(const k of [1,2,2.5,5,10])if(k*p>=v)return k*p;return v}
+
+// ---------- timelines
+R.timeline=function(){const el=$('#t-timeline');const fams=[...new Set(classes.map(c=>c.job_family))].sort();
+ el.innerHTML=`<div class="card"><h2>Class timelines</h2><p class="muted small">Each lane is one class code. Dots are notice events (filled = final notice; hollow = proposal/preliminary/draft); a tick marks the current spec effective date from the series page. Hover for details; click a lane to list its events with links to the source PDFs.</p>
+ <div class="row"><input id="tq" placeholder="Search title or code" aria-label="Search classes" style="flex:1 1 200px"><select id="tf" aria-label="Family"><option value="">All families</option>${fams.map(f=>`<option>${esc(f)}</option>`).join('')}</select>
+ <select id="ts" aria-label="Status"><option value="">Any status</option><option value="active">Active</option><option value="abolished">Abolished</option><option value="proposed_abolish">Proposed abolish</option><option value="changed">Has notice events</option></select></div>
+ ${legend(['revise_spec','abolish','new_class','title_change','exam_change','rescind'])}<div id="lanes"></div><div id="tdetail"></div></div>`;
+ const draw=()=>{const q=$('#tq').value.toLowerCase(),f=$('#tf').value,st=$('#ts').value;
+  let list=classes.filter(c=>(!q||(c.class_title||'').toLowerCase().includes(q)||c.class_code.includes(q))&&(!f||c.job_family===f)&&(!st||(st==='changed'?c.n_notice_events>0:(st==='abolished'?c.status.startsWith('abolished'):c.status===st))));
+  list.sort((a,b)=>(b.n_notice_events-a.n_notice_events)||((a.class_title||'').localeCompare(b.class_title||'')));
+  const n=list.length;list=list.slice(0,60);lanes(list,n)};
+ ['#tq','#tf','#ts'].forEach(s=>$(s).oninput=draw);draw()};
+function lanes(list,total){const host=$('#lanes');const W=Math.max(320,host.clientWidth||900);const lw=W<600?120:230,m={r:10};const y0=1985,y1=2027;const iw=W-lw-m.r;const rh=22;const H=list.length*rh+26;
+ const X=d=>{const t=+d.slice(0,4)+(+d.slice(5,7)-1)/12;return lw+iw*(Math.max(y0,t)-y0)/(y1-y0)};
+ let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="class timelines">`;
+ for(let y=1990;y<=2025;y+=5){const x=X(y+'-01');s+=`<line x1="${x}" x2="${x}" y1="0" y2="${H-20}" stroke="var(--grid)"/><text x="${x}" y="${H-6}" text-anchor="middle">${y}</text>`}
+ list.forEach((c,i)=>{const y=i*rh+rh/2;const evs=(evBy[c.class_code]||[]).filter(e=>e.role!=='context');
+  const t=(c.class_title||'(title unknown)');const tt=t.length>(W<600?16:32)?t.slice(0,W<600?15:31)+'…':t;
+  s+=`<g class="lane" data-c="${c.class_code}"><rect class="bg" x="0" y="${y-rh/2}" width="${W}" height="${rh}" fill="transparent"/><text class="ink" x="4" y="${y+4}">${esc(c.class_code)} ${esc(tt)}</text><line x1="${lw}" x2="${W-m.r}" y1="${y}" y2="${y}" stroke="var(--line)"/>`;
+  if(c.abolished_date)s+=`<line x1="${X(c.abolished_date)}" x2="${W-m.r}" y1="${y}" y2="${y}" stroke="var(--a-abolish)" stroke-dasharray="2 3"/>`;
+  evs.forEach(e=>{const x=X(e.event_date);if(e.source==='series_page'){if(e.action!=='exam_change')s+=`<rect x="${x-1.5}" y="${y-8}" width="3" height="16" rx="1.5" fill="var(--ink)" opacity=".55" data-t="${esc(c.class_code)} spec in force since ${e.event_date} (series page)"/>`;return}
+   const fin=e.stage==='final';s+=`<circle cx="${x}" cy="${y}" r="5" fill="${fin?actColor(e.action):'var(--panel)'}" stroke="${actColor(e.action)}" stroke-width="2" data-t="<b>${esc(c.class_code)}</b> · ${e.event_date}<br>${esc((ACT[e.action]||[e.action])[0])} · ${esc(e.stage)} · CSN ${e.csn}${e.target_codes&&e.target_codes.length?'<br>→ '+e.target_codes.map(t=>esc(t+' '+((byCode[t]||{}).class_title||''))).join(', '):''}"/>`});
+  s+='</g>'});
+ host.innerHTML=s+'</svg>'+`<p class="muted small">${total>list.length?`Showing ${list.length} of ${total}; refine the search.`:`${total} classes.`}</p>`;
+ host.querySelectorAll('[data-t]').forEach(r=>{r.onmousemove=e=>showTip(e,r.dataset.t);r.onmouseleave=hideTip});
+ host.querySelectorAll('.lane').forEach(g=>g.onclick=()=>detail(g.dataset.c))}
+function detail(code){const c=byCode[code];const evs=(evBy[code]||[]).slice().sort((a,b)=>a.event_date<b.event_date?-1:1);
+ $('#tdetail').innerHTML=`<h3>${esc(code)} · ${esc(c.class_title||'')}</h3><p class="small">${esc(c.job_family)} · status <b>${esc(c.status)}</b> · spec effective ${fmt(c.spec_effective_date)}${c.series_id?` · <a href="${SER(c.series_id)}" rel="noopener">series page</a>`:''} · O*NET candidate (unreviewed): ${c.onet_top1_code?esc(c.onet_top1_code+' '+c.onet_top1_title):'none'}</p>
+ <div class="tw"><table><tr><th>Date</th><th>Source</th><th>Stage</th><th>Action</th><th>Role</th><th>Other codes</th></tr>${evs.map(e=>`<tr><td>${e.event_date}</td><td>${e.csn?`<a href="${CSN(e.csn)}" rel="noopener">CSN ${e.csn}</a>`:'series page'}</td><td>${esc(e.stage)}</td><td><span class="sw" style="background:${actColor(e.action)}"></span>${esc((ACT[e.action]||[e.action])[0])}${(e.secondary||[]).map(x=>` <span class="chip">${esc(x.replace('_',' '))}</span>`).join('')}</td><td>${esc(e.role)}</td><td>${(e.target_codes||[]).map(esc).join(', ')}</td></tr>`).join('')}</table></div>`}
+
+// ---------- heatmap
+R.heat=function(){const el=$('#t-heat');el.innerHTML=`<div class="card"><h2>Job-family heatmap</h2><p class="muted small">Distinct classes per family and year. Families are transparent title-keyword rules (see Method). The series-page measure shows only each class's <i>current</i> spec date, so older revisions are overwritten by later ones.</p>
+ <div class="row"><select id="hm" aria-label="Measure"><option value="final_revise_spec">Final notices: revised spec</option><option value="any_notice">Named in any notice</option><option value="final_abolish">Final notices: abolished</option><option value="spec_in_force">Current spec took effect (series page)</option><option value="final_new_class">Final notices: new class</option></select>
+ <label class="small"><input type="checkbox" id="hshare"> share of current family size</label></div><div id="heat" class="tw"></div><div class="legend" id="hleg"></div></div>`;
+ const draw=()=>{const m=$('#hm').value,share=$('#hshare').checked;const data=D.heat[m]||{};const fams=Object.keys(data).sort();const sizes={};D.alignment.forEach(a=>sizes[a.job_family]=a.n_active);
+  let y0=2026;Object.values(data).forEach(o=>Object.keys(o).forEach(y=>{if(+y>=1990&&+y<y0)y0=+y}));y0=Math.min(y0,2008);const yrs=[];for(let y=y0;y<=2026;y++)yrs.push(y);const host=$('#heat');const W=Math.max(640,host.clientWidth||900);const lw=190,cw=(W-lw-8)/yrs.length,rh=22,H=fams.length*rh+24;
+  const val=(f,y)=>{const v=(data[f]||{})[y]||0;return share?(sizes[f]?v/sizes[f]:0):v};let mx=0;fams.forEach(f=>yrs.forEach(y=>mx=Math.max(mx,val(f,y))));
+  const steps=['--s0','--s1','--s2','--s3','--s4','--s5','--s6','--s7'];const col=v=>v<=0?'var(--s0)':`var(${steps[Math.min(7,1+Math.floor(6.999*v/mx))]})`;
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="family by year heatmap">`;
+  fams.forEach((f,i)=>{s+=`<text class="ink" x="4" y="${i*rh+15}">${esc(f)}</text>`;yrs.forEach((y,j)=>{const v=val(f,y),raw=(data[f]||{})[y]||0;s+=`<rect x="${lw+j*cw+1}" y="${i*rh+1}" width="${cw-2}" height="${rh-2}" rx="3" fill="${col(v)}" data-t="<b>${esc(f)}</b> · ${y}<br>${raw} classes${sizes[f]?` (${(100*raw/sizes[f]).toFixed(1)}% of ${sizes[f]} active)`:''}"/>`})});
+  yrs.forEach((y,j)=>{if(j%2===0)s+=`<text x="${lw+j*cw+cw/2}" y="${H-6}" text-anchor="middle">${String(y).slice(2)}</text>`});
+  host.innerHTML=s+'</svg>';host.querySelectorAll('[data-t]').forEach(r=>{r.onmousemove=e=>showTip(e,r.dataset.t);r.onmouseleave=hideTip});
+  $('#hleg').innerHTML=`<span>0</span>${steps.slice(1).map(v=>`<span class="sw" style="border-radius:2px;background:var(${v})"></span>`).join('')}<span>${share?(100*mx).toFixed(0)+'%':mx}</span>`};
+ $('#hm').oninput=draw;$('#hshare').oninput=draw;draw()};
+
+// ---------- stale
+R.stale=function(){const el=$('#t-stale');const fams=[...new Set(D.stale.map(r=>r.job_family))].sort();const sa=AN.spec_age_years;
+ el.innerHTML=`<div class="card"><h2>Stale-spec watchlist</h2><p class="muted small">Active classes ordered by age of the current spec weighted by national change (hot-technology share, emerging-task rate and AI exposure of the unreviewed O*NET candidate). Median spec age ${sa.median} years; ${sa.n_over_10y} classes over 10 years, ${sa.n_over_20y} over 20. "Lag" = older than 8 years and in the top 40% of national change. An open process means SUCSS has already issued a proposal or preliminary notice.</p>
+ <div class="row"><select id="sf" aria-label="Family"><option value="">All families</option>${fams.map(f=>`<option>${esc(f)}</option>`).join('')}</select><label class="small"><input type="checkbox" id="slag"> lag-flagged only</label><label class="small"><input type="checkbox" id="sopen"> hide classes already in an open process</label></div><div class="tw"><table id="stbl"></table></div><div class="row" style="margin-top:8px"><button class="tbtn" id="smore">Show 50 more</button><span class="muted small" id="scount"></span></div></div>`;
+ let lim=50;
+ const cols=[{l:'#',n:1,v:r=>r.watch_rank},{l:'Code',v:r=>r.class_code},{l:'Class',v:r=>r.class_title},{l:'Family',v:r=>r.job_family},{l:'Spec since',v:r=>r.last_revision_date},{l:'Age (yrs)',n:1,v:r=>r.years_since_last_revision},{l:'National change pctile',n:1,v:r=>r.national_change_pctile},{l:'O*NET candidate (unreviewed)',v:r=>r.onet_top1_code},{l:'Flags',v:r=>r.lag_flag}];
+ const draw=()=>{const f=$('#sf').value,lag=$('#slag').checked,op=$('#sopen').checked;const all=D.stale.filter(r=>(!f||r.job_family===f)&&(!lag||r.lag_flag)&&(!op||!r.open_process));const rows=all.slice(0,lim);$('#scount').textContent=`showing ${rows.length} of ${all.length}`;$('#smore').style.display=rows.length<all.length?'':'none';
+  sortable($('#stbl'),rows,cols,r=>`<tr><td class="n">${r.watch_rank}</td><td>${r.series_id?`<a href="${SER(r.series_id)}" rel="noopener">${esc(r.class_code)}</a>`:esc(r.class_code)}</td><td>${esc(r.class_title)}</td><td class="small">${esc(r.job_family)}</td><td>${fmt(r.last_revision_date)}</td><td class="n"><div style="display:flex;gap:6px;align-items:center;justify-content:flex-end">${fmt(r.years_since_last_revision,1)}<span class="bar hide-sm" style="width:${Math.min(60,2*r.years_since_last_revision)}px"></span></div></td><td class="n">${r.national_change_pctile==null?'—':fmt(100*r.national_change_pctile)}</td><td class="small">${r.onet_top1_code?esc(r.onet_top1_code+' '+r.onet_top1_title):'—'}</td><td>${r.lag_flag?'<span class="chip">lag</span>':''}${r.open_process?`<span class="chip">open: ${esc(r.open_process_stage)}</span>`:''}</td></tr>`)};
+ ['#sf','#slag','#sopen'].forEach(s=>$(s).oninput=()=>{lim=50;draw()});$('#smore').onclick=()=>{lim+=50;draw()};draw()};
+
+// ---------- new & abolished
+R.newab=function(){const el=$('#t-newab');const ca=D.created_abolished;const ab=ca.filter(r=>r.abolished_date).sort((a,b)=>a.abolished_date<b.abolished_date?1:-1);const cr=ca.filter(r=>r.created_date).sort((a,b)=>a.created_date<b.created_date?1:-1);const pr=ca.filter(r=>r.status==='proposed_abolish');
+ const yrs=yrange([...Object.keys(AN.created_by_year||{}),...Object.keys(AN.abolished_by_year||{})]);
+ el.innerHTML=`<div class="card"><h2>Classes created and abolished, by year</h2><div id="cachart"></div>${legend(['new_class','abolish'])}<p class="muted small">Created = a "new class" action in a final notice, or a series page whose last action is Add/New (dated by the current spec date). Abolished = a final deletion notice.</p></div>
+ <div class="grid2"><div class="card"><h2>Abolished (${ab.length})</h2><div class="tw scroll"><table>${'<tr><th>Date</th><th>Code</th><th>Class</th><th>Family</th><th>Successor</th></tr>'+ab.map(r=>`<tr><td>${r.abolished_date}</td><td>${esc(r.class_code)}</td><td>${esc(r.class_title||'—')}</td><td class="small">${esc(r.job_family)}</td><td class="small">${(r.successor_codes||[]).map((c,i)=>esc(c+' '+(r.successor_titles[i]||''))).join('<br>')}</td></tr>`).join('')}</table></div></div>
+ <div class="card"><h2>Created (${cr.length})</h2><div class="tw scroll"><table>${'<tr><th>Date</th><th>Code</th><th>Class</th><th>Family</th><th>Evidence</th></tr>'+cr.map(r=>`<tr><td>${r.created_date}</td><td>${esc(r.class_code)}</td><td>${esc(r.class_title||'—')}</td><td class="small">${esc(r.job_family)}</td><td class="small">${esc(r.created_evidence)}</td></tr>`).join('')}</table></div>
+ <h3>Proposed for deletion, not yet final (${pr.length})</h3><p class="small">${pr.map(r=>`<span class="chip">${esc(r.class_code)} ${esc(r.class_title||'')}</span>`).join(' ')||'none'}</p></div></div>`;
+ stackBars($('#cachart'),yrs,['new_class','abolish'],y=>({new_class:(AN.created_by_year||{})[y]||0,abolish:(AN.abolished_by_year||{})[y]||0}),actColor,a=>ACT[a][0])};
+
+// ---------- titles
+R.titles=function(){const el=$('#t-titles');const tc=D.title_changes;const pats=AN.title_change_patterns_final||{};
+ el.innerHTML=`<div class="card"><h2>Title-change and consolidation patterns (final notices)</h2><p class="small">${Object.entries(pats).map(([k,v])=>`<span class="chip">${esc(k.replace(/_/g,' '))}: ${v}</span>`).join(' ')}</p>
+ <h3>Largest consolidation targets</h3><p class="small">${(AN.top_consolidation_targets||[]).map(r=>`<span class="chip">${esc(r.to_code)} ${esc(r.to_title||'')} ← ${r.n_from_classes} classes</span>`).join(' ')||'none'}</p>
+ <div class="tw scroll"><table id="tctbl"></table></div></div>`;
+ sortable($('#tctbl'),tc,[{l:'Date',v:r=>r.event_date},{l:'CSN',n:1,v:r=>r.csn},{l:'From',v:r=>r.from_code},{l:'To',v:r=>r.to_code},{l:'Pattern',v:r=>r.pattern},{l:'Family',v:r=>r.job_family}],r=>`<tr><td>${r.event_date}</td><td class="n"><a href="${CSN(r.csn)}" rel="noopener">${r.csn}</a></td><td>${esc(r.from_code)} ${esc(r.from_title||'')}</td><td>${r.to_code?esc(r.to_code+' '+(r.to_title||'')):'(same code)'}</td><td class="small">${esc((r.pattern||'').replace(/_/g,' '))}</td><td class="small">${esc(r.job_family)}</td></tr>`)};
+
+// ---------- alignment
+R.align=function(){const el=$('#t-align');const rows=D.alignment.filter(r=>r.national_change_index!=null);const sp=AN.class_level_spearman||{};
+ el.innerHTML=`<div class="card"><h2>Does SUCSS churn follow national task and technology change?</h2><p class="muted small">x = national change index for the family (mean percentile of O*NET 31.0 hot-technology share, emerging-task rate, AEI observed AI exposure and — from the job_evolution panel — O*NET task churn across releases 2016–2026, over classes with an unreviewed O*NET candidate). y = share of the family's classes with any SUCSS notice, revision or abolishment in the last 5 years. Quadrant lines at the median family.</p><div id="sc"></div>
+ <p class="small">Class-level Spearman ρ vs years since last revision (negative = more national change goes with more recent revision): ${Object.entries(sp).map(([k,v])=>`<span class="chip">${esc(k)}: ${v?v.rho:'—'} (n=${v?v.n:0})</span>`).join(' ')}</p></div>
+ <div class="card"><div class="tw"><table id="altbl"></table></div></div>`;
+ const host=$('#sc');const W=Math.max(320,host.clientWidth||800),H=360,m={l:44,r:16,t:12,b:36};const iw=W-m.l-m.r,ih=H-m.t-m.b;const ymax=Math.min(1,Math.ceil(Math.max(.1,...rows.map(r=>r.share_any_churn_last_5y||0))*10+0.5)/10);
+ const X=v=>m.l+iw*v,Y=v=>m.t+ih-ih*v/ymax;const med=a=>{const s=a.slice().sort((x,y)=>x-y);return s[Math.floor(s.length/2)]};const mx=med(rows.map(r=>r.national_change_index)),my=med(rows.map(r=>r.share_any_churn_last_5y));
+ let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="scatter of national change vs local churn">`;
+ for(let i=0;i<=4;i++){const v=ymax*i/4;s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--grid)"/><text x="${m.l-4}" y="${Y(v)+3}" text-anchor="end">${Math.round(100*v)}%</text>`;s+=`<text x="${X(i/4)}" y="${H-18}" text-anchor="middle">${(i/4).toFixed(2)}</text>`}
+ s+=`<line x1="${X(mx)}" x2="${X(mx)}" y1="${m.t}" y2="${m.t+ih}" stroke="var(--muted)" stroke-dasharray="3 3"/><line x1="${m.l}" x2="${W-m.r}" y1="${Y(my)}" y2="${Y(my)}" stroke="var(--muted)" stroke-dasharray="3 3"/>`;
+ s+=`<text x="${W-m.r}" y="${m.t+ih-4}" text-anchor="end" style="font-size:10px">↘ national change, local quiet</text><text x="${m.l+4}" y="${m.t+ih-4}" style="font-size:10px">↙ both quiet</text><text x="${(m.l+W)/2}" y="${H-3}" text-anchor="middle">national change index →</text>`;
+ const placed=[];rows.slice().sort((a,b)=>b.n_active-a.n_active).forEach(r=>{const x=X(r.national_change_index),y=Y(r.share_any_churn_last_5y||0),rad=4+Math.sqrt(r.n_active||1)/2;s+=`<circle cx="${x}" cy="${y}" r="${rad}" fill="var(--a-revise)" fill-opacity=".75" stroke="var(--panel)" stroke-width="2" data-t="<b>${esc(r.job_family)}</b><br>national index ${r.national_change_index}<br>any churn last 5y ${(100*r.share_any_churn_last_5y).toFixed(1)}%<br>${r.n_active} active, ${r.n_abolished} abolished, median spec age ${r.median_spec_age_years} y"/>`;
+  const lab=r.job_family.split(/,| &/)[0];const lx=x+rad+3,ly=y+4,lw2=lab.length*6;if(lx+lw2<W&&!placed.some(p=>Math.abs(p[1]-ly)<12&&lx<p[0]+p[2]&&p[0]<lx+lw2)){placed.push([lx,ly,lw2]);s+=`<text class="ink" x="${lx}" y="${ly}" style="font-size:10.5px">${esc(lab)}</text>`}});
+ host.innerHTML=s+'</svg>';host.querySelectorAll('[data-t]').forEach(r=>{r.onmousemove=e=>showTip(e,r.dataset.t);r.onmouseleave=hideTip});
+ sortable($('#altbl'),D.alignment,[{l:'Family',v:r=>r.job_family},{l:'Active',n:1,v:r=>r.n_active},{l:'Abolished',n:1,v:r=>r.n_abolished},{l:'Revised ≤5y',n:1,v:r=>r.share_revised_last_5y},{l:'Median age',n:1,v:r=>r.median_spec_age_years},{l:'Hot-tech share',n:1,v:r=>r.mean_hot_tech_share},{l:'Emerging-task rate',n:1,v:r=>r.mean_emerging_task_rate},{l:'AEI exposure',n:1,v:r=>r.mean_aei_exposure},{l:'Alignment',v:r=>r.alignment}],
+ r=>`<tr><td>${esc(r.job_family)}</td><td class="n">${r.n_active}</td><td class="n">${r.n_abolished}</td><td class="n">${r.share_revised_last_5y==null?'—':fmt(100*r.share_revised_last_5y,0)+'%'}</td><td class="n">${fmt(r.median_spec_age_years,1)}</td><td class="n">${fmt(r.mean_hot_tech_share,3)}</td><td class="n">${fmt(r.mean_emerging_task_rate,3)}</td><td class="n">${fmt(r.mean_aei_exposure,3)}</td><td class="small">${esc((r.alignment||'').replace(/_/g,' '))}</td></tr>`)};
+
+// ---------- risk
+R.risk=function(){const el=$('#t-risk');const bo=M.backtest_overview||{};const pred=M.mode==='predictive_with_temporal_backtest';
+ el.innerHTML=`<div class="card"><h2>Which classes are likely to change in the next ${M.horizon_years} years?</h2>
+ <p class="small">Mode: <b>${pred?'predictive model with temporal backtest':'descriptive risk index'}</b> — ${esc(M.mode_reason)}. Ranking by <code>${esc(M.ranking_key)}</code>. ${pred?'':'The index is 55% spec-age percentile, 25% national change percentile, 20% recent notice activity in the class or its series; it is an ordering, not a probability.'}</p>
+ <h3>Out-of-time backtest</h3><div class="tw"><table><tr><th>Cutoff</th><th class="n">Classes</th><th class="n">Changed in 3 y</th><th class="n">AUC model</th><th class="n">AUC age only</th><th class="n">AUC family rate</th><th class="n">Prec@top10% model</th><th class="n">Prec@top10% age</th></tr>${(D.backtest||[]).map(b=>`<tr><td>${b.cutoff}</td><td class="n">${b.n}</td><td class="n">${b.positives} (${b.base_rate==null?'—':(100*b.base_rate).toFixed(0)+'%'})</td><td class="n">${fmt(b.auc_model,3)}</td><td class="n">${fmt(b.auc_age_only,3)}</td><td class="n">${fmt(b.auc_family_rate,3)}</td><td class="n">${fmt(b.precision_at_k_model,2)}</td><td class="n">${fmt(b.precision_at_k_age_only,2)}</td></tr>`).join('')}</table></div>
+ <p class="muted small">Mean AUC: model ${fmt(bo.mean_auc_model,3)}, age only ${fmt(bo.mean_auc_age_only,3)}, family base rate ${fmt(bo.mean_auc_family_rate,3)} over ${bo.n_cutoffs_evaluated||0} cutoffs. Each cutoff is trained only on earlier cutoffs whose 3-year label windows had closed.</p>
+ <h3>Largest standardized coefficients (final model)</h3><p class="small">${(M.coefficients||[]).slice(0,10).map(c=>`<span class="chip">${esc(c.feature)} ${c.std_coef>0?'+':''}${c.std_coef}</span>`).join(' ')||'—'}</p></div>
+ <div class="card"><h2>Top 60 ranked classes, ${esc((D.risk[0]||{}).horizon||'')}</h2><p class="muted small">Full ranking: class_evolution/outputs/revision_risk.csv.</p><div class="tw"><table id="rtbl"></table></div></div>`;
+ sortable($('#rtbl'),D.risk.slice(0,60),[{l:'#',n:1,v:r=>r.rank},{l:'Class',v:r=>r.class_title},{l:'Family',v:r=>r.job_family},{l:'Age',n:1,v:r=>r.years_since_last_revision},{l:'P(change, 3y)',n:1,v:r=>r.model_prob_3y},{l:'Risk index',n:1,v:r=>r.risk_index},{l:'Signals',v:r=>r.open_process}],
+ r=>`<tr><td class="n">${r.rank}</td><td>${esc(r.class_code)} ${esc(r.class_title)}</td><td class="small">${esc(r.job_family)}</td><td class="n">${fmt(r.years_since_last_revision,1)}</td><td class="n">${r.model_prob_3y==null?'—':fmt(100*r.model_prob_3y,0)+'%'}</td><td class="n">${fmt(r.risk_index,1)}</td><td>${r.open_process?`<span class="chip">open ${esc(r.open_process_stage)}</span>`:''}${r.series_peer_activity_2y?'<span class="chip">series active</span>':''}${r.recent_rescission?'<span class="chip">proposal rescinded</span>':''}</td></tr>`)};
+
+// ---------- method
+R.method=function(){$('#t-method').innerHTML=`<div class="card"><h2>Method</h2><ul class="small">
+<li><b>Acquisition.</b> robots.txt disallows the notice index pages (/csn.aspx, /csn_detail.aspx), so the index was not used. PDFs at /documents/csn/&lt;n&gt;.pdf (not disallowed) were enumerated by number, sequentially, 1.5 s apart, with a generic research User-Agent; every response's SHA-256 is recorded. Requests: ${fmt(A.csn_numbers_requested)}; PDFs: ${fmt(A.pdfs)}.</li>
+<li><b>Parsing.</b> Text via poppler pdftotext (layout mode). Memo header gives date and subject; stage from subject (proposal, preliminary, final, rescission, meeting); action from SUCSS action tables (REVISE / NEW / DELETE / CIT …, matched row by row to the class code, with "Revised/New Class Title" codes recorded as successors) or from the subject. Codes cited as "not affected by this notice" are kept as context, not events. Scanned PDFs with no text layer (${fmt(P.by_kind.no_text_layer||0)}) are not OCRed.</li>
+<li><b>Series pages</b> add each class's current spec and exam effective dates and last action. They only show the latest revision.</li>
+<li><b>Job families</b> are transparent keyword rules on class titles with the occupational line as a fallback (families.py).</li>
+<li><b>National context.</b> O*NET 31.0 technology skills (hot-technology flag), emerging tasks, task statements; the job_evolution workstream's O*NET release-to-release panel (task churn and hot-technology additions, releases 13.0–31.0, used point-in-time in the backtest); Anthropic Economic Index observed exposure and task usage — linked through the <b>unreviewed</b> top-1 duty-based O*NET candidate from sucss_mapping (abstentions excluded).</li>
+<li><b>Licensing.</b> SUCSS documents are not redistributed. The repository keeps CSN numbers, URLs, hashes, dates, class codes and titles, categorical labels, counts and derived features only; the PDFs and extracted text stay in the gitignored lake.</li></ul></div>`};
+
+let start='archive';try{start=localStorage.getItem('ce-tab')||start}catch(e){}if(!R[start])start='archive';go(start);
+</script>
+</body></html>

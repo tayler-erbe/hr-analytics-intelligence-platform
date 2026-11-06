@@ -1,0 +1,187 @@
+occupational_line,occupational_line_name,year,n_classes_changed,line_classes_2026
+01,Professional,2005,1,132
+01,Professional,2006,1,132
+01,Professional,2007,23,132
+01,Professional,2008,6,132
+01,Professional,2009,7,132
+01,Professional,2010,12,132
+01,Professional,2011,29,132
+01,Professional,2012,10,132
+01,Professional,2013,8,132
+01,Professional,2015,7,132
+01,Professional,2016,7,132
+01,Professional,2018,3,132
+01,Professional,2019,10,132
+01,Professional,2020,8,132
+01,Professional,2021,8,132
+01,Professional,2022,32,132
+01,Professional,2023,3,132
+01,Professional,2026,1,132
+02,Semi-Professional,1989,2,213
+02,Semi-Professional,1992,1,213
+02,Semi-Professional,2001,1,213
+02,Semi-Professional,2004,3,213
+02,Semi-Professional,2005,5,213
+02,Semi-Professional,2006,3,213
+02,Semi-Professional,2007,6,213
+02,Semi-Professional,2008,12,213
+02,Semi-Professional,2009,19,213
+02,Semi-Professional,2010,8,213
+02,Semi-Professional,2011,22,213
+02,Semi-Professional,2012,6,213
+02,Semi-Professional,2013,8,213
+02,Semi-Professional,2014,19,213
+02,Semi-Professional,2015,11,213
+02,Semi-Professional,2016,4,213
+02,Semi-Professional,2017,5,213
+02,Semi-Professional,2018,10,213
+02,Semi-Professional,2019,5,213
+02,Semi-Professional,2020,15,213
+02,Semi-Professional,2021,4,213
+02,Semi-Professional,2022,104,213
+02,Semi-Professional,2023,2,213
+02,Semi-Professional,2024,8,213
+02,Semi-Professional,2025,1,213
+02,Semi-Professional,2026,6,213
+03,Managerial,2005,7,150
+03,Managerial,2007,2,150
+03,Managerial,2008,10,150
+03,Managerial,2009,6,150
+03,Managerial,2010,5,150
+03,Managerial,2011,7,150
+03,Managerial,2012,10,150
+03,Managerial,2013,6,150
+03,Managerial,2014,4,150
+03,Managerial,2015,6,150
+03,Managerial,2016,4,150
+03,Managerial,2017,1,150
+03,Managerial,2018,3,150
+03,Managerial,2019,6,150
+03,Managerial,2020,11,150
+03,Managerial,2021,4,150
+03,Managerial,2022,83,150
+03,Managerial,2023,1,150
+03,Managerial,2025,1,150
+03,Managerial,2026,3,150
+04,Clerical,1977,1,88
+04,Clerical,1984,1,88
+04,Clerical,1988,2,88
+04,Clerical,1996,1,88
+04,Clerical,1997,1,88
+04,Clerical,2008,6,88
+04,Clerical,2011,1,88
+04,Clerical,2012,4,88
+04,Clerical,2015,2,88
+04,Clerical,2017,1,88
+04,Clerical,2019,5,88
+04,Clerical,2020,5,88
+04,Clerical,2021,4,88
+04,Clerical,2022,84,88
+05,Stores,2013,4,10
+05,Stores,2022,9,10
+06,Aeronautical,2022,10,10
+07,Agricultural,2010,5,13
+07,Agricultural,2021,1,13
+07,Agricultural,2022,10,13
+08,Custodial Services,1992,1,12
+08,Custodial Services,2007,4,12
+08,Custodial Services,2014,2,12
+08,Custodial Services,2017,4,12
+08,Custodial Services,2022,8,12
+08,Custodial Services,2024,1,12
+09,Domestic Services,2021,1,3
+09,Domestic Services,2022,3,3
+10,Food Services,2016,2,18
+10,Food Services,2017,1,18
+10,Food Services,2019,1,18
+10,Food Services,2022,18,18
+11,"Power, Heat, and Light Services",1987,2,19
+11,"Power, Heat, and Light Services",2007,1,19
+11,"Power, Heat, and Light Services",2013,4,19
+11,"Power, Heat, and Light Services",2022,15,19
+12,Medical Services,2004,2,51
+12,Medical Services,2005,2,51
+12,Medical Services,2007,7,51
+12,Medical Services,2008,4,51
+12,Medical Services,2009,12,51
+12,Medical Services,2011,5,51
+12,Medical Services,2012,2,51
+12,Medical Services,2013,2,51
+12,Medical Services,2015,5,51
+12,Medical Services,2016,4,51
+12,Medical Services,2017,2,51
+12,Medical Services,2018,1,51
+12,Medical Services,2022,26,51
+12,Medical Services,2023,2,51
+12,Medical Services,2024,1,51
+12,Medical Services,2025,2,51
+13,Protective Services,2008,2,20
+13,Protective Services,2012,1,20
+13,Protective Services,2013,2,20
+13,Protective Services,2015,2,20
+13,Protective Services,2016,4,20
+13,Protective Services,2018,1,20
+13,Protective Services,2019,5,20
+13,Protective Services,2020,1,20
+13,Protective Services,2022,11,20
+13,Protective Services,2026,2,20
+14,Skilled Trades,1990,1,103
+14,Skilled Trades,1992,5,103
+14,Skilled Trades,1994,2,103
+14,Skilled Trades,2004,1,103
+14,Skilled Trades,2005,4,103
+14,Skilled Trades,2007,6,103
+14,Skilled Trades,2008,4,103
+14,Skilled Trades,2009,5,103
+14,Skilled Trades,2010,9,103
+14,Skilled Trades,2011,5,103
+14,Skilled Trades,2012,1,103
+14,Skilled Trades,2013,7,103
+14,Skilled Trades,2014,4,103
+14,Skilled Trades,2015,4,103
+14,Skilled Trades,2016,15,103
+14,Skilled Trades,2017,5,103
+14,Skilled Trades,2019,3,103
+14,Skilled Trades,2021,2,103
+14,Skilled Trades,2022,72,103
+14,Skilled Trades,2023,3,103
+14,Skilled Trades,2024,5,103
+14,Skilled Trades,2025,2,103
+14,Skilled Trades,2026,2,103
+15,Semi-Skilled Trades,1985,1,37
+15,Semi-Skilled Trades,1997,1,37
+15,Semi-Skilled Trades,2005,1,37
+15,Semi-Skilled Trades,2010,3,37
+15,Semi-Skilled Trades,2012,4,37
+15,Semi-Skilled Trades,2013,1,37
+15,Semi-Skilled Trades,2015,2,37
+15,Semi-Skilled Trades,2016,2,37
+15,Semi-Skilled Trades,2018,1,37
+15,Semi-Skilled Trades,2021,1,37
+15,Semi-Skilled Trades,2022,33,37
+15,Semi-Skilled Trades,2023,1,37
+15,Semi-Skilled Trades,2024,1,37
+15,Semi-Skilled Trades,2025,1,37
+15,Semi-Skilled Trades,2026,1,37
+16,Unskilled Trades,2022,2,2
+??,,2005,14,0
+??,,2006,7,0
+??,,2007,7,0
+??,,2008,5,0
+??,,2009,9,0
+??,,2010,17,0
+??,,2011,12,0
+??,,2012,30,0
+??,,2013,28,0
+??,,2014,2,0
+??,,2015,38,0
+??,,2016,20,0
+??,,2017,9,0
+??,,2018,1,0
+??,,2019,8,0
+??,,2020,8,0
+??,,2021,10,0
+??,,2022,43,0
+??,,2023,52,0
+??,,2024,45,0
+??,,2026,12,0
