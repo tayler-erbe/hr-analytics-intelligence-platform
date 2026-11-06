@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workforce Evidence Portal</title>
+<meta name="description" content="Offline index of every demo page in the HR workforce analytics platform-evaluation workspace, with data class and key caveat.">
+<style>
+:root{
+  --bg:#f7f7f5;--panel:#ffffff;--ink:#1d2329;--muted:#5b6670;--line:#dcdfe2;
+  --accent:#13294b;--accent-ink:#ffffff;--link:#1f4e8c;
+  --pub-bg:#e3f1e6;--pub-ink:#1d5a2c;--syn-bg:#fdeedd;--syn-ink:#8a4b0f;
+  --warn-bg:#fff8e6;--warn-line:#e6c36a;--code-bg:#eef0f2;--focus:#e84a27;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12161a;--panel:#1b2127;--ink:#e6e9ec;--muted:#a3adb6;--line:#2f3841;
+  --accent:#9cb8e6;--accent-ink:#12161a;--link:#9cc3ff;
+  --pub-bg:#1f3a27;--pub-ink:#a6e3b5;--syn-bg:#43301a;--syn-ink:#f6c88f;
+  --warn-bg:#2c2617;--warn-line:#7a6430;--code-bg:#232a31;--focus:#ff8a65;
+}}
+:root[data-theme="dark"]{
+  --bg:#12161a;--panel:#1b2127;--ink:#e6e9ec;--muted:#a3adb6;--line:#2f3841;
+  --accent:#9cb8e6;--accent-ink:#12161a;--link:#9cc3ff;
+  --pub-bg:#1f3a27;--pub-ink:#a6e3b5;--syn-bg:#43301a;--syn-ink:#f6c88f;
+  --warn-bg:#2c2617;--warn-line:#7a6430;--code-bg:#232a31;--focus:#ff8a65;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1040px;margin:0 auto;padding:28px 16px 64px}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:8px;background:var(--panel);padding:6px 10px}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+h1{font-size:1.7rem;line-height:1.2;margin:0 0 6px;color:var(--accent)}
+h2{font-size:1.2rem;margin:36px 0 10px}
+h3{font-size:1.05rem;margin:0}
+.lede{color:var(--muted);margin:0 0 16px;max-width:70ch}
+.theme{font:inherit;font-size:.9rem;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.notice{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:10px;padding:12px 14px;margin:8px 0 4px;font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;list-style:none;padding:0;margin:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.card h3 a{text-decoration:none}.card h3 a:hover{text-decoration:underline}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.badge{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;border-radius:999px;padding:2px 9px}
+.b-public{background:var(--pub-bg);color:var(--pub-ink)}
+.b-synthetic{background:var(--syn-bg);color:var(--syn-ink)}
+.path{font:.8rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--muted);word-break:break-all}
+.desc{margin:0}
+.caveat{margin:0;font-size:.9rem;color:var(--muted);border-left:3px solid var(--warn-line);padding-left:10px}
+.caveat strong{color:var(--ink)}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:14px;overflow-x:auto;font:.8rem/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:0}
+table{border-collapse:collapse;width:100%;font-size:.92rem;background:var(--panel)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600}
+tr:last-child td{border-bottom:0}
+footer{margin-top:40px;color:var(--muted);font-size:.85rem}
+ul.plain{padding-left:20px;margin:0}
+</style>
+</head>
+<body>
+<a class="skip" href="#demos">Skip to demo pages</a>
+<main>
+<header>
+  <div>
+    <h1>Workforce Evidence Portal</h1>
+    <p class="lede">Every offline demo page in this workspace, with its data class and its main caveat. All pages open from disk with no network calls. Read the full project map in <a href="../ARCHITECTURE.md">ARCHITECTURE.md</a>.</p>
+  </div>
+  <button class="theme" type="button" id="themeBtn" aria-label="Switch colour theme">Theme: auto</button>
+</header>
+
+<p class="notice" role="note"><strong>No university employee data appears on any page.</strong> Public pages use published open data (O*NET, IPEDS, QCEW, QWI, the SUCSS catalog, the Anthropic Economic Index). Synthetic pages use invented or generated records. Nothing here scores an individual or forecasts job loss.</p>
+
+<h2 id="demos">Demo pages</h2>
+<ul class="grid">
+  <li class="card">
+    <h3><a href="lake/external_evidence.html">External workforce evidence</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">lake/external_evidence.html</span></div>
+    <p class="desc">Peer pay, higher-ed employment, Illinois turnover flows and task-level AI-usage evidence from the lake's gold views.</p>
+    <p class="caveat"><strong>Caveat:</strong> the peer panel is a proposal, not an approved HR peer group. Women-to-men pay ratios are unadjusted and are not a pay-equity finding.</p>
+  </li>
+  <li class="card">
+    <h3><a href="graph/workforce_graph_explorer.html">Workforce graph explorer</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">graph/workforce_graph_explorer.html</span></div>
+    <p class="desc">The role ontology: SUCSS classes, O*NET occupations, tasks, skills, technology, institutions and labor-market facts, with provenance on every link.</p>
+    <p class="caveat"><strong>Caveat:</strong> SUCSS-to-O*NET links are unreviewed lexical title suggestions, not mappings.</p>
+  </li>
+  <li class="card">
+    <h3><a href="reskilling/role_evolution_reskilling.html">AI reskilling explorer</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">reskilling/role_evolution_reskilling.html</span></div>
+    <p class="desc">For each role: which tasks show observed AI use, which skills hold up, adjacent roles with skill gaps, and AI-literacy targets.</p>
+    <p class="caveat"><strong>Caveat:</strong> role grain only. Observed AI usage is evidence about tasks, not a job-loss forecast. SUCSS mappings are unreviewed.</p>
+  </li>
+  <li class="card">
+    <h3><a href="workforce_sim/scenario_planner.html">Workforce scenario planner</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">workforce_sim/scenario_planner.html</span></div>
+    <p class="desc">Monte Carlo scenarios over five years (retirement waves, hiring freezes, reskilling, AI capacity) with P10/P50/P90 ranges.</p>
+    <p class="caveat"><strong>Caveat:</strong> synthetic population calibrated to UIUC's public IPEDS total (12,905) and QWI hazards. Not a prediction about UIUC staff; the AI lever is an assumption.</p>
+  </li>
+  <li class="card">
+    <h3><a href="demo/role-evolution.html">Role evolution lab (Demo University IT)</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">demo/role-evolution.html</span></div>
+    <p class="desc">A fictional enterprise IT organization with role histories, skills, tools and evidence-linked development proposals.</p>
+    <p class="caveat"><strong>Caveat:</strong> every person, history and recommendation is fictional. Proposals are deterministic, not live AI-agent responses.</p>
+  </li>
+</ul>
+
+<h2 id="arch">Architecture at a glance</h2>
+<pre tabindex="0" role="img" aria-label="Layered architecture: public, synthetic and internal sources flow to raw, silver, contract, gold and semantic layers, then the knowledge graph, applications and evaluation.">
+SOURCES   public: O*NET · IPEDS · QCEW · QWI · Indeed · AEI · SUCSS
+          synthetic: benchmark · Demo IT org · sim population
+          internal: EDW history, JDX, surveys  [not populated; approved machines only]
+   │
+RAW       data/lake/raw        byte-for-byte, SHA-256 manifest
+SILVER    80 typed Parquet tables
+CONTRACT  23 tables, fixed grains, source_id + vintage  ← one input for all platforms
+GOLD /    11 portable SQL views
+SEMANTIC  one metric spec → DuckDB · Snowflake · Databricks
+GRAPH     122,874 nodes · 399,444 edges · review_status on every edge
+   │
+APPS      evidence page · graph explorer · reskilling · scenario planner · demo lab
+          governed metrics assistant (answer | clarify | abstain)
+   │
+EVALUATION  rubric v1.0 · benchmark v1.0 · Snowflake / Databricks kits · custom stack
+</pre>
+
+<h2 id="status">What is real and what is not yet built</h2>
+<div class="tablewrap">
+<table>
+  <thead><tr><th scope="col">Area</th><th scope="col">Status</th></tr></thead>
+  <tbody>
+    <tr><td>Public data lake, graph, reskilling map, evidence page</td><td>Built or prototype, on public data</td></tr>
+    <tr><td>Benchmark, Demo IT lab, scenario planner</td><td>Built or prototype, on synthetic data</td></tr>
+    <tr><td>Snowflake and Databricks kits</td><td>Written, not run in any vendor account. No platform has a score</td></tr>
+    <tr><td>SUCSS-to-O*NET mappings</td><td>Unreviewed suggestions</td></tr>
+    <tr><td>BLS OEWS / Projections / JOLTS; Census ACS</td><td>Not loaded: BLS needs a contact User-Agent; Census needs an API key</td></tr>
+    <tr><td>AI adoption scorecard, proficiency rubric, use-case registry, survey themes, SUCSS spec mapping, peer benchmarks, policy assistant</td><td>In progress (no demo page yet)</td></tr>
+    <tr><td>ERP readiness, sponsored funding, faculty pipeline</td><td>Not started</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="rules">Ground rules</h2>
+<ul class="plain">
+  <li>Only public data is kept in Git. Internal HR records stay on approved machines.</li>
+  <li>No individual scoring. Outputs are at role, unit or cohort level (Illinois HB 3773).</li>
+  <li>Restricted text goes only to local or enterprise-approved models.</li>
+  <li>No model grades another model. Scores come from exact comparison or human review.</li>
+</ul>
+
+<footer>
+  <p>Generated 2026-11-06 for the platform-evaluation workspace. Rebuild the pages with the run order in <a href="../ARCHITECTURE.md#8-run-order">ARCHITECTURE.md §8</a>.</p>
+</footer>
+</main>
+<script>
+(function(){
+  var btn=document.getElementById('themeBtn'),root=document.documentElement,modes=['auto','light','dark'],i=0;
+  try{var s=localStorage.getItem('portal-theme');if(s&&modes.indexOf(s)>-1)i=modes.indexOf(s);}catch(e){}
+  function apply(){var m=modes[i];if(m==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',m);btn.textContent='Theme: '+m;}
+  apply();
+  btn.addEventListener('click',function(){i=(i+1)%modes.length;apply();try{localStorage.setItem('portal-theme',modes[i]);}catch(e){}});
+})();
+</script>
+</body>
+</html>
