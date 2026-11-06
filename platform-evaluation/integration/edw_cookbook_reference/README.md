@@ -8,6 +8,7 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 |---|---:|---|
 | T_JOB_DETL_HIST | 79 | Verified 2026-11-06 |
 | T_EMPEE_HIST | 71 | Verified 2026-11-06 |
+| T_EMPEE_HIST_5 | ? | Exists (secured; termination code, description, date); columns pending |
 | T_PERS_HIST, position history, payroll accounting detail, reference tables (org, E-Class, P-Class/job class) | — | Pending |
 
 ## Conventions confirmed by T_JOB_DETL_HIST
@@ -25,7 +26,7 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 ## Conventions confirmed by T_EMPEE_HIST
 
 - Primary key: EDW_PERS_ID + EMPEE_EFF_DT. `EMPEE_EXP_DT` inclusive, 12/31/9999 open end; `EMPEE_CUR_INFO_IND` Y/N/D; `EMPEE_POST_DT`, `EMPEE_DATA_STATUS_DESC`, `EMPEE_DATA_EXP_DT` as in job detail.
-- Termination lives here: `TERMN_REASON_CD`/`DESC` (VARCHAR2(2)), `EMPEE_TERMN_DT`. Retirement flag `EMPEE_RET_IND` is derived: 'Y' when termination reason is TR or TF, or E-Class is TR. A separate `T_EMPEE_HIST_5` table is therefore not required for separations; this repo's earlier assumption is superseded.
+- Termination lives here: `TERMN_REASON_CD`/`DESC` (VARCHAR2(2)), `EMPEE_TERMN_DT`. Retirement flag `EMPEE_RET_IND` is derived: 'Y' when termination reason is TR or TF, or E-Class is TR. `T_EMPEE_HIST_5` also exists (Cookbook comment: "THIS SECURED TABLE CONTAINS THE TERMINATION CODE, DESCRIPTION AND DATE FOR AN EMPLOYEE."); its columns are not yet transcribed. Use T_EMPEE_HIST for termination where access allows; T_EMPEE_HIST_5 is the secured source and may be what restricted roles must use.
 - `EMPEE_STATUS_CD` examples: A Active, B Leave without pay with benefits, F Leave with pay with benefits (full list still to confirm; terminated status letter not listed).
 - `EMPEE_GROUP_CD` is VARCHAR2(4) here ("higher level grouping of employee classes") but VARCHAR2(1) on job detail (first character of E-Class). Treat them as different fields.
 - Person-level rollups: `EMPEE_FTE` (sum of FTE across current active jobs) and `EMPEE_ANNL_SAL` (sum of salary, excluding job suffix CE and job number C63998, adjusted by appointment percent).
