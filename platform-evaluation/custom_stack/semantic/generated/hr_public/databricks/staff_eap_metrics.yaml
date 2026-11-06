@@ -1,0 +1,115 @@
+version: '1.1'
+comment: 'IPEDS Employees by Assigned Position (EAP), Fall snapshot. Includes total, subtotal and faculty-status rows (is_category_total
+  = true) alongside the partition rows. Grain: one row per unitid x survey_year x eapcat_code (occupation category x faculty
+  status). Generated from hr_public.yaml sha256 102bec2ac50cb4a9; status development.'
+source: hr_analytics.hr_public.ipeds_employees_by_position
+joins:
+- name: institution
+  source: hr_analytics.hr_public.ipeds_institution
+  'on': source.unitid = institution.unitid
+dimensions:
+- name: survey_year
+  expr: survey_year
+  comment: IPEDS EAP survey year = Fall snapshot year (EAP2023 = Fall 2023).
+  synonyms:
+  - survey year
+- name: unitid
+  expr: unitid
+  comment: IPEDS unit id (also used to align populations in derived ratios).
+  synonyms:
+  - unitid
+  - unit id
+- name: position_category
+  expr: position_category
+  comment: EAP position category. Non-total rows (is_category_total = false) partition the institution total exactly (lake
+    contract rule 4), so grouped rows are additive.
+  synonyms:
+  - position category
+  - position categories
+  - occupation category
+  - occupational category
+  - job category
+  - job categories
+- name: category_total_row
+  expr: is_category_total
+  comment: TRUE for published total / subtotal / faculty-status rows; FALSE rows form the exact partition.
+  synonyms:
+  - category total row
+- name: institution_name
+  expr: institution.institution_name
+  comment: Institution name as published in IPEDS HD.
+  synonyms:
+  - institution
+  - institutions
+  - college
+  - colleges
+  - university
+  - universities
+  - school
+  - schools
+  - campus
+  - campuses
+- name: state
+  expr: institution.state_abbr
+  comment: Institution state (postal abbreviation).
+  synonyms:
+  - state
+  - states
+- name: sector
+  expr: institution.sector_code
+  comment: IPEDS sector code (1 public 4-year+, 2 private nonprofit 4-year+, 3 private for-profit 4-year+, 4 public 2-year
+    ...).
+  synonyms:
+  - sector
+  - sectors
+  - control
+  - institution type
+- name: carnegie
+  expr: institution.carnegie
+  comment: Carnegie classification label as loaded (HD2024).
+  synonyms:
+  - carnegie classification
+  - carnegie class
+  - carnegie
+measures:
+- name: staff_headcount
+  expr: CASE WHEN COUNT(DISTINCT survey_year) <= 1 THEN SUM(CASE WHEN (is_category_total = FALSE) THEN total_employees END)
+    END
+  comment: 'Full-time plus part-time employees reported in IPEDS EAP for one Fall snapshot. Unit: people. Grain rule: Snapshot
+    stock. One survey year at a time. Sums only is_category_total = false rows (exact partition of the institution total);
+    never adds total/subtotal rows.'
+  synonyms:
+  - staff headcount
+  - headcount
+  - employees
+  - employee headcount
+  - staff count
+  - number of staff
+  - number of employees
+  - staff
+  - workforce
+  - employee count
+- name: full_time_staff_headcount
+  expr: CASE WHEN COUNT(DISTINCT survey_year) <= 1 THEN SUM(CASE WHEN (is_category_total = FALSE) THEN full_time END) END
+  comment: 'Full-time employees reported in IPEDS EAP for one Fall snapshot. Unit: people. Grain rule: Snapshot stock; one
+    survey year at a time; same category rules as staff_headcount.'
+  synonyms:
+  - full-time staff
+  - full time staff
+  - full-time employees
+  - full time employees
+  - full-time headcount
+  - full-time staff headcount
+  - full time staff headcount
+- name: staff_fte
+  expr: CASE WHEN COUNT(DISTINCT survey_year) <= 1 THEN SUM(CASE WHEN (is_category_total = FALSE) THEN full_time + part_time
+    / 3.0 END) END
+  comment: 'IPEDS FTE convention = full-time + one third of part-time. Not payroll FTE. Unit: FTE. Grain rule: Snapshot stock;
+    FTE is not headcount. One survey year at a time.'
+  synonyms:
+  - staff fte
+  - fte
+  - full-time equivalent
+  - full time equivalent
+  - fte staff
+  - full-time equivalent staff

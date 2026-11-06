@@ -1,0 +1,4 @@
+# Workforce graph prototype. Tested with Python 3.13, duckdb 2.0.0, pyarrow 26.0.1.
+# networkx is not needed: traversal and similarity run in DuckDB SQL.
+duckdb>=2.0
+pyarrow>=16

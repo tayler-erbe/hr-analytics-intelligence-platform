@@ -1,0 +1,205 @@
+# Semantic spec over the FROZEN synthetic benchmark v1.0 workforce fixture
+# (../../../benchmark/fixtures, read-only). It encodes the benchmark README
+# definitions so the same compiler can be checked against the approved answers:
+# 3 people, 4 appointments, 4 filled positions, 2.5 FTE (2.75 as known on
+# 2026-10-31), POS5 vacant. Definitions are approved for this fixture only.
+spec_version: 1
+model: benchmark_workforce
+label: Benchmark v1.0 synthetic workforce
+description: >
+  Bitemporal appointment fixture. Business date 2026-10-31; current knowledge
+  cutoff 2026-11-02; historical knowledge comparison 2026-10-31. Headcount,
+  appointment count, filled positions and FTE are separate metrics.
+status: fixture_only
+physical:
+  format: jsonl
+  data_dir_env: CUSTOM_STACK_BENCHMARK_DIR
+  default_data_dir: ../../../benchmark/fixtures
+targets:
+  snowflake: {database: HR_ANALYTICS, schema: BENCHMARK_V1, semantic_view: WORKFORCE_METRICS}
+  databricks: {catalog: hr_analytics, schema: benchmark_v1}
+
+abstain_rules:
+  - id: obsolescence
+    pattern: '\b(obsolete|obsolescence|becoming obsolete|eliminated|replaced by ai)\b'
+    reason: Obsolescence cannot be inferred from title age or the synthetic role history.
+  - id: causal
+    pattern: '\b(why|cause|because|reason)\b'
+    reason: Causal explanations are not computable from governed metrics.
+  - id: individual
+    pattern: '\b(who|whose|named|names|person id|employee id|individual)\b'
+    reason: Person-level detail is outside the aggregate metric layer (role-based detail access is a separate test).
+  - id: instruction_injection
+    pattern: '\b(ignore (all |previous |prior )?instructions|system prompt|export|email|drop table)\b'
+    reason: Request contains instructions or actions, not an analytical question.
+
+ignorable_words: [do, we, our, have, has, there, show, me, list, give, tell, what, is, are, was, were, the, a, an,
+  of, in, at, on, for, to, by, per, with, how, many, much, number, total, count, all, and, across, each, which,
+  as, people, business, date, today, now, organization, org, overall, currently, current, effective, did, does,
+  positions, position, department, departments]
+
+entities:
+  appointment_segment:
+    table: workforce_appointment_effective
+    physical_tables: [appointments]
+    description: Appointment segments effective on business date 2026-10-31, after selecting the latest revision known at each knowledge cutoff.
+    sql: |
+      WITH bases AS (
+        SELECT 'current' AS knowledge_basis, DATE '2026-11-02' AS knowledge_cutoff
+        UNION ALL
+        SELECT 'as_known_2026_10_31' AS knowledge_basis, DATE '2026-10-31' AS knowledge_cutoff
+      ),
+      ranked AS (
+        SELECT b.knowledge_basis, a.appointment_id, a.person_id, a.position_id, a.department_id,
+               a.fte, a.title, a.effective_from, a.effective_to,
+               ROW_NUMBER() OVER (
+                 PARTITION BY b.knowledge_basis, a.appointment_id, a.effective_from
+                 ORDER BY CAST(a.recorded_on AS DATE) DESC, a.revision DESC) AS revision_rank
+        FROM appointments a
+        JOIN bases b ON CAST(a.recorded_on AS DATE) <= b.knowledge_cutoff
+      )
+      SELECT knowledge_basis, appointment_id, person_id, position_id, department_id, fte, title
+      FROM ranked
+      WHERE revision_rank = 1
+        AND CAST(effective_from AS DATE) <= DATE '2026-10-31'
+        AND (effective_to IS NULL OR CAST(effective_to AS DATE) > DATE '2026-10-31')
+    grain: one row per knowledge_basis x effective appointment segment
+    primary_key: [knowledge_basis, appointment_id]
+    columns:
+      knowledge_basis: string
+      appointment_id: string
+      person_id: string
+      position_id: string
+      department_id: string
+      fte: number
+      title: string
+    dimensions:
+      department:
+        expr: department_id
+        type: string
+        description: The appointment's effective department assignment (not the position's home department).
+        synonyms: [department, departments, unit, units, dept]
+        values:
+          T1: [t1, department t1]
+          T2: [t2, department t2]
+      title:
+        expr: title
+        type: string
+        description: Working title on the appointment segment.
+        synonyms: [title, titles, job title]
+      knowledge_basis:
+        expr: knowledge_basis
+        type: string
+        description: "'current' = known by 2026-11-02; 'as_known_2026_10_31' = known by 2026-10-31 (before AP4's late correction)."
+        synonyms: [knowledge basis]
+        values:
+          as_known_2026_10_31: [as known on october 31, as known on 2026-10-31, before the correction, before the late correction, earlier-known, earlier known, as originally known, as of october 31 knowledge]
+          current: [current knowledge, after the correction]
+    constrained_dimensions:
+      - dimension: knowledge_basis
+        default_value: current
+        when_unconstrained: default
+        reason: The two knowledge bases are alternative views of the same segments; never sum them.
+
+  position_status:
+    table: workforce_position_status
+    physical_tables: [positions]
+    description: Authorized positions and whether any current-knowledge appointment segment fills them on 2026-10-31.
+    sql: |
+      SELECT p.position_id, p.department_id,
+             CASE WHEN EXISTS (
+               SELECT 1 FROM workforce_appointment_effective a
+               WHERE a.position_id = p.position_id AND a.knowledge_basis = 'current'
+             ) THEN 'filled' ELSE 'vacant' END AS status
+      FROM positions p
+    depends_on: [appointment_segment]
+    grain: one row per authorized position
+    primary_key: [position_id]
+    columns: {position_id: string, department_id: string, status: string}
+    dimensions:
+      position_home_department:
+        expr: department_id
+        type: string
+        description: Position's static home department (differs from effective assignment).
+        synonyms: [home department, position home department]
+
+relationships: []
+
+# Terms that sound like one metric but mean several governed ones: always ask.
+ambiguous_terms:
+  employees:
+    options: [wf_headcount, wf_appointment_count, wf_fte]
+    question: "'Employees' can mean distinct people (headcount), appointments, or FTE. Which do you want?"
+  staff:
+    options: [wf_headcount, wf_appointment_count, wf_fte]
+    question: "'Staff' can mean distinct people (headcount), appointments, or FTE. Which do you want?"
+
+metrics:
+  wf_headcount:
+    label: Headcount (distinct people)
+    type: simple
+    entity: appointment_segment
+    agg: count_distinct
+    expr: person_id
+    additivity: non_additive
+    unit: people
+    description: Distinct occupied person IDs among effective appointment segments.
+    grain_rule: Count distinct; department headcounts are NOT additive when people span units.
+    synonyms: [headcount, head count, distinct people, number of people]
+  wf_appointment_count:
+    label: Appointment count
+    type: simple
+    entity: appointment_segment
+    agg: count
+    expr: '*'
+    additivity: additive
+    unit: appointments
+    description: Effective appointment segments.
+    grain_rule: Additive; one person can hold several appointments.
+    synonyms: [appointments, appointment count, number of appointments]
+  wf_fte:
+    label: Appointment FTE
+    type: simple
+    entity: appointment_segment
+    agg: sum
+    expr: fte
+    additivity: additive
+    unit: FTE
+    description: Sum of appointment FTE on effective segments.
+    grain_rule: Additive across appointments; not a person count.
+    synonyms: [fte, full-time equivalent, full time equivalent, appointment fte]
+  wf_filled_positions:
+    label: Filled positions
+    type: simple
+    entity: appointment_segment
+    agg: count_distinct
+    expr: position_id
+    additivity: non_additive
+    unit: positions
+    description: Distinct positions with an effective appointment.
+    grain_rule: Count distinct positions.
+    synonyms: [filled positions, occupied positions]
+  wf_vacant_positions:
+    label: Vacant positions
+    type: simple
+    entity: position_status
+    agg: count
+    expr: '*'
+    filter: "status = 'vacant'"
+    additivity: additive
+    unit: positions
+    description: Authorized positions with no current-knowledge effective appointment on 2026-10-31.
+    grain_rule: Count of positions; current knowledge basis only.
+    synonyms: [vacant positions, vacancies, open positions, unfilled positions]
+
+verified_queries:
+  - name: current_fte
+    question: What is the current FTE?
+    plan: {metric: wf_fte, dimensions: [], filters: []}
+    verified_by: benchmark v1.0 README fixed outputs (2.5)
+    verified_at: '2026-11-02'
+  - name: headcount_by_department
+    question: Headcount by department
+    plan: {metric: wf_headcount, dimensions: [department], filters: []}
+    verified_by: benchmark v1.0 README fixed outputs (T1 1, T2 2)
+    verified_at: '2026-11-02'

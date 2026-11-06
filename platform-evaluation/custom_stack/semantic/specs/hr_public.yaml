@@ -1,0 +1,789 @@
+# Portable semantic layer spec: public higher-education workforce lake.
+# One source of truth compiled to DuckDB SQL, a Snowflake semantic view / Cortex
+# Analyst YAML, and Databricks Unity Catalog metric views (see ../compile_*.py).
+#
+# STATUS: development definitions over PUBLIC data. Not approved by a domain
+# owner. Tables/columns follow the contract-named layer the lake build wrote to
+# data/lake/contract/ (draft contract v0.1 said silver/; silver/ holds
+# source-named files). Reconciled against the real schemas on 2026-11-06; run
+# `python -m custom_stack.semantic.cli check-contract` after every lake rebuild.
+spec_version: 1
+model: hr_public
+label: Public higher-education workforce lake
+description: >
+  Governed metrics over public IPEDS, BLS QCEW, Census QWI, O*NET, SUCSS and
+  Anthropic Economic Index tables. Every metric declares its grain, its
+  additivity and the rows it must never double count.
+status: development
+physical:
+  format: parquet
+  data_dir_env: CUSTOM_STACK_LAKE_DIR
+  default_data_dir: ../../../data/lake/contract
+targets:
+  snowflake: {database: HR_ANALYTICS, schema: HR_PUBLIC, semantic_view: HR_PUBLIC_METRICS}
+  databricks: {catalog: hr_analytics, schema: hr_public}
+
+# Questions that must be refused before any metric matching. Appropriate
+# abstention is a successful response (rubric v1.0 gates).
+abstain_rules:
+  - id: causal
+    pattern: '\b(why|cause|caused|causes|because|reason|reasons|drove|driver|drivers)\b'
+    reason: Causal explanations cannot be computed from descriptive metrics; the layer only returns governed aggregates.
+  - id: obsolescence
+    pattern: '\b(obsolete|obsolescence|eliminated|eliminate|replaced by ai|automated away|disappear\w*)\b'
+    reason: No governed measure of role obsolescence exists; AI task-usage shares are not obsolescence evidence.
+  - id: forecast
+    pattern: '\b(predict\w*|forecast\w*|projected|projection\w*|will|next year|future)\b'
+    reason: Forecasts are not governed metrics. BLS projections are PENDING in the lake contract.
+  - id: individual
+    pattern: '\b(who|whose|named|names|name of|person id|employee id|ssn|individual|individuals|home address)\b'
+    reason: Person-level or named-individual questions are outside this aggregate-only layer.
+  - id: instruction_injection
+    pattern: '\b(ignore (all |any |previous |prior )?instructions|system prompt|drop table|delete from|truncate|export|email|send to)\b'
+    reason: Request contains instructions or actions, not an analytical question; the layer only reads governed metrics.
+  - id: pending_source
+    pattern: '\b(oews|occupational employment and wage|bls projections|employment projections)\b'
+    reason: BLS OEWS and projections are PENDING in the lake contract (not loaded).
+  - id: competency
+    pattern: '\b(skill gaps?|competenc\w*|performance rating\w*|productivity)\b'
+    reason: No governed measure of employee competency or performance exists in public data.
+
+# Words that may appear in questions without changing the plan.
+ignorable_words: [do, we, our, us, have, has, had, there, show, me, list, give, tell, get, find, please,
+  what, whats, what's, is, are, was, were, be, been, the, a, an, of, in, at, on, for, to, from, by, per, with,
+  how, many, much, number, total, count, value, values, all, and, or, across, each, every, which, during,
+  across, as, its, it, their, this, that, these, those, than, between, through, report, reported, overall,
+  combined, sum, amount, level, figure, data, ipeds, did, does, institutions, institution, campuses,
+  schools, colleges, universities, fall, year, years, survey, compare, comparison, versus, vs, broken,
+  down, split, top, bottom, highest, lowest, most, least, largest, smallest, rank, ranked, ranking,
+  latest, recent, current, currently, quarter, quarters, average, mean, typical, employed, people,
+  had, any]
+
+entities:
+  institution:
+    table: ipeds_institution
+    description: IPEDS institutional characteristics (HD2024).
+    grain: one row per IPEDS institution (unitid)
+    primary_key: [unitid]
+    columns:
+      unitid: string
+      institution_name: string
+      state_abbr: string
+      sector_code: string
+      sector: string
+      carnegie: string
+      source_id: string
+      source_vintage: string
+    dimensions:
+      institution_name:
+        expr: institution_name
+        type: string
+        description: Institution name as published in IPEDS HD.
+        synonyms: [institution, institutions, college, colleges, university, universities, school, schools, campus, campuses]
+        values:
+          "University of Illinois Urbana-Champaign": [uiuc, university of illinois urbana-champaign, urbana-champaign, illinois urbana-champaign]
+          "University of Illinois Chicago": [uic, university of illinois chicago]
+          "University of Illinois Springfield": [uis, university of illinois springfield]
+      state:
+        expr: state_abbr
+        type: string
+        description: Institution state (postal abbreviation).
+        synonyms: [state, states]
+        values:
+          IL: [illinois]
+          IN: [indiana]
+          WI: [wisconsin]
+          MI: [michigan]
+          IA: [iowa]
+          MO: [missouri]
+      sector:
+        expr: sector_code
+        type: string
+        description: IPEDS sector code (1 public 4-year+, 2 private nonprofit 4-year+, 3 private for-profit 4-year+, 4 public 2-year ...).
+        synonyms: [sector, sectors, control, institution type]
+        values:
+          "1": [public four-year, public 4-year, public 4 year, public universities, public university]
+          "2": [private nonprofit four-year, private nonprofit 4-year, private nonprofit, private not-for-profit]
+          "3": [private for-profit four-year, for-profit, for profit]
+          "4": [public two-year, public 2-year, community college, community colleges]
+      carnegie:
+        expr: carnegie
+        type: string
+        description: Carnegie classification label as loaded (HD2024).
+        synonyms: [carnegie classification, carnegie class, carnegie]
+
+  staff_eap:
+    synonyms: [eap, ipeds eap, employees by assigned position]
+    table: ipeds_employees_by_position
+    description: IPEDS Employees by Assigned Position (EAP), Fall snapshot. Includes total, subtotal and faculty-status rows (is_category_total = true) alongside the partition rows.
+    grain: one row per unitid x survey_year x eapcat_code (occupation category x faculty status)
+    primary_key: [unitid, survey_year, eapcat_code]
+    columns:
+      unitid: string
+      survey_year: integer
+      eapcat_code: string
+      position_category: string
+      facstat_code: string
+      total_employees: integer
+      full_time: integer
+      part_time: integer
+      is_category_total: boolean
+      source_id: string
+      source_vintage: string
+    time_dimensions: {year: survey_year}
+    dimensions:
+      survey_year:
+        expr: survey_year
+        type: integer
+        description: IPEDS EAP survey year = Fall snapshot year (EAP2023 = Fall 2023).
+        synonyms: [survey year]
+      unitid:
+        expr: unitid
+        type: string
+        description: IPEDS unit id (also used to align populations in derived ratios).
+        synonyms: [unitid, unit id]
+      position_category:
+        expr: position_category
+        type: string
+        description: EAP position category. Non-total rows (is_category_total = false) partition the institution total exactly (lake contract rule 4), so grouped rows are additive.
+        synonyms: [position category, position categories, occupation category, occupational category, job category, job categories]
+        values:
+          "Instructional staff, total": [instructional staff, instructional]
+          Management: [management, managers]
+          "Computer, Engineering, and Science": [computer engineering and science, it staff, computing staff]
+          Research: [research staff]
+          "Office and Administrative Support": [office and administrative support, administrative support]
+      category_total_row:
+        expr: is_category_total
+        type: boolean
+        description: TRUE for published total / subtotal / faculty-status rows; FALSE rows form the exact partition.
+        synonyms: [category total row]
+    constrained_dimensions:
+      - dimension: category_total_row
+        default_value: "false"
+        when_unconstrained: default
+        reason: Only is_category_total = false rows partition the total (lake contract rule 4); total and faculty-status rows would double count.
+
+  salary_instructional:
+    synonyms: [sal_is, ipeds salary survey]
+    table: ipeds_salary_instructional
+    description: IPEDS SAL_IS full-time instructional staff salary outlays by rank and contract length.
+    grain: one row per unitid x survey_year x arank_code x contract_length
+    primary_key: [unitid, survey_year, arank_code, contract_length]
+    columns:
+      unitid: string
+      survey_year: integer
+      arank_code: string
+      academic_rank: string
+      contract_length: string
+      staff_count: integer
+      salary_outlays: integer
+      source_id: string
+      source_vintage: string
+    time_dimensions: {year: survey_year}
+    dimensions:
+      survey_year: {expr: survey_year, type: integer, description: "IPEDS salary survey year (SAL2023 = academic year 2023-24).", synonyms: [survey year]}
+      academic_rank:
+        expr: academic_rank
+        type: string
+        description: Academic rank (no published all-ranks row; ranks partition staff).
+        synonyms: [rank, ranks, academic rank, faculty rank]
+        values:
+          Professor: [full professor, full professors, professors]
+          Associate professor: [associate professor, associate professors]
+          Assistant professor: [assistant professor, assistant professors]
+          Instructor: [instructor, instructors]
+          Lecturer: [lecturer, lecturers]
+      contract_length:
+        expr: contract_length
+        type: string
+        description: Contract length (9-, 10-, 11-, 12-month). Partitions staff; salaries are not comparable across lengths.
+        synonyms: [contract length, contract]
+        values:
+          9-month: [9-month, nine-month, 9-month contracts]
+          12-month: [12-month, twelve-month, 12-month contracts]
+
+  salary_noninstructional:
+    synonyms: [sal_nis]
+    table: ipeds_salary_noninstructional
+    description: IPEDS SAL_NIS full-time non-instructional staff salary outlays (13 categories that partition staff).
+    grain: one row per unitid x survey_year x occupation_category_code
+    primary_key: [unitid, survey_year, occupation_category_code]
+    columns:
+      unitid: string
+      survey_year: integer
+      occupation_category_code: string
+      occupation_category: string
+      staff_count: integer
+      salary_outlays: integer
+      source_id: string
+      source_vintage: string
+    time_dimensions: {year: survey_year}
+    dimensions:
+      survey_year: {expr: survey_year, type: integer, description: "IPEDS salary survey year (SAL2023 = 2023-24).", synonyms: [survey year]}
+      occupation_category:
+        expr: occupation_category
+        type: string
+        description: Non-instructional occupation category (partition; no total row).
+        synonyms: [occupation category, occupation categories, staff category, staff categories]
+        values:
+          Management: [management staff]
+          "Computer, engineering and science": [computer engineering and science staff, it staff]
+
+  enrollment:
+    synonyms: [effy]
+    table: ipeds_enrollment_12mo
+    description: IPEDS EFFY 12-month unduplicated enrollment by student level (levels nest).
+    grain: one row per unitid x survey_year x level_code
+    primary_key: [unitid, survey_year, level_code]
+    columns:
+      unitid: string
+      survey_year: integer
+      level_code: string
+      student_level: string
+      enrollment_total: integer
+      source_id: string
+      source_vintage: string
+    time_dimensions: {year: survey_year}
+    dimensions:
+      survey_year:
+        expr: survey_year - 1
+        type: integer
+        description: ALIGNED fall-year label. EFFY N covers academic year (N-1)-(N), so EFFY2024 (2023-24) is labelled 2023 to align with the EAP Fall 2023 snapshot.
+        synonyms: [survey year]
+      unitid:
+        expr: unitid
+        type: string
+        description: IPEDS unit id.
+        synonyms: [unitid, unit id]
+      effy_year:
+        expr: survey_year
+        type: integer
+        description: Raw EFFY survey year as published (EFFY2024 = 2023-24).
+        synonyms: [effy year]
+      student_level:
+        expr: level_code
+        type: string
+        hierarchical: true
+        description: EFFY student level code (1 all students, 2 undergraduate, 12 graduate). Levels nest.
+        synonyms: [student level, level, levels]
+        values:
+          "2": [undergraduate, undergraduates, undergraduate students]
+          "12": [graduate, graduate students]
+    constrained_dimensions:
+      - dimension: student_level
+        total_value: "1"
+        when_unconstrained: use_total
+        reason: Levels nest under 'All students total' (1).
+
+  qcew:
+    synonyms: [qcew, bls qcew, quarterly census of employment and wages]
+    table: qcew_combined
+    description: >
+      BLS QCEW. Union of the national/state/county NAICS 611310 file and the IL county
+      all-industry file, excluding industry_code '611310' from the county file
+      (those rows duplicate the industry file; lake contract rule 7).
+    sql: |
+      SELECT area_fips, own_code, industry_code, year, qtr, disclosure_code,
+             month1_emplvl, month2_emplvl, month3_emplvl, total_qtrly_wages, source_id, source_vintage
+      FROM qcew_industry
+      UNION ALL
+      SELECT area_fips, own_code, industry_code, year, qtr, disclosure_code,
+             month1_emplvl, month2_emplvl, month3_emplvl, total_qtrly_wages, source_id, source_vintage
+      FROM qcew_area
+      WHERE industry_code <> '611310'
+    physical_tables: [qcew_industry, qcew_area]
+    grain: one row per area_fips x own_code x industry_code x year x qtr
+    primary_key: [area_fips, own_code, industry_code, year, qtr]
+    columns:
+      area_fips: string
+      own_code: string
+      industry_code: string
+      year: integer
+      qtr: integer
+      disclosure_code: string
+      month1_emplvl: integer
+      month2_emplvl: integer
+      month3_emplvl: integer
+      total_qtrly_wages: integer
+      source_id: string
+      source_vintage: string
+    time_dimensions: {year: year, quarter: quarter}
+    dimensions:
+      year: {expr: year, type: integer, description: Calendar year., synonyms: [calendar year]}
+      quarter: {expr: qtr, type: integer, description: Calendar quarter 1-4., synonyms: [calendar quarter]}
+      area:
+        expr: area_fips
+        type: string
+        description: QCEW area FIPS (US000 national, 17000 Illinois statewide, 5-digit counties).
+        synonyms: [area, areas, county, counties, geography]
+        values:
+          US000: [united states, national, nationwide, u.s.]
+          "17000": [illinois, illinois statewide, statewide]
+          "17019": [champaign county, champaign]
+          "17031": [cook county, cook]
+          "17167": [sangamon county, sangamon]
+      ownership:
+        expr: own_code
+        type: string
+        description: QCEW ownership code (0 total covered, 1 federal, 2 state, 3 local, 5 private).
+        synonyms: [ownership, owner, public or private]
+        values:
+          "1": [federal government, federal]
+          "2": [state government, state-owned, state owned]
+          "3": [local government]
+          "5": [private, private sector]
+      industry:
+        expr: industry_code
+        type: string
+        hierarchical: true
+        description: NAICS industry code (nested levels in the county file).
+        synonyms: [industry, industries, naics]
+        values:
+          "611310": [colleges and universities, colleges universities and professional schools, higher education, naics 611310]
+          "10": [all industries, total all industries]
+    constrained_dimensions:
+      - dimension: area
+        when_unconstrained: clarify
+        reason: National, state and county rows overlap; summing areas double counts.
+      - dimension: ownership
+        total_value: "0"
+        when_unconstrained: sum_members
+        reason: Ownership 0 is the total of the other codes where published.
+      - dimension: industry
+        default_value: "611310"
+        when_unconstrained: default
+        reason: NAICS levels nest; default is NAICS 611310 (colleges and universities).
+
+  qwi:
+    synonyms: [qwi, census qwi, quarterly workforce indicators]
+    table: qwi_higher_ed
+    description: Census QWI, Illinois, NAICS 6113, by sex x age group (published totals sex 0 / agegrp A00).
+    grain: one row per geography x industry x ownercode x year x quarter x sex x agegrp
+    primary_key: [geography, industry, ownercode, year, quarter, sex, agegrp]
+    columns:
+      geography: string
+      industry: string
+      ownercode: string
+      year: integer
+      quarter: integer
+      sex: string
+      agegrp: string
+      emp: integer
+      emp_s: integer
+      hira: integer
+      sep: integer
+      earns: integer
+      source_id: string
+      source_vintage: string
+    time_dimensions: {year: year, quarter: quarter}
+    dimensions:
+      year: {expr: year, type: integer, description: Calendar year., synonyms: [calendar year]}
+      quarter: {expr: quarter, type: integer, description: Calendar quarter 1-4., synonyms: [calendar quarter]}
+      geography:
+        expr: geography
+        type: string
+        description: QWI geography (2-digit state FIPS; counties if loaded).
+        synonyms: [geography]
+        values:
+          "17": [illinois, illinois statewide, statewide]
+      industry:
+        expr: industry
+        type: string
+        description: NAICS industry code.
+        synonyms: [industry, naics]
+        values:
+          "6113": [colleges and universities, higher education, naics 6113]
+      ownership:
+        expr: ownercode
+        type: string
+        description: QWI ownership code (A00 all).
+        synonyms: [ownership]
+      sex:
+        expr: sex
+        type: string
+        description: QWI sex code (0 all, 1 male, 2 female).
+        synonyms: [sex, gender]
+        values:
+          "1": [male, men]
+          "2": [female, women]
+      age_group:
+        expr: agegrp
+        type: string
+        description: QWI age group (A00 all ages, A01 14-18 ... A08 65-99).
+        synonyms: [age group, age groups, age]
+    constrained_dimensions:
+      - dimension: geography
+        default_value: "17"
+        when_unconstrained: default
+        reason: Illinois statewide by default; state and county rows would overlap.
+      - dimension: sex
+        total_value: "0"
+        when_unconstrained: use_total
+        reason: Use the published all-sex row.
+      - dimension: age_group
+        total_value: A00
+        when_unconstrained: use_total
+        reason: Use the published all-ages row.
+      - dimension: industry
+        default_value: "6113"
+        when_unconstrained: default
+        reason: Lake extract is NAICS 6113.
+      - dimension: ownership
+        default_value: A00
+        when_unconstrained: default
+        reason: All ownership.
+
+  onet_occupation:
+    synonyms: [o*net, onet]
+    table: onet_occupation
+    description: O*NET 31.0 occupations.
+    grain: one row per O*NET-SOC occupation
+    primary_key: [onetsoc_code]
+    columns: {onetsoc_code: string, title: string, source_id: string, source_vintage: string}
+    dimensions:
+      occupation_title:
+        expr: title
+        type: string
+        description: O*NET occupation title.
+        synonyms: [occupation, occupations, occupation title]
+        values:
+          Database Administrators: [database administrators, database administrator]
+          Postsecondary Teachers, All Other: [postsecondary teachers]
+      occupation_code:
+        expr: onetsoc_code
+        type: string
+        description: O*NET-SOC code.
+        synonyms: [onet code, soc code, occupation code]
+
+  onet_task:
+    table: onet_task_statement
+    description: O*NET task statements.
+    grain: one row per onetsoc_code x task_id
+    primary_key: [onetsoc_code, task_id]
+    columns: {onetsoc_code: string, task_id: string, task: string, task_type: string, source_id: string, source_vintage: string}
+    dimensions:
+      task_type:
+        expr: task_type
+        type: string
+        description: Core, Supplemental or n/a.
+        synonyms: [task type]
+        values:
+          Core: [core]
+          Supplemental: [supplemental]
+
+  aei_task_usage:
+    synonyms: [aei, anthropic economic index, economic index]
+    table: aei_task_usage
+    description: Anthropic Economic Index task usage percentage by release (lower-cased O*NET task text).
+    grain: one row per task_name x release
+    primary_key: [task_name, release]
+    columns: {task_name: string, release: string, usage_pct: number, source_id: string, source_vintage: string}
+    dimensions:
+      release:
+        expr: release
+        type: string
+        description: AEI data release label.
+        synonyms: [release, releases]
+        values:
+          release_2025_03_27: [march 2025 release, 2025-03-27 release, 2025-03-27, release 2025-03-27]
+          labor_market_impacts: [labor market impacts release, labor market impacts]
+    constrained_dimensions:
+      - dimension: release
+        when_unconstrained: clarify
+        reason: Percentages are only comparable within one release; summing releases is meaningless.
+
+  sucss_class:
+    synonyms: [sucss]
+    table: sucss_class
+    description: Illinois SUCSS civil-service class catalog records (not employees, not vacancies).
+    grain: one row per source class record (a class code can have several records)
+    primary_key: [source_record_id]
+    columns: {source_record_id: integer, class_code: string, class_title: string, source_id: string, source_vintage: string}
+    dimensions: {}
+
+relationships:
+  - {name: eap_institution, from: staff_eap, to: institution, keys: [[unitid, unitid]], type: many_to_one}
+  - {name: sal_is_institution, from: salary_instructional, to: institution, keys: [[unitid, unitid]], type: many_to_one}
+  - {name: sal_nis_institution, from: salary_noninstructional, to: institution, keys: [[unitid, unitid]], type: many_to_one}
+  - {name: enrollment_institution, from: enrollment, to: institution, keys: [[unitid, unitid]], type: many_to_one}
+  - {name: task_occupation, from: onet_task, to: onet_occupation, keys: [[onetsoc_code, onetsoc_code]], type: many_to_one}
+  - name: aei_task_text
+    from: aei_task_usage
+    to: onet_task
+    keys: [[task_name, task]]
+    type: many_to_many
+    note: Task text is not unique across occupations (and AEI lower-cases it); joining would fan out usage percentages. Blocked.
+  - name: sucss_onet_candidate
+    from: sucss_class
+    to: onet_occupation
+    keys: [[class_code, onetsoc_code]]
+    type: many_to_many
+    note: Mappings are unreviewed lexical suggestions (sucss_onet_candidate); not an approved join.
+
+metrics:
+  staff_headcount:
+    label: Staff headcount (EAP)
+    type: simple
+    entity: staff_eap
+    agg: sum
+    expr: total_employees
+    additivity: semi_additive
+    time_rollup: require_single
+    unit: people
+    description: Full-time plus part-time employees reported in IPEDS EAP for one Fall snapshot.
+    grain_rule: Snapshot stock. One survey year at a time. Sums only is_category_total = false rows (exact partition of the institution total); never adds total/subtotal rows.
+    synonyms: [staff headcount, headcount, employees, employee headcount, staff count, number of staff, number of employees, staff, workforce, employee count]
+  full_time_staff_headcount:
+    label: Full-time staff headcount (EAP)
+    type: simple
+    entity: staff_eap
+    agg: sum
+    expr: full_time
+    additivity: semi_additive
+    time_rollup: require_single
+    unit: people
+    description: Full-time employees reported in IPEDS EAP for one Fall snapshot.
+    grain_rule: Snapshot stock; one survey year at a time; same category rules as staff_headcount.
+    synonyms: [full-time staff, full time staff, full-time employees, full time employees, full-time headcount, full-time staff headcount, full time staff headcount]
+  staff_fte:
+    label: Staff FTE (EAP, IPEDS convention)
+    type: simple
+    entity: staff_eap
+    agg: sum
+    expr: full_time + part_time / 3.0
+    additivity: semi_additive
+    time_rollup: require_single
+    unit: FTE
+    description: IPEDS FTE convention = full-time + one third of part-time. Not payroll FTE.
+    grain_rule: Snapshot stock; FTE is not headcount. One survey year at a time.
+    synonyms: [staff fte, fte, full-time equivalent, full time equivalent, fte staff, full-time equivalent staff]
+  instructional_staff_count:
+    label: Full-time instructional staff (SAL_IS)
+    type: simple
+    entity: salary_instructional
+    agg: sum
+    expr: staff_count
+    additivity: semi_additive
+    time_rollup: require_single
+    unit: people
+    description: Full-time instructional staff counted in the salary survey, all contract lengths (differs from EAP instructional headcount).
+    grain_rule: Snapshot stock; ranks and contract lengths partition staff and are additive.
+    synonyms: [faculty count, number of faculty, instructional staff count, full-time faculty]
+  avg_instructional_salary:
+    label: Average full-time instructional salary
+    type: ratio
+    entity: salary_instructional
+    numerator: {agg: sum, expr: salary_outlays}
+    denominator: {agg: sum, expr: staff_count}
+    additivity: non_additive
+    unit: USD per person
+    description: Salary outlays divided by full-time instructional staff at the requested grain; 9-month contracts unless another contract length is requested.
+    grain_rule: Ratio of sums. Never average institution averages, never mix contract lengths, never sum salaries across a join fan-out.
+    synonyms: [average faculty salary, average instructional salary, faculty salary, faculty salaries, mean faculty salary, instructional salary]
+    constrained_dimensions:
+      - dimension: contract_length
+        default_value: 9-month
+        when_unconstrained: default
+        reason: Outlays for 9- and 12-month contracts are not comparable; default 9-month.
+  avg_noninstructional_salary:
+    label: Average full-time non-instructional salary
+    type: ratio
+    entity: salary_noninstructional
+    numerator: {agg: sum, expr: salary_outlays}
+    denominator: {agg: sum, expr: staff_count}
+    additivity: non_additive
+    unit: USD per person
+    description: Non-instructional salary outlays divided by full-time non-instructional staff.
+    grain_rule: Ratio of sums at the requested grain.
+    synonyms: [average staff salary, average non-instructional salary, average noninstructional salary, non-instructional salary, staff salary]
+  noninstructional_salary_outlays:
+    label: Non-instructional salary outlays
+    type: simple
+    entity: salary_noninstructional
+    agg: sum
+    expr: salary_outlays
+    additivity: additive
+    unit: USD
+    description: Total salary outlays for full-time non-instructional staff.
+    grain_rule: Additive across institutions and the 13 categories (they partition staff).
+    synonyms: [salary outlays, non-instructional salary outlays, staff payroll, payroll]
+  enrollment_12mo:
+    label: 12-month unduplicated enrollment
+    type: simple
+    entity: enrollment
+    agg: sum
+    expr: enrollment_total
+    additivity: semi_additive
+    time_rollup: require_single
+    unit: students
+    description: IPEDS EFFY unduplicated headcount for the 12-month period, all students unless a level is requested.
+    grain_rule: Do not sum across years (students recur) or across nested levels.
+    synonyms: [enrollment, enrolment, students, student headcount, 12-month enrollment, unduplicated enrollment]
+  staff_fte_per_100_students:
+    label: Staff FTE per 100 students
+    type: derived
+    formula: '{staff_fte} * 100.0 / NULLIF({enrollment_12mo}, 0)'
+    align_on: [unitid]
+    additivity: non_additive
+    unit: FTE per 100 students
+    description: EAP staff FTE (Fall N) divided by EFFY 12-month enrollment for academic year N to N+1, each aggregated separately then joined on the aligned year.
+    grain_rule: Components aggregate separately per institution (no row-level join between EAP and EFFY rows), then only institutions reporting BOTH are summed, so staff of institutions without enrollment never inflate the ratio.
+    synonyms: [staff per 100 students, staff fte per 100 students, staff to student ratio, staffing ratio]
+  qcew_employment:
+    label: QCEW average monthly employment
+    type: simple
+    entity: qcew
+    agg: sum
+    expr: (month1_emplvl + month2_emplvl + month3_emplvl) / 3.0
+    additivity: semi_additive
+    time_rollup: avg
+    null_policy: propagate
+    unit: jobs
+    description: Covered employment, average of the three monthly levels; averaged over quarters for a year. Returns NULL when any contributing cell is disclosure-suppressed.
+    grain_rule: Stock. Sum across ownership members within one area; average (not sum) over quarters. Area must be chosen. Suppressed cells propagate as NULL instead of silently understating.
+    synonyms: [qcew employment, covered employment, jobs, employment, employees, employment level]
+  qcew_total_wages:
+    label: QCEW total wages
+    type: simple
+    entity: qcew
+    agg: sum
+    expr: total_qtrly_wages
+    additivity: additive
+    null_policy: propagate
+    unit: USD
+    description: Total covered quarterly wages, additive over quarters. NULL when any contributing cell is suppressed.
+    grain_rule: Flow. Sum over quarters and ownership members within one area; suppressed cells propagate as NULL.
+    synonyms: [total wages, qcew wages, wages paid, quarterly wages]
+  qwi_employment:
+    label: QWI beginning-of-quarter employment
+    type: simple
+    entity: qwi
+    agg: sum
+    expr: emp
+    additivity: semi_additive
+    time_rollup: avg
+    null_policy: propagate
+    unit: jobs
+    description: Census QWI Emp (beginning-of-quarter jobs); averaged over quarters.
+    grain_rule: Stock; average over quarters; all-sex/all-age row by default.
+    synonyms: [qwi employment, beginning of quarter employment, employment, employees, jobs]
+  qwi_hires:
+    label: QWI all hires
+    type: simple
+    entity: qwi
+    agg: sum
+    expr: hira
+    additivity: additive
+    null_policy: propagate
+    unit: hires
+    description: Census QWI HirA, summed over quarters; NULL if any quarter is not yet published.
+    grain_rule: Flow; additive over quarters.
+    synonyms: [hires, hiring, new hires, all hires]
+  qwi_separations:
+    label: QWI separations
+    type: simple
+    entity: qwi
+    agg: sum
+    expr: sep
+    additivity: additive
+    null_policy: propagate
+    unit: separations
+    description: Census QWI Sep, summed over quarters; NULL if any quarter is not yet published (latest quarter lags).
+    grain_rule: Flow; additive over quarters.
+    synonyms: [separations, exits, departures]
+  qwi_avg_monthly_earnings:
+    label: QWI average monthly earnings (stable jobs)
+    type: ratio
+    entity: qwi
+    numerator: {agg: sum, expr: earns * emp_s}
+    denominator: {agg: sum, expr: 'CASE WHEN earns IS NOT NULL THEN emp_s END'}
+    additivity: non_additive
+    unit: USD per month
+    description: EarnS weighted by EmpS over the requested grain (quarters without published earnings excluded from both sides).
+    grain_rule: Employment-weighted ratio; never average the published averages.
+    synonyms: [average monthly earnings, monthly earnings, earnings]
+  occupation_count:
+    label: O*NET occupations
+    type: simple
+    entity: onet_occupation
+    agg: count_distinct
+    expr: onetsoc_code
+    additivity: non_additive
+    unit: occupations
+    description: Distinct O*NET-SOC occupations.
+    grain_rule: Count distinct; not additive across groupings.
+    synonyms: [occupation count, number of occupations, onet occupations, o*net occupations]
+  task_statement_count:
+    label: O*NET task statements
+    type: simple
+    entity: onet_task
+    agg: count
+    expr: '*'
+    additivity: additive
+    unit: task statements
+    description: Number of task statements (rows).
+    grain_rule: Additive across occupations.
+    synonyms: [task count, task statements, number of tasks, tasks]
+  core_task_count:
+    label: O*NET core task statements
+    type: simple
+    entity: onet_task
+    agg: count
+    expr: '*'
+    filter: "task_type = 'Core'"
+    additivity: additive
+    unit: task statements
+    description: Task statements typed Core.
+    grain_rule: Additive; metric-level filter task_type = 'Core'.
+    synonyms: [core tasks, core task count, number of core tasks]
+  ai_task_usage_pct:
+    label: AEI task usage percentage (sum)
+    type: simple
+    entity: aei_task_usage
+    agg: sum
+    expr: usage_pct
+    additivity: additive
+    unit: percent of AEI conversations
+    description: Sum of AEI usage percentages for tasks within ONE release. Usage is not automation, displacement or obsolescence.
+    grain_rule: Additive across tasks within a release only; cannot be sliced by occupation (task-text join fans out).
+    synonyms: [ai usage share, ai usage percentage, ai task usage, ai usage, economic index usage]
+  sucss_class_record_count:
+    label: SUCSS class records
+    type: simple
+    entity: sucss_class
+    agg: count
+    expr: '*'
+    additivity: additive
+    unit: catalog records
+    description: Catalog records. A class code can have several records (e.g. 1164); records are not employees or vacancies.
+    grain_rule: Count rows.
+    synonyms: [class records, sucss class records, civil service class records, catalog records]
+  sucss_class_code_count:
+    label: SUCSS distinct class codes
+    type: simple
+    entity: sucss_class
+    agg: count_distinct
+    expr: class_code
+    additivity: non_additive
+    unit: class codes
+    description: Distinct civil-service class codes.
+    grain_rule: Count distinct; differs from record count where a code has multiple records.
+    synonyms: [civil service classes, sucss classes, class codes, civil service class codes, number of classes]
+
+verified_queries:
+  - name: il_staff_headcount_2023
+    question: What was the staff headcount in Illinois in 2023?
+    plan: {metric: staff_headcount, dimensions: [], filters: [{dimension: state, op: eq, value: IL}, {dimension: survey_year, op: eq, value: 2023}]}
+    verified_by: custom_stack author against the real lake (146119; EAP2023 'All staff' rows, IL)
+    verified_at: '2026-11-06'
+  - name: fte_by_sector_2023
+    question: Staff FTE by sector in 2023
+    plan: {metric: staff_fte, dimensions: [sector], filters: [{dimension: survey_year, op: eq, value: 2023}]}
+    verified_by: custom_stack author (fixture + real lake run; not domain-owner approved)
+    verified_at: '2026-11-06'
+  - name: il_qcew_employment_2024
+    question: QCEW employment in Illinois in 2024
+    plan: {metric: qcew_employment, dimensions: [], filters: [{dimension: area, op: eq, value: '17000'}, {dimension: year, op: eq, value: 2024}]}
+    verified_by: custom_stack author (fixture + real lake run; not domain-owner approved)
+    verified_at: '2026-11-06'

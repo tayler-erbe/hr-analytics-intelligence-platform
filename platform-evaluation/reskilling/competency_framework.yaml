@@ -1,0 +1,89 @@
+# AI-literacy competency framework for role-level reskilling design.
+#
+# Purpose: describe what AI-literacy behaviour a ROLE (SUCSS class or O*NET
+# occupation) should be designed and trained for. It is a program-design target
+# for a job family, never an assessment, rating or score of a person. Do not use
+# it for hiring, promotion, discipline, pay, tenure or any other decision about an
+# individual (Illinois HB 3773 / Public Act 103-0804). Self-assessments, if ever
+# collected, stay on approved university machines and are reported only as
+# suppressed aggregates (n < 10 suppressed).
+#
+# Changing any level, indicator, anchor activity or threshold below changes
+# published targets. Bump `version` and record why; do not tune it to make a
+# family look better or worse.
+
+version: ai_literacy_rubric_v1
+status: draft for HR SME review (not approved)
+scale_source: "O*NET 31.0 Work Activities, Importance scale (IM, 1-5)"
+
+levels:
+  - id: 1
+    name: Aware
+    summary: Understands what generative AI is, where the university permits it, and the limits of its output.
+    behavioral_indicators:
+      - Can explain in plain language what a generative AI tool does and does not do (it predicts text; it can be confidently wrong).
+      - Knows which data classifications may never be entered into a public AI tool (personnel, FERPA, health, credentials) and where the approved tools are listed.
+      - Recognises AI-generated content and knows to verify facts, figures and citations before reuse.
+      - Knows how to report a concern about an AI-assisted process.
+    anchor_activities: [Getting Information, Updating and Using Relevant Knowledge]
+  - id: 2
+    name: Practitioner
+    summary: Uses approved AI tools safely for own routine information tasks and checks every output.
+    behavioral_indicators:
+      - Drafts, summarises or reformats routine documents with an approved tool and edits the result against the source (Documenting/Recording Information).
+      - Uses AI to search, sort or extract from non-restricted information, and spot-checks extracted values against the record (Processing Information).
+      - Writes clear, bounded prompts that include context, constraints and the expected format.
+      - Keeps a human decision on anything that affects a person, a payment or a record of entry.
+    anchor_activities: [Processing Information, Documenting/Recording Information, Working with Computers]
+  - id: 3
+    name: Integrator
+    summary: Redesigns a team workflow around AI assistance with checks, logging and measurable quality.
+    behavioral_indicators:
+      - Maps a unit process to tasks, marks which steps AI may assist and which stay human, and documents the hand-offs (Analyzing Data or Information).
+      - Defines acceptance checks (sample review, reconciliation to source totals, error log) before a workflow goes live.
+      - Explains AI-assisted results to others, including uncertainty and known failure modes (Interpreting the Meaning of Information for Others).
+      - Trains peers on the redesigned workflow and keeps the procedure current (Training and Teaching Others).
+    anchor_activities: [Analyzing Data or Information, Interpreting the Meaning of Information for Others, Evaluating Information to Determine Compliance with Standards]
+  - id: 4
+    name: Leader
+    summary: Sets direction, risk controls and reskilling plans for AI use across a unit or job family.
+    behavioral_indicators:
+      - Sets unit objectives for AI use, prioritises workflows, and funds reskilling time (Developing Objectives and Strategies).
+      - Maintains the unit's AI tool registry, notice to employees and adverse-impact review schedule with HR, Counsel and Labor Relations.
+      - Uses role-level evidence (task portfolios, adjacent-role gaps) to plan mobility and succession, never individual AI scores.
+      - Coaches managers on redesigning roles with staff rather than around them (Guiding, Directing, and Motivating Subordinates; Coaching and Developing Others).
+    anchor_activities: [Developing Objectives and Strategies, Guiding, Directing, and Motivating Subordinates, Coaching and Developing Others]
+
+# Information-work activities whose O*NET importance drives the role target.
+information_work_activities:
+  - {element_id: "4.A.2.a.2", name: Processing Information}
+  - {element_id: "4.A.2.a.4", name: Analyzing Data or Information}
+  - {element_id: "4.A.3.b.6", name: Documenting/Recording Information}
+  - {element_id: "4.A.3.b.1", name: Working with Computers}
+  - {element_id: "4.A.4.a.1", name: Interpreting the Meaning of Information for Others}
+  - {element_id: "4.A.1.a.1", name: Getting Information}
+
+leadership_activities:
+  - {element_id: "4.A.2.b.4", name: Developing Objectives and Strategies}
+  - {element_id: "4.A.4.b.4", name: "Guiding, Directing, and Motivating Subordinates"}
+  - {element_id: "4.A.4.b.5", name: Coaching and Developing Others}
+
+# Transparent, ordered rules. The first rule that matches sets the role target.
+# info_index   = mean IM over information_work_activities (1-5)
+# lead_index   = mean IM over leadership_activities (1-5)
+# job_zone     = O*NET job zone (1-5)
+target_rules:
+  - level: Leader
+    when: "lead_index >= 3.75 and job_zone >= 4"
+  - level: Integrator
+    when: "info_index >= 3.75 and analyzing_im >= 3.5"
+  - level: Practitioner
+    when: "info_index >= 3.0"
+  - level: Aware
+    when: "always"
+
+# Per-activity target: the level each anchor activity should reach in this role.
+activity_target_thresholds:
+  - {min_im: 4.0, level: Integrator}
+  - {min_im: 3.0, level: Practitioner}
+  - {min_im: 0.0, level: Aware}

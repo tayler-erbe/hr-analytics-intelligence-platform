@@ -1,0 +1,4 @@
+duckdb>=1.1  # tested with 2.0.0 (queries use .fetchall(), never .fetchone())
+pyarrow>=15  # tested with 26.0.1
+numpy>=1.26  # tested with 2.5.3
+# Python 3.13 tested. Page screenshot check: node + playwright (optional, not a Python dependency).

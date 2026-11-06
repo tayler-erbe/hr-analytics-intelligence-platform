@@ -1,0 +1,23 @@
+version: '1.1'
+comment: 'Anthropic Economic Index task usage percentage by release (lower-cased O*NET task text). Grain: one row per task_name
+  x release. Generated from hr_public.yaml sha256 102bec2ac50cb4a9; status development.'
+source: hr_analytics.hr_public.aei_task_usage
+dimensions:
+- name: release
+  expr: release
+  comment: AEI data release label.
+  synonyms:
+  - release
+  - releases
+measures:
+- name: ai_task_usage_pct
+  expr: SUM(usage_pct)
+  comment: 'Sum of AEI usage percentages for tasks within ONE release. Usage is not automation, displacement or obsolescence.
+    Unit: percent of AEI conversations. Grain rule: Additive across tasks within a release only; cannot be sliced by occupation
+    (task-text join fans out).'
+  synonyms:
+  - ai usage share
+  - ai usage percentage
+  - ai task usage
+  - ai usage
+  - economic index usage

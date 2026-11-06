@@ -1,0 +1,81 @@
+version: '1.1'
+comment: 'IPEDS EFFY 12-month unduplicated enrollment by student level (levels nest). Grain: one row per unitid x survey_year
+  x level_code. Generated from hr_public.yaml sha256 102bec2ac50cb4a9; status development.'
+source: hr_analytics.hr_public.ipeds_enrollment_12mo
+joins:
+- name: institution
+  source: hr_analytics.hr_public.ipeds_institution
+  'on': source.unitid = institution.unitid
+dimensions:
+- name: survey_year
+  expr: survey_year - 1
+  comment: ALIGNED fall-year label. EFFY N covers academic year (N-1)-(N), so EFFY2024 (2023-24) is labelled 2023 to align
+    with the EAP Fall 2023 snapshot.
+  synonyms:
+  - survey year
+- name: unitid
+  expr: unitid
+  comment: IPEDS unit id.
+  synonyms:
+  - unitid
+  - unit id
+- name: effy_year
+  expr: survey_year
+  comment: Raw EFFY survey year as published (EFFY2024 = 2023-24).
+  synonyms:
+  - effy year
+- name: student_level
+  expr: level_code
+  comment: EFFY student level code (1 all students, 2 undergraduate, 12 graduate). Levels nest.
+  synonyms:
+  - student level
+  - level
+  - levels
+- name: institution_name
+  expr: institution.institution_name
+  comment: Institution name as published in IPEDS HD.
+  synonyms:
+  - institution
+  - institutions
+  - college
+  - colleges
+  - university
+  - universities
+  - school
+  - schools
+  - campus
+  - campuses
+- name: state
+  expr: institution.state_abbr
+  comment: Institution state (postal abbreviation).
+  synonyms:
+  - state
+  - states
+- name: sector
+  expr: institution.sector_code
+  comment: IPEDS sector code (1 public 4-year+, 2 private nonprofit 4-year+, 3 private for-profit 4-year+, 4 public 2-year
+    ...).
+  synonyms:
+  - sector
+  - sectors
+  - control
+  - institution type
+- name: carnegie
+  expr: institution.carnegie
+  comment: Carnegie classification label as loaded (HD2024).
+  synonyms:
+  - carnegie classification
+  - carnegie class
+  - carnegie
+measures:
+- name: enrollment_12mo
+  expr: CASE WHEN COUNT(DISTINCT survey_year - 1) <= 1 THEN SUM(CASE WHEN (level_code = '1') THEN enrollment_total END) END
+  comment: 'IPEDS EFFY unduplicated headcount for the 12-month period, all students unless a level is requested. Unit: students.
+    Grain rule: Do not sum across years (students recur) or across nested levels.'
+  synonyms:
+  - enrollment
+  - enrolment
+  - students
+  - student headcount
+  - 12-month enrollment
+  - unduplicated enrollment

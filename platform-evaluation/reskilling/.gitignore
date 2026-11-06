@@ -1,0 +1,4 @@
+# Regenerable build outputs: python reskilling/build_pathways.py
+artifacts/*.parquet
+artifacts/pathways.json
+__pycache__/

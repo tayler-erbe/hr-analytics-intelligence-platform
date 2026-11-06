@@ -1,0 +1,96 @@
+{
+  "ontology_version": "0.1",
+  "built_at_utc": "2026-11-06T07:24:41Z",
+  "duckdb_version": "2.0.0",
+  "inputs": "data/lake/contract/*.parquet (contract v1.0) + data/lake/silver onet_* reference tables",
+  "outputs": {
+    "nodes": {
+      "path": "data/lake/graph/nodes.parquet",
+      "bytes": 3172931
+    },
+    "edges": {
+      "path": "data/lake/graph/edges.parquet",
+      "bytes": 6811954
+    }
+  },
+  "node_count": 122874,
+  "edge_count": 399444,
+  "nodes_by_type": {
+    "AIUsageEvidence": 20983,
+    "Ability": 52,
+    "DWA": 2087,
+    "GWA": 41,
+    "Geography": 3062,
+    "IPEDSOccupationGroup": 13,
+    "IWA": 332,
+    "Industry": 3,
+    "Institution": 6090,
+    "JobZone": 4,
+    "Knowledge": 33,
+    "LaborMarketFact": 59759,
+    "Occupation": 1016,
+    "SOC2018": 890,
+    "SUCSSClass": 883,
+    "Skill": 35,
+    "Task": 18838,
+    "Technology": 8753
+  },
+  "edges_by_type": {
+    "ABOUT_GEOGRAPHY": 23078,
+    "ABOUT_INDUSTRY": 23078,
+    "ABOUT_OCCUPATION_GROUP": 30757,
+    "ALIGNS_TO_DWA": 24087,
+    "BROADER": 868,
+    "CANDIDATE_MATCH": 2649,
+    "COVERS_SOC_GROUP": 22,
+    "HAS_AI_USAGE_EVIDENCE": 22907,
+    "HAS_ELEMENT_RATING": 146551,
+    "HAS_FACT": 36681,
+    "IN_CBSA": 7001,
+    "IN_JOB_ZONE": 923,
+    "IN_STATE": 2219,
+    "LOCATED_IN": 6069,
+    "MAPS_TO_SOC": 1016,
+    "PART_OF": 2419,
+    "PERFORMS_TASK": 18838,
+    "RELATED_TO": 18460,
+    "USES_TECHNOLOGY": 31821
+  },
+  "edges_by_review_status": {
+    "curated_rule": 22,
+    "derived_rule": 26443,
+    "publisher_asserted": 370330,
+    "unreviewed": 2649
+  },
+  "integrity": {
+    "duplicate_node_ids": 0,
+    "duplicate_edge_ids": 0,
+    "dangling_edges": 0,
+    "internal_node_types_present": 0
+  },
+  "notes": {
+    "aei_task_usage_rows": 21363,
+    "aei_task_usage_exact_duplicate_rows_collapsed": 7,
+    "aei_task_rows_without_onet_text_match": 1129,
+    "technology_slug_collisions_hashed": 0,
+    "qcew_years": [
+      2019,
+      2025
+    ]
+  },
+  "timings_seconds": {
+    "onet_occupations_soc_jobzones": 0.074,
+    "onet_tasks_and_work_activities": 0.105,
+    "onet_element_ratings": 0.181,
+    "onet_technology_and_related": 0.647,
+    "sucss": 0.011,
+    "geography": 0.1,
+    "institutions": 0.05,
+    "qcew_facts": 0.225,
+    "qwi_and_ipeds_facts": 0.494,
+    "ai_usage_evidence": 0.158,
+    "finalize": 0.36,
+    "write_parquet": 0.313,
+    "total": 2.792
+  }
+}

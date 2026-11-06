@@ -1,0 +1,28 @@
+version: '1.1'
+comment: 'O*NET 31.0 occupations. Grain: one row per O*NET-SOC occupation. Generated from hr_public.yaml sha256 102bec2ac50cb4a9;
+  status development.'
+source: hr_analytics.hr_public.onet_occupation
+dimensions:
+- name: occupation_title
+  expr: title
+  comment: O*NET occupation title.
+  synonyms:
+  - occupation
+  - occupations
+  - occupation title
+- name: occupation_code
+  expr: onetsoc_code
+  comment: O*NET-SOC code.
+  synonyms:
+  - onet code
+  - soc code
+  - occupation code
+measures:
+- name: occupation_count
+  expr: COUNT(DISTINCT onetsoc_code)
+  comment: 'Distinct O*NET-SOC occupations. Unit: occupations. Grain rule: Count distinct; not additive across groupings.'
+  synonyms:
+  - occupation count
+  - number of occupations
+  - onet occupations
+  - o*net occupations

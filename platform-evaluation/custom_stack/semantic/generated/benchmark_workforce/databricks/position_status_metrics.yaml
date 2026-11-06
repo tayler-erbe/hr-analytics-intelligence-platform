@@ -1,0 +1,21 @@
+version: '1.1'
+comment: 'Authorized positions and whether any current-knowledge appointment segment fills them on 2026-10-31. Grain: one
+  row per authorized position. Generated from benchmark_workforce.yaml sha256 165342455c6b88cd; status fixture_only.'
+source: hr_analytics.benchmark_v1.workforce_position_status
+dimensions:
+- name: position_home_department
+  expr: department_id
+  comment: Position's static home department (differs from effective assignment).
+  synonyms:
+  - home department
+  - position home department
+measures:
+- name: wf_vacant_positions
+  expr: COUNT(CASE WHEN (status = 'vacant') THEN 1 END)
+  comment: 'Authorized positions with no current-knowledge effective appointment on 2026-10-31. Unit: positions. Grain rule:
+    Count of positions; current knowledge basis only.'
+  synonyms:
+  - vacant positions
+  - vacancies
+  - open positions
+  - unfilled positions

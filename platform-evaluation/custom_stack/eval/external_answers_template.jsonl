@@ -1,0 +1,6 @@
+// One JSON object per line per question id in questions.yaml. Lines starting with // are ignored.
+// status is assigned by a HUMAN reviewer from the vendor transcript: answer | clarify | abstain | error.
+// rows: full-precision result rows exported from the vendor (same data snapshot); not screenshots or rounded displays.
+{"id": "Q01", "status": "answer", "columns": ["STAFF_HEADCOUNT"], "rows": [[293]], "sql": "<generated SQL copied verbatim>", "run_id": "cortex-2026-11-XXTXX", "reviewer": "<initials>", "notes": ""}
+{"id": "Q20", "status": "clarify", "rows": null, "sql": null, "run_id": "cortex-2026-11-XXTXX", "reviewer": "<initials>", "notes": "asked which population/period"}
+{"id": "Q26", "status": "abstain", "rows": null, "sql": null, "run_id": "cortex-2026-11-XXTXX", "reviewer": "<initials>", "notes": "declined causal question"}

@@ -1,0 +1,92 @@
+version: '1.1'
+comment: 'Census QWI, Illinois, NAICS 6113, by sex x age group (published totals sex 0 / agegrp A00). Grain: one row per geography
+  x industry x ownercode x year x quarter x sex x agegrp. Generated from hr_public.yaml sha256 102bec2ac50cb4a9; status development.'
+source: hr_analytics.hr_public.qwi_higher_ed
+dimensions:
+- name: year
+  expr: year
+  comment: Calendar year.
+  synonyms:
+  - calendar year
+- name: quarter
+  expr: quarter
+  comment: Calendar quarter 1-4.
+  synonyms:
+  - calendar quarter
+- name: geography
+  expr: geography
+  comment: QWI geography (2-digit state FIPS; counties if loaded).
+  synonyms:
+  - geography
+- name: industry
+  expr: industry
+  comment: NAICS industry code.
+  synonyms:
+  - industry
+  - naics
+- name: ownership
+  expr: ownercode
+  comment: QWI ownership code (A00 all).
+  synonyms:
+  - ownership
+- name: sex
+  expr: sex
+  comment: QWI sex code (0 all, 1 male, 2 female).
+  synonyms:
+  - sex
+  - gender
+- name: age_group
+  expr: agegrp
+  comment: QWI age group (A00 all ages, A01 14-18 ... A08 65-99).
+  synonyms:
+  - age group
+  - age groups
+  - age
+measures:
+- name: qwi_employment
+  expr: CAST(CASE WHEN COUNT(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND (industry = '6113') AND
+    (ownercode = 'A00') THEN 1 END) = COUNT(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND (industry
+    = '6113') AND (ownercode = 'A00') THEN emp END) THEN SUM(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00')
+    AND (industry = '6113') AND (ownercode = 'A00') THEN emp END) END AS DOUBLE) / NULLIF(COUNT(DISTINCT CONCAT(CAST(year
+    AS STRING), '-', CAST(quarter AS STRING))), 0)
+  comment: 'Census QWI Emp (beginning-of-quarter jobs); averaged over quarters. Unit: jobs. Grain rule: Stock; average over
+    quarters; all-sex/all-age row by default.'
+  synonyms:
+  - qwi employment
+  - beginning of quarter employment
+  - employment
+  - employees
+  - jobs
+- name: qwi_hires
+  expr: CASE WHEN COUNT(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND (industry = '6113') AND (ownercode
+    = 'A00') THEN 1 END) = COUNT(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND (industry = '6113')
+    AND (ownercode = 'A00') THEN hira END) THEN SUM(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND
+    (industry = '6113') AND (ownercode = 'A00') THEN hira END) END
+  comment: 'Census QWI HirA, summed over quarters; NULL if any quarter is not yet published. Unit: hires. Grain rule: Flow;
+    additive over quarters.'
+  synonyms:
+  - hires
+  - hiring
+  - new hires
+  - all hires
+- name: qwi_separations
+  expr: CASE WHEN COUNT(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND (industry = '6113') AND (ownercode
+    = 'A00') THEN 1 END) = COUNT(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND (industry = '6113')
+    AND (ownercode = 'A00') THEN sep END) THEN SUM(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND (industry
+    = '6113') AND (ownercode = 'A00') THEN sep END) END
+  comment: 'Census QWI Sep, summed over quarters; NULL if any quarter is not yet published (latest quarter lags). Unit: separations.
+    Grain rule: Flow; additive over quarters.'
+  synonyms:
+  - separations
+  - exits
+  - departures
+- name: qwi_avg_monthly_earnings
+  expr: CAST(SUM(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00') AND (industry = '6113') AND (ownercode
+    = 'A00') THEN earns * emp_s END) AS DOUBLE) / NULLIF(SUM(CASE WHEN (geography = '17') AND (sex = '0') AND (agegrp = 'A00')
+    AND (industry = '6113') AND (ownercode = 'A00') THEN CASE WHEN earns IS NOT NULL THEN emp_s END END), 0)
+  comment: 'EarnS weighted by EmpS over the requested grain (quarters without published earnings excluded from both sides).
+    Unit: USD per month. Grain rule: Employment-weighted ratio; never average the published averages.'
+  synonyms:
+  - average monthly earnings
+  - monthly earnings
+  - earnings

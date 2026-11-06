@@ -1,0 +1,66 @@
+version: '1.1'
+comment: 'BLS QCEW. Union of the national/state/county NAICS 611310 file and the IL county all-industry file, excluding industry_code
+  ''611310'' from the county file (those rows duplicate the industry file; lake contract rule 7). Grain: one row per area_fips
+  x own_code x industry_code x year x qtr. Generated from hr_public.yaml sha256 102bec2ac50cb4a9; status development.'
+source: hr_analytics.hr_public.qcew_combined
+dimensions:
+- name: year
+  expr: year
+  comment: Calendar year.
+  synonyms:
+  - calendar year
+- name: quarter
+  expr: qtr
+  comment: Calendar quarter 1-4.
+  synonyms:
+  - calendar quarter
+- name: area
+  expr: area_fips
+  comment: QCEW area FIPS (US000 national, 17000 Illinois statewide, 5-digit counties).
+  synonyms:
+  - area
+  - areas
+  - county
+  - counties
+  - geography
+- name: ownership
+  expr: own_code
+  comment: QCEW ownership code (0 total covered, 1 federal, 2 state, 3 local, 5 private).
+  synonyms:
+  - ownership
+  - owner
+  - public or private
+- name: industry
+  expr: industry_code
+  comment: NAICS industry code (nested levels in the county file).
+  synonyms:
+  - industry
+  - industries
+  - naics
+measures:
+- name: qcew_employment
+  expr: CAST(CASE WHEN COUNT(CASE WHEN (own_code <> '0') AND (industry_code = '611310') THEN 1 END) = COUNT(CASE WHEN (own_code
+    <> '0') AND (industry_code = '611310') THEN (month1_emplvl + month2_emplvl + month3_emplvl) / 3.0 END) THEN SUM(CASE WHEN
+    (own_code <> '0') AND (industry_code = '611310') THEN (month1_emplvl + month2_emplvl + month3_emplvl) / 3.0 END) END AS
+    DOUBLE) / NULLIF(COUNT(DISTINCT CONCAT(CAST(year AS STRING), '-', CAST(qtr AS STRING))), 0)
+  comment: 'Covered employment, average of the three monthly levels; averaged over quarters for a year. Returns NULL when
+    any contributing cell is disclosure-suppressed. Unit: jobs. Grain rule: Stock. Sum across ownership members within one
+    area; average (not sum) over quarters. Area must be chosen. Suppressed cells propagate as NULL instead of silently understating.'
+  synonyms:
+  - qcew employment
+  - covered employment
+  - jobs
+  - employment
+  - employees
+  - employment level
+- name: qcew_total_wages
+  expr: CASE WHEN COUNT(CASE WHEN (own_code <> '0') AND (industry_code = '611310') THEN 1 END) = COUNT(CASE WHEN (own_code
+    <> '0') AND (industry_code = '611310') THEN total_qtrly_wages END) THEN SUM(CASE WHEN (own_code <> '0') AND (industry_code
+    = '611310') THEN total_qtrly_wages END) END
+  comment: 'Total covered quarterly wages, additive over quarters. NULL when any contributing cell is suppressed. Unit: USD.
+    Grain rule: Flow. Sum over quarters and ownership members within one area; suppressed cells propagate as NULL.'
+  synonyms:
+  - total wages
+  - qcew wages
+  - wages paid
+  - quarterly wages

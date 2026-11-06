@@ -1,0 +1,5 @@
+# custom_stack runtime + tests (Python 3.13 tested). Everything else is stdlib.
+duckdb>=1.1        # tested with 2.0.0: query engine, Parquet/JSONL reader, fixture builder
+pyyaml>=6.0        # tested with 6.0.3: spec loading and Cortex/Databricks YAML emission
+# pyarrow is NOT required (DuckDB reads/writes Parquet itself).
+# Optional LLM backend: no extra package (urllib against an OpenAI-compatible local endpoint).

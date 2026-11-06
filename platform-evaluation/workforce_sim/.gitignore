@@ -1,0 +1,4 @@
+# Regenerable outputs (rebuild with the commands in README.md)
+data/synthetic/
+data/scenario_grid.json
+__pycache__/

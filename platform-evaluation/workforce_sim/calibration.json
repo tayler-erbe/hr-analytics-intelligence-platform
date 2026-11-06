@@ -1,0 +1,554 @@
+{
+  "calibration_version": "wfsim-cal-1.0",
+  "generated_at_utc": "2026-11-06T07:09:13+00:00",
+  "lake_contract": "1.0",
+  "uiuc_ipeds": {
+    "unitid": "145637",
+    "institution": "University of Illinois Urbana-Champaign",
+    "snapshot_date": "2023-11-01",
+    "vintage": "S2023_OC (Fall 2023)",
+    "grand_total_headcount": 12905,
+    "ft_total": 11712,
+    "pt_total": 1193,
+    "families": {
+      "FAC": {
+        "label": "Instructional (faculty)",
+        "ipeds_staffcat_suffixes": [
+          "210"
+        ],
+        "ft": 2498,
+        "pt": 373,
+        "total": 2871,
+        "new_hire_codes": [
+          "21000"
+        ],
+        "salary_key": "instructional",
+        "ft_new_hires": 201.0,
+        "ft_new_hire_rate": 0.08046,
+        "turnover_multiplier": 0.7582,
+        "avg_salary_ft": 129567,
+        "salary_basis": "SAL2023_IS all ranks/contract lengths (outlays/count)"
+      },
+      "RES": {
+        "label": "Research & public service",
+        "ipeds_staffcat_suffixes": [
+          "220",
+          "230"
+        ],
+        "ft": 69,
+        "pt": 626,
+        "total": 695,
+        "new_hire_codes": [
+          "22000"
+        ],
+        "salary_key": "02",
+        "ft_new_hires": 12.0,
+        "ft_new_hire_rate": 0.17391,
+        "turnover_multiplier": 1.6387,
+        "avg_salary_ft": 87519.0,
+        "salary_basis": "SAL2023_NIS group 02 (Research), n=67"
+      },
+      "LIB": {
+        "label": "Library & archives",
+        "ipeds_staffcat_suffixes": [
+          "260"
+        ],
+        "ft": 213,
+        "pt": 7,
+        "total": 220,
+        "new_hire_codes": [
+          "25000"
+        ],
+        "salary_key": "04",
+        "ft_new_hires": 26.79,
+        "ft_new_hire_rate": 0.12577,
+        "turnover_multiplier": 1.1851,
+        "avg_salary_ft": 63316.0,
+        "salary_basis": "SAL2023_NIS group 04 (Library, curators, archivists, academic affairs and other education services), n=798"
+      },
+      "SAA": {
+        "label": "Student & academic affairs",
+        "ipeds_staffcat_suffixes": [
+          "270"
+        ],
+        "ft": 590,
+        "pt": 25,
+        "total": 615,
+        "new_hire_codes": [
+          "25000"
+        ],
+        "salary_key": "04",
+        "ft_new_hires": 74.21,
+        "ft_new_hire_rate": 0.12578,
+        "turnover_multiplier": 1.1851,
+        "avg_salary_ft": 63316.0,
+        "salary_basis": "SAL2023_NIS group 04 (Library, curators, archivists, academic affairs and other education services), n=798"
+      },
+      "MGT": {
+        "label": "Management",
+        "ipeds_staffcat_suffixes": [
+          "300"
+        ],
+        "ft": 1349,
+        "pt": 18,
+        "total": 1367,
+        "new_hire_codes": [
+          "30000"
+        ],
+        "salary_key": "05",
+        "ft_new_hires": 71.0,
+        "ft_new_hire_rate": 0.05263,
+        "turnover_multiplier": 0.5,
+        "avg_salary_ft": 117207.0,
+        "salary_basis": "SAL2023_NIS group 05 (Management), n=1326"
+      },
+      "BFO": {
+        "label": "Business & financial ops",
+        "ipeds_staffcat_suffixes": [
+          "310"
+        ],
+        "ft": 918,
+        "pt": 11,
+        "total": 929,
+        "new_hire_codes": [
+          "31000"
+        ],
+        "salary_key": "06",
+        "ft_new_hires": 61.0,
+        "ft_new_hire_rate": 0.06645,
+        "turnover_multiplier": 0.6261,
+        "avg_salary_ft": 73933.0,
+        "salary_basis": "SAL2023_NIS group 06 (Business and financial operations), n=912"
+      },
+      "CES": {
+        "label": "Computer, engineering & science",
+        "ipeds_staffcat_suffixes": [
+          "320"
+        ],
+        "ft": 1698,
+        "pt": 50,
+        "total": 1748,
+        "new_hire_codes": [
+          "32000"
+        ],
+        "salary_key": "07",
+        "ft_new_hires": 171.0,
+        "ft_new_hire_rate": 0.10071,
+        "turnover_multiplier": 0.9489,
+        "avg_salary_ft": 76615.0,
+        "salary_basis": "SAL2023_NIS group 07 (Computer, engineering and science), n=1694"
+      },
+      "CSL": {
+        "label": "Community svc, legal, arts & media",
+        "ipeds_staffcat_suffixes": [
+          "330"
+        ],
+        "ft": 669,
+        "pt": 17,
+        "total": 686,
+        "new_hire_codes": [
+          "33000"
+        ],
+        "salary_key": "08",
+        "ft_new_hires": 116.0,
+        "ft_new_hire_rate": 0.17339,
+        "turnover_multiplier": 1.6338,
+        "avg_salary_ft": 86721.0,
+        "salary_basis": "SAL2023_NIS group 08 (Community/social service, legal, arts, design, media), n=663"
+      },
+      "HLT": {
+        "label": "Healthcare practitioners",
+        "ipeds_staffcat_suffixes": [
+          "340"
+        ],
+        "ft": 264,
+        "pt": 13,
+        "total": 277,
+        "new_hire_codes": [
+          "34000"
+        ],
+        "salary_key": "09",
+        "ft_new_hires": 39.0,
+        "ft_new_hire_rate": 0.14773,
+        "turnover_multiplier": 1.3919,
+        "avg_salary_ft": 63482.0,
+        "salary_basis": "SAL2023_NIS group 09 (Healthcare practitioners and technical), n=264"
+      },
+      "SVC": {
+        "label": "Service occupations",
+        "ipeds_staffcat_suffixes": [
+          "350"
+        ],
+        "ft": 1019,
+        "pt": 4,
+        "total": 1023,
+        "new_hire_codes": [
+          "35000"
+        ],
+        "salary_key": "10",
+        "ft_new_hires": 132.0,
+        "ft_new_hire_rate": 0.12954,
+        "turnover_multiplier": 1.2206,
+        "avg_salary_ft": 50284.0,
+        "salary_basis": "SAL2023_NIS group 10 (Service), n=1019"
+      },
+      "OAS": {
+        "label": "Office & administrative support",
+        "ipeds_staffcat_suffixes": [
+          "370"
+        ],
+        "ft": 1695,
+        "pt": 46,
+        "total": 1741,
+        "new_hire_codes": [
+          "37000"
+        ],
+        "salary_key": "12",
+        "ft_new_hires": 274.0,
+        "ft_new_hire_rate": 0.16165,
+        "turnover_multiplier": 1.5231,
+        "avg_salary_ft": 52712.0,
+        "salary_basis": "SAL2023_NIS group 12 (Office and administrative support), n=1663"
+      },
+      "NRC": {
+        "label": "Construction & maintenance",
+        "ipeds_staffcat_suffixes": [
+          "380"
+        ],
+        "ft": 524,
+        "pt": 2,
+        "total": 526,
+        "new_hire_codes": [
+          "38000"
+        ],
+        "salary_key": "13",
+        "ft_new_hires": 55.0,
+        "ft_new_hire_rate": 0.10496,
+        "turnover_multiplier": 0.989,
+        "avg_salary_ft": 80610.0,
+        "salary_basis": "SAL2023_NIS group 13 (Natural resources, construction and maintenance), n=524"
+      },
+      "PTM": {
+        "label": "Production & transportation",
+        "ipeds_staffcat_suffixes": [
+          "390"
+        ],
+        "ft": 206,
+        "pt": 1,
+        "total": 207,
+        "new_hire_codes": [
+          "39000"
+        ],
+        "salary_key": "14",
+        "ft_new_hires": 10.0,
+        "ft_new_hire_rate": 0.04854,
+        "turnover_multiplier": 0.5,
+        "avg_salary_ft": 79211.0,
+        "salary_basis": "SAL2023_NIS group 14 (Production, transportation and material moving), n=206"
+      }
+    },
+    "faculty_ft_rank": {
+      "PROF": {
+        "label": "Professor",
+        "ft_headcount": 845,
+        "ipeds_siscat_codes": [
+          "201",
+          "301",
+          "411",
+          "421"
+        ],
+        "tenured": 799,
+        "avg_salary_ft": 173212
+      },
+      "ASSOC": {
+        "label": "Associate professor",
+        "ft_headcount": 587,
+        "ipeds_siscat_codes": [
+          "202",
+          "302",
+          "412",
+          "422"
+        ],
+        "tenured": 476,
+        "avg_salary_ft": 120990
+      },
+      "ASST": {
+        "label": "Assistant professor",
+        "ft_headcount": 764,
+        "ipeds_siscat_codes": [
+          "203",
+          "303",
+          "413",
+          "423"
+        ],
+        "tenured": 1,
+        "avg_salary_ft": 107084
+      },
+      "INSTR": {
+        "label": "Instructor",
+        "ft_headcount": 96,
+        "ipeds_siscat_codes": [
+          "414",
+          "424"
+        ],
+        "tenured": 0,
+        "avg_salary_ft": 93389
+      },
+      "LECT": {
+        "label": "Lecturer",
+        "ft_headcount": 176,
+        "ipeds_siscat_codes": [
+          "415",
+          "425"
+        ],
+        "tenured": 0,
+        "avg_salary_ft": 77546
+      },
+      "NORANK": {
+        "label": "No academic rank",
+        "ft_headcount": 30,
+        "ipeds_siscat_codes": [
+          "426"
+        ],
+        "tenured": 0,
+        "avg_salary_ft": 57836
+      }
+    },
+    "ft_new_hires_total": 1243,
+    "ft_new_hire_rate": 0.10613,
+    "cross_check": {
+      "family_partition_sum": 12905,
+      "equals_grand_total": true,
+      "rank_partition_sum": 2498,
+      "equals_ft_instructional": true
+    },
+    "source": "contract ipeds_staff_by_occupation (is_category_total=false, sex/race='Total'), ipeds_instructional_staff, ipeds_new_hires, ipeds_salary_instructional, ipeds_salary_noninstructional"
+  },
+  "qwi_il_higher_ed": {
+    "geography": "Illinois statewide",
+    "industry": "NAICS 6113 Colleges, universities & professional schools",
+    "ownership": "A00 all (public + private)",
+    "window": "2023Q3-2025Q2",
+    "hazard_measure": "stable_sep_rate_q = SepS / EmpS (separations from jobs held a full quarter)",
+    "by_age": {
+      "A00": {
+        "label": "all ages",
+        "quarters": 8,
+        "mean_stable_emp": 112846.5,
+        "stable_sep_rate_q": 0.06034,
+        "stable_hire_rate_q": 0.06563,
+        "all_sep_rate_q": 0.10466,
+        "beginning_of_quarter_sep_rate_q": 0.07696,
+        "stable_hires_total": 59250,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ]
+      },
+      "A01": {
+        "label": "14-18",
+        "quarters": 8,
+        "mean_stable_emp": 210.8,
+        "stable_sep_rate_q": 0.14769,
+        "stable_hire_rate_q": 0.56999,
+        "all_sep_rate_q": 0.8558,
+        "beginning_of_quarter_sep_rate_q": 0.39031,
+        "stable_hires_total": 961,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ]
+      },
+      "A02": {
+        "label": "19-21",
+        "quarters": 8,
+        "mean_stable_emp": 4448.2,
+        "stable_sep_rate_q": 0.13477,
+        "stable_hire_rate_q": 0.22548,
+        "all_sep_rate_q": 0.3144,
+        "beginning_of_quarter_sep_rate_q": 0.19106,
+        "stable_hires_total": 8024,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ],
+        "sim_population_share": 0.03949,
+        "sim_hire_age_share": 0.13765,
+        "age_bounds": [
+          19,
+          22
+        ]
+      },
+      "A03": {
+        "label": "22-24",
+        "quarters": 8,
+        "mean_stable_emp": 4541.5,
+        "stable_sep_rate_q": 0.20313,
+        "stable_hire_rate_q": 0.20844,
+        "all_sep_rate_q": 0.30403,
+        "beginning_of_quarter_sep_rate_q": 0.21817,
+        "stable_hires_total": 7573,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ],
+        "sim_population_share": 0.04032,
+        "sim_hire_age_share": 0.12992,
+        "age_bounds": [
+          22,
+          25
+        ]
+      },
+      "A04": {
+        "label": "25-34",
+        "quarters": 8,
+        "mean_stable_emp": 21130.6,
+        "stable_sep_rate_q": 0.07929,
+        "stable_hire_rate_q": 0.10182,
+        "all_sep_rate_q": 0.11931,
+        "beginning_of_quarter_sep_rate_q": 0.09243,
+        "stable_hires_total": 17212,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ],
+        "sim_population_share": 0.1876,
+        "sim_hire_age_share": 0.29528,
+        "age_bounds": [
+          25,
+          35
+        ]
+      },
+      "A05": {
+        "label": "35-44",
+        "quarters": 8,
+        "mean_stable_emp": 26839.9,
+        "stable_sep_rate_q": 0.04465,
+        "stable_hire_rate_q": 0.04924,
+        "all_sep_rate_q": 0.07241,
+        "beginning_of_quarter_sep_rate_q": 0.05613,
+        "stable_hires_total": 10572,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ],
+        "sim_population_share": 0.23829,
+        "sim_hire_age_share": 0.18137,
+        "age_bounds": [
+          35,
+          45
+        ]
+      },
+      "A06": {
+        "label": "45-54",
+        "quarters": 8,
+        "mean_stable_emp": 25962.0,
+        "stable_sep_rate_q": 0.03458,
+        "stable_hire_rate_q": 0.03489,
+        "all_sep_rate_q": 0.0608,
+        "beginning_of_quarter_sep_rate_q": 0.04587,
+        "stable_hires_total": 7246,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ],
+        "sim_population_share": 0.2305,
+        "sim_hire_age_share": 0.12431,
+        "age_bounds": [
+          45,
+          55
+        ]
+      },
+      "A07": {
+        "label": "55-64",
+        "quarters": 8,
+        "mean_stable_emp": 20070.4,
+        "stable_sep_rate_q": 0.03909,
+        "stable_hire_rate_q": 0.02868,
+        "all_sep_rate_q": 0.0629,
+        "beginning_of_quarter_sep_rate_q": 0.04942,
+        "stable_hires_total": 4605,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ],
+        "sim_population_share": 0.17819,
+        "sim_hire_age_share": 0.079,
+        "age_bounds": [
+          55,
+          65
+        ]
+      },
+      "A08": {
+        "label": "65-99",
+        "quarters": 8,
+        "mean_stable_emp": 9642.4,
+        "stable_sep_rate_q": 0.0726,
+        "stable_hire_rate_q": 0.03966,
+        "all_sep_rate_q": 0.11215,
+        "beginning_of_quarter_sep_rate_q": 0.08677,
+        "stable_hires_total": 3059,
+        "status_flag_range_sep_s": [
+          1,
+          1
+        ],
+        "sim_population_share": 0.08561,
+        "sim_hire_age_share": 0.05248,
+        "age_bounds": [
+          65,
+          75
+        ]
+      }
+    },
+    "seasonality_multiplier_by_quarter": {
+      "1": 0.6375,
+      "2": 1.5304,
+      "3": 0.9837,
+      "4": 0.8483
+    },
+    "cross_check": {
+      "contract_rows_in_window_sex0": 72,
+      "contract_vs_silver_sep_emp_mismatches": 0
+    },
+    "source": "contract qwi_higher_ed (totals) + silver qwi_il_sa_gs_n4_oslp (age rows, stable measures)"
+  },
+  "hazard_anchors": {
+    "qwi": {
+      "label": "QWI statewide level",
+      "quarterly_rate_by_age": {
+        "A02": 0.13477,
+        "A03": 0.20313,
+        "A04": 0.07929,
+        "A05": 0.04465,
+        "A06": 0.03458,
+        "A07": 0.03909,
+        "A08": 0.0726
+      },
+      "implied_annual_rate_for_sim_age_mix": 0.2198
+    },
+    "ipeds": {
+      "label": "UIUC IPEDS new-hire anchored",
+      "scale_vs_qwi": 0.4596,
+      "quarterly_rate_by_age": {
+        "A02": 0.06194,
+        "A03": 0.09336,
+        "A04": 0.03644,
+        "A05": 0.02052,
+        "A06": 0.01589,
+        "A07": 0.01797,
+        "A08": 0.03337
+      },
+      "implied_annual_rate_for_sim_age_mix": 0.1061
+    }
+  },
+  "caveats": [
+    "All targets are public aggregates. The simulator's population is synthetic; nothing here describes any real employee.",
+    "QWI covers ALL Illinois NAICS 6113 employers (public and private), not UIUC. It includes stable jobs of any FTE; age group 14-18 is excluded from the synthetic population because IPEDS staff counts exclude student workers and graduate assistants.",
+    "QWI does not distinguish retirements, voluntary quits or terminations. Retirement classification in the simulator is an illustrative eligibility rule, not SURS plan rules.",
+    "The QWI statewide separation level is roughly twice the UIUC IPEDS full-time new-hire rate. Both anchors are kept; the difference is structural uncertainty and is shown in the planner.",
+    "IPEDS new hires are Fall-2023 full-time permanent hires only; the IPEDS anchor assumes steady state (hires ~ separations) and ignores part-time churn.",
+    "Family turnover multipliers come from UIUC FT new-hire rate by occupation relative to the overall rate, clipped to [0.5, 2.0]. Library and Student/Academic Affairs share one IPEDS new-hire category and are split by FT headcount.",
+    "IPEDS salary averages are full-time only, Fall 2023 / AY2023-24; part-time pay is assumed pro-rata. No level-specific pay is published.",
+    "Reporting levels, tenure, critical-role flags, promotion rates and time-to-fill have NO public UIUC source. They are labelled assumptions in synthesize.py/simulate.py."
+  ]
+}

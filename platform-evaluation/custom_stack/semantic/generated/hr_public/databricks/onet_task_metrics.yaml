@@ -1,0 +1,44 @@
+version: '1.1'
+comment: 'O*NET task statements. Grain: one row per onetsoc_code x task_id. Generated from hr_public.yaml sha256 102bec2ac50cb4a9;
+  status development.'
+source: hr_analytics.hr_public.onet_task_statement
+joins:
+- name: onet_occupation
+  source: hr_analytics.hr_public.onet_occupation
+  'on': source.onetsoc_code = onet_occupation.onetsoc_code
+dimensions:
+- name: task_type
+  expr: task_type
+  comment: Core, Supplemental or n/a.
+  synonyms:
+  - task type
+- name: occupation_title
+  expr: onet_occupation.title
+  comment: O*NET occupation title.
+  synonyms:
+  - occupation
+  - occupations
+  - occupation title
+- name: occupation_code
+  expr: onet_occupation.onetsoc_code
+  comment: O*NET-SOC code.
+  synonyms:
+  - onet code
+  - soc code
+  - occupation code
+measures:
+- name: task_statement_count
+  expr: COUNT(*)
+  comment: 'Number of task statements (rows). Unit: task statements. Grain rule: Additive across occupations.'
+  synonyms:
+  - task count
+  - task statements
+  - number of tasks
+  - tasks
+- name: core_task_count
+  expr: COUNT(CASE WHEN (task_type = 'Core') THEN 1 END)
+  comment: 'Task statements typed Core. Unit: task statements. Grain rule: Additive; metric-level filter task_type = ''Core''.'
+  synonyms:
+  - core tasks
+  - core task count
+  - number of core tasks

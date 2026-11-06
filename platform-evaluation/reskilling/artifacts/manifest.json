@@ -1,0 +1,43 @@
+{
+  "counts": {
+    "occupation_profiles": 433,
+    "onet_roles": 173,
+    "roles": 1056,
+    "sucss_roles": 883
+  },
+  "input_sha256": {
+    "contract/aei_occupation_exposure.parquet": "351f111d4ae07cde60001c8506345810770d32e1d1f0b339d03c593654a27a6b",
+    "contract/aei_task_usage.parquet": "b0b7caa775f9716c78a9be6f59df4fe261b144514af9cdc971bc7ff6dc7d58bf",
+    "contract/ipeds_staff_by_occupation.parquet": "b5218aa0ae8addc5526258f31dc16e49078319ac680df4701f2a85029bbe7872",
+    "contract/onet_element_rating.parquet": "b3a461a7eb3990c56c45fb1b82b81ada32e3c97db7b849a47477d1aa6f50528f",
+    "contract/onet_job_zone.parquet": "1243a4344da0b8b7b29a64054c83f6056b60ed0488f0184e70b4f667fd8fad72",
+    "contract/onet_occupation.parquet": "36e4b46027a91e2ef18ea6bc8fbe6b4aa8b2a3e9d113536ae07c59cff14faa4c",
+    "contract/onet_soc_crosswalk.parquet": "775e47048b1463b36e820171293bab9088036a50dea714265c8db8bd784826e7",
+    "contract/onet_task_rating.parquet": "1fa47f98d96400cc0369dec4b25f7cebb85fa01bc3d29a9d86a2ee382baee2c2",
+    "contract/onet_task_statement.parquet": "d43bb0a7fbe9464e8a99f29a3b5b0c002f0f6d20d71b22de0c0ef0effcc7ce76",
+    "contract/onet_technology_skill.parquet": "c5f264d58069dd4253fc488f3dd1c8b32783877af88bee7061f69304cd8d5452",
+    "contract/qwi_higher_ed.parquet": "bab1022ecf172e8bb082d484be25feac81562a69910b4ef08fa8e62e4647bceb",
+    "contract/sucss_class.parquet": "afdac5b3c69da43225327f530eccb63454e38067cfe5943f7d10c9e0da8fc7fa",
+    "contract/sucss_onet_candidate.parquet": "c4d8d1b314645d881d8244318a9d70a9030b7080c48a9dbab87d08abb487b80b",
+    "silver/onet_education.parquet": "b68c231a04a927126e429f64817228d3202705bcd54305c56af2c3b18ee5bf8f",
+    "silver/onet_education_categories.parquet": "31fc58d1fe712d8b71e7e3aeddeafe2ecf1e52ad308a0930f6935be44fd7a625",
+    "silver/onet_essential_skills_to_work_activities.parquet": "93ff7a0ec514d24cea11f3505dc486f8681c2f96712936dec70a1d1296bb1a4d",
+    "silver/onet_gwas_to_iwas_to_dwas.parquet": "70fd5473db9a86833a2d73726b0a9b18ce4d32def2c5ff11301fe24a4d1d6610",
+    "silver/onet_related_occupations.parquet": "885e8bf444b998cdb65742e13b904f9ed6ae4f4760d928689a7f0c200bbc23a5",
+    "silver/onet_tasks_to_dwas.parquet": "da5017ec6517e9a691435f7a1987431acea08050eb530a7ac624c231d354908b",
+    "silver/onet_transferable_skills_to_work_activities.parquet": "aae3fdb33e3901b3a9574ffbdbeb65f8091e95548b480b69763b622a3b372223"
+  },
+  "outputs": {
+    "adjacent_role.parquet": "778eee22121dec2200dc2beb485b83986ae85ec43c19db276d16711db11f660f",
+    "adjacent_role_gap.parquet": "437d92d9364dcf7bb4c972be62a101fddaaae81584edb47bd328c31b48efdd30",
+    "competency_target.parquet": "1ae4924bad8b5ed58de6645cd8b9fc0eb419b0738f5c2a4a8c37d256eb9b5cb3",
+    "family_summary.parquet": "d902e674f5216679c18a6625fb915bcde130c74ff4139018bf84a6c0cfd8b7b3",
+    "learning_theme.parquet": "64f1f463400a8049204484ccd8f50da431c89c82930ebd30ae40afcf40b324a2",
+    "pathways.json": "3c5736caa957609ac6b35d27210860f7b460aec904924ed3c61f306ab7b37bbb",
+    "role_activity_augmentation.parquet": "3b9035da6b2487dbae9697771b3bd25a9768ed886cbc29cfd597ef15c6a4df27",
+    "role_profile.parquet": "28df70ed4b7b379f112d28411072ea6f43ba5f52a446ce156d8ed6bba0ab6f4f",
+    "role_skill_durability.parquet": "bef39bc4e928c1a866e4c9051e93b808dc2a00a5b7065268b77643eaaf65a00b",
+    "role_task_split.parquet": "5b3aca7f90f0e233010156954b0bbb190166549841da070392676523d706e62f"
+  },
+  "protocol_version": "reskilling_pathways_v1"
+}
