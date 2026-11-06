@@ -1,0 +1,184 @@
+# Canonical concept -> physical table.column mapping (the single switch point).
+#
+# This file maps the integration layer's canonical concepts to the PHYSICAL names of the
+# synthetic ESGC sample pack (platform-evaluation/sample_datasets/v1). Nothing else in
+# integration/ names a physical table or column: build_integrated.py only reads the canonical
+# views that mapping.py creates from this file.
+#
+# To run on cookbook-verified or real EDW names, copy this file, change table/column/code values,
+# set every verified entry's provenance to verified_dictionary, and point the loader at it:
+#   HR_DATA_SOURCE=edw HR_EDW_MAPPING=/secure/edw_profile/edw_mapping.yaml HR_EDW_DATA=<duckdb file or parquet dir>
+# (HR_DATA_SOURCE=sample is the default; "synthetic" is accepted as an alias, matching
+#  CODEX_HANDOFF_EDW_PROFILING.md.)
+#
+# Provenance flags:
+#   assumed_synthetic_layout  - name/convention copied from the sample pack's schema_assumptions.json;
+#                               NOT confirmed against an EDW data dictionary.
+#   verified_dictionary       - confirmed against the EDW data dictionary / Data Cookbook (none yet).
+#
+# Field keys follow the concept names proposed in CODEX_HANDOFF_EDW_PROFILING.md step 2
+# (person_id, position_id, eff_date, exp_date with convention/open_end, fte with transform ...).
+
+mapping_version: "1.0"
+source: sample
+default_provenance: assumed_synthetic_layout
+
+data:
+  # Where the physical tables live. For the sample pack each set is a folder holding
+  # sample.duckdb plus <TABLE>.parquet and <TABLE>.jsonl.
+  pack_path: sample_datasets/v1          # relative to platform-evaluation/; override with HR_SAMPLE_PACK_PATH
+  storage: duckdb                         # duckdb | parquet | jsonl (jsonl stores every value as text)
+  duckdb_file: sample.duckdb
+  sets:                                   # three separate synthetic worlds; never join people across them
+    longitudinal: longitudinal
+    CLEAN: quality/CLEAN
+    DEFECTS: quality/DEFECTS
+
+conventions:
+  effective_end: inclusive                # *_EXP_DT is the last valid day (generator assumption)
+  recorded_end: exclusive                 # ROW_REC_END_DT is the first day the version is no longer current
+  open_end: "9999-12-31"
+  provenance: assumed_synthetic_layout
+
+# Code domains the integration interprets. Real EDW code values must replace these.
+code_values:
+  appointment_status_active: {values: ["A"], provenance: assumed_synthetic_layout}
+  appointment_status_terminated: {values: ["T"], provenance: assumed_synthetic_layout}
+  position_status_active: {values: ["A"], provenance: assumed_synthetic_layout}
+  employment_status_active: {values: ["A"], provenance: assumed_synthetic_layout}
+  surs_retirement_yes: {values: ["Y"], provenance: assumed_synthetic_layout}
+  separation_reason_group:
+    provenance: assumed_synthetic_layout
+    map:
+      RET: retirement
+      RES: resignation
+      END: end_of_appointment
+  class_source_public_sucss: {values: ["SUCSS"], provenance: assumed_synthetic_layout}
+
+concepts:
+  person:
+    table: T_PERS_HIST
+    grain: person x effective row (x recorded version where present)
+    fields:
+      person_id:      {column: EDW_PERS_ID, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      eff_date:       {column: PERS_EFF_DT, type: date, provenance: assumed_synthetic_layout}
+      exp_date:       {column: PERS_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", provenance: assumed_synthetic_layout}
+      birth_date:     {column: BIRTH_DT, type: date, role: restricted, provenance: assumed_synthetic_layout}
+      recorded_start: {column: ROW_REC_START_DT, type: date, optional: true, provenance: assumed_synthetic_layout}
+      recorded_end:   {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, provenance: assumed_synthetic_layout}
+
+  employment:
+    table: T_EMPEE_HIST
+    grain: person x employment effective row
+    fields:
+      person_id:           {column: EDW_PERS_ID, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      eff_date:            {column: EMPEE_EFF_DT, type: date, provenance: assumed_synthetic_layout}
+      exp_date:            {column: EMPEE_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", provenance: assumed_synthetic_layout}
+      status_code:         {column: EMPEE_STATUS_CD, type: varchar, provenance: assumed_synthetic_layout}
+      employee_class_code: {column: EMPEE_CLS_CD, type: varchar, provenance: assumed_synthetic_layout}
+      first_hire_date:     {column: FIRST_HIRE_DT, type: date, provenance: assumed_synthetic_layout}
+      current_hire_date:   {column: CUR_HIRE_DT, type: date, provenance: assumed_synthetic_layout}
+      home_org_code:       {column: HOME_ORG_CD, type: varchar, optional: true, provenance: assumed_synthetic_layout}
+      campus_code:         {column: CAMPUS_CD, type: varchar, optional: true, provenance: assumed_synthetic_layout}
+      recorded_start:      {column: ROW_REC_START_DT, type: date, optional: true, provenance: assumed_synthetic_layout}
+      recorded_end:        {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, provenance: assumed_synthetic_layout}
+
+  appointment:
+    table: T_JOB_DETL_HIST
+    grain: person x position x job suffix x effective row (x recorded version where present)
+    fields:
+      person_id:            {column: EDW_PERS_ID, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      position_id:          {column: POSN_NBR, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      job_suffix:           {column: JOB_SUFFIX, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      eff_date:             {column: JOB_DETL_EFF_DT, type: date, provenance: assumed_synthetic_layout}
+      exp_date:             {column: JOB_DETL_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", provenance: assumed_synthetic_layout}
+      contract_type_code:   {column: JOB_CONTRACT_TYPE_CD, type: varchar, provenance: assumed_synthetic_layout}
+      status_code:          {column: JOB_STATUS_CD, type: varchar, provenance: assumed_synthetic_layout}
+      fte:                  {column: JOB_FTE, type: double, transform: none, provenance: assumed_synthetic_layout}
+      annual_salary:        {column: JOB_ANNUAL_SAL_AMT, type: double, provenance: assumed_synthetic_layout}
+      job_class_code:       {column: JOB_CLS_CD, type: varchar, provenance: assumed_synthetic_layout}
+      employee_class_code:  {column: JOB_ECLS_CD, type: varchar, provenance: assumed_synthetic_layout}
+      org_code:             {column: JOB_ORG_CD, type: varchar, provenance: assumed_synthetic_layout}
+      supervisor_person_id: {column: SUPERVISOR_PERS_ID, type: varchar, optional: true, provenance: assumed_synthetic_layout}
+      recorded_start:       {column: ROW_REC_START_DT, type: date, optional: true, provenance: assumed_synthetic_layout}
+      recorded_end:         {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, provenance: assumed_synthetic_layout}
+
+  position:
+    table: T_POSN_HIST
+    grain: position x effective row (x recorded version where present)
+    fields:
+      position_id:    {column: POSN_NBR, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      eff_date:       {column: POSN_EFF_DT, type: date, provenance: assumed_synthetic_layout}
+      exp_date:       {column: POSN_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", provenance: assumed_synthetic_layout}
+      status_code:    {column: POSN_STATUS_CD, type: varchar, provenance: assumed_synthetic_layout}
+      job_class_code: {column: POSN_CLS_CD, type: varchar, provenance: assumed_synthetic_layout}
+      org_code:       {column: POSN_ORG_CD, type: varchar, provenance: assumed_synthetic_layout}
+      budget_fte:     {column: POSN_BUDGET_FTE, type: double, transform: none, provenance: assumed_synthetic_layout}
+      title:          {column: POSN_TITLE, type: varchar, optional: true, provenance: assumed_synthetic_layout}
+      recorded_start: {column: ROW_REC_START_DT, type: date, optional: true, provenance: assumed_synthetic_layout}
+      recorded_end:   {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, provenance: assumed_synthetic_layout}
+
+  separation:
+    table: T_EMPEE_HIST_5
+    grain: person x termination event (x recorded version where present)
+    fields:
+      person_id:          {column: EDW_PERS_ID, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      term_date:          {column: TERM_DT, type: date, provenance: assumed_synthetic_layout}
+      term_reason_code:   {column: TERM_REASON_CD, type: varchar, provenance: assumed_synthetic_layout}
+      surs_retirement_ind: {column: SURS_RETIR_IND, type: varchar, provenance: assumed_synthetic_layout}
+      recorded_start:     {column: ROW_REC_START_DT, type: date, optional: true, provenance: assumed_synthetic_layout}
+      recorded_end:       {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, provenance: assumed_synthetic_layout}
+
+  payroll_line:
+    table: T_PAYR_ACCTG_DETL
+    optional: true                      # absent from the longitudinal set
+    grain: person x position x suffix x pay period x payroll line
+    fields:
+      person_id:           {column: EDW_PERS_ID, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      position_id:         {column: POSN_NBR, type: varchar, provenance: assumed_synthetic_layout}
+      job_suffix:          {column: JOB_SUFFIX, type: varchar, provenance: assumed_synthetic_layout}
+      pay_period_end_date: {column: PAY_PERIOD_END_DT, type: date, provenance: assumed_synthetic_layout}
+      payroll_id:          {column: PAYR_ID, type: varchar, provenance: assumed_synthetic_layout}
+      earn_code:           {column: EARN_CD, type: varchar, provenance: assumed_synthetic_layout}
+      pay_amount:          {column: PAY_AMT, type: double, provenance: assumed_synthetic_layout}
+      org_code:            {column: ORG_CD, type: varchar, provenance: assumed_synthetic_layout}
+      payroll_seq:         {column: PAYR_SEQ_NBR, type: bigint, provenance: assumed_synthetic_layout}
+
+  job_class:
+    table: REF_JOB_CLASS
+    grain: job class code
+    fields:
+      job_class_code:    {column: CLS_CD, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      class_source:      {column: CLS_SOURCE, type: varchar, provenance: assumed_synthetic_layout}
+      class_title:       {column: CLS_TITLE, type: varchar, provenance: assumed_synthetic_layout}
+      min_annual_amount: {column: MIN_ANNUAL_AMT, type: double, provenance: assumed_synthetic_layout}
+      max_annual_amount: {column: MAX_ANNUAL_AMT, type: double, provenance: assumed_synthetic_layout}
+
+  org:
+    table: REF_ORG
+    grain: "org unit (synthetic tree - U00 system, U10/U20/U30 campuses, U1x colleges, U1xx departments)"
+    fields:
+      org_code:        {column: ORG_CD, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      parent_org_code: {column: PARENT_ORG_CD, type: varchar, provenance: assumed_synthetic_layout}
+      status_code:     {column: ORG_STATUS_CD, type: varchar, provenance: assumed_synthetic_layout}
+      org_title:       {column: ORG_TITLE, type: varchar, provenance: assumed_synthetic_layout}
+
+  role_family:
+    table: REF_ROLE_FAMILY
+    optional: true                      # longitudinal only
+    grain: job class code
+    fields:
+      job_class_code: {column: CLS_CD, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      role_family:    {column: ROLE_FAMILY, type: varchar, provenance: assumed_synthetic_layout}
+      role_level:     {column: ROLE_LEVEL, type: integer, provenance: assumed_synthetic_layout}
+      critical_ind:   {column: CRITICAL_IND, type: varchar, provenance: assumed_synthetic_layout}
+
+  employee_class:
+    table: REF_EMPEE_CLS
+    optional: true                      # quality sets only
+    grain: employee class code
+    fields:
+      employee_class_code: {column: ECLS_CD, type: varchar, role: key, provenance: assumed_synthetic_layout}
+      description:         {column: ECLS_DESC, type: varchar, provenance: assumed_synthetic_layout}
+      class_group:         {column: ECLS_GROUP, type: varchar, provenance: assumed_synthetic_layout}
+      pay_basis:           {column: PAY_BASIS, type: varchar, provenance: assumed_synthetic_layout}

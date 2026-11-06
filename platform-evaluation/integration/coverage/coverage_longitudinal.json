@@ -1,0 +1,317 @@
+{
+ "set": "longitudinal",
+ "latest_snapshot": "2026-06-30",
+ "denominators": {
+  "classes_reference": 38,
+  "classes_used_in_appointments": 38,
+  "positions_active_or_filled": 859,
+  "headcount_distinct_persons": 813
+ },
+ "reach": [
+  {
+   "source": "sucss_class_record",
+   "bridge": "job_class_to_sucss_record",
+   "classes_used": 34,
+   "classes_used_pct": 89.5,
+   "classes_reference": 34,
+   "classes_reference_pct": 89.5,
+   "positions": 714,
+   "positions_pct": 83.1,
+   "headcount": 675,
+   "headcount_pct": 83.0
+  },
+  {
+   "source": "onet_occupation (duty match, not abstained)",
+   "bridge": "sucss_to_onet",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "soc_2018",
+   "bridge": "onet_to_soc2018",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "oews_national_median_2025",
+   "bridge": "soc_to_bls_oews",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "oews_illinois_median_2025",
+   "bridge": "soc_to_bls_oews",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "oews_any_local_msa_median_2025",
+   "bridge": "soc_to_bls_oews",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "oews_naics611300_median_2025",
+   "bridge": "soc_to_bls_oews",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "bls_projections_separation_rate",
+   "bridge": "soc_to_bls_projections",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "oews_national_trend",
+   "bridge": "soc_to_oews_national_history",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "aei_observed_exposure",
+   "bridge": "soc_to_aei_exposure",
+   "classes_used": 30,
+   "classes_used_pct": 78.9,
+   "classes_reference": 30,
+   "classes_reference_pct": 78.9,
+   "positions": 606,
+   "positions_pct": 70.5,
+   "headcount": 570,
+   "headcount_pct": 70.1
+  },
+  {
+   "source": "onet_job_zone",
+   "bridge": "onet_to_job_zone_tasks_tech",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "job_evolution_watch_score",
+   "bridge": "sucss_to_job_evolution",
+   "classes_used": 32,
+   "classes_used_pct": 84.2,
+   "classes_reference": 32,
+   "classes_reference_pct": 84.2,
+   "positions": 672,
+   "positions_pct": 78.2,
+   "headcount": 634,
+   "headcount_pct": 78.0
+  },
+  {
+   "source": "class_evolution_timeline",
+   "bridge": "sucss_to_class_evolution",
+   "classes_used": 34,
+   "classes_used_pct": 89.5,
+   "classes_reference": 34,
+   "classes_reference_pct": 89.5,
+   "positions": 714,
+   "positions_pct": 83.1,
+   "headcount": 675,
+   "headcount_pct": 83.0
+  },
+  {
+   "source": "class_evolution_stale_spec",
+   "bridge": "sucss_to_class_evolution",
+   "classes_used": 34,
+   "classes_used_pct": 89.5,
+   "classes_reference": 34,
+   "classes_reference_pct": 89.5,
+   "positions": 714,
+   "positions_pct": 83.1,
+   "headcount": 675,
+   "headcount_pct": 83.0
+  },
+  {
+   "source": "class_evolution_revision_risk",
+   "bridge": "sucss_to_class_evolution",
+   "classes_used": 34,
+   "classes_used_pct": 89.5,
+   "classes_reference": 34,
+   "classes_reference_pct": 89.5,
+   "positions": 714,
+   "positions_pct": 83.1,
+   "headcount": 675,
+   "headcount_pct": 83.0
+  }
+ ],
+ "position_market_pay": {
+  "filled_positions": 813,
+  "with_local_msa_ratio": 597,
+  "with_il_ratio": 634,
+  "local_pct": 73.4,
+  "il_pct": 78.0
+ },
+ "sucss_match_types": [
+  {
+   "sucss_match_type": "exact_code",
+   "classes_used": 34,
+   "headcount": 675
+  },
+  {
+   "sucss_match_type": "local_class_no_sucss_record",
+   "classes_used": 4,
+   "headcount": 138
+  }
+ ],
+ "onet_evidence_bands": [
+  {
+   "evidence_band": "abstained",
+   "classes_used": 2,
+   "headcount": 41
+  },
+  {
+   "evidence_band": "moderate",
+   "classes_used": 19,
+   "headcount": 383
+  },
+  {
+   "evidence_band": "no_link",
+   "classes_used": 4,
+   "headcount": 138
+  },
+  {
+   "evidence_band": "strong",
+   "classes_used": 9,
+   "headcount": 157
+  },
+  {
+   "evidence_band": "weak",
+   "classes_used": 4,
+   "headcount": 94
+  }
+ ],
+ "abstained_classes": [
+  {
+   "job_class_code": "3318",
+   "class_title": "Storekeeper II",
+   "abstain_reason": "weak_duty_evidence",
+   "headcount": 14
+  },
+  {
+   "job_class_code": "4699",
+   "class_title": "Client Relations Representative III",
+   "abstain_reason": "weak_duty_evidence",
+   "headcount": 27
+  }
+ ],
+ "multi_record_codes": [],
+ "sample_titles_disagreeing_with_sucss": 0,
+ "oews_broad_rollup_classes": 2,
+ "oews_national_median_suppressed_classes": 0,
+ "positions_without_campus": 0,
+ "unreviewed_or_synthetic_bridges": [
+  {
+   "bridge": "sucss_to_onet",
+   "review_status": "unreviewed"
+  },
+  {
+   "bridge": "sucss_to_job_evolution",
+   "review_status": "unreviewed"
+  },
+  {
+   "bridge": "org_to_campus",
+   "review_status": "synthetic_assignment"
+  }
+ ],
+ "mapping_ok": true,
+ "mapping_concepts": {
+  "appointment": "resolved",
+  "employee_class": "absent_optional",
+  "employment": "resolved",
+  "job_class": "resolved",
+  "org": "resolved",
+  "payroll_line": "absent_optional",
+  "person": "resolved",
+  "position": "resolved",
+  "role_family": "resolved",
+  "separation": "resolved"
+ },
+ "oews_year_recovery": "silver_survey_year",
+ "flows": {
+  "flow_years": [
+   2006,
+   2026
+  ],
+  "partial_last_year": true,
+  "reference_date": "2026-10-27"
+ },
+ "benchmarks": {
+  "benchmark_window": [
+   2023,
+   2025
+  ],
+  "last_complete_year": 2025,
+  "latest_snapshot": "2026-06-30"
+ },
+ "generator_truth_check": {
+  "truth_stats": {
+   "abolished": 197,
+   "external_hires": 1928,
+   "internal_moves": 1467,
+   "positions_created_by_moves": 685,
+   "separations": 1480
+  },
+  "integration_counts_all_years": {
+   "first_observed_appointments (external_hire)": 2302,
+   "internal_moves": 1467,
+   "rehires": 0,
+   "separations": 1480
+  },
+  "note": "external_hire counts every person's first observed appointment, so it includes the generator's initial stock; the generator's external_hires counts only hires during the simulation."
+ }
+}

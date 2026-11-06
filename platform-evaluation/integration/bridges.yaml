@@ -1,0 +1,188 @@
+# Bridges from the canonical internal concepts to public external data.
+#
+# Every bridge states its method, source, review_status and what confidence it deserves.
+# review_status vocabulary follows knowledge_graph/schema.md section 1:
+#   publisher_asserted   the publisher states the relationship (crosswalks, IPEDS county)
+#   derived_rule         deterministic documented rule in this layer (code equality, date -> quarter)
+#   curated_rule         hand-written mapping reviewable in this file
+#   unreviewed           a machine suggestion nobody has checked (SUCSS -> O*NET)
+#   synthetic_assignment a labelled stand-in that only exists because the internal data is synthetic
+#
+# The status of a chain is the weakest link: anything downstream of an unreviewed or synthetic
+# link carries chain_review_status = unreviewed / synthetic_assignment.
+#
+# Paths are relative to platform-evaluation/; the lake root can be moved with HR_LAKE_PATH.
+
+bridges_version: "1.0"
+lake_root: data/lake          # "lake:" paths resolve here; other paths are relative to platform-evaluation/
+
+bridges:
+  - id: job_class_to_sucss_record
+    from: job_class.job_class_code
+    to: sucss_class (source_record_id)
+    source: {source_id: sucss_catalog, path: lake:contract/sucss_class.parquet, vintage: "acquired 2026-10-29"}
+    method: exact_class_code_match
+    review_status: derived_rule
+    confidence: >-
+      High for code identity: the sample's CLS_CD values are real public SUCSS codes. The sample
+      titles are synthetic and are only compared, never used to match. LOCAL classes (AP/FA/GA/OV)
+      have no SUCSS record by design.
+    multi_record_rule: >-
+      A code with several catalog records (1164 has two: Police Telecommunicator and Public Safety
+      Telecommunicator) resolves to the record whose normalized title equals the sample title; if
+      none or several do, to the lowest source_record_id, flagged code_multi_record_ambiguous. One
+      class never fans out to two records.
+
+  - id: sucss_to_onet
+    from: sucss_class.source_record_id
+    to: onet_occupation.onetsoc_code
+    source: {source_id: sucss_mapping, path: sucss_mapping/outputs/candidates.parquet, vintage: sucss_duty_tfidf_v1}
+    method: rank-1 duty-based candidate (sucss_duty_tfidf_v1), carrying evidence_index, evidence_band and abstain
+    review_status: unreviewed
+    confidence: >-
+      Directional. Provisional 60-class gold sample: top-1 acceptable 65% (95% CI 52-76%), top-5 90%.
+      evidence_index is an ordinal 0-100 score, not a probability. Abstained records get NULL
+      external facts with the abstain reason.
+    params:
+      allow_title_lexical_fallback: false   # when true and the duty matcher abstains, use the
+                                            # title_lexical_baseline_v1 rank-1 candidate, flagged
+      fallback_source: {source_id: sucss_catalog, path: lake:contract/sucss_onet_candidate.parquet, vintage: title_lexical_baseline_v1}
+      top_k: 3                              # carried in br_sucss_onet_topk for display only
+      top_k_weight_note: "display share of evidence_index among the top-k; NOT a probability; never used to allocate headcount"
+
+  - id: onet_to_soc2018
+    from: onet_occupation.onetsoc_code
+    to: soc_2018_code
+    source: {source_id: onet_soc_crosswalk, path: lake:contract/onet_soc_crosswalk.parquet, vintage: "O*NET-SOC 2019 to SOC 2018"}
+    method: official crosswalk (many O*NET codes -> one SOC; never one -> many)
+    review_status: publisher_asserted
+    confidence: Exact.
+
+  - id: soc_to_bls_oews
+    from: soc_2018_code
+    to: bls_oews_all (survey May 2025; May 2024 kept for change)
+    source: {source_id: bls_oews, path: lake:silver/bls_oews_all.parquet, vintage: "OEWS May 2025"}
+    method: >-
+      occ_code equality on detailed SOC; when the detailed code is not published, the OEWS broad
+      code (first 6 characters + '0') flagged soc_rollup_broad. Rows: national cross-industry
+      (area 99, naics 000000), Illinois (area 17), MSAs Champaign-Urbana 16580, Chicago 16980,
+      Springfield 44100, and national NAICS 611300 colleges & universities (own_code 235 all
+      ownerships; own_code 2 state government).
+    review_status: publisher_asserted
+    suppression: "'*' not available, '**' employment not published, '#' wage top-coded, '~' <0.5%: all become NULL with a *_flag column; never zero"
+    confidence: >-
+      OEWS SOC-level wages describe an occupation's labour market, not the pay of an Illinois
+      civil-service class. survey_year in silver is broken (literal 'survey_year'); the layer
+      recovers it from the extract file order and refuses to assign a year if row counts disagree.
+    params:
+      primary_year: 2025
+      areas:
+        national: {area: "99", naics: "000000"}
+        illinois: {area: "17", naics: "000000"}
+        msa_champaign_urbana: {area: "16580", naics: "000000"}
+        msa_chicago: {area: "16980", naics: "000000"}
+        msa_springfield: {area: "44100", naics: "000000"}
+        ind611300_all: {area: "99", naics: "611300", own_code: "235"}
+        ind611300_state_gov: {area: "99", naics: "611300", own_code: "2"}
+
+  - id: soc_to_bls_projections
+    from: soc_2018_code
+    to: bls_projections_occupation, bls_projections_separations (2025-35)
+    source: {source_id: bls_projections, path: lake:silver/bls_projections_occupation.parquet, vintage: "Employment Projections 2025-35"}
+    method: national matrix code equality (Line item rows), broad-code fallback flagged
+    review_status: publisher_asserted
+    confidence: >-
+      National occupation-level projections. The separations rate is OCCUPATIONAL separation
+      (labour-force exits + occupational transfers), not employer turnover.
+
+  - id: soc_to_oews_national_history
+    from: soc_2018_code
+    to: bls_oews_national_history (May 2015 - May 2025)
+    source: {source_id: bls_oews, path: lake:silver/bls_oews_national_history.parquet, vintage: "OEWS national May 2015-2025"}
+    method: occ_code equality per survey year; years before 2019 use SOC 2010 codes, so a code that changed is missing there (reported as n_years)
+    review_status: publisher_asserted
+
+  - id: soc_to_aei_exposure
+    from: soc_2018_code
+    to: aei_occupation_exposure.observed_exposure
+    source: {source_id: anthropic_economic_index, path: lake:contract/aei_occupation_exposure.parquet, vintage: labor_market_impacts}
+    method: soc_2018_code equality
+    review_status: publisher_asserted
+    confidence: Observed Claude usage evidence (contract rule 10); not a displacement forecast.
+
+  - id: onet_to_job_zone_tasks_tech
+    from: onet_occupation.onetsoc_code
+    to: onet_job_zone, onet_task_statement (counts), onet_technology_skill (counts)
+    source: {source_id: onet_db_31_0, path: lake:contract/, vintage: "O*NET 31.0"}
+    method: onetsoc_code equality
+    review_status: publisher_asserted
+
+  - id: sucss_to_job_evolution
+    from: sucss_class.source_record_id
+    to: job_evolution/artifacts/sucss_class_watch.parquet
+    source: {source_id: job_evolution, path: job_evolution/artifacts/sucss_class_watch.parquet, vintage: "O*NET 13.0-31.0 panel"}
+    method: source_record_id equality (job_evolution itself rides the same unreviewed rank-1 SUCSS->O*NET link)
+    review_status: unreviewed
+    confidence: Watch score is a rank for where to look first, not a forecast of job loss. NULL when the O*NET link abstained.
+
+  - id: sucss_to_class_evolution
+    from: job_class.job_class_code
+    to: class_evolution/outputs/{class_timeline, stale_specs, revision_risk}.parquet
+    source: {source_id: class_evolution, path: class_evolution/outputs/, vintage: "SUCSS notices 2003-2026, build 2026-11-06"}
+    method: class_code equality
+    review_status: derived_rule
+    confidence: Machine-parsed public notices; counts are lower bounds. revision_risk is a descriptive index, not a probability.
+
+  - id: org_to_campus
+    from: org.org_code
+    to: campus org (ancestor whose parent is the root) -> IPEDS unitid
+    source: {source_id: integration_synthetic_campus_assignment, path: integration/bridges.yaml, vintage: "v1"}
+    method: walk REF_ORG parents to the campus level, then the labelled synthetic assignment below
+    review_status: synthetic_assignment
+    confidence: >-
+      NONE as a fact about the University. The synthetic org tree's Campus 1/2/3 are assigned to
+      UIUC/UIC/UIS purely so public context can be attached; synthetic people are not employees of
+      those campuses.
+    params:
+      assignment:
+        U00: {unitid: "149587", label: "System Offices (synthetic assignment)"}
+        U10: {unitid: "145637", label: "UIUC (synthetic assignment)"}
+        U20: {unitid: "145600", label: "UIC (synthetic assignment)"}
+        U30: {unitid: "148654", label: "UIS (synthetic assignment)"}
+
+  - id: campus_to_geography
+    from: ipeds unitid
+    to: county FIPS, CBSA (OEWS MSA), state
+    source: {source_id: ipeds_hd2024, path: lake:contract/ipeds_institution.parquet, vintage: HD2024}
+    method: IPEDS directory county_fips and cbsa_code; OEWS MSA code = CBSA code
+    review_status: publisher_asserted
+
+  - id: geography_to_qcew_qwi
+    from: county FIPS / state
+    to: qcew_area (county, all industries), qcew_industry (county NAICS 611310 by ownership), qwi_higher_ed (Illinois statewide NAICS 6113)
+    source: {source_id: "qcew_il_counties_qtr|qcew_colleges_qtr|qwi_il", path: lake:contract/, vintage: "2019Q1 onward; LEHD latest_release"}
+    method: area_fips equality; QWI is statewide only (no county or ownership split)
+    review_status: publisher_asserted
+    confidence: Suppressed QCEW cells (disclosure_code N) and QWI status flags stay NULL / kept.
+
+  - id: campus_to_ipeds_peers
+    from: ipeds unitid
+    to: peer_benchmarks/artifacts/fact_institution_metrics.parquet (Big Ten peer panel, Fall 2015-2023)
+    source: {source_id: peer_benchmarks, path: peer_benchmarks/artifacts/fact_institution_metrics.parquet, vintage: "IPEDS Fall 2015-2023"}
+    fallback_source: {source_id: ipeds, path: lake:contract/ipeds_staff_by_occupation.parquet, vintage: "S2023_OC"}
+    method: unitid equality; peer group is the proposed Big Ten panel (not an approved HR peer group)
+    review_status: publisher_asserted
+
+  - id: calendar_to_period
+    from: calendar date
+    to: year, quarter, quarter_start (QCEW/QWI), JOLTS annual period M13
+    source: {source_id: integration_calendar, path: integration/build_integrated.py, vintage: "v1"}
+    method: date_trunc to quarter / year
+    review_status: derived_rule
+
+  - id: jolts_context
+    from: calendar year
+    to: bls_jolts annual total separations rate (NSA, period M13) for State and local government education (923000, national) and Illinois total nonfarm
+    source: {source_id: bls_jolts, path: lake:silver/bls_jolts.parquet, vintage: "JOLTS 2000-2026"}
+    method: series selection by industry/state/dataelement codes
+    review_status: publisher_asserted

@@ -1,0 +1,314 @@
+{
+ "set": "CLEAN",
+ "latest_snapshot": "2026-06-30",
+ "denominators": {
+  "classes_reference": 899,
+  "classes_used_in_appointments": 57,
+  "positions_active_or_filled": 1129,
+  "headcount_distinct_persons": 1035
+ },
+ "reach": [
+  {
+   "source": "sucss_class_record",
+   "bridge": "job_class_to_sucss_record",
+   "classes_used": 40,
+   "classes_used_pct": 70.2,
+   "classes_reference": 882,
+   "classes_reference_pct": 98.1,
+   "positions": 519,
+   "positions_pct": 46.0,
+   "headcount": 480,
+   "headcount_pct": 46.4
+  },
+  {
+   "source": "onet_occupation (duty match, not abstained)",
+   "bridge": "sucss_to_onet",
+   "classes_used": 38,
+   "classes_used_pct": 66.7,
+   "classes_reference": 852,
+   "classes_reference_pct": 94.8,
+   "positions": 491,
+   "positions_pct": 43.5,
+   "headcount": 455,
+   "headcount_pct": 44.0
+  },
+  {
+   "source": "soc_2018",
+   "bridge": "onet_to_soc2018",
+   "classes_used": 38,
+   "classes_used_pct": 66.7,
+   "classes_reference": 852,
+   "classes_reference_pct": 94.8,
+   "positions": 491,
+   "positions_pct": 43.5,
+   "headcount": 455,
+   "headcount_pct": 44.0
+  },
+  {
+   "source": "oews_national_median_2025",
+   "bridge": "soc_to_bls_oews",
+   "classes_used": 38,
+   "classes_used_pct": 66.7,
+   "classes_reference": 852,
+   "classes_reference_pct": 94.8,
+   "positions": 491,
+   "positions_pct": 43.5,
+   "headcount": 455,
+   "headcount_pct": 44.0
+  },
+  {
+   "source": "oews_illinois_median_2025",
+   "bridge": "soc_to_bls_oews",
+   "classes_used": 38,
+   "classes_used_pct": 66.7,
+   "classes_reference": 823,
+   "classes_reference_pct": 91.5,
+   "positions": 491,
+   "positions_pct": 43.5,
+   "headcount": 455,
+   "headcount_pct": 44.0
+  },
+  {
+   "source": "oews_any_local_msa_median_2025",
+   "bridge": "soc_to_bls_oews",
+   "classes_used": 38,
+   "classes_used_pct": 66.7,
+   "classes_reference": 826,
+   "classes_reference_pct": 91.9,
+   "positions": 491,
+   "positions_pct": 43.5,
+   "headcount": 455,
+   "headcount_pct": 44.0
+  },
+  {
+   "source": "oews_naics611300_median_2025",
+   "bridge": "soc_to_bls_oews",
+   "classes_used": 38,
+   "classes_used_pct": 66.7,
+   "classes_reference": 830,
+   "classes_reference_pct": 92.3,
+   "positions": 491,
+   "positions_pct": 43.5,
+   "headcount": 455,
+   "headcount_pct": 44.0
+  },
+  {
+   "source": "bls_projections_separation_rate",
+   "bridge": "soc_to_bls_projections",
+   "classes_used": 38,
+   "classes_used_pct": 66.7,
+   "classes_reference": 842,
+   "classes_reference_pct": 93.7,
+   "positions": 491,
+   "positions_pct": 43.5,
+   "headcount": 455,
+   "headcount_pct": 44.0
+  },
+  {
+   "source": "oews_national_trend",
+   "bridge": "soc_to_oews_national_history",
+   "classes_used": 38,
+   "classes_used_pct": 66.7,
+   "classes_reference": 841,
+   "classes_reference_pct": 93.5,
+   "positions": 491,
+   "positions_pct": 43.5,
+   "headcount": 455,
+   "headcount_pct": 44.0
+  },
+  {
+   "source": "aei_observed_exposure",
+   "bridge": "soc_to_aei_exposure",
+   "classes_used": 36,
+   "classes_used_pct": 63.2,
+   "classes_reference": 810,
+   "classes_reference_pct": 90.1,
+   "positions": 462,
+   "positions_pct": 40.9,
+   "headcount": 429,
+   "headcount_pct": 41.4
+  },
+  {
+   "source": "onet_job_zone",
+   "bridge": "onet_to_job_zone_tasks_tech",
+   "classes_used": 37,
+   "classes_used_pct": 64.9,
+   "classes_reference": 845,
+   "classes_reference_pct": 94.0,
+   "positions": 477,
+   "positions_pct": 42.2,
+   "headcount": 442,
+   "headcount_pct": 42.7
+  },
+  {
+   "source": "job_evolution_watch_score",
+   "bridge": "sucss_to_job_evolution",
+   "classes_used": 37,
+   "classes_used_pct": 64.9,
+   "classes_reference": 845,
+   "classes_reference_pct": 94.0,
+   "positions": 477,
+   "positions_pct": 42.2,
+   "headcount": 442,
+   "headcount_pct": 42.7
+  },
+  {
+   "source": "class_evolution_timeline",
+   "bridge": "sucss_to_class_evolution",
+   "classes_used": 40,
+   "classes_used_pct": 70.2,
+   "classes_reference": 882,
+   "classes_reference_pct": 98.1,
+   "positions": 519,
+   "positions_pct": 46.0,
+   "headcount": 480,
+   "headcount_pct": 46.4
+  },
+  {
+   "source": "class_evolution_stale_spec",
+   "bridge": "sucss_to_class_evolution",
+   "classes_used": 40,
+   "classes_used_pct": 70.2,
+   "classes_reference": 860,
+   "classes_reference_pct": 95.7,
+   "positions": 519,
+   "positions_pct": 46.0,
+   "headcount": 480,
+   "headcount_pct": 46.4
+  },
+  {
+   "source": "class_evolution_revision_risk",
+   "bridge": "sucss_to_class_evolution",
+   "classes_used": 40,
+   "classes_used_pct": 70.2,
+   "classes_reference": 874,
+   "classes_reference_pct": 97.2,
+   "positions": 519,
+   "positions_pct": 46.0,
+   "headcount": 480,
+   "headcount_pct": 46.4
+  }
+ ],
+ "position_market_pay": {
+  "filled_positions": 1079,
+  "with_local_msa_ratio": 413,
+  "with_il_ratio": 462,
+  "local_pct": 38.3,
+  "il_pct": 42.8
+ },
+ "sucss_match_types": [
+  {
+   "sucss_match_type": "exact_code",
+   "classes_used": 40,
+   "headcount": 480
+  },
+  {
+   "sucss_match_type": "exact_code_multi_record_title_resolved",
+   "classes_used": 0,
+   "headcount": 0
+  },
+  {
+   "sucss_match_type": "local_class_no_sucss_record",
+   "classes_used": 17,
+   "headcount": 555
+  }
+ ],
+ "onet_evidence_bands": [
+  {
+   "evidence_band": "abstained",
+   "classes_used": 2,
+   "headcount": 25
+  },
+  {
+   "evidence_band": "moderate",
+   "classes_used": 17,
+   "headcount": 219
+  },
+  {
+   "evidence_band": "no_link",
+   "classes_used": 17,
+   "headcount": 555
+  },
+  {
+   "evidence_band": "strong",
+   "classes_used": 16,
+   "headcount": 181
+  },
+  {
+   "evidence_band": "weak",
+   "classes_used": 5,
+   "headcount": 55
+  }
+ ],
+ "abstained_classes": [
+  {
+   "job_class_code": "3029",
+   "class_title": "Work Program Participant",
+   "abstain_reason": "low_evidence_index",
+   "headcount": 15
+  },
+  {
+   "job_class_code": "4701",
+   "class_title": "Client Relations Representative V",
+   "abstain_reason": "weak_duty_evidence",
+   "headcount": 10
+  }
+ ],
+ "multi_record_codes": [
+  {
+   "job_class_code": "1164",
+   "n_sucss_records": 2,
+   "sucss_match_type": "exact_code_multi_record_title_resolved",
+   "sucss_class_title": "Police Telecommunicator"
+  }
+ ],
+ "sample_titles_disagreeing_with_sucss": 0,
+ "oews_broad_rollup_classes": 2,
+ "oews_national_median_suppressed_classes": 0,
+ "positions_without_campus": 0,
+ "unreviewed_or_synthetic_bridges": [
+  {
+   "bridge": "sucss_to_onet",
+   "review_status": "unreviewed"
+  },
+  {
+   "bridge": "sucss_to_job_evolution",
+   "review_status": "unreviewed"
+  },
+  {
+   "bridge": "org_to_campus",
+   "review_status": "synthetic_assignment"
+  }
+ ],
+ "mapping_ok": true,
+ "mapping_concepts": {
+  "appointment": "resolved",
+  "employee_class": "resolved",
+  "employment": "resolved",
+  "job_class": "resolved",
+  "org": "resolved",
+  "payroll_line": "resolved",
+  "person": "resolved",
+  "position": "resolved",
+  "role_family": "absent_optional",
+  "separation": "resolved"
+ },
+ "oews_year_recovery": "silver_survey_year",
+ "flows": {
+  "flow_years": [
+   2006,
+   2026
+  ],
+  "partial_last_year": true,
+  "reference_date": "2026-12-15"
+ },
+ "benchmarks": {
+  "benchmark_window": [
+   2023,
+   2025
+  ],
+  "last_complete_year": 2025,
+  "latest_snapshot": "2026-06-30"
+ },
+ "generator_truth_check": null
+}
