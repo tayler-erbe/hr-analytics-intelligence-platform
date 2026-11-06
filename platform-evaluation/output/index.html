@@ -98,6 +98,42 @@ ul.plain{padding-left:20px;margin:0}
     <p class="caveat"><strong>Caveat:</strong> synthetic population calibrated to UIUC's public IPEDS total (12,905) and QWI hazards. Not a prediction about UIUC staff; the AI lever is an assumption.</p>
   </li>
   <li class="card">
+    <h3><a href="succession_models/succession_planning.html">Succession planning models</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">succession_models/succession_planning.html</span></div>
+    <p class="desc">EDW-ready vacancy-risk hazard models (6/12/24 months), career-transition matrix, bench strength and a disabled-by-default readiness ranking with fairness audit.</p>
+    <p class="caveat"><strong>Caveat:</strong> validated on synthetic EDW-shaped data only; run on real data only on an approved machine after sign-off. Role/unit outputs, not people rankings.</p>
+  </li>
+  <li class="card">
+    <h3><a href="turnover_forecast/turnover_forecast.html">Turnover and retirement-wave forecasts</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">turnover_forecast/turnover_forecast.html</span></div>
+    <p class="desc">Real Census QWI for Illinois and 13 peer states: 8-quarter forecasts of separations, 55+ separations and hires, backtested against seasonal naive; Illinois vs peers.</p>
+    <p class="caveat"><strong>Caveat:</strong> public and private colleges combined; gains over naive are modest and 80% intervals under-cover.</p>
+  </li>
+  <li class="card">
+    <h3><a href="ipeds_models/ipeds_models.html">National IPEDS predictive models</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">ipeds_models/ipeds_models.html</span></div>
+    <p class="desc">Models trained on 3,462 institutions (2015–2023) score U of I campuses: expected vs actual tenure, new hires, staffing and real pay; data-driven peer groups.</p>
+    <p class="caveat"><strong>Caveat:</strong> institution-level aggregates; only new-hire rates are clearly predictable; intervals under-cover after 2021–22.</p>
+  </li>
+  <li class="card">
+    <h3><a href="job_evolution/job_evolution_explorer.html">Job evolution from O*NET history</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">job_evolution/job_evolution_explorer.html</span></div>
+    <p class="desc">20 O*NET releases (2008–2026): task churn, skill drift, technology adoption and a role-family watchlist for U of I.</p>
+    <p class="caveat"><strong>Caveat:</strong> O*NET update timing drives most change; the task-change model is modest and poorly calibrated.</p>
+  </li>
+  <li class="card">
+    <h3><a href="class_evolution/class_evolution_explorer.html">Illinois civil-service class evolution</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">class_evolution/class_evolution_explorer.html</span></div>
+    <p class="desc">SUCSS notices 2003–2026: class revisions, new and abolished classes, the 2023–24 IT consolidation and stale specs.</p>
+    <p class="caveat"><strong>Caveat:</strong> revision prediction did not beat spec age; shown as a descriptive index. Unreviewed O*NET links.</p>
+  </li>
+  <li class="card">
+    <h3><a href="trend_nowcast/trend_nowcast.html">Trend vs reality nowcast</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">trend_nowcast/trend_nowcast.html</span></div>
+    <p class="desc">Do job-posting trends lead Illinois higher-ed hiring and employment? Lead-lag tests, nowcasts and a divergence monitor.</p>
+    <p class="caveat"><strong>Caveat:</strong> postings add no reliable predictive skill post-COVID; Indeed indices are not vacancy counts.</p>
+  </li>
+  <li class="card">
     <h3><a href="swp_workbench/swp_workbench.html">Strategic Workforce Planning workbench</a></h3>
     <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">swp_workbench/swp_workbench.html</span></div>
     <p class="desc">IHR's nine planning worksheets with evidence behind them: critical roles, bench strength, knowledge stewardship, capability gaps, ERP and AI lenses.</p>
@@ -190,7 +226,8 @@ EVALUATION  rubric v1.0 · benchmark v1.0 · Snowflake / Databricks kits · cust
   <thead><tr><th scope="col">Area</th><th scope="col">Status</th></tr></thead>
   <tbody>
     <tr><td>Public data lake, graph, reskilling map, evidence page, IPEDS peer trends, sponsored-funding cliff, policy assistant</td><td>Built or prototype, on public data</td></tr>
-    <tr><td>Benchmark, Demo IT lab, scenario planner, SWP workbench, AI adoption scorecard, proficiency rubric, survey themes, use-case registry, ERP readiness, faculty pipeline</td><td>Built or prototype, on synthetic data</td></tr>
+    <tr><td>Predictive models on real public data: turnover forecasts, national IPEDS models, O*NET job evolution, civil-service class evolution, trend nowcast</td><td>Backtested against baselines; modest gains, reported honestly</td></tr>
+    <tr><td>Succession models, benchmark, Demo IT lab, scenario planner, SWP workbench, AI adoption scorecard, proficiency rubric, survey themes, use-case registry, ERP readiness, faculty pipeline</td><td>Built or prototype, on synthetic data</td></tr>
     <tr><td>Snowflake and Databricks kits</td><td>Written, not run in any vendor account. No platform has a score</td></tr>
     <tr><td>SUCSS-to-O*NET mappings</td><td>Duty-based matcher with a 4,415-row review queue; unreviewed until an HR analyst confirms</td></tr>
     <tr><td>BLS OEWS / Projections / JOLTS; Census ACS</td><td>Not loaded: BLS needs a contact User-Agent; Census needs an API key</td></tr>
