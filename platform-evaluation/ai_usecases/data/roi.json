@@ -1,0 +1,2614 @@
+[
+ {
+  "id": "UC-0001",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 10.591342,
+   "mid": 15.6,
+   "high": 20.608658
+  },
+  "origin_hours": {
+   "low": 105.913419,
+   "mid": 195.0,
+   "high": 309.129871
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 105.913419,
+   "mid": 195.0,
+   "high": 309.129871
+  },
+  "cost_hours": {
+   "low": 38.0,
+   "mid": 64.0,
+   "high": 90.0
+  },
+  "net_hours": {
+   "low": 15.913419,
+   "mid": 131.0,
+   "high": 271.129871
+  },
+  "potential_hours": {
+   "low": 105.913419,
+   "mid": 195.0,
+   "high": 309.129871
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0002",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 2.7,
+   "high": 5.4
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 30.0,
+   "mid": 45.0,
+   "high": 60.0
+  },
+  "net_hours": {
+   "low": -60.0,
+   "mid": -45.0,
+   "high": -30.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0003",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 1.95,
+   "high": 3.9
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 30.0,
+   "mid": 45.0,
+   "high": 60.0
+  },
+  "net_hours": {
+   "low": -60.0,
+   "mid": -45.0,
+   "high": -30.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 260.0,
+   "high": 650.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0004",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 3.787498,
+   "mid": 4.9,
+   "high": 6.012502
+  },
+  "origin_hours": {
+   "low": 220.937361,
+   "mid": 347.083333,
+   "high": 501.041865
+  },
+  "reuse_hours": {
+   "low": 231.589698,
+   "mid": 545.768125,
+   "high": 1050.534479
+  },
+  "gross_hours": {
+   "low": 452.527059,
+   "mid": 892.851458,
+   "high": 1551.576344
+  },
+  "cost_hours": {
+   "low": 34.0,
+   "mid": 74.0,
+   "high": 114.0
+  },
+  "net_hours": {
+   "low": 338.527059,
+   "mid": 818.851458,
+   "high": 1517.576344
+  },
+  "potential_hours": {
+   "low": 220.937361,
+   "mid": 347.083333,
+   "high": 501.041865
+  },
+  "adopting_units": 6
+ },
+ {
+  "id": "UC-0005",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 82.838417,
+   "mid": 104.7,
+   "high": 126.561583
+  },
+  "origin_hours": {
+   "low": 24.851525,
+   "mid": 41.88,
+   "high": 63.280791
+  },
+  "reuse_hours": {
+   "low": 4.141921,
+   "mid": 10.633594,
+   "high": 21.620937
+  },
+  "gross_hours": {
+   "low": 28.993446,
+   "mid": 52.513594,
+   "high": 84.901729
+  },
+  "cost_hours": {
+   "low": 16.0,
+   "mid": 36.0,
+   "high": 56.0
+  },
+  "net_hours": {
+   "low": -27.006554,
+   "mid": 16.513594,
+   "high": 68.901729
+  },
+  "potential_hours": {
+   "low": 24.851525,
+   "mid": 41.88,
+   "high": 63.280791
+  },
+  "adopting_units": 2
+ },
+ {
+  "id": "UC-0006",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 24.694837,
+   "mid": 31.3,
+   "high": 37.905163
+  },
+  "origin_hours": {
+   "low": 12.347419,
+   "mid": 23.475,
+   "high": 37.905163
+  },
+  "reuse_hours": {
+   "low": 6.070814,
+   "mid": 17.459531,
+   "high": 37.747225
+  },
+  "gross_hours": {
+   "low": 18.418233,
+   "mid": 40.934531,
+   "high": 75.652388
+  },
+  "cost_hours": {
+   "low": 13.0,
+   "mid": 31.0,
+   "high": 49.0
+  },
+  "net_hours": {
+   "low": -30.581767,
+   "mid": 9.934531,
+   "high": 62.652388
+  },
+  "potential_hours": {
+   "low": 12.347419,
+   "mid": 23.475,
+   "high": 37.905163
+  },
+  "adopting_units": 2
+ },
+ {
+  "id": "UC-0007",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 4.096506,
+   "mid": 11.8,
+   "high": 19.503494
+  },
+  "origin_hours": {
+   "low": 23.896284,
+   "mid": 88.5,
+   "high": 178.78203
+  },
+  "reuse_hours": {
+   "low": 1.997047,
+   "mid": 11.099375,
+   "high": 29.905358
+  },
+  "gross_hours": {
+   "low": 25.893331,
+   "mid": 99.599375,
+   "high": 208.687387
+  },
+  "cost_hours": {
+   "low": 11.0,
+   "mid": 26.0,
+   "high": 41.0
+  },
+  "net_hours": {
+   "low": -15.106669,
+   "mid": 73.599375,
+   "high": 197.687387
+  },
+  "potential_hours": {
+   "low": 47.792568,
+   "mid": 177.0,
+   "high": 357.564059
+  },
+  "adopting_units": 1
+ },
+ {
+  "id": "UC-0008",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 5.25,
+   "high": 10.5
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 30.0,
+   "mid": 45.0,
+   "high": 60.0
+  },
+  "net_hours": {
+   "low": -60.0,
+   "mid": -45.0,
+   "high": -30.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 48.125,
+   "high": 122.5
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0009",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 3.801048,
+   "mid": 5.6,
+   "high": 7.398952
+  },
+  "origin_hours": {
+   "low": 15.8377,
+   "mid": 30.333333,
+   "high": 49.326346
+  },
+  "reuse_hours": {
+   "low": 11.339794,
+   "mid": 32.585,
+   "high": 70.65999
+  },
+  "gross_hours": {
+   "low": 27.177494,
+   "mid": 62.918333,
+   "high": 119.986336
+  },
+  "cost_hours": {
+   "low": 15.0,
+   "mid": 34.0,
+   "high": 53.0
+  },
+  "net_hours": {
+   "low": -25.822506,
+   "mid": 28.918333,
+   "high": 104.986336
+  },
+  "potential_hours": {
+   "low": 15.8377,
+   "mid": 30.333333,
+   "high": 49.326346
+  },
+  "adopting_units": 3
+ },
+ {
+  "id": "UC-0010",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": -0.284129,
+   "mid": 1.5,
+   "high": 3.284129
+  },
+  "origin_hours": {
+   "low": -21.309711,
+   "mid": 81.25,
+   "high": 246.309711
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": -21.309711,
+   "mid": 81.25,
+   "high": 246.309711
+  },
+  "cost_hours": {
+   "low": 48.0,
+   "mid": 95.0,
+   "high": 142.0
+  },
+  "net_hours": {
+   "low": -163.309711,
+   "mid": -13.75,
+   "high": 198.309711
+  },
+  "potential_hours": {
+   "low": -42.619423,
+   "mid": 162.5,
+   "high": 492.619423
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0011",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 10.6,
+   "high": 21.2
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 32.0,
+   "mid": 49.0,
+   "high": 66.0
+  },
+  "net_hours": {
+   "low": -66.0,
+   "mid": -49.0,
+   "high": -32.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 48.583333,
+   "high": 123.666667
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0012",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 14.841167,
+   "mid": 20.7,
+   "high": 26.558833
+  },
+  "origin_hours": {
+   "low": 9.894111,
+   "mid": 18.975,
+   "high": 30.985305
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 9.894111,
+   "mid": 18.975,
+   "high": 30.985305
+  },
+  "cost_hours": {
+   "low": 12.0,
+   "mid": 26.0,
+   "high": 40.0
+  },
+  "net_hours": {
+   "low": -30.105889,
+   "mid": -7.025,
+   "high": 18.985305
+  },
+  "potential_hours": {
+   "low": 9.894111,
+   "mid": 18.975,
+   "high": 30.985305
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0013",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 19.6,
+   "high": 39.2
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 1.0,
+   "mid": 2.0,
+   "high": 3.0
+  },
+  "net_hours": {
+   "low": -3.0,
+   "mid": -2.0,
+   "high": -1.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 5.88,
+   "high": 15.68
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0014",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 303.23038,
+   "mid": 402.8,
+   "high": 502.36962
+  },
+  "origin_hours": {
+   "low": 5.05384,
+   "mid": 8.391667,
+   "high": 12.55924
+  },
+  "reuse_hours": {
+   "low": 0.63173,
+   "mid": 1.25875,
+   "high": 2.093207
+  },
+  "gross_hours": {
+   "low": 5.68557,
+   "mid": 9.650417,
+   "high": 14.652447
+  },
+  "cost_hours": {
+   "low": 48.0,
+   "mid": 111.0,
+   "high": 174.0
+  },
+  "net_hours": {
+   "low": -168.31443,
+   "mid": -101.349583,
+   "high": -33.347553
+  },
+  "potential_hours": {
+   "low": 10.107679,
+   "mid": 16.783333,
+   "high": 25.118481
+  },
+  "adopting_units": 1
+ },
+ {
+  "id": "UC-0015",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 0.660685,
+   "mid": 1.6,
+   "high": 2.539315
+  },
+  "origin_hours": {
+   "low": 99.102814,
+   "mid": 306.666667,
+   "high": 592.506734
+  },
+  "reuse_hours": {
+   "low": 22.991853,
+   "mid": 106.7175,
+   "high": 274.912544
+  },
+  "gross_hours": {
+   "low": 122.094666,
+   "mid": 413.384167,
+   "high": 867.419279
+  },
+  "cost_hours": {
+   "low": 16.0,
+   "mid": 36.0,
+   "high": 56.0
+  },
+  "net_hours": {
+   "low": 66.094666,
+   "mid": 377.384167,
+   "high": 851.419279
+  },
+  "potential_hours": {
+   "low": 99.102814,
+   "mid": 306.666667,
+   "high": 592.506734
+  },
+  "adopting_units": 2
+ },
+ {
+  "id": "UC-0016",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 4.26403,
+   "mid": 6.5,
+   "high": 8.73597
+  },
+  "origin_hours": {
+   "low": 10.660074,
+   "mid": 22.208333,
+   "high": 37.855872
+  },
+  "reuse_hours": {
+   "low": 6.245027,
+   "mid": 19.58125,
+   "high": 44.589849
+  },
+  "gross_hours": {
+   "low": 16.9051,
+   "mid": 41.789583,
+   "high": 82.445721
+  },
+  "cost_hours": {
+   "low": 17.0,
+   "mid": 39.0,
+   "high": 61.0
+  },
+  "net_hours": {
+   "low": -44.0949,
+   "mid": 2.789583,
+   "high": 65.445721
+  },
+  "potential_hours": {
+   "low": 10.660074,
+   "mid": 22.208333,
+   "high": 37.855872
+  },
+  "adopting_units": 4
+ },
+ {
+  "id": "UC-0017",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 18.040054,
+   "mid": 38.2,
+   "high": 58.359946
+  },
+  "origin_hours": {
+   "low": 18.040054,
+   "mid": 49.66,
+   "high": 93.375913
+  },
+  "reuse_hours": {
+   "low": 18.002471,
+   "mid": 74.072187,
+   "high": 185.292827
+  },
+  "gross_hours": {
+   "low": 36.042525,
+   "mid": 123.732188,
+   "high": 278.66874
+  },
+  "cost_hours": {
+   "low": 17.0,
+   "mid": 41.0,
+   "high": 65.0
+  },
+  "net_hours": {
+   "low": -28.957475,
+   "mid": 82.732188,
+   "high": 261.66874
+  },
+  "potential_hours": {
+   "low": 18.040054,
+   "mid": 49.66,
+   "high": 93.375913
+  },
+  "adopting_units": 4
+ },
+ {
+  "id": "UC-0018",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 7.283386,
+   "mid": 21.4,
+   "high": 35.516614
+  },
+  "origin_hours": {
+   "low": 14.566771,
+   "mid": 60.633333,
+   "high": 130.227586
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 14.566771,
+   "mid": 60.633333,
+   "high": 130.227586
+  },
+  "cost_hours": {
+   "low": 22.0,
+   "mid": 44.0,
+   "high": 66.0
+  },
+  "net_hours": {
+   "low": -51.433229,
+   "mid": 16.633333,
+   "high": 108.227586
+  },
+  "potential_hours": {
+   "low": 14.566771,
+   "mid": 60.633333,
+   "high": 130.227586
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0019",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 6.418018,
+   "mid": 15.2,
+   "high": 23.981982
+  },
+  "origin_hours": {
+   "low": 1.283604,
+   "mid": 3.04,
+   "high": 4.796396
+  },
+  "reuse_hours": {
+   "low": 0.213934,
+   "mid": 0.76,
+   "high": 1.598799
+  },
+  "gross_hours": {
+   "low": 1.497537,
+   "mid": 3.8,
+   "high": 6.395195
+  },
+  "cost_hours": {
+   "low": 11.0,
+   "mid": 26.0,
+   "high": 41.0
+  },
+  "net_hours": {
+   "low": -39.502463,
+   "mid": -22.2,
+   "high": -4.604805
+  },
+  "potential_hours": {
+   "low": 1.283604,
+   "mid": 3.04,
+   "high": 4.796396
+  },
+  "adopting_units": 1
+ },
+ {
+  "id": "UC-0020",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 10.092536,
+   "mid": 19.4,
+   "high": 28.707464
+  },
+  "origin_hours": {
+   "low": 12.61567,
+   "mid": 32.333333,
+   "high": 59.807216
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 12.61567,
+   "mid": 32.333333,
+   "high": 59.807216
+  },
+  "cost_hours": {
+   "low": 30.0,
+   "mid": 58.0,
+   "high": 86.0
+  },
+  "net_hours": {
+   "low": -73.38433,
+   "mid": -25.666667,
+   "high": 29.807216
+  },
+  "potential_hours": {
+   "low": 25.231341,
+   "mid": 64.666667,
+   "high": 119.614432
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0021",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": -3.34806,
+   "mid": -0.7,
+   "high": 1.94806
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 3.0,
+   "mid": 6.0,
+   "high": 9.0
+  },
+  "net_hours": {
+   "low": -9.0,
+   "mid": -6.0,
+   "high": -3.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0022",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 0.947169,
+   "mid": 3.1,
+   "high": 5.252831
+  },
+  "origin_hours": {
+   "low": 19.73268,
+   "mid": 83.958333,
+   "high": 175.094378
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 19.73268,
+   "mid": 83.958333,
+   "high": 175.094378
+  },
+  "cost_hours": {
+   "low": 12.0,
+   "mid": 24.0,
+   "high": 36.0
+  },
+  "net_hours": {
+   "low": -16.26732,
+   "mid": 59.958333,
+   "high": 163.094378
+  },
+  "potential_hours": {
+   "low": 39.46536,
+   "mid": 167.916667,
+   "high": 350.188757
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0023",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 1.8,
+   "high": 3.6
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 24.0,
+   "mid": 47.0,
+   "high": 70.0
+  },
+  "net_hours": {
+   "low": -70.0,
+   "mid": -47.0,
+   "high": -24.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 34.5,
+   "high": 90.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0024",
+  "evidence": "not_estimated",
+  "realized": false,
+  "per_instance_minutes": null,
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "net_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0025",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 1.7,
+   "high": 3.4
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "net_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 19.833333,
+   "high": 51.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0026",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 5.42297,
+   "mid": 6.9,
+   "high": 8.37703
+  },
+  "origin_hours": {
+   "low": 13.557424,
+   "mid": 23.0,
+   "high": 34.904293
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 13.557424,
+   "mid": 23.0,
+   "high": 34.904293
+  },
+  "cost_hours": {
+   "low": 12.0,
+   "mid": 26.0,
+   "high": 40.0
+  },
+  "net_hours": {
+   "low": -26.442576,
+   "mid": -3.0,
+   "high": 22.904293
+  },
+  "potential_hours": {
+   "low": 13.557424,
+   "mid": 23.0,
+   "high": 34.904293
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0027",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 0.846451,
+   "mid": 2.1,
+   "high": 3.353549
+  },
+  "origin_hours": {
+   "low": 84.64514,
+   "mid": 262.5,
+   "high": 503.032289
+  },
+  "reuse_hours": {
+   "low": 3.428128,
+   "mid": 15.946875,
+   "high": 40.745615
+  },
+  "gross_hours": {
+   "low": 88.073269,
+   "mid": 278.446875,
+   "high": 543.777905
+  },
+  "cost_hours": {
+   "low": 22.0,
+   "mid": 45.0,
+   "high": 68.0
+  },
+  "net_hours": {
+   "low": 20.073269,
+   "mid": 233.446875,
+   "high": 521.777905
+  },
+  "potential_hours": {
+   "low": 84.64514,
+   "mid": 262.5,
+   "high": 503.032289
+  },
+  "adopting_units": 1
+ },
+ {
+  "id": "UC-0028",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 2.8,
+   "high": 5.6
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 12.0,
+   "mid": 21.0,
+   "high": 30.0
+  },
+  "net_hours": {
+   "low": -30.0,
+   "mid": -21.0,
+   "high": -12.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 466.666667,
+   "high": 1120.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0029",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 5.061531,
+   "mid": 8.0,
+   "high": 10.938469
+  },
+  "origin_hours": {
+   "low": 75.922971,
+   "mid": 160.0,
+   "high": 273.461715
+  },
+  "reuse_hours": {
+   "low": 67.655803,
+   "mid": 213.85,
+   "high": 487.308776
+  },
+  "gross_hours": {
+   "low": 143.578774,
+   "mid": 373.85,
+   "high": 760.770491
+  },
+  "cost_hours": {
+   "low": 40.0,
+   "mid": 83.0,
+   "high": 126.0
+  },
+  "net_hours": {
+   "low": 17.578774,
+   "mid": 290.85,
+   "high": 720.770491
+  },
+  "potential_hours": {
+   "low": 75.922971,
+   "mid": 160.0,
+   "high": 273.461715
+  },
+  "adopting_units": 5
+ },
+ {
+  "id": "UC-0030",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 2.103638,
+   "mid": 9.2,
+   "high": 16.296362
+  },
+  "origin_hours": {
+   "low": 26.295476,
+   "mid": 153.333333,
+   "high": 339.507539
+  },
+  "reuse_hours": {
+   "low": 1.021141,
+   "mid": 8.926875,
+   "high": 26.345785
+  },
+  "gross_hours": {
+   "low": 27.316617,
+   "mid": 162.260208,
+   "high": 365.853324
+  },
+  "cost_hours": {
+   "low": 58.0,
+   "mid": 114.0,
+   "high": 170.0
+  },
+  "net_hours": {
+   "low": -142.683383,
+   "mid": 48.260208,
+   "high": 307.853324
+  },
+  "potential_hours": {
+   "low": 52.590953,
+   "mid": 306.666667,
+   "high": 679.015079
+  },
+  "adopting_units": 1
+ },
+ {
+  "id": "UC-0031",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 0.49268,
+   "mid": 1.4,
+   "high": 2.30732
+  },
+  "origin_hours": {
+   "low": 41.056692,
+   "mid": 163.333333,
+   "high": 346.097955
+  },
+  "reuse_hours": {
+   "low": 19.244298,
+   "mid": 114.839375,
+   "high": 324.457219
+  },
+  "gross_hours": {
+   "low": 60.30099,
+   "mid": 278.172708,
+   "high": 670.555173
+  },
+  "cost_hours": {
+   "low": 52.0,
+   "mid": 105.0,
+   "high": 158.0
+  },
+  "net_hours": {
+   "low": -97.69901,
+   "mid": 173.172708,
+   "high": 618.555173
+  },
+  "potential_hours": {
+   "low": 41.056692,
+   "mid": 163.333333,
+   "high": 346.097955
+  },
+  "adopting_units": 2
+ },
+ {
+  "id": "UC-0032",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 6.926785,
+   "mid": 9.9,
+   "high": 12.873215
+  },
+  "origin_hours": {
+   "low": 23.089282,
+   "mid": 45.375,
+   "high": 75.093756
+  },
+  "reuse_hours": {
+   "low": 2.539821,
+   "mid": 7.54875,
+   "high": 16.73518
+  },
+  "gross_hours": {
+   "low": 25.629103,
+   "mid": 52.92375,
+   "high": 91.828936
+  },
+  "cost_hours": {
+   "low": 22.0,
+   "mid": 43.0,
+   "high": 64.0
+  },
+  "net_hours": {
+   "low": -38.370897,
+   "mid": 9.92375,
+   "high": 69.828936
+  },
+  "potential_hours": {
+   "low": 23.089282,
+   "mid": 45.375,
+   "high": 75.093756
+  },
+  "adopting_units": 1
+ },
+ {
+  "id": "UC-0033",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 49.766301,
+   "mid": 71.8,
+   "high": 93.833699
+  },
+  "origin_hours": {
+   "low": 8.294383,
+   "mid": 17.95,
+   "high": 31.2779
+  },
+  "reuse_hours": {
+   "low": 7.153906,
+   "mid": 22.4375,
+   "high": 51.217561
+  },
+  "gross_hours": {
+   "low": 15.448289,
+   "mid": 40.3875,
+   "high": 82.495461
+  },
+  "cost_hours": {
+   "low": 20.0,
+   "mid": 46.0,
+   "high": 72.0
+  },
+  "net_hours": {
+   "low": -56.551711,
+   "mid": -5.6125,
+   "high": 62.495461
+  },
+  "potential_hours": {
+   "low": 8.294383,
+   "mid": 17.95,
+   "high": 31.2779
+  },
+  "adopting_units": 4
+ },
+ {
+  "id": "UC-0034",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 12.987594,
+   "mid": 16.3,
+   "high": 19.612406
+  },
+  "origin_hours": {
+   "low": 32.468984,
+   "mid": 54.333333,
+   "high": 81.71836
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 32.468984,
+   "mid": 54.333333,
+   "high": 81.71836
+  },
+  "cost_hours": {
+   "low": 20.0,
+   "mid": 40.0,
+   "high": 60.0
+  },
+  "net_hours": {
+   "low": -27.531016,
+   "mid": 14.333333,
+   "high": 61.71836
+  },
+  "potential_hours": {
+   "low": 32.468984,
+   "mid": 54.333333,
+   "high": 81.71836
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0035",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 3.55,
+   "high": 7.1
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 12.0,
+   "mid": 21.0,
+   "high": 30.0
+  },
+  "net_hours": {
+   "low": -30.0,
+   "mid": -21.0,
+   "high": -12.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0036",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 15.45,
+   "high": 30.9
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 4.0,
+   "mid": 7.0,
+   "high": 10.0
+  },
+  "net_hours": {
+   "low": -10.0,
+   "mid": -7.0,
+   "high": -4.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 3.09,
+   "high": 8.24
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0037",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 7.5,
+   "high": 15.0
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 7.0,
+   "mid": 15.0,
+   "high": 23.0
+  },
+  "net_hours": {
+   "low": -23.0,
+   "mid": -15.0,
+   "high": -7.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 11.25,
+   "high": 30.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0038",
+  "evidence": "not_estimated",
+  "realized": false,
+  "per_instance_minutes": null,
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "net_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0039",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 0.160381,
+   "mid": 0.9,
+   "high": 1.639619
+  },
+  "origin_hours": {
+   "low": 53.460429,
+   "mid": 375.0,
+   "high": 819.809356
+  },
+  "reuse_hours": {
+   "low": 36.257531,
+   "mid": 381.488906,
+   "high": 1111.982579
+  },
+  "gross_hours": {
+   "low": 89.717961,
+   "mid": 756.488906,
+   "high": 1931.791935
+  },
+  "cost_hours": {
+   "low": 20.0,
+   "mid": 46.0,
+   "high": 72.0
+  },
+  "net_hours": {
+   "low": 17.717961,
+   "mid": 710.488906,
+   "high": 1911.791935
+  },
+  "potential_hours": {
+   "low": 53.460429,
+   "mid": 375.0,
+   "high": 819.809356
+  },
+  "adopting_units": 4
+ },
+ {
+  "id": "UC-0040",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 15.79423,
+   "mid": 23.2,
+   "high": 30.60577
+  },
+  "origin_hours": {
+   "low": 39.485574,
+   "mid": 87.0,
+   "high": 153.028852
+  },
+  "reuse_hours": {
+   "low": 23.987486,
+   "mid": 79.06125,
+   "high": 185.164911
+  },
+  "gross_hours": {
+   "low": 63.47306,
+   "mid": 166.06125,
+   "high": 338.193764
+  },
+  "cost_hours": {
+   "low": 18.0,
+   "mid": 39.0,
+   "high": 60.0
+  },
+  "net_hours": {
+   "low": 3.47306,
+   "mid": 127.06125,
+   "high": 320.193764
+  },
+  "potential_hours": {
+   "low": 39.485574,
+   "mid": 87.0,
+   "high": 153.028852
+  },
+  "adopting_units": 3
+ },
+ {
+  "id": "UC-0041",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 1.190093,
+   "mid": 2.2,
+   "high": 3.209907
+  },
+  "origin_hours": {
+   "low": 119.009322,
+   "mid": 311.666667,
+   "high": 588.482911
+  },
+  "reuse_hours": {
+   "low": 19.200171,
+   "mid": 75.41875,
+   "high": 189.865986
+  },
+  "gross_hours": {
+   "low": 138.209492,
+   "mid": 387.085417,
+   "high": 778.348897
+  },
+  "cost_hours": {
+   "low": 22.0,
+   "mid": 45.0,
+   "high": 68.0
+  },
+  "net_hours": {
+   "low": 70.209492,
+   "mid": 342.085417,
+   "high": 756.348897
+  },
+  "potential_hours": {
+   "low": 119.009322,
+   "mid": 311.666667,
+   "high": 588.482911
+  },
+  "adopting_units": 1
+ },
+ {
+  "id": "UC-0042",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 13.466004,
+   "mid": 17.9,
+   "high": 22.333996
+  },
+  "origin_hours": {
+   "low": 8.977336,
+   "mid": 17.9,
+   "high": 29.778662
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 8.977336,
+   "mid": 17.9,
+   "high": 29.778662
+  },
+  "cost_hours": {
+   "low": 9.0,
+   "mid": 21.0,
+   "high": 33.0
+  },
+  "net_hours": {
+   "low": -24.022664,
+   "mid": -3.1,
+   "high": 20.778662
+  },
+  "potential_hours": {
+   "low": 8.977336,
+   "mid": 17.9,
+   "high": 29.778662
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0043",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 2.895711,
+   "mid": 5.9,
+   "high": 8.904289
+  },
+  "origin_hours": {
+   "low": 7.239277,
+   "mid": 19.666667,
+   "high": 37.101205
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 7.239277,
+   "mid": 19.666667,
+   "high": 37.101205
+  },
+  "cost_hours": {
+   "low": 9.0,
+   "mid": 21.0,
+   "high": 33.0
+  },
+  "net_hours": {
+   "low": -25.760723,
+   "mid": -1.333333,
+   "high": 28.101205
+  },
+  "potential_hours": {
+   "low": 14.478554,
+   "mid": 39.333333,
+   "high": 74.202409
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0044",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 26.64892,
+   "mid": 34.0,
+   "high": 41.35108
+  },
+  "origin_hours": {
+   "low": 35.531893,
+   "mid": 65.166667,
+   "high": 103.3777
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 35.531893,
+   "mid": 65.166667,
+   "high": 103.3777
+  },
+  "cost_hours": {
+   "low": 19.0,
+   "mid": 39.0,
+   "high": 59.0
+  },
+  "net_hours": {
+   "low": -23.468107,
+   "mid": 26.166667,
+   "high": 84.3777
+  },
+  "potential_hours": {
+   "low": 35.531893,
+   "mid": 65.166667,
+   "high": 103.3777
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0045",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 7.55,
+   "high": 15.1
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 12.0,
+   "mid": 21.0,
+   "high": 30.0
+  },
+  "net_hours": {
+   "low": -30.0,
+   "mid": -21.0,
+   "high": -12.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0046",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 0.533294,
+   "mid": 3.5,
+   "high": 6.466706
+  },
+  "origin_hours": {
+   "low": 3.555291,
+   "mid": 33.541667,
+   "high": 80.833829
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 3.555291,
+   "mid": 33.541667,
+   "high": 80.833829
+  },
+  "cost_hours": {
+   "low": 9.0,
+   "mid": 21.0,
+   "high": 33.0
+  },
+  "net_hours": {
+   "low": -29.444709,
+   "mid": 12.541667,
+   "high": 71.833829
+  },
+  "potential_hours": {
+   "low": 7.110583,
+   "mid": 67.083333,
+   "high": 161.667658
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0047",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 43.9,
+   "high": 87.8
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 1.0,
+   "mid": 2.0,
+   "high": 3.0
+  },
+  "net_hours": {
+   "low": -3.0,
+   "mid": -2.0,
+   "high": -1.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 6.585,
+   "high": 17.56
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0048",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 5.05,
+   "high": 10.1
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 4.0,
+   "mid": 7.0,
+   "high": 10.0
+  },
+  "net_hours": {
+   "low": -10.0,
+   "mid": -7.0,
+   "high": -4.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 67.333333,
+   "high": 168.333333
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0049",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.052823,
+   "mid": 0.8,
+   "high": 1.547177
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 6.0,
+   "mid": 11.0,
+   "high": 16.0
+  },
+  "net_hours": {
+   "low": -16.0,
+   "mid": -11.0,
+   "high": -6.0
+  },
+  "potential_hours": {
+   "low": 2.64114,
+   "mid": 60.0,
+   "high": 154.71772
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0050",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 17.727818,
+   "mid": 25.6,
+   "high": 33.472182
+  },
+  "origin_hours": {
+   "low": 147.731815,
+   "mid": 277.333333,
+   "high": 446.295763
+  },
+  "reuse_hours": {
+   "low": 33.38739,
+   "mid": 94.12,
+   "high": 202.0883
+  },
+  "gross_hours": {
+   "low": 181.119205,
+   "mid": 371.453333,
+   "high": 648.384063
+  },
+  "cost_hours": {
+   "low": 13.0,
+   "mid": 31.0,
+   "high": 49.0
+  },
+  "net_hours": {
+   "low": 132.119205,
+   "mid": 340.453333,
+   "high": 635.384063
+  },
+  "potential_hours": {
+   "low": 147.731815,
+   "mid": 277.333333,
+   "high": 446.295763
+  },
+  "adopting_units": 2
+ },
+ {
+  "id": "UC-0051",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 34.808479,
+   "mid": 47.4,
+   "high": 59.991521
+  },
+  "origin_hours": {
+   "low": 87.021198,
+   "mid": 158.0,
+   "high": 249.96467
+  },
+  "reuse_hours": {
+   "low": 29.877278,
+   "mid": 81.542813,
+   "high": 172.225658
+  },
+  "gross_hours": {
+   "low": 116.898476,
+   "mid": 239.542813,
+   "high": 422.190328
+  },
+  "cost_hours": {
+   "low": 15.0,
+   "mid": 36.0,
+   "high": 57.0
+  },
+  "net_hours": {
+   "low": 59.898476,
+   "mid": 203.542813,
+   "high": 407.190328
+  },
+  "potential_hours": {
+   "low": 87.021198,
+   "mid": 158.0,
+   "high": 249.96467
+  },
+  "adopting_units": 3
+ },
+ {
+  "id": "UC-0052",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 9.686228,
+   "mid": 15.3,
+   "high": 20.913772
+  },
+  "origin_hours": {
+   "low": 193.724563,
+   "mid": 382.5,
+   "high": 627.413155
+  },
+  "reuse_hours": {
+   "low": 105.741324,
+   "mid": 313.195781,
+   "high": 685.013169
+  },
+  "gross_hours": {
+   "low": 299.465887,
+   "mid": 695.695781,
+   "high": 1312.426324
+  },
+  "cost_hours": {
+   "low": 15.0,
+   "mid": 36.0,
+   "high": 57.0
+  },
+  "net_hours": {
+   "low": 242.465887,
+   "mid": 659.695781,
+   "high": 1297.426324
+  },
+  "potential_hours": {
+   "low": 193.724563,
+   "mid": 382.5,
+   "high": 627.413155
+  },
+  "adopting_units": 3
+ },
+ {
+  "id": "UC-0053",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 4.13429,
+   "mid": 23.6,
+   "high": 43.06571
+  },
+  "origin_hours": {
+   "low": 6.890484,
+   "mid": 54.083333,
+   "high": 125.60832
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 6.890484,
+   "mid": 54.083333,
+   "high": 125.60832
+  },
+  "cost_hours": {
+   "low": 30.0,
+   "mid": 58.0,
+   "high": 86.0
+  },
+  "net_hours": {
+   "low": -79.109516,
+   "mid": -3.916667,
+   "high": 95.60832
+  },
+  "potential_hours": {
+   "low": 13.780967,
+   "mid": 108.166667,
+   "high": 251.21664
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0054",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 1.525333,
+   "mid": 2.5,
+   "high": 3.474667
+  },
+  "origin_hours": {
+   "low": 7.626663,
+   "mid": 16.666667,
+   "high": 28.955562
+  },
+  "reuse_hours": {
+   "low": 4.423465,
+   "mid": 14.496094,
+   "high": 33.573974
+  },
+  "gross_hours": {
+   "low": 12.050128,
+   "mid": 31.16276,
+   "high": 62.529535
+  },
+  "cost_hours": {
+   "low": 13.0,
+   "mid": 29.0,
+   "high": 45.0
+  },
+  "net_hours": {
+   "low": -32.949872,
+   "mid": 2.16276,
+   "high": 49.529535
+  },
+  "potential_hours": {
+   "low": 7.626663,
+   "mid": 16.666667,
+   "high": 28.955562
+  },
+  "adopting_units": 2
+ },
+ {
+  "id": "UC-0055",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 5.697552,
+   "mid": 14.3,
+   "high": 22.902448
+  },
+  "origin_hours": {
+   "low": 28.487759,
+   "mid": 95.333333,
+   "high": 190.853736
+  },
+  "reuse_hours": {
+   "low": 20.985982,
+   "mid": 105.194375,
+   "high": 280.554992
+  },
+  "gross_hours": {
+   "low": 49.473741,
+   "mid": 200.527708,
+   "high": 471.408727
+  },
+  "cost_hours": {
+   "low": 52.0,
+   "mid": 121.0,
+   "high": 190.0
+  },
+  "net_hours": {
+   "low": -140.526259,
+   "mid": 79.527708,
+   "high": 419.408727
+  },
+  "potential_hours": {
+   "low": 28.487759,
+   "mid": 95.333333,
+   "high": 190.853736
+  },
+  "adopting_units": 3
+ },
+ {
+  "id": "UC-0056",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 3.4,
+   "high": 6.8
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 12.0,
+   "mid": 21.0,
+   "high": 30.0
+  },
+  "net_hours": {
+   "low": -30.0,
+   "mid": -21.0,
+   "high": -12.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 113.333333,
+   "high": 283.333333
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0057",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 44.489903,
+   "mid": 63.4,
+   "high": 82.310097
+  },
+  "origin_hours": {
+   "low": 33.367427,
+   "mid": 51.248333,
+   "high": 71.335417
+  },
+  "reuse_hours": {
+   "low": 3.707492,
+   "mid": 8.32125,
+   "high": 15.090184
+  },
+  "gross_hours": {
+   "low": 37.074919,
+   "mid": 59.569583,
+   "high": 86.425602
+  },
+  "cost_hours": {
+   "low": 14.0,
+   "mid": 31.0,
+   "high": 48.0
+  },
+  "net_hours": {
+   "low": -10.925081,
+   "mid": 28.569583,
+   "high": 72.425602
+  },
+  "potential_hours": {
+   "low": 33.367427,
+   "mid": 51.248333,
+   "high": 71.335417
+  },
+  "adopting_units": 1
+ },
+ {
+  "id": "UC-0058",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 20.55,
+   "high": 41.1
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 3.0,
+   "mid": 6.0,
+   "high": 9.0
+  },
+  "net_hours": {
+   "low": -9.0,
+   "mid": -6.0,
+   "high": -3.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 27.4,
+   "high": 68.5
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0059",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": 4.619712,
+   "mid": 9.5,
+   "high": 14.380288
+  },
+  "origin_hours": {
+   "low": 26.948322,
+   "mid": 71.25,
+   "high": 131.819304
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 26.948322,
+   "mid": 71.25,
+   "high": 131.819304
+  },
+  "cost_hours": {
+   "low": 20.0,
+   "mid": 40.0,
+   "high": 60.0
+  },
+  "net_hours": {
+   "low": -33.051678,
+   "mid": 31.25,
+   "high": 111.819304
+  },
+  "potential_hours": {
+   "low": 53.896644,
+   "mid": 142.5,
+   "high": 263.638608
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0060",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 3.45,
+   "high": 6.9
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 4.0,
+   "mid": 7.0,
+   "high": 10.0
+  },
+  "net_hours": {
+   "low": -10.0,
+   "mid": -7.0,
+   "high": -4.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 12.9375,
+   "high": 34.5
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0061",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": -4.785638,
+   "mid": 3.0,
+   "high": 10.785638
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 3.0,
+   "mid": 7.0,
+   "high": 11.0
+  },
+  "net_hours": {
+   "low": -11.0,
+   "mid": -7.0,
+   "high": -3.0
+  },
+  "potential_hours": {
+   "low": -55.832446,
+   "mid": 27.5,
+   "high": 125.832446
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0062",
+  "evidence": "not_estimated",
+  "realized": false,
+  "per_instance_minutes": null,
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "net_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "adopting_units": 0
+ },
+ {
+  "id": "UC-0063",
+  "evidence": "timed_baseline_vs_pilot",
+  "realized": true,
+  "per_instance_minutes": {
+   "low": -0.087856,
+   "mid": 0.9,
+   "high": 1.887856
+  },
+  "origin_hours": {
+   "low": -17.57128,
+   "mid": 135.0,
+   "high": 377.57128
+  },
+  "reuse_hours": {
+   "low": -15.828429,
+   "mid": 91.205156,
+   "high": 340.120929
+  },
+  "gross_hours": {
+   "low": -33.399708,
+   "mid": 226.205156,
+   "high": 717.692208
+  },
+  "cost_hours": {
+   "low": 52.0,
+   "mid": 105.0,
+   "high": 158.0
+  },
+  "net_hours": {
+   "low": -191.399708,
+   "mid": 121.205156,
+   "high": 665.692208
+  },
+  "potential_hours": {
+   "low": -17.57128,
+   "mid": 135.0,
+   "high": 377.57128
+  },
+  "adopting_units": 2
+ },
+ {
+  "id": "UC-0064",
+  "evidence": "self_report",
+  "realized": false,
+  "per_instance_minutes": {
+   "low": 0.0,
+   "mid": 6.5,
+   "high": 13.0
+  },
+  "origin_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "reuse_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "gross_hours": {
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  "cost_hours": {
+   "low": 1.0,
+   "mid": 2.0,
+   "high": 3.0
+  },
+  "net_hours": {
+   "low": -3.0,
+   "mid": -2.0,
+   "high": -1.0
+  },
+  "potential_hours": {
+   "low": 0.0,
+   "mid": 24.375,
+   "high": 65.0
+  },
+  "adopting_units": 0
+ }
+]

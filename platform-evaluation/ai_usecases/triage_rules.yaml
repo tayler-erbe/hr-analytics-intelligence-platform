@@ -1,0 +1,303 @@
+# Deterministic risk triage for the AI use-case registry.
+#
+# How the engine reads this file (registry_lib.py and registry_core.js implement the same thing):
+#   * Every rule whose `when` matches fires. Order does not matter.
+#   * tier          = the highest `tier` of any fired rule (1..4).
+#   * review_paths  = union of fired rules' `review_paths`, sorted in the order listed under `review_paths:`.
+#   * blocked       = true if any fired rule has `block: true`. A blocked use case cannot enter
+#                     approved_pilot / piloting / production / reusable_library until the input changes.
+#   * reasons       = "<rule id>: <title>" for each fired rule, sorted by id.
+#   * controls      = union of fired rules' `controls`.
+# Conditions: {field, equals} {field, in} {field, not_in} {field, contains_any} {field, gte} {field, lte}
+#             {all: [...]} {any: [...]} {not: {...}} {always: true}.  `field` is a dotted path into the
+#             record; `derived.*` fields are computed by the engine (see README).
+# This file is the policy. Change it through review, bump `version`, and re-run triage on the registry
+# (build_registry.py does this and the tests fail if any stored risk block is stale).
+#
+# This file uses a small YAML subset (block maps, block lists, flow lists, scalars, comments) so it
+# can be read with the standard library; tests check it parses identically under PyYAML when present.
+
+version: "1.3"
+
+tiers:
+  "1": "Tier 1 - Low"
+  "2": "Tier 2 - Moderate"
+  "3": "Tier 3 - High"
+  "4": "Tier 4 - Restricted (employment decision)"
+
+review_paths:
+  self_certify:
+    who: "Owning unit lead, recorded by JIAT registry steward"
+    checks: "Approved tool for the data class; HITL pattern written down; fallback process exists"
+  jiat_peer_review:
+    who: "Joint Innovation in AI Team (two reviewers outside the owning unit)"
+    checks: "Problem fit, prompt/config review, evaluation plan, reuse packaging"
+  security_privacy_review:
+    who: "Technology Services security and privacy office"
+    checks: "Data classification, tool configuration, retention, access"
+  data_steward_signoff:
+    who: "Data steward for the source domain (HR, finance, student records, research administration)"
+    checks: "Permitted use of the source data for this purpose"
+  accessibility_review:
+    who: "EIT accessibility reviewer"
+    checks: "IITAA / U of I EIT accessibility guidelines for any campus- or public-facing output"
+  student_records_review:
+    who: "Registrar / FERPA compliance contact"
+    checks: "Education-record use, disclosure and retention"
+  employment_ai_review:
+    who: "University Counsel, Office for Access and Equity, and Illinois HR (employment AI review)"
+    checks: "HB 3773 scope, notice, adverse-impact monitoring, human decision logging"
+  tool_procurement_review:
+    who: "GenAI Solutions Hub procurement pathway with security review"
+    checks: "Whether a non-approved tool can be approved at all; until then the use case is blocked"
+
+# Tools approved for the Sensitive data class (UIUC GenAI approved-tools list; see the tool landscape).
+sensitive_approved_tools: ["Microsoft Copilot Chat", "Illinois ChatGPT EDU", "Illinois Chat (local models)"]
+
+rules:
+  - id: T00
+    title: "Baseline: every entry is self-certified and registered"
+    source: "NIST AI RMF GOVERN 1.6 (inventory of AI systems)"
+    when:
+      always: true
+    tier: 1
+    review_paths: [self_certify]
+
+  - id: T01
+    title: "Sensitive data: security/privacy review and data-steward sign-off"
+    source: "UIUC GenAI approved-tools data classes; tool landscape section 6"
+    when:
+      field: data.classification
+      equals: "Sensitive"
+    tier: 3
+    review_paths: [jiat_peer_review, security_privacy_review, data_steward_signoff]
+    controls: ["Use only the tool configuration reviewed for Sensitive data", "No Sensitive data in prompts saved to shared templates"]
+
+  - id: T02
+    title: "Sensitive data on a tool not approved for Sensitive data"
+    source: "UIUC GenAI approved-tools list: Illinois Chat Sensitive data only on locally hosted models"
+    when:
+      all:
+        - field: data.classification
+          equals: "Sensitive"
+        - field: tool.approved_tool
+          not_in: ["Microsoft Copilot Chat", "Illinois ChatGPT EDU", "Illinois Chat (local models)"]
+    tier: 3
+    block: true
+    review_paths: [security_privacy_review]
+
+  - id: T03
+    title: "Tool is not on the approved list"
+    source: "UIUC GenAI Solutions Hub procurement pathways; Illinois Procurement Code"
+    when:
+      field: tool.approved_tool
+      equals: "Other (not on approved list)"
+    tier: 3
+    block: true
+    review_paths: [tool_procurement_review, security_privacy_review]
+
+  - id: T04
+    title: "PII declared but data classified Public: reclassify before review"
+    source: "Data classification consistency check"
+    when:
+      all:
+        - field: data.contains_pii
+          equals: true
+        - field: data.classification
+          equals: "Public"
+    tier: 2
+    block: true
+    review_paths: [data_steward_signoff]
+
+  - id: T05
+    title: "Employment decision (Illinois HB 3773)"
+    source: "Illinois HB 3773 / Public Act 103-0804, 775 ILCS 5/2-102(L), effective 2026-01-01; OMB M-25-21 presumed high-impact categories"
+    when:
+      field: employment_decision.hb3773_flag
+      equals: true
+    tier: 4
+    review_paths: [employment_ai_review, jiat_peer_review, data_steward_signoff]
+    controls: ["Notice to affected employees/applicants before use", "Adverse-impact monitoring plan (selection-rate comparison) before production", "Human makes and logs every decision; AI output is advisory", "Each adopting unit repeats employment review (no library reuse)"]
+
+  - id: T06
+    title: "Zip code or other proxy for a protected class"
+    source: "Illinois HB 3773 (zip code as proxy prohibited)"
+    when:
+      field: employment_decision.uses_zip_code_or_proxy
+      equals: true
+    tier: 4
+    block: true
+    review_paths: [employment_ai_review]
+
+  - id: T07
+    title: "Employment decision without human review of every output"
+    source: "Illinois HB 3773; OMB M-25-21 minimum practices (human oversight); NIST AI RMF MANAGE"
+    when:
+      all:
+        - field: employment_decision.hb3773_flag
+          equals: true
+        - field: human_in_the_loop.pattern
+          in: ["ai_drafts_human_samples_outputs", "ai_acts_human_audits_after"]
+    tier: 4
+    block: true
+    review_paths: [employment_ai_review]
+
+  - id: T08
+    title: "Consequential non-employment decision about a person"
+    source: "OMB M-25-21 high-impact definition (principal basis for decisions with significant effect); NIST AI RMF MAP 1.1/5.1"
+    when:
+      field: consequential_decision.flag
+      equals: true
+    tier: 3
+    review_paths: [jiat_peer_review, data_steward_signoff]
+    controls: ["Human makes and logs every decision", "Affected person can ask for human reconsideration"]
+
+  - id: T09
+    title: "Consequential decision without human review of every output"
+    source: "OMB M-25-21 minimum practices (human oversight, remedy); NIST AI RMF MANAGE"
+    when:
+      all:
+        - field: consequential_decision.flag
+          equals: true
+        - field: human_in_the_loop.pattern
+          in: ["ai_drafts_human_samples_outputs", "ai_acts_human_audits_after"]
+    tier: 3
+    block: true
+    review_paths: [jiat_peer_review]
+
+  - id: T10
+    title: "Student records involved"
+    source: "FERPA; UIUC data classification (student records are Sensitive)"
+    when:
+      all:
+        - field: affected_people.groups
+          contains_any: ["students"]
+        - field: data.classification
+          equals: "Sensitive"
+    tier: 3
+    review_paths: [student_records_review]
+
+  - id: T11
+    title: "Campus- or public-facing output: accessibility and peer review"
+    source: "IITAA (30 ILCS 587) and U of I EIT accessibility guidelines; state GenAI risk screens flag public-facing use (Oregon, California SIMM 5305-F)"
+    when:
+      field: affected_people.output_audience
+      in: ["campus", "public"]
+    tier: 2
+    review_paths: [jiat_peer_review, accessibility_review]
+    controls: ["Disclose that AI assisted the output", "Answers cite their source pages"]
+
+  - id: T12
+    title: "AI acts before a human sees the output"
+    source: "NIST AI RMF MANAGE 2.4 (mechanisms to supersede or deactivate); OMB M-25-21 human oversight"
+    when:
+      field: human_in_the_loop.pattern
+      equals: "ai_acts_human_audits_after"
+    tier: 3
+    review_paths: [jiat_peer_review]
+    controls: ["Documented kill switch and manual fallback", "Audit sample size and cadence written down"]
+
+  - id: T13
+    title: "Human samples outputs rather than reviewing each one"
+    source: "NIST AI RMF MEASURE 2.x (ongoing monitoring)"
+    when:
+      field: human_in_the_loop.pattern
+      equals: "ai_drafts_human_samples_outputs"
+    tier: 2
+    review_paths: [jiat_peer_review]
+    controls: ["Sampling rate and error threshold that triggers full review"]
+
+  - id: T14
+    title: "Large scale: 5,000 or more people affected"
+    source: "NIST AI RMF MAP 1.1 (context and scale); California SIMM 5305-F risk factors"
+    when:
+      field: affected_people.scale_band
+      equals: "5000+"
+    tier: 2
+    review_paths: [jiat_peer_review]
+
+  - id: T15
+    title: "Applicants affected but not flagged as an employment decision: confirm scope"
+    source: "Illinois HB 3773 covers recruitment; conservative scoping"
+    when:
+      all:
+        - field: affected_people.groups
+          contains_any: ["applicants"]
+        - field: employment_decision.hb3773_flag
+          equals: false
+    tier: 3
+    review_paths: [employment_ai_review]
+
+  - id: T16
+    title: "Sensitive data with human sampling or after-the-fact audit"
+    source: "Defense in depth for Sensitive data"
+    when:
+      all:
+        - field: data.classification
+          equals: "Sensitive"
+        - field: human_in_the_loop.pattern
+          in: ["ai_drafts_human_samples_outputs", "ai_acts_human_audits_after"]
+    tier: 3
+    review_paths: [security_privacy_review]
+    controls: ["Override log reviewed monthly by the data steward"]
+
+lifecycle:
+  # Allowed moves between stages. Mapped to the OMB inventory SDLC stages in the README.
+  transitions:
+    submitted: [triaged, rejected]
+    triaged: [in_review, approved_pilot, rejected, paused]
+    in_review: [approved_pilot, rejected, paused]
+    approved_pilot: [piloting, paused, retired]
+    piloting: [production, paused, retired, rejected]
+    production: [reusable_library, paused, retired]
+    reusable_library: [paused, retired]
+    paused: [in_review, piloting, production, retired]
+    retired: []
+    rejected: []
+  gates:
+    - id: G1
+      title: "Not blocked by triage"
+      entering: [approved_pilot, piloting, production, reusable_library]
+      require:
+        field: risk.blocked
+        equals: false
+    - id: G2
+      title: "Every required review path completed"
+      entering: [approved_pilot, piloting, production, reusable_library]
+      require:
+        field: derived.reviews_outstanding
+        equals: 0
+    - id: G3
+      title: "Production needs a real evaluation and a time-saved estimate"
+      entering: [production, reusable_library]
+      require:
+        all:
+          - field: evaluation.method
+            in: [test_set, side_by_side, pilot_with_baseline]
+          - field: time_saved.method
+            not_in: [not_estimated]
+    - id: G4
+      title: "Tier 3+ production needs 30+ test cases and logged overrides"
+      entering: [production, reusable_library]
+      require:
+        any:
+          - field: risk.tier
+            lte: 2
+          - all:
+              - field: evaluation.method
+                in: [test_set, pilot_with_baseline]
+              - field: evaluation.test_cases
+                gte: 30
+              - field: human_in_the_loop.override_logged
+                equals: true
+    - id: G5
+      title: "Reusable library: evidence on file, a maintenance owner, and not an employment decision"
+      entering: [reusable_library]
+      require:
+        all:
+          - field: derived.has_evidence_location
+            equals: true
+          - field: maintenance.hours_per_month.high
+            gte: 0.5
+          - field: risk.tier
+            lte: 3

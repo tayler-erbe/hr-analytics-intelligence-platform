@@ -1,0 +1,1001 @@
+{
+ "generated_for": "2026-11-06",
+ "seed": 20261106,
+ "synthetic": true,
+ "portfolio": {
+  "timed_baseline_vs_pilot": {
+   "count": 43,
+   "realized": 40,
+   "origin_hours": {
+    "low": 1660.24,
+    "mid": 4424.57,
+    "high": 8270.308
+   },
+   "reuse_hours": {
+    "low": 666.007,
+    "mid": 2447.529,
+    "high": 5881.446
+   },
+   "gross_hours": {
+    "low": 2326.247,
+    "mid": 6872.099,
+    "high": 14151.754
+   },
+   "cost_hours": {
+    "low": 948.0,
+    "mid": 2010.0,
+    "high": 3072.0
+   },
+   "net_hours": {
+    "low": -745.753,
+    "mid": 4862.099,
+    "high": 13203.754
+   },
+   "potential_hours": {
+    "low": 1717.966,
+    "mid": 5138.378,
+    "high": 9938.281
+   },
+   "net_hours_independent": {
+    "low": 3589.747,
+    "mid": 4862.099,
+    "high": 6872.298
+   }
+  },
+  "self_report": {
+   "count": 18,
+   "realized": 0,
+   "origin_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "reuse_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "gross_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "cost_hours": {
+    "low": 219.0,
+    "mid": 363.0,
+    "high": 507.0
+   },
+   "net_hours": {
+    "low": -507.0,
+    "mid": -363.0,
+    "high": -219.0
+   },
+   "potential_hours": {
+    "low": 0.0,
+    "mid": 1149.892,
+    "high": 2848.313
+   },
+   "net_hours_independent": {
+    "low": -406.818,
+    "mid": -363.0,
+    "high": -319.182
+   }
+  },
+  "not_estimated": {
+   "count": 3,
+   "realized": 0,
+   "origin_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "reuse_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "gross_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "cost_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "net_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "potential_hours": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   },
+   "net_hours_independent": {
+    "low": 0.0,
+    "mid": 0.0,
+    "high": 0.0
+   }
+  }
+ },
+ "reuse_matrix": [
+  {
+   "origin_domain": "Advising",
+   "adopter_domain": "Advising",
+   "adoptions": 9
+  },
+  {
+   "origin_domain": "Advising",
+   "adopter_domain": "HR",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "Advising",
+   "adopter_domain": "IT",
+   "adoptions": 2
+  },
+  {
+   "origin_domain": "Advising",
+   "adopter_domain": "Research Administration",
+   "adoptions": 2
+  },
+  {
+   "origin_domain": "Finance",
+   "adopter_domain": "Finance",
+   "adoptions": 9
+  },
+  {
+   "origin_domain": "Finance",
+   "adopter_domain": "HR",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "Finance",
+   "adopter_domain": "IT",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "HR",
+   "adopter_domain": "Advising",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "HR",
+   "adopter_domain": "Finance",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "HR",
+   "adopter_domain": "HR",
+   "adoptions": 10
+  },
+  {
+   "origin_domain": "HR",
+   "adopter_domain": "IT",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "HR",
+   "adopter_domain": "Research Administration",
+   "adoptions": 2
+  },
+  {
+   "origin_domain": "IT",
+   "adopter_domain": "Advising",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "IT",
+   "adopter_domain": "Finance",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "IT",
+   "adopter_domain": "HR",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "IT",
+   "adopter_domain": "IT",
+   "adoptions": 5
+  },
+  {
+   "origin_domain": "IT",
+   "adopter_domain": "Research Administration",
+   "adoptions": 2
+  },
+  {
+   "origin_domain": "Research Administration",
+   "adopter_domain": "Advising",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "Research Administration",
+   "adopter_domain": "HR",
+   "adoptions": 1
+  },
+  {
+   "origin_domain": "Research Administration",
+   "adopter_domain": "IT",
+   "adoptions": 4
+  },
+  {
+   "origin_domain": "Research Administration",
+   "adopter_domain": "Research Administration",
+   "adoptions": 8
+  }
+ ],
+ "unit_edges": [
+  {
+   "origin_unit": "Service Desk",
+   "origin_domain": "IT",
+   "adopter_unit": "Accessible IT Group",
+   "adopter_domain": "IT",
+   "solutions": 3,
+   "ids": "UC-0039,UC-0040,UC-0063"
+  },
+  {
+   "origin_unit": "Applied Sciences HR Office",
+   "origin_domain": "HR",
+   "adopter_unit": "Learning & Development Team",
+   "adopter_domain": "HR",
+   "solutions": 2,
+   "ids": "UC-0009,UC-0014"
+  },
+  {
+   "origin_unit": "Learning & Development Team",
+   "origin_domain": "HR",
+   "adopter_unit": "Applied Sciences HR Office",
+   "adopter_domain": "HR",
+   "solutions": 2,
+   "ids": "UC-0005,UC-0006"
+  },
+  {
+   "origin_unit": "Pre-Award Office",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Post-Award Office",
+   "adopter_domain": "Research Administration",
+   "solutions": 2,
+   "ids": "UC-0050,UC-0057"
+  },
+  {
+   "origin_unit": "Service Desk",
+   "origin_domain": "IT",
+   "adopter_unit": "Security Operations",
+   "adopter_domain": "IT",
+   "solutions": 2,
+   "ids": "UC-0040,UC-0063"
+  },
+  {
+   "origin_unit": "Accounts Payable Team",
+   "origin_domain": "Finance",
+   "adopter_unit": "Budget & Planning Office",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0015"
+  },
+  {
+   "origin_unit": "Accounts Payable Team",
+   "origin_domain": "Finance",
+   "adopter_unit": "Purchasing Team",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0015"
+  },
+  {
+   "origin_unit": "Applied Sciences Business Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Purchasing Team",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0019"
+  },
+  {
+   "origin_unit": "Applied Sciences HR Office",
+   "origin_domain": "HR",
+   "adopter_unit": "Benefits Service Center",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0009"
+  },
+  {
+   "origin_unit": "Applied Sciences HR Office",
+   "origin_domain": "HR",
+   "adopter_unit": "Transfer Student Services",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0009"
+  },
+  {
+   "origin_unit": "Applied Sciences Research Admin Team",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Benefits Service Center",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0054"
+  },
+  {
+   "origin_unit": "Applied Sciences Research Admin Team",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Life Sciences Departmental IT",
+   "adopter_domain": "IT",
+   "solutions": 1,
+   "ids": "UC-0054"
+  },
+  {
+   "origin_unit": "Benefits Service Center",
+   "origin_domain": "HR",
+   "adopter_unit": "Applied Sciences HR Office",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0004"
+  },
+  {
+   "origin_unit": "Benefits Service Center",
+   "origin_domain": "HR",
+   "adopter_unit": "Classification & Compensation Team",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0004"
+  },
+  {
+   "origin_unit": "Benefits Service Center",
+   "origin_domain": "HR",
+   "adopter_unit": "Learning & Development Team",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0004"
+  },
+  {
+   "origin_unit": "Benefits Service Center",
+   "origin_domain": "HR",
+   "adopter_unit": "Life Sciences Departmental IT",
+   "adopter_domain": "IT",
+   "solutions": 1,
+   "ids": "UC-0004"
+  },
+  {
+   "origin_unit": "Benefits Service Center",
+   "origin_domain": "HR",
+   "adopter_unit": "Post-Award Office",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0004"
+  },
+  {
+   "origin_unit": "Benefits Service Center",
+   "origin_domain": "HR",
+   "adopter_unit": "Talent Acquisition Team",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0004"
+  },
+  {
+   "origin_unit": "Budget & Planning Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Applied Sciences Business Office",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0017"
+  },
+  {
+   "origin_unit": "Budget & Planning Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Classification & Compensation Team",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0017"
+  },
+  {
+   "origin_unit": "Budget & Planning Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Humanities & Arts Business Office",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0017"
+  },
+  {
+   "origin_unit": "Budget & Planning Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Life Sciences Departmental IT",
+   "adopter_domain": "IT",
+   "solutions": 1,
+   "ids": "UC-0017"
+  },
+  {
+   "origin_unit": "Career Services Office",
+   "origin_domain": "Advising",
+   "adopter_unit": "Humanities Academic Advising",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0033"
+  },
+  {
+   "origin_unit": "Career Services Office",
+   "origin_domain": "Advising",
+   "adopter_unit": "Talent Acquisition Team",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0033"
+  },
+  {
+   "origin_unit": "Career Services Office",
+   "origin_domain": "Advising",
+   "adopter_unit": "Transfer Student Services",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0033"
+  },
+  {
+   "origin_unit": "Career Services Office",
+   "origin_domain": "Advising",
+   "adopter_unit": "Undergraduate Advising Center",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0033"
+  },
+  {
+   "origin_unit": "Classification & Compensation Team",
+   "origin_domain": "HR",
+   "adopter_unit": "Post-Award Office",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0007"
+  },
+  {
+   "origin_unit": "Humanities & Arts Business Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Accounts Payable Team",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0016"
+  },
+  {
+   "origin_unit": "Humanities & Arts Business Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Applied Sciences Business Office",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0016"
+  },
+  {
+   "origin_unit": "Humanities & Arts Business Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Budget & Planning Office",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0016"
+  },
+  {
+   "origin_unit": "Humanities & Arts Business Office",
+   "origin_domain": "Finance",
+   "adopter_unit": "Purchasing Team",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0016"
+  },
+  {
+   "origin_unit": "Humanities Academic Advising",
+   "origin_domain": "Advising",
+   "adopter_unit": "Accessible IT Group",
+   "adopter_domain": "IT",
+   "solutions": 1,
+   "ids": "UC-0029"
+  },
+  {
+   "origin_unit": "Humanities Academic Advising",
+   "origin_domain": "Advising",
+   "adopter_unit": "Career Services Office",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0029"
+  },
+  {
+   "origin_unit": "Humanities Academic Advising",
+   "origin_domain": "Advising",
+   "adopter_unit": "Graduate Program Coordinators",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0032"
+  },
+  {
+   "origin_unit": "Humanities Academic Advising",
+   "origin_domain": "Advising",
+   "adopter_unit": "Service Desk",
+   "adopter_domain": "IT",
+   "solutions": 1,
+   "ids": "UC-0029"
+  },
+  {
+   "origin_unit": "Humanities Academic Advising",
+   "origin_domain": "Advising",
+   "adopter_unit": "Transfer Student Services",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0029"
+  },
+  {
+   "origin_unit": "Humanities Academic Advising",
+   "origin_domain": "Advising",
+   "adopter_unit": "Undergraduate Advising Center",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0029"
+  },
+  {
+   "origin_unit": "Learning & Development Team",
+   "origin_domain": "HR",
+   "adopter_unit": "Budget & Planning Office",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0006"
+  },
+  {
+   "origin_unit": "Learning & Development Team",
+   "origin_domain": "HR",
+   "adopter_unit": "Talent Acquisition Team",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0005"
+  },
+  {
+   "origin_unit": "Life Sciences Grants Team",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Applied Sciences Research Admin Team",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0051"
+  },
+  {
+   "origin_unit": "Life Sciences Grants Team",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Post-Award Office",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0051"
+  },
+  {
+   "origin_unit": "Life Sciences Grants Team",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Pre-Award Office",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0051"
+  },
+  {
+   "origin_unit": "Post-Award Office",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Accessible IT Group",
+   "adopter_domain": "IT",
+   "solutions": 1,
+   "ids": "UC-0052"
+  },
+  {
+   "origin_unit": "Post-Award Office",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Life Sciences Grants Team",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0052"
+  },
+  {
+   "origin_unit": "Post-Award Office",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Security Operations",
+   "adopter_domain": "IT",
+   "solutions": 1,
+   "ids": "UC-0052"
+  },
+  {
+   "origin_unit": "Pre-Award Office",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Life Sciences Grants Team",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0050"
+  },
+  {
+   "origin_unit": "Research Compliance Office",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Humanities Academic Advising",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0055"
+  },
+  {
+   "origin_unit": "Research Compliance Office",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Life Sciences Departmental IT",
+   "adopter_domain": "IT",
+   "solutions": 1,
+   "ids": "UC-0055"
+  },
+  {
+   "origin_unit": "Research Compliance Office",
+   "origin_domain": "Research Administration",
+   "adopter_unit": "Pre-Award Office",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0055"
+  },
+  {
+   "origin_unit": "Security Operations",
+   "origin_domain": "IT",
+   "adopter_unit": "Research Compliance Office",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0041"
+  },
+  {
+   "origin_unit": "Service Desk",
+   "origin_domain": "IT",
+   "adopter_unit": "Budget & Planning Office",
+   "adopter_domain": "Finance",
+   "solutions": 1,
+   "ids": "UC-0040"
+  },
+  {
+   "origin_unit": "Service Desk",
+   "origin_domain": "IT",
+   "adopter_unit": "Career Services Office",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0039"
+  },
+  {
+   "origin_unit": "Service Desk",
+   "origin_domain": "IT",
+   "adopter_unit": "Life Sciences Grants Team",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0039"
+  },
+  {
+   "origin_unit": "Service Desk",
+   "origin_domain": "IT",
+   "adopter_unit": "Talent Acquisition Team",
+   "adopter_domain": "HR",
+   "solutions": 1,
+   "ids": "UC-0039"
+  },
+  {
+   "origin_unit": "Transfer Student Services",
+   "origin_domain": "Advising",
+   "adopter_unit": "Humanities Academic Advising",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0030"
+  },
+  {
+   "origin_unit": "Undergraduate Advising Center",
+   "origin_domain": "Advising",
+   "adopter_unit": "Life Sciences Grants Team",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0031"
+  },
+  {
+   "origin_unit": "Undergraduate Advising Center",
+   "origin_domain": "Advising",
+   "adopter_unit": "Pre-Award Office",
+   "adopter_domain": "Research Administration",
+   "solutions": 1,
+   "ids": "UC-0027"
+  },
+  {
+   "origin_unit": "Undergraduate Advising Center",
+   "origin_domain": "Advising",
+   "adopter_unit": "Transfer Student Services",
+   "adopter_domain": "Advising",
+   "solutions": 1,
+   "ids": "UC-0031"
+  }
+ ],
+ "roi_by_domain": [
+  {
+   "domain": "Advising",
+   "evidence": "not_estimated",
+   "n": 1,
+   "realized": 0,
+   "net_low": 0.0,
+   "net_mid": 0.0,
+   "net_high": 0.0,
+   "gross_low": 0.0,
+   "gross_mid": 0.0,
+   "gross_high": 0.0
+  },
+  {
+   "domain": "Advising",
+   "evidence": "self_report",
+   "n": 4,
+   "realized": 0,
+   "net_low": -93.0,
+   "net_mid": -64.0,
+   "net_high": -35.0,
+   "gross_low": 0.0,
+   "gross_mid": 0.0,
+   "gross_high": 0.0
+  },
+  {
+   "domain": "Advising",
+   "evidence": "timed_baseline_vs_pilot",
+   "n": 7,
+   "realized": 7,
+   "net_low": -325.184,
+   "net_mid": 764.374,
+   "net_high": 2363.0,
+   "gross_low": 392.816,
+   "gross_mid": 1240.374,
+   "gross_high": 2597.0
+  },
+  {
+   "domain": "Finance",
+   "evidence": "not_estimated",
+   "n": 1,
+   "realized": 0,
+   "net_low": 0.0,
+   "net_mid": 0.0,
+   "net_high": 0.0,
+   "gross_low": 0.0,
+   "gross_mid": 0.0,
+   "gross_high": 0.0
+  },
+  {
+   "domain": "Finance",
+   "evidence": "self_report",
+   "n": 3,
+   "realized": 0,
+   "net_low": -73.0,
+   "net_mid": -49.0,
+   "net_high": -25.0,
+   "gross_low": 0.0,
+   "gross_mid": 0.0,
+   "gross_high": 0.0
+  },
+  {
+   "domain": "Finance",
+   "evidence": "timed_baseline_vs_pilot",
+   "n": 9,
+   "realized": 8,
+   "net_low": -222.988,
+   "net_mid": 482.631,
+   "net_high": 1494.962,
+   "gross_low": 237.012,
+   "gross_mid": 782.631,
+   "gross_high": 1634.962
+  },
+  {
+   "domain": "HR",
+   "evidence": "not_estimated",
+   "n": 1,
+   "realized": 0,
+   "net_low": 0.0,
+   "net_mid": 0.0,
+   "net_high": 0.0,
+   "gross_low": 0.0,
+   "gross_mid": 0.0,
+   "gross_high": 0.0
+  },
+  {
+   "domain": "HR",
+   "evidence": "self_report",
+   "n": 5,
+   "realized": 0,
+   "net_low": -249.0,
+   "net_mid": -186.0,
+   "net_high": -123.0,
+   "gross_low": 0.0,
+   "gross_mid": 0.0,
+   "gross_high": 0.0
+  },
+  {
+   "domain": "HR",
+   "evidence": "timed_baseline_vs_pilot",
+   "n": 9,
+   "realized": 9,
+   "net_low": -105.807,
+   "net_mid": 956.693,
+   "net_high": 2406.882,
+   "gross_low": 653.193,
+   "gross_mid": 1453.693,
+   "gross_high": 2641.882
+  },
+  {
+   "domain": "IT",
+   "evidence": "self_report",
+   "n": 3,
+   "realized": 0,
+   "net_low": -43.0,
+   "net_mid": -30.0,
+   "net_high": -17.0,
+   "gross_low": 0.0,
+   "gross_mid": 0.0,
+   "gross_high": 0.0
+  },
+  {
+   "domain": "IT",
+   "evidence": "timed_baseline_vs_pilot",
+   "n": 9,
+   "realized": 8,
+   "net_low": -218.695,
+   "net_mid": 1324.116,
+   "net_high": 3853.118,
+   "gross_low": 313.305,
+   "gross_mid": 1672.116,
+   "gross_high": 4017.118
+  },
+  {
+   "domain": "Research Administration",
+   "evidence": "self_report",
+   "n": 3,
+   "realized": 0,
+   "net_low": -49.0,
+   "net_mid": -34.0,
+   "net_high": -19.0,
+   "gross_low": 0.0,
+   "gross_mid": 0.0,
+   "gross_high": 0.0
+  },
+  {
+   "domain": "Research Administration",
+   "evidence": "timed_baseline_vs_pilot",
+   "n": 9,
+   "realized": 8,
+   "net_low": 126.921,
+   "net_mid": 1334.285,
+   "net_high": 3085.792,
+   "gross_low": 729.921,
+   "gross_mid": 1723.285,
+   "gross_high": 3260.792
+  }
+ ],
+ "tool_by_class": [
+  {
+   "tool": "Illinois Chat (hosted models)",
+   "data_class": "Public",
+   "n": 6
+  },
+  {
+   "tool": "Illinois Chat (hosted models)",
+   "data_class": "Sensitive",
+   "n": 1
+  },
+  {
+   "tool": "Illinois Chat (local models)",
+   "data_class": "Internal",
+   "n": 1
+  },
+  {
+   "tool": "Illinois Chat (local models)",
+   "data_class": "Sensitive",
+   "n": 6
+  },
+  {
+   "tool": "Illinois ChatGPT EDU",
+   "data_class": "Internal",
+   "n": 5
+  },
+  {
+   "tool": "Illinois ChatGPT EDU",
+   "data_class": "Public",
+   "n": 7
+  },
+  {
+   "tool": "Illinois ChatGPT EDU",
+   "data_class": "Sensitive",
+   "n": 5
+  },
+  {
+   "tool": "Microsoft Copilot Chat",
+   "data_class": "Internal",
+   "n": 25
+  },
+  {
+   "tool": "Microsoft Copilot Chat",
+   "data_class": "Public",
+   "n": 1
+  },
+  {
+   "tool": "Microsoft Copilot Chat",
+   "data_class": "Sensitive",
+   "n": 5
+  },
+  {
+   "tool": "Other (not on approved list)",
+   "data_class": "Internal",
+   "n": 1
+  },
+  {
+   "tool": "Other (not on approved list)",
+   "data_class": "Public",
+   "n": 1
+  }
+ ],
+ "tiers": [
+  {
+   "tier": 1,
+   "blocked": 0,
+   "n": 22
+  },
+  {
+   "tier": 2,
+   "blocked": 0,
+   "n": 20
+  },
+  {
+   "tier": 3,
+   "blocked": 5,
+   "n": 16
+  },
+  {
+   "tier": 4,
+   "blocked": 1,
+   "n": 6
+  }
+ ],
+ "stages": [
+  {
+   "stage": "approved_pilot",
+   "n": 4
+  },
+  {
+   "stage": "in_review",
+   "n": 6
+  },
+  {
+   "stage": "paused",
+   "n": 2
+  },
+  {
+   "stage": "piloting",
+   "n": 10
+  },
+  {
+   "stage": "production",
+   "n": 20
+  },
+  {
+   "stage": "rejected",
+   "n": 3
+  },
+  {
+   "stage": "retired",
+   "n": 1
+  },
+  {
+   "stage": "reusable_library",
+   "n": 10
+  },
+  {
+   "stage": "submitted",
+   "n": 4
+  },
+  {
+   "stage": "triaged",
+   "n": 4
+  }
+ ],
+ "net_totals_sql": [
+  {
+   "evidence": "not_estimated",
+   "low": 0.0,
+   "mid": 0.0,
+   "high": 0.0
+  },
+  {
+   "evidence": "self_report",
+   "low": -507.0,
+   "mid": -363.0,
+   "high": -219.0
+  },
+  {
+   "evidence": "timed_baseline_vs_pilot",
+   "low": -745.753,
+   "mid": 4862.099,
+   "high": 13203.754
+  }
+ ]
+}

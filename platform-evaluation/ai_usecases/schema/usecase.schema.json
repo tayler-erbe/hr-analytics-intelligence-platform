@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/ai_usecases/usecase.schema.json",
+  "title": "AI use-case registry entry",
+  "description": "One AI use case brought to the Joint Innovation in AI Team (JIAT), typically from an AI Professional Development cohort. Structure only: policy (risk tier, review path, lifecycle gates) lives in triage_rules.yaml so it can change without a schema version bump. Validators in registry_lib.py and registry_core.js implement the keyword subset used here: type, properties, required, additionalProperties, enum, const, minLength, maxLength, pattern, minimum, maximum, items, minItems, maxItems, uniqueItems, format(date), allOf, if/then, $ref to #/$defs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "schema_version", "synthetic", "title", "problem_statement", "proposed_solution", "domain", "unit", "process", "origin", "owner_role", "tool", "data", "human_in_the_loop", "affected_people", "employment_decision", "consequential_decision", "risk", "evaluation", "time_saved", "maintenance", "adoption_events", "status", "submitted_on", "tags"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^UC-[0-9]{4}$", "description": "Registry key, assigned at intake. Never reused."},
+    "schema_version": {"const": "1.0"},
+    "synthetic": {"type": "boolean", "description": "true for demo/seed entries. Reporting excludes synthetic entries once real ones exist."},
+    "title": {"type": "string", "minLength": 8, "maxLength": 120},
+    "problem_statement": {"type": "string", "minLength": 30, "maxLength": 1200, "description": "The work problem in the unit's words: who does what, how often, and what is painful about it. Not the AI solution."},
+    "proposed_solution": {"type": "string", "minLength": 30, "maxLength": 1200, "description": "What the AI does and what the human still does."},
+    "domain": {"enum": ["HR", "Finance", "Advising", "IT", "Research Administration", "Other"]},
+    "unit": {
+      "type": "object", "additionalProperties": false, "required": ["name", "division"],
+      "properties": {
+        "name": {"type": "string", "minLength": 3, "maxLength": 120},
+        "division": {"type": "string", "minLength": 2, "maxLength": 120}
+      }
+    },
+    "process": {
+      "type": "object", "additionalProperties": false, "required": ["name", "frequency", "step_augmented"],
+      "properties": {
+        "name": {"type": "string", "minLength": 3, "maxLength": 120},
+        "frequency": {"enum": ["daily", "weekly", "monthly", "per_term", "annual", "ad_hoc"]},
+        "step_augmented": {"type": "string", "minLength": 5, "maxLength": 400, "description": "The single process step the AI touches. Use cases that touch many steps are split."}
+      }
+    },
+    "origin": {
+      "type": "object", "additionalProperties": false, "required": ["program", "cohort"],
+      "properties": {
+        "program": {"enum": ["AI PD Intermediate cohort", "AI PD leader track", "JIAT sprint", "Unit-initiated"]},
+        "cohort": {"type": ["string", "null"], "pattern": "^[0-9]{4}-(Spring|Summer|Fall)-C[0-9]+$"}
+      }
+    },
+    "owner_role": {"type": "string", "minLength": 3, "maxLength": 120, "description": "Accountable role title. Role, not a person's name, so the entry survives staff changes."},
+    "tool": {
+      "type": "object", "additionalProperties": false, "required": ["approved_tool", "artifact_type", "configuration"],
+      "properties": {
+        "approved_tool": {"enum": ["Microsoft Copilot Chat", "Illinois ChatGPT EDU", "Illinois Chat (hosted models)", "Illinois Chat (local models)", "Other (not on approved list)"]},
+        "artifact_type": {"enum": ["prompt_template", "custom_gpt", "rag_chatbot", "document_template", "workflow_script"]},
+        "configuration": {"type": "string", "minLength": 5, "maxLength": 600, "description": "Enough for another unit to rebuild it: prompt, knowledge sources, settings."}
+      }
+    },
+    "data": {
+      "type": "object", "additionalProperties": false, "required": ["classification", "contains_pii", "sources"],
+      "properties": {
+        "classification": {"enum": ["Public", "Internal", "Sensitive"], "description": "Highest class of any data the tool sees. Anything above Sensitive is out of scope for these tools and must not be entered."},
+        "contains_pii": {"type": "boolean"},
+        "sources": {"type": "array", "minItems": 1, "maxItems": 10, "items": {"type": "string", "minLength": 2, "maxLength": 120}}
+      }
+    },
+    "human_in_the_loop": {
+      "type": "object", "additionalProperties": false, "required": ["pattern", "reviewer_role", "review_point", "override_logged", "fallback_process"],
+      "properties": {
+        "pattern": {"enum": ["human_drafts_ai_assists", "ai_drafts_human_reviews_every_output", "ai_drafts_human_samples_outputs", "ai_acts_human_audits_after"]},
+        "reviewer_role": {"type": "string", "minLength": 3, "maxLength": 120},
+        "review_point": {"type": "string", "minLength": 5, "maxLength": 300, "description": "Where in the process the human looks, and what they check."},
+        "override_logged": {"type": "boolean", "description": "Are human edits/rejections of AI output recorded? Needed to measure error rates in production."},
+        "fallback_process": {"type": "string", "minLength": 5, "maxLength": 300, "description": "How the work gets done if the tool is unavailable or withdrawn."}
+      }
+    },
+    "affected_people": {
+      "type": "object", "additionalProperties": false, "required": ["groups", "scale_band", "output_audience"],
+      "properties": {
+        "groups": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["staff", "faculty", "students", "applicants", "research_sponsors", "vendors", "public", "unit_team_only"]}},
+        "scale_band": {"enum": ["<50", "50-499", "500-4999", "5000+"]},
+        "output_audience": {"enum": ["internal_team", "unit", "campus", "public"], "description": "Who sees the AI-assisted output."}
+      }
+    },
+    "employment_decision": {
+      "type": "object", "additionalProperties": false, "required": ["hb3773_flag", "decision_types", "notice_plan", "uses_zip_code_or_proxy"],
+      "description": "Illinois HB 3773 (Public Act 103-0804, in effect 2026-01-01): AI used with respect to recruitment, hiring, promotion, renewal of employment, selection for training or apprenticeship, discharge, discipline, tenure, or terms, privileges or conditions of employment. Flag conservatively; Counsel decides scope.",
+      "properties": {
+        "hb3773_flag": {"type": "boolean"},
+        "decision_types": {"type": "array", "uniqueItems": true, "items": {"enum": ["recruitment", "hiring", "promotion", "renewal", "training_selection", "discipline", "discharge", "tenure", "terms_of_employment"]}},
+        "notice_plan": {"type": ["string", "null"], "maxLength": 600},
+        "uses_zip_code_or_proxy": {"type": "boolean", "description": "Zip code as a proxy for protected classes is prohibited by HB 3773."}
+      }
+    },
+    "consequential_decision": {
+      "type": "object", "additionalProperties": false, "required": ["flag", "description"],
+      "description": "Non-employment decisions with material effect on a person (e.g., student standing, aid, access, discipline, research compliance determinations).",
+      "properties": {
+        "flag": {"type": "boolean"},
+        "description": {"type": ["string", "null"], "maxLength": 400}
+      }
+    },
+    "risk": {
+      "type": "object", "additionalProperties": false, "required": ["tier", "review_paths", "blocked", "reasons", "triage_rules_version", "reviews_completed"],
+      "description": "Written by the triage engine from triage_rules.yaml, never typed by hand. reviews_completed is written by reviewers.",
+      "properties": {
+        "tier": {"type": "integer", "minimum": 1, "maximum": 4},
+        "review_paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/review_path"}},
+        "blocked": {"type": "boolean"},
+        "reasons": {"type": "array", "items": {"type": "string"}},
+        "triage_rules_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+        "reviews_completed": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/review_path"}}
+      }
+    },
+    "evaluation": {
+      "type": "object", "additionalProperties": false, "required": ["method", "test_cases", "observed_error_rate", "known_failure_modes", "evidence_location", "last_evaluated"],
+      "properties": {
+        "method": {"enum": ["none_yet", "spot_check", "test_set", "side_by_side", "pilot_with_baseline"]},
+        "test_cases": {"type": "integer", "minimum": 0, "maximum": 100000},
+        "observed_error_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "Share of reviewed outputs a human had to materially correct or reject."},
+        "known_failure_modes": {"type": "array", "items": {"type": "string", "minLength": 3, "maxLength": 200}},
+        "evidence_location": {"type": ["string", "null"], "maxLength": 300, "description": "Box/SharePoint path to the test set and results. A pointer, not the data."},
+        "last_evaluated": {"type": ["string", "null"], "format": "date"}
+      }
+    },
+    "time_saved": {
+      "type": "object", "additionalProperties": false, "required": ["method", "baseline", "pilot", "self_reported_minutes", "instances_per_year"],
+      "properties": {
+        "method": {"enum": ["not_estimated", "self_report", "timed_baseline_vs_pilot"]},
+        "baseline": {"$ref": "#/$defs/timing_or_null"},
+        "pilot": {"$ref": "#/$defs/timing_or_null"},
+        "self_reported_minutes": {"type": ["number", "null"], "minimum": 0, "maximum": 2400},
+        "instances_per_year": {"$ref": "#/$defs/range_nonneg"}
+      },
+      "allOf": [
+        {"if": {"properties": {"method": {"const": "timed_baseline_vs_pilot"}}},
+         "then": {"properties": {"baseline": {"$ref": "#/$defs/timing"}, "pilot": {"$ref": "#/$defs/timing"}}}},
+        {"if": {"properties": {"method": {"const": "self_report"}}},
+         "then": {"properties": {"self_reported_minutes": {"type": "number", "minimum": 0, "maximum": 2400}}}}
+      ]
+    },
+    "maintenance": {
+      "type": "object", "additionalProperties": false, "required": ["owner_role", "hours_per_month", "review_cadence"],
+      "properties": {
+        "owner_role": {"type": "string", "minLength": 3, "maxLength": 120},
+        "hours_per_month": {"$ref": "#/$defs/range_nonneg"},
+        "review_cadence": {"enum": ["monthly", "quarterly", "semiannual", "annual"]}
+      }
+    },
+    "adoption_events": {
+      "type": "array", "maxItems": 200,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["date", "unit", "domain", "event", "instances_per_year"],
+        "properties": {
+          "date": {"type": "string", "format": "date"},
+          "unit": {"type": "string", "minLength": 3, "maxLength": 120},
+          "domain": {"enum": ["HR", "Finance", "Advising", "IT", "Research Administration", "Other"]},
+          "event": {"enum": ["pilot_started", "adopted", "forked_adapted", "retired_by_unit"]},
+          "instances_per_year": {"$ref": "#/$defs/range_nonneg_or_null"}
+        }
+      }
+    },
+    "status": {
+      "type": "object", "additionalProperties": false, "required": ["stage", "history"],
+      "properties": {
+        "stage": {"$ref": "#/$defs/stage"},
+        "history": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["stage", "date", "by_role"],
+            "properties": {
+              "stage": {"$ref": "#/$defs/stage"},
+              "date": {"type": "string", "format": "date"},
+              "by_role": {"type": "string", "minLength": 3, "maxLength": 120}
+            }
+          }
+        }
+      }
+    },
+    "submitted_on": {"type": "string", "format": "date"},
+    "tags": {"type": "array", "maxItems": 12, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,30}$"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"employment_decision": {"properties": {"hb3773_flag": {"const": true}}}}},
+     "then": {"properties": {"employment_decision": {"properties": {"decision_types": {"minItems": 1}, "notice_plan": {"type": "string", "minLength": 20}}}}}},
+    {"if": {"properties": {"consequential_decision": {"properties": {"flag": {"const": true}}}}},
+     "then": {"properties": {"consequential_decision": {"properties": {"description": {"type": "string", "minLength": 10}}}}}}
+  ],
+  "$defs": {
+    "stage": {"enum": ["submitted", "triaged", "in_review", "approved_pilot", "piloting", "production", "reusable_library", "paused", "retired", "rejected"]},
+    "review_path": {"enum": ["self_certify", "jiat_peer_review", "security_privacy_review", "data_steward_signoff", "accessibility_review", "student_records_review", "employment_ai_review", "tool_procurement_review"]},
+    "timing": {
+      "type": "object", "additionalProperties": false, "required": ["n", "mean_minutes", "sd_minutes"],
+      "description": "Timed observations of one process instance. Pilot timing includes the human review step.",
+      "properties": {
+        "n": {"type": "integer", "minimum": 5, "maximum": 10000},
+        "mean_minutes": {"type": "number", "minimum": 0, "maximum": 2400},
+        "sd_minutes": {"type": "number", "minimum": 0, "maximum": 2400}
+      }
+    },
+    "timing_or_null": {
+      "type": ["object", "null"], "additionalProperties": false, "required": ["n", "mean_minutes", "sd_minutes"],
+      "properties": {
+        "n": {"type": "integer", "minimum": 1, "maximum": 10000},
+        "mean_minutes": {"type": "number", "minimum": 0, "maximum": 2400},
+        "sd_minutes": {"type": "number", "minimum": 0, "maximum": 2400}
+      }
+    },
+    "range_nonneg": {
+      "type": "object", "additionalProperties": false, "required": ["low", "high"],
+      "properties": {"low": {"type": "number", "minimum": 0}, "high": {"type": "number", "minimum": 0}}
+    },
+    "range_nonneg_or_null": {
+      "type": ["object", "null"], "additionalProperties": false, "required": ["low", "high"],
+      "properties": {"low": {"type": "number", "minimum": 0}, "high": {"type": "number", "minimum": 0}}
+    }
+  }
+}

@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Use-Case Registry</title>
+<meta name="description" content="Synthetic demo of an AI use-case registry and reuse library: catalog, risk triage, lifecycle, ROI with ranges, reuse map and an offline intake form.">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f6f4; --surface: #fcfcfb; --surface-2: #f0efec; --border: #dddcd7;
+  --text: #0b0b0b; --text-2: #52514e; --muted: #6f6e69;
+  --accent: #2a78d6; --accent-ink: #1c5cab; --focus: #2a78d6;
+  --series: #2a78d6; --grid: #e4e3de;
+  --t1: #86b6ef; --t2: #3987e5; --t3: #1c5cab; --t4: #0d366b;
+  --critical: #d03b3b; --good: #0ca30c; --warning: #fab219;
+  --crit-bg: #fbeaea; --warn-bg: #fdf3dc; --good-bg: #e6f5e6;
+  --seq-ink-0: #0b0b0b; --seq-ink-1: #0b0b0b; --seq-ink-2: #0b0b0b; --seq-ink-3: #0b0b0b; --seq-ink-4: #ffffff; --seq-ink-5: #ffffff;
+  --seq-0: #f0efec; --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #5598e7; --seq-4: #256abf; --seq-5: #0d366b;
+  --shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --bg: #121211; --surface: #1a1a19; --surface-2: #242422; --border: #383835;
+    --text: #f0efec; --text-2: #c3c2b7; --muted: #9a998f;
+    --accent: #3987e5; --accent-ink: #86b6ef; --focus: #6da7ec;
+    --series: #3987e5; --grid: #2e2e2b;
+    --t1: #b7d3f6; --t2: #6da7ec; --t3: #3987e5; --t4: #256abf;
+    --crit-bg: #3a1c1c; --warn-bg: #3a2f14; --good-bg: #173117;
+    --seq-ink-0: #f0efec; --seq-ink-1: #f0efec; --seq-ink-2: #f0efec; --seq-ink-3: #f0efec; --seq-ink-4: #0b0b0b; --seq-ink-5: #0b0b0b;
+    --seq-0: #242422; --seq-1: #184f95; --seq-2: #1c5cab; --seq-3: #2a78d6; --seq-4: #5598e7; --seq-5: #9ec5f4;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121211; --surface: #1a1a19; --surface-2: #242422; --border: #383835;
+  --text: #f0efec; --text-2: #c3c2b7; --muted: #9a998f;
+  --accent: #3987e5; --accent-ink: #86b6ef; --focus: #6da7ec;
+  --series: #3987e5; --grid: #2e2e2b;
+  --t1: #b7d3f6; --t2: #6da7ec; --t3: #3987e5; --t4: #256abf;
+  --crit-bg: #3a1c1c; --warn-bg: #3a2f14; --good-bg: #173117;
+  --seq-ink-0: #f0efec; --seq-ink-1: #f0efec; --seq-ink-2: #f0efec; --seq-ink-3: #f0efec; --seq-ink-4: #0b0b0b; --seq-ink-5: #0b0b0b;
+  --seq-0: #242422; --seq-1: #184f95; --seq-2: #1c5cab; --seq-3: #2a78d6; --seq-4: #5598e7; --seq-5: #9ec5f4;
+  --shadow: none;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow-x: hidden; }
+a { color: var(--accent-ink); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+header.top { background: var(--surface); border-bottom: 1px solid var(--border); }
+header.top .wrap { display: flex; gap: 12px; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 10px; flex-wrap: wrap; }
+h1 { font-size: 1.3rem; margin: 0; letter-spacing: -.01em; }
+.sub { color: var(--text-2); font-size: .9rem; margin: 2px 0 0; }
+.banner { background: var(--warn-bg); color: var(--text); border-bottom: 1px solid var(--border); font-size: .85rem; }
+.banner .wrap { padding-top: 6px; padding-bottom: 6px; }
+nav.tabs { display: flex; gap: 4px; overflow-x: auto; padding: 8px 0 0; scrollbar-width: thin; }
+nav.tabs button { border: 1px solid transparent; border-bottom: none; background: none; padding: 8px 14px; border-radius: 8px 8px 0 0; cursor: pointer; color: var(--text-2); white-space: nowrap; }
+nav.tabs button[aria-selected="true"] { background: var(--bg); border-color: var(--border); color: var(--text); font-weight: 600; }
+.icon-btn { border: 1px solid var(--border); background: var(--surface-2); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+main { padding: 16px 0 48px; }
+section[hidden] { display: none; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.filters { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px; margin-bottom: 12px; }
+.filters input[type=search] { flex: 1 1 240px; min-width: 0; }
+input[type=text], input[type=search], input[type=number], input[type=date], select, textarea {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 7px 9px; max-width: 100%; }
+textarea { width: 100%; min-height: 70px; resize: vertical; }
+.count { color: var(--text-2); font-size: .9rem; margin: 4px 0 10px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; box-shadow: var(--shadow); cursor: pointer; text-align: left; display: flex; flex-direction: column; gap: 6px; width: 100%; }
+.card:hover { border-color: var(--accent); }
+.card h3 { font-size: 1rem; margin: 0; }
+.meta { color: var(--text-2); font-size: .85rem; }
+.badges { display: flex; flex-wrap: wrap; gap: 4px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; font-size: .75rem; border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; background: var(--surface-2); color: var(--text); white-space: nowrap; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+.tier-1 .dot { background: var(--t1); } .tier-2 .dot { background: var(--t2); } .tier-3 .dot { background: var(--t3); } .tier-4 .dot { background: var(--t4); }
+.badge.blocked { background: var(--crit-bg); border-color: var(--critical); }
+.badge.blocked svg { color: var(--critical); }
+.badge.hb { background: var(--warn-bg); }
+.roi-line { font-size: .85rem; color: var(--text-2); margin-top: auto; }
+.board { display: flex; align-items: flex-start; gap: 10px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; }
+.col { flex: 0 0 236px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 8px; scroll-snap-align: start; }
+.col h3 { font-size: .85rem; margin: 2px 2px 8px; display: flex; justify-content: space-between; text-transform: none; }
+.col .card { padding: 8px; gap: 4px; margin-bottom: 8px; }
+.col .card h4 { margin: 0; font-size: .85rem; font-weight: 600; }
+.legend-note { font-size: .85rem; color: var(--text-2); margin: 0 0 10px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; margin-bottom: 16px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.tile .k { font-size: .8rem; color: var(--text-2); }
+.tile .v { font-size: 1.35rem; font-weight: 650; letter-spacing: -.01em; margin: 2px 0; font-variant-numeric: tabular-nums; }
+.tile .n { font-size: .8rem; color: var(--muted); }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 16px; }
+.panel h2 { font-size: 1.05rem; margin: 0 0 6px; }
+.panel h3 { font-size: .95rem; margin: 12px 0 6px; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+th, td { border-bottom: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
+th { color: var(--text-2); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { fill: var(--text-2); font-size: 12px; }
+.tooltip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 9px; font-size: .8rem; box-shadow: 0 2px 8px rgba(0,0,0,.15); white-space: nowrap; z-index: 5; }
+.matrix td.cell { text-align: center; font-variant-numeric: tabular-nums; min-width: 52px; border: 2px solid var(--surface); }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+dialog { border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); width: min(860px, calc(100vw - 24px)); max-height: calc(100vh - 32px); padding: 0; }
+dialog::backdrop { background: rgba(0,0,0,.45); }
+.dlg-head { position: sticky; top: 0; background: var(--surface); border-bottom: 1px solid var(--border); padding: 12px 16px; display: flex; gap: 8px; justify-content: space-between; align-items: flex-start; z-index: 2; }
+.dlg-body { padding: 4px 16px 16px; }
+.dlg-body h3 { font-size: .95rem; margin: 14px 0 4px; }
+.kv { display: grid; grid-template-columns: minmax(120px, 190px) 1fr; gap: 3px 12px; font-size: .88rem; }
+.kv dt { color: var(--text-2); } .kv dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 560px) { .kv { grid-template-columns: 1fr; } .kv dd { margin-bottom: 6px; } }
+ul.tight { margin: 4px 0; padding-left: 20px; }
+.ok { color: var(--good); } .bad { color: var(--critical); }
+form.intake fieldset { border: 1px solid var(--border); border-radius: 10px; margin: 0 0 12px; padding: 10px 12px; background: var(--surface); }
+form.intake legend { font-weight: 600; padding: 0 4px; }
+.field { display: flex; flex-direction: column; gap: 3px; margin-bottom: 10px; min-width: 0; }
+.field label, .field .lbl { font-size: .85rem; font-weight: 600; }
+.field .help { font-size: .78rem; color: var(--muted); }
+.field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--critical); }
+.field .chk { display: flex; flex-wrap: wrap; gap: 4px 14px; font-weight: 400; }
+.field .chk label { font-weight: 400; display: inline-flex; gap: 5px; align-items: center; }
+.cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0 12px; }
+.intake-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 380px); gap: 16px; align-items: start; }
+.intake-side { position: sticky; top: 8px; }
+@media (max-width: 900px) { .intake-layout { grid-template-columns: 1fr; } .intake-side { position: static; } }
+pre.json { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px; font-size: .75rem; max-height: 280px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.btn { border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 8px; padding: 7px 12px; cursor: pointer; }
+.btn.secondary { background: var(--surface); color: var(--text); border-color: var(--border); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.status-box { border-radius: 8px; padding: 8px 10px; font-size: .88rem; margin: 8px 0; }
+.status-box.good { background: var(--good-bg); } .status-box.bad { background: var(--crit-bg); }
+.method p, .method li { max-width: 80ch; }
+.small { font-size: .82rem; color: var(--text-2); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (forced-colors: active) { .dot { forced-color-adjust: none; border: 1px solid CanvasText; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div>
+      <h1>AI Use-Case Registry &amp; Reuse Library</h1>
+      <p class="sub">Joint Innovation in AI Team prototype: from cohort prototype to governed, reusable, human-in-the-loop solution</p>
+    </div>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle light or dark theme">Theme</button>
+  </div>
+  <div class="wrap"><nav class="tabs" role="tablist" id="tabs"></nav></div>
+</header>
+<div class="banner" role="note"><div class="wrap"><strong>Synthetic demo.</strong> Every use case, unit and number on this page is fictional and generated for illustration. It describes no real office, person or measurement. Works offline; nothing leaves this page.</div></div>
+<main class="wrap">
+  <section id="tab-catalog" role="tabpanel">
+    <div class="filters">
+      <div class="row">
+        <label class="sr-only" for="q">Search</label>
+        <input type="search" id="q" placeholder="Search title, problem, unit, tag, tool…">
+        <select id="fDomain" aria-label="Domain"></select>
+        <select id="fTier" aria-label="Risk tier"></select>
+        <select id="fStage" aria-label="Lifecycle stage"></select>
+        <select id="fTool" aria-label="Tool"></select>
+        <select id="fClass" aria-label="Data classification"></select>
+        <label class="small"><input type="checkbox" id="fBlocked"> blocked only</label>
+      </div>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="cards"></div>
+  </section>
+
+  <section id="tab-lifecycle" role="tabpanel" hidden>
+    <p class="legend-note">Stages follow the gates in <code>triage_rules.yaml</code>. A card can only move right once its review paths are complete and it is not blocked; production needs evaluation evidence and a time-saved estimate; the reusable library also needs evidence on file and excludes employment-decision (Tier 4) uses. Scroll sideways on small screens.</p>
+    <div class="board" id="board" tabindex="0" aria-label="Lifecycle board"></div>
+  </section>
+
+  <section id="tab-roi" role="tabpanel" hidden>
+    <div class="tiles" id="roiTiles"></div>
+    <div class="panel">
+      <h2>Measured net hours returned per year, by domain</h2>
+      <p class="small">Only use cases with a timed baseline-vs-pilot comparison, in piloting or later. Bar = conservative range (all estimates at their low end and all costs at their high end, and vice versa); dot = middle estimate. Hover or focus a row for numbers. The table below the chart carries the same data.</p>
+      <div class="chart" id="domainChart"></div>
+      <div class="table-scroll"><table id="domainTable"></table></div>
+    </div>
+    <div class="panel">
+      <h2>Use cases by measured net hours (middle estimate)</h2>
+      <div class="table-scroll"><table id="roiTable"></table></div>
+    </div>
+    <div class="panel">
+      <h2>Assumptions and what this does not show</h2>
+      <div id="roiAssumptions"></div>
+    </div>
+  </section>
+
+  <section id="tab-reuse" role="tabpanel" hidden>
+    <div class="panel">
+      <h2>Reuse across domains</h2>
+      <p class="small">Rows: domain of the unit that built the solution. Columns: domain of a unit that later piloted, adopted or adapted it (units that later retired it are excluded). Darker = more adoptions; every cell is labelled.</p>
+      <div class="table-scroll"><table class="matrix" id="matrix"></table></div>
+    </div>
+    <div class="panel">
+      <h2>Most-reused solutions</h2>
+      <div id="reuseList"></div>
+    </div>
+    <div class="panel">
+      <h2>Unit-to-unit reuse links</h2>
+      <div class="table-scroll"><table id="edgeTable"></table></div>
+    </div>
+  </section>
+
+  <section id="tab-intake" role="tabpanel" hidden>
+    <div class="intake-layout">
+      <form class="intake" id="intakeForm" novalidate></form>
+      <aside class="intake-side">
+        <div class="panel">
+          <h2>Triage (live)</h2>
+          <div id="liveTriage"></div>
+        </div>
+        <div class="panel">
+          <h2>Validation</h2>
+          <div id="liveValidation"></div>
+          <div class="row" style="margin-top:8px">
+            <button class="btn" type="button" id="dlBtn">Download JSON</button>
+            <button class="btn secondary" type="button" id="copyBtn">Copy JSON</button>
+          </div>
+          <p class="small" id="copyMsg" aria-live="polite"></p>
+          <details><summary class="small">Preview JSON</summary><pre class="json" id="jsonPreview"></pre></details>
+        </div>
+        <div class="panel">
+          <h2>Check an existing file</h2>
+          <p class="small">Validate a registry entry (or an array of entries) against the schema, data contract, triage and lifecycle rules. The file is read locally.</p>
+          <input type="file" id="importFile" accept=".json,application/json">
+          <div id="importResult"></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tab-method" role="tabpanel" hidden>
+    <div class="panel method" id="methodPanel"></div>
+  </section>
+</main>
+
+<dialog id="detail" aria-labelledby="dTitle">
+  <div class="dlg-head">
+    <div><h2 id="dTitle" style="margin:0;font-size:1.1rem"></h2><div class="meta" id="dMeta"></div></div>
+    <div class="row"><button class="btn secondary" type="button" id="dExport">Export JSON</button><button class="btn secondary" type="button" id="dClose" aria-label="Close">Close</button></div>
+  </div>
+  <div class="dlg-body" id="dBody"></div>
+</dialog>
+
+<script id="registry-data" type="application/json">/*__DATA__*/</script>
+<script>/*__CORE__*/</script>
+<script>
+(function () {
+"use strict";
+var D = JSON.parse(document.getElementById("registry-data").textContent);
+var C = window.RegistryCore;
+var REG = D.registry, ROI = {}, RULES = D.rules, SCHEMA = D.schema, A = D.assumptions;
+D.roi.forEach(function (r) { ROI[r.id] = r; });
+var BYID = {}; REG.forEach(function (r) { BYID[r.id] = r; });
+var STAGES = SCHEMA.$defs.stage.enum;
+var STAGE_LABEL = { submitted: "Submitted", triaged: "Triaged", in_review: "In review", approved_pilot: "Approved for pilot",
+  piloting: "Piloting", production: "Production", reusable_library: "Reusable library", paused: "Paused", retired: "Retired", rejected: "Rejected" };
+var PATH_LABEL = { self_certify: "Self-certify", jiat_peer_review: "JIAT peer review", security_privacy_review: "Security & privacy",
+  data_steward_signoff: "Data steward", accessibility_review: "Accessibility (IITAA)", student_records_review: "Student records (FERPA)",
+  employment_ai_review: "Employment AI review (HB 3773)", tool_procurement_review: "Tool procurement review" };
+var EVID_LABEL = { timed_baseline_vs_pilot: "Timed baseline vs pilot", self_report: "Self-reported", not_estimated: "Not estimated" };
+var HITL_LABEL = { human_drafts_ai_assists: "Human drafts, AI assists", ai_drafts_human_reviews_every_output: "AI drafts, human reviews every output",
+  ai_drafts_human_samples_outputs: "AI drafts, human samples outputs", ai_acts_human_audits_after: "AI acts, human audits after" };
+
+/* ---------- helpers ---------- */
+function el(tag, attrs, kids) {
+  var n = document.createElement(tag);
+  if (attrs) Object.keys(attrs).forEach(function (k) {
+    var v = attrs[k];
+    if (v === null || v === undefined || v === false) return;
+    if (k === "text") n.textContent = v;
+    else if (k === "html") n.innerHTML = v;
+    else if (k.slice(0, 2) === "on") n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v === true ? "" : v);
+  });
+  (kids || []).forEach(function (c) { if (c !== null && c !== undefined) n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+  return n;
+}
+function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+function nf(x, d) { return (x < 0 ? "−" : "") + Math.abs(x).toLocaleString("en-US", { maximumFractionDigits: d || 0, minimumFractionDigits: d || 0 }); }
+function usd(x) { return (x < 0 ? "−" : "") + "$" + Math.abs(Math.round(x / 1000)).toLocaleString("en-US") + "k"; }
+function hrs(x) { var a = Math.abs(x); return nf(a >= 100 ? Math.round(x / 10) * 10 : Math.round(x)); }
+function range(iv, unit) { return hrs(iv.low) + " to " + hrs(iv.high) + (unit || "") ; }
+function tierBadge(t) { return el("span", { class: "badge tier-" + t, title: RULES.tiers[String(t)] }, [el("span", { class: "dot", "aria-hidden": "true" }), "T" + t + " " + ["", "Low", "Moderate", "High", "Restricted"][t]]); }
+var STOP = '<svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path fill="currentColor" d="M3.5 0h5L12 3.5v5L8.5 12h-5L0 8.5v-5z"/><path stroke="#fff" stroke-width="1.6" d="M3.5 6h5"/></svg>';
+function blockedBadge() { return el("span", { class: "badge blocked", html: STOP + " Blocked" }); }
+function hbBadge() { return el("span", { class: "badge hb", title: "Employment decision under Illinois HB 3773" }, ["HB 3773"]); }
+function stageBadge(s) { return el("span", { class: "badge" }, [STAGE_LABEL[s]]); }
+function today() { var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+function download(name, text) {
+  var b = new Blob([text], { type: "application/json" }), u = URL.createObjectURL(b);
+  var a = el("a", { href: u, download: name }); document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function () { URL.revokeObjectURL(u); }, 1000);
+}
+function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+
+/* ---------- theme ---------- */
+(function () {
+  var saved = store("aiuc-theme");
+  if (saved === "light" || saved === "dark") document.documentElement.setAttribute("data-theme", saved);
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var cur = document.documentElement.getAttribute("data-theme") ||
+      (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    var next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next); store("aiuc-theme", next);
+  });
+})();
+
+/* ---------- tabs ---------- */
+var TABS = [["catalog", "Catalog"], ["lifecycle", "Lifecycle"], ["roi", "ROI"], ["reuse", "Reuse map"], ["intake", "Intake form"], ["method", "Method & sources"]];
+var tabsEl = document.getElementById("tabs");
+function showTab(id) {
+  TABS.forEach(function (t) {
+    document.getElementById("tab-" + t[0]).hidden = t[0] !== id;
+    var b = document.getElementById("tb-" + t[0]); b.setAttribute("aria-selected", String(t[0] === id)); b.tabIndex = t[0] === id ? 0 : -1;
+  });
+  store("aiuc-tab", id);
+  if (id === "roi") drawChart();
+  if (location.hash !== "#" + id) history.replaceState(null, "", "#" + id);
+}
+TABS.forEach(function (t, i) {
+  tabsEl.appendChild(el("button", { id: "tb-" + t[0], role: "tab", type: "button", "aria-controls": "tab-" + t[0], onclick: function () { showTab(t[0]); },
+    onkeydown: function (e) {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      var j = (i + (e.key === "ArrowRight" ? 1 : TABS.length - 1)) % TABS.length;
+      showTab(TABS[j][0]); document.getElementById("tb-" + TABS[j][0]).focus();
+    } }, [t[1]]));
+});
+
+/* ---------- catalog ---------- */
+function fillSelect(id, label, values, fmt) {
+  var s = document.getElementById(id);
+  s.appendChild(el("option", { value: "" }, ["All " + label]));
+  values.forEach(function (v) { s.appendChild(el("option", { value: String(v) }, [fmt ? fmt(v) : String(v)])); });
+}
+fillSelect("fDomain", "domains", SCHEMA.properties.domain.enum.filter(function (d) { return REG.some(function (r) { return r.domain === d; }); }));
+fillSelect("fTier", "tiers", [1, 2, 3, 4], function (t) { return RULES.tiers[String(t)]; });
+fillSelect("fStage", "stages", STAGES, function (s) { return STAGE_LABEL[s]; });
+fillSelect("fTool", "tools", SCHEMA.properties.tool.properties.approved_tool.enum);
+fillSelect("fClass", "data classes", SCHEMA.properties.data.properties.classification.enum);
+function roiLine(r) {
+  var x = ROI[r.id];
+  if (!x.realized) return x.evidence === "not_estimated" ? "No time-saved estimate yet" : "Not realized yet (" + EVID_LABEL[x.evidence].toLowerCase() + ")";
+  return "Net " + range(x.net_hours, " h/yr") + " · " + EVID_LABEL[x.evidence].toLowerCase();
+}
+function card(r) {
+  var b = [tierBadge(r.risk.tier)];
+  if (r.risk.blocked) b.push(blockedBadge());
+  if (r.employment_decision.hb3773_flag) b.push(hbBadge());
+  b.push(stageBadge(r.status.stage), el("span", { class: "badge" }, [r.data.classification]), el("span", { class: "badge" }, [r.tool.approved_tool]));
+  var ad = ROI[r.id].adopting_units;
+  return el("button", { class: "card", type: "button", onclick: function () { openDetail(r.id); } }, [
+    el("h3", { text: r.title }),
+    el("div", { class: "meta", text: r.id + " · " + r.unit.name + " · " + r.domain }),
+    el("div", { class: "badges" }, b),
+    el("div", { class: "roi-line", text: roiLine(r) + (ad ? " · reused by " + ad + " unit" + (ad > 1 ? "s" : "") : "") })
+  ]);
+}
+function renderCatalog() {
+  var q = document.getElementById("q").value.trim().toLowerCase();
+  var f = { d: fDomain.value, t: fTier.value, s: fStage.value, tool: fTool.value, c: fClass.value, b: fBlocked.checked };
+  var hits = REG.filter(function (r) {
+    if (f.d && r.domain !== f.d) return false;
+    if (f.t && String(r.risk.tier) !== f.t) return false;
+    if (f.s && r.status.stage !== f.s) return false;
+    if (f.tool && r.tool.approved_tool !== f.tool) return false;
+    if (f.c && r.data.classification !== f.c) return false;
+    if (f.b && !r.risk.blocked) return false;
+    if (!q) return true;
+    var hay = [r.id, r.title, r.problem_statement, r.proposed_solution, r.unit.name, r.unit.division, r.domain, r.tool.approved_tool, r.process.name, r.tags.join(" ")].join(" ").toLowerCase();
+    return q.split(/\s+/).every(function (w) { return hay.indexOf(w) >= 0; });
+  });
+  var box = document.getElementById("cards"); box.textContent = "";
+  hits.forEach(function (r) { box.appendChild(card(r)); });
+  document.getElementById("count").textContent = hits.length + " of " + REG.length + " use cases";
+}
+["q", "fDomain", "fTier", "fStage", "fTool", "fClass", "fBlocked"].forEach(function (id) {
+  document.getElementById(id).addEventListener(id === "q" ? "input" : "change", renderCatalog);
+});
+
+/* ---------- detail ---------- */
+var dlg = document.getElementById("detail"), current = null;
+function kv(pairs) {
+  var dl = el("dl", { class: "kv" });
+  pairs.forEach(function (p) { if (p[1] === null || p[1] === undefined || p[1] === "") return; dl.appendChild(el("dt", { text: p[0] })); dl.appendChild(el("dd", null, [typeof p[1] === "string" ? p[1] : p[1]])); });
+  return dl;
+}
+function openDetail(id) {
+  var r = BYID[id], x = ROI[id], body = document.getElementById("dBody"); current = r;
+  document.getElementById("dTitle").textContent = r.title;
+  document.getElementById("dMeta").textContent = r.id + " · " + r.unit.name + " (" + r.unit.division + ") · " + STAGE_LABEL[r.status.stage];
+  body.textContent = "";
+  var b = [tierBadge(r.risk.tier)]; if (r.risk.blocked) b.push(blockedBadge()); if (r.employment_decision.hb3773_flag) b.push(hbBadge());
+  body.appendChild(el("div", { class: "badges", style: "margin-top:10px" }, b));
+  body.appendChild(el("h3", { text: "Problem" })); body.appendChild(el("p", { text: r.problem_statement }));
+  body.appendChild(el("h3", { text: "Solution and the human's role" })); body.appendChild(el("p", { text: r.proposed_solution }));
+  body.appendChild(kv([["Process / step", r.process.name + " (" + r.process.frequency.replace("_", " ") + "): " + r.process.step_augmented],
+    ["Tool", r.tool.approved_tool + " · " + r.tool.artifact_type.replace(/_/g, " ")], ["Configuration", r.tool.configuration],
+    ["Data", r.data.classification + (r.data.contains_pii ? ", contains PII" : "") + " · " + r.data.sources.join("; ")],
+    ["Human in the loop", HITL_LABEL[r.human_in_the_loop.pattern] + ". " + r.human_in_the_loop.review_point],
+    ["Overrides logged", r.human_in_the_loop.override_logged ? "Yes" : "No"], ["Fallback", r.human_in_the_loop.fallback_process],
+    ["People affected", r.affected_people.groups.join(", ") + " · " + r.affected_people.scale_band + " · output seen by " + r.affected_people.output_audience.replace("_", " ")],
+    ["Employment decision", r.employment_decision.hb3773_flag ? "Yes: " + r.employment_decision.decision_types.join(", ") : "No"],
+    ["Notice plan", r.employment_decision.notice_plan], ["Consequential decision", r.consequential_decision.flag ? r.consequential_decision.description : "No"],
+    ["Origin", r.origin.program + (r.origin.cohort ? " " + r.origin.cohort : "")], ["Owner", r.owner_role]]));
+  body.appendChild(el("h3", { text: "Triage (rules v" + r.risk.triage_rules_version + ")" }));
+  body.appendChild(el("ul", { class: "tight" }, r.risk.reasons.map(function (s) { return el("li", { text: s }); })));
+  var t = C.triage(r, RULES);
+  if (t.controls.length) { body.appendChild(el("div", { class: "small", text: "Required controls:" })); body.appendChild(el("ul", { class: "tight" }, t.controls.map(function (s) { return el("li", { text: s }); }))); }
+  body.appendChild(el("div", { class: "small", text: "Review paths:" }));
+  body.appendChild(el("ul", { class: "tight" }, r.risk.review_paths.map(function (p) {
+    var done = r.risk.reviews_completed.indexOf(p) >= 0;
+    return el("li", null, [el("span", { class: done ? "ok" : "bad", text: done ? "✓ done " : "○ open " }), PATH_LABEL[p] + " — " + RULES.review_paths[p].who]);
+  })));
+  var ev = r.evaluation;
+  body.appendChild(el("h3", { text: "Evaluation evidence" }));
+  body.appendChild(kv([["Method", ev.method.replace(/_/g, " ")], ["Test cases", ev.test_cases ? String(ev.test_cases) : null],
+    ["Observed correction rate", ev.observed_error_rate === null ? null : nf(ev.observed_error_rate * 100, 1) + "% of reviewed outputs needed material correction"],
+    ["Known failure modes", ev.known_failure_modes.join("; ")], ["Evidence on file", ev.evidence_location], ["Last evaluated", ev.last_evaluated]]));
+  var ts = r.time_saved;
+  body.appendChild(el("h3", { text: "Time saved and ROI" }));
+  var rows = [["Method", EVID_LABEL[ts.method]], ["Volume", nf(ts.instances_per_year.low) + " to " + nf(ts.instances_per_year.high) + " instances/yr in the origin unit"]];
+  if (ts.baseline) rows.push(["Baseline (timed)", nf(ts.baseline.mean_minutes, 1) + " min ± " + nf(ts.baseline.sd_minutes, 1) + " SD, n=" + ts.baseline.n],
+    ["Pilot incl. review", nf(ts.pilot.mean_minutes, 1) + " min ± " + nf(ts.pilot.sd_minutes, 1) + " SD, n=" + ts.pilot.n]);
+  if (ts.self_reported_minutes !== null) rows.push(["Self-reported saving", nf(ts.self_reported_minutes, 1) + " min per instance (treated as an upper bound)"]);
+  if (x.per_instance_minutes) rows.push(["Saved per instance", nf(x.per_instance_minutes.low, 1) + " to " + nf(x.per_instance_minutes.high, 1) + " min (mid " + nf(x.per_instance_minutes.mid, 1) + ")"]);
+  rows.push(["Origin unit", range(x.origin_hours, " h/yr")], ["Reuse in other units", range(x.reuse_hours, " h/yr") + " across " + x.adopting_units + " unit(s)"],
+    ["Cost (first year)", range(x.cost_hours, " h") + " review, build, maintenance, onboarding"], ["Net", range(x.net_hours, " h/yr") + " (mid " + hrs(x.net_hours.mid) + ")"]);
+  if (!x.realized && (x.potential_hours.high > 0)) rows.push(["Potential (not counted)", range(x.potential_hours, " h/yr") + " if fully used in the origin unit"]);
+  rows.push(["Maintenance", r.maintenance.owner_role + ", " + nf(r.maintenance.hours_per_month.low, 1) + "–" + nf(r.maintenance.hours_per_month.high, 1) + " h/month, " + r.maintenance.review_cadence + " review"]);
+  body.appendChild(kv(rows));
+  if (r.adoption_events.length) {
+    body.appendChild(el("h3", { text: "Adoption by other units" }));
+    body.appendChild(el("ul", { class: "tight" }, r.adoption_events.map(function (e) {
+      return el("li", { text: e.date + " · " + e.unit + " (" + e.domain + ") · " + e.event.replace(/_/g, " ") + (e.instances_per_year ? " · " + nf(e.instances_per_year.low) + "–" + nf(e.instances_per_year.high) + "/yr" : "") });
+    })));
+  }
+  body.appendChild(el("h3", { text: "Status history" }));
+  body.appendChild(el("ul", { class: "tight" }, r.status.history.map(function (h) { return el("li", { text: h.date + " · " + STAGE_LABEL[h.stage] + " · " + h.by_role }); })));
+  if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+}
+document.getElementById("dClose").addEventListener("click", function () { dlg.close(); });
+dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+document.getElementById("dExport").addEventListener("click", function () { if (current) download(current.id + ".json", JSON.stringify(current, null, 2) + "\n"); });
+
+/* ---------- lifecycle board ---------- */
+function renderBoard() {
+  var board = document.getElementById("board");
+  var flow = ["submitted", "triaged", "in_review", "approved_pilot", "piloting", "production", "reusable_library"];
+  var cols = flow.map(function (s) { return [s, STAGE_LABEL[s], [s]]; }).concat([["off", "Paused / retired / rejected", ["paused", "retired", "rejected"]]]);
+  cols.forEach(function (c) {
+    var items = REG.filter(function (r) { return c[2].indexOf(r.status.stage) >= 0; });
+    var col = el("div", { class: "col" }, [el("h3", null, [el("span", { text: c[1] }), el("span", { class: "meta", text: String(items.length) })])]);
+    items.sort(function (a, b) { return b.risk.tier - a.risk.tier || (a.id < b.id ? -1 : 1); }).forEach(function (r) {
+      var bs = [tierBadge(r.risk.tier)]; if (r.risk.blocked) bs.push(blockedBadge()); if (c[0] === "off") bs.push(stageBadge(r.status.stage));
+      var open = r.risk.review_paths.filter(function (p) { return r.risk.reviews_completed.indexOf(p) < 0; }).length;
+      col.appendChild(el("button", { class: "card", type: "button", onclick: function () { openDetail(r.id); } }, [
+        el("h4", { text: r.title }), el("div", { class: "meta", text: r.id + " · " + r.domain }), el("div", { class: "badges" }, bs),
+        open && ["submitted", "triaged", "in_review", "rejected"].indexOf(r.status.stage) >= 0 ? el("div", { class: "meta", text: open + " review path(s) open" }) : null
+      ]));
+    });
+    board.appendChild(col);
+  });
+}
+
+/* ---------- ROI ---------- */
+function renderROI() {
+  var P = D.summary.portfolio, T = P.timed_baseline_vs_pilot, S = P.self_report;
+  var rate = A.loaded_hourly_cost_usd;
+  var val = { low: T.net_hours.low * (T.net_hours.low < 0 ? rate.high : rate.low), high: T.net_hours.high * rate.high };
+  var tiles = [
+    ["Measured net time returned", range(T.net_hours, " h/yr"), "Conservative range, mid " + hrs(T.net_hours.mid) + " h. " + T.realized + " use cases with timed evidence in piloting or later."],
+    ["Same, if errors are independent", range(T.net_hours_independent, " h/yr"), "Approximation (root-sum-square of each entry's range). Narrower; not the headline."],
+    ["Gross: origin units / reuse elsewhere", hrs(T.origin_hours.mid) + " / " + hrs(T.reuse_hours.mid) + " h/yr", "Middle estimates. Reuse uses a 0.5–1.0 transfer discount because savings were not re-measured in adopting units."],
+    ["Cost counted", range(T.cost_hours, " h"), "Review, build, 12 months of maintenance and adopter onboarding for the measured set."],
+    ["Self-reported pipeline (not counted)", range(S.potential_hours, " h/yr"), S.count + " use cases. Self-reports are treated as upper bounds (low end = 0) and left out of every total."],
+    ["Value of measured time (synthetic rate)", usd(val.low) + " to " + usd(val.high), "At a placeholder $" + rate.low + "–$" + rate.high + "/h loaded cost. Capacity returned to the work, not a cash or headcount saving."]
+  ];
+  var box = document.getElementById("roiTiles");
+  tiles.forEach(function (t) { box.appendChild(el("div", { class: "tile" }, [el("div", { class: "k", text: t[0] }), el("div", { class: "v", text: t[1] }), el("div", { class: "n", text: t[2] })])); });
+
+  var rows = D.summary.roi_by_domain.filter(function (r) { return r.evidence === "timed_baseline_vs_pilot"; });
+  CHART = [document.getElementById("domainChart"), rows.map(function (r) { return { label: r.domain === "Research Administration" && window.innerWidth < 480 ? "Research Admin." : r.domain, low: r.net_low, mid: r.net_mid, high: r.net_high, n: r.realized }; })];
+  var tb = document.getElementById("domainTable");
+  tb.appendChild(el("thead", null, [el("tr", null, ["Domain", "Use cases (realized)", "Net low", "Net mid", "Net high"].map(function (h, i) { return el("th", { class: i > 0 ? "num" : null, text: h }); }))]));
+  var tbody = el("tbody"); rows.forEach(function (r) {
+    tbody.appendChild(el("tr", null, [el("td", { text: r.domain }), el("td", { class: "num", text: r.n + " (" + r.realized + ")" }),
+      el("td", { class: "num", text: hrs(r.net_low) }), el("td", { class: "num", text: hrs(r.net_mid) }), el("td", { class: "num", text: hrs(r.net_high) })]));
+  }); tb.appendChild(tbody);
+
+  var top = D.roi.filter(function (x) { return x.realized; }).sort(function (a, b) { return b.net_hours.mid - a.net_hours.mid; });
+  var rt = document.getElementById("roiTable");
+  rt.appendChild(el("thead", null, [el("tr", null, ["Use case", "Stage", "Saved / instance (min)", "Adopting units", "Net h/yr (range)", "Net mid"].map(function (h, i) { return el("th", { class: i > 1 ? "num" : null, text: h }); }))]));
+  var rb = el("tbody"); top.forEach(function (x) {
+    var r = BYID[x.id];
+    rb.appendChild(el("tr", null, [el("td", null, [el("a", { href: "#", onclick: function (e) { e.preventDefault(); openDetail(x.id); }, text: r.title })]),
+      el("td", { text: STAGE_LABEL[r.status.stage] }),
+      el("td", { class: "num", text: nf(x.per_instance_minutes.low, 1) + " to " + nf(x.per_instance_minutes.high, 1) }),
+      el("td", { class: "num", text: String(x.adopting_units) }), el("td", { class: "num", text: range(x.net_hours) }), el("td", { class: "num", text: hrs(x.net_hours.mid) })]));
+  }); rt.appendChild(rb);
+
+  var a = document.getElementById("roiAssumptions");
+  a.innerHTML = "<ul class='tight'>" + [
+    "Saved minutes per instance = baseline mean − pilot mean (pilot time includes the human review). 90% interval from the Welch standard error (z = " + A.z_interval + "). Low end can be negative: some pilots were slower.",
+    "Self-reported savings: low 0, mid " + A.self_report_haircut + " × reported, high = reported. In a 2025 randomized trial, experienced developers believed AI made them 20% faster while measured time rose 19% (METR, arXiv 2507.09089).",
+    "Origin-unit volume counts " + A.stage_realization.piloting * 100 + "% while piloting and 100% in production or the library. Earlier stages count nothing.",
+    "Adopting units: weight " + A.adoption_event_weight.pilot_started + " (pilot), " + A.adoption_event_weight.forked_adapted + " (adapted), " + A.adoption_event_weight.adopted + " (adopted), times a transfer discount of " + A.transfer_multiplier.low + "–" + A.transfer_multiplier.high + ". Units that retired a solution stop counting.",
+    "Costs: one-time review hours by tier, build hours by artifact type, 12 months of maintenance, " + A.adopter_onboarding_hours.low + "–" + A.adopter_onboarding_hours.high + " h onboarding per adopting unit.",
+    "Portfolio range sums every entry's low ends and high ends: it assumes all estimates err the same way at once, so it is wide on purpose."
+  ].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul><h3>Not shown</h3><ul class='tight'>" + [
+    "Quality effects (fewer returned proposals, faster answers to students) are not converted to hours.",
+    "Time returned is capacity redeployed to other work. It is not a budget cut and says nothing about positions.",
+    "No individual's productivity is measured; timings are per process instance, aggregated by use case.",
+    "All numbers on this page are synthetic."
+  ].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>";
+}
+var CHART = null;
+function drawChart() { if (CHART) rangeChart(CHART[0], CHART[1]); }
+window.addEventListener("resize", function () { if (!document.getElementById("tab-roi").hidden) drawChart(); });
+function rangeChart(host, data) {
+  var W = Math.max(320, Math.min(900, host.clientWidth || 720)), rowH = 40, padL = W < 480 ? 104 : 170, padR = 24, padT = 26, H = padT + rowH * data.length + 8;
+  var lo = Math.min(0, Math.min.apply(null, data.map(function (d) { return d.low; })));
+  var hi = Math.max.apply(null, data.map(function (d) { return d.high; }));
+  var step = niceStep((hi - lo) / (W < 480 ? 3 : 5)); lo = Math.floor(lo / step) * step; hi = Math.ceil(hi / step) * step;
+  function x(v) { return padL + (v - lo) / (hi - lo) * (W - padL - padR); }
+  var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Net hours per year by domain, range and middle estimate">';
+  for (var v = lo; v <= hi + 1e-9; v += step) {
+    s += '<line x1="' + x(v) + '" x2="' + x(v) + '" y1="' + (padT - 6) + '" y2="' + (H - 4) + '" stroke="var(--grid)" stroke-width="1"/>';
+    s += '<text x="' + x(v) + '" y="' + (padT - 10) + '" text-anchor="middle">' + nf(v) + "</text>";
+  }
+  s += '<line x1="' + x(0) + '" x2="' + x(0) + '" y1="' + (padT - 6) + '" y2="' + (H - 4) + '" stroke="var(--text-2)" stroke-width="1"/>';
+  data.forEach(function (d, i) {
+    var y = padT + i * rowH + rowH / 2;
+    s += '<g class="mk" tabindex="0" data-i="' + i + '">';
+    s += '<rect x="0" y="' + (y - rowH / 2) + '" width="' + W + '" height="' + rowH + '" fill="transparent"/>';
+    s += '<text x="' + (padL - 10) + '" y="' + (y + 4) + '" text-anchor="end" style="fill:var(--text)">' + esc(d.label) + "</text>";
+    s += '<rect x="' + x(d.low) + '" y="' + (y - 4) + '" width="' + Math.max(2, x(d.high) - x(d.low)) + '" height="8" rx="4" fill="var(--series)" opacity=".45"/>';
+    s += '<circle cx="' + x(d.mid) + '" cy="' + y + '" r="6" fill="var(--series)" stroke="var(--surface)" stroke-width="2"/>';
+    s += "</g>";
+  });
+  s += "</svg>";
+  host.innerHTML = s;
+  var tip = el("div", { class: "tooltip", hidden: true }); host.appendChild(tip);
+  function show(g, ev) {
+    var d = data[+g.getAttribute("data-i")];
+    tip.innerHTML = "<strong>" + esc(d.label) + "</strong><br>Net " + hrs(d.low) + " to " + hrs(d.high) + " h/yr<br>Middle " + hrs(d.mid) + " h/yr · " + d.n + " realized";
+    tip.hidden = false;
+    var hb = host.getBoundingClientRect(), gb = g.getBoundingClientRect();
+    var left = (ev && ev.clientX ? ev.clientX - hb.left : gb.left - hb.left + hb.width / 2) + 12;
+    tip.style.left = Math.min(left, hb.width - tip.offsetWidth - 4) + "px";
+    tip.style.top = (gb.top - hb.top - tip.offsetHeight - 4) + "px";
+  }
+  host.querySelectorAll("g.mk").forEach(function (g) {
+    g.addEventListener("mousemove", function (e) { show(g, e); });
+    g.addEventListener("focus", function () { show(g); });
+    g.addEventListener("mouseleave", function () { tip.hidden = true; });
+    g.addEventListener("blur", function () { tip.hidden = true; });
+  });
+}
+function niceStep(raw) { var p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p; return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * p; }
+
+/* ---------- reuse map ---------- */
+function renderReuse() {
+  var M = D.summary.reuse_matrix, doms = SCHEMA.properties.domain.enum.filter(function (d) { return REG.some(function (r) { return r.domain === d; }); });
+  var get = function (o, a) { var m = M.filter(function (x) { return x.origin_domain === o && x.adopter_domain === a; })[0]; return m ? m.adoptions : 0; };
+  var max = Math.max.apply(null, M.map(function (m) { return m.adoptions; }).concat([1]));
+  var t = document.getElementById("matrix");
+  t.appendChild(el("thead", null, [el("tr", null, [el("th", { text: "Built by ↓ / adopted by →" })].concat(doms.map(function (d) { return el("th", { class: "num", text: d }); })))]));
+  var tb = el("tbody");
+  doms.forEach(function (o) {
+    tb.appendChild(el("tr", null, [el("th", { text: o })].concat(doms.map(function (a) {
+      var n = get(o, a), lvl = n === 0 ? 0 : Math.max(1, Math.ceil(n / max * 5));
+      return el("td", { class: "cell", style: "background:var(--seq-" + lvl + ");color:var(--seq-ink-" + lvl + ")", title: o + " → " + a + ": " + n, text: String(n) });
+    }))));
+  });
+  t.appendChild(tb);
+
+  var reused = REG.map(function (r) { return [r, C.activeAdopters(r)]; }).filter(function (p) { return Object.keys(p[1]).length; })
+    .sort(function (a, b) { return Object.keys(b[1]).length - Object.keys(a[1]).length || (a[0].id < b[0].id ? -1 : 1); });
+  var list = document.getElementById("reuseList");
+  reused.forEach(function (p) {
+    var r = p[0], ad = p[1];
+    list.appendChild(el("div", { style: "padding:8px 0;border-bottom:1px solid var(--border)" }, [
+      el("div", null, [el("a", { href: "#", onclick: function (e) { e.preventDefault(); openDetail(r.id); }, text: r.title }), el("span", { class: "meta", text: "  · built by " + r.unit.name + " (" + r.domain + ")" })]),
+      el("div", { class: "chips", style: "margin-top:4px" }, Object.keys(ad).sort().map(function (u) {
+        return el("span", { class: "badge", title: ad[u].event.replace(/_/g, " ") + " on " + ad[u].date }, [u + " · " + ad[u].event.replace(/_/g, " ")]);
+      }))
+    ]));
+  });
+  var et = document.getElementById("edgeTable");
+  et.appendChild(el("thead", null, [el("tr", null, ["Built by", "Adopted by", "Solutions", "IDs"].map(function (h, i) { return el("th", { class: i === 2 ? "num" : null, text: h }); }))]));
+  var eb = el("tbody");
+  D.summary.unit_edges.forEach(function (e) {
+    eb.appendChild(el("tr", null, [el("td", { text: e.origin_unit + " (" + e.origin_domain + ")" }), el("td", { text: e.adopter_unit + " (" + e.adopter_domain + ")" }),
+      el("td", { class: "num", text: String(e.solutions) }), el("td", { text: e.ids.replace(/,/g, ", ") })]));
+  });
+  et.appendChild(eb);
+}
+
+/* ---------- intake form ---------- */
+var P = SCHEMA.properties;
+var F = [
+  ["Basics", [
+    ["title", "Title", "text", null, "Short, names the task, not the tool."],
+    ["domain", "Domain", "select", P.domain.enum],
+    ["unit.name", "Unit", "text"], ["unit.division", "College / division", "text"],
+    ["owner_role", "Accountable role (not a name)", "text"],
+    ["problem_statement", "Problem (in the unit's words)", "textarea", null, "Who does what, how often, what is painful. At least 30 characters."],
+    ["proposed_solution", "What the AI does and what the human still does", "textarea"],
+    ["origin.program", "Where it came from", "select", P.origin.properties.program.enum],
+    ["origin.cohort", "Cohort (e.g. 2026-Fall-C1)", "text", null, "Leave blank if not from a cohort."],
+    ["submitted_on", "Submitted on", "date"],
+    ["tags", "Tags (comma-separated, lowercase)", "list"],
+    ["synthetic", "Demo / synthetic entry", "checkbox"]]],
+  ["Process and tool", [
+    ["process.name", "Process", "text"], ["process.frequency", "How often the process runs", "select", P.process.properties.frequency.enum],
+    ["process.step_augmented", "The one step the AI touches", "text"],
+    ["tool.approved_tool", "Tool", "select", P.tool.properties.approved_tool.enum, "Sensitive data: Copilot Chat, ChatGPT EDU, or Illinois Chat local models only."],
+    ["tool.artifact_type", "What gets reused", "select", P.tool.properties.artifact_type.enum],
+    ["tool.configuration", "Configuration another unit would need", "textarea"]]],
+  ["Data", [
+    ["data.classification", "Highest data class the tool sees", "select", P.data.properties.classification.enum],
+    ["data.contains_pii", "Contains personally identifiable information", "checkbox"],
+    ["data.sources", "Data sources (comma-separated)", "list"]]],
+  ["Human in the loop", [
+    ["human_in_the_loop.pattern", "Pattern", "select", P.human_in_the_loop.properties.pattern.enum, null, HITL_LABEL],
+    ["human_in_the_loop.reviewer_role", "Reviewer role", "text"],
+    ["human_in_the_loop.review_point", "Where the human looks and what they check", "text"],
+    ["human_in_the_loop.override_logged", "Human corrections/rejections are logged", "checkbox"],
+    ["human_in_the_loop.fallback_process", "Fallback if the tool is unavailable", "text"]]],
+  ["People affected", [
+    ["affected_people.groups", "Groups", "checks", P.affected_people.properties.groups.items.enum],
+    ["affected_people.scale_band", "How many people", "select", P.affected_people.properties.scale_band.enum],
+    ["affected_people.output_audience", "Who sees the output", "select", P.affected_people.properties.output_audience.enum]]],
+  ["Employment decisions (Illinois HB 3773)", [
+    ["employment_decision.hb3773_flag", "Used with respect to an employment decision (flag if unsure)", "checkbox"],
+    ["employment_decision.decision_types", "Decision types", "checks", P.employment_decision.properties.decision_types.items.enum],
+    ["employment_decision.notice_plan", "Notice plan", "textarea", null, "Required when flagged: how affected people are told AI is used."],
+    ["employment_decision.uses_zip_code_or_proxy", "Uses zip code or another proxy for a protected class", "checkbox"]]],
+  ["Other consequential decisions", [
+    ["consequential_decision.flag", "Materially affects a person (student standing, aid, compliance determination…)", "checkbox"],
+    ["consequential_decision.description", "Describe the decision", "text"]]],
+  ["Evaluation evidence", [
+    ["evaluation.method", "Method", "select", P.evaluation.properties.method.enum],
+    ["evaluation.test_cases", "Test cases", "number"], ["evaluation.observed_error_rate", "Share of outputs needing material correction (0–1)", "number"],
+    ["evaluation.known_failure_modes", "Known failure modes (one per line)", "lines"],
+    ["evaluation.evidence_location", "Evidence location (Box/SharePoint path)", "text"], ["evaluation.last_evaluated", "Last evaluated", "date"]]],
+  ["Time saved", [
+    ["time_saved.method", "Estimate method", "select", P.time_saved.properties.method.enum, "Timed baseline vs pilot is the only kind counted in ROI totals."],
+    ["time_saved.instances_per_year.low", "Instances per year (low)", "number"], ["time_saved.instances_per_year.high", "Instances per year (high)", "number"],
+    ["time_saved.baseline.n", "Baseline: timed instances (n ≥ 5)", "number"], ["time_saved.baseline.mean_minutes", "Baseline: mean minutes", "number"], ["time_saved.baseline.sd_minutes", "Baseline: SD minutes", "number"],
+    ["time_saved.pilot.n", "Pilot: timed instances (n ≥ 5)", "number"], ["time_saved.pilot.mean_minutes", "Pilot: mean minutes incl. review", "number"], ["time_saved.pilot.sd_minutes", "Pilot: SD minutes", "number"],
+    ["time_saved.self_reported_minutes", "Self-reported minutes saved per instance", "number"]]],
+  ["Maintenance", [
+    ["maintenance.owner_role", "Maintenance owner role", "text"],
+    ["maintenance.hours_per_month.low", "Hours per month (low)", "number"], ["maintenance.hours_per_month.high", "Hours per month (high)", "number"],
+    ["maintenance.review_cadence", "Review cadence", "select", P.maintenance.properties.review_cadence.enum]]]
+];
+var form = document.getElementById("intakeForm"), INPUTS = {};
+F.forEach(function (sec) {
+  var fs = el("fieldset", null, [el("legend", { text: sec[0] })]), grid = el("div", { class: "cols2" });
+  sec[1].forEach(function (f) {
+    var path = f[0], id = "in-" + path.replace(/\./g, "-"), kind = f[2], input, wrap = el("div", { class: "field", "data-path": path });
+    if (kind === "select") {
+      input = el("select", { id: id });
+      f[3].forEach(function (o) { input.appendChild(el("option", { value: o }, [f[5] ? f[5][o] : o.replace(/_/g, " ")])); });
+    } else if (kind === "textarea" || kind === "lines") input = el("textarea", { id: id, rows: 3 });
+    else if (kind === "checkbox") input = el("input", { id: id, type: "checkbox" });
+    else if (kind === "checks") {
+      input = el("div", { class: "chk", role: "group", "aria-labelledby": id + "-l" });
+      f[3].forEach(function (o) { input.appendChild(el("label", null, [el("input", { type: "checkbox", value: o }), o.replace(/_/g, " ")])); });
+    } else input = el("input", { id: id, type: kind === "list" ? "text" : kind, step: kind === "number" ? "any" : null });
+    INPUTS[path] = [kind, input];
+    if (kind === "checkbox") wrap.appendChild(el("label", null, [input, " " + f[1]]));
+    else if (kind === "checks") { wrap.appendChild(el("span", { class: "lbl", id: id + "-l", text: f[1] })); wrap.appendChild(input); }
+    else { wrap.appendChild(el("label", { for: id, text: f[1] })); wrap.appendChild(input); }
+    if (f[4]) wrap.appendChild(el("span", { class: "help", text: f[4] }));
+    var full = kind === "textarea" || kind === "lines" || kind === "checks";
+    if (full) { if (grid.childNodes.length) fs.appendChild(grid); fs.appendChild(wrap); grid = el("div", { class: "cols2" }); }
+    else grid.appendChild(wrap);
+  });
+  if (grid.childNodes.length) fs.appendChild(grid);
+  form.appendChild(fs);
+});
+form.appendChild(el("div", { class: "row" }, [
+  el("button", { class: "btn secondary", type: "button", onclick: function () { loadExample(); } }, ["Fill with an example"]),
+  el("button", { class: "btn secondary", type: "button", onclick: function () { form.reset(); setVal("submitted_on", today()); setVal("synthetic", true); update(); } }, ["Clear"])
+]));
+function setPath(o, path, v) { var ks = path.split("."), cur = o; ks.slice(0, -1).forEach(function (k) { if (!cur[k] || typeof cur[k] !== "object") cur[k] = {}; cur = cur[k]; }); cur[ks[ks.length - 1]] = v; }
+function getPath(o, path) { return path.split(".").reduce(function (c, k) { return c === null || c === undefined ? undefined : c[k]; }, o); }
+function readVal(path) {
+  var k = INPUTS[path][0], n = INPUTS[path][1];
+  if (k === "checkbox") return n.checked;
+  if (k === "checks") return Array.prototype.filter.call(n.querySelectorAll("input"), function (c) { return c.checked; }).map(function (c) { return c.value; });
+  if (k === "number") return n.value.trim() === "" ? null : Number(n.value);
+  if (k === "list") return n.value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+  if (k === "lines") return n.value.split("\n").map(function (s) { return s.trim(); }).filter(Boolean);
+  var s = n.value.trim(); return s === "" ? null : s;
+}
+function setVal(path, v) {
+  var k = INPUTS[path][0], n = INPUTS[path][1];
+  if (k === "checkbox") n.checked = !!v;
+  else if (k === "checks") Array.prototype.forEach.call(n.querySelectorAll("input"), function (c) { c.checked = (v || []).indexOf(c.value) >= 0; });
+  else if (k === "list") n.value = (v || []).join(", ");
+  else if (k === "lines") n.value = (v || []).join("\n");
+  else n.value = v === null || v === undefined ? "" : v;
+}
+function nextId() { var m = 0; REG.forEach(function (r) { m = Math.max(m, +r.id.slice(3)); }); return "UC-" + String(m + 1).padStart(4, "0"); }
+var NEW_ID = nextId();
+function buildRecord() {
+  var r = {};
+  Object.keys(INPUTS).forEach(function (p) { setPath(r, p, readVal(p)); });
+  ["time_saved.baseline", "time_saved.pilot"].forEach(function (p) {
+    var t = getPath(r, p); if (t && t.n === null && t.mean_minutes === null && t.sd_minutes === null) setPath(r, p, null);
+  });
+  r.id = NEW_ID; r.schema_version = "1.0";
+  ["title", "problem_statement", "proposed_solution", "owner_role", "submitted_on"].forEach(function (k) { if (r[k] === null) r[k] = ""; });
+  if (r.evaluation.test_cases === null) r.evaluation.test_cases = 0;
+  r.adoption_events = [];
+  r.status = { stage: "submitted", history: [{ stage: "submitted", date: r.submitted_on || "", by_role: r.owner_role || "" }] };
+  r.risk = { tier: 1, review_paths: ["self_certify"], blocked: false, reasons: [], triage_rules_version: RULES.version, reviews_completed: [] };
+  var order = ["id", "schema_version", "synthetic", "title", "problem_statement", "proposed_solution", "domain", "unit", "process", "origin", "owner_role", "tool", "data",
+    "human_in_the_loop", "affected_people", "employment_decision", "consequential_decision", "risk", "evaluation", "time_saved", "maintenance", "adoption_events", "status", "submitted_on", "tags"];
+  var out = {}; order.forEach(function (k) { out[k] = r[k]; });
+  return C.applyTriage(out, RULES);
+}
+var lastRec = null, lastOk = false;
+function update() {
+  var rec = buildRecord(), errs = C.validate(rec, SCHEMA);
+  if (!errs.length) errs = C.contractChecks(rec).concat(C.lifecycleCheck(rec, RULES));
+  lastRec = rec; lastOk = errs.length === 0;
+  document.querySelectorAll(".field.invalid").forEach(function (n) { n.classList.remove("invalid"); });
+  errs.forEach(function (e) {
+    var p = (e.match(/^\$\.([^:\[]+)/) || [])[1]; if (!p) return;
+    var m = e.match(/missing required property '([^']+)'/); if (m) p = p + "." + m[1];
+    Object.keys(INPUTS).forEach(function (k) { if (k === p || k.indexOf(p + ".") === 0 || p.indexOf(k + ".") === 0 || p === k) { var f = form.querySelector('[data-path="' + k + '"]'); if (f) f.classList.add("invalid"); } });
+  });
+  var t = C.triage(rec, RULES), lt = document.getElementById("liveTriage"); lt.textContent = "";
+  var b = [tierBadge(t.tier)]; if (t.blocked) b.push(blockedBadge()); if (rec.employment_decision && rec.employment_decision.hb3773_flag) b.push(hbBadge());
+  lt.appendChild(el("div", { class: "badges" }, b));
+  lt.appendChild(el("div", { class: "small", style: "margin-top:6px", text: "Review paths:" }));
+  lt.appendChild(el("ul", { class: "tight" }, t.review_paths.map(function (p) { return el("li", { text: PATH_LABEL[p] + " — " + RULES.review_paths[p].who }); })));
+  lt.appendChild(el("div", { class: "small", text: "Rules fired:" }));
+  lt.appendChild(el("ul", { class: "tight small" }, t.reasons.map(function (s) { return el("li", { text: s }); })));
+  if (t.controls.length) { lt.appendChild(el("div", { class: "small", text: "Required controls:" })); lt.appendChild(el("ul", { class: "tight small" }, t.controls.map(function (s) { return el("li", { text: s }); }))); }
+  var x = C.roi(rec, A);
+  if (x.per_instance_minutes) lt.appendChild(el("p", { class: "small", text: "Estimated saving: " + nf(x.per_instance_minutes.low, 1) + " to " + nf(x.per_instance_minutes.high, 1) + " min per instance; " + range(x.potential_hours, " h/yr") + " if fully used in this unit (not counted until piloting)." }));
+  var lv = document.getElementById("liveValidation"); lv.textContent = "";
+  lv.appendChild(lastOk ? el("div", { class: "status-box good", text: "Valid against schema v" + SCHEMA.properties.schema_version.const + ", data contract and lifecycle rules." })
+    : el("div", { class: "status-box bad" }, [el("strong", { text: errs.length + " problem(s)" }), el("ul", { class: "tight small" }, errs.slice(0, 25).map(function (e) { return el("li", { text: e }); }))]));
+  document.getElementById("dlBtn").disabled = !lastOk;
+  document.getElementById("jsonPreview").textContent = JSON.stringify(rec, null, 2);
+}
+form.addEventListener("input", update); form.addEventListener("change", update);
+document.getElementById("dlBtn").addEventListener("click", function () { if (lastOk) download(lastRec.id + ".json", JSON.stringify(lastRec, null, 2) + "\n"); });
+document.getElementById("copyBtn").addEventListener("click", function () {
+  var txt = JSON.stringify(lastRec, null, 2), msg = document.getElementById("copyMsg");
+  function fallback() { var ta = el("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); msg.textContent = "Copied."; } catch (e) { msg.textContent = "Copy failed; use Preview JSON."; } ta.remove(); }
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(function () { msg.textContent = "Copied" + (lastOk ? "." : " (not yet valid)."); }, fallback); else fallback();
+});
+function loadExample() {
+  var ex = BYID["UC-0032"] || REG[0];
+  Object.keys(INPUTS).forEach(function (p) { setVal(p, getPath(ex, p)); });
+  setVal("title", ex.title + " (copy for another unit)"); setVal("submitted_on", today()); setVal("synthetic", true);
+  update();
+}
+document.getElementById("importFile").addEventListener("change", function (e) {
+  var f = e.target.files[0], out = document.getElementById("importResult"); out.textContent = "";
+  if (!f) return;
+  var rd = new FileReader();
+  rd.onload = function () {
+    var data; try { data = JSON.parse(rd.result); } catch (err) { out.appendChild(el("div", { class: "status-box bad", text: "Not valid JSON: " + err.message })); return; }
+    (Array.isArray(data) ? data : [data]).forEach(function (rec, i) {
+      var errs = C.checkRecord(rec, SCHEMA, RULES), name = (rec && rec.id) || ("item " + i);
+      out.appendChild(errs.length ? el("div", { class: "status-box bad" }, [el("strong", { text: name + ": " + errs.length + " problem(s)" }), el("ul", { class: "tight small" }, errs.slice(0, 20).map(function (x) { return el("li", { text: x }); }))])
+        : el("div", { class: "status-box good", text: name + ": valid; stored triage is current; lifecycle gates pass." }));
+    });
+  };
+  rd.readAsText(f);
+});
+setVal("submitted_on", today()); setVal("synthetic", true); setVal("time_saved.method", "not_estimated");
+
+/* ---------- method ---------- */
+document.getElementById("methodPanel").innerHTML = D.method_html;
+
+renderCatalog(); renderBoard(); renderROI(); renderReuse(); update();
+var start = (location.hash || "").slice(1) || store("aiuc-tab") || "catalog";
+showTab(TABS.some(function (t) { return t[0] === start; }) ? start : "catalog");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+# ROI model assumptions. Every number here is a stated assumption, shown on the page, and the first
+# thing to replace with campus measurements. Units: minutes per process instance, hours per year.
+version: "1.0"
+
+# Two-sided 90% interval for a difference of means (normal approximation, Welch standard error).
+z_interval: 1.645
+
+# Self-reported savings are treated as an upper bound, not a point estimate. In a randomized trial,
+# experienced developers estimated AI made them 20% faster while measured time rose 19%
+# (METR, arXiv 2507.09089, 2025). So: low = 0, mid = haircut x reported, high = reported.
+self_report_haircut: 0.5
+
+# Share of the origin unit's annual volume that runs through the tool in each stage.
+# Stages not listed contribute nothing (they are pipeline, not realized value).
+stage_realization:
+  piloting: 0.5
+  production: 1.0
+  reusable_library: 1.0
+
+# Adopting units: weight by their latest adoption event (retired_by_unit stops counting).
+adoption_event_weight:
+  pilot_started: 0.25
+  adopted: 1.0
+  forked_adapted: 0.75
+
+# Savings were measured in the origin unit, not in adopting units. Adopters get a discounted range.
+transfer_multiplier:
+  low: 0.5
+  mid: 0.75
+  high: 1.0
+
+# One-time costs, counted in the first year.
+review_hours_by_tier:
+  "1": {low: 1, high: 3}
+  "2": {low: 4, high: 10}
+  "3": {low: 12, high: 30}
+  "4": {low: 30, high: 60}
+
+build_hours_by_artifact:
+  prompt_template: {low: 2, high: 6}
+  document_template: {low: 2, high: 8}
+  custom_gpt: {low: 6, high: 20}
+  rag_chatbot: {low: 20, high: 60}
+  workflow_script: {low: 10, high: 40}
+
+# Each adopting unit spends time learning and adapting the solution.
+adopter_onboarding_hours: {low: 2, high: 8}
+
+# Stages from which build cost and maintenance cost are counted.
+build_cost_from_stage: [approved_pilot, piloting, production, reusable_library, paused, retired]
+maintenance_stages: [piloting, production, reusable_library]
+
+# Optional conversion of hours to a value-of-time figure. Loaded hourly cost is a SYNTHETIC
+# placeholder range, not a campus figure. Time returned is capacity, not a cash saving.
+loaded_hourly_cost_usd: {low: 38, high: 62}
