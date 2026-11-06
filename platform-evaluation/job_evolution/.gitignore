@@ -1,0 +1,3 @@
+# Regenerable: python job_evolution/run_all.py (explorer data is embedded in the HTML)
+artifacts/explorer_data.json
+__pycache__/

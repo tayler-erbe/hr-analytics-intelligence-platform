@@ -1,0 +1,1277 @@
+{
+ "all_occupations": {
+  "ai_ml_added_total": 18,
+  "data_tools_added_total": 1253,
+  "mean_skill_drift_at_update": 0.044,
+  "mean_task_churn_at_update": 0.0345,
+  "median_years_since_task_update": 4.0,
+  "n_occupations": 923,
+  "n_scored": 923,
+  "p_task_high": 0.2704,
+  "p_task_high_p10": 0.1853,
+  "p_task_high_p90": 0.3651,
+  "p_task_update_2y": 0.2278,
+  "p_tech_high": 0.3225,
+  "p_tech_high_p10": 0.2677,
+  "p_tech_high_p90": 0.3853,
+  "share_updates_with_task_change": 0.4114,
+  "tech_added_per_year": 0.9256,
+  "top_roles": [
+   {
+    "code": "19-4061.00",
+    "title": "Social Science Research Assistants",
+    "watch_score": 0.944
+   },
+   {
+    "code": "19-4099.03",
+    "title": "Remote Sensing Technicians",
+    "watch_score": 0.9429
+   },
+   {
+    "code": "17-2171.00",
+    "title": "Petroleum Engineers",
+    "watch_score": 0.9411
+   },
+   {
+    "code": "41-4011.00",
+    "title": "Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products",
+    "watch_score": 0.9171
+   },
+   {
+    "code": "19-3011.00",
+    "title": "Economists",
+    "watch_score": 0.915
+   }
+  ],
+  "watch_score": 0.5
+ },
+ "caveats": {
+  "editorial_change": "Some change is editorial: O*NET rewrote 'and' as 'or' in many task statements, stripped vendor prefixes and generic suffixes from software names (about 7,000 renames across 2017-2024 releases), and moved to the O*NET-SOC 2010 and 2019 taxonomies. Matching rules fold these, but residual editorial change remains.",
+  "national_data": "O*NET describes occupations nationally, not University positions.",
+  "observed_usage_not_displacement": "AI usage exposure (Anthropic Economic Index) is observed Claude usage. It was published in 2025-2026, after every backtest origin, so it is used only as a clearly flagged ex-post feature. It is not a forecast of job loss.",
+  "role_level_only": "Role-level evidence only: no person is read, stored or scored. Do not use for hiring, promotion, discipline, pay or any decision about an individual (Illinois HB 3773).",
+  "rolling_updates": "O*NET updates occupations on a rolling schedule (each occupation's tasks are re-surveyed roughly every 5-10 years). Release-to-release change therefore mostly reflects WHEN an occupation was updated, not how fast the work changed. Indicators here are measured at real update events, and the timing of updates is modelled separately.",
+  "technology_method": "Technology examples exist in the database files only from O*NET 21.0 (2016). From about 2018 O*NET adds software examples from job-posting data in bulk, so technology adoption partly reflects O*NET's collection method, not only employer adoption.",
+  "unreviewed_mapping": "SUCSS classes are linked through the rank-1 candidate in sucss_mapping/outputs/candidates.parquet (review_status = unreviewed). Validate before use."
+ },
+ "families": [
+  {
+   "ai_ml_added_total": 13,
+   "data_tools_added_total": 369,
+   "family": "it",
+   "label": "Information technology & data",
+   "mean_skill_drift_at_update": 0.0484,
+   "mean_task_churn_at_update": 0.0049,
+   "median_years_since_task_update": 3.0,
+   "n_occupations": 30,
+   "n_scored": 30,
+   "p_task_high": 0.1318,
+   "p_task_high_p10": 0.0302,
+   "p_task_high_p90": 0.2447,
+   "p_task_update_2y": 0.2365,
+   "p_tech_high": 0.6473,
+   "p_tech_high_p10": 0.5664,
+   "p_tech_high_p90": 0.732,
+   "rank": 1,
+   "share_updates_with_task_change": 0.0789,
+   "tech_added_per_year": 5.728,
+   "top_roles": [
+    {
+     "code": "15-1221.00",
+     "title": "Computer and Information Research Scientists",
+     "watch_score": 0.9068
+    },
+    {
+     "code": "15-1251.00",
+     "title": "Computer Programmers",
+     "watch_score": 0.8949
+    },
+    {
+     "code": "15-1211.00",
+     "title": "Computer Systems Analysts",
+     "watch_score": 0.8817
+    },
+    {
+     "code": "15-1243.01",
+     "title": "Data Warehousing Specialists",
+     "watch_score": 0.8254
+    },
+    {
+     "code": "15-1252.00",
+     "title": "Software Developers",
+     "watch_score": 0.8232
+    }
+   ],
+   "watch_score": 0.7217
+  },
+  {
+   "ai_ml_added_total": 0,
+   "data_tools_added_total": 28,
+   "family": "management",
+   "label": "Admin, IT, HR, finance & facilities management",
+   "mean_skill_drift_at_update": 0.0427,
+   "mean_task_churn_at_update": 0.0297,
+   "median_years_since_task_update": 3.0,
+   "n_occupations": 11,
+   "n_scored": 11,
+   "p_task_high": 0.3096,
+   "p_task_high_p10": 0.2415,
+   "p_task_high_p90": 0.3782,
+   "p_task_update_2y": 0.2866,
+   "p_tech_high": 0.3913,
+   "p_tech_high_p10": 0.335,
+   "p_tech_high_p90": 0.4542,
+   "rank": 2,
+   "share_updates_with_task_change": 0.2576,
+   "tech_added_per_year": 1.7202,
+   "top_roles": [
+    {
+     "code": "11-9033.00",
+     "title": "Education Administrators, Postsecondary",
+     "watch_score": 0.818
+    },
+    {
+     "code": "11-3012.00",
+     "title": "Administrative Services Managers",
+     "watch_score": 0.7752
+    },
+    {
+     "code": "11-3031.03",
+     "title": "Investment Fund Managers",
+     "watch_score": 0.7559
+    },
+    {
+     "code": "11-3031.01",
+     "title": "Treasurers and Controllers",
+     "watch_score": 0.7304
+    },
+    {
+     "code": "11-3013.00",
+     "title": "Facilities Managers",
+     "watch_score": 0.7257
+    }
+   ],
+   "watch_score": 0.6924
+  },
+  {
+   "ai_ml_added_total": 0,
+   "data_tools_added_total": 66,
+   "family": "business",
+   "label": "Business operations",
+   "mean_skill_drift_at_update": 0.0451,
+   "mean_task_churn_at_update": 0.043,
+   "median_years_since_task_update": 4.0,
+   "n_occupations": 28,
+   "n_scored": 28,
+   "p_task_high": 0.3641,
+   "p_task_high_p10": 0.2838,
+   "p_task_high_p90": 0.4515,
+   "p_task_update_2y": 0.2625,
+   "p_tech_high": 0.4505,
+   "p_tech_high_p10": 0.3865,
+   "p_tech_high_p90": 0.5132,
+   "rank": 3,
+   "share_updates_with_task_change": 0.3631,
+   "tech_added_per_year": 1.5632,
+   "top_roles": [
+    {
+     "code": "13-1199.05",
+     "title": "Sustainability Specialists",
+     "watch_score": 0.8839
+    },
+    {
+     "code": "13-1041.06",
+     "title": "Coroners",
+     "watch_score": 0.8613
+    },
+    {
+     "code": "13-1161.00",
+     "title": "Market Research Analysts and Marketing Specialists",
+     "watch_score": 0.8557
+    },
+    {
+     "code": "13-1199.07",
+     "title": "Security Management Specialists",
+     "watch_score": 0.8539
+    },
+    {
+     "code": "13-1111.00",
+     "title": "Management Analysts",
+     "watch_score": 0.8187
+    }
+   ],
+   "watch_score": 0.6794
+  },
+  {
+   "ai_ml_added_total": 0,
+   "data_tools_added_total": 10,
+   "family": "hr",
+   "label": "Human resources & training",
+   "mean_skill_drift_at_update": 0.0511,
+   "mean_task_churn_at_update": 0.0298,
+   "median_years_since_task_update": 4.0,
+   "n_occupations": 5,
+   "n_scored": 5,
+   "p_task_high": 0.1299,
+   "p_task_high_p10": 0.0327,
+   "p_task_high_p90": 0.2372,
+   "p_task_update_2y": 0.2906,
+   "p_tech_high": 0.451,
+   "p_tech_high_p10": 0.3883,
+   "p_tech_high_p90": 0.5295,
+   "rank": 4,
+   "share_updates_with_task_change": 0.45,
+   "tech_added_per_year": 1.94,
+   "top_roles": [
+    {
+     "code": "13-1071.00",
+     "title": "Human Resources Specialists",
+     "watch_score": 0.8023
+    },
+    {
+     "code": "13-1141.00",
+     "title": "Compensation, Benefits, and Job Analysis Specialists",
+     "watch_score": 0.781
+    },
+    {
+     "code": "13-1151.00",
+     "title": "Training and Development Specialists",
+     "watch_score": 0.6782
+    },
+    {
+     "code": "43-4161.00",
+     "title": "Human Resources Assistants, Except Payroll and Timekeeping",
+     "watch_score": 0.6511
+    },
+    {
+     "code": "13-1075.00",
+     "title": "Labor Relations Specialists",
+     "watch_score": 0.4444
+    }
+   ],
+   "watch_score": 0.6714
+  },
+  {
+   "ai_ml_added_total": 0,
+   "data_tools_added_total": 6,
+   "family": "library",
+   "label": "Library & archives",
+   "mean_skill_drift_at_update": 0.0405,
+   "mean_task_churn_at_update": 0.0756,
+   "median_years_since_task_update": 5.0,
+   "n_occupations": 6,
+   "n_scored": 6,
+   "p_task_high": 0.3899,
+   "p_task_high_p10": 0.2863,
+   "p_task_high_p90": 0.4933,
+   "p_task_update_2y": 0.305,
+   "p_tech_high": 0.4134,
+   "p_tech_high_p10": 0.3483,
+   "p_tech_high_p90": 0.4892,
+   "rank": 5,
+   "share_updates_with_task_change": 0.6667,
+   "tech_added_per_year": 1.0115,
+   "top_roles": [
+    {
+     "code": "25-4012.00",
+     "title": "Curators",
+     "watch_score": 0.7506
+    },
+    {
+     "code": "25-4013.00",
+     "title": "Museum Technicians and Conservators",
+     "watch_score": 0.6699
+    },
+    {
+     "code": "43-4121.00",
+     "title": "Library Assistants, Clerical",
+     "watch_score": 0.6647
+    },
+    {
+     "code": "25-4031.00",
+     "title": "Library Technicians",
+     "watch_score": 0.66
+    },
+    {
+     "code": "25-4011.00",
+     "title": "Archivists",
+     "watch_score": 0.6029
+    }
+   ],
+   "watch_score": 0.6579
+  },
+  {
+   "ai_ml_added_total": 0,
+   "data_tools_added_total": 1,
+   "family": "student_services",
+   "label": "Student services & academic support",
+   "mean_skill_drift_at_update": 0.0438,
+   "mean_task_churn_at_update": 0.0643,
+   "median_years_since_task_update": 3.9,
+   "n_occupations": 2,
+   "n_scored": 2,
+   "p_task_high": 0.0824,
+   "p_task_high_p10": 0.0323,
+   "p_task_high_p90": 0.1391,
+   "p_task_update_2y": 0.4476,
+   "p_tech_high": 0.4336,
+   "p_tech_high_p10": 0.3619,
+   "p_tech_high_p90": 0.5149,
+   "rank": 6,
+   "share_updates_with_task_change": 0.3333,
+   "tech_added_per_year": 1.6346,
+   "top_roles": [
+    {
+     "code": "21-1012.00",
+     "title": "Educational, Guidance, and Career Counselors and Advisors",
+     "watch_score": 0.6354
+    },
+    {
+     "code": "25-9031.00",
+     "title": "Instructional Coordinators",
+     "watch_score": 0.628
+    }
+   ],
+   "watch_score": 0.6317
+  },
+  {
+   "ai_ml_added_total": 2,
+   "data_tools_added_total": 53,
+   "family": "finance",
+   "label": "Finance & accounting",
+   "mean_skill_drift_at_update": 0.043,
+   "mean_task_churn_at_update": 0.0332,
+   "median_years_since_task_update": 4.0,
+   "n_occupations": 23,
+   "n_scored": 23,
+   "p_task_high": 0.2149,
+   "p_task_high_p10": 0.1313,
+   "p_task_high_p90": 0.3092,
+   "p_task_update_2y": 0.256,
+   "p_tech_high": 0.398,
+   "p_tech_high_p10": 0.3333,
+   "p_tech_high_p90": 0.4647,
+   "rank": 7,
+   "share_updates_with_task_change": 0.4783,
+   "tech_added_per_year": 0.9054,
+   "top_roles": [
+    {
+     "code": "13-2081.00",
+     "title": "Tax Examiners and Collectors, and Revenue Agents",
+     "watch_score": 0.8559
+    },
+    {
+     "code": "13-2041.00",
+     "title": "Credit Analysts",
+     "watch_score": 0.853
+    },
+    {
+     "code": "13-2054.00",
+     "title": "Financial Risk Specialists",
+     "watch_score": 0.831
+    },
+    {
+     "code": "13-2051.00",
+     "title": "Financial and Investment Analysts",
+     "watch_score": 0.8183
+    },
+    {
+     "code": "13-2031.00",
+     "title": "Budget Analysts",
+     "watch_score": 0.7597
+    }
+   ],
+   "watch_score": 0.6054
+  },
+  {
+   "ai_ml_added_total": 0,
+   "data_tools_added_total": 25,
+   "family": "admin",
+   "label": "Office & administrative support",
+   "mean_skill_drift_at_update": 0.0439,
+   "mean_task_churn_at_update": 0.0438,
+   "median_years_since_task_update": 4.0,
+   "n_occupations": 42,
+   "n_scored": 42,
+   "p_task_high": 0.2341,
+   "p_task_high_p10": 0.1506,
+   "p_task_high_p90": 0.347,
+   "p_task_update_2y": 0.1997,
+   "p_tech_high": 0.3601,
+   "p_tech_high_p10": 0.3016,
+   "p_tech_high_p90": 0.4261,
+   "rank": 8,
+   "share_updates_with_task_change": 0.4524,
+   "tech_added_per_year": 1.0488,
+   "top_roles": [
+    {
+     "code": "43-5053.00",
+     "title": "Postal Service Mail Sorters, Processors, and Processing Machine Operators",
+     "watch_score": 0.7384
+    },
+    {
+     "code": "43-4041.00",
+     "title": "Credit Authorizers, Checkers, and Clerks",
+     "watch_score": 0.7378
+    },
+    {
+     "code": "43-9081.00",
+     "title": "Proofreaders and Copy Markers",
+     "watch_score": 0.7329
+    },
+    {
+     "code": "43-4011.00",
+     "title": "Brokerage Clerks",
+     "watch_score": 0.712
+    },
+    {
+     "code": "43-1011.00",
+     "title": "First-Line Supervisors of Office and Administrative Support Workers",
+     "watch_score": 0.703
+    }
+   ],
+   "watch_score": 0.5
+  },
+  {
+   "ai_ml_added_total": 0,
+   "data_tools_added_total": 0,
+   "family": "facilities",
+   "label": "Facilities & building services",
+   "mean_skill_drift_at_update": 0.0455,
+   "mean_task_churn_at_update": 0.0317,
+   "median_years_since_task_update": 4.0,
+   "n_occupations": 17,
+   "n_scored": 17,
+   "p_task_high": 0.3724,
+   "p_task_high_p10": 0.2783,
+   "p_task_high_p90": 0.4746,
+   "p_task_update_2y": 0.1721,
+   "p_tech_high": 0.2577,
+   "p_tech_high_p10": 0.1994,
+   "p_tech_high_p90": 0.324,
+   "rank": 9,
+   "share_updates_with_task_change": 0.3717,
+   "tech_added_per_year": 0.5376,
+   "top_roles": [
+    {
+     "code": "49-9071.00",
+     "title": "Maintenance and Repair Workers, General",
+     "watch_score": 0.6495
+    },
+    {
+     "code": "37-1012.00",
+     "title": "First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",
+     "watch_score": 0.5484
+    },
+    {
+     "code": "37-3013.00",
+     "title": "Tree Trimmers and Pruners",
+     "watch_score": 0.4886
+    },
+    {
+     "code": "37-2012.00",
+     "title": "Maids and Housekeeping Cleaners",
+     "watch_score": 0.4861
+    },
+    {
+     "code": "37-1011.00",
+     "title": "First-Line Supervisors of Housekeeping and Janitorial Workers",
+     "watch_score": 0.4567
+    }
+   ],
+   "watch_score": 0.4005
+  }
+ ],
+ "origin_release": "31.0",
+ "protocol": "job_evolution_v1",
+ "score_definition": "watch_score = mean of three percentile ranks across all scored O*NET occupations: (1) P(task update within 2 years) x P(substantive task change at that update); (2) P(high technology churn next release); (3) data/AI tools added 2016-2026 (AI/ML examples weighted 3x). It ranks where to look first. It is not a forecast of job loss or of change in University positions.",
+ "sucss_lines": [
+  {
+   "line": "01 Professional",
+   "mean_task_churn_at_update": 0.0412,
+   "n_abstained": 2,
+   "n_class_records": 132,
+   "n_distinct_occupations": 75,
+   "n_weak_evidence": 22,
+   "p_task_high": 0.2625,
+   "p_task_update_2y": 0.2155,
+   "p_tech_high": 0.4064,
+   "tech_added_per_year": 1.4873,
+   "top_classes": [
+    {
+     "class_code": "5004",
+     "class_title": "Marketing Associate",
+     "evidence_band": "moderate",
+     "onet_title": "Market Research Analysts and Marketing Specialists",
+     "watch_score": 0.8557
+    },
+    {
+     "class_code": "4975",
+     "class_title": "Organizational Quality Coordinator",
+     "evidence_band": "weak",
+     "onet_title": "Industrial-Organizational Psychologists",
+     "watch_score": 0.8445
+    },
+    {
+     "class_code": "2753",
+     "class_title": "Admissions and Records Associate",
+     "evidence_band": "moderate",
+     "onet_title": "Education Administrators, Postsecondary",
+     "watch_score": 0.818
+    },
+    {
+     "class_code": "4728",
+     "class_title": "University Budget Officer",
+     "evidence_band": "weak",
+     "onet_title": "Education Administrators, Postsecondary",
+     "watch_score": 0.818
+    },
+    {
+     "class_code": "4805",
+     "class_title": "Infection Prevention and Control Coordinator",
+     "evidence_band": "moderate",
+     "onet_title": "Epidemiologists",
+     "watch_score": 0.7981
+    }
+   ],
+   "watch_score": 0.6031
+  },
+  {
+   "line": "03 Managerial",
+   "mean_task_churn_at_update": 0.0312,
+   "n_abstained": 5,
+   "n_class_records": 150,
+   "n_distinct_occupations": 74,
+   "n_weak_evidence": 36,
+   "p_task_high": 0.1743,
+   "p_task_update_2y": 0.2908,
+   "p_tech_high": 0.3868,
+   "tech_added_per_year": 1.7637,
+   "top_classes": [
+    {
+     "class_code": "4694",
+     "class_title": "Training and Development Specialist II",
+     "evidence_band": "strong",
+     "onet_title": "Industrial-Organizational Psychologists",
+     "watch_score": 0.8445
+    },
+    {
+     "class_code": "4555",
+     "class_title": "Records Management Officer",
+     "evidence_band": "moderate",
+     "onet_title": "Management Analysts",
+     "watch_score": 0.8187
+    },
+    {
+     "class_code": "0923",
+     "class_title": "Campus Planning Coordinator",
+     "evidence_band": "moderate",
+     "onet_title": "Education Administrators, Postsecondary",
+     "watch_score": 0.818
+    },
+    {
+     "class_code": "1065",
+     "class_title": "Assistant Director of Alumni Relations",
+     "evidence_band": "weak",
+     "onet_title": "Education Administrators, Postsecondary",
+     "watch_score": 0.818
+    },
+    {
+     "class_code": "1147",
+     "class_title": "Assistant Director of University Student Center",
+     "evidence_band": "weak",
+     "onet_title": "Education Administrators, Postsecondary",
+     "watch_score": 0.818
+    }
+   ],
+   "watch_score": 0.5773
+  },
+  {
+   "line": "04 Clerical",
+   "mean_task_churn_at_update": 0.0289,
+   "n_abstained": 1,
+   "n_class_records": 88,
+   "n_distinct_occupations": 48,
+   "n_weak_evidence": 7,
+   "p_task_high": 0.1564,
+   "p_task_update_2y": 0.2739,
+   "p_tech_high": 0.3812,
+   "tech_added_per_year": 1.5314,
+   "top_classes": [
+    {
+     "class_code": "3852",
+     "class_title": "Accounting Officer",
+     "evidence_band": "strong",
+     "onet_title": "Accountants and Auditors",
+     "watch_score": 0.7468
+    },
+    {
+     "class_code": "0784",
+     "class_title": "Operations Clerk",
+     "evidence_band": "moderate",
+     "onet_title": "Brokerage Clerks",
+     "watch_score": 0.712
+    },
+    {
+     "class_code": "3854",
+     "class_title": "Health Information Administrator",
+     "evidence_band": "moderate",
+     "onet_title": "Computer and Information Systems Managers",
+     "watch_score": 0.7044
+    },
+    {
+     "class_code": "4844",
+     "class_title": "Image Processing Technician IV",
+     "evidence_band": "weak",
+     "onet_title": "Computer and Information Systems Managers",
+     "watch_score": 0.7044
+    },
+    {
+     "class_code": "2764",
+     "class_title": "Admitting Officer II",
+     "evidence_band": "moderate",
+     "onet_title": "First-Line Supervisors of Office and Administrative Support Workers",
+     "watch_score": 0.703
+    }
+   ],
+   "watch_score": 0.5374
+  },
+  {
+   "line": "02 Semi-Professional",
+   "mean_task_churn_at_update": 0.0355,
+   "n_abstained": 7,
+   "n_class_records": 213,
+   "n_distinct_occupations": 106,
+   "n_weak_evidence": 48,
+   "p_task_high": 0.2405,
+   "p_task_update_2y": 0.2518,
+   "p_tech_high": 0.3523,
+   "tech_added_per_year": 1.0502,
+   "top_classes": [
+    {
+     "class_code": "3853",
+     "class_title": "Archaeological Technician",
+     "evidence_band": "moderate",
+     "onet_title": "Anthropologists and Archeologists",
+     "watch_score": 0.8694
+    },
+    {
+     "class_code": "4675",
+     "class_title": "Curator of Anthropology I",
+     "evidence_band": "weak",
+     "onet_title": "Anthropologists and Archeologists",
+     "watch_score": 0.8694
+    },
+    {
+     "class_code": "4676",
+     "class_title": "Curator of Anthropology II",
+     "evidence_band": "weak",
+     "onet_title": "Anthropologists and Archeologists",
+     "watch_score": 0.8694
+    },
+    {
+     "class_code": "4677",
+     "class_title": "Curator of Anthropology III",
+     "evidence_band": "weak",
+     "onet_title": "Anthropologists and Archeologists",
+     "watch_score": 0.8694
+    },
+    {
+     "class_code": "1031",
+     "class_title": "Assistant Technical Director",
+     "evidence_band": "moderate",
+     "onet_title": "Media Technical Directors/Managers",
+     "watch_score": 0.8563
+    }
+   ],
+   "watch_score": 0.533
+  },
+  {
+   "line": "09 Domestic Services",
+   "mean_task_churn_at_update": 0.059,
+   "n_abstained": 0,
+   "n_class_records": 3,
+   "n_distinct_occupations": 2,
+   "n_weak_evidence": 1,
+   "p_task_high": 0.9514,
+   "p_task_update_2y": 0.2466,
+   "p_tech_high": 0.2722,
+   "tech_added_per_year": 0.2,
+   "top_classes": [
+    {
+     "class_code": "0965",
+     "class_title": "Costumer",
+     "evidence_band": "moderate",
+     "onet_title": "Costume Attendants",
+     "watch_score": 0.5991
+    },
+    {
+     "class_code": "3314",
+     "class_title": "Theatrical Stitcher",
+     "evidence_band": "weak",
+     "onet_title": "Costume Attendants",
+     "watch_score": 0.5991
+    },
+    {
+     "class_code": "4249",
+     "class_title": "Laundry Worker",
+     "evidence_band": "strong",
+     "onet_title": "Laundry and Dry-Cleaning Workers",
+     "watch_score": 0.394
+    }
+   ],
+   "watch_score": 0.5308
+  },
+  {
+   "line": "06 Aeronautical",
+   "mean_task_churn_at_update": 0.0448,
+   "n_abstained": 0,
+   "n_class_records": 10,
+   "n_distinct_occupations": 7,
+   "n_weak_evidence": 2,
+   "p_task_high": 0.3918,
+   "p_task_update_2y": 0.1882,
+   "p_tech_high": 0.2875,
+   "tech_added_per_year": 0.94,
+   "top_classes": [
+    {
+     "class_code": "2272",
+     "class_title": "Chief Flight Line Attendant",
+     "evidence_band": "moderate",
+     "onet_title": "Commercial Pilots",
+     "watch_score": 0.706
+    },
+    {
+     "class_code": "1841",
+     "class_title": "Aircraft Shop Sub-Foreman",
+     "evidence_band": "weak",
+     "onet_title": "Aviation Inspectors",
+     "watch_score": 0.704
+    },
+    {
+     "class_code": "2040",
+     "class_title": "Aircraft Maintenance Mechanic Helper",
+     "evidence_band": "moderate",
+     "onet_title": "Aviation Inspectors",
+     "watch_score": 0.704
+    },
+    {
+     "class_code": "2560",
+     "class_title": "Airport Mechanic",
+     "evidence_band": "moderate",
+     "onet_title": "Airfield Operations Specialists",
+     "watch_score": 0.6766
+    },
+    {
+     "class_code": "2270",
+     "class_title": "Flight Line Attendant I",
+     "evidence_band": "moderate",
+     "onet_title": "Automotive and Watercraft Service Attendants",
+     "watch_score": 0.4726
+    }
+   ],
+   "watch_score": 0.5016
+  },
+  {
+   "line": "(blank)",
+   "mean_task_churn_at_update": 0.0484,
+   "n_abstained": 1,
+   "n_class_records": 1,
+   "n_distinct_occupations": 1,
+   "n_weak_evidence": 1,
+   "p_task_high": 0.0552,
+   "p_task_update_2y": 0.4791,
+   "p_tech_high": 0.3153,
+   "tech_added_per_year": 0.4,
+   "top_classes": [
+    {
+     "class_code": "3029",
+     "class_title": "Work Program Participant",
+     "evidence_band": "weak",
+     "onet_title": "Social and Community Service Managers",
+     "watch_score": 0.4686
+    }
+   ],
+   "watch_score": 0.4686
+  },
+  {
+   "line": "15 Semi-Skilled Trades",
+   "mean_task_churn_at_update": 0.043,
+   "n_abstained": 2,
+   "n_class_records": 37,
+   "n_distinct_occupations": 26,
+   "n_weak_evidence": 7,
+   "p_task_high": 0.3208,
+   "p_task_update_2y": 0.2353,
+   "p_tech_high": 0.2638,
+   "tech_added_per_year": 0.7519,
+   "top_classes": [
+    {
+     "class_code": "2604",
+     "class_title": "Parking Meter Mechanic II",
+     "evidence_band": "moderate",
+     "onet_title": "Control and Valve Installers and Repairers, Except Mechanical Door",
+     "watch_score": 0.7286
+    },
+    {
+     "class_code": "3281",
+     "class_title": "Parking Meter Mechanic I",
+     "evidence_band": "moderate",
+     "onet_title": "Control and Valve Installers and Repairers, Except Mechanical Door",
+     "watch_score": 0.7286
+    },
+    {
+     "class_code": "2350",
+     "class_title": "Bowling and Billiard Center Manager",
+     "evidence_band": "weak",
+     "onet_title": "First-Line Supervisors of Office and Administrative Support Workers",
+     "watch_score": 0.703
+    },
+    {
+     "class_code": "1598",
+     "class_title": "Building Mechanic Foreman",
+     "evidence_band": "moderate",
+     "onet_title": "Maintenance and Repair Workers, General",
+     "watch_score": 0.6495
+    },
+    {
+     "class_code": "2576",
+     "class_title": "Building Mechanic",
+     "evidence_band": "moderate",
+     "onet_title": "Maintenance and Repair Workers, General",
+     "watch_score": 0.6495
+    }
+   ],
+   "watch_score": 0.4376
+  },
+  {
+   "line": "13 Protective Services",
+   "mean_task_churn_at_update": 0.0311,
+   "n_abstained": 1,
+   "n_class_records": 21,
+   "n_distinct_occupations": 13,
+   "n_weak_evidence": 3,
+   "p_task_high": 0.2562,
+   "p_task_update_2y": 0.1995,
+   "p_tech_high": 0.3006,
+   "tech_added_per_year": 0.5978,
+   "top_classes": [
+    {
+     "class_code": "1165",
+     "class_title": "Police Telecommunicator Supervisor",
+     "evidence_band": "moderate",
+     "onet_title": "First-Line Supervisors of Office and Administrative Support Workers",
+     "watch_score": 0.703
+    },
+    {
+     "class_code": "3288",
+     "class_title": "Crash-Rescue and Security Specialist",
+     "evidence_band": "weak",
+     "onet_title": "Retail Loss Prevention Specialists",
+     "watch_score": 0.6448
+    },
+    {
+     "class_code": "4213",
+     "class_title": "Security Sergeant",
+     "evidence_band": "moderate",
+     "onet_title": "Retail Loss Prevention Specialists",
+     "watch_score": 0.6448
+    },
+    {
+     "class_code": "0560",
+     "class_title": "Residence Hall Attendant",
+     "evidence_band": "moderate",
+     "onet_title": "Residential Advisors",
+     "watch_score": 0.5785
+    },
+    {
+     "class_code": "3806",
+     "class_title": "Coordinator of Residence Hall Attendant Program",
+     "evidence_band": "moderate",
+     "onet_title": "Residential Advisors",
+     "watch_score": 0.5785
+    }
+   ],
+   "watch_score": 0.4343
+  },
+  {
+   "line": "08 Custodial Services",
+   "mean_task_churn_at_update": 0.0272,
+   "n_abstained": 0,
+   "n_class_records": 12,
+   "n_distinct_occupations": 7,
+   "n_weak_evidence": 4,
+   "p_task_high": 0.2153,
+   "p_task_update_2y": 0.2343,
+   "p_tech_high": 0.2664,
+   "tech_added_per_year": 0.4167,
+   "top_classes": [
+    {
+     "class_code": "2173",
+     "class_title": "Housing Maintenance Inspector",
+     "evidence_band": "moderate",
+     "onet_title": "Construction and Building Inspectors",
+     "watch_score": 0.5527
+    },
+    {
+     "class_code": "2133",
+     "class_title": "Housekeeper",
+     "evidence_band": "moderate",
+     "onet_title": "Maids and Housekeeping Cleaners",
+     "watch_score": 0.4861
+    },
+    {
+     "class_code": "2296",
+     "class_title": "Maid",
+     "evidence_band": "strong",
+     "onet_title": "Maids and Housekeeping Cleaners",
+     "watch_score": 0.4861
+    },
+    {
+     "class_code": "1848",
+     "class_title": "Building Service Sub-Foreman",
+     "evidence_band": "weak",
+     "onet_title": "First-Line Supervisors of Housekeeping and Janitorial Workers",
+     "watch_score": 0.4567
+    },
+    {
+     "class_code": "3445",
+     "class_title": "Building Service Supervisor",
+     "evidence_band": "moderate",
+     "onet_title": "First-Line Supervisors of Housekeeping and Janitorial Workers",
+     "watch_score": 0.4567
+    }
+   ],
+   "watch_score": 0.4318
+  },
+  {
+   "line": "14 Skilled Trades",
+   "mean_task_churn_at_update": 0.039,
+   "n_abstained": 7,
+   "n_class_records": 103,
+   "n_distinct_occupations": 55,
+   "n_weak_evidence": 35,
+   "p_task_high": 0.2154,
+   "p_task_update_2y": 0.2319,
+   "p_tech_high": 0.269,
+   "tech_added_per_year": 0.6259,
+   "top_classes": [
+    {
+     "class_code": "3899",
+     "class_title": "Cryogenic Technician I",
+     "evidence_band": "weak",
+     "onet_title": "Mechanical Engineers",
+     "watch_score": 0.8481
+    },
+    {
+     "class_code": "3900",
+     "class_title": "Cryogenic Technician II",
+     "evidence_band": "moderate",
+     "onet_title": "Mechanical Engineers",
+     "watch_score": 0.8481
+    },
+    {
+     "class_code": "2610",
+     "class_title": "Pneumatic Instrument and Controls Mechanic",
+     "evidence_band": "weak",
+     "onet_title": "Control and Valve Installers and Repairers, Except Mechanical Door",
+     "watch_score": 0.7286
+    },
+    {
+     "class_code": "4834",
+     "class_title": "Head Disability Transportation Specialist",
+     "evidence_band": "moderate",
+     "onet_title": "Transportation Planners",
+     "watch_score": 0.6871
+    },
+    {
+     "class_code": "3108",
+     "class_title": "Museum Exhibits Preparator",
+     "evidence_band": "moderate",
+     "onet_title": "Museum Technicians and Conservators",
+     "watch_score": 0.6699
+    }
+   ],
+   "watch_score": 0.4267
+  },
+  {
+   "line": "12 Medical Services",
+   "mean_task_churn_at_update": 0.0298,
+   "n_abstained": 2,
+   "n_class_records": 51,
+   "n_distinct_occupations": 30,
+   "n_weak_evidence": 4,
+   "p_task_high": 0.2122,
+   "p_task_update_2y": 0.2222,
+   "p_tech_high": 0.2729,
+   "tech_added_per_year": 0.5117,
+   "top_classes": [
+    {
+     "class_code": "0981",
+     "class_title": "Anatomy Curator",
+     "evidence_band": "weak",
+     "onet_title": "Biological Science Teachers, Postsecondary",
+     "watch_score": 0.7152
+    },
+    {
+     "class_code": "0990",
+     "class_title": "Anatomy Curator Coordinator",
+     "evidence_band": "weak",
+     "onet_title": "Biological Science Teachers, Postsecondary",
+     "watch_score": 0.7152
+    },
+    {
+     "class_code": "0828",
+     "class_title": "Tumor Registrar I",
+     "evidence_band": "strong",
+     "onet_title": "Health Information Technologists and Medical Registrars",
+     "watch_score": 0.6833
+    },
+    {
+     "class_code": "0829",
+     "class_title": "Tumor Registrar II",
+     "evidence_band": "moderate",
+     "onet_title": "Health Information Technologists and Medical Registrars",
+     "watch_score": 0.6833
+    },
+    {
+     "class_code": "0262",
+     "class_title": "Medical Laboratory Assistant I",
+     "evidence_band": "moderate",
+     "onet_title": "Chemical Technicians",
+     "watch_score": 0.6352
+    }
+   ],
+   "watch_score": 0.4127
+  },
+  {
+   "line": "16 Unskilled Trades",
+   "mean_task_churn_at_update": 0.0847,
+   "n_abstained": 0,
+   "n_class_records": 2,
+   "n_distinct_occupations": 2,
+   "n_weak_evidence": 1,
+   "p_task_high": 0.1983,
+   "p_task_update_2y": 0.2049,
+   "p_tech_high": 0.2331,
+   "tech_added_per_year": 0.5,
+   "top_classes": [
+    {
+     "class_code": "2095",
+     "class_title": "Laboratory Helper",
+     "evidence_band": "weak",
+     "onet_title": "Biological Technicians",
+     "watch_score": 0.5392
+    },
+    {
+     "class_code": "0195",
+     "class_title": "Child Care Assistant",
+     "evidence_band": "strong",
+     "onet_title": "Childcare Workers",
+     "watch_score": 0.2862
+    }
+   ],
+   "watch_score": 0.4127
+  },
+  {
+   "line": "11 Power, Heat, and Light Services",
+   "mean_task_churn_at_update": 0.0305,
+   "n_abstained": 0,
+   "n_class_records": 19,
+   "n_distinct_occupations": 10,
+   "n_weak_evidence": 3,
+   "p_task_high": 0.3097,
+   "p_task_update_2y": 0.2189,
+   "p_tech_high": 0.236,
+   "tech_added_per_year": 0.8895,
+   "top_classes": [
+    {
+     "class_code": "1969",
+     "class_title": "Water Station Sub-Foreman",
+     "evidence_band": "weak",
+     "onet_title": "Water/Wastewater Engineers",
+     "watch_score": 0.7725
+    },
+    {
+     "class_code": "4995",
+     "class_title": "Instrument Technician",
+     "evidence_band": "moderate",
+     "onet_title": "Control and Valve Installers and Repairers, Except Mechanical Door",
+     "watch_score": 0.7286
+    },
+    {
+     "class_code": "4988",
+     "class_title": "Power Plant Mechanic Supervisor",
+     "evidence_band": "moderate",
+     "onet_title": "Hydroelectric Production Managers",
+     "watch_score": 0.6869
+    },
+    {
+     "class_code": "1328",
+     "class_title": "Building Operating Engineer",
+     "evidence_band": "moderate",
+     "onet_title": "Maintenance and Repair Workers, General",
+     "watch_score": 0.6495
+    },
+    {
+     "class_code": "1329",
+     "class_title": "Assistant Chief Building Operating Engineer",
+     "evidence_band": "moderate",
+     "onet_title": "Maintenance and Repair Workers, General",
+     "watch_score": 0.6495
+    }
+   ],
+   "watch_score": 0.4091
+  },
+  {
+   "line": "07 Agricultural",
+   "mean_task_churn_at_update": 0.032,
+   "n_abstained": 0,
+   "n_class_records": 13,
+   "n_distinct_occupations": 6,
+   "n_weak_evidence": 1,
+   "p_task_high": 0.2254,
+   "p_task_update_2y": 0.1531,
+   "p_tech_high": 0.2534,
+   "tech_added_per_year": 0.3929,
+   "top_classes": [
+    {
+     "class_code": "2007",
+     "class_title": "Greens Worker",
+     "evidence_band": "moderate",
+     "onet_title": "First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",
+     "watch_score": 0.5484
+    },
+    {
+     "class_code": "2461",
+     "class_title": "Manager of Agricultural Sciences Facilities",
+     "evidence_band": "moderate",
+     "onet_title": "Agricultural Sciences Teachers, Postsecondary",
+     "watch_score": 0.4119
+    },
+    {
+     "class_code": "0996",
+     "class_title": "Forest Custodian",
+     "evidence_band": "weak",
+     "onet_title": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
+     "watch_score": 0.4112
+    },
+    {
+     "class_code": "2211",
+     "class_title": "Assistant Agricultural Research Technician",
+     "evidence_band": "moderate",
+     "onet_title": "Agricultural Technicians",
+     "watch_score": 0.4025
+    },
+    {
+     "class_code": "2212",
+     "class_title": "Associate Agricultural Research Technician",
+     "evidence_band": "moderate",
+     "onet_title": "Agricultural Technicians",
+     "watch_score": 0.4025
+    }
+   ],
+   "watch_score": 0.4047
+  },
+  {
+   "line": "10 Food Services",
+   "mean_task_churn_at_update": 0.032,
+   "n_abstained": 0,
+   "n_class_records": 18,
+   "n_distinct_occupations": 10,
+   "n_weak_evidence": 0,
+   "p_task_high": 0.2527,
+   "p_task_update_2y": 0.085,
+   "p_tech_high": 0.2931,
+   "tech_added_per_year": 0.3444,
+   "top_classes": [
+    {
+     "class_code": "3481",
+     "class_title": "Dining Room Supervisor",
+     "evidence_band": "strong",
+     "onet_title": "Dining Room and Cafeteria Attendants and Bartender Helpers",
+     "watch_score": 0.639
+    },
+    {
+     "class_code": "3484",
+     "class_title": "Dishroom Supervisor",
+     "evidence_band": "strong",
+     "onet_title": "Dishwashers",
+     "watch_score": 0.4986
+    },
+    {
+     "class_code": "4191",
+     "class_title": "Waiter/Waitress",
+     "evidence_band": "strong",
+     "onet_title": "Waiters and Waitresses",
+     "watch_score": 0.4834
+    },
+    {
+     "class_code": "0024",
+     "class_title": "Food Service Sanitation Laborer",
+     "evidence_band": "moderate",
+     "onet_title": "Food Preparation Workers",
+     "watch_score": 0.4592
+    },
+    {
+     "class_code": "3866",
+     "class_title": "Culinary Worker I",
+     "evidence_band": "strong",
+     "onet_title": "Food Preparation Workers",
+     "watch_score": 0.4592
+    }
+   ],
+   "watch_score": 0.3743
+  },
+  {
+   "line": "05 Stores",
+   "mean_task_churn_at_update": 0.0206,
+   "n_abstained": 2,
+   "n_class_records": 10,
+   "n_distinct_occupations": 5,
+   "n_weak_evidence": 4,
+   "p_task_high": 0.047,
+   "p_task_update_2y": 0.1632,
+   "p_tech_high": 0.3407,
+   "tech_added_per_year": 0.8427,
+   "top_classes": [
+    {
+     "class_code": "3606",
+     "class_title": "Stores Supervisor",
+     "evidence_band": "weak",
+     "onet_title": "First-Line Supervisors of Office and Administrative Support Workers",
+     "watch_score": 0.703
+    },
+    {
+     "class_code": "1160",
+     "class_title": "Central Receiving Station Dispatcher",
+     "evidence_band": "weak",
+     "onet_title": "Shipping, Receiving, and Inventory Clerks",
+     "watch_score": 0.3635
+    },
+    {
+     "class_code": "0575",
+     "class_title": "Tool Room Attendant",
+     "evidence_band": "moderate",
+     "onet_title": "Stockers and Order Fillers",
+     "watch_score": 0.3519
+    },
+    {
+     "class_code": "0576",
+     "class_title": "Senior Tool Room Attendant",
+     "evidence_band": "moderate",
+     "onet_title": "Stockers and Order Fillers",
+     "watch_score": 0.3519
+    },
+    {
+     "class_code": "3317",
+     "class_title": "Storekeeper I",
+     "evidence_band": "strong",
+     "onet_title": "Stockers and Order Fillers",
+     "watch_score": 0.3519
+    }
+   ],
+   "watch_score": 0.3729
+  }
+ ]
+}

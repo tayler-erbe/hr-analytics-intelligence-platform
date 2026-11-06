@@ -1,0 +1,111 @@
+{
+ "gwa": {
+  "agree": 12879,
+  "agreement_rate": 0.9995,
+  "compared_transitions": 12886,
+  "detected_not_in_file": 7,
+  "examples": [
+   {
+    "code": "29-1069.05",
+    "detected": true,
+    "file": false,
+    "rel": "19.0"
+   },
+   {
+    "code": "51-9122.00",
+    "detected": true,
+    "file": false,
+    "rel": "19.0"
+   },
+   {
+    "code": "13-2071.01",
+    "detected": true,
+    "file": false,
+    "rel": "21.0"
+   },
+   {
+    "code": "17-2199.01",
+    "detected": true,
+    "file": false,
+    "rel": "21.0"
+   },
+   {
+    "code": "17-3029.06",
+    "detected": true,
+    "file": false,
+    "rel": "22.0"
+   },
+   {
+    "code": "17-3029.09",
+    "detected": true,
+    "file": false,
+    "rel": "22.0"
+   },
+   {
+    "code": "49-2021.01",
+    "detected": true,
+    "file": false,
+    "rel": "23.0"
+   }
+  ],
+  "in_file_not_detected": 0
+ },
+ "note": "Detected update = the maximum O*NET 'Date' on the occupation's task statements (or GWA ratings) increased between consecutive sampled releases. File update = O*NET Longitudinal Data Updates lists a database version inside that release interval for the same native code.",
+ "tasks": {
+  "agree": 13024,
+  "agreement_rate": 0.9944,
+  "compared_transitions": 13097,
+  "detected_not_in_file": 73,
+  "examples": [
+   {
+    "code": "11-1021.00",
+    "detected": true,
+    "file": false,
+    "rel": "16.0"
+   },
+   {
+    "code": "11-2011.01",
+    "detected": true,
+    "file": false,
+    "rel": "16.0"
+   },
+   {
+    "code": "11-2021.00",
+    "detected": true,
+    "file": false,
+    "rel": "16.0"
+   },
+   {
+    "code": "11-9021.00",
+    "detected": true,
+    "file": false,
+    "rel": "16.0"
+   },
+   {
+    "code": "11-9041.00",
+    "detected": true,
+    "file": false,
+    "rel": "16.0"
+   },
+   {
+    "code": "11-9199.01",
+    "detected": true,
+    "file": false,
+    "rel": "16.0"
+   },
+   {
+    "code": "11-9199.04",
+    "detected": true,
+    "file": false,
+    "rel": "16.0"
+   },
+   {
+    "code": "13-1022.00",
+    "detected": true,
+    "file": false,
+    "rel": "16.0"
+   }
+  ],
+  "in_file_not_detected": 0
+ }
+}

@@ -1,0 +1,199 @@
+{
+ "coefficients": {
+  "const": {
+   "coef": -3.4618,
+   "se": 0.0842
+  },
+  "jz1": {
+   "coef": -0.3012,
+   "se": 0.1181
+  },
+  "jz2": {
+   "coef": -0.4997,
+   "se": 0.0637
+  },
+  "jz4": {
+   "coef": -0.1021,
+   "se": 0.0644
+  },
+  "jz5": {
+   "coef": 0.1575,
+   "se": 0.0699
+  },
+  "src_analyst": {
+   "coef": 1.6612,
+   "se": 0.0789
+  },
+  "src_expert": {
+   "coef": 0.3411,
+   "se": 0.0624
+  },
+  "ys_10_99": {
+   "coef": 2.4306,
+   "se": 0.1042
+  },
+  "ys_2_4": {
+   "coef": 0.7342,
+   "se": 0.0888
+  },
+  "ys_4_6": {
+   "coef": 1.286,
+   "se": 0.0886
+  },
+  "ys_6_8": {
+   "coef": 2.1401,
+   "se": 0.0871
+  },
+  "ys_8_10": {
+   "coef": 2.4433,
+   "se": 0.0965
+  }
+ },
+ "empirical_by_years_since_update": [
+  {
+   "n_intervals": 4812,
+   "update_rate_per_interval": 0.0426,
+   "update_rate_per_year": 0.0455,
+   "years_since_update": "0-2"
+  },
+  {
+   "n_intervals": 4818,
+   "update_rate_per_interval": 0.0724,
+   "update_rate_per_year": 0.0753,
+   "years_since_update": "2-4"
+  },
+  {
+   "n_intervals": 3865,
+   "update_rate_per_interval": 0.1043,
+   "update_rate_per_year": 0.1129,
+   "years_since_update": "4-6"
+  },
+  {
+   "n_intervals": 2451,
+   "update_rate_per_interval": 0.2187,
+   "update_rate_per_year": 0.2213,
+   "years_since_update": "6-8"
+  },
+  {
+   "n_intervals": 1121,
+   "update_rate_per_interval": 0.2721,
+   "update_rate_per_year": 0.2702,
+   "years_since_update": "8-10"
+  },
+  {
+   "n_intervals": 801,
+   "update_rate_per_interval": 0.2747,
+   "update_rate_per_year": 0.2743,
+   "years_since_update": "10+"
+  }
+ ],
+ "model": "discrete-time hazard, binomial GLM with complementary log-log link and log(interval years) offset",
+ "n_intervals": 17868,
+ "n_updates": 2018,
+ "share_updated_by_release": [
+  {
+   "n": 812,
+   "release": "14.0",
+   "share_updated": 0.1182
+  },
+  {
+   "n": 965,
+   "release": "15.0",
+   "share_updated": 0.1244
+  },
+  {
+   "n": 944,
+   "release": "15.1",
+   "share_updated": 0.0
+  },
+  {
+   "n": 974,
+   "release": "16.0",
+   "share_updated": 0.2074
+  },
+  {
+   "n": 974,
+   "release": "17.0",
+   "share_updated": 0.1119
+  },
+  {
+   "n": 974,
+   "release": "18.0",
+   "share_updated": 0.1181
+  },
+  {
+   "n": 974,
+   "release": "19.0",
+   "share_updated": 0.1294
+  },
+  {
+   "n": 974,
+   "release": "20.0",
+   "share_updated": 0.1047
+  },
+  {
+   "n": 974,
+   "release": "21.0",
+   "share_updated": 0.1191
+  },
+  {
+   "n": 974,
+   "release": "22.0",
+   "share_updated": 0.1027
+  },
+  {
+   "n": 974,
+   "release": "23.0",
+   "share_updated": 0.1027
+  },
+  {
+   "n": 974,
+   "release": "24.0",
+   "share_updated": 0.1027
+  },
+  {
+   "n": 974,
+   "release": "25.0",
+   "share_updated": 0.1027
+  },
+  {
+   "n": 792,
+   "release": "26.0",
+   "share_updated": 0.1237
+  },
+  {
+   "n": 923,
+   "release": "27.0",
+   "share_updated": 0.0867
+  },
+  {
+   "n": 923,
+   "release": "28.0",
+   "share_updated": 0.0975
+  },
+  {
+   "n": 923,
+   "release": "29.0",
+   "share_updated": 0.0867
+  },
+  {
+   "n": 923,
+   "release": "30.0",
+   "share_updated": 0.0845
+  },
+  {
+   "n": 923,
+   "release": "31.0",
+   "share_updated": 0.2232
+  }
+ ],
+ "temporal_check": {
+  "ap": 0.2609,
+  "auc": 0.7892,
+  "base_rate": 0.1131,
+  "mean_pred": 0.1463,
+  "test_releases": "24.0-31.0",
+  "train_releases": "14.0-23.0"
+ },
+ "unit": "lineage x release interval (tasks present at both ends)"
+}
