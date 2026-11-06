@@ -1,0 +1,34 @@
+{
+  "G1_required_columns": {
+    "detail": "all required files and columns present",
+    "status": "PASS"
+  },
+  "G2_no_identity_columns": {
+    "detail": "no name / national-ID / address / ZIP columns extracted",
+    "status": "PASS"
+  },
+  "G3_interval_order": {
+    "detail": "0 of 36699 job rows have EFF_DT > EXP_DT (tolerance 0.1%)",
+    "status": "PASS"
+  },
+  "G4_row_versions": {
+    "detail": "0 versions with REC_START >= REC_END; 0 keys with >1 current version",
+    "status": "PASS"
+  },
+  "G5_history_depth": {
+    "detail": "49.2 years of job history (need >= 8 for a 5-origin backtest)",
+    "status": "PASS"
+  },
+  "G6_role_family_coverage": {
+    "detail": "100.0% of open primary job rows map to a role family (need 95%)",
+    "status": "PASS"
+  },
+  "G7_one_primary_job": {
+    "detail": "0.00% of persons hold >1 open primary position (tolerance 1%)",
+    "status": "PASS"
+  },
+  "I1_retro_keying_rate": {
+    "detail": "6.8% of job rows were first recorded >30 days after their effective date",
+    "status": "INFO"
+  }
+}

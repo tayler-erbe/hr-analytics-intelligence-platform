@@ -1,0 +1,4 @@
+{"ECLS_CD": "A1", "ECLS_DESC": "Academic professional (synthetic)", "ECLS_GROUP": "AP", "PAY_BASIS": "SAL"}
+{"ECLS_CD": "C1", "ECLS_DESC": "Civil service, salaried (synthetic)", "ECLS_GROUP": "CS", "PAY_BASIS": "SAL"}
+{"ECLS_CD": "F1", "ECLS_DESC": "Faculty (synthetic)", "ECLS_GROUP": "FA", "PAY_BASIS": "SAL"}
+{"ECLS_CD": "G1", "ECLS_DESC": "Graduate assistant (synthetic)", "ECLS_GROUP": "GA", "PAY_BASIS": "SAL"}

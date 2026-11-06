@@ -1,0 +1,24 @@
+{
+  "as_of": "2026-10-31",
+  "defect_scale": 0.0,
+  "expected": {},
+  "generator_version": "0.1",
+  "injections": [],
+  "label": "CLEAN",
+  "n_persons": 1500,
+  "note": "SYNTHETIC data. No real person, ID or salary. SUCSS codes/titles are public; pay ranges are invented.",
+  "row_counts": {
+    "REF_EMPEE_CLS": 4,
+    "REF_HIERARCHY_ROOT": 1,
+    "REF_JOB_CLASS": 899,
+    "REF_ORG": 52,
+    "T_EMPEE_HIST": 2268,
+    "T_EMPEE_HIST_5": 612,
+    "T_JOB_DETL_HIST": 17775,
+    "T_PAYR_ACCTG_DETL": 25571,
+    "T_PERS_HIST": 1951,
+    "T_POSN_HIST": 2705
+  },
+  "seed": 20261106,
+  "synthetic": true
+}

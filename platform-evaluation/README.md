@@ -43,3 +43,8 @@ O*NET 31.0 Database, U.S. Department of Labor, Employment and Training Administr
 SUCSS: [public classification catalog](https://www.sucss.illinois.gov/pages/classspec/Default.aspx). The JSON response was obtained from the same read-only ShowAll request used by that page. Source record IDs are preserved. Review source terms before republishing raw material.
 
 Acquired October 29, 2026. The manifest records URLs, request body, hashes, counts and limitations. BLS direct download returned HTTP 403; BLS data, individual SUCSS specs, IPEDS and HigherEdJobs postings remain pending. Read the plan for source-specific paths and access dependencies.
+
+
+## Downloadable synthetic workforce samples
+
+The [sample datasets](sample_datasets/README.md) provide complete clean, deliberately defective and longitudinal synthetic histories, with a ZIP download, typed files, DuckDB databases, validation reports and reproducibility instructions. Read the [sample design](sample_datasets/SAMPLE_DESIGN.md) before interpreting results. No EDW calibration is claimed.

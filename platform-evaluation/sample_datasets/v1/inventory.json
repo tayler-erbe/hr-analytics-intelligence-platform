@@ -1,0 +1,142 @@
+[
+  {
+    "dataset": "quality/CLEAN",
+    "table": "REF_EMPEE_CLS",
+    "rows": 4
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "REF_HIERARCHY_ROOT",
+    "rows": 1
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "REF_JOB_CLASS",
+    "rows": 899
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "REF_ORG",
+    "rows": 52
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "T_EMPEE_HIST",
+    "rows": 2268
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "T_EMPEE_HIST_5",
+    "rows": 612
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "T_JOB_DETL_HIST",
+    "rows": 17775
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "T_PAYR_ACCTG_DETL",
+    "rows": 25571
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "T_PERS_HIST",
+    "rows": 1951
+  },
+  {
+    "dataset": "quality/CLEAN",
+    "table": "T_POSN_HIST",
+    "rows": 2705
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "REF_EMPEE_CLS",
+    "rows": 4
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "REF_HIERARCHY_ROOT",
+    "rows": 1
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "REF_JOB_CLASS",
+    "rows": 899
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "REF_ORG",
+    "rows": 52
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "T_EMPEE_HIST",
+    "rows": 2270
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "T_EMPEE_HIST_5",
+    "rows": 616
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "T_JOB_DETL_HIST",
+    "rows": 17774
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "T_PAYR_ACCTG_DETL",
+    "rows": 25560
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "T_PERS_HIST",
+    "rows": 1956
+  },
+  {
+    "dataset": "quality/DEFECTS",
+    "table": "T_POSN_HIST",
+    "rows": 2716
+  },
+  {
+    "dataset": "longitudinal",
+    "table": "REF_JOB_CLASS",
+    "rows": 38
+  },
+  {
+    "dataset": "longitudinal",
+    "table": "REF_ORG",
+    "rows": 52
+  },
+  {
+    "dataset": "longitudinal",
+    "table": "REF_ROLE_FAMILY",
+    "rows": 38
+  },
+  {
+    "dataset": "longitudinal",
+    "table": "T_EMPEE_HIST",
+    "rows": 5257
+  },
+  {
+    "dataset": "longitudinal",
+    "table": "T_EMPEE_HIST_5",
+    "rows": 1480
+  },
+  {
+    "dataset": "longitudinal",
+    "table": "T_JOB_DETL_HIST",
+    "rows": 36699
+  },
+  {
+    "dataset": "longitudinal",
+    "table": "T_PERS_HIST",
+    "rows": 2302
+  },
+  {
+    "dataset": "longitudinal",
+    "table": "T_POSN_HIST",
+    "rows": 1256
+  }
+]

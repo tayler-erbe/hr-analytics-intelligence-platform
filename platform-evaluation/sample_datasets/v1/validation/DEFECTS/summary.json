@@ -1,0 +1,1599 @@
+{
+  "as_of": "2026-10-31",
+  "catalog_version": 0.1,
+  "data_dir": "DEFECTS",
+  "domains": [
+    {
+      "critical_failing_rules": 2,
+      "domain": "person",
+      "failing_entities": 24,
+      "failing_rules": 5,
+      "gate": "blocked",
+      "label": "Person identity and biographic master data",
+      "rules": 5,
+      "score": 0.3
+    },
+    {
+      "critical_failing_rules": 2,
+      "domain": "employment",
+      "failing_entities": 29,
+      "failing_rules": 8,
+      "gate": "blocked",
+      "label": "Employment lifecycle (hire, status, termination)",
+      "rules": 8,
+      "score": 10.3
+    },
+    {
+      "critical_failing_rules": 4,
+      "domain": "job_history",
+      "failing_entities": 47,
+      "failing_rules": 8,
+      "gate": "blocked",
+      "label": "Effective-dated job / appointment history",
+      "rules": 8,
+      "score": 3.7
+    },
+    {
+      "critical_failing_rules": 1,
+      "domain": "position",
+      "failing_entities": 41,
+      "failing_rules": 7,
+      "gate": "blocked",
+      "label": "Position control and job-to-position integrity",
+      "rules": 7,
+      "score": 0.7
+    },
+    {
+      "critical_failing_rules": 1,
+      "domain": "classification",
+      "failing_entities": 18,
+      "failing_rules": 4,
+      "gate": "blocked",
+      "label": "Classification and compensation (SUCSS, AP, faculty)",
+      "rules": 4,
+      "score": 6.8
+    },
+    {
+      "critical_failing_rules": 2,
+      "domain": "org_supervisory",
+      "failing_entities": 20,
+      "failing_rules": 6,
+      "gate": "blocked",
+      "label": "Organizations and reporting lines",
+      "rules": 6,
+      "score": 0.0
+    },
+    {
+      "critical_failing_rules": 1,
+      "domain": "payroll",
+      "failing_entities": 97,
+      "failing_rules": 5,
+      "gate": "blocked",
+      "label": "Payroll accounting history",
+      "rules": 5,
+      "score": 42.4
+    }
+  ],
+  "label": "DEFECTS",
+  "overall_score": 9.2,
+  "params": {
+    "AS_OF": "2026-10-31",
+    "FUTURE_HORIZON": "2027-04-29",
+    "ORPHAN_LOOKBACK": "2024-10-31",
+    "PAY_WINDOW_START": "2024-10-31"
+  },
+  "register": [
+    {
+      "domain": "person",
+      "examples": [
+        {
+          "detail": "national-id hash shared by 2 person ids",
+          "entity_id": "SD000089",
+          "entity_type": "person"
+        },
+        {
+          "detail": "national-id hash shared by 2 person ids",
+          "entity_id": "SD000177",
+          "entity_type": "person"
+        },
+        {
+          "detail": "national-id hash shared by 2 person ids",
+          "entity_id": "SD001282",
+          "entity_type": "person"
+        },
+        {
+          "detail": "national-id hash shared by 2 person ids",
+          "entity_id": "SD001352",
+          "entity_type": "person"
+        },
+        {
+          "detail": "national-id hash shared by 2 person ids",
+          "entity_id": "SP000089",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 8,
+      "failure_rate": 0.005316,
+      "name": "Same national-ID hash on more than one person ID",
+      "owner": "IHR HR Records (identity steward) with AITS Identity",
+      "population": "persons",
+      "population_n": 1505,
+      "rule_id": "P01",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "person",
+      "examples": [
+        {
+          "detail": "name+birth date shared with another person id",
+          "entity_id": "SF000321",
+          "entity_type": "person"
+        },
+        {
+          "detail": "name+birth date shared with another person id",
+          "entity_id": "SF000346",
+          "entity_type": "person"
+        },
+        {
+          "detail": "name+birth date shared with another person id",
+          "entity_id": "SF001408",
+          "entity_type": "person"
+        },
+        {
+          "detail": "name+birth date shared with another person id",
+          "entity_id": "SP000321",
+          "entity_type": "person"
+        },
+        {
+          "detail": "name+birth date shared with another person id",
+          "entity_id": "SP000346",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 6,
+      "failure_rate": 0.003987,
+      "name": "Probable duplicate person (same name and birth date, different national-ID hash)",
+      "owner": "IHR HR Records (identity steward)",
+      "population": "persons",
+      "population_n": 1505,
+      "rule_id": "P02",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "person",
+      "examples": [
+        {
+          "detail": "row ending 2017-08-04 overlaps next row starting 2017-07-26",
+          "entity_id": "SP000001",
+          "entity_type": "person"
+        },
+        {
+          "detail": "row ending 2026-05-05 overlaps next row starting 2026-04-26",
+          "entity_id": "SP001150",
+          "entity_type": "person"
+        },
+        {
+          "detail": "row ending 2015-11-29 overlaps next row starting 2015-11-20",
+          "entity_id": "SP001221",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.001993,
+      "name": "Overlapping person history rows",
+      "owner": "AITS Decision Support (EDW history load)",
+      "population": "persons",
+      "population_n": 1505,
+      "rule_id": "P03",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "person",
+      "examples": [
+        {
+          "detail": "active worker, birth date missing",
+          "entity_id": "SP000047",
+          "entity_type": "person"
+        },
+        {
+          "detail": "active worker, birth date missing",
+          "entity_id": "SP000329",
+          "entity_type": "person"
+        },
+        {
+          "detail": "active worker, birth date missing",
+          "entity_id": "SP000960",
+          "entity_type": "person"
+        },
+        {
+          "detail": "active worker, birth date missing",
+          "entity_id": "SP001037",
+          "entity_type": "person"
+        },
+        {
+          "detail": "active worker, birth date missing",
+          "entity_id": "SP001216",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 5,
+      "failure_rate": 0.00485,
+      "name": "Active worker with no birth date",
+      "owner": "IHR HR Records",
+      "population": "active_employees",
+      "population_n": 1031,
+      "rule_id": "P04",
+      "rule_score": 0.0301,
+      "severity": "medium",
+      "status": "warn"
+    },
+    {
+      "domain": "person",
+      "examples": [
+        {
+          "detail": "employee rows but no T_PERS_HIST row",
+          "entity_id": "SP000301",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee rows but no T_PERS_HIST row",
+          "entity_id": "SP000876",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 2,
+      "failure_rate": 0.001333,
+      "name": "Employee history with no person record",
+      "owner": "AITS Decision Support (EDW)",
+      "population": "employees",
+      "population_n": 1500,
+      "rule_id": "P05",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "employment",
+      "examples": [
+        {
+          "detail": "employee row ending 2019-11-06 overlaps row starting 2019-10-28",
+          "entity_id": "SP000291",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee row ending 2023-03-26 overlaps row starting 2023-03-17",
+          "entity_id": "SP000353",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee row ending 2020-07-30 overlaps row starting 2020-07-21",
+          "entity_id": "SP000521",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee row ending 2019-05-31 overlaps row starting 2019-05-22",
+          "entity_id": "SP000610",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.002667,
+      "name": "Overlapping employee status intervals",
+      "owner": "AITS Decision Support (EDW) with IHR HR Records",
+      "population": "employees",
+      "population_n": 1500,
+      "rule_id": "E01",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "employment",
+      "examples": [
+        {
+          "detail": "no employee row between 2019-06-07 and 2019-06-22",
+          "entity_id": "SP000594",
+          "entity_type": "person"
+        },
+        {
+          "detail": "no employee row between 2021-05-30 and 2021-06-14",
+          "entity_id": "SP000626",
+          "entity_type": "person"
+        },
+        {
+          "detail": "no employee row between 2022-03-27 and 2022-04-11",
+          "entity_id": "SP000874",
+          "entity_type": "person"
+        },
+        {
+          "detail": "no employee row between 2009-12-17 and 2010-01-01",
+          "entity_id": "SP001330",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.002667,
+      "name": "Gap in employee history",
+      "owner": "AITS Decision Support (EDW)",
+      "population": "employees",
+      "population_n": 1500,
+      "rule_id": "E02",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "employment",
+      "examples": [
+        {
+          "detail": "employee status T since 2026-06-02 but job R000792 active",
+          "entity_id": "SP000005",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee status T since 2026-10-07 but job R001656 active",
+          "entity_id": "SP000083",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee status T since 2026-08-24 but job R000553 active",
+          "entity_id": "SP000947",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee status T since 2026-08-20 but job R001266 active",
+          "entity_id": "SP001261",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee status T since 2026-06-08 but job R000456 active",
+          "entity_id": "SP001275",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 5,
+      "failure_rate": 0.004643,
+      "name": "Terminated employee with an active job",
+      "owner": "Unit HR via HR Front End; IHR HR Records",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "E03",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "employment",
+      "examples": [
+        {
+          "detail": "termination dated 2026-07-23 but status A",
+          "entity_id": "SP000012",
+          "entity_type": "person"
+        },
+        {
+          "detail": "termination dated 2026-07-23 but status A",
+          "entity_id": "SP000559",
+          "entity_type": "person"
+        },
+        {
+          "detail": "termination dated 2026-07-23 but status A",
+          "entity_id": "SP000565",
+          "entity_type": "person"
+        },
+        {
+          "detail": "termination dated 2026-07-23 but status A",
+          "entity_id": "SP000855",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.00388,
+      "name": "Termination record but employee still active",
+      "owner": "IHR HR Records",
+      "population": "active_employees",
+      "population_n": 1031,
+      "rule_id": "E04",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "employment",
+      "examples": [
+        {
+          "detail": "first hire 2018-07-25 > current hire 2017-06-20",
+          "entity_id": "SP000239",
+          "entity_type": "person"
+        },
+        {
+          "detail": "first hire 2020-09-06 > current hire 2019-08-03",
+          "entity_id": "SP000741",
+          "entity_type": "person"
+        },
+        {
+          "detail": "first hire 2015-05-26 > current hire 2014-04-21",
+          "entity_id": "SP001250",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.002,
+      "name": "First hire date after current hire date",
+      "owner": "IHR HR Records",
+      "population": "employees",
+      "population_n": 1500,
+      "rule_id": "E05",
+      "rule_score": 0.6,
+      "severity": "medium",
+      "status": "warn"
+    },
+    {
+      "domain": "employment",
+      "examples": [
+        {
+          "detail": "employee status A with no active job",
+          "entity_id": "SP000168",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee status A with no active job",
+          "entity_id": "SP000470",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee status A with no active job",
+          "entity_id": "SP000622",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee status A with no active job",
+          "entity_id": "SP000815",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.00388,
+      "name": "Active employee with no active job",
+      "owner": "Unit HR via HR Front End",
+      "population": "active_employees",
+      "population_n": 1031,
+      "rule_id": "E06",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "employment",
+      "examples": [
+        {
+          "detail": "employee class XZ not in reference",
+          "entity_id": "SP000166",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee class XZ not in reference",
+          "entity_id": "SP001366",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee class XZ not in reference",
+          "entity_id": "SP001420",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.00291,
+      "name": "Employee class not in the employee-class reference (PTRECLS)",
+      "owner": "IHR HRIS (code tables)",
+      "population": "active_employees",
+      "population_n": 1031,
+      "rule_id": "E07",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "employment",
+      "examples": [
+        {
+          "detail": "employee row effective 2062-07-01",
+          "entity_id": "SP000786",
+          "entity_type": "person"
+        },
+        {
+          "detail": "employee row effective 2062-07-01",
+          "entity_id": "SP001271",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 2,
+      "failure_rate": 0.001333,
+      "name": "Employee row dated beyond the pending-action horizon",
+      "owner": "Unit HR via HR Front End",
+      "population": "employees",
+      "population_n": 1500,
+      "rule_id": "E08",
+      "rule_score": 0.7333,
+      "severity": "medium",
+      "status": "warn"
+    },
+    {
+      "domain": "job_history",
+      "examples": [
+        {
+          "detail": "row ending 2017-07-30 overlaps row starting 2017-07-01",
+          "entity_id": "SP000085|R001048|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "row ending 2022-07-30 overlaps row starting 2022-07-01",
+          "entity_id": "SP000156|R000150|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "row ending 2020-07-30 overlaps row starting 2020-07-01",
+          "entity_id": "SP000309|R001349|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "row ending 2005-07-30 overlaps row starting 2005-07-01",
+          "entity_id": "SP000490|R000100|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "row ending 2007-07-30 overlaps row starting 2007-07-01",
+          "entity_id": "SP000742|R000283|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 8,
+      "failure_rate": 0.004199,
+      "name": "Overlapping job detail intervals",
+      "owner": "AITS Decision Support (EDW) with IHR HR Records",
+      "population": "job_keys",
+      "population_n": 1905,
+      "rule_id": "J01",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "job_history",
+      "examples": [
+        {
+          "detail": "no job row between 2015-06-27 and 2016-07-01",
+          "entity_id": "SP000123|R000895|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "no job row between 2015-06-11 and 2015-07-01",
+          "entity_id": "SP000214|R000934|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "no job row between 2013-06-11 and 2013-07-01",
+          "entity_id": "SP000286|R000433|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "no job row between 2012-06-11 and 2012-07-01",
+          "entity_id": "SP000543|R000654|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "no job row between 2010-06-11 and 2010-07-01",
+          "entity_id": "SP000563|R000488|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 11,
+      "failure_rate": 0.005774,
+      "name": "Gap in job detail history",
+      "owner": "AITS Decision Support (EDW)",
+      "population": "job_keys",
+      "population_n": 1905,
+      "rule_id": "J02",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "job_history",
+      "examples": [
+        {
+          "detail": "eff 2015-07-01 > exp 2015-06-26",
+          "entity_id": "SP000123|R000895|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "eff 2019-07-01 > exp 2019-06-26",
+          "entity_id": "SP000841|R001235|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "eff 2018-07-01 > exp 2018-06-26",
+          "entity_id": "SP000871|O001134|01",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.001575,
+      "name": "Job row expires before it starts",
+      "owner": "AITS Decision Support (EDW)",
+      "population": "job_keys",
+      "population_n": 1905,
+      "rule_id": "J03",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "job_history",
+      "examples": [
+        {
+          "detail": "2 active primary jobs",
+          "entity_id": "SP000134",
+          "entity_type": "person"
+        },
+        {
+          "detail": "2 active primary jobs",
+          "entity_id": "SP000211",
+          "entity_type": "person"
+        },
+        {
+          "detail": "2 active primary jobs",
+          "entity_id": "SP001007",
+          "entity_type": "person"
+        },
+        {
+          "detail": "2 active primary jobs",
+          "entity_id": "SP001238",
+          "entity_type": "person"
+        },
+        {
+          "detail": "2 active primary jobs",
+          "entity_id": "SP001429",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 5,
+      "failure_rate": 0.00485,
+      "name": "More than one active primary job",
+      "owner": "Unit HR via HR Front End",
+      "population": "active_employees",
+      "population_n": 1031,
+      "rule_id": "J04",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "job_history",
+      "examples": [
+        {
+          "detail": "active jobs but none primary",
+          "entity_id": "SP000203",
+          "entity_type": "person"
+        },
+        {
+          "detail": "active jobs but none primary",
+          "entity_id": "SP000435",
+          "entity_type": "person"
+        },
+        {
+          "detail": "active jobs but none primary",
+          "entity_id": "SP001056",
+          "entity_type": "person"
+        },
+        {
+          "detail": "active jobs but none primary",
+          "entity_id": "SP001131",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.00388,
+      "name": "Active secondary/overload job without a primary job",
+      "owner": "Unit HR via HR Front End",
+      "population": "active_employees",
+      "population_n": 1031,
+      "rule_id": "J05",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "job_history",
+      "examples": [
+        {
+          "detail": "FTE 1.250",
+          "entity_id": "SP000084|R001169|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE 1.250",
+          "entity_id": "SP000367|R001261|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE 1.250",
+          "entity_id": "SP000845|R001834|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE 1.250",
+          "entity_id": "SP001087|R000767|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.003714,
+      "name": "Single job FTE above 1.0",
+      "owner": "Unit HR via HR Front End",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "J06",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "job_history",
+      "examples": [
+        {
+          "detail": "total active FTE 1.250",
+          "entity_id": "SP000084",
+          "entity_type": "person"
+        },
+        {
+          "detail": "total active FTE 1.250",
+          "entity_id": "SP000367",
+          "entity_type": "person"
+        },
+        {
+          "detail": "total active FTE 1.250",
+          "entity_id": "SP000448",
+          "entity_type": "person"
+        },
+        {
+          "detail": "total active FTE 1.250",
+          "entity_id": "SP000845",
+          "entity_type": "person"
+        },
+        {
+          "detail": "total active FTE 1.250",
+          "entity_id": "SP001087",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 8,
+      "failure_rate": 0.007759,
+      "name": "Person's total active FTE above 1.0",
+      "owner": "Unit HR; IHR Policy (concurrent appointments)",
+      "population": "active_employees",
+      "population_n": 1031,
+      "rule_id": "J07",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "job_history",
+      "examples": [
+        {
+          "detail": "job row effective 2062-07-01",
+          "entity_id": "SP000086|R000201|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job row effective 2062-07-01",
+          "entity_id": "SP000522|R001345|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job row effective 2062-07-01",
+          "entity_id": "SP000773|R001814|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job row effective 2062-07-01",
+          "entity_id": "SP000858|R001752|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.0021,
+      "name": "Job row dated beyond the pending-action horizon",
+      "owner": "Unit HR via HR Front End",
+      "population": "job_keys",
+      "population_n": 1905,
+      "rule_id": "J08",
+      "rule_score": 0.5801,
+      "severity": "medium",
+      "status": "warn"
+    },
+    {
+      "domain": "position",
+      "examples": [
+        {
+          "detail": "active, no incumbent since before 2024-10-31",
+          "entity_id": "R001916",
+          "entity_type": "position"
+        },
+        {
+          "detail": "active, no incumbent since before 2024-10-31",
+          "entity_id": "R001917",
+          "entity_type": "position"
+        },
+        {
+          "detail": "active, no incumbent since before 2024-10-31",
+          "entity_id": "R001918",
+          "entity_type": "position"
+        },
+        {
+          "detail": "active, no incumbent since before 2024-10-31",
+          "entity_id": "R001919",
+          "entity_type": "position"
+        },
+        {
+          "detail": "active, no incumbent since before 2024-10-31",
+          "entity_id": "R001920",
+          "entity_type": "position"
+        }
+      ],
+      "failing": 12,
+      "failure_rate": 0.00624,
+      "name": "Orphan position (active, older than 24 months, no incumbent in 24 months)",
+      "owner": "IHR Position Control with unit HR",
+      "population": "positions",
+      "population_n": 1923,
+      "rule_id": "S01",
+      "rule_score": 0.0,
+      "severity": "medium",
+      "status": "fail"
+    },
+    {
+      "domain": "position",
+      "examples": [
+        {
+          "detail": "incumbent FTE 1.000 > budget 0.500",
+          "entity_id": "R000326",
+          "entity_type": "position"
+        },
+        {
+          "detail": "incumbent FTE 1.250 > budget 1.000",
+          "entity_id": "R000767",
+          "entity_type": "position"
+        },
+        {
+          "detail": "incumbent FTE 1.250 > budget 1.000",
+          "entity_id": "R001169",
+          "entity_type": "position"
+        },
+        {
+          "detail": "incumbent FTE 1.250 > budget 1.000",
+          "entity_id": "R001261",
+          "entity_type": "position"
+        },
+        {
+          "detail": "incumbent FTE 1.000 > budget 0.500",
+          "entity_id": "R001407",
+          "entity_type": "position"
+        }
+      ],
+      "failing": 8,
+      "failure_rate": 0.00416,
+      "name": "Position over-filled (incumbent FTE above budgeted FTE)",
+      "owner": "IHR Position Control",
+      "population": "positions",
+      "population_n": 1923,
+      "rule_id": "S02",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "position",
+      "examples": [
+        {
+          "detail": "row ending 2022-07-05 overlaps row starting 2022-06-26",
+          "entity_id": "R000942",
+          "entity_type": "position"
+        },
+        {
+          "detail": "row ending 2018-07-25 overlaps row starting 2018-07-16",
+          "entity_id": "R000971",
+          "entity_type": "position"
+        },
+        {
+          "detail": "row ending 2023-04-25 overlaps row starting 2023-04-16",
+          "entity_id": "R001284",
+          "entity_type": "position"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.00156,
+      "name": "Overlapping position history rows",
+      "owner": "AITS Decision Support (EDW)",
+      "population": "positions",
+      "population_n": 1923,
+      "rule_id": "S03",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "position",
+      "examples": [
+        {
+          "detail": "position R000285 not in position history",
+          "entity_id": "SP000498|R000285|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "position R001869 not in position history",
+          "entity_id": "SP000517|R001869|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "position R000894 not in position history",
+          "entity_id": "SP000905|R000894|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "position R001253 not in position history",
+          "entity_id": "SP001224|R001253|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.0021,
+      "name": "Job references a position missing from position control",
+      "owner": "IHR Position Control",
+      "population": "job_keys",
+      "population_n": 1905,
+      "rule_id": "S04",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "position",
+      "examples": [
+        {
+          "detail": "position status I",
+          "entity_id": "SP000008|R001306|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "position status I",
+          "entity_id": "SP000315|R001011|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "position status I",
+          "entity_id": "SP000438|R001356|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.002786,
+      "name": "Active job on an inactive position",
+      "owner": "IHR Position Control",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "S05",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "position",
+      "examples": [
+        {
+          "detail": "job org U332 vs position org U211",
+          "entity_id": "SP000068|R001808|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job org U113 vs position org U112",
+          "entity_id": "SP000290|R000493|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job org U131 vs position org U222",
+          "entity_id": "SP000366|R001765|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job org U143 vs position org U323",
+          "entity_id": "SP001042|R000043|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job org U122 vs position org U141",
+          "entity_id": "SP001169|R000843|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 6,
+      "failure_rate": 0.005571,
+      "name": "Job org differs from its position's org",
+      "owner": "Unit HR with IHR Position Control",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "S06",
+      "rule_score": 0.0,
+      "severity": "medium",
+      "status": "fail"
+    },
+    {
+      "domain": "position",
+      "examples": [
+        {
+          "detail": "job class 5009 vs position class 1194",
+          "entity_id": "SP000446|R001792|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job class 3666 vs position class 0055",
+          "entity_id": "SP000569|R000027|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job class 1839 vs position class 3514",
+          "entity_id": "SP000878|R000763|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job class 0516 vs position class 4617",
+          "entity_id": "SP001286|R000160|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "job class 5009 vs position class 0516",
+          "entity_id": "SP001471|R000462|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 5,
+      "failure_rate": 0.004643,
+      "name": "Job class differs from its position's class",
+      "owner": "IHR Classification",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "S07",
+      "rule_score": 0.0715,
+      "severity": "medium",
+      "status": "warn"
+    },
+    {
+      "domain": "classification",
+      "examples": [
+        {
+          "detail": "class 7999 not in SUCSS catalog",
+          "entity_id": "SP000129|R001665|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "class 9903 not in SUCSS catalog",
+          "entity_id": "SP000371|R001335|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "class 9904 not in SUCSS catalog",
+          "entity_id": "SP000950|R000191|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "class 9905 not in SUCSS catalog",
+          "entity_id": "SP001041|R001498|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "class 9901 not in SUCSS catalog",
+          "entity_id": "SP001255|R000712|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 6,
+      "failure_rate": 0.005571,
+      "name": "Civil-service job class not in the SUCSS catalog",
+      "owner": "IHR Classification (SUCSS liaison)",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "C01",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "classification",
+      "examples": [
+        {
+          "detail": "FTE rate 66300.00 < min 78000.00",
+          "entity_id": "SP000195|R000388|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE rate 64600.00 < min 76000.00",
+          "entity_id": "SP000231|R001206|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE rate 69700.00 < min 82000.00",
+          "entity_id": "SP000473|R000046|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE rate 47600.00 < min 56000.00",
+          "entity_id": "SP000802|R001233|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE rate 40800.00 < min 48000.00",
+          "entity_id": "SP001128|R001487|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 6,
+      "failure_rate": 0.005571,
+      "name": "Salary below the class range minimum (full-time equivalent)",
+      "owner": "IHR Compensation",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "C02",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "classification",
+      "examples": [
+        {
+          "detail": "FTE rate 152460.00 > max 127050.00",
+          "entity_id": "SP000726|R001251|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE rate 83160.00 > max 69300.00",
+          "entity_id": "SP001301|R001171|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "FTE rate 207600.00 > max 173000.00",
+          "entity_id": "SP001324|R001179|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.002786,
+      "name": "Salary above the class range maximum (full-time equivalent)",
+      "owner": "IHR Compensation",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "C03",
+      "rule_score": 0.4429,
+      "severity": "medium",
+      "status": "warn"
+    },
+    {
+      "domain": "classification",
+      "examples": [
+        {
+          "detail": "class code missing",
+          "entity_id": "SP000696|R001410|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "class code missing",
+          "entity_id": "SP000698|R000724|00",
+          "entity_type": "job"
+        },
+        {
+          "detail": "class code missing",
+          "entity_id": "SP001185|R001770|00",
+          "entity_type": "job"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.002786,
+      "name": "Active job with no class code",
+      "owner": "IHR Classification",
+      "population": "active_jobs",
+      "population_n": 1077,
+      "rule_id": "C04",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "org_supervisory",
+      "examples": [
+        {
+          "detail": "primary job R001055 has no supervisor",
+          "entity_id": "SP000153",
+          "entity_type": "person"
+        },
+        {
+          "detail": "primary job R000812 has no supervisor",
+          "entity_id": "SP000213",
+          "entity_type": "person"
+        },
+        {
+          "detail": "primary job R001588 has no supervisor",
+          "entity_id": "SP000974",
+          "entity_type": "person"
+        },
+        {
+          "detail": "primary job R001130 has no supervisor",
+          "entity_id": "SP001182",
+          "entity_type": "person"
+        },
+        {
+          "detail": "primary job R000295 has no supervisor",
+          "entity_id": "SP001228",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 6,
+      "failure_rate": 0.005808,
+      "name": "Active primary job with no supervisor",
+      "owner": "Unit HR; IHR HRIS",
+      "population": "active_primary_jobs",
+      "population_n": 1033,
+      "rule_id": "O01",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "org_supervisory",
+      "examples": [
+        {
+          "detail": "supervisor SP001022 not active",
+          "entity_id": "SP000232",
+          "entity_type": "person"
+        },
+        {
+          "detail": "supervisor SP000592 not active",
+          "entity_id": "SP000385",
+          "entity_type": "person"
+        },
+        {
+          "detail": "supervisor SP000531 not active",
+          "entity_id": "SP000966",
+          "entity_type": "person"
+        },
+        {
+          "detail": "supervisor SP000109 not active",
+          "entity_id": "SP000994",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.003872,
+      "name": "Supervisor is not an active worker",
+      "owner": "Unit HR",
+      "population": "active_primary_jobs",
+      "population_n": 1033,
+      "rule_id": "O02",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "org_supervisory",
+      "examples": [
+        {
+          "detail": "reporting cycle of length 2",
+          "entity_id": "SP000174",
+          "entity_type": "person"
+        },
+        {
+          "detail": "reporting cycle of length 2",
+          "entity_id": "SP000314",
+          "entity_type": "person"
+        },
+        {
+          "detail": "reporting cycle of length 2",
+          "entity_id": "SP000605",
+          "entity_type": "person"
+        },
+        {
+          "detail": "reporting cycle of length 2",
+          "entity_id": "SP000775",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.003872,
+      "name": "Cycle in reporting lines",
+      "owner": "IHR HRIS",
+      "population": "active_primary_jobs",
+      "population_n": 1033,
+      "rule_id": "O03",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "org_supervisory",
+      "examples": [
+        {
+          "detail": "supervisor is self",
+          "entity_id": "SP000179",
+          "entity_type": "person"
+        },
+        {
+          "detail": "supervisor is self",
+          "entity_id": "SP000753",
+          "entity_type": "person"
+        }
+      ],
+      "failing": 2,
+      "failure_rate": 0.001936,
+      "name": "Person supervises themselves",
+      "owner": "Unit HR",
+      "population": "active_primary_jobs",
+      "population_n": 1033,
+      "rule_id": "O04",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "org_supervisory",
+      "examples": [
+        {
+          "detail": "parent U9X missing",
+          "entity_id": "U122",
+          "entity_type": "org"
+        },
+        {
+          "detail": "parent U9X missing",
+          "entity_id": "U343",
+          "entity_type": "org"
+        }
+      ],
+      "failing": 2,
+      "failure_rate": 0.038462,
+      "name": "Org whose parent org does not exist",
+      "owner": "University Accounting (org hierarchy) with IHR",
+      "population": "orgs",
+      "population_n": 52,
+      "rule_id": "O05",
+      "rule_score": 0.0,
+      "severity": "medium",
+      "status": "fail"
+    },
+    {
+      "domain": "org_supervisory",
+      "examples": [
+        {
+          "detail": "referenced by active job/position; unknown or inactive",
+          "entity_id": "Q90",
+          "entity_type": "org"
+        },
+        {
+          "detail": "referenced by active job/position; unknown or inactive",
+          "entity_id": "U341",
+          "entity_type": "org"
+        }
+      ],
+      "failing": 2,
+      "failure_rate": 0.038462,
+      "name": "Active job or position uses an unknown or inactive org",
+      "owner": "University Accounting with unit HR",
+      "population": "orgs",
+      "population_n": 52,
+      "rule_id": "O06",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "payroll",
+      "examples": [
+        {
+          "detail": "no job record for this person/position/suffix",
+          "entity_id": "SP000028|R001477|00|2026-08-31",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "no job record for this person/position/suffix",
+          "entity_id": "SP000241|R000182|00|2026-08-31",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "no job record for this person/position/suffix",
+          "entity_id": "SP000425|R000492|00|2026-08-31",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "no job record for this person/position/suffix",
+          "entity_id": "SP001189|X900000|00|2026-09-30",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "no job record for this person/position/suffix",
+          "entity_id": "SP001257|X900001|00|2026-09-30",
+          "entity_type": "pay"
+        }
+      ],
+      "failing": 5,
+      "failure_rate": 0.000196,
+      "name": "Pay with no job record for the same person, position and suffix",
+      "owner": "University Payroll with AITS Decision Support",
+      "population": "pay_keys",
+      "population_n": 25552,
+      "rule_id": "Y01",
+      "rule_score": 0.8043,
+      "severity": "high",
+      "status": "warn"
+    },
+    {
+      "domain": "payroll",
+      "examples": [
+        {
+          "detail": "employee status T on period end",
+          "entity_id": "SP000396|R001543|00|2026-05-31",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "employee status T on period end",
+          "entity_id": "SP000480|R001755|00|2026-04-30",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "employee status T on period end",
+          "entity_id": "SP001328|R001182|00|2026-04-30",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "employee status T on period end",
+          "entity_id": "SP001342|R000615|00|2026-05-31",
+          "entity_type": "pay"
+        }
+      ],
+      "failing": 4,
+      "failure_rate": 0.000157,
+      "name": "Pay after termination without rehire",
+      "owner": "University Payroll",
+      "population": "pay_keys",
+      "population_n": 25552,
+      "rule_id": "Y02",
+      "rule_score": 0.0,
+      "severity": "critical",
+      "status": "fail"
+    },
+    {
+      "domain": "payroll",
+      "examples": [
+        {
+          "detail": "position R000285 not in position history",
+          "entity_id": "SP000498|R000285|00|2024-11-30",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "position R000285 not in position history",
+          "entity_id": "SP000498|R000285|00|2024-12-31",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "position R000285 not in position history",
+          "entity_id": "SP000498|R000285|00|2025-01-31",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "position R000285 not in position history",
+          "entity_id": "SP000498|R000285|00|2025-02-28",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "position R000285 not in position history",
+          "entity_id": "SP000498|R000285|00|2025-03-31",
+          "entity_type": "pay"
+        }
+      ],
+      "failing": 80,
+      "failure_rate": 0.003131,
+      "name": "Pay charged to a position missing from position control",
+      "owner": "University Payroll with IHR Position Control",
+      "population": "pay_keys",
+      "population_n": 25552,
+      "rule_id": "Y03",
+      "rule_score": 0.0,
+      "severity": "high",
+      "status": "fail"
+    },
+    {
+      "domain": "payroll",
+      "examples": [
+        {
+          "detail": "net pay -9776.89",
+          "entity_id": "SP000114|2026-07-31",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "net pay -6668.75",
+          "entity_id": "SP000487|2026-07-31",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "net pay -14427.23",
+          "entity_id": "SP001210|2026-07-31",
+          "entity_type": "pay"
+        }
+      ],
+      "failing": 3,
+      "failure_rate": 0.000117,
+      "name": "Negative net pay for a person and period",
+      "owner": "University Payroll",
+      "population": "pay_keys",
+      "population_n": 25552,
+      "rule_id": "Y04",
+      "rule_score": 0.9765,
+      "severity": "medium",
+      "status": "warn"
+    },
+    {
+      "domain": "payroll",
+      "examples": [
+        {
+          "detail": "2 identical rows for earn code REG",
+          "entity_id": "SP000342|R001007|00|2026-06-30",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "2 identical rows for earn code REG",
+          "entity_id": "SP000352|R000861|00|2026-06-30",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "2 identical rows for earn code REG",
+          "entity_id": "SP001107|R001589|00|2026-06-30",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "2 identical rows for earn code REG",
+          "entity_id": "SP001148|R000198|00|2026-06-30",
+          "entity_type": "pay"
+        },
+        {
+          "detail": "2 identical rows for earn code REG",
+          "entity_id": "SP001298|R001021|00|2026-06-30",
+          "entity_type": "pay"
+        }
+      ],
+      "failing": 5,
+      "failure_rate": 0.000196,
+      "name": "Duplicate pay accounting rows",
+      "owner": "University Payroll with AITS Decision Support",
+      "population": "pay_keys",
+      "population_n": 25552,
+      "rule_id": "Y05",
+      "rule_score": 0.8043,
+      "severity": "high",
+      "status": "warn"
+    }
+  ],
+  "synthetic": true,
+  "totals": {
+    "by_severity": {
+      "critical": 63,
+      "high": 168,
+      "low": 0,
+      "medium": 45
+    },
+    "failing_entities": 276,
+    "failing_rules": 43,
+    "rules": 43
+  }
+}
