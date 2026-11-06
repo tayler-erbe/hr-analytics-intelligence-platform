@@ -98,6 +98,66 @@ ul.plain{padding-left:20px;margin:0}
     <p class="caveat"><strong>Caveat:</strong> synthetic population calibrated to UIUC's public IPEDS total (12,905) and QWI hazards. Not a prediction about UIUC staff; the AI lever is an assumption.</p>
   </li>
   <li class="card">
+    <h3><a href="swp_workbench/swp_workbench.html">Strategic Workforce Planning workbench</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">swp_workbench/swp_workbench.html</span></div>
+    <p class="desc">IHR's nine planning worksheets with evidence behind them: critical roles, bench strength, knowledge stewardship, capability gaps, ERP and AI lenses.</p>
+    <p class="caveat"><strong>Caveat:</strong> synthetic workforce and units; SURS rules from search text; suppression is heuristic. Not about real UIUC units.</p>
+  </li>
+  <li class="card">
+    <h3><a href="ai_adoption/ai_adoption_scorecard.html">AI Adoption Impact Scorecard</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">ai_adoption/ai_adoption_scorecard.html</span></div>
+    <p class="desc">Measures the AI Professional Development Series beyond attendance: tier badges, proficiency, 30/60/90-day behavior change, use cases, trust signals and badge-to-talent links.</p>
+    <p class="caveat"><strong>Caveat:</strong> invented program data; comparisons are associations, not causal effects.</p>
+  </li>
+  <li class="card">
+    <h3><a href="ai_proficiency/rubric_toolkit.html">AI proficiency rubric toolkit</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">ai_proficiency/rubric_toolkit.html</span></div>
+    <p class="desc">Human-scored rubric and 12 work tasks aligned to AI Explorer, Catalyst and Practitioner, with rater-reliability statistics.</p>
+    <p class="caveat"><strong>Caveat:</strong> synthetic ratings show badge decisions are not yet dependable; tasks need equating before a pilot.</p>
+  </li>
+  <li class="card">
+    <h3><a href="survey_text/survey_insights.html">Survey text intelligence</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">survey_text/survey_insights.html</span></div>
+    <p class="desc">Redacted theme analysis of Workplace Satisfaction and exit-survey comments, eNPS by segment and driver analysis, designed for local models.</p>
+    <p class="caveat"><strong>Caveat:</strong> synthetic comments; accuracy figures are a pipeline check, not real-world performance.</p>
+  </li>
+  <li class="card">
+    <h3><a href="ai_usecases/registry.html">AI use-case registry</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">ai_usecases/registry.html</span></div>
+    <p class="desc">Intake, risk triage (HB 3773 employment decisions to Tier 4 review), lifecycle board, measured time-returned ROI and reuse map.</p>
+    <p class="caveat"><strong>Caveat:</strong> fictional entries; tier rules need calibration with Counsel and security.</p>
+  </li>
+  <li class="card">
+    <h3><a href="erp_readiness/readiness_dashboard.html">ERP conversion readiness</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">erp_readiness/readiness_dashboard.html</span></div>
+    <p class="desc">43 HR data-quality checks for the Banner-to-cloud-ERP move with readiness gates and a mock-conversion reconciliation.</p>
+    <p class="caveat"><strong>Caveat:</strong> synthetic EDW-shaped data; EDW column names are assumptions.</p>
+  </li>
+  <li class="card">
+    <h3><a href="peer_benchmarks/peer_trends.html">IPEDS peer trends, Fall 2015–2023</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">peer_benchmarks/peer_trends.html</span></div>
+    <p class="desc">U of I campuses against Big Ten publics: staffing per student, management share, tenure, new hires, faculty and staff pay (current and real dollars).</p>
+    <p class="caveat"><strong>Caveat:</strong> institution-level public aggregates; classification differences drive much of the variation. Not a pay-equity finding.</p>
+  </li>
+  <li class="card">
+    <h3><a href="faculty_pipeline/faculty_pipeline.html">Faculty pipeline model</a></h3>
+    <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">faculty_pipeline/faculty_pipeline.html</span></div>
+    <p class="desc">Rank, tenure clock, SURS retirement and hiring-mix scenarios for UIUC, UIC and UIS over 15 years.</p>
+    <p class="caveat"><strong>Caveat:</strong> calibrated to public IPEDS stock; ages, tiers and rates are synthetic or literature-based; not backtested.</p>
+  </li>
+  <li class="card">
+    <h3><a href="sponsored_funding/funding_cliff.html">Sponsored-funding cliff</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">sponsored_funding/funding_cliff.html</span></div>
+    <p class="desc">Federal grant run-rate and expirations by quarter and agency for UIUC and UIC from USAspending and NIH RePORTER.</p>
+    <p class="caveat"><strong>Caveat:</strong> obligations are not salaries; the position-level join is designed, not run.</p>
+  </li>
+  <li class="card">
+    <h3><a href="policy_assistant/index.html">HR policy assistant (local build)</a></h3>
+    <div class="meta"><span class="badge b-public">Public</span><span class="path">policy_assistant/index.html</span></div>
+    <p class="desc">Cited answers from public Illinois HR pages, with refusal of individual advice and employment decisions.</p>
+    <p class="caveat"><strong>Caveat:</strong> generated locally (python -m policy_assistant.cli demo); not in Git; held-out accuracy is low and System HR pages are missing.</p>
+  </li>
+  <li class="card">
     <h3><a href="demo/role-evolution.html">Role evolution lab (Demo University IT)</a></h3>
     <div class="meta"><span class="badge b-synthetic">Synthetic</span><span class="path">demo/role-evolution.html</span></div>
     <p class="desc">A fictional enterprise IT organization with role histories, skills, tools and evidence-linked development proposals.</p>
@@ -129,13 +189,11 @@ EVALUATION  rubric v1.0 · benchmark v1.0 · Snowflake / Databricks kits · cust
 <table>
   <thead><tr><th scope="col">Area</th><th scope="col">Status</th></tr></thead>
   <tbody>
-    <tr><td>Public data lake, graph, reskilling map, evidence page</td><td>Built or prototype, on public data</td></tr>
-    <tr><td>Benchmark, Demo IT lab, scenario planner</td><td>Built or prototype, on synthetic data</td></tr>
+    <tr><td>Public data lake, graph, reskilling map, evidence page, IPEDS peer trends, sponsored-funding cliff, policy assistant</td><td>Built or prototype, on public data</td></tr>
+    <tr><td>Benchmark, Demo IT lab, scenario planner, SWP workbench, AI adoption scorecard, proficiency rubric, survey themes, use-case registry, ERP readiness, faculty pipeline</td><td>Built or prototype, on synthetic data</td></tr>
     <tr><td>Snowflake and Databricks kits</td><td>Written, not run in any vendor account. No platform has a score</td></tr>
-    <tr><td>SUCSS-to-O*NET mappings</td><td>Unreviewed suggestions</td></tr>
+    <tr><td>SUCSS-to-O*NET mappings</td><td>Duty-based matcher with a 4,415-row review queue; unreviewed until an HR analyst confirms</td></tr>
     <tr><td>BLS OEWS / Projections / JOLTS; Census ACS</td><td>Not loaded: BLS needs a contact User-Agent; Census needs an API key</td></tr>
-    <tr><td>AI adoption scorecard, proficiency rubric, use-case registry, survey themes, SUCSS spec mapping, peer benchmarks, policy assistant</td><td>In progress (no demo page yet)</td></tr>
-    <tr><td>ERP readiness, sponsored funding, faculty pipeline</td><td>Not started</td></tr>
   </tbody>
 </table>
 </div>

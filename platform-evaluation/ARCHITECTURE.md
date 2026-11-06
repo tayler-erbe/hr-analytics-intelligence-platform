@@ -82,14 +82,17 @@ Data class: **public** = published open data; **synthetic** = invented or genera
 | `notebooks/01_databricks_reference_pilot.py` | Imports the pilot JSONL into Databricks and shows the review queue | `data/prepared/*.jsonl` in a UC Volume | Delta tables (optional) | syntax-checked only | design-only | public |
 | `scripts/workforce_store.py` ([DATA_INTAKE.md](DATA_INTAKE.md)) | Local SQLite evidence store for dated org-chart, directory, appointment, description and posting observations | Public reference tables; JSONL observations in `data/local/` | `data/local/*.sqlite`, coverage report | `scripts/test_workforce_store.py` (4) | built | public reference; imported observations internal-only |
 | `scripts/build_synthetic_demo.py`, `build_demo_explorer.py`, `templates/` ([design](SYNTHETIC_DEMO_AND_AGENT_DESIGN.md)) | Fictional "Demo University Shared IT" (57 positions, 171 role snapshots, 48 proposals) | Seeded generator | `data/synthetic/*.jsonl`, `output/demo/role-evolution.html` | none dedicated | built | synthetic |
-| `ai_proficiency/` | Human-rated AI proficiency rubric for AI PD badges (`rubric.yaml`) | — | — | `tests/` (empty) | in progress | synthetic / internal-only when real samples arrive |
-| `ai_usecases/` | AI use-case registry for the Joint Innovation in AI Team (`schema/usecase.schema.json`) | — | — | `tests/fixtures` | in progress | synthetic |
-| `survey_text/` | Codebook and lexicon baseline for exit / satisfaction survey themes (`codebook.yaml`, draft) | — | — | — | in progress | synthetic; real text internal-only |
-| `ai_adoption/` | AI Adoption Impact Scorecard (brief item #1): data contract (`contract.py`) and synthetic generator | Registration, badge, survey and AI-tool aggregates (synthetic for now) | — | `tests/` | in progress | synthetic; real extracts internal-only |
-| `sucss_mapping/` | Acquires SUCSS class-specification series pages (duties, qualifications) to support reviewed SUCSS → O*NET mapping | Public SUCSS site | Cached spec pages (planned) | — | in progress | public |
-| `peer_benchmarks/` | Multi-year IPEDS HR/enrollment and CPI-U downloads for peer benchmarking | Public NCES and BLS files | `data/lake/raw/ipeds_history/`, `manifests/` | `tests/` | in progress | public |
-| `policy_assistant/` | Policy-question assistant: crawl scope, extraction, evaluation set | Public policy pages | — | `tests/`, `eval/` | in progress | public |
-| `erp_readiness/`, `sponsored_funding/`, `faculty_pipeline/` | Planned | — | — | — | not started (no folder yet) | — |
+| `ai_proficiency/` | Human-scored AI proficiency rubric and 12 work tasks aligned to AI Explorer/Catalyst/Practitioner; reliability, Angoff, DIF | Synthetic ratings (real work samples internal-only) | `output/ai_proficiency/rubric_toolkit.html`, reliability report | 42 | prototype | synthetic |
+| `ai_usecases/` | AI use-case registry: intake schema, 17 triage rules (HB 3773 to Tier 4), measured-time ROI, reuse map | Fictional entries | `output/ai_usecases/registry.html` | 68 | prototype | synthetic |
+| `survey_text/` | Exit and satisfaction comment pipeline: layered redaction, lexicon/NMF themes, loopback-only LLM coder, eNPS drivers, quote approval | Synthetic Qualtrics-style exports (real text internal-only) | `output/survey_text/survey_insights.html` | 23 | prototype | synthetic |
+| `ai_adoption/` | AI Adoption Impact Scorecard: reach → proficiency → 30/60/90-day behavior → results, badge-to-talent view, complementary suppression | Synthetic program events (real extracts internal-only) | `output/ai_adoption/ai_adoption_scorecard.html` | 28 | prototype | synthetic |
+| `sucss_mapping/` | Duty-based SUCSS class → O*NET matcher with evidence pairs and abstention; 4,415-row HR review queue; no spec text in Git | Public SUCSS series pages (cached, gitignored) | `outputs/review_queue.*`, `summary.json` | 13 | prototype | public |
+| `peer_benchmarks/` | Fall 2015–2023 IPEDS trends for U of I vs Big Ten publics, CPI-adjusted pay, comparability flags | Public NCES files, BLS CPI-U | `output/peer_benchmarks/peer_trends.html` | 20 | built | public |
+| `policy_assistant/` | Cited HR policy Q&A over public IHR/SUCSS pages with refusal rules and deterministic eval | Public pages (crawl gitignored) | Local demo page (gitignored), eval results | 27 | prototype | public |
+| `erp_readiness/` | 43 HR conversion-readiness checks compiled to 4 SQL dialects, readiness gates, mock-conversion reconciliation | Synthetic EDW-shaped history | `output/erp_readiness/readiness_dashboard.html` | 20 | prototype | synthetic |
+| `sponsored_funding/` | Federal grant run-rate and expiry cliff for UIUC/UIC; designed labor-distribution join | USAspending, NIH RePORTER | `output/sponsored_funding/funding_cliff.html` | 20 | built | public |
+| `faculty_pipeline/` | Faculty rank/tenure/SURS retirement Markov model with 225 scenarios | IPEDS, literature, synthetic ages/tiers | `output/faculty_pipeline/faculty_pipeline.html` | 16 | prototype | public + synthetic |
+| `swp_workbench/` | Evidence layer under IHR's nine Strategic Workforce Planning worksheets | Synthetic workforce (workforce_sim), reskilling outputs | `output/swp_workbench/swp_workbench.html` | 27 | prototype | synthetic |
 | `SERVER_PROJECT_PRESERVATION_HANDOFF.md` | Separate handoff for backing up server pipeline projects | — | — | — | design-only | n/a |
 
 Test counts are `def test` functions in each file, counted 2026-11-06.
@@ -145,9 +148,9 @@ Shared rules: the same frozen fixtures and answer keys; no model grades another 
 | SUCSS catalog (883 records) and its 2,649 *unreviewed* candidates | Demo University Shared IT (57 positions, 171 snapshots, 48 proposals) | Reviewed SUCSS → O*NET mappings |
 | IPEDS Fall 2023 HR, HD2024, EFFY2024 | `workforce_sim` population (12,905 people, totals matched to IPEDS) | BLS OEWS, Employment Projections, JOLTS silver tables |
 | QCEW 2015–2025, QWI Illinois higher ed, Indeed, AEI | `custom_stack/tests/fixtures/contract` | Census ACS county labor table; IPEDS 2024 HR |
-| 80 silver, 23 contract, 11 gold; graph with 122,874 nodes | Survey-text and use-case fixtures (in progress) | Internal EDW history, JDX, requisitions, learning, survey data (none present) |
+| 80 silver, 23 contract, 11 gold; graph with 122,874 nodes | All SP&P prototypes run on synthetic data | Internal EDW history, JDX, requisitions, learning, survey data (none present) |
 | Research reports (from search excerpts; vendor feature status unverified) | Scenario assumptions such as hiring freezes and AI capacity (user-set) | Blind holdout question sets for AI evaluation |
-| | | AI adoption scorecard, proficiency pilot, survey themes, use-case registry, SUCSS spec mapping, peer benchmarks, policy assistant (in progress); ERP readiness, sponsored funding, faculty pipeline (not started) |
+| | | Reviewed SUCSS mappings; vendor-account runs of both kits; a blind holdout question set |
 | | | Live autonomous agents; POC models (Markov, SRI, departure risk) on real data |
 
 ## 8. Run order
@@ -210,5 +213,5 @@ Platform kits run inside vendor trial accounts by following their READMEs. Use p
 - **No blind holdout.** The benchmark's 30 cases and the custom stack's 44 questions are visible development sets.
 - **Other data gaps:** IPEDS 2024 HR files return 404, so Fall 2023 is the latest. The 219 MB AEI 2026-06-26 release was blocked by the network. QWI cannot separate public from private colleges. The latest two QWI quarters are provisional.
 - **Internal data is absent by design.** Real POC models (mobility, succession, forecasting) need approved EDW history, longitudinal outcomes and HB 3773 review first.
-- **SP&P solution folders are partial.** `ai_adoption`, `ai_proficiency`, `ai_usecases`, `survey_text`, `sucss_mapping`, `peer_benchmarks` and `policy_assistant` were in progress without READMEs on 2026-11-06. `erp_readiness`, `sponsored_funding` and `faculty_pipeline` do not exist yet. Update §3 when their READMEs land.
+- **SP&P prototypes are unvalidated on real data.** Every SP&P component runs on synthetic or public data; each README lists what real data and reviews it needs before use.
 - **Business definitions need owners.** Benchmark definitions are approved for the synthetic fixture only. AITS domain-owner approval for real measures, performance targets and the peer panel (a proposal, not an approved HR peer group) is still pending.
