@@ -1,0 +1,72 @@
+ordinal	column	datatype	pk	comment
+1	EDW_PERS_ID	NUMBER(9,0)	Y	An identification number generated for each person for Enterprise Data Warehouse (EDW) use only. EDW Person ID is used as the key for all references to persons in the EDW.
+2	EMPEE_EFF_DT	DATE	Y	The date the details for the employee record became effective in the corresponding source system.
+3	EMPEE_EXP_DT	DATE		For records no longer in effect, this is the day before the record expired in the EDW (i.e., the last effective date). For current records, expiration date is set to 12/31/9999.
+4	EMPEE_CUR_INFO_IND	VARCHAR2(1)		When the value is 'Y', this indicates the record is considered to contain current, effective information. The value of 'N' indicates that the record is no longer considered to contain current information. The value of 'D' indicates that the record has been deleted from the source system.
+5	ACTIVE_EMPEE_IND	VARCHAR2(1)		Indicates whether or not the employee is employed.
+6	FIRST_HIRE_DT	DATE		The initial date the employment decision was made by the University.
+7	CUR_HIRE_DT	DATE		The most recent date the employment decision was made by the University.
+8	ADJ_SVC_DT	DATE		Date used to determine years of service for leave accrual if the First Hire Date and Current Hire Date are not equal.
+9	FIRST_WORK_DT	DATE		The first day the employee physically worked at the University.
+10	LAST_WORK_DT	DATE		The last day the employee physically worked at the University.
+11	ORIG_STATUS_HIRE_DT	DATE		The Original Hire date for Status Appointment.
+12	EMPEE_STATUS_CD	VARCHAR2(1)		The status code indicates whether an employee is active, terminated or on leave, with or without benefits. Valid values include A - Active, B - Leave without pay and with benefits and F - Leave with pay and with benefits.
+13	EMPEE_STATUS_DESC	VARCHAR2(30)		The status description provides the definition of the Employee Status Code. Valid values include A - Active, B - Leave without pay and with benefits and F - Leave with pay and with benefits.
+14	EMPEE_CLS_CD	VARCHAR2(2)		The employee class is a high level grouping of employees and details that are associated with this grouping. Details from the employee class default to the position class unless otherwise changed.
+15	EMPEE_CLS_LONG_DESC	VARCHAR2(30)		The full description or title for the associated Employee Class.
+16	EMPEE_GROUP_CD	VARCHAR2(4)		A higher level grouping of employee classes.
+17	EMPEE_GROUP_DESC	VARCHAR2(30)		A higher level grouping of employee classes.
+18	TERMN_REASON_CD	VARCHAR2(2)		Code used to identify the reason of termination.
+19	TERMN_REASON_DESC	VARCHAR2(30)		A full description or title of the termination code.
+20	EMPEE_TERMN_DT	DATE		Termination date of the employee.
+21	EMPEE_LEAVE_CATGRY_CD	VARCHAR2(2)		A code identifying which types of leave an employee is eligible for.
+22	EMPEE_LEAVE_CATGRY_DESC	VARCHAR2(30)		A full description or title of the leave category code for which an employee is eligible.
+23	BNFT_CATGRY_CD	VARCHAR2(2)		The benefit category to which the employee belongs.
+24	BNFT_CATGRY_DESC	VARCHAR2(30)		A full description or title of the benefit category code.
+25	BNFT_ELIG_IND	VARCHAR2(1)		Indicates whether an employee is eligible to receive University benefits.
+26	HR_CAMPUS_CD	VARCHAR2(3)		Formerly known as the Payroll Campus Code.
+27	HR_CAMPUS_NAME	VARCHAR2(30)		Formerly known as the Payroll Campus Code.
+28	FLSA_IND	VARCHAR2(1)		Used for Fair Labor Overtime compensation. (C)ash, (A)ccrual or (N)o FLSA.
+29	COA_CD	VARCHAR2(1)		Chart of Accounts code as defined by the BANNER Finance system. This is the C in C-FOAPAL.
+30	ORG_CD	VARCHAR2(6)		Organization code as defined by the BANNER Finance system. This is the O in C-FOAPAL.
+31	EMPEE_CAMPUS_CD	VARCHAR2(1)		A code identifying the campus of the employee's primary job.
+32	EMPEE_CAMPUS_NAME	VARCHAR2(35)		Name of campus of the employee's primary job.
+33	EMPEE_COLL_CD	VARCHAR2(6)		A code identifying the college of the employee's primary job.
+34	EMPEE_COLL_NAME	VARCHAR2(35)		The college name of the employee's primary job.
+35	EMPEE_DEPT_CD	VARCHAR2(6)		A code identifying the department of the employee's primary job.
+36	EMPEE_DEPT_NAME	VARCHAR2(35)		Name of department of the employee's primary job.
+37	WORK_PERD_CD	VARCHAR2(4)		Code to define the work period.
+38	WORK_PERD_DESC	VARCHAR2(30)		Description to define the work period.
+39	EMPEE_POST_DT	DATE		Date when the record was inserted or last modified in the EDW.
+40	EMPEE_DATA_STATUS_DESC	VARCHAR2(10)		A description that categorizes the status of records as current, no longer effective (i.e., expired), effective in the future or deleted for University Business.
+41	EMPEE_DATA_EXP_DT	DATE		The last date on which the data in this record is effective for University Business.
+42	EMPEE_RET_IND	VARCHAR2(1)		This field is a Y/N flag indicating whether the employee is retired. This field is derived. The value of this field is set to 'Y' if the Termination reason code = 'TR' or 'TF' or if the Employee eclass = 'TR'; otherwise it is set to 'N'.
+43	EMPEE_ORG_TITLE	VARCHAR2(35)		Name of organization of the employee's primary job.
+44	UNIV_SNRTY_DT	DATE		The date on which years of service to the university began. This date does not take any prior service elsewhere into account.
+45	EMPEE_SUB_DEPT_LEVEL_6_CD	VARCHAR2(6)		A code identifying the level 6 subdepartment associated with each employee record.
+46	EMPEE_SUB_DEPT_LEVEL_6_NAME	VARCHAR2(35)		The name of the level 6 subdepartment associated with each employee record.
+47	EMPEE_SUB_DEPT_LEVEL_7_CD	VARCHAR2(6)		A code identifying the level 7 subdepartment associated with each employee record.
+48	EMPEE_SUB_DEPT_LEVEL_7_NAME	VARCHAR2(35)		The name of the level 7 subdepartment associated with each employee record.
+49	EMPEE_LAST_PD_DT	DATE		The last day of the Pay Period for which an employee was paid.
+50	EMPEE_FTE	NUMBER(7,3)		The sum of an employee's FTE across all their current, active (i.e., non-terminated) jobs.
+51	EMPEE_ANNL_SAL	NUMBER(12,2)		The sum of an employee's salary across all their current, active (i.e., non-terminated) jobs. It excludes Job Suffixes of CE and Job Number C63998. The Job Detail Salary is adjusted when APPT PCT is than 1.
+52	EMPEE_ADMIN_LEVEL_2_CD	VARCHAR2(6)		The two digit Employee Detail Admin Code identifies the Vice Chancellor that a person would report to.
+53	EMPEE_ADMIN_LEVEL_2_NAME	VARCHAR2(35)		The Employee Detail Admin Name is the title associated with the Employee Detail Admin Code.
+54	E_VERIFY_CASE_NBR	VARCHAR2(20)		Number entered into the SDE by central HR.
+55	CASE_NBR_ENTRY_USER_ID	VARCHAR2(30)		The name of the person who put the E-Verify Case Number into Banner.
+56	CASE_NBR_ENTRY_DT	DATE		The date that the person put the E-Verify Case Number into Banner.
+57	HIRETOUCH_ID	VARCHAR2(50)		The users' HireTouch identification number.
+58	E_VERIFY_EFF_DT	DATE		The date the electronic verification became effective
+59	SURS_ANNUITANT_AFFECT_DT	DATE		This date will be populated when an employee becomes a SURS affected annuitant.
+60	SURS_LAST_HR_REVW_DT	DATE		Date the SURS information was last reviewed by HR.
+61	SURS_MAX_ANNL_EARNS_AMT	NUMBER		The annuitant's highest annual rate of earnings received prior to retirement
+62	SURS_FORTY_PCT_THRSHLD_AMT	NUMBER		The value should be 40% of the SURS highest annual earnings.
+63	SURS_LAST_UPDATE_CHG_ID	VARCHAR2(30)		The netid of the Banner user updating the SURS SDE fields.
+64	SURS_ENTR_EDW_PERS_ID	NUMBER(9,0)		
+65	SURS_ENTR_FULL_NAME	VARCHAR2(180)		The full name of the Banner user updating the SURS SDE fields.
+66	EMPEE_LEAVE_REASON_CD	VARCHAR2(2)		A code identifying the leave reason.
+67	EMPEE_LEAVE_REASON_DESC	VARCHAR2(30)		A description of the code identifying the leave reason.
+68	EMPEE_LOA_FROM_DT	DATE		Beginning date of the leave of absence.
+69	EMPEE_LOA_TO_DT	DATE		Ending date of the leave of absence.
+70	EMPEE_USER_ID	VARCHAR2(30)		The User Id of the person who entered the Leave of Absence information.
+71	SURS_UPDATE_NOTE_TXT	VARCHAR2(60)		Notes entered by the Banner user updating the SURS SDE fields.
