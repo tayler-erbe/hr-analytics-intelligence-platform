@@ -1,0 +1,63 @@
+ordinal	column	datatype	pk	comment
+1	EDW_PERS_ID	NUMBER(9,0)	Y	EDW person key.
+2	PERS_HIST_EFF_DT	DATE	Y	The date that this record became effective in the corresponding source system.
+3	PERS_EXP_DT	DATE		Day before the record expired (last effective date); current records 12/31/9999.
+4	PERS_CUR_INFO_IND	VARCHAR2(1)		Current information indicator.
+5	UIN	VARCHAR2(9)		University identification number.
+6	SSN	VARCHAR2(15)		Social Security Number
+7	PERS_FNAME	VARCHAR2(60)		First Name
+8	PERS_MNAME	VARCHAR2(60)		Middle Name
+9	PERS_LNAME	VARCHAR2(60)		Last Name
+10	PERS_NAME_SUFFIX	VARCHAR2(20)		Name suffix
+11	BIRTH_DT	DATE		Birth Date
+12	SEX_CD	VARCHAR2(1)		Sex code
+13	SEX_DESC	VARCHAR2(15)		Sex description
+14	PERS_MARITAL_STATUS_CD	VARCHAR2(1)		Marital status code
+15	PERS_MARITAL_STATUS_DESC	VARCHAR2(30)		Marital status description
+16	PERS_CITZN_TYPE_CD	VARCHAR2(2)		Citizenship type code
+17	PERS_CITZN_TYPE_DESC	VARCHAR2(30)		Citizenship type description
+18	PERS_CITZN_IND	VARCHAR2(1)		Full US citizenship indicator
+19	VETERAN_CLS_CD	VARCHAR2(1)		Veteran classification code
+20	VETERAN_CLS_DESC	VARCHAR2(45)		Veteran classification description
+21	SPECIAL_DISABLED_VETERAN_IND	VARCHAR2(1)		Special disabled veteran indicator
+22	SEARCH_FNAME	VARCHAR2(60)		Normalized first name
+23	SEARCH_MNAME	VARCHAR2(60)		Normalized middle name
+24	SEARCH_LNAME	VARCHAR2(60)		Normalized last name
+25	PERS_HIST_POST_DT	DATE		The date that this record was loaded to the EDW.
+26	NON_UIN_UNIQUE_ID	VARCHAR2(9)		ID for recruits/applicants before UIN.
+27	PERS_PREFERRED_FNAME	VARCHAR2(60)		Preferred first name
+28	PERS_NAME_PREFIX	VARCHAR2(20)		Name prefix
+29	LEGACY_CD	VARCHAR2(1)		Legacy (alumnus relative) code
+30	LEGACY_DESC	VARCHAR2(30)		Legacy description
+31	PERS_CONFIDENTIALITY_IND	VARCHAR2(1)		Confidential record indicator (strict confidentiality when Y).
+32	BIRTH_CITY	VARCHAR2(50)		Birth city
+33	BIRTH_STATE_CD	VARCHAR2(3)		Birth state code
+34	BIRTH_STATE_NAME	VARCHAR2(30)		Birth state name
+35	PERS_CITZN_TYPE_GROUP	VARCHAR2(40)		Domestic / International / Not Reported
+36	AGE	NUMBER(5,0)		Age; calculated only for current rows of non-deceased persons.
+37	AGE_AT_DEATH	NUMBER(5,0)		Age at death; current rows of deceased persons.
+38	IPEDS_RACE_ETH_CATGRY	VARCHAR2(1)		Derived IPEDS race/ethnicity category ('9' for citizenship types AS, NR, RA; else from T_PERS_RACE_ETH_HIST via T_RACE_ETH_IPEDS_CD_HIST).
+39	IPEDS_RACE_ETH_CATGRY_DESC	VARCHAR2(30)		Description of the derived IPEDS category.
+40	PERS_DSD	VARCHAR2(10)		Data status description (current, expired, future, deleted).
+41	HISPANIC_ETH_IND	VARCHAR2(1)		Hispanic/Latino indicator
+42	AIAN_RACE_IND	VARCHAR2(1)		American Indian or Alaska Native indicator
+43	ASIAN_RACE_IND	VARCHAR2(1)		Asian indicator
+44	BLACK_RACE_IND	VARCHAR2(1)		Black or African American indicator
+45	NHPI_RACE_IND	VARCHAR2(1)		Native Hawaiian or Other Pacific Islander indicator
+46	WHITE_RACE_IND	VARCHAR2(1)		White indicator
+47	RACE_VERF_IND	VARCHAR2(1)		Race re-verification indicator
+48	RACE_VERF_DT	DATE		Race re-verification date
+49	MULT_RACE_IND	VARCHAR2(1)		More than one race selected
+50	VISUAL_VERF_IND	VARCHAR2(1)		Visual verification indicator
+51	VERIFIER_EDW_PERS_ID	NUMBER(9,0)		Verifier EDW person ID
+52	VISUAL_VERF_DT	DATE		Visual verification date
+53	VERIFY_ETH_CHG_IND	VARCHAR2(1)		Ethnicity visually verified
+54	VERIFY_RACE_CHG_IND	VARCHAR2(1)		Race visually verified
+55	ARMED_FORCES_SVC_MEDAL_IND	VARCHAR2(1)		Armed forces service medal (self-reported)
+56	RACE_ETH_RPT_CD	VARCHAR2(1)		Derived reporting code: U unknown (citizenship UC), 9 international (AS, NR, RA), H Hispanic, M multi-race, 1 AIAN, 2 Asian, 3 Black/African American, 4 NHPI, 5 White, U if none.
+57	RACE_ETH_RPT_DESC	VARCHAR2(60)		Description of RACE_ETH_RPT_CD.
+58	VETERAN_ACTIVE_DUTY_SEPRTN_DT	DATE		Active duty separation date
+59	GENDER_CD	VARCHAR2(4)		
+60	GENDER_DESC	VARCHAR2(60)		
+61	PERS_PRONOUN_CD	VARCHAR2(4)		
+62	PERS_PRONOUN_DESC	VARCHAR2(60)		

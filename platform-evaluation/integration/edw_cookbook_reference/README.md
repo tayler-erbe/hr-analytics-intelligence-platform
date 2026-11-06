@@ -10,7 +10,8 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 | T_EMPEE_HIST | 71 | Verified 2026-11-06 |
 | T_EMPEE_HIST_5 | 27 | Verified 2026-11-06 (secured) |
 | T_POSN_HIST | 52 | Verified 2026-11-06 |
-| T_PERS_HIST, payroll accounting detail, reference tables (org, E-Class, P-Class/job class) | — | Pending |
+| T_PERS_HIST | 62 | Verified 2026-11-06 (comments condensed; restricted columns flagged below) |
+| Payroll accounting detail, reference tables (org, E-Class, P-Class/job class) | — | Pending |
 
 ## Conventions confirmed by T_JOB_DETL_HIST
 
@@ -56,3 +57,11 @@ This reference outranks `../edw_public_reference/` (public job aids and search s
 - Position-description freshness: `POSN_DESC_UPDATE_DT` (last review of the physical position description).
 - Supervision: `SUPV_POSN_NBR`.
 - There is no organization column on the position table; a position's org comes from its job records (or a position-funding/labor-distribution table not yet transcribed).
+
+## Conventions confirmed by T_PERS_HIST (person; highly sensitive)
+
+- Primary key: EDW_PERS_ID + PERS_HIST_EFF_DT; PERS_EXP_DT inclusive (12/31/9999 open end); PERS_CUR_INFO_IND; PERS_HIST_POST_DT (load date); PERS_DSD data status.
+- **Never extract, never synthesize realistic values:** UIN, SSN, all name fields (FNAME/MNAME/LNAME/SUFFIX/PREFIX/PREFERRED/SEARCH_*), NON_UIN_UNIQUE_ID, BIRTH_CITY/STATE, marital status, legacy, verifier IDs and verification dates. Synthetic samples keep these columns NULL.
+- **Model inputs allowed:** EDW_PERS_ID, dates, current indicator, and an age band derived from BIRTH_DT/AGE (AGE is populated only on current rows).
+- **Restricted, fairness audit only (never model features):** SEX_CD/DESC, GENDER_CD/DESC, RACE_ETH_RPT_CD (the University's derived reporting code: U, 9, H, M, 1–5), IPEDS_RACE_ETH_CATGRY, the race/ethnicity indicators, citizenship type group, veteran fields. PERS_CONFIDENTIALITY_IND = 'Y' rows require strict handling and must be excluded from any published aggregate below the approved threshold.
+- Race/ethnicity derivation references T_PERS_RACE_ETH_HIST and T_RACE_ETH_IPEDS_CD_HIST; T_PERS (DEATH_IND) also exists.
