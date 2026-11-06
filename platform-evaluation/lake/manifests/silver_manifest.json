@@ -1,5 +1,5 @@
 {
- "built_at_utc": "2026-11-06T06:59:20.061425+00:00",
+ "built_at_utc": "2026-11-06T19:16:19.185336+00:00",
  "duckdb_version": "2.0.0",
  "tables": {
   "aei_automation_vs_augmentation_by_task": {
@@ -158,6 +158,554 @@
    ],
    "source_sha256": {
     "data/lake/raw/anthropic_economic_index/labor_market_impacts__task_penetration.csv": "85bee872db1d55d3e9a7f4e89da5ae4a5d59aa8ec875d728fbf4b7d820984616"
+   }
+  },
+  "bls_jolts": {
+   "domain": "bls_jolts",
+   "rows": 628661,
+   "bytes": 833339,
+   "note": "JOLTS monthly series with dimension labels; ratelevel L = level (thousands), R = rate",
+   "columns": [
+    {
+     "name": "series_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "period",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "footnote_codes",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "seasonal",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry_text",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "state_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "state_text",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sizeclass_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "dataelement_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "dataelement_text",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ratelevel_code",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/bls_jolts/jt.data.1.AllItems",
+    "data/lake/raw/bls_jolts/jt.dataelement",
+    "data/lake/raw/bls_jolts/jt.industry",
+    "data/lake/raw/bls_jolts/jt.series",
+    "data/lake/raw/bls_jolts/jt.state"
+   ],
+   "source_sha256": {
+    "data/lake/raw/bls_jolts/jt.data.1.AllItems": "37d8650b0486d6a67895ca1996c26d98a15eb0ab15391ebbaaa4ea6c389703a1",
+    "data/lake/raw/bls_jolts/jt.dataelement": "32e1f1a79b1d207e70aff5988d574d40930d38f30dbab2b5a8e3f52d68890e59",
+    "data/lake/raw/bls_jolts/jt.industry": "94c0c48daa6c3e93d898367a944c8357faba6be22c4bf034d99ad587713d3b50",
+    "data/lake/raw/bls_jolts/jt.series": "f5715f0142c9dc37c5a39164e3b58cf0fe24d550025aafd43732ed0899ac300a",
+    "data/lake/raw/bls_jolts/jt.state": "9abe706a9638003324046af1525eaebc2bdda9c9da715b1a9dd9700beefabecb"
+   }
+  },
+  "bls_oews_all": {
+   "domain": "bls_oews",
+   "rows": 827964,
+   "bytes": 27832688,
+   "note": "OEWS May estimates, all areas/industries/occupations; values as published text (* = not available, # = top-coded, ** = suppressed)",
+   "columns": [
+    {
+     "name": "area",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "area_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "area_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "prim_state",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "naics",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "naics_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "i_group",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "own_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occ_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occ_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "o_group",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "tot_emp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "emp_prse",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "jobs_1000",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "loc_quotient",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "pct_total",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "pct_rpt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_mean",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_mean",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "mean_prse",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_pct10",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_pct25",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_median",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_pct75",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_pct90",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_pct10",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_pct25",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_median",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_pct75",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_pct90",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "annual",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hourly",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/bls_oews/oesm24all.zip",
+    "data/lake/raw/bls_oews/oesm25all.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/bls_oews/oesm24all.zip": "7fe6409f04b73003404de933ecbcc2e4ce6e8440919634beedb237353cfc1d04",
+    "data/lake/raw/bls_oews/oesm25all.zip": "86ffcbbeb27a96b7aa84d01801de71ee94ee9027452152caabebfdec9d764fde"
+   }
+  },
+  "bls_oews_national_history": {
+   "domain": "bls_oews",
+   "rows": 15219,
+   "bytes": 541841,
+   "note": "OEWS national May estimates 2015-2025; column names vary by year (union by name)",
+   "columns": [
+    {
+     "name": "occ_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occ_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occ_group",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "tot_emp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "emp_prse",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_mean",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_mean",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "mean_prse",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_pct10",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_pct25",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_median",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_pct75",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "h_pct90",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_pct10",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_pct25",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_median",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_pct75",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "a_pct90",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "annual",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hourly",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "area",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "area_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "area_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "naics",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "naics_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "i_group",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "own_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "o_group",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "jobs_1000",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "loc_quotient",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "pct_total",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "prim_state",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "pct_rpt",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/bls_oews/oesm15nat.zip",
+    "data/lake/raw/bls_oews/oesm16nat.zip",
+    "data/lake/raw/bls_oews/oesm17nat.zip",
+    "data/lake/raw/bls_oews/oesm18nat.zip",
+    "data/lake/raw/bls_oews/oesm19nat.zip",
+    "data/lake/raw/bls_oews/oesm20nat.zip",
+    "data/lake/raw/bls_oews/oesm21nat.zip",
+    "data/lake/raw/bls_oews/oesm22nat.zip",
+    "data/lake/raw/bls_oews/oesm23nat.zip",
+    "data/lake/raw/bls_oews/oesm24nat.zip",
+    "data/lake/raw/bls_oews/oesm25nat.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/bls_oews/oesm15nat.zip": "cd82bfc9f3fa9df41099cd88cc1116eee645f5d5c7878c408e97a6dd12cabb0c",
+    "data/lake/raw/bls_oews/oesm16nat.zip": "af505efc7af5b66aeb642ab8bd4814dc43dde6fe557aff9bb2f957b16199813c",
+    "data/lake/raw/bls_oews/oesm17nat.zip": "acce9d7c13a2c02f9cc4ebdf1f577b6ca898c766ca3d2d235ef6e7ca1ee42863",
+    "data/lake/raw/bls_oews/oesm18nat.zip": "7ad399c96360c6abd3977574af958d49582f8dd33372b6d433b31669ddeb156c",
+    "data/lake/raw/bls_oews/oesm19nat.zip": "850891ca753bc0c252756175c72483a126fdf64bc66643bd199c844e3f7de9ff",
+    "data/lake/raw/bls_oews/oesm20nat.zip": "cabe67638fdf72bef9681da9323c95f4b75cc16f8e37cc68fa0189f3bf8b0884",
+    "data/lake/raw/bls_oews/oesm21nat.zip": "83ad09f19e62104a39024d36ed67cae5c3f7d5b42ff165ca656e0e35241bcf31",
+    "data/lake/raw/bls_oews/oesm22nat.zip": "725348e28b50bf6a58b3beed88175efea9ad1235c09d1f498feae5b15c315fd1",
+    "data/lake/raw/bls_oews/oesm23nat.zip": "8ce5e8277c3ba68a19f468fec9b4da21170593d5ad9693a813f1afc04c80efa2",
+    "data/lake/raw/bls_oews/oesm24nat.zip": "5fa368aa034ca784f0a4f67f0f1bac67072c5a07992ac3e3de92db10a2821043",
+    "data/lake/raw/bls_oews/oesm25nat.zip": "b5855a37f3e03e779f6fbf173d3bbc94aeeff33426aef32fa95ce6d025bab1af"
+   }
+  },
+  "bls_projections_occupation": {
+   "domain": "bls_projections",
+   "rows": 1117,
+   "bytes": 48701,
+   "note": "Employment Projections 2025-35, Table 1.2",
+   "columns": [
+    {
+     "name": "2025_national_employment_matrix_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "2025_national_employment_matrix_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupation_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_2025",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_2035",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_distribution_percent_2025",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_distribution_percent_2035",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_change_numeric_2025_35",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_change_percent_2025_35",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "percent_self_employed_2025",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupational_openings_2025_35_annual_average",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "median_annual_wage_dollars_2025",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "typical_education_needed_for_entry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_experience_in_a_related_occupation",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "typical_on_the_job_training_needed_to_attain_competency_in_the_occupation",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "related_occupational_outlook_handbook_ooh_content",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "related_occupational_outlook_handbook_ooh_content_1",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/bls_projections/occupation.xlsx"
+   ],
+   "source_sha256": {
+    "data/lake/raw/bls_projections/occupation.xlsx": "08ee182f992d972593e64559ce467bad75967d2228f11ad5e2f86d4ec0ee6c00"
+   }
+  },
+  "bls_projections_separations": {
+   "domain": "bls_projections",
+   "rows": 1115,
+   "bytes": 43516,
+   "note": "Employment Projections 2025-35, Table 1.10",
+   "columns": [
+    {
+     "name": "2025_national_employment_matrix_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "2025_national_employment_matrix_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupation_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_2025",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_2035",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_change_numeric_2025_35",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "employment_change_percent_2025_35",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "labor_force_exit_rate_2025_35_annual_average",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupational_transfer_rate_2025_35_annual_average",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "total_occupational_separations_rate_2025_35_annual_average",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "labor_force_exits_2025_35_annual_average",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupational_transfers_2025_35_annual_average",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "total_occupational_separations_2025_35_annual_average",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupational_openings_2025_35_annual_average",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/bls_projections/occupation.xlsx"
+   ],
+   "source_sha256": {
+    "data/lake/raw/bls_projections/occupation.xlsx": "08ee182f992d972593e64559ce467bad75967d2228f11ad5e2f86d4ec0ee6c00"
    }
   },
   "indeed_aggregate_job_postings_us": {

@@ -1,5 +1,5 @@
 {
- "registry_version": "0.3",
+ "registry_version": "0.4",
  "created": "2026-11-06",
  "sources": [
   {
@@ -457,10 +457,80 @@
     {
      "url": "https://www.bls.gov/oes/special-requests/oesm24in4.zip",
      "filename": "oesm24in4.zip"
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm25all.zip",
+     "filename": "oesm25all.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm25nat.zip",
+     "filename": "oesm25nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm25st.zip",
+     "filename": "oesm25st.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm25ma.zip",
+     "filename": "oesm25ma.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm25in4.zip",
+     "filename": "oesm25in4.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm15nat.zip",
+     "filename": "oesm15nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm16nat.zip",
+     "filename": "oesm16nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm17nat.zip",
+     "filename": "oesm17nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm18nat.zip",
+     "filename": "oesm18nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm19nat.zip",
+     "filename": "oesm19nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm20nat.zip",
+     "filename": "oesm20nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm21nat.zip",
+     "filename": "oesm21nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm22nat.zip",
+     "filename": "oesm22nat.zip",
+     "optional": true
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm23nat.zip",
+     "filename": "oesm23nat.zip",
+     "optional": true
     }
    ],
    "license": "U.S. federal public data",
-   "vintage": "May 2024",
+   "vintage": "May 2015-May 2025 (national history); May 2024-2025 full detail",
    "grain": "area x industry x SOC",
    "notes": "www.bls.gov returns HTTP 403 unless the User-Agent contains contact information (BLS policy). Set BLS_USER_AGENT='project-name your.email@domain'."
   },

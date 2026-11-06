@@ -224,7 +224,99 @@ def build_misc(b: Builder):
             [prep / "mapping_review_queue.jsonl"], "sucss", "Unreviewed lexical title suggestions; not mappings")
 
 
-STEPS = {"onet": build_onet, "ipeds": build_ipeds, "qcew": build_qcew, "qwi": build_qwi, "misc": build_misc}
+# ----------------------------------------------------------------------------- BLS
+def xlsx_to_csv(xlsx: Path, out: Path, sheet: str | None = None, header_match: str | None = None,
+                extra: dict | None = None) -> Path:
+    """Stream an xlsx sheet to CSV (all values as text), starting at the header row."""
+    import csv
+    import openpyxl
+    wb = openpyxl.load_workbook(xlsx, read_only=True, data_only=True)
+    ws = wb[sheet] if sheet else wb.worksheets[0]
+    out.parent.mkdir(parents=True, exist_ok=True)
+    extra = extra or {}
+    with out.open("w", newline="") as fh:
+        w = csv.writer(fh)
+        started = header_match is None
+        for row in ws.iter_rows(values_only=True):
+            if not started:
+                if row and any(isinstance(v, str) and header_match in v for v in row):
+                    started = True
+                else:
+                    continue
+                w.writerow([str(v).strip() if v is not None else "" for v in row] + list(extra))
+                continue
+            if started and header_match is None:
+                started = "done"
+                w.writerow([str(v).strip() if v is not None else "" for v in row] + list(extra))
+                continue
+            if row is None or all(v is None for v in row):
+                continue
+            w.writerow(["" if v is None else str(v) for v in row] + [str(v) for v in extra.values()])
+    wb.close()
+    return out
+
+
+def build_bls(b: Builder):
+    oews = RAW / "bls_oews"
+    if not oews.exists():
+        print("  (skipped: BLS files not acquired; set BLS_USER_AGENT and run lake_acquire.py)")
+        return
+    csvs = []
+    # Full detail (area x industry x occupation) for the two latest panels.
+    for yy in ("24", "25"):
+        zp = oews / f"oesm{yy}all.zip"
+        if not zp.exists():
+            continue
+        (x,) = [p for p in unzip(zp, WORK / "bls" / zp.stem) if p.suffix == ".xlsx"]
+        csvs.append(xlsx_to_csv(x, WORK / "bls" / f"oews_all_20{yy}.csv", extra={"survey_year": f"20{yy}"}))
+    if csvs:
+        glob = q(WORK / "bls") + "/oews_all_*.csv"
+        b.write("bls_oews_all", f"SELECT * FROM read_csv('{glob}', header=true, all_varchar=true, union_by_name=true)",
+                [oews / f"oesm{y}all.zip" for y in ("24", "25") if (oews / f"oesm{y}all.zip").exists()], "bls_oews",
+                "OEWS May estimates, all areas/industries/occupations; values as published text "
+                "(* = not available, # = top-coded, ** = suppressed)")
+    # National history 2015-2025 (occupation x year).
+    nat = []
+    for y in range(15, 26):
+        zp = oews / f"oesm{y:02d}nat.zip"
+        if not zp.exists():
+            continue
+        xs = [p for p in unzip(zp, WORK / "bls" / zp.stem) if p.suffix == ".xlsx" and "field" not in p.name.lower()]
+        if xs:
+            nat.append(xlsx_to_csv(xs[0], WORK / "bls" / "nat" / f"oews_nat_20{y:02d}.csv",
+                                   extra={"survey_year": f"20{y:02d}"}))
+    if nat:
+        glob = q(WORK / "bls" / "nat") + "/*.csv"
+        b.write("bls_oews_national_history",
+                f"SELECT * FROM read_csv('{glob}', header=true, all_varchar=true, union_by_name=true)",
+                [oews / f"oesm{y:02d}nat.zip" for y in range(15, 26) if (oews / f"oesm{y:02d}nat.zip").exists()],
+                "bls_oews", "OEWS national May estimates 2015-2025; column names vary by year (union by name)")
+    proj = RAW / "bls_projections" / "occupation.xlsx"
+    if proj.exists():
+        for sheet, table, note in [("Table 1.2", "bls_projections_occupation", "Employment Projections 2025-35, Table 1.2"),
+                                   ("Table 1.10", "bls_projections_separations", "Employment Projections 2025-35, Table 1.10")]:
+            c = xlsx_to_csv(proj, WORK / "bls" / f"{table}.csv", sheet=sheet, header_match="National Employment Matrix code")
+            b.write(table, f"SELECT * FROM read_csv('{q(c)}', header=true, all_varchar=true)", [proj], "bls_projections", note)
+    jt = RAW / "bls_jolts"
+    if (jt / "jt.data.1.AllItems").exists():
+        def tsv(f):
+            return f"read_csv('{q(jt / f)}', delim='\\t', header=true, all_varchar=true)"
+        b.write("bls_jolts", f"""
+            SELECT trim(d.series_id) AS series_id, CAST(d.year AS INTEGER) AS year, trim(d.period) AS period,
+                   TRY_CAST(trim(d.value) AS DOUBLE) AS value, trim(d.footnote_codes) AS footnote_codes,
+                   s.seasonal, s.industry_code, i.industry_text, s.state_code, st.state_text, s.sizeclass_code,
+                   s.dataelement_code, e.dataelement_text, s.ratelevel_code
+            FROM {tsv('jt.data.1.AllItems')} d
+            JOIN {tsv('jt.series')} s ON trim(s.series_id) = trim(d.series_id)
+            LEFT JOIN {tsv('jt.industry')} i ON i.industry_code = s.industry_code
+            LEFT JOIN {tsv('jt.state')} st ON st.state_code = s.state_code
+            LEFT JOIN {tsv('jt.dataelement')} e ON e.dataelement_code = s.dataelement_code""",
+                [jt / f for f in ("jt.data.1.AllItems", "jt.series", "jt.industry", "jt.state", "jt.dataelement")],
+                "bls_jolts", "JOLTS monthly series with dimension labels; ratelevel L = level (thousands), R = rate")
+
+
+STEPS = {"onet": build_onet, "ipeds": build_ipeds, "qcew": build_qcew, "qwi": build_qwi, "misc": build_misc,
+         "bls": build_bls}
 
 SF_TYPES = {"VARCHAR": "VARCHAR", "BIGINT": "NUMBER(19,0)", "INTEGER": "NUMBER(10,0)", "DOUBLE": "FLOAT",
             "DATE": "DATE", "BOOLEAN": "BOOLEAN", "TIMESTAMP": "TIMESTAMP_NTZ", "SMALLINT": "NUMBER(5,0)",
