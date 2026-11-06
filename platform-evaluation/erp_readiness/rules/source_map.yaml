@@ -1,0 +1,121 @@
+# Binds the LOGICAL views every rule is written against (stg_*, ref_*) to PHYSICAL tables.
+#
+# In this repository the physical tables are the SYNTHETIC EDW-shaped Parquet files written by
+# generate_synthetic.py. Table names follow the EDW tables named in the repository README
+# (T_PERS_HIST, T_EMPEE_HIST, T_EMPEE_HIST_5, T_JOB_DETL_HIST, T_PAYR_ACCTG_DETL). The COLUMN
+# names, the position-control table (T_POSN_HIST) and the reference tables are ASSUMPTIONS made
+# for the synthetic build: they have not been checked against the real AITS EDW data dictionary.
+#
+# On an approved machine, edit ONLY this file (physical side of each mapping) after reading the
+# EDW metadata; the 43 rules stay unchanged. Banner source tables are listed so the mapping can be
+# traced back to the system of record (Banner HR: SPRIDEN/SPBPERS, PEBEMPL, NBRJOBS/NBRBJOB,
+# NBBPOSN/NBRPTOT, PTRECLS, PERJTOT/PHRHIST, FTVORGN).
+#
+# Interval convention: rules assume *_EFF_DT inclusive start and *_EXP_DT inclusive end, with
+# 9999-12-31 (or NULL) meaning open. The staging layer adds exp_next_dt = exp_dt + 1 day so gap
+# checks need no dialect-specific date arithmetic. CONFIRM the EDW convention before first run.
+version: 1
+# Schema holding the physical tables (synthetic: DuckDB schema 'edw'; real: the EDW owner schema).
+physical_schema: edw
+views:
+  stg_person:
+    table: T_PERS_HIST
+    banner_source: SPRIDEN / SPBPERS (identity, birth date); national ID kept only as a hash
+    interval: {eff: PERS_EFF_DT, exp: PERS_EXP_DT, end: inclusive}
+    columns:
+      pers_id: EDW_PERS_ID
+      eff_dt: PERS_EFF_DT
+      natl_id_hash: NATL_ID_HASH
+      first_name: PERS_FIRST_NAME
+      last_name: PERS_LAST_NAME
+      birth_dt: BIRTH_DT
+  stg_employee:
+    table: T_EMPEE_HIST
+    banner_source: PEBEMPL (employee status, employee class, first/current hire dates, home org)
+    interval: {eff: EMPEE_EFF_DT, exp: EMPEE_EXP_DT, end: inclusive}
+    columns:
+      pers_id: EDW_PERS_ID
+      eff_dt: EMPEE_EFF_DT
+      status_cd: EMPEE_STATUS_CD
+      ecls_cd: EMPEE_CLS_CD
+      first_hire_dt: FIRST_HIRE_DT
+      cur_hire_dt: CUR_HIRE_DT
+      home_org_cd: HOME_ORG_CD
+  stg_termination:
+    table: T_EMPEE_HIST_5
+    banner_source: PEBEMPL termination fields / SURS retirement data
+    columns:
+      pers_id: EDW_PERS_ID
+      term_dt: TERM_DT
+      term_reason_cd: TERM_REASON_CD
+      surs_retir_ind: SURS_RETIR_IND
+  stg_job:
+    table: T_JOB_DETL_HIST
+    banner_source: NBRBJOB (job base, contract type P/S/O) + NBRJOBS (effective-dated job detail)
+    interval: {eff: JOB_DETL_EFF_DT, exp: JOB_DETL_EXP_DT, end: inclusive}
+    columns:
+      pers_id: EDW_PERS_ID
+      posn_nbr: POSN_NBR
+      suffix: JOB_SUFFIX
+      eff_dt: JOB_DETL_EFF_DT
+      contract_type: JOB_CONTRACT_TYPE_CD
+      status_cd: JOB_STATUS_CD
+      fte: JOB_FTE
+      annual_sal: JOB_ANNUAL_SAL_AMT
+      class_cd: JOB_CLS_CD
+      ecls_cd: JOB_ECLS_CD
+      org_cd: JOB_ORG_CD
+      supervisor_pers_id: SUPERVISOR_PERS_ID
+  stg_position:
+    table: T_POSN_HIST
+    banner_source: NBBPOSN (position definition) + NBRPTOT (position budget FTE)
+    interval: {eff: POSN_EFF_DT, exp: POSN_EXP_DT, end: inclusive}
+    columns:
+      posn_nbr: POSN_NBR
+      eff_dt: POSN_EFF_DT
+      status_cd: POSN_STATUS_CD
+      class_cd: POSN_CLS_CD
+      org_cd: POSN_ORG_CD
+      budget_fte: POSN_BUDGET_FTE
+  stg_pay:
+    table: T_PAYR_ACCTG_DETL
+    banner_source: PHRHIST / PHRDOCM / PERJTOT (pay history, labor distribution)
+    columns:
+      pers_id: EDW_PERS_ID
+      posn_nbr: POSN_NBR
+      suffix: JOB_SUFFIX
+      period_end_dt: PAY_PERIOD_END_DT
+      earn_cd: EARN_CD
+      amount: PAY_AMT
+      org_cd: ORG_CD
+      seq_nbr: PAYR_SEQ_NBR
+  ref_class:
+    table: REF_JOB_CLASS
+    banner_source: NTRPCLS (position class) + SUCSS public class catalog; pay ranges are SYNTHETIC
+    columns:
+      class_cd: CLS_CD
+      class_source: CLS_SOURCE
+      class_title: CLS_TITLE
+      min_annual: MIN_ANNUAL_AMT
+      max_annual: MAX_ANNUAL_AMT
+  ref_ecls:
+    table: REF_EMPEE_CLS
+    banner_source: PTRECLS (employee class validation)
+    columns:
+      ecls_cd: ECLS_CD
+      ecls_group: ECLS_GROUP
+      pay_basis: PAY_BASIS
+      ecls_desc: ECLS_DESC
+  ref_org:
+    table: REF_ORG
+    banner_source: FTVORGN (organization hierarchy)
+    columns:
+      org_cd: ORG_CD
+      parent_org_cd: PARENT_ORG_CD
+      status_cd: ORG_STATUS_CD
+      org_title: ORG_TITLE
+  ref_hierarchy_root:
+    table: REF_HIERARCHY_ROOT
+    banner_source: none - a steward-maintained list of top-of-house positions allowed to have no supervisor
+    columns:
+      posn_nbr: POSN_NBR

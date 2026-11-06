@@ -1,0 +1,773 @@
+# HR data conversion-readiness rule catalog, v0.1 (development; NOT steward-approved)
+#
+# Each rule is a portable SQL query over the logical views in source_map.yaml. It returns one
+# row per failing entity with exactly three columns: entity_type, entity_id, detail.
+#
+# Portability contract (checked by tests/test_erp_readiness.py):
+#   * ANSI subset: CTEs, LEAD/LAG/COUNT window functions, CASE, COALESCE, EXISTS, UNION, || concat,
+#     CAST(x AS VARCHAR(n)), DATE 'yyyy-mm-dd' literals.
+#   * Forbidden: LIMIT/TOP, QUALIFY, ILIKE, '::' casts, IS DISTINCT FROM, EXCEPT/MINUS, table
+#     aliases written with AS (Oracle rejects them), FROM-less SELECT, dialect date functions.
+#   * Only two tokens are rendered per dialect: date parameters ({{AS_OF}} ...) and
+#     {{WITH_RECURSIVE}} (Oracle takes plain WITH plus a column list).
+#   * Oracle: set NLS_DATE_FORMAT='YYYY-MM-DD' so CAST(date AS VARCHAR) gives ISO entity IDs.
+#
+# Target-ERP concepts are written for the three candidates named by the ERP program
+# (Workday, Oracle Fusion Cloud HCM; Ellucian Cloud keeps the Banner model, so most rules
+# apply unchanged). No vendor has been selected; these notes are mapping hypotheses.
+version: 0.1
+status: development_unapproved
+
+severity:
+  # weight: contribution to the domain readiness score
+  # tolerance: share of the rule's population that may fail before the rule scores 0.
+  #            0 means any failure zeroes the rule and gates the domain.
+  critical: {weight: 5, tolerance: 0.0}
+  high:     {weight: 3, tolerance: 0.001}
+  medium:   {weight: 2, tolerance: 0.005}
+  low:      {weight: 1, tolerance: 0.02}
+
+domains:
+  person: Person identity and biographic master data
+  employment: Employment lifecycle (hire, status, termination)
+  job_history: Effective-dated job / appointment history
+  position: Position control and job-to-position integrity
+  classification: Classification and compensation (SUCSS, AP, faculty)
+  org_supervisory: Organizations and reporting lines
+  payroll: Payroll accounting history
+
+sources:
+  penn: {title: "Penn ISC - Workday conversion: stale data needed cleanup", url: "https://isc.upenn.edu/node/122"}
+  richmond: {title: "Workday@Richmond history - Banner data converted four times", url: "https://workday.richmond.edu/about/history/index.html"}
+  richmond_is: {title: "Richmond IS - Workday technology support", url: "https://is.richmond.edu/features/article/-/25767/workdayrichmond-technology-support.html"}
+  uw_tsb: {title: "UW HR/Payroll Modernization lessons learned (WA OCIO TSB, 2016)", url: "https://ocio.wa.gov/sites/default/files/2022-12/UW_TSB%25202.11.16%2520FINAL%2520nn.pdf"}
+  uchicago: {title: "UChicago HCM symposium deck (Stanford-hosted)", url: "https://uit.stanford.edu/sites/default/files/2022/09/02/Human%20Capital%20Management%20Symposium%20Full%20Slide%20Deck.pdf"}
+  osu_positions: {title: "Ohio State - position data quality carried into Workday", url: "https://hr.osu.edu/news/2017/02/20/hr-service-delivery-transitions-to-workday-enterprise-project/"}
+  osu_timeline: {title: "Ohio State enterprise project timeline", url: "https://busfin.osu.edu/news/2020/05/12/revised-enterprise-project-timeline"}
+  wisc_atp: {title: "UW-Madison ATP - Workday data mapping / foundation tenant", url: "https://atp.wisconsin.edu/?p=4602"}
+  wisc_launch: {title: "UW-Madison Workday launch revised to July 2025", url: "https://news.wisc.edu/workday-launch-revised-to-july-2025"}
+  banner_jobtype: {title: "U of I HR - NBAJOBS field data standards (job type P/S/O, suffix rules)", url: "https://www.hr.uillinois.edu/human_resource_systems/reporting_portal/data_assistance/hr_banner_forms_field_data_standards/nbajobs_form"}
+  usnh_terms: {title: "USNH Key Banner HR terms (one primary job; secondary/overload)", url: "https://usnh.edu/banner/training/active/key_terms.htm"}
+  banner_posn: {title: "W&M ODS metadata - position definition (NBBPOSN)", url: "https://odsmetadata.wm.edu/ODST/POSITION_DEFINITION_ODS_target.html"}
+  banner_empl: {title: "Banner ODS EMPLOYEE metadata (PEBEMPL, PTRECLS)", url: "https://bnrordsp.neu.edu/metadata_nfs/EMPLOYEE_ODS_target.html"}
+  sequoias: {title: "Banner report issues - assignments not properly terminated (NBRJOBS_STATUS vs PEBEMPL_EMPL_STATUS)", url: "https://sequoias.atlassian.net/wiki/x/lQBzKQ"}
+  wd_suporg: {title: "URI Workday - supervisory organizations, position vs job management", url: "https://web.uri.edu/workday/supervisory-organizations/"}
+  wd_staffing: {title: "U of Louisville Workday - organizations and staffing", url: "https://louisville.edu/workday/resources/resources-pdfs/pdf-organizations-and-staffing"}
+  oracle_assign: {title: "Oracle HCM - attributes for worker assignment (primary flag)", url: "https://docs.oracle.com/en/cloud/saas/human-resources/24d/faiau/attributes-for-worker-assignment.html"}
+  oracle_posn: {title: "Oracle HCM Data Loader - guidelines for loading positions", url: "https://docs.oracle.com/en/cloud/saas/human-resources/fahbo/guidelines-for-loading-positions.html"}
+  oracle_assign_chg: {title: "Oracle HCM Data Loader - loading assignment changes (effective dates)", url: "https://docs.oracle.com/en/cloud/saas/human-resources/fahbo/example-of-loading-assignment-changes.html"}
+  sucss: {title: "SUCSS public class specification catalog", url: "https://www.sucss.illinois.gov/pages/classspec/Default.aspx"}
+  repo_guardrails: {title: "This repo - research/HR_USE_CASES_AND_GUARDRAILS.md section 2", url: "../../research/HR_USE_CASES_AND_GUARDRAILS.md"}
+
+populations:
+  persons: SELECT COUNT(DISTINCT pers_id) AS n FROM stg_person
+  employees: SELECT COUNT(DISTINCT pers_id) AS n FROM stg_employee
+  active_employees: SELECT COUNT(*) AS n FROM cur_emp WHERE status_cd IN ('A', 'L')
+  job_keys: SELECT COUNT(*) AS n FROM (SELECT DISTINCT pers_id, posn_nbr, suffix FROM stg_job) k
+  active_jobs: SELECT COUNT(*) AS n FROM cur_job
+  active_primary_jobs: SELECT COUNT(*) AS n FROM cur_job WHERE contract_type = 'P'
+  positions: SELECT COUNT(DISTINCT posn_nbr) AS n FROM stg_position
+  pay_keys: SELECT COUNT(*) AS n FROM (SELECT DISTINCT pers_id, posn_nbr, suffix, period_end_dt FROM stg_pay) k
+  orgs: SELECT COUNT(*) AS n FROM ref_org
+
+# Helper views, created after staging and before rules. Same portability contract.
+helpers:
+  cur_emp: |
+    SELECT * FROM stg_employee WHERE eff_dt <= {{AS_OF}} AND exp_dt >= {{AS_OF}}
+  cur_person: |
+    SELECT * FROM stg_person WHERE eff_dt <= {{AS_OF}} AND exp_dt >= {{AS_OF}}
+  cur_job: |
+    SELECT j.*, j.pers_id || '|' || j.posn_nbr || '|' || j.suffix AS job_key
+    FROM stg_job j
+    WHERE j.eff_dt <= {{AS_OF}} AND j.exp_dt >= {{AS_OF}} AND j.status_cd IN ('A', 'L')
+  cur_posn: |
+    SELECT * FROM stg_position WHERE eff_dt <= {{AS_OF}} AND exp_dt >= {{AS_OF}}
+  active_worker: |
+    SELECT DISTINCT e.pers_id FROM cur_emp e
+    WHERE e.status_cd IN ('A', 'L') AND EXISTS (SELECT 1 FROM cur_job j WHERE j.pers_id = e.pers_id)
+
+rules:
+# ---------------------------------------------------------------- person
+- id: P01
+  name: Same national-ID hash on more than one person ID
+  domain: person
+  severity: critical
+  owner: IHR HR Records (identity steward) with AITS Identity
+  population: persons
+  rationale: >-
+    Duplicate persons convert into duplicate workers, split service history (SURS, tenure) and break
+    payroll tax reporting. Banner can hold two PIDMs for one human when a rehire is keyed as new.
+  target: {workday: "Worker (one Worker ID per human; duplicate check on hire)", oracle: "Person (PER_ALL_PEOPLE_F) and national identifier"}
+  remediation: Merge in Banner (identity merge process) before conversion; keep a survivor crosswalk.
+  cites: [penn, repo_guardrails]
+  sql: |
+    SELECT 'person' AS entity_type, p.pers_id AS entity_id,
+           'national-id hash shared by ' || CAST(g.n AS VARCHAR(10)) || ' person ids' AS detail
+    FROM (SELECT DISTINCT pers_id, natl_id_hash FROM stg_person WHERE natl_id_hash IS NOT NULL) p
+    JOIN (SELECT natl_id_hash, COUNT(DISTINCT pers_id) AS n FROM stg_person
+          WHERE natl_id_hash IS NOT NULL GROUP BY natl_id_hash HAVING COUNT(DISTINCT pers_id) > 1) g
+      ON g.natl_id_hash = p.natl_id_hash
+- id: P02
+  name: Probable duplicate person (same name and birth date, different national-ID hash)
+  domain: person
+  severity: high
+  owner: IHR HR Records (identity steward)
+  population: persons
+  rationale: >-
+    Mistyped SSNs create near-duplicates that exact matching misses. These need human review, not
+    automatic merge.
+  target: {workday: "Worker duplicate review", oracle: "Person duplicate check (Manage Persons)"}
+  remediation: Steward review queue; correct the identifier or record a not-a-duplicate decision.
+  cites: [penn]
+  sql: |
+    SELECT 'person' AS entity_type, p.pers_id AS entity_id,
+           'name+birth date shared with another person id' AS detail
+    FROM (SELECT DISTINCT pers_id, UPPER(last_name) AS ln, UPPER(first_name) AS fn, birth_dt
+          FROM cur_person WHERE birth_dt IS NOT NULL) p
+    JOIN (SELECT UPPER(last_name) AS ln, UPPER(first_name) AS fn, birth_dt
+          FROM cur_person WHERE birth_dt IS NOT NULL
+          GROUP BY UPPER(last_name), UPPER(first_name), birth_dt
+          HAVING COUNT(DISTINCT pers_id) > 1 AND COUNT(DISTINCT natl_id_hash) > 1) g
+      ON g.ln = p.ln AND g.fn = p.fn AND g.birth_dt = p.birth_dt
+- id: P03
+  name: Overlapping person history rows
+  domain: person
+  severity: high
+  owner: AITS Decision Support (EDW history load)
+  population: persons
+  rationale: Two person versions valid on one day make as-of joins fan out and double count.
+  target: {workday: "Worker personal data effective dating", oracle: "PER_PERSON_NAMES_F date-effective rows"}
+  remediation: Fix EDW history build; re-derive expiry dates from the next effective date.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, x.pers_id AS entity_id,
+           'row ending ' || CAST(x.exp_dt AS VARCHAR(30)) || ' overlaps next row starting ' || CAST(x.nxt AS VARCHAR(30)) AS detail
+    FROM (SELECT pers_id, exp_dt, LEAD(eff_dt) OVER (PARTITION BY pers_id ORDER BY eff_dt, exp_dt) AS nxt
+          FROM stg_person) x
+    WHERE x.nxt IS NOT NULL AND x.nxt <= x.exp_dt
+- id: P04
+  name: Active worker with no birth date
+  domain: person
+  severity: medium
+  owner: IHR HR Records
+  population: active_employees
+  rationale: Birth date drives benefits eligibility, SURS and age-based reporting; target loads usually require it.
+  target: {workday: "Worker personal information (required for benefits)", oracle: "Person date of birth"}
+  remediation: Collect from source documents through HR Records.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT 'person' AS entity_type, e.pers_id AS entity_id, 'active worker, birth date missing' AS detail
+    FROM active_worker e JOIN cur_person p ON p.pers_id = e.pers_id
+    WHERE p.birth_dt IS NULL
+- id: P05
+  name: Employee history with no person record
+  domain: person
+  severity: critical
+  owner: AITS Decision Support (EDW)
+  population: employees
+  rationale: Orphan employee rows cannot become workers; they usually signal a broken identity merge or purge.
+  target: {workday: "Worker (hire requires a pre-hire/person)", oracle: "Person must exist before work relationship"}
+  remediation: Trace in Banner (PEBEMPL without SPRIDEN) and restore or purge both.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, e.pers_id AS entity_id, 'employee rows but no T_PERS_HIST row' AS detail
+    FROM stg_employee e
+    WHERE NOT EXISTS (SELECT 1 FROM stg_person p WHERE p.pers_id = e.pers_id)
+# ---------------------------------------------------------------- employment
+- id: E01
+  name: Overlapping employee status intervals
+  domain: employment
+  severity: critical
+  owner: AITS Decision Support (EDW) with IHR HR Records
+  population: employees
+  rationale: The converter cannot tell which status (active, terminated) was true; service dates and rehire logic break.
+  target: {workday: "Worker hire / termination event history", oracle: "Work relationship (PER_PERIODS_OF_SERVICE)"}
+  remediation: Rebuild expiry dates; confirm the true status sequence with HR Records.
+  cites: [repo_guardrails, oracle_assign_chg]
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, x.pers_id AS entity_id,
+           'employee row ending ' || CAST(x.exp_dt AS VARCHAR(30)) || ' overlaps row starting ' || CAST(x.nxt AS VARCHAR(30)) AS detail
+    FROM (SELECT pers_id, exp_dt, LEAD(eff_dt) OVER (PARTITION BY pers_id ORDER BY eff_dt, exp_dt) AS nxt
+          FROM stg_employee) x
+    WHERE x.nxt IS NOT NULL AND x.nxt <= x.exp_dt
+- id: E02
+  name: Gap in employee history
+  domain: employment
+  severity: high
+  owner: AITS Decision Support (EDW)
+  population: employees
+  rationale: Employee history should tile from first hire to today (terminated periods carry status T). Gaps lose service credit.
+  target: {workday: "Continuous service date / seniority", oracle: "Period of service dates"}
+  remediation: Find the missing Banner PEBEMPL change or EDW load gap and backfill.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, x.pers_id AS entity_id,
+           'no employee row between ' || CAST(x.exp_next_dt AS VARCHAR(30)) || ' and ' || CAST(x.nxt AS VARCHAR(30)) AS detail
+    FROM (SELECT pers_id, exp_next_dt, LEAD(eff_dt) OVER (PARTITION BY pers_id ORDER BY eff_dt, exp_dt) AS nxt
+          FROM stg_employee) x
+    WHERE x.nxt IS NOT NULL AND x.nxt > x.exp_next_dt
+- id: E03
+  name: Terminated employee with an active job
+  domain: employment
+  severity: critical
+  owner: Unit HR via HR Front End; IHR HR Records
+  population: active_jobs
+  rationale: >-
+    Classic "assignment not properly terminated" defect (PEBEMPL_EMPL_STATUS = T, NBRJOBS_STATUS = A).
+    It converts into an active assignment for a terminated worker and can resume pay.
+  target: {workday: "Worker terminated but position filled; position stays unavailable", oracle: "Active assignment under ended work relationship (load error)"}
+  remediation: Key the missing job termination in HRFE effective on the employee termination date.
+  cites: [sequoias, repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, e.pers_id AS entity_id,
+           'employee status T since ' || CAST(e.eff_dt AS VARCHAR(30)) || ' but job ' || j.posn_nbr || ' active' AS detail
+    FROM cur_emp e JOIN cur_job j ON j.pers_id = e.pers_id
+    WHERE e.status_cd = 'T'
+- id: E04
+  name: Termination record but employee still active
+  domain: employment
+  severity: high
+  owner: IHR HR Records
+  population: active_employees
+  rationale: T_EMPEE_HIST_5 shows a termination inside the current active spell; one of the two sources is wrong.
+  target: {workday: "Terminate Employee event / rehire", oracle: "Work relationship termination"}
+  remediation: Confirm with the unit; either key the termination or remove the stray termination record.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, e.pers_id AS entity_id,
+           'termination dated ' || CAST(t.term_dt AS VARCHAR(30)) || ' but status ' || e.status_cd AS detail
+    FROM cur_emp e JOIN stg_termination t ON t.pers_id = e.pers_id
+    WHERE e.status_cd IN ('A', 'L') AND t.term_dt >= e.eff_dt AND t.term_dt <= {{AS_OF}}
+- id: E05
+  name: First hire date after current hire date
+  domain: employment
+  severity: medium
+  owner: IHR HR Records
+  population: employees
+  rationale: Original and continuous service dates drive seniority, vacation accrual and SURS; they must be ordered.
+  target: {workday: "Original Hire Date / Continuous Service Date", oracle: "Original hire date / enterprise seniority"}
+  remediation: Correct PEBEMPL first/current hire dates from personnel file.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, pers_id AS entity_id,
+           'first hire ' || CAST(first_hire_dt AS VARCHAR(30)) || ' > current hire ' || CAST(cur_hire_dt AS VARCHAR(30)) AS detail
+    FROM stg_employee WHERE first_hire_dt > cur_hire_dt
+- id: E06
+  name: Active employee with no active job
+  domain: employment
+  severity: high
+  owner: Unit HR via HR Front End
+  population: active_employees
+  rationale: Every converted active worker needs at least one assignment / position; jobless actives fail the load or create placeholder positions.
+  target: {workday: "Worker must hold a position (position management) or job", oracle: "Employment terms / assignment required"}
+  remediation: Terminate the employee or key the missing job.
+  cites: [wd_staffing, osu_positions]
+  sql: |
+    SELECT 'person' AS entity_type, e.pers_id AS entity_id, 'employee status ' || e.status_cd || ' with no active job' AS detail
+    FROM cur_emp e
+    WHERE e.status_cd IN ('A', 'L') AND NOT EXISTS (SELECT 1 FROM cur_job j WHERE j.pers_id = e.pers_id)
+- id: E07
+  name: Employee class not in the employee-class reference (PTRECLS)
+  domain: employment
+  severity: high
+  owner: IHR HRIS (code tables)
+  population: active_employees
+  rationale: Employee class maps to worker type / worker sub-type; an unknown class has no crosswalk target and fails the build.
+  target: {workday: "Worker Type / Worker Sub-Type, Employee Type", oracle: "Person type / assignment category"}
+  remediation: Map the code in the eclass crosswalk or correct the employee record.
+  cites: [banner_empl, repo_guardrails]
+  sql: |
+    SELECT 'person' AS entity_type, e.pers_id AS entity_id, 'employee class ' || COALESCE(e.ecls_cd, '(null)') || ' not in reference' AS detail
+    FROM cur_emp e
+    WHERE e.status_cd IN ('A', 'L') AND NOT EXISTS (SELECT 1 FROM ref_ecls r WHERE r.ecls_cd = e.ecls_cd)
+- id: E08
+  name: Employee row dated beyond the pending-action horizon
+  domain: employment
+  severity: medium
+  owner: Unit HR via HR Front End
+  population: employees
+  rationale: Rows effective more than 180 days after extract are usually keying errors (e.g. 2062 for 2026); legitimate pending actions need a cutover plan.
+  target: {workday: "Future-dated events during cutover", oracle: "Future-dated changes (HDL EffectiveStartDate)"}
+  remediation: Correct the date or list it for cutover re-keying.
+  cites: [oracle_assign_chg]
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, pers_id AS entity_id, 'employee row effective ' || CAST(eff_dt AS VARCHAR(30)) AS detail
+    FROM stg_employee WHERE eff_dt > {{FUTURE_HORIZON}}
+# ---------------------------------------------------------------- job history
+- id: J01
+  name: Overlapping job detail intervals
+  domain: job_history
+  severity: critical
+  owner: AITS Decision Support (EDW) with IHR HR Records
+  population: job_keys
+  rationale: Two NBRJOBS versions on one day double count FTE and salary in history conversion and in the reconciliation.
+  target: {workday: "Position/job history events", oracle: "Assignment date-effective rows (PER_ALL_ASSIGNMENTS_M)"}
+  remediation: Re-derive expiry from next effective date; review the HRFE transaction that created the second row.
+  cites: [repo_guardrails, oracle_assign_chg]
+  sql: |
+    SELECT DISTINCT 'job' AS entity_type, x.pers_id || '|' || x.posn_nbr || '|' || x.suffix AS entity_id,
+           'row ending ' || CAST(x.exp_dt AS VARCHAR(30)) || ' overlaps row starting ' || CAST(x.nxt AS VARCHAR(30)) AS detail
+    FROM (SELECT pers_id, posn_nbr, suffix, exp_dt,
+                 LEAD(eff_dt) OVER (PARTITION BY pers_id, posn_nbr, suffix ORDER BY eff_dt, exp_dt) AS nxt
+          FROM stg_job) x
+    WHERE x.nxt IS NOT NULL AND x.nxt <= x.exp_dt
+- id: J02
+  name: Gap in job detail history
+  domain: job_history
+  severity: high
+  owner: AITS Decision Support (EDW)
+  population: job_keys
+  rationale: A job key's rows should tile from start to its termination row; gaps lose salary history and service.
+  target: {workday: "Compensation history", oracle: "Assignment / salary history"}
+  remediation: Backfill from Banner NBRJOBS; check EDW incremental loads.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'job' AS entity_type, x.pers_id || '|' || x.posn_nbr || '|' || x.suffix AS entity_id,
+           'no job row between ' || CAST(x.exp_next_dt AS VARCHAR(30)) || ' and ' || CAST(x.nxt AS VARCHAR(30)) AS detail
+    FROM (SELECT pers_id, posn_nbr, suffix, exp_next_dt,
+                 LEAD(eff_dt) OVER (PARTITION BY pers_id, posn_nbr, suffix ORDER BY eff_dt, exp_dt) AS nxt
+          FROM stg_job) x
+    WHERE x.nxt IS NOT NULL AND x.nxt > x.exp_next_dt
+- id: J03
+  name: Job row expires before it starts
+  domain: job_history
+  severity: critical
+  owner: AITS Decision Support (EDW)
+  population: job_keys
+  rationale: Inverted intervals are rejected by every target loader and silently vanish from as-of queries.
+  target: {workday: "Event effective dates", oracle: "EffectiveStartDate <= EffectiveEndDate"}
+  remediation: Correct the expiry date.
+  cites: [oracle_assign_chg]
+  sql: |
+    SELECT DISTINCT 'job' AS entity_type, pers_id || '|' || posn_nbr || '|' || suffix AS entity_id,
+           'eff ' || CAST(eff_dt AS VARCHAR(30)) || ' > exp ' || CAST(exp_dt AS VARCHAR(30)) AS detail
+    FROM stg_job WHERE exp_dt < eff_dt
+- id: J04
+  name: More than one active primary job
+  domain: job_history
+  severity: critical
+  owner: Unit HR via HR Front End
+  population: active_employees
+  rationale: >-
+    Banner requires exactly one primary (P) job; secondary (S) and overload (O) are unlimited. Two primaries
+    have no single target for the primary assignment / primary position.
+  target: {workday: "Primary position vs additional jobs", oracle: "Primary assignment flag (one per primary work relationship)"}
+  remediation: Re-type one job to S/O in HRFE.
+  cites: [usnh_terms, banner_jobtype, oracle_assign]
+  sql: |
+    SELECT 'person' AS entity_type, pers_id AS entity_id, CAST(COUNT(*) AS VARCHAR(10)) || ' active primary jobs' AS detail
+    FROM cur_job WHERE contract_type = 'P'
+    GROUP BY pers_id HAVING COUNT(*) > 1
+- id: J05
+  name: Active secondary/overload job without a primary job
+  domain: job_history
+  severity: high
+  owner: Unit HR via HR Front End
+  population: active_employees
+  rationale: The target needs a primary assignment to hang additional jobs from; payroll defaults and benefits follow the primary.
+  target: {workday: "Additional Job requires a primary position", oracle: "Primary assignment required"}
+  remediation: Promote one job to P or end the orphan secondary job.
+  cites: [usnh_terms, banner_jobtype]
+  sql: |
+    SELECT 'person' AS entity_type, pers_id AS entity_id, 'active jobs but none primary' AS detail
+    FROM cur_job
+    GROUP BY pers_id
+    HAVING SUM(CASE WHEN contract_type = 'P' THEN 1 ELSE 0 END) = 0
+- id: J06
+  name: Single job FTE above 1.0
+  domain: job_history
+  severity: critical
+  owner: Unit HR via HR Front End
+  population: active_jobs
+  rationale: Target FTE / scheduled-hours fields cap at 100%; values above it are keying errors and distort FTE totals.
+  target: {workday: "Position FTE / Scheduled Weekly Hours", oracle: "Assignment FTE (working hours / standard hours)"}
+  remediation: Correct the FTE in HRFE.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT 'job' AS entity_type, job_key AS entity_id, 'FTE ' || CAST(fte AS VARCHAR(20)) AS detail
+    FROM cur_job WHERE fte > 1
+- id: J07
+  name: Person's total active FTE above 1.0
+  domain: job_history
+  severity: high
+  owner: Unit HR; IHR Policy (concurrent appointments)
+  population: active_employees
+  rationale: Total effort over 100% needs a documented concurrent-appointment exception or it is an error; FLSA and benefits depend on it.
+  target: {workday: "Total FTE across positions", oracle: "FTE across assignments"}
+  remediation: Confirm exception or correct FTE.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT 'person' AS entity_type, pers_id AS entity_id, 'total active FTE ' || CAST(SUM(fte) AS VARCHAR(20)) AS detail
+    FROM cur_job GROUP BY pers_id HAVING SUM(fte) > 1
+- id: J08
+  name: Job row dated beyond the pending-action horizon
+  domain: job_history
+  severity: medium
+  owner: Unit HR via HR Front End
+  population: job_keys
+  rationale: Future rows more than 180 days out are usually year typos; real pending actions must be re-keyed or loaded as future-dated changes at cutover.
+  target: {workday: "Future-dated compensation / job change", oracle: "Future-dated assignment change"}
+  remediation: Correct the date or add to the cutover re-key list.
+  cites: [oracle_assign_chg, richmond]
+  sql: |
+    SELECT DISTINCT 'job' AS entity_type, pers_id || '|' || posn_nbr || '|' || suffix AS entity_id,
+           'job row effective ' || CAST(eff_dt AS VARCHAR(30)) AS detail
+    FROM stg_job WHERE eff_dt > {{FUTURE_HORIZON}}
+# ---------------------------------------------------------------- position
+- id: S01
+  name: Orphan position (active, older than 24 months, no incumbent in 24 months)
+  domain: position
+  severity: medium
+  owner: IHR Position Control with unit HR
+  population: positions
+  rationale: >-
+    Stale positions inflate vacancy counts and must get a retire / merge / keep decision before loading.
+    Ohio State had to clean up positions retroactively after the staffing-model choice.
+  target: {workday: "Position (position management) - vacant positions in supervisory org", oracle: "Position (HR_ALL_POSITIONS_F) with no assignment"}
+  remediation: Unit worklist - retire, merge or keep with justification.
+  cites: [osu_positions, osu_timeline, repo_guardrails]
+  sql: |
+    SELECT 'position' AS entity_type, p.posn_nbr AS entity_id, 'active, no incumbent since before ' || CAST({{ORPHAN_LOOKBACK}} AS VARCHAR(30)) AS detail
+    FROM cur_posn p
+    WHERE p.status_cd = 'A'
+      AND (SELECT MIN(h.eff_dt) FROM stg_position h WHERE h.posn_nbr = p.posn_nbr) < {{ORPHAN_LOOKBACK}}
+      AND NOT EXISTS (SELECT 1 FROM stg_job j WHERE j.posn_nbr = p.posn_nbr AND j.status_cd IN ('A', 'L')
+                      AND j.eff_dt <= {{AS_OF}} AND j.exp_dt >= {{ORPHAN_LOOKBACK}})
+- id: S02
+  name: Position over-filled (incumbent FTE above budgeted FTE)
+  domain: position
+  severity: high
+  owner: IHR Position Control
+  population: positions
+  rationale: Under position management the target enforces headcount/FTE per position; over-filled positions fail hire loads.
+  target: {workday: "Position restrictions (one worker per position)", oracle: "Position FTE / headcount (overlap allowed flag)"}
+  remediation: Split into separate positions or correct budget FTE.
+  cites: [wd_suporg, oracle_posn]
+  sql: |
+    SELECT 'position' AS entity_type, p.posn_nbr AS entity_id,
+           'incumbent FTE ' || CAST(SUM(j.fte) AS VARCHAR(20)) || ' > budget ' || CAST(MAX(p.budget_fte) AS VARCHAR(20)) AS detail
+    FROM cur_posn p JOIN cur_job j ON j.posn_nbr = p.posn_nbr
+    GROUP BY p.posn_nbr HAVING SUM(j.fte) > MAX(p.budget_fte)
+- id: S03
+  name: Overlapping position history rows
+  domain: position
+  severity: high
+  owner: AITS Decision Support (EDW)
+  population: positions
+  rationale: Position versions must not overlap; Oracle requires a position and its children to share effective dates.
+  target: {workday: "Position restrictions history", oracle: "Position date-effective rows"}
+  remediation: Rebuild position expiry dates.
+  cites: [oracle_posn]
+  sql: |
+    SELECT DISTINCT 'position' AS entity_type, x.posn_nbr AS entity_id,
+           'row ending ' || CAST(x.exp_dt AS VARCHAR(30)) || ' overlaps row starting ' || CAST(x.nxt AS VARCHAR(30)) AS detail
+    FROM (SELECT posn_nbr, exp_dt, LEAD(eff_dt) OVER (PARTITION BY posn_nbr ORDER BY eff_dt, exp_dt) AS nxt
+          FROM stg_position) x
+    WHERE x.nxt IS NOT NULL AND x.nxt <= x.exp_dt
+- id: S04
+  name: Job references a position missing from position control
+  domain: position
+  severity: critical
+  owner: IHR Position Control
+  population: job_keys
+  rationale: Jobs without positions cannot load under position management; they also lose budget and class lineage.
+  target: {workday: "Position must exist before hire (position management)", oracle: "Assignment PositionCode must resolve"}
+  remediation: Restore the position (NBBPOSN) or re-point the job.
+  cites: [wd_staffing, osu_positions, repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'job' AS entity_type, j.pers_id || '|' || j.posn_nbr || '|' || j.suffix AS entity_id,
+           'position ' || j.posn_nbr || ' not in position history' AS detail
+    FROM stg_job j
+    WHERE NOT EXISTS (SELECT 1 FROM stg_position p WHERE p.posn_nbr = j.posn_nbr)
+- id: S05
+  name: Active job on an inactive position
+  domain: position
+  severity: high
+  owner: IHR Position Control
+  population: active_jobs
+  rationale: Expired positions with active assignments are a known conversion blocker (see guardrails section 2 item 1).
+  target: {workday: "Closed position with incumbent", oracle: "Inactive position on active assignment"}
+  remediation: Reactivate the position or move the job.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT 'job' AS entity_type, j.job_key AS entity_id, 'position status ' || p.status_cd AS detail
+    FROM cur_job j JOIN cur_posn p ON p.posn_nbr = j.posn_nbr
+    WHERE p.status_cd <> 'A'
+- id: S06
+  name: Job org differs from its position's org
+  domain: position
+  severity: medium
+  owner: Unit HR with IHR Position Control
+  population: active_jobs
+  rationale: The target has one home (supervisory org / department) per position; disagreeing org codes force a choice and break security and reporting.
+  target: {workday: "Supervisory organization of the position", oracle: "Department on position vs assignment"}
+  remediation: Decide the authoritative org; correct the other.
+  cites: [wd_suporg]
+  sql: |
+    SELECT 'job' AS entity_type, j.job_key AS entity_id, 'job org ' || j.org_cd || ' vs position org ' || p.org_cd AS detail
+    FROM cur_job j JOIN cur_posn p ON p.posn_nbr = j.posn_nbr
+    WHERE j.org_cd <> p.org_cd
+- id: S07
+  name: Job class differs from its position's class
+  domain: position
+  severity: medium
+  owner: IHR Classification
+  population: active_jobs
+  rationale: Job profile is set on the position in Workday and Oracle; the class carried by the job must match.
+  target: {workday: "Job profile on position", oracle: "Job on position and assignment"}
+  remediation: Classification review; correct job or position.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT 'job' AS entity_type, j.job_key AS entity_id, 'job class ' || j.class_cd || ' vs position class ' || p.class_cd AS detail
+    FROM cur_job j JOIN cur_posn p ON p.posn_nbr = j.posn_nbr
+    WHERE j.class_cd <> p.class_cd
+# ---------------------------------------------------------------- classification / compensation
+- id: C01
+  name: Civil-service job class not in the SUCSS catalog
+  domain: classification
+  severity: critical
+  owner: IHR Classification (SUCSS liaison)
+  population: active_jobs
+  rationale: >-
+    Every legacy class must map to exactly one target job profile or an explicit retire decision; codes
+    missing from the SUCSS class plan have no mapping and fail the build. The class plan keeps changing.
+  target: {workday: "Job Profile (job family / job family group)", oracle: "Job (PER_JOBS_F) and job family"}
+  remediation: Reclassify or add the code to the crosswalk with a SUCSS citation.
+  cites: [sucss, repo_guardrails]
+  sql: |
+    SELECT 'job' AS entity_type, j.job_key AS entity_id, 'class ' || COALESCE(j.class_cd, '(null)') || ' not in SUCSS catalog' AS detail
+    FROM cur_job j JOIN ref_ecls e ON e.ecls_cd = j.ecls_cd
+    WHERE e.ecls_group = 'CS' AND j.class_cd IS NOT NULL
+      AND NOT EXISTS (SELECT 1 FROM ref_class c WHERE c.class_cd = j.class_cd AND c.class_source = 'SUCSS')
+- id: C02
+  name: Salary below the class range minimum (full-time equivalent)
+  domain: classification
+  severity: high
+  owner: IHR Compensation
+  population: active_jobs
+  rationale: Target compensation grades validate rate against range; below-minimum pay is either a data error or a compliance issue.
+  target: {workday: "Compensation grade / grade profile", oracle: "Grade and salary range"}
+  remediation: Compensation review; correct salary, FTE or class.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT 'job' AS entity_type, j.job_key AS entity_id,
+           'FTE rate ' || CAST(CAST(j.annual_sal / j.fte AS DECIMAL(14,2)) AS VARCHAR(20)) || ' < min ' || CAST(c.min_annual AS VARCHAR(20)) AS detail
+    FROM cur_job j
+    JOIN ref_ecls e ON e.ecls_cd = j.ecls_cd
+    JOIN ref_class c ON c.class_cd = j.class_cd
+    WHERE e.pay_basis = 'SAL' AND j.fte > 0 AND j.annual_sal / j.fte < c.min_annual
+- id: C03
+  name: Salary above the class range maximum (full-time equivalent)
+  domain: classification
+  severity: medium
+  owner: IHR Compensation
+  population: active_jobs
+  rationale: Above-maximum rates fail grade validation unless loaded with an approved exception.
+  target: {workday: "Compensation grade profile (outside range)", oracle: "Salary range violation"}
+  remediation: Confirm exception (red-circle) or correct.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT 'job' AS entity_type, j.job_key AS entity_id,
+           'FTE rate ' || CAST(CAST(j.annual_sal / j.fte AS DECIMAL(14,2)) AS VARCHAR(20)) || ' > max ' || CAST(c.max_annual AS VARCHAR(20)) AS detail
+    FROM cur_job j
+    JOIN ref_ecls e ON e.ecls_cd = j.ecls_cd
+    JOIN ref_class c ON c.class_cd = j.class_cd
+    WHERE e.pay_basis = 'SAL' AND j.fte > 0 AND j.annual_sal / j.fte > c.max_annual
+- id: C04
+  name: Active job with no class code
+  domain: classification
+  severity: high
+  owner: IHR Classification
+  population: active_jobs
+  rationale: Without a class (SUCSS, AP or faculty title code) no job profile can be assigned.
+  target: {workday: "Job Profile required on position", oracle: "Job required on assignment"}
+  remediation: Classify in JDX / HRFE.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT 'job' AS entity_type, job_key AS entity_id, 'class code missing' AS detail
+    FROM cur_job WHERE class_cd IS NULL
+# ---------------------------------------------------------------- org / supervisory
+- id: O01
+  name: Active primary job with no supervisor
+  domain: org_supervisory
+  severity: critical
+  owner: Unit HR; IHR HRIS
+  population: active_primary_jobs
+  rationale: >-
+    Supervisory organizations drive approval routing and security in Workday; a missing manager link
+    breaks routing for every business process. Only steward-approved top-of-house positions may be blank.
+  target: {workday: "Supervisory organization manager", oracle: "Assignment manager (line manager)"}
+  remediation: Key supervisor in HRFE, or add the position to REF_HIERARCHY_ROOT with approval.
+  cites: [wd_suporg, repo_guardrails]
+  sql: |
+    SELECT 'person' AS entity_type, j.pers_id AS entity_id, 'primary job ' || j.posn_nbr || ' has no supervisor' AS detail
+    FROM cur_job j
+    WHERE j.contract_type = 'P' AND j.supervisor_pers_id IS NULL
+      AND NOT EXISTS (SELECT 1 FROM ref_hierarchy_root r WHERE r.posn_nbr = j.posn_nbr)
+- id: O02
+  name: Supervisor is not an active worker
+  domain: org_supervisory
+  severity: high
+  owner: Unit HR
+  population: active_primary_jobs
+  rationale: Approvals route to someone who left; in the target the sup org would have no active manager.
+  target: {workday: "Supervisory org manager must be active", oracle: "Manager must have active assignment"}
+  remediation: Re-point to the current manager.
+  cites: [wd_suporg]
+  sql: |
+    SELECT 'person' AS entity_type, j.pers_id AS entity_id, 'supervisor ' || j.supervisor_pers_id || ' not active' AS detail
+    FROM cur_job j
+    WHERE j.contract_type = 'P' AND j.supervisor_pers_id IS NOT NULL AND j.supervisor_pers_id <> j.pers_id
+      AND NOT EXISTS (SELECT 1 FROM active_worker a WHERE a.pers_id = j.supervisor_pers_id)
+- id: O03
+  name: Cycle in reporting lines
+  domain: org_supervisory
+  severity: critical
+  owner: IHR HRIS
+  population: active_primary_jobs
+  rationale: A reporting cycle cannot be built into a supervisory-org tree and loops approval chains.
+  target: {workday: "Supervisory organization hierarchy (must be a tree)", oracle: "Manager hierarchy (PER_MANAGER_HRCHY_DN)"}
+  remediation: Break the loop with the correct manager.
+  cites: [wd_suporg]
+  portability: >-
+    Recursive CTE. DuckDB/Snowflake: WITH RECURSIVE. Oracle: plain WITH with column list (rendered).
+    Databricks SQL supports recursive CTEs only on recent runtimes - verify on the workspace, or
+    replace with a fixed-depth self-join. Depth bound 30 keeps every engine terminating.
+  sql: |
+    {{WITH_RECURSIVE}} edges (pers_id, sup_id) AS (
+      SELECT DISTINCT pers_id, supervisor_pers_id FROM cur_job
+      WHERE contract_type = 'P' AND supervisor_pers_id IS NOT NULL AND supervisor_pers_id <> pers_id
+    ),
+    walk (start_id, cur_id, depth) AS (
+      SELECT pers_id, sup_id, 1 FROM edges
+      UNION ALL
+      SELECT w.start_id, e.sup_id, w.depth + 1
+      FROM walk w JOIN edges e ON e.pers_id = w.cur_id
+      WHERE w.depth < 30 AND w.cur_id <> w.start_id
+    )
+    SELECT 'person' AS entity_type, start_id AS entity_id,
+           'reporting cycle of length ' || CAST(MIN(depth) AS VARCHAR(10)) AS detail
+    FROM walk WHERE cur_id = start_id AND depth >= 2
+    GROUP BY start_id
+- id: O04
+  name: Person supervises themselves
+  domain: org_supervisory
+  severity: high
+  owner: Unit HR
+  population: active_primary_jobs
+  rationale: Self-approval is a control failure and an invalid manager link in every target.
+  target: {workday: "Manager of own supervisory org", oracle: "Self as line manager"}
+  remediation: Set the actual manager.
+  cites: [wd_suporg]
+  sql: |
+    SELECT 'person' AS entity_type, pers_id AS entity_id, 'supervisor is self' AS detail
+    FROM cur_job WHERE contract_type = 'P' AND supervisor_pers_id = pers_id
+- id: O05
+  name: Org whose parent org does not exist
+  domain: org_supervisory
+  severity: medium
+  owner: University Accounting (org hierarchy) with IHR
+  population: orgs
+  rationale: Broken org hierarchy produces orphan cost centers / departments and breaks roll-ups.
+  target: {workday: "Cost center / company hierarchy", oracle: "Department tree"}
+  remediation: Correct the parent in the org hierarchy (FTVORGN).
+  cites: [wisc_atp]
+  sql: |
+    SELECT 'org' AS entity_type, o.org_cd AS entity_id, 'parent ' || o.parent_org_cd || ' missing' AS detail
+    FROM ref_org o
+    WHERE o.parent_org_cd IS NOT NULL AND NOT EXISTS (SELECT 1 FROM ref_org p WHERE p.org_cd = o.parent_org_cd)
+- id: O06
+  name: Active job or position uses an unknown or inactive org
+  domain: org_supervisory
+  severity: high
+  owner: University Accounting with unit HR
+  population: orgs
+  rationale: Every org code needs a crosswalk to a target org; inactive or unknown codes have none.
+  target: {workday: "Supervisory org / cost center crosswalk", oracle: "Department crosswalk"}
+  remediation: Move jobs/positions to an active org or reactivate it.
+  cites: [wisc_atp, repo_guardrails]
+  sql: |
+    SELECT 'org' AS entity_type, u.org_cd AS entity_id, 'referenced by active job/position; unknown or inactive' AS detail
+    FROM (SELECT org_cd FROM cur_job UNION SELECT org_cd FROM cur_posn WHERE status_cd = 'A') u
+    WHERE NOT EXISTS (SELECT 1 FROM ref_org o WHERE o.org_cd = u.org_cd AND o.status_cd = 'A')
+# ---------------------------------------------------------------- payroll
+- id: Y01
+  name: Pay with no job record for the same person, position and suffix
+  domain: payroll
+  severity: high
+  owner: University Payroll with AITS Decision Support
+  population: pay_keys
+  rationale: Pay history must tie to an appointment to load as historical pay results / balances and for labor-distribution reconciliation.
+  target: {workday: "Payroll results / historical pay balances by position", oracle: "Payroll relationship and assignment balances"}
+  remediation: Trace the pay document; fix the job key or the payroll accounting row.
+  cites: [uchicago, repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'pay' AS entity_type,
+           y.pers_id || '|' || y.posn_nbr || '|' || y.suffix || '|' || CAST(y.period_end_dt AS VARCHAR(30)) AS entity_id,
+           'no job record for this person/position/suffix' AS detail
+    FROM stg_pay y
+    WHERE NOT EXISTS (SELECT 1 FROM stg_job j WHERE j.pers_id = y.pers_id AND j.posn_nbr = y.posn_nbr AND j.suffix = y.suffix)
+- id: Y02
+  name: Pay after termination without rehire
+  domain: payroll
+  severity: critical
+  owner: University Payroll
+  population: pay_keys
+  rationale: Payments while the employee record says terminated are overpayments or a missed rehire; both block parallel-pay reconciliation.
+  target: {workday: "Payroll parallel testing / pay results for terminated worker", oracle: "Payroll for ended work relationship"}
+  remediation: Payroll review; recover or key rehire.
+  cites: [uchicago, repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'pay' AS entity_type,
+           y.pers_id || '|' || y.posn_nbr || '|' || y.suffix || '|' || CAST(y.period_end_dt AS VARCHAR(30)) AS entity_id,
+           'employee status T on period end' AS detail
+    FROM stg_pay y JOIN stg_employee e
+      ON e.pers_id = y.pers_id AND e.eff_dt <= y.period_end_dt AND e.exp_dt >= y.period_end_dt
+    WHERE e.status_cd = 'T'
+- id: Y03
+  name: Pay charged to a position missing from position control
+  domain: payroll
+  severity: high
+  owner: University Payroll with IHR Position Control
+  population: pay_keys
+  rationale: Labor distribution by position cannot reconcile to converted positions.
+  target: {workday: "Costing allocation on position", oracle: "Costing on position / assignment"}
+  remediation: Correct the position number on the payroll accounting row.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'pay' AS entity_type,
+           y.pers_id || '|' || y.posn_nbr || '|' || y.suffix || '|' || CAST(y.period_end_dt AS VARCHAR(30)) AS entity_id,
+           'position ' || y.posn_nbr || ' not in position history' AS detail
+    FROM stg_pay y
+    WHERE NOT EXISTS (SELECT 1 FROM stg_position p WHERE p.posn_nbr = y.posn_nbr)
+- id: Y04
+  name: Negative net pay for a person and period
+  domain: payroll
+  severity: medium
+  owner: University Payroll
+  population: pay_keys
+  rationale: Net negative periods are unmatched reversals; they distort YTD balances loaded into the target.
+  target: {workday: "Historical payroll balances / YTD", oracle: "Balance initialization"}
+  remediation: Pair the reversal with its original or correct the adjustment.
+  cites: [uchicago]
+  sql: |
+    SELECT 'pay' AS entity_type, pers_id || '|' || CAST(period_end_dt AS VARCHAR(30)) AS entity_id,
+           'net pay ' || CAST(SUM(amount) AS VARCHAR(20)) AS detail
+    FROM stg_pay GROUP BY pers_id, period_end_dt HAVING SUM(amount) < 0
+- id: Y05
+  name: Duplicate pay accounting rows
+  domain: payroll
+  severity: high
+  owner: University Payroll with AITS Decision Support
+  population: pay_keys
+  rationale: Same person, position, period, earnings code and amount on two sequence numbers usually means a double load; it inflates pay totals.
+  target: {workday: "Historical pay results", oracle: "Payroll balances"}
+  remediation: Confirm with Payroll; remove the duplicate from EDW or document the true second payment.
+  cites: [repo_guardrails]
+  sql: |
+    SELECT DISTINCT 'pay' AS entity_type,
+           pers_id || '|' || posn_nbr || '|' || suffix || '|' || CAST(period_end_dt AS VARCHAR(30)) AS entity_id,
+           CAST(COUNT(*) AS VARCHAR(10)) || ' identical rows for earn code ' || earn_cd AS detail
+    FROM stg_pay
+    GROUP BY pers_id, posn_nbr, suffix, period_end_dt, earn_cd, amount
+    HAVING COUNT(*) > 1

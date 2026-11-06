@@ -1,0 +1,52 @@
+# Reconciliation tolerance rules for pre/post mock-conversion comparisons (v0.1, development).
+# Proposed defaults for discussion with the data stewards and the integrator. They are NOT
+# approved targets. Converted HISTORY should reconcile exactly: nothing is recomputed, so any
+# drift is a converter defect. Parallel PAYROLL testing (recomputed pay in the target) is a
+# different test with its own, looser per-employee tolerance; it is listed here for completeness
+# but is not executed on synthetic data.
+version: 0.1
+status: development_unapproved
+
+statuses:
+  match: Legacy and target agree within tolerance.
+  explained: Difference is fully accounted for by documented load rejections (each tied to a readiness rule ID) within tolerance.
+  unexplained: Residual after documented rejections exceeds tolerance. Blocks sign-off for that object.
+
+metrics:
+  headcount:
+    description: Distinct workers with an active assignment on the cutover date
+    grain: [org_cd, worker_group]
+    abs_tol: 0
+    rel_tol: 0.0
+    why: People are counted, not estimated; any difference is a missing or extra worker.
+  appointments:
+    description: Active assignments (jobs) on the cutover date
+    grain: [org_cd, class_cd]
+    abs_tol: 0
+    rel_tol: 0.0
+    why: Banner jobs map one-to-one to assignments / position fills in the converted snapshot.
+  fte:
+    description: Sum of assignment FTE on the cutover date
+    grain: [org_cd, class_cd]
+    abs_tol: 0.01
+    rel_tol: 0.0
+    why: Allows target FTE precision (e.g. scheduled hours / standard hours rounding) of at most 0.01 per group.
+  pay_total:
+    description: Sum of historical pay amounts loaded as pay results / balances, last 12 periods
+    grain: [org_cd, period_end_dt]
+    abs_tol: 0.00
+    rel_tol: 0.0
+    why: Converted history is loaded, not recomputed; amounts must tie to the cent.
+
+# Not executed here (needs a target tenant/pod). Recorded so the harness design is complete.
+parallel_payroll:
+  description: Gross-to-net parallel per employee per pay period (legacy vs target calculation)
+  per_employee_abs_tol: 1.00
+  population_match_target: 0.99
+  note: >-
+    Peer institutions set explicit pay-accuracy targets for parallel testing (the UChicago HCM deck
+    reports >99 % pay accuracy); agree the value with University Payroll before the first parallel.
+
+mock_cycles:
+  planned: 4
+  note: Richmond converted Banner data into Workday four times; trend defects and residuals across cycles.
