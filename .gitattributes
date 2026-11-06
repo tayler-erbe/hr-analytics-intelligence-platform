@@ -1,0 +1,2 @@
+# Preserve source snapshots and benchmark hashes byte-for-byte on every OS.
+* -text

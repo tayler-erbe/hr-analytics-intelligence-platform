@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>University IT | Role evolution lab</title>
+<style>
+:root{font-family:Segoe UI,Arial,sans-serif;color:#183448;background:#f1f5f6}*{box-sizing:border-box}body{margin:0}header{background:#123c4c;color:#fff;padding:28px max(24px,calc((100vw - 1180px)/2))}header p{color:#c7e1e5;max-width:840px;line-height:1.6}h1{font-size:32px;margin:10px 0}h2{font-size:23px}h3{font-size:17px}p{line-height:1.55}.badge{font-size:12px;letter-spacing:1px;font-weight:700;color:#9fe7d8}.banner{background:#fff2cf;color:#654a16;padding:14px 24px;text-align:center;line-height:1.5}main{max-width:1230px;margin:auto;padding:24px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}.stat,.panel,.snapshot{background:white;border:1px solid #dbe5e8;border-radius:12px;padding:20px}.stat strong{display:block;font-size:30px}.stat span{font-size:14px;color:#546d78}.layout{display:grid;grid-template-columns:310px 1fr;gap:24px}label{display:block;font-weight:600;font-size:14px;margin:10px 0}select,input{width:100%;padding:11px;border:1px solid #b8cbd0;border-radius:6px;background:white;color:inherit;font:inherit}#roles{max-height:600px;overflow:auto;margin-top:16px}button.role{display:block;text-align:left;width:100%;border:0;border-top:1px solid #e5edee;background:white;padding:14px 8px;color:inherit;cursor:pointer;font:inherit}button.role:hover,button.role[aria-pressed=true]{background:#e6f4f1}button.role small{display:block;color:#546d78;margin-top:4px}.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.snapshot{padding:16px;background:#f7fafb}.year{font-weight:700;color:#147566}.muted{color:#526c79}.pill{display:inline-block;background:#e4f4ef;color:#155e4e;border-radius:20px;padding:6px 10px;margin:4px 4px 4px 0;font-size:13px}.proposal{border-left:4px solid #218775;padding-left:18px;margin-top:24px}.evidence{font-family:monospace;font-size:12px;overflow-wrap:anywhere;color:#54717a}.signal{padding:12px;background:#e9f4f5;border-radius:8px;font-weight:600}details{margin-top:24px}summary{cursor:pointer;font-weight:600}footer{max-width:1180px;margin:20px auto;padding:20px;color:#526c79;font-size:13px}@media(max-width:900px){.layout{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}#roles{max-height:240px}.stats{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<header><div class="badge">WORKFORCE INTELLIGENCE / SYNTHETIC LAB</div><h1>The title is only the beginning.</h1><p>Explore how university IT work could evolve across roles, skills, tools and service outcomes. Demo University Shared IT is a fictional organization.</p></header>
+<div class="banner"><strong>All people, histories, tools and recommendations below are fictional.</strong> No real employee assessment, measured market trend, live agent or platform benchmark is shown.</div>
+<main><section class="stats" aria-label="Synthetic dataset counts"><div class="stat"><strong>57</strong><span>Fictional positions per snapshot</span></div><div class="stat"><strong>8</strong><span>Service teams plus leadership</span></div><div class="stat"><strong>36</strong><span>Changed titles, 2025 to 2026</span></div><div class="stat"><strong>12</strong><span>Same title, changed duties</span></div></section>
+<div class="layout"><aside class="panel"><h2>Role inventory</h2><label for="team">Service team</label><select id="team"><option value="">All teams</option></select><label for="query">Find a role or tool</label><input id="query" type="search" placeholder="Try report, ColdFusion, recovery"><p id="count" class="muted" aria-live="polite"></p><div id="roles"></div></aside>
+<article class="panel" id="detail" aria-live="polite"></article></div>
+</main><footer>Role histories are scenario evidence, not observed changes in AITS. Training proposals require a verified tool roadmap, capability assessment and service outcome. Agent contracts and vendor research are in the accompanying design brief.</footer>
+<script>
+'use strict';
+const data=/*DEMO_DATA*/;
+const el=id=>document.getElementById(id);
+const escapeHtml=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const latest=data.role_versions.filter(r=>r.year===2026);
+let selected=latest.find(r=>r.title==='Analytics Engineer').position_id;
+const teams=[...new Set(latest.map(r=>r.team))].sort();
+for(const t of teams){const option=document.createElement('option');option.value=t;option.textContent=t;el('team').appendChild(option);}
+function renderDetail(){
+ const states=data.role_versions.filter(r=>r.position_id===selected).sort((a,b)=>a.year-b.year);
+ const now=states[states.length-1], before=states.find(r=>r.year===2025);
+ const person=data.people.find(p=>p.position_id===selected);
+ const rec=data.recommendations.find(r=>r.position_id===selected);
+ const signal=now.title!==before.title?'Title changed: inspect duties before concluding the role changed.':now.duties!==before.duties?'Title stayed the same; duties and tools changed in this scenario.':'Stable leadership role in this scenario.';
+ el('detail').innerHTML=`<div class="year">${escapeHtml(now.team)} / ${escapeHtml(selected)}</div><h2>${escapeHtml(now.title)}</h2><p class="muted">${escapeHtml(person.display_name)} · fictional identity</p><p class="signal">${signal}</p><div class="timeline">${states.map(s=>`<section class="snapshot"><div class="year">${s.year} scenario</div><h3>${escapeHtml(s.title)}</h3><p>${escapeHtml(s.duties)}</p><h3>Tools</h3><p>${escapeHtml(s.tools)}</p><div>${s.skills.map(x=>`<span class="pill">${escapeHtml(x)}</span>`).join('')}</div><p class="evidence">${escapeHtml(s.evidence_id)} · synthetic evidence</p></section>`).join('')}</div>${rec?`<section class="proposal"><h3>Illustrative development proposal</h3><p>${escapeHtml(rec.suggestion)}</p><h3>Demonstrate capability</h3><p>${escapeHtml(rec.validation_task)}</p><h3>Test before acting</h3><p>${escapeHtml(rec.decision_test)}</p><p class="evidence">${rec.evidence_ids.map(escapeHtml).join(' + ')}</p><details><summary>What is still missing?</summary><ul>${rec.missing_evidence.map(x=>`<li>${escapeHtml(x)}</li>`).join('')}</ul><p>Benefit: hypothesis only. Reviewer: ${escapeHtml(rec.owner)}. No staffing or training purchase is approved.</p></details></section>`:'<p>Leadership priorities need service evidence before a recommendation.</p>'}`;
+}
+function render(){
+ const q=el('query').value.toLowerCase();
+ const rows=latest.filter(r=>(!el('team').value||r.team===el('team').value)&&[r.title,r.tools,r.team,...r.skills].join(' ').toLowerCase().includes(q));
+ el('count').textContent=rows.length+' matching fictional positions';
+ if(rows.length&&!rows.some(r=>r.position_id===selected))selected=rows[0].position_id;
+ el('roles').innerHTML='';
+ for(const r of rows){const b=document.createElement('button');b.className='role';b.setAttribute('aria-pressed',String(r.position_id===selected));b.innerHTML=escapeHtml(r.title)+`<small>${escapeHtml(r.team)} · ${escapeHtml(r.position_id)}</small>`;b.addEventListener('click',()=>{selected=r.position_id;render();});el('roles').appendChild(b);}
+ if(rows.length)renderDetail();else el('detail').innerHTML='<h2>No matching role</h2><p>Choose another team or search term.</p>';
+}
+el('team').addEventListener('change',render);el('query').addEventListener('input',render);render();
+</script></body></html>

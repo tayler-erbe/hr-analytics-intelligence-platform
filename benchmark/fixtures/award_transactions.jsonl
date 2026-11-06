@@ -1,0 +1,6 @@
+{"amount_cents": 12000000, "award_id": "AW1", "transaction_id": "TX1", "transaction_type": "obligation"}
+{"amount_cents": 2000000, "award_id": "AW1", "transaction_id": "TX2", "transaction_type": "obligation"}
+{"amount_cents": -1000000, "award_id": "AW1", "transaction_id": "TX3", "transaction_type": "obligation"}
+{"amount_cents": 3000000, "award_id": "AW2", "transaction_id": "TX4", "transaction_type": "obligation"}
+{"amount_cents": 5000000, "award_id": "AW1", "transaction_id": "TX5", "transaction_type": "expenditure"}
+{"amount_cents": 1500000, "award_id": "AW2", "transaction_id": "TX6", "transaction_type": "expenditure"}
