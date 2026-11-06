@@ -1,0 +1,7214 @@
+{
+ "built_at_utc": "2026-11-06T06:48:35.423341+00:00",
+ "duckdb_version": "2.0.0",
+ "tables": {
+  "aei_automation_vs_augmentation_by_task": {
+   "domain": "anthropic_economic_index",
+   "rows": 3364,
+   "bytes": 167214,
+   "note": "release_2025_03_27; observed Claude usage, not displacement",
+   "columns": [
+    {
+     "name": "task_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "feedback_loop",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "directive",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "task_iteration",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "validation",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "learning",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "filtered",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/anthropic_economic_index/release_2025_03_27__automation_vs_augmentation_by_task.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/anthropic_economic_index/release_2025_03_27__automation_vs_augmentation_by_task.csv": "f6570714a9af31ae783fd91bd7ee3b2e9cfabcbf522a30ba1aa9b1f230665e79"
+   }
+  },
+  "aei_job_exposure": {
+   "domain": "anthropic_economic_index",
+   "rows": 756,
+   "bytes": 14147,
+   "note": "labor_market_impacts; observed Claude usage, not displacement",
+   "columns": [
+    {
+     "name": "occ_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "observed_exposure",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/anthropic_economic_index/labor_market_impacts__job_exposure.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/anthropic_economic_index/labor_market_impacts__job_exposure.csv": "4f0a3adf5feeb2ec5f5d02ab18cc5e851a2a4b8470bde84c0c9335017be12d68"
+   }
+  },
+  "aei_onet_task_statements": {
+   "domain": "anthropic_economic_index",
+   "rows": 19530,
+   "bytes": 662154,
+   "note": "release_2025_03_27; observed Claude usage, not displacement",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "incumbents_responding",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/anthropic_economic_index/release_2025_03_27__onet_task_statements.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/anthropic_economic_index/release_2025_03_27__onet_task_statements.csv": "82e4c418dc08475ef1263ad1e8c66ffa3357291370cd35ee1065ecea590597ec"
+   }
+  },
+  "aei_task_pct_v2": {
+   "domain": "anthropic_economic_index",
+   "rows": 3365,
+   "bytes": 120457,
+   "note": "release_2025_03_27; observed Claude usage, not displacement",
+   "columns": [
+    {
+     "name": "task_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "pct",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/anthropic_economic_index/release_2025_03_27__task_pct_v2.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/anthropic_economic_index/release_2025_03_27__task_pct_v2.csv": "0c20f184cd4a1e3d8ef3d77f500b32b62431ce61a3c2f133c3af7fa8429f97db"
+   }
+  },
+  "aei_task_penetration": {
+   "domain": "anthropic_economic_index",
+   "rows": 17998,
+   "bytes": 560392,
+   "note": "labor_market_impacts; observed Claude usage, not displacement",
+   "columns": [
+    {
+     "name": "task",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "penetration",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/anthropic_economic_index/labor_market_impacts__task_penetration.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/anthropic_economic_index/labor_market_impacts__task_penetration.csv": "85bee872db1d55d3e9a7f4e89da5ae4a5d59aa8ec875d728fbf4b7d820984616"
+   }
+  },
+  "indeed_aggregate_job_postings_us": {
+   "domain": "indeed",
+   "rows": 4928,
+   "bytes": 34332,
+   "note": "Indeed Hiring Lab index; not raw vacancy counts",
+   "columns": [
+    {
+     "name": "date",
+     "type": "DATE"
+    },
+    {
+     "name": "jobcountry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "indeed_job_postings_index_sa",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "indeed_job_postings_index_nsa",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "variable",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/indeed_postings/aggregate_job_postings_US.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/indeed_postings/aggregate_job_postings_US.csv": "6168f3e7fd08c9c84ac11fac9c04bcc2810fa4ec9e6a8a07f412e06e5ae69e4d"
+   }
+  },
+  "indeed_job_postings_by_sector_us": {
+   "domain": "indeed",
+   "rows": 231616,
+   "bytes": 643665,
+   "note": "Indeed Hiring Lab index; not raw vacancy counts",
+   "columns": [
+    {
+     "name": "date",
+     "type": "DATE"
+    },
+    {
+     "name": "jobcountry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "indeed_job_postings_index",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "variable",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "display_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/indeed_postings/job_postings_by_sector_US.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/indeed_postings/job_postings_by_sector_US.csv": "d3c8d54151c0dd37d3536ee750df109a65c8640d34fe74c0afd99c4fe1a36675"
+   }
+  },
+  "indeed_metro_job_postings_us": {
+   "domain": "indeed",
+   "rows": 1458688,
+   "bytes": 3542945,
+   "note": "Indeed Hiring Lab index; not raw vacancy counts",
+   "columns": [
+    {
+     "name": "date",
+     "type": "DATE"
+    },
+    {
+     "name": "metro",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "cbsa_code",
+     "type": "BIGINT"
+    },
+    {
+     "name": "indeed_job_postings_index",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/indeed_postings/metro_job_postings_us.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/indeed_postings/metro_job_postings_us.csv": "e9489b20feb4280857aeeb58815b0eb252295431a70145aea4e57d499aa732b9"
+   }
+  },
+  "indeed_sector_job_title_examples": {
+   "domain": "indeed",
+   "rows": 47,
+   "bytes": 1873,
+   "note": "Indeed Hiring Lab index; not raw vacancy counts",
+   "columns": [
+    {
+     "name": "sector",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "job_titles",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/indeed_postings/sector-job-title-examples.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/indeed_postings/sector-job-title-examples.csv": "50124270d2c29b74451fced1180179a26edc5561704c131e8d04455259459558"
+   }
+  },
+  "indeed_state_job_postings_us": {
+   "domain": "indeed",
+   "rows": 125664,
+   "bytes": 297092,
+   "note": "Indeed Hiring Lab index; not raw vacancy counts",
+   "columns": [
+    {
+     "name": "date",
+     "type": "DATE"
+    },
+    {
+     "name": "state",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "indeed_job_postings_index",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/indeed_postings/state_job_postings_us.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/indeed_postings/state_job_postings_us.csv": "45655f350c930d46e083cde5860d99838b6027730653ab64404a6176e561f869"
+   }
+  },
+  "ipeds_eap2023": {
+   "domain": "ipeds",
+   "rows": 288192,
+   "bytes": 1799271,
+   "note": "IPEDS EAP2023 as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eapcat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "occupcat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "facstat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeaptot",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eaptot",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeaptyp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eaptyp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeapmed",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eapmed",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeapft",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eapft",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeapftty",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eapfttyp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeapftmd",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eapftmed",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeappt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eappt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeapptty",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eappttyp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeapptmd",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "eapptmed",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/EAP2023.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/EAP2023.zip": "f133e6a2de3f8294f436bf3a906596e6570a72f6c01647a6ce73a1f3214b7f44"
+   }
+  },
+  "ipeds_effy2024": {
+   "domain": "ipeds",
+   "rows": 115026,
+   "bytes": 3687472,
+   "note": "IPEDS EFFY2024 as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "effyalev",
+     "type": "BIGINT"
+    },
+    {
+     "name": "effylev",
+     "type": "BIGINT"
+    },
+    {
+     "name": "lstudy",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeytotlt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efytotlt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeytotlm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efytotlm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeytotlw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efytotlw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyaiat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyaiant",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyaiam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyaianm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyaiaw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyaianw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyasit",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyasiat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyasim",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyasiam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyasiw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyasiaw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefybkat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efybkaat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefybkam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efybkaam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefybkaw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efybkaaw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyhist",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyhispt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyhism",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyhispm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyhisw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyhispw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefynhpt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efynhpit",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefynhpm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efynhpim",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefynhpw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efynhpiw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefywhit",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efywhitt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefywhim",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efywhitm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefywhiw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efywhitw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefy2mot",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efy2mort",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefy2mom",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efy2morm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefy2mow",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efy2morw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeyunknt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyunknt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeyunknm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyunknm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeyunknw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyunknw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeynralt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efynralt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeynralm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efynralm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xeynralw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efynralw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xefyguun",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyguun",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "xefyguan",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efyguan",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "xefyguto",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efygutot",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "xefygukn",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "efygukn",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/EFFY2024.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/EFFY2024.zip": "fff28cbfaecbddd871f64dc958abbbd967f750ead7c699506efb47dc2ce8366f"
+   }
+  },
+  "ipeds_hd2024": {
+   "domain": "ipeds",
+   "rows": 6072,
+   "bytes": 1096339,
+   "note": "IPEDS HD2024 as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "instnm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ialias",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "addr",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "city",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "stabbr",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "zip",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "fips",
+     "type": "BIGINT"
+    },
+    {
+     "name": "obereg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "chfnm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "chftitle",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "gentele",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ein",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ueis",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "opeid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "opeflag",
+     "type": "BIGINT"
+    },
+    {
+     "name": "webaddr",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "adminurl",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "faidurl",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "applurl",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "npricurl",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "veturl",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "athurl",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "disaurl",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sector",
+     "type": "BIGINT"
+    },
+    {
+     "name": "iclevel",
+     "type": "BIGINT"
+    },
+    {
+     "name": "control",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hloffer",
+     "type": "BIGINT"
+    },
+    {
+     "name": "ugoffer",
+     "type": "BIGINT"
+    },
+    {
+     "name": "groffer",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hdegofr1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "deggrant",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hbcu",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hospital",
+     "type": "BIGINT"
+    },
+    {
+     "name": "medical",
+     "type": "BIGINT"
+    },
+    {
+     "name": "tribal",
+     "type": "BIGINT"
+    },
+    {
+     "name": "locale",
+     "type": "BIGINT"
+    },
+    {
+     "name": "openpubl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "act",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "newid",
+     "type": "BIGINT"
+    },
+    {
+     "name": "deathyr",
+     "type": "BIGINT"
+    },
+    {
+     "name": "closedat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "cyactive",
+     "type": "BIGINT"
+    },
+    {
+     "name": "postsec",
+     "type": "BIGINT"
+    },
+    {
+     "name": "pseflag",
+     "type": "BIGINT"
+    },
+    {
+     "name": "pset4flg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "rptmth",
+     "type": "BIGINT"
+    },
+    {
+     "name": "instcat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "c00carnegie",
+     "type": "BIGINT"
+    },
+    {
+     "name": "c21basic",
+     "type": "BIGINT"
+    },
+    {
+     "name": "carnegieic",
+     "type": "BIGINT"
+    },
+    {
+     "name": "carnegiesaec",
+     "type": "BIGINT"
+    },
+    {
+     "name": "carnegiersch",
+     "type": "BIGINT"
+    },
+    {
+     "name": "carnegiesize",
+     "type": "BIGINT"
+    },
+    {
+     "name": "carnegiealf",
+     "type": "BIGINT"
+    },
+    {
+     "name": "carnegieapm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "carnegiegpm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "landgrnt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "instsize",
+     "type": "BIGINT"
+    },
+    {
+     "name": "f1systyp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "f1sysnam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "f1syscod",
+     "type": "BIGINT"
+    },
+    {
+     "name": "cbsa",
+     "type": "BIGINT"
+    },
+    {
+     "name": "cbsatype",
+     "type": "BIGINT"
+    },
+    {
+     "name": "csa",
+     "type": "BIGINT"
+    },
+    {
+     "name": "countycd",
+     "type": "BIGINT"
+    },
+    {
+     "name": "countynm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "cngdstcd",
+     "type": "BIGINT"
+    },
+    {
+     "name": "longitud",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "latitude",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "dfrcgid",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dfrcuscg",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/HD2024.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/HD2024.zip": "d98425c123d7c0e872aec6e83960dfb501884818bf17385c340790f3d1f28345"
+   }
+  },
+  "ipeds_ic2024": {
+   "domain": "ipeds",
+   "rows": 5963,
+   "bytes": 150494,
+   "note": "IPEDS IC2024 as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "peo1istr",
+     "type": "BIGINT"
+    },
+    {
+     "name": "peo2istr",
+     "type": "BIGINT"
+    },
+    {
+     "name": "peo3istr",
+     "type": "BIGINT"
+    },
+    {
+     "name": "peo4istr",
+     "type": "BIGINT"
+    },
+    {
+     "name": "peo5istr",
+     "type": "BIGINT"
+    },
+    {
+     "name": "peo6istr",
+     "type": "BIGINT"
+    },
+    {
+     "name": "peo7istr",
+     "type": "BIGINT"
+    },
+    {
+     "name": "cntlaffi",
+     "type": "BIGINT"
+    },
+    {
+     "name": "pubprime",
+     "type": "BIGINT"
+    },
+    {
+     "name": "pubsecon",
+     "type": "BIGINT"
+    },
+    {
+     "name": "relaffil",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level1a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level1b",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level4",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level5",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level6",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level7",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level8",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level12",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level17",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level18",
+     "type": "BIGINT"
+    },
+    {
+     "name": "level19",
+     "type": "BIGINT"
+    },
+    {
+     "name": "calsys",
+     "type": "BIGINT"
+    },
+    {
+     "name": "ft_ug",
+     "type": "BIGINT"
+    },
+    {
+     "name": "ft_ftug",
+     "type": "BIGINT"
+    },
+    {
+     "name": "ftgdnidp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "pt_ug",
+     "type": "BIGINT"
+    },
+    {
+     "name": "pt_ftug",
+     "type": "BIGINT"
+    },
+    {
+     "name": "ptgdnidp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "docpp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "docppsp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "openadmp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt4",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt5",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt6",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt7",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt8",
+     "type": "BIGINT"
+    },
+    {
+     "name": "noncrdt9",
+     "type": "BIGINT"
+    },
+    {
+     "name": "vet1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "vet2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "vet3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "vet4",
+     "type": "BIGINT"
+    },
+    {
+     "name": "vet5",
+     "type": "BIGINT"
+    },
+    {
+     "name": "vet9",
+     "type": "BIGINT"
+    },
+    {
+     "name": "credits2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "credits3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "credits4",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo5",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo51",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo52",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo521",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo53",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo6",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo7",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sloa",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo8",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo81",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo82",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo83",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slob",
+     "type": "BIGINT"
+    },
+    {
+     "name": "slo9",
+     "type": "BIGINT"
+    },
+    {
+     "name": "yrscoll",
+     "type": "BIGINT"
+    },
+    {
+     "name": "stusrv2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "stusrv3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "stusrv4",
+     "type": "BIGINT"
+    },
+    {
+     "name": "stusrv8",
+     "type": "BIGINT"
+    },
+    {
+     "name": "stusrv9",
+     "type": "BIGINT"
+    },
+    {
+     "name": "libres1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "libres2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "libres3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "libres4",
+     "type": "BIGINT"
+    },
+    {
+     "name": "libres5",
+     "type": "BIGINT"
+    },
+    {
+     "name": "libres6",
+     "type": "BIGINT"
+    },
+    {
+     "name": "libres9",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstnugc",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstnugp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstnugn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstngc",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstngp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstngn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "distcrs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "distpgs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstnced1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstnced2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "dstnced3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "distnced",
+     "type": "BIGINT"
+    },
+    {
+     "name": "disab",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xdisabpc",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "disabpct",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "athassoc",
+     "type": "BIGINT"
+    },
+    {
+     "name": "assoc1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "assoc2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "assoc3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "assoc4",
+     "type": "BIGINT"
+    },
+    {
+     "name": "assoc5",
+     "type": "BIGINT"
+    },
+    {
+     "name": "assoc6",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sport1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "confno1",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sport2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "confno2",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sport3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "confno3",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sport4",
+     "type": "BIGINT"
+    },
+    {
+     "name": "confno4",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/IC2024.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/IC2024.zip": "924f04f0afd953633a34bbc2ad1beaa65fdbf2a7ba25ebe364bac7469a976288"
+   }
+  },
+  "ipeds_s2023_is": {
+   "domain": "ipeds",
+   "rows": 63732,
+   "bytes": 1031455,
+   "note": "IPEDS S2023_IS as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "siscat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "facstat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "arank",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraiant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraiant",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraianm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraianm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraianw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraianw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiaw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiaw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaaw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaaw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpit",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpit",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpim",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpim",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpiw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpiw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2mort",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2mort",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2morm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2morm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2morw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2morw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralw",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/S2023_IS.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/S2023_IS.zip": "ad32dfa87dd498dc4b6d0cd6bd64059473a43c87dcc7b04059e0888e9b1bcda2"
+   }
+  },
+  "ipeds_s2023_nh": {
+   "domain": "ipeds",
+   "rows": 41141,
+   "bytes": 548554,
+   "note": "IPEDS S2023_NH as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "snhcat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "occupcat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "facstat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sgtype",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraiant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraiant",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraianm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraianm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraianw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraianw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiaw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiaw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaaw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaaw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpit",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpit",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpim",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpim",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpiw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpiw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2mort",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2mort",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2morm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2morm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2morw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2morw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralw",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/S2023_NH.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/S2023_NH.zip": "8411cc2d8616d4cf559cda4b192ecec97ed7ea0905700d51ddba95506bf5a830"
+   }
+  },
+  "ipeds_s2023_oc": {
+   "domain": "ipeds",
+   "rows": 180266,
+   "bytes": 2929708,
+   "note": "IPEDS S2023_OC as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "staffcat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "ftpt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "occupcat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sabdtype",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrtotlw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrtotlw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraiant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraiant",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraianm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraianm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhraianw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hraianw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrasiaw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrasiaw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrbkaaw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrbkaaw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrhispw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrhispw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpit",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpit",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpim",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpim",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnhpiw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnhpiw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrwhitw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrwhitw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2mort",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2mort",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2morm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2morm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhr2morw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hr2morw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrunknw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrunknw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xhrnralw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hrnralw",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/S2023_OC.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/S2023_OC.zip": "8a18c9092cd8a966e9fc50c36b98265bfe06072292ff8e820050b9e899f5f461"
+   }
+  },
+  "ipeds_s2023_sis": {
+   "domain": "ipeds",
+   "rows": 20912,
+   "bytes": 143469,
+   "note": "IPEDS S2023_SIS as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "facstat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsistotl",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sistotl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsisprof",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sisprof",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsisascp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sisascp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsisastp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sisastp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsisinst",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sisinst",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsislect",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sislect",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsisnork",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sisnork",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/S2023_SIS.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/S2023_SIS.zip": "72db9cbbeecd9558bc2d52af90194693f89fef9467fac60db80c21d7859624e2"
+   }
+  },
+  "ipeds_sal2023_is": {
+   "domain": "ipeds",
+   "rows": 15300,
+   "bytes": 1237091,
+   "note": "IPEDS SAL2023_IS as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "arank",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsainstt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sainstt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsainstm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sainstm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsainstw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sainstw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa_9mct",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa_9mct",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa_9mcm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa_9mcm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa_9mcw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa_9mcw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsatotlt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "satotlt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsatotlm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "satotlm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsatotlw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "satotlw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09mct",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09mct",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09mcm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09mcm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09mcw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09mcw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10mct",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10mct",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10mcm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10mcm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10mcw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10mcw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11mct",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11mct",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11mcm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11mcm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11mcw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11mcw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12mct",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12mct",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12mcm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12mcm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12mcw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12mcw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaoutlt",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saoutlt",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaoutlm",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saoutlm",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaoutlw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saoutlw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09mot",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09mot",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09mom",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09mom",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09mow",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09mow",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10mot",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10mot",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10mom",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10mom",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10mow",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10mow",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11mot",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11mot",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11mom",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11mom",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11mow",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11mow",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12mot",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12mot",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12mom",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12mom",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12mow",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12mow",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaeq9ot",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saeq9ot",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaeq9om",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saeq9om",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaeq9ow",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saeq9ow",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaeq9at",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saeq9at",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaeq9am",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saeq9am",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsaeq9aw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "saeq9aw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09mat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09mat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09mam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09mam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa09maw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa09maw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10mat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10mat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10mam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10mam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa10maw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa10maw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11mat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11mat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11mam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11mam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa11maw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa11maw",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12mat",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12mat",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12mam",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12mam",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsa12maw",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sa12maw",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/SAL2023_IS.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/SAL2023_IS.zip": "39336a8fd8004993e5e87e9585dec422f7a55101d165fbfa67c78126e7986fca"
+   }
+  },
+  "ipeds_sal2023_nis": {
+   "domain": "ipeds",
+   "rows": 3961,
+   "bytes": 223473,
+   "note": "IPEDS SAL2023_NIS as published (wide); X* columns are imputation flags",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "xsanin01",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin01",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit01",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit01",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin02",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin02",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit02",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit02",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin03",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin03",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit03",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit03",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin04",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin04",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit04",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit04",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin05",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin05",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit05",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit05",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin06",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin06",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit06",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit06",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin07",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin07",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit07",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit07",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin08",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin08",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit08",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit08",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin09",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin09",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit09",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit09",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin10",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin10",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit10",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit10",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin11",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin11",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit11",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit11",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin12",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin12",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit12",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit12",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin13",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin13",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit13",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit13",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanin14",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanin14",
+     "type": "BIGINT"
+    },
+    {
+     "name": "xsanit14",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sanit14",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/SAL2023_NIS.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/SAL2023_NIS.zip": "be10ab34d45e10eaa852e718a529524970cd9bdced6d6fedd703e80199c866d1"
+   }
+  },
+  "ipeds_value_label": {
+   "domain": "ipeds",
+   "rows": 5361,
+   "bytes": 47518,
+   "note": "Code labels from IPEDS dictionaries",
+   "columns": [
+    {
+     "name": "survey",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "varname",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "codevalue",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "valuelabel",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/EAP2023_Dict.zip",
+    "data/lake/raw/ipeds/EFFY2024_Dict.zip",
+    "data/lake/raw/ipeds/HD2024_Dict.zip",
+    "data/lake/raw/ipeds/IC2024_Dict.zip",
+    "data/lake/raw/ipeds/S2023_IS_Dict.zip",
+    "data/lake/raw/ipeds/S2023_NH_Dict.zip",
+    "data/lake/raw/ipeds/S2023_OC_Dict.zip",
+    "data/lake/raw/ipeds/S2023_SIS_Dict.zip",
+    "data/lake/raw/ipeds/SAL2023_IS_Dict.zip",
+    "data/lake/raw/ipeds/SAL2023_NIS_Dict.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/EAP2023_Dict.zip": "78bd12d910de3cae77de07f590eeb558509bfa7d3506efa0f23e4c47edb48ed9",
+    "data/lake/raw/ipeds/EFFY2024_Dict.zip": "bf199f8d452ea53c02f0365489aeb7c99eaf51cf5774d6cb5306467ba8e1f981",
+    "data/lake/raw/ipeds/HD2024_Dict.zip": "a68c38003a9e56b1b5f444377540d5120d86cecc35855f84f1393480b862487d",
+    "data/lake/raw/ipeds/IC2024_Dict.zip": "d18e1c06153039963d005d86a45de23776603c6b3d31b79269a8388d511f9c54",
+    "data/lake/raw/ipeds/S2023_IS_Dict.zip": "1296fb3857b07ad463a29ebb12219da8779ce53b90e5947d73bff677012fbf29",
+    "data/lake/raw/ipeds/S2023_NH_Dict.zip": "6fd813531e32e4cdb0b41b5b6b4c0b1a81eba0ff7793a974a1ffea8a96b02c53",
+    "data/lake/raw/ipeds/S2023_OC_Dict.zip": "7aa482c3a8e42cd8bb5221113090be1df94a249f48bdafa5f672e412dd33a82e",
+    "data/lake/raw/ipeds/S2023_SIS_Dict.zip": "dce13fb04df41c3a15586ad39303da9e21871e6a2734221f7464312270c35f12",
+    "data/lake/raw/ipeds/SAL2023_IS_Dict.zip": "f471d946359bb9dbfddc6b3688c1dfb1af5a5aeba08ffd149a0f19cff4d19673",
+    "data/lake/raw/ipeds/SAL2023_NIS_Dict.zip": "a1e0afd51d6c37d60c0bf488822543d89eceac70fe7deadb96c4ebf191144054"
+   }
+  },
+  "ipeds_variable": {
+   "domain": "ipeds",
+   "rows": 431,
+   "bytes": 7704,
+   "note": "Variable list from IPEDS dictionaries",
+   "columns": [
+    {
+     "name": "survey",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "varname",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "format",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "imputation_var",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "var_title",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/ipeds/EAP2023_Dict.zip",
+    "data/lake/raw/ipeds/EFFY2024_Dict.zip",
+    "data/lake/raw/ipeds/HD2024_Dict.zip",
+    "data/lake/raw/ipeds/IC2024_Dict.zip",
+    "data/lake/raw/ipeds/S2023_IS_Dict.zip",
+    "data/lake/raw/ipeds/S2023_NH_Dict.zip",
+    "data/lake/raw/ipeds/S2023_OC_Dict.zip",
+    "data/lake/raw/ipeds/S2023_SIS_Dict.zip",
+    "data/lake/raw/ipeds/SAL2023_IS_Dict.zip",
+    "data/lake/raw/ipeds/SAL2023_NIS_Dict.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/ipeds/EAP2023_Dict.zip": "78bd12d910de3cae77de07f590eeb558509bfa7d3506efa0f23e4c47edb48ed9",
+    "data/lake/raw/ipeds/EFFY2024_Dict.zip": "bf199f8d452ea53c02f0365489aeb7c99eaf51cf5774d6cb5306467ba8e1f981",
+    "data/lake/raw/ipeds/HD2024_Dict.zip": "a68c38003a9e56b1b5f444377540d5120d86cecc35855f84f1393480b862487d",
+    "data/lake/raw/ipeds/IC2024_Dict.zip": "d18e1c06153039963d005d86a45de23776603c6b3d31b79269a8388d511f9c54",
+    "data/lake/raw/ipeds/S2023_IS_Dict.zip": "1296fb3857b07ad463a29ebb12219da8779ce53b90e5947d73bff677012fbf29",
+    "data/lake/raw/ipeds/S2023_NH_Dict.zip": "6fd813531e32e4cdb0b41b5b6b4c0b1a81eba0ff7793a974a1ffea8a96b02c53",
+    "data/lake/raw/ipeds/S2023_OC_Dict.zip": "7aa482c3a8e42cd8bb5221113090be1df94a249f48bdafa5f672e412dd33a82e",
+    "data/lake/raw/ipeds/S2023_SIS_Dict.zip": "dce13fb04df41c3a15586ad39303da9e21871e6a2734221f7464312270c35f12",
+    "data/lake/raw/ipeds/SAL2023_IS_Dict.zip": "f471d946359bb9dbfddc6b3688c1dfb1af5a5aeba08ffd149a0f19cff4d19673",
+    "data/lake/raw/ipeds/SAL2023_NIS_Dict.zip": "a1e0afd51d6c37d60c0bf488822543d89eceac70fe7deadb96c4ebf191144054"
+   }
+  },
+  "onet_abilities": {
+   "domain": "onet",
+   "rows": 94640,
+   "bytes": 279165,
+   "note": "O*NET 31.0 Abilities",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_error",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "not_relevant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_abilities_to_work_activities": {
+   "domain": "onet",
+   "rows": 381,
+   "bytes": 3953,
+   "note": "O*NET 31.0 Abilities to Work Activities",
+   "columns": [
+    {
+     "name": "abilities_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "abilities_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_activities_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_activities_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_abilities_to_work_context": {
+   "domain": "onet",
+   "rows": 139,
+   "bytes": 2802,
+   "note": "O*NET 31.0 Abilities to Work Context",
+   "columns": [
+    {
+     "name": "abilities_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "abilities_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_context_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_context_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_career_interest_type_keywords": {
+   "domain": "onet",
+   "rows": 75,
+   "bytes": 1626,
+   "note": "O*NET 31.0 Career Interest Type Keywords",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "keyword",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "keyword_type",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_career_interest_types": {
+   "domain": "onet",
+   "rows": 8307,
+   "bytes": 19705,
+   "note": "O*NET 31.0 Career Interest Types",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_content_model_reference": {
+   "domain": "onet",
+   "rows": 3006,
+   "bytes": 69998,
+   "note": "O*NET 31.0 Content Model Reference",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "description",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_education": {
+   "domain": "onet",
+   "rows": 11495,
+   "bytes": 87818,
+   "note": "O*NET 31.0 Education",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_error",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_education_categories": {
+   "domain": "onet",
+   "rows": 24,
+   "bytes": 1745,
+   "note": "O*NET 31.0 Education Categories",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category_description",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_element_rating": {
+   "domain": "onet",
+   "rows": 411893,
+   "bytes": 1927223,
+   "note": "Long union of O*NET rating files: Abilities, Career Interest Types, Essential Skills, Knowledge, Specific Interest Areas, Transferable Skills, Work Activities, Work Styles",
+   "columns": [
+    {
+     "name": "domain",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "standard_error",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "not_relevant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_emerging_tasks": {
+   "domain": "onet",
+   "rows": 338,
+   "bytes": 16481,
+   "note": "O*NET 31.0 Emerging Tasks",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "original_task_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "original_task",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_essential_skills": {
+   "domain": "onet",
+   "rows": 18200,
+   "bytes": 59411,
+   "note": "O*NET 31.0 Essential Skills",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_error",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "not_relevant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_essential_skills_to_work_activities": {
+   "domain": "onet",
+   "rows": 110,
+   "bytes": 2471,
+   "note": "O*NET 31.0 Essential Skills to Work Activities",
+   "columns": [
+    {
+     "name": "essential_skills_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "essential_skills_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_activities_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_activities_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_essential_skills_to_work_context": {
+   "domain": "onet",
+   "rows": 39,
+   "bytes": 1929,
+   "note": "O*NET 31.0 Essential Skills to Work Context",
+   "columns": [
+    {
+     "name": "essential_skills_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "essential_skills_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_context_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_context_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_gwas_to_iwas": {
+   "domain": "onet",
+   "rows": 332,
+   "bytes": 6998,
+   "note": "O*NET 31.0 GWAs to IWAs",
+   "columns": [
+    {
+     "name": "gwa_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "iwa_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "iwa_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_gwas_to_iwas_to_dwas": {
+   "domain": "onet",
+   "rows": 2087,
+   "bytes": 37302,
+   "note": "O*NET 31.0 GWAs to IWAs to DWAs",
+   "columns": [
+    {
+     "name": "gwa_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "iwa_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "dwa_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "dwa_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_interests_illustrative_activities": {
+   "domain": "onet",
+   "rows": 188,
+   "bytes": 5447,
+   "note": "O*NET 31.0 Interests Illustrative Activities",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "interest_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "activity",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_interests_illustrative_occupations": {
+   "domain": "onet",
+   "rows": 186,
+   "bytes": 2308,
+   "note": "O*NET 31.0 Interests Illustrative Occupations",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "interest_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_job_titles": {
+   "domain": "onet",
+   "rows": 54269,
+   "bytes": 449355,
+   "note": "O*NET 31.0 Job Titles",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "job_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "short_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_s",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_job_zone_reference": {
+   "domain": "onet",
+   "rows": 4,
+   "bytes": 5986,
+   "note": "O*NET 31.0 Job Zone Reference",
+   "columns": [
+    {
+     "name": "job_zone",
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "experience",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "education",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "job_training",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "examples",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "svp_range",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_job_zones": {
+   "domain": "onet",
+   "rows": 923,
+   "bytes": 3899,
+   "note": "O*NET 31.0 Job Zones",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "job_zone",
+     "type": "BIGINT"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_knowledge": {
+   "domain": "onet",
+   "rows": 60060,
+   "bytes": 480011,
+   "note": "O*NET 31.0 Knowledge",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "standard_error",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "not_relevant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_level_scale_anchors": {
+   "domain": "onet",
+   "rows": 483,
+   "bytes": 14826,
+   "note": "O*NET 31.0 Level Scale Anchors",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "anchor_value",
+     "type": "BIGINT"
+    },
+    {
+     "name": "anchor_description",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_occupation_data": {
+   "domain": "onet",
+   "rows": 1016,
+   "bytes": 85607,
+   "note": "O*NET 31.0 Occupation Data",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "description",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_occupation_level_metadata": {
+   "domain": "onet",
+   "rows": 32280,
+   "bytes": 45161,
+   "note": "O*NET 31.0 Occupation Level Metadata",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "item",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "response",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "n",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "percent",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_related_occupations": {
+   "domain": "onet",
+   "rows": 18460,
+   "bytes": 35465,
+   "note": "O*NET 31.0 Related Occupations",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "related_o_net_soc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "relatedness_tier",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "index",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_sample_of_reported_titles": {
+   "domain": "onet",
+   "rows": 8189,
+   "bytes": 69568,
+   "note": "O*NET 31.0 Sample of Reported Titles",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "reported_job_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "shown_in_my_next_move",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_scales_reference": {
+   "domain": "onet",
+   "rows": 33,
+   "bytes": 1433,
+   "note": "O*NET 31.0 Scales Reference",
+   "columns": [
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "minimum",
+     "type": "BIGINT"
+    },
+    {
+     "name": "maximum",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_soc_crosswalk": {
+   "domain": "onet",
+   "rows": 1016,
+   "bytes": 28106,
+   "note": "Official O*NET-SOC 2019 to SOC 2018 crosswalk",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "onetsoc_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "soc_2018_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "soc_2018_title",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_soc_crosswalk/2019_to_SOC_Crosswalk.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_soc_crosswalk/2019_to_SOC_Crosswalk.csv": "506fff0a3ca0d26137b9389322413022a4348bead559c4dd24edeb2cea86aa89"
+   }
+  },
+  "onet_software_skills": {
+   "domain": "onet",
+   "rows": 31821,
+   "bytes": 227306,
+   "note": "O*NET 31.0 Software Skills",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "workplace_example",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hot_technology",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "in_demand",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_specific_interest_areas": {
+   "domain": "onet",
+   "rows": 73062,
+   "bytes": 57533,
+   "note": "O*NET 31.0 Specific Interest Areas",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_specific_interest_areas_to_career_interest_types": {
+   "domain": "onet",
+   "rows": 53,
+   "bytes": 1831,
+   "note": "O*NET 31.0 Specific Interest Areas to Career Interest Types",
+   "columns": [
+    {
+     "name": "specific_interest_areas_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "specific_interest_areas_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "career_interest_types_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "career_interest_types_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_survey_booklet_locations": {
+   "domain": "onet",
+   "rows": 211,
+   "bytes": 4355,
+   "note": "O*NET 31.0 Survey Booklet Locations",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_item_number",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_task_categories": {
+   "domain": "onet",
+   "rows": 7,
+   "bytes": 705,
+   "note": "O*NET 31.0 Task Categories",
+   "columns": [
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category_description",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_task_ratings": {
+   "domain": "onet",
+   "rows": 165780,
+   "bytes": 1762368,
+   "note": "O*NET 31.0 Task Ratings",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "standard_error",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_task_statements": {
+   "domain": "onet",
+   "rows": 18838,
+   "bytes": 613563,
+   "note": "O*NET 31.0 Task Statements",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "incumbents_responding",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_tasks_to_dwas": {
+   "domain": "onet",
+   "rows": 24087,
+   "bytes": 93631,
+   "note": "O*NET 31.0 Tasks to DWAs",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "dwa_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_training_and_experience": {
+   "domain": "onet",
+   "rows": 26812,
+   "bytes": 249404,
+   "note": "O*NET 31.0 Training and Experience",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_error",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_training_and_experience_categories": {
+   "domain": "onet",
+   "rows": 29,
+   "bytes": 1622,
+   "note": "O*NET 31.0 Training and Experience Categories",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category_description",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_transferable_skills": {
+   "domain": "onet",
+   "rows": 45500,
+   "bytes": 154348,
+   "note": "O*NET 31.0 Transferable Skills",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_error",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "not_relevant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_transferable_skills_to_work_activities": {
+   "domain": "onet",
+   "rows": 122,
+   "bytes": 2780,
+   "note": "O*NET 31.0 Transferable Skills to Work Activities",
+   "columns": [
+    {
+     "name": "transferable_skills_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "transferable_skills_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_activities_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_activities_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_transferable_skills_to_work_context": {
+   "domain": "onet",
+   "rows": 57,
+   "bytes": 1955,
+   "note": "O*NET 31.0 Transferable Skills to Work Context",
+   "columns": [
+    {
+     "name": "transferable_skills_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "transferable_skills_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_context_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_context_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_work_activities": {
+   "domain": "onet",
+   "rows": 74702,
+   "bytes": 601379,
+   "note": "O*NET 31.0 Work Activities",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "standard_error",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "not_relevant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_work_context": {
+   "domain": "onet",
+   "rows": 305389,
+   "bytes": 2697748,
+   "note": "O*NET 31.0 Work Context",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "standard_error",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "not_relevant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_work_context_categories": {
+   "domain": "onet",
+   "rows": 281,
+   "bytes": 3670,
+   "note": "O*NET 31.0 Work Context Categories",
+   "columns": [
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category_description",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_work_styles": {
+   "domain": "onet",
+   "rows": 37422,
+   "bytes": 44958,
+   "note": "O*NET 31.0 Work Styles",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_work_styles_to_work_activities": {
+   "domain": "onet",
+   "rows": 303,
+   "bytes": 3255,
+   "note": "O*NET 31.0 Work Styles to Work Activities",
+   "columns": [
+    {
+     "name": "work_styles_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_styles_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_activities_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_activities_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "onet_work_styles_to_work_context": {
+   "domain": "onet",
+   "rows": 266,
+   "bytes": 3436,
+   "note": "O*NET 31.0 Work Styles to Work Context",
+   "columns": [
+    {
+     "name": "work_styles_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_styles_element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_context_element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "work_context_element_name",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip"
+   ],
+   "source_sha256": {
+    "data/lake/raw/onet_db_31_0/db_31_0_text.zip": "6883548adf5fde64cf6f801b35d15519c9225f2732c3cab0e281c652d16b23a9"
+   }
+  },
+  "qcew_colleges_annual": {
+   "domain": "bls_qcew",
+   "rows": 31532,
+   "bytes": 827602,
+   "note": "NAICS 611310, all areas/ownerships, annual",
+   "columns": [
+    {
+     "name": "area_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "own_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agglvl_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "size_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "qtr",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "annual_avg_estabs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "annual_avg_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_annual_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "taxable_annual_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "annual_contributions",
+     "type": "BIGINT"
+    },
+    {
+     "name": "annual_avg_wkly_wage",
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_annual_pay",
+     "type": "BIGINT"
+    },
+    {
+     "name": "lq_disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lq_annual_avg_estabs",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_annual_avg_emplvl",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_total_annual_wages",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_taxable_annual_wages",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_annual_contributions",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_annual_avg_wkly_wage",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_avg_annual_pay",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "oty_annual_avg_estabs_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_annual_avg_estabs_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_annual_avg_emplvl_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_annual_avg_emplvl_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_total_annual_wages_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_total_annual_wages_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_taxable_annual_wages_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_taxable_annual_wages_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_annual_contributions_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_annual_contributions_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_annual_avg_wkly_wage_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_annual_avg_wkly_wage_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_avg_annual_pay_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_avg_annual_pay_pct_chg",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qcew_colleges/2015_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2016_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2017_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2018_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2019_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2020_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2021_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2022_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2023_a_611310.csv",
+    "data/lake/raw/qcew_colleges/2024_a_611310.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qcew_colleges/2015_a_611310.csv": "f5b93121af8d1bd8953f502da601a5355a481d8a7aa22fa9e140cb55e32d3545",
+    "data/lake/raw/qcew_colleges/2016_a_611310.csv": "9b7efd24afe478c516312da6c6dcb612b8dd5ad5f9bd21673ff187cb4b6a649b",
+    "data/lake/raw/qcew_colleges/2017_a_611310.csv": "d65438816cc8790e20f13e15b6193daa6555935c799f257b1d67ea893df56091",
+    "data/lake/raw/qcew_colleges/2018_a_611310.csv": "f7c58156792824000dd1ca4832cb38ba3bccd985b68d8914fd56b0ba329858a1",
+    "data/lake/raw/qcew_colleges/2019_a_611310.csv": "213caee7326f036429f5c78e2e3877c0c01fad0a6c7b131fbd795d68af1558d8",
+    "data/lake/raw/qcew_colleges/2020_a_611310.csv": "b94b2128b729111b19a6f2c5ed90f9497664e31518321ac2b09eab76d18c1b00",
+    "data/lake/raw/qcew_colleges/2021_a_611310.csv": "655f28d2aeacf63a883c26c59d16518bbd3cacb369c3f296b84c42f4582f1cd7",
+    "data/lake/raw/qcew_colleges/2022_a_611310.csv": "02ad6ed790dad9ca42bfe357e164713813255d6ba8cab30bfa888cbd9cbb9dc7",
+    "data/lake/raw/qcew_colleges/2023_a_611310.csv": "69d54221cc51e50b803e6bc4e1f373d5953a4a6fd943d68d0ce4f07c545cf143",
+    "data/lake/raw/qcew_colleges/2024_a_611310.csv": "cbaa512f7e7b0abb8d01feced5b676e8ba4fa3f4f65037b9b57b6c39752a57d0"
+   }
+  },
+  "qcew_il_county_annual": {
+   "domain": "bls_qcew",
+   "rows": 53858,
+   "bytes": 1891918,
+   "note": "Champaign/Cook/Sangamon, all industries, annual",
+   "columns": [
+    {
+     "name": "area_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "own_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agglvl_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "size_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "qtr",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "annual_avg_estabs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "annual_avg_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_annual_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "taxable_annual_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "annual_contributions",
+     "type": "BIGINT"
+    },
+    {
+     "name": "annual_avg_wkly_wage",
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_annual_pay",
+     "type": "BIGINT"
+    },
+    {
+     "name": "lq_disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lq_annual_avg_estabs",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_annual_avg_emplvl",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_total_annual_wages",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_taxable_annual_wages",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_annual_contributions",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_annual_avg_wkly_wage",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_avg_annual_pay",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "oty_annual_avg_estabs_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_annual_avg_estabs_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_annual_avg_emplvl_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_annual_avg_emplvl_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_total_annual_wages_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_total_annual_wages_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_taxable_annual_wages_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_taxable_annual_wages_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_annual_contributions_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_annual_contributions_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_annual_avg_wkly_wage_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_annual_avg_wkly_wage_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_avg_annual_pay_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_avg_annual_pay_pct_chg",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qcew_il_counties/2015_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2015_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2015_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2016_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2016_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2016_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2017_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2017_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2017_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2018_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2018_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2018_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2019_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2019_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2019_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2020_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2020_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2020_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2021_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2021_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2021_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2022_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2022_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2022_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2023_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2023_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2023_a_17167.csv",
+    "data/lake/raw/qcew_il_counties/2024_a_17019.csv",
+    "data/lake/raw/qcew_il_counties/2024_a_17031.csv",
+    "data/lake/raw/qcew_il_counties/2024_a_17167.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qcew_il_counties/2015_a_17019.csv": "3155fda54d9fb8ac60c99858604e511a3e6647136aec2f97653957134c3bf9e0",
+    "data/lake/raw/qcew_il_counties/2015_a_17031.csv": "2aa19f7ccf1aca1c5d416a7f0df124c53e0771cb182414df37a251a3ab1f842b",
+    "data/lake/raw/qcew_il_counties/2015_a_17167.csv": "cc1c3b9a4c7980c4116caf7ee2c16dc7d594f4c9392688fae7d7fc8730e093fa",
+    "data/lake/raw/qcew_il_counties/2016_a_17019.csv": "cd37ee1c37ee7196628821edda76e38dea116358629c076e145c6132dd62277f",
+    "data/lake/raw/qcew_il_counties/2016_a_17031.csv": "bafaa5726413fcd5f346351ad99c2e6c1a05b81526a630b785a5a790b983963a",
+    "data/lake/raw/qcew_il_counties/2016_a_17167.csv": "3bf17811575b487fd4b68dd2fbc70f083d00d4f87f47b8175cee897184b726c6",
+    "data/lake/raw/qcew_il_counties/2017_a_17019.csv": "0c52ee379b95c0b6dfc3426e5cf20f3937d3d22329a0233ae43961dfc36ca472",
+    "data/lake/raw/qcew_il_counties/2017_a_17031.csv": "2c3c890d1f70b9834cf7c9fce3fe5c1a29e306356d9fcb1afee3ba6277145f21",
+    "data/lake/raw/qcew_il_counties/2017_a_17167.csv": "7414242a754b8898db1a3e16cef7a2bd704397024cb3dde44bbdb009fc3c896b",
+    "data/lake/raw/qcew_il_counties/2018_a_17019.csv": "40448015962216bd3179d592ccd66dcef5263ab62d0029e4fe150f6de5ca49da",
+    "data/lake/raw/qcew_il_counties/2018_a_17031.csv": "f6299f495f05034602010bead64f368e1cd4ad07690d210c5d1537ab098bb9c8",
+    "data/lake/raw/qcew_il_counties/2018_a_17167.csv": "07020dc9100713522d32b263367d14e6f903a021fd4f6c79786fc04459a0ba0c",
+    "data/lake/raw/qcew_il_counties/2019_a_17019.csv": "9c6f4cb2333fab86b57e3d10abe9990b4720d5a8d9fb4313673425bba501672f",
+    "data/lake/raw/qcew_il_counties/2019_a_17031.csv": "7b6f95657110532439036504a2bb0b3d647545c2b62d47406cf37c9d17f5d681",
+    "data/lake/raw/qcew_il_counties/2019_a_17167.csv": "54a820d7204a53215421b161b2c518e79f8633e39782b435cf1d119ad079a28a",
+    "data/lake/raw/qcew_il_counties/2020_a_17019.csv": "77d54228d4db4a690f407bfdaea6730c53624c02d6ab3952c301c4e762a8b962",
+    "data/lake/raw/qcew_il_counties/2020_a_17031.csv": "e91d2433b4cac98b7b05362d469d09461628a3acdc416be2152d2861ca7b31df",
+    "data/lake/raw/qcew_il_counties/2020_a_17167.csv": "715bfeaf358c35191b30eb82647aafa5517fd2d0cb47bc968843637ccfd6e9da",
+    "data/lake/raw/qcew_il_counties/2021_a_17019.csv": "8682a82fbedb4ea2dad96d701d812bfec7908e17aced0d5c43caa96e374abd1c",
+    "data/lake/raw/qcew_il_counties/2021_a_17031.csv": "a396bf5dd41c320c57685374d4edec39f25b3396453dabb1b3b0b7e2b20bc895",
+    "data/lake/raw/qcew_il_counties/2021_a_17167.csv": "bfc54f7664593697308e0f4c5fbd2b98c24417aba00b039e764dd385c2f84013",
+    "data/lake/raw/qcew_il_counties/2022_a_17019.csv": "887dd4039d54a6db3488eccc9bc8c8e91daa0379d3837e8827cba4a5be38f361",
+    "data/lake/raw/qcew_il_counties/2022_a_17031.csv": "b3c4b96a59ec5b7f4110b802298f39429e3c68ddeb643179e8e5dffb431e2896",
+    "data/lake/raw/qcew_il_counties/2022_a_17167.csv": "862b059f71e17a7bd9d5a9b4890523a9f89d2b40f6a14a2c60f961e7ca4d9729",
+    "data/lake/raw/qcew_il_counties/2023_a_17019.csv": "f0cc2f3672c7d14a6653acbd90ef77cf3ebf29f54a66f9ce581e5397a49902d0",
+    "data/lake/raw/qcew_il_counties/2023_a_17031.csv": "e7ef912d819b3b7637389598ddba338bc6036a2175ff34a7fa84228d2b477f5f",
+    "data/lake/raw/qcew_il_counties/2023_a_17167.csv": "26e91e41690814aa563a8b7ddd4442fac6e485e4d754c7e474e5895cfcff8f3c",
+    "data/lake/raw/qcew_il_counties/2024_a_17019.csv": "816f5450c014a555d60790fd208bf422e9176aa22ecb89c87899a439212b933c",
+    "data/lake/raw/qcew_il_counties/2024_a_17031.csv": "e42e2d30ab4b779b7213a68cf72bb3064bc7316681323e2dfb448982f9473370",
+    "data/lake/raw/qcew_il_counties/2024_a_17167.csv": "3f2a7ac93f0a11a13734f23b8d8029ce883e6f99a31daa2fc7048cfc274ac0cf"
+   }
+  },
+  "qwi_il_rh_gs_ns_oslp": {
+   "domain": "census_qwi",
+   "rows": 57771,
+   "bytes": 3733463,
+   "note": "LEHD QWI Illinois qwi_il_rh_f_gs_ns_oslp_u.csv.gz; s* columns are status flags",
+   "columns": [
+    {
+     "name": "periodicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "seasonadj",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geo_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geography",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ind_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ownercode",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agegrp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "race",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ethnicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "education",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmage",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmsize",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "quarter",
+     "type": "BIGINT"
+    },
+    {
+     "name": "agg_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "sep_beg_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_aend_repl_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "turn_ovr_s",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "payroll",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "s_emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_turn_ovr_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_payroll",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qwi_il/qwi_il_rh_f_gs_ns_oslp_u.csv.gz"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qwi_il/qwi_il_rh_f_gs_ns_oslp_u.csv.gz": "0ca998d7aeb494915600e987327e027668fa04f92cbd6c36840bf743f6de4293"
+   }
+  },
+  "qwi_il_sa_gm_ns_oslp": {
+   "domain": "census_qwi",
+   "rows": 2564865,
+   "bytes": 105100940,
+   "note": "LEHD QWI Illinois qwi_il_sa_f_gm_ns_oslp_u.csv.gz; s* columns are status flags",
+   "columns": [
+    {
+     "name": "periodicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "seasonadj",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geo_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geography",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ind_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ownercode",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agegrp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "race",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ethnicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "education",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmage",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmsize",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "quarter",
+     "type": "BIGINT"
+    },
+    {
+     "name": "agg_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "sep_beg_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_aend_repl_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "turn_ovr_s",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "payroll",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "s_emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_turn_ovr_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_payroll",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qwi_il/qwi_il_sa_f_gm_ns_oslp_u.csv.gz"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qwi_il/qwi_il_sa_f_gm_ns_oslp_u.csv.gz": "0ac13734c6f50da406fd5f4be09b72ca74310b628724830178a8d026c6431f2d"
+   }
+  },
+  "qwi_il_sa_gs_n4_oslp": {
+   "domain": "census_qwi",
+   "rows": 1085157,
+   "bytes": 53109410,
+   "note": "LEHD QWI Illinois qwi_il_sa_f_gs_n4_oslp_u.csv.gz; s* columns are status flags",
+   "columns": [
+    {
+     "name": "periodicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "seasonadj",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geo_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geography",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ind_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ownercode",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agegrp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "race",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ethnicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "education",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmage",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmsize",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "quarter",
+     "type": "BIGINT"
+    },
+    {
+     "name": "agg_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "sep_beg_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_aend_repl_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "turn_ovr_s",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "payroll",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "s_emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_turn_ovr_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_payroll",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qwi_il/qwi_il_sa_f_gs_n4_oslp_u.csv.gz"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qwi_il/qwi_il_sa_f_gs_n4_oslp_u.csv.gz": "8ac3034737d5272052ae70d57f6155571a31bdd17d023b0d7a62acf6ca8fbece"
+   }
+  },
+  "qwi_il_sa_gs_ns_oslp": {
+   "domain": "census_qwi",
+   "rows": 74277,
+   "bytes": 5224505,
+   "note": "LEHD QWI Illinois qwi_il_sa_f_gs_ns_oslp_u.csv.gz; s* columns are status flags",
+   "columns": [
+    {
+     "name": "periodicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "seasonadj",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geo_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geography",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ind_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ownercode",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agegrp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "race",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ethnicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "education",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmage",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmsize",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "quarter",
+     "type": "BIGINT"
+    },
+    {
+     "name": "agg_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "sep_beg_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_aend_repl_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "turn_ovr_s",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "payroll",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "s_emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_turn_ovr_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_payroll",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qwi_il/qwi_il_sa_f_gs_ns_oslp_u.csv.gz"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qwi_il/qwi_il_sa_f_gs_ns_oslp_u.csv.gz": "6ff0705f93ada725d652e513b1ad7073c677736b83394d923ca2d97a7ba53f3c"
+   }
+  },
+  "qwi_il_se_gs_ns_oslp": {
+   "domain": "census_qwi",
+   "rows": 49518,
+   "bytes": 3524326,
+   "note": "LEHD QWI Illinois qwi_il_se_f_gs_ns_oslp_u.csv.gz; s* columns are status flags",
+   "columns": [
+    {
+     "name": "periodicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "seasonadj",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geo_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geography",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ind_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ownercode",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agegrp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "race",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ethnicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "education",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmage",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "firmsize",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "quarter",
+     "type": "BIGINT"
+    },
+    {
+     "name": "agg_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_aend_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "sep_beg_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_aend_repl_r",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "turn_ovr_s",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "payroll",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "s_emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_end",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp_spv",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_n",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_beg_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_aend_repl_r",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep_snx",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_turn_ovr_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_c",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_gn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_ls_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_frm_jb_cs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_beg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_as",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_hir_ns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_sep_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_payroll",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qwi_il/qwi_il_se_f_gs_ns_oslp_u.csv.gz"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qwi_il/qwi_il_se_f_gs_ns_oslp_u.csv.gz": "c5e78c9b4e8fc4e991216e905150cd8ee32e8cea3a6d93565d31353bfd662eb1"
+   }
+  },
+  "sucss_class": {
+   "domain": "sucss",
+   "rows": 883,
+   "bytes": 12569,
+   "note": "Illinois SUCSS class catalog (acquired 2026-10-29)",
+   "columns": [
+    {
+     "name": "class_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "class_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupational_line",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_record_id",
+     "type": "BIGINT"
+    }
+   ],
+   "sources": [
+    "data/prepared/classes.jsonl"
+   ],
+   "source_sha256": {
+    "data/prepared/classes.jsonl": "44a859dbfae683b5c3e63c999b719963669da416c3c80ba29226fe342f6a6a9f"
+   }
+  },
+  "sucss_onet_candidate": {
+   "domain": "sucss",
+   "rows": 2649,
+   "bytes": 43278,
+   "note": "Unreviewed lexical title suggestions; not mappings",
+   "columns": [
+    {
+     "name": "source_record_id",
+     "type": "BIGINT"
+    },
+    {
+     "name": "class_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "class_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "onet_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupation_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "candidate_rank",
+     "type": "BIGINT"
+    },
+    {
+     "name": "title_similarity",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "method",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "review_status",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "warning",
+     "type": "VARCHAR"
+    }
+   ],
+   "sources": [
+    "data/prepared/mapping_review_queue.jsonl"
+   ],
+   "source_sha256": {
+    "data/prepared/mapping_review_queue.jsonl": "7cd76fcfa8c5782a4b8072126b4a408c6986f2f0b462a7c0ab699d8901b38031"
+   }
+  }
+ }
+}

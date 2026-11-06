@@ -1,0 +1,947 @@
+[
+  {
+    "id": "onet_db",
+    "name": "O*NET Database (full, incl. Tasks, Work Activities, Technology Skills, Alternate Titles)",
+    "publisher": "O*NET Resource Center / US DOL ETA",
+    "tier": "P0",
+    "urls": [
+      "https://www.onetcenter.org/database.html",
+      "https://www.onetcenter.org/dictionary/30.3/json/",
+      "https://www.onetcenter.org/dictionary/30.3/csv/",
+      "https://www.onetcenter.org/dictionary/31.0/nt/appendix_updates.html",
+      "https://onetcenter.org/db_releases.html"
+    ],
+    "unverified_urls": [
+      "https://www.onetcenter.org/dl_files/database/db_30_3_text.zip",
+      "https://www.onetcenter.org/dl_files/database/db_31_0_text.zip"
+    ],
+    "hosts": [
+      "www.onetcenter.org",
+      "onetcenter.org"
+    ],
+    "format": "ZIP of tab-delimited text (also Excel, MySQL, Oracle, SQL Server; JSON/CSV/RDF dictionary renderings exist for 30.3)",
+    "grain": "O*NET-SOC 2019 occupation (8-digit, e.g. 15-1252.00) x element (task/activity/skill/technology/title)",
+    "join_keys": [
+      "onetsoc_code",
+      "soc_2018 (first 7 chars)",
+      "element_id",
+      "task_id",
+      "dwa_id",
+      "iwa_id",
+      "commodity_code (UNSPSC, Technology Skills)"
+    ],
+    "vintage": "30.3 is the current release listed on database.html; a 31.0 release-notes page exists (208 occupations updated) - confirm whether 31.0 is live. 30.3 dropped 'Tools Used' and 'Work Values' and reorganised the content model.",
+    "license": "CC BY 4.0 (attribution to O*NET/USDOL ETA required)",
+    "api_key_required": false,
+    "notes": "Core files: Occupation Data, Task Statements, Task Ratings, Work Activities, Tasks to DWAs, DWA/IWA Reference, Technology Skills, Alternate Titles, Sample of Reported Titles. Bulk zip needs no key; O*NET Web Services API (services.onetcenter.org) needs free registration. Direct zip URLs not verified (host unreachable from this session)."
+  },
+  {
+    "id": "onet_soc_crosswalks",
+    "name": "O*NET-SOC 2019 taxonomy and crosswalks (O*NET-SOC 2019<->2018 SOC, 2010<->2019, ESCO, military, CIP)",
+    "publisher": "O*NET Resource Center",
+    "tier": "P0",
+    "urls": [
+      "https://www.onetcenter.org/database.html"
+    ],
+    "unverified_urls": [
+      "https://www.onetcenter.org/taxonomy/2019/soc.html",
+      "https://www.onetcenter.org/crosswalks.html",
+      "https://www.onetcenter.org/taxonomy/2019/soc/2019_to_SOC_Crosswalk.csv"
+    ],
+    "hosts": [
+      "www.onetcenter.org"
+    ],
+    "format": "CSV / XLSX",
+    "grain": "occupation code pair",
+    "join_keys": [
+      "onetsoc_code",
+      "soc_2018",
+      "soc_2010",
+      "cip_2020"
+    ],
+    "vintage": "O*NET-SOC 2019 taxonomy (current)",
+    "license": "CC BY 4.0",
+    "api_key_required": false,
+    "notes": "Needed to roll 8-digit O*NET-SOC up to 6-digit SOC 2018 used by OEWS/EP. BLS also publishes an O*NET-SOC -> National Employment Matrix/OOH crosswalk on bls.gov/emp/data/occupational-data.htm."
+  },
+  {
+    "id": "bls_oews",
+    "name": "BLS Occupational Employment and Wage Statistics (OEWS) - national, state, metro/nonmetro, industry-specific incl. NAICS 611300",
+    "publisher": "US BLS",
+    "tier": "P0",
+    "urls": [
+      "https://www.bls.gov/oes/tables.htm",
+      "https://www.bls.gov/oes/2025/may/oes_tec.htm",
+      "https://download.bls.gov/pub/time.series/oe/",
+      "https://download.bls.gov/pub/time.series/oe/oe.txt",
+      "https://www.bls.gov/oes/2024/may/area_definitions_m2024.xlsx",
+      "https://www.bls.gov/oes/current/611300_5.htm",
+      "https://www.bls.gov/oes/2022/may/naics4_611300.htm"
+    ],
+    "unverified_urls": [
+      "https://www.bls.gov/oes/special-requests/oesm25nat.zip (seen only in a third-party lock file)",
+      "https://www.bls.gov/oes/special-requests/oesm25st.zip",
+      "https://www.bls.gov/oes/special-requests/oesm25ma.zip",
+      "https://www.bls.gov/oes/special-requests/oesm25in4.zip",
+      "https://www.bls.gov/oes/special-requests/oesm25all.zip",
+      "https://www.bls.gov/oes/current/naics4_611300.htm"
+    ],
+    "hosts": [
+      "www.bls.gov",
+      "download.bls.gov"
+    ],
+    "format": "ZIP of XLSX (per-geo/per-industry), plus flat tab-delimited time.series/oe",
+    "grain": "year (May reference) x area (nat/state/MSA/nonmetro) x 6-digit SOC 2018 [x NAICS 2022 for industry files, x ownership for 611300_2/_3/_5 views]",
+    "join_keys": [
+      "occ_code (SOC 2018)",
+      "area (FIPS state / CBSA / BLS nonmetro code)",
+      "naics",
+      "own_code",
+      "year"
+    ],
+    "vintage": "May 2025 (released May 2026; MB3 model-based, 2022 NAICS, ~830 occupations). May 2026 expected spring 2027.",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "Industry files exist only nationally (no state x industry). 611300 = Colleges, Universities and Professional Schools, with ownership splits (private, state govt, local govt). Relevant MSAs: Champaign-Urbana (16580), Chicago-Naperville-Elgin (16980), Springfield IL (44100). BLS blocks default user agents: send a User-Agent with contact email for download.bls.gov."
+  },
+  {
+    "id": "bls_ep",
+    "name": "BLS Employment Projections - occupation tables & National Employment Matrix",
+    "publisher": "US BLS",
+    "tier": "P1",
+    "urls": [
+      "https://www.bls.gov/emp/data/occupational-data.htm",
+      "https://www.bls.gov/emp/data.htm",
+      "https://www.bls.gov/emp/tables/emp-by-detailed-occupation.htm",
+      "https://www.bls.gov/emp/tables/occupational-separations-and-openings.htm",
+      "https://www.bls.gov/emp/tables/industry-occupation-matrix-industry.htm",
+      "https://www.bls.gov/emp/tables/educational-attainment.htm",
+      "https://www.bls.gov/emp/tables/top-skills-by-detailed-occupation.htm"
+    ],
+    "unverified_urls": [
+      "https://www.bls.gov/emp/ind-occ-matrix/occupation.xlsx",
+      "https://www.bls.gov/emp/ind-occ-matrix/matrix.xlsx"
+    ],
+    "hosts": [
+      "www.bls.gov"
+    ],
+    "format": "XLSX (tables also HTML)",
+    "grain": "projection decade x National Employment Matrix occupation (SOC-based) [x NEM industry]",
+    "join_keys": [
+      "soc_code / NEM occupation code",
+      "nem_industry_code (NAICS-based)",
+      "base_year",
+      "projection_year"
+    ],
+    "vintage": "2024-34 confirmed (832 detailed occupations). 2025-35 normally released ~September 2026 - check.",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "Separations/openings table gives labor-force-exit and occupational-transfer rates useful as attrition priors. National only."
+  },
+  {
+    "id": "bls_jolts",
+    "name": "BLS Job Openings and Labor Turnover Survey (national industry incl. education; state estimates)",
+    "publisher": "US BLS",
+    "tier": "P1",
+    "urls": [
+      "https://www.bls.gov/news.release/archives/jltst_07222026.htm"
+    ],
+    "unverified_urls": [
+      "https://download.bls.gov/pub/time.series/jt/",
+      "https://download.bls.gov/pub/time.series/jt/jt.series",
+      "https://www.bls.gov/jlt/jlt_statedata.htm (cited in a state slide deck)"
+    ],
+    "hosts": [
+      "download.bls.gov",
+      "www.bls.gov"
+    ],
+    "format": "tab-delimited flat files; API series",
+    "grain": "month x industry (national) or month x state (total nonfarm) x data element (JO/HI/QU/LD/TS) x level|rate",
+    "join_keys": [
+      "series_id",
+      "industry_code (JOLTS NAICS-based, e.g. 610000 educational services, 923000 state&local govt education)",
+      "state_code (FIPS)",
+      "year",
+      "period"
+    ],
+    "vintage": "monthly; state release July 2026 seen (archives/jltst_07222026)",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "State JOLTS are model-based and essentially total-nonfarm/supersector; there is no Illinois x higher-ed series - use QWI for that. National 'state and local government education' is the closest public-university benchmark."
+  },
+  {
+    "id": "bls_qcew",
+    "name": "BLS QCEW open data CSV slices (NAICS 6113, Illinois counties)",
+    "publisher": "US BLS",
+    "tier": "P0",
+    "urls": [
+      "https://www.bls.gov/cew/additional-resources/open-data/csv-data-slices.htm",
+      "https://www.bls.gov/cew/additional-resources/open-data/home.htm",
+      "https://www.bls.gov/cew/additional-resources/open-data/sample-code.htm",
+      "https://www.bls.gov/cew/data.htm"
+    ],
+    "unverified_urls": [
+      "https://data.bls.gov/cew/data/api/2025/a/area/17019.csv",
+      "https://data.bls.gov/cew/data/api/2025/a/area/17031.csv",
+      "https://data.bls.gov/cew/data/api/2025/a/area/17167.csv",
+      "https://data.bls.gov/cew/data/api/2025/1/industry/6113.csv",
+      "https://data.bls.gov/cew/data/api/2025/a/industry/6113.csv"
+    ],
+    "hosts": [
+      "data.bls.gov",
+      "www.bls.gov"
+    ],
+    "format": "CSV (one file per year/qtr/slice); older years as zipped bulk files",
+    "grain": "year x qtr (or 'a' annual) x area_fips x own_code x industry_code x agglvl_code",
+    "join_keys": [
+      "area_fips (county FIPS 17019 Champaign, 17031 Cook, 17167 Sangamon, 17000 IL)",
+      "industry_code (NAICS)",
+      "own_code (2=state govt, 3=local, 5=private)",
+      "year",
+      "qtr"
+    ],
+    "vintage": "open-data slices cover most recent 5 years; quarterly with ~5-6 month lag",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "URL pattern from BLS docs: https://data.bls.gov/cew/data/api/{year}/{qtr}/{industry|area|size}/{code}.csv (data.bls.gov replaces older bls.gov path). University of Illinois campuses are state-government owned (own_code 2); county x 6113 x own 2 cells are often disclosure-suppressed - expect disclosure_code 'N'."
+  },
+  {
+    "id": "bls_cpi",
+    "name": "BLS Consumer Price Index (CPI-U national and Chicago area) for real-wage adjustment",
+    "publisher": "US BLS",
+    "tier": "P0",
+    "urls": [
+      "https://download.bls.gov/pub/time.series/cu/cu.txt",
+      "https://www.bls.gov:443/cpi/factsheets/cpi-series-ids.htm"
+    ],
+    "unverified_urls": [
+      "https://download.bls.gov/pub/time.series/cu/cu.data.1.AllItems",
+      "https://download.bls.gov/pub/time.series/cu/cu.series"
+    ],
+    "hosts": [
+      "download.bls.gov",
+      "www.bls.gov"
+    ],
+    "format": "tab-delimited flat files",
+    "grain": "month (and annual avg) x area x item",
+    "join_keys": [
+      "series_id (CUUR0000SA0 US city avg NSA)",
+      "year",
+      "period"
+    ],
+    "vintage": "monthly",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "Chicago-Naperville-Elgin all-items series ID believed to be CUURS23ASA0 - unverified, confirm in cu.series. Champaign/Springfield have no local CPI; use Midwest size-class series (CUUR0200SA0 region) - unverified."
+  },
+  {
+    "id": "bls_api_v2",
+    "name": "BLS Public Data API v2",
+    "publisher": "US BLS",
+    "tier": "P1",
+    "urls": [
+      "https://www.bls.gov/developers/api_faqs.htm",
+      "https://www.bls.gov/bls/api_features.htm"
+    ],
+    "unverified_urls": [
+      "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "https://data.bls.gov/registrationEngine/"
+    ],
+    "hosts": [
+      "api.bls.gov",
+      "data.bls.gov"
+    ],
+    "format": "JSON (POST/GET)",
+    "grain": "series_id x period",
+    "join_keys": [
+      "series_id"
+    ],
+    "vintage": "live",
+    "license": "US federal public domain",
+    "api_key_required": true,
+    "notes": "Free registration key (renew yearly). v2: 500 queries/day, 50 series/query, 20 years/query; unregistered 25/day. HTTP 429 on overage. Prefer flat files on download.bls.gov for bulk loads."
+  },
+  {
+    "id": "ipeds_hr",
+    "name": "IPEDS Complete Data Files - Human Resources (S, SAL, EAP)",
+    "publisher": "NCES / US Dept of Education",
+    "tier": "P0",
+    "urls": [
+      "https://nces.ed.gov/ipeds/datacenter/",
+      "https://nces.ed.gov/IPEDS/help/complete-data-files",
+      "https://nces.ed.gov/ipeds/survey-components/data-release-schedule",
+      "https://nces.ed.gov/ipeds/use-the-data/download-access-database/"
+    ],
+    "unverified_urls": [
+      "https://nces.ed.gov/ipeds/datacenter/data/S2024_SIS.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/S2024_IS.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/S2024_NH.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/S2024_OC.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/SAL2024_IS.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/SAL2024_NIS.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/EAP2024.zip"
+    ],
+    "hosts": [
+      "nces.ed.gov"
+    ],
+    "format": "ZIP of CSV (+ _Dict.zip XLSX dictionary; Access DB alternative)",
+    "grain": "UNITID x collection year x staff category (occupation/faculty status/rank/gender/race) [x contract length for SAL]",
+    "join_keys": [
+      "UNITID",
+      "collection_year",
+      "occupational category (IPEDS SOC-based)",
+      "ARANK"
+    ],
+    "vintage": "2024-25 collection (Nov 1 2024 staff) final ~Sept 2026; 2025-26 (Nov 1 2025) provisional ~July 2026 - confirm on release schedule.",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "URL pattern confirmed from btskinner/downloadipeds source: https://nces.ed.gov/ipeds/datacenter/data/{FILE}.zip and {FILE}_Dict.zip. File codes from memory, confirm in the Complete Data Files list. Provisional files carry an _RV suffix when revised. Peer set: UIUC 145637, UIC 145600, UIS 148654."
+  },
+  {
+    "id": "ipeds_core",
+    "name": "IPEDS Complete Data Files - HD directory, EF/EFFY enrollment, F finance",
+    "publisher": "NCES / US Dept of Education",
+    "tier": "P0",
+    "urls": [
+      "https://nces.ed.gov/ipeds/datacenter/",
+      "https://nces.ed.gov/IPEDS/help/complete-data-files"
+    ],
+    "unverified_urls": [
+      "https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/EF2024A.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/EFFY2024.zip",
+      "https://nces.ed.gov/ipeds/datacenter/data/F2324_F1A.zip"
+    ],
+    "hosts": [
+      "nces.ed.gov"
+    ],
+    "format": "ZIP of CSV",
+    "grain": "UNITID x year [x enrollment level/race/sex or finance line]",
+    "join_keys": [
+      "UNITID",
+      "OPEID",
+      "FIPS (state/county in HD)",
+      "CBSA (in HD)",
+      "year"
+    ],
+    "vintage": "HD 2025 provisional likely available; F FY2024 (F2324) - confirm.",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "HD carries COUNTYCD, CBSA, CARNEGIE, F1SYSCOD (system id) - this is the bridge from UNITID to FIPS/CBSA. Public institutions use F*_F1A (GASB). Historical 1980-2023 mirror on DataLumos (www.datalumos.org) if NCES availability changes."
+  },
+  {
+    "id": "census_acs",
+    "name": "Census American Community Survey (API) - labor market context",
+    "publisher": "US Census Bureau",
+    "tier": "P1",
+    "urls": [
+      "https://www.census.gov/data/developers/data-sets/acs-5year.2011.html",
+      "https://api.census.gov/data/key_signup.html"
+    ],
+    "unverified_urls": [
+      "https://api.census.gov/data/2024/acs/acs5",
+      "https://api.census.gov/data/2024/acs/acs5/subject",
+      "https://api.census.gov/data/2025/acs/acs1"
+    ],
+    "hosts": [
+      "api.census.gov",
+      "www.census.gov"
+    ],
+    "format": "JSON (API)",
+    "grain": "geography (county/CBSA/place/tract) x vintage x table variable",
+    "join_keys": [
+      "state FIPS 17",
+      "county FIPS",
+      "CBSA (16580/16980/44100)",
+      "year",
+      "variable (e.g. S2401 occupation, B24010, B20017)"
+    ],
+    "vintage": "2020-2024 5-year (released Dec 2025); 2025 1-year typically Sept 2026 - confirm.",
+    "license": "US federal public domain",
+    "api_key_required": true,
+    "notes": "Key requirement per Census guidance seen in search; key is free. 50 variables/call limit."
+  },
+  {
+    "id": "census_qwi",
+    "name": "Census LEHD Quarterly Workforce Indicators (hires, separations, turnover, earnings)",
+    "publisher": "US Census Bureau (LEHD)",
+    "tier": "P0",
+    "urls": [
+      "https://lehd.ces.census.gov/data/qwi/R2025Q2/ri/?C=S&O=D",
+      "https://lehd.ces.census.gov/data/qwi_national_beta.html",
+      "https://lehd.ces.census.gov/data/schema/V4.11.1/lehd_csv_naming.html",
+      "https://api.census.gov/data/timeseries/qwi/se",
+      "https://census.gov/data/developers/data-sets/qwi.html",
+      "https://ledextract.ces.census.gov/",
+      "https://lehd.ces.census.gov/announcements.html"
+    ],
+    "unverified_urls": [
+      "https://lehd.ces.census.gov/data/qwi/latest_release/il/",
+      "https://lehd.ces.census.gov/data/qwi/latest_release/il/qwi_il_sa_f_gc_n4_oslp_u.csv.gz",
+      "https://lehd.ces.census.gov/data/qwi/latest_release/il/qwi_il_se_f_gm_n4_oslp_u.csv.gz",
+      "https://api.census.gov/data/timeseries/qwi/sa"
+    ],
+    "hosts": [
+      "lehd.ces.census.gov",
+      "ledextract.ces.census.gov",
+      "api.census.gov"
+    ],
+    "format": "gzip CSV; JSON API",
+    "grain": "quarter x geography (state/county/metro/WIB) x NAICS (sector/3/4-digit; 5/6-digit added Jan 2026) x ownership x demographic (sex*age, sex*education, race/ethnicity) [x firm age/size]",
+    "join_keys": [
+      "geography (FIPS county / CBSA)",
+      "industry (NAICS)",
+      "ownercode (A00 = state+local govt+private, A05 = private only; confirm in label_ownercode.csv)",
+      "year",
+      "quarter",
+      "sex",
+      "agegrp",
+      "education"
+    ],
+    "vintage": "quarterly releases; R2025Q2 directory observed; NAICS 5/6 expansion Jan-Feb 2026; data lag ~3 quarters",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "Best public source for higher-ed attrition benchmarks: HirA, Sep, TurnOvrS, EarnHirNS for NAICS 6113 in Champaign/Cook/Sangamon counties, using ownercat 'oslp' (A00, all ownership incl. state/local govt) vs 'op' (A05, private); public-sector rows are only derivable as A00 minus A05 and may be noisy. File naming: qwi_[geo]_[demo]_[fas]_[geocat]_[indcat]_[ownercat]_[sa].csv.gz. API key optional (recommended for volume). Also consider J2J job-to-job flows under /data/j2j/."
+  },
+  {
+    "id": "census_pseo",
+    "name": "Census Post-Secondary Employment Outcomes (PSEO) earnings & flows",
+    "publisher": "US Census Bureau (LEHD)",
+    "tier": "P1",
+    "urls": [
+      "https://www.census.gov/data/experimental-data-products/post-secondary-employment-outcomes.html",
+      "https://lehd.ces.census.gov/data/pseo_experimental.html",
+      "https://lehd.ces.census.gov/doc/PSEOTechnicalDocumentation.pdf",
+      "https://www.pb.uillinois.edu/what-we-do/other-system-services/pseo.cfm",
+      "https://www.census.gov/newsroom/press-releases/2026/pseo-partners.html"
+    ],
+    "unverified_urls": [
+      "https://lehd.ces.census.gov/data/pseo/latest_release/all/",
+      "https://lehd.ces.census.gov/data/pseo/latest_release/il/",
+      "https://lehd.ces.census.gov/data/pseo_explorer.html"
+    ],
+    "hosts": [
+      "lehd.ces.census.gov",
+      "www.census.gov"
+    ],
+    "format": "CSV (gz) + label files",
+    "grain": "institution x CIP program x degree level x grad cohort [x NAICS sector / geography for flows]",
+    "join_keys": [
+      "institution (OPEID-based; map to UNITID via IPEDS HD)",
+      "cipcode",
+      "degree_level",
+      "grad_cohort",
+      "industry (NAICS sector)",
+      "geography"
+    ],
+    "vintage": "annual; Aug 2026 partner expansion announced",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "UI System campuses participate via IBHE. Graduate earnings/destination industry - context for talent pipeline, not staff HR."
+  },
+  {
+    "id": "nsf_herd",
+    "name": "NSF NCSES Higher Education Research and Development (HERD) Survey",
+    "publisher": "NSF NCSES",
+    "tier": "P1",
+    "urls": [
+      "https://ncses.nsf.gov/explore-data/microdata/higher-education-research-development",
+      "https://ncses.nsf.gov/surveys/higher-education-research-development/2024",
+      "https://ncses.nsf.gov/pubs/ncses26003",
+      "https://ncses.nsf.gov/schedule-of-release-dates"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "ncses.nsf.gov"
+    ],
+    "format": "public-use files (CSV/zip, confirm) + data tables XLSX",
+    "grain": "institution x fiscal year x R&D source/field/expense type (incl. R&D personnel headcounts)",
+    "join_keys": [
+      "inst_id (NCSES)",
+      "ipeds_unitid (column in public file - confirm)",
+      "fiscal_year"
+    ],
+    "vintage": "FY2024 released 2025-12-23; FY2025 scheduled 2026-11-24",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "R&D personnel (researchers, postdocs) counts per institution - useful for research-workforce benchmarks across UIUC/UIC."
+  },
+  {
+    "id": "usaspending",
+    "name": "USAspending.gov API v2 and award bulk downloads",
+    "publisher": "US Treasury (Bureau of the Fiscal Service)",
+    "tier": "P2",
+    "urls": [
+      "https://api.usaspending.gov/docs/endpoints"
+    ],
+    "unverified_urls": [
+      "https://api.usaspending.gov/api/v2/bulk_download/awards/",
+      "https://files.usaspending.gov/award_data_archive/"
+    ],
+    "hosts": [
+      "api.usaspending.gov",
+      "files.usaspending.gov"
+    ],
+    "format": "JSON API; zipped CSV bulk",
+    "grain": "award / transaction x recipient x fiscal year",
+    "join_keys": [
+      "recipient_uei",
+      "duns (pre-2022)",
+      "awarding_agency",
+      "cfda/assistance listing",
+      "fiscal_year",
+      "recipient county FIPS"
+    ],
+    "vintage": "live (daily)",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "Federal grants funding positions (sponsored-research workforce proxy). Map UEI to UNITID manually for the three campuses."
+  },
+  {
+    "id": "nih_reporter",
+    "name": "NIH RePORTER API v2 / ExPORTER",
+    "publisher": "NIH",
+    "tier": "P2",
+    "urls": [
+      "https://api.reporter.nih.gov/",
+      "https://api.reporter.nih.gov/documents/Sample RePORTER API Request Matching ExPORTER Project Files.pdf"
+    ],
+    "unverified_urls": [
+      "https://api.reporter.nih.gov/v2/projects/search",
+      "https://reporter.nih.gov/exporter"
+    ],
+    "hosts": [
+      "api.reporter.nih.gov",
+      "reporter.nih.gov"
+    ],
+    "format": "JSON (POST); ExPORTER CSV zips",
+    "grain": "project x fiscal year (PIs, org, award amount)",
+    "join_keys": [
+      "org_ipf_code / org_uei",
+      "fiscal_year",
+      "appl_id"
+    ],
+    "vintage": "live (weekly)",
+    "license": "US federal public domain",
+    "api_key_required": false,
+    "notes": "No auth; max ~15k records per search (paginate by FY/org). Contains named PIs - aggregate before publishing."
+  },
+  {
+    "id": "il_comptroller_salary",
+    "name": "Illinois Comptroller state employee salary database / Illinois Open Data state employee data",
+    "publisher": "Illinois Office of the Comptroller; Illinois ITAP",
+    "tier": "P2",
+    "urls": [
+      "https://illinoiscomptroller.gov/financial-reports-data/data-sets-portals/salary-database",
+      "https://itap.illinois.gov/state-employee-data"
+    ],
+    "unverified_urls": [
+      "https://data.illinois.gov/"
+    ],
+    "hosts": [
+      "illinoiscomptroller.gov",
+      "itap.illinois.gov",
+      "data.illinois.gov"
+    ],
+    "format": "web search UI; datasets on state Open Data Portal (CSV/Socrata-style API - confirm)",
+    "grain": "employee x agency x year (person-level)",
+    "join_keys": [
+      "agency",
+      "position title",
+      "year"
+    ],
+    "vintage": "current + prior years",
+    "license": "Illinois public records; terms on portal (confirm)",
+    "api_key_required": false,
+    "notes": "Person-level public records. University employees may not be covered (universities run own payrolls) - confirm. Ingest only aggregates into shared lake."
+  },
+  {
+    "id": "ibhe_salary",
+    "name": "IBHE public university salary search (PA 96-266) and IBHE data/Data Book",
+    "publisher": "Illinois Board of Higher Education",
+    "tier": "P1",
+    "urls": [
+      "https://salarysearch.ibhe.org",
+      "https://www.pb.uillinois.edu/what-we-do/institutional-research-and-analytical-studies/students/ibhe-reporting.cfm"
+    ],
+    "unverified_urls": [
+      "https://www.ibhe.org/"
+    ],
+    "hosts": [
+      "salarysearch.ibhe.org",
+      "www.ibhe.org"
+    ],
+    "format": "web search UI (export unconfirmed); PDF/XLSX reports",
+    "grain": "employee x institution x year (base salary + benefits)",
+    "join_keys": [
+      "institution (map to UNITID)",
+      "position title",
+      "year"
+    ],
+    "vintage": "annual",
+    "license": "Illinois public records",
+    "api_key_required": false,
+    "notes": "Covers all IL public universities - enables peer comparisons (ISU, NIU, SIU etc.). Person-level; aggregate before publishing; check terms before bulk scraping."
+  },
+  {
+    "id": "uillinois_graybook",
+    "name": "University of Illinois Board of Trustees Gray Book (academic & administrative appointments)",
+    "publisher": "University of Illinois System BOT",
+    "tier": "P2",
+    "urls": [
+      "https://www.bot.uillinois.edu/gray-book",
+      "https://www.trustees.uillinois.edu/trustees/resources/25-26-Graybook/HD.html",
+      "https://www.trustees.uillinois.edu/trustees/resources/25-26-Graybook/SF.html",
+      "https://www.trustees.uillinois.edu/trustees/resources/25-26-Graybook/ZZ.html",
+      "https://www.trustees.uillinois.edu/trustees/resources/25-26-Gray-Book-System-Offices.docx",
+      "https://www.trustees.uillinois.edu/trustees/resources/24-25-Graybook/AM.html"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "www.bot.uillinois.edu",
+      "www.trustees.uillinois.edu"
+    ],
+    "format": "HTML pages per unit (+ DOCX)",
+    "grain": "appointment (named employee) x unit x year (present vs proposed salary, FTE, tenure)",
+    "join_keys": [
+      "unit code",
+      "job title",
+      "year"
+    ],
+    "vintage": "2025-26 (dated 2025-08-18); 2026-27 likely published Aug/Sep 2026 - check",
+    "license": "Public record",
+    "api_key_required": false,
+    "notes": "Public but person-level and institution-specific; treat as restricted under project rules (aggregate only, keep off public presentation assets)."
+  },
+  {
+    "id": "surs",
+    "name": "Illinois State Universities Retirement System (SURS) ACFR, actuarial valuation, experience study",
+    "publisher": "SURS",
+    "tier": "P1",
+    "urls": [
+      "https://surs.org/news-publications/publications/annual-financial-report/",
+      "https://surs.org/wp-content/uploads/SURS-Actuarial-Valuation-Report-2025.pdf",
+      "https://surs.org/wp-content/uploads/Annual-Report-2025-Summary.pdf",
+      "https://surs.org/wp-content/uploads/experience_study_2024.pdf",
+      "https://publicplansdata.org/reports/IL_IL-SURS_CAFR_2017_35.pdf"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "surs.org",
+      "publicplansdata.org"
+    ],
+    "format": "PDF (tables need extraction)",
+    "grain": "system x fiscal year (membership counts, retirements, withdrawal/termination rates by age/service)",
+    "join_keys": [
+      "fiscal_year",
+      "employer (statistical section lists UI campuses)"
+    ],
+    "vintage": "FY2025 (valuation dated 2025-10-24); experience study 2020-2023",
+    "license": "Public report",
+    "api_key_required": false,
+    "notes": "Experience study gives actuarial turnover/retirement rates - strong attrition priors for IL university staff. Public Plans Data has historic CAFRs."
+  },
+  {
+    "id": "cupahr_public",
+    "name": "CUPA-HR public survey summaries (workforce pay increases etc.)",
+    "publisher": "CUPA-HR",
+    "tier": "P1",
+    "urls": [
+      "https://www.cupahr.org/resource/workforce-pay-increases/",
+      "https://cupahr.org/research-data/about-our-surveys/faculty-survey/",
+      "https://cupahr.org/research-data/about-our-surveys/staff-methodology/"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "www.cupahr.org",
+      "cupahr.org"
+    ],
+    "format": "HTML/PDF summaries (manually transcribed)",
+    "grain": "national x employee group x academic year (median pay increase %)",
+    "join_keys": [
+      "academic_year",
+      "employee_group (admin/professional/faculty/staff)"
+    ],
+    "vintage": "2025-26",
+    "license": "Copyrighted; public summaries only - cite, do not redistribute raw; DataOnDemand is paid",
+    "api_key_required": false,
+    "notes": "2025-26: tenure-track faculty lowest raise (1.8%); all groups below 2019-20 real pay. Microdata out of scope."
+  },
+  {
+    "id": "anthropic_econ_index",
+    "name": "Anthropic Economic Index",
+    "publisher": "Anthropic",
+    "tier": "P1",
+    "urls": [
+      "https://huggingface.co/datasets/Anthropic/EconomicIndex",
+      "https://cran.r-project.org/web/packages/aieconindex/index.html"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "huggingface.co",
+      "cdn-lfs.huggingface.co (LFS, unverified)",
+      "cas-bridge.xethub.hf.co (Xet storage, unverified)"
+    ],
+    "format": "CSV/JSON files per dated release folder (git LFS)",
+    "grain": "O*NET task / SOC occupation x release (usage share, automation vs augmentation); some geo cuts",
+    "join_keys": [
+      "onet_task_text / task_id",
+      "soc_code",
+      "release_date",
+      "country/state (geo releases)"
+    ],
+    "vintage": "releases incl. 2026-01-15 and 2026-03-24 seen via mirror README; later releases possible",
+    "license": "CC BY 4.0",
+    "api_key_required": false,
+    "notes": "huggingface.co was unreachable from this session; facts taken from mirror README and CRAN aieconindex docs."
+  },
+  {
+    "id": "ms_working_with_ai",
+    "name": "Microsoft Research 'Working with AI' occupational AI applicability",
+    "publisher": "Microsoft Research",
+    "tier": "P1",
+    "urls": [
+      "https://github.com/microsoft/working-with-ai",
+      "https://raw.githubusercontent.com/microsoft/working-with-ai/main/ai_applicability_scores.csv",
+      "https://raw.githubusercontent.com/microsoft/working-with-ai/main/soc_metrics.csv",
+      "https://raw.githubusercontent.com/microsoft/working-with-ai/main/iwa_metrics.csv",
+      "https://raw.githubusercontent.com/microsoft/working-with-ai/main/soc_iwa_weights.csv",
+      "https://raw.githubusercontent.com/microsoft/working-with-ai/main/soc_to_iwas.csv",
+      "https://arxiv.org/abs/2507.07935"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "github.com",
+      "raw.githubusercontent.com"
+    ],
+    "format": "CSV",
+    "grain": "SOC 2018 detailed occupation (785) and O*NET IWA",
+    "join_keys": [
+      "SOC Code",
+      "IWA (O*NET IWA id)"
+    ],
+    "vintage": "paper v6 (2025-2026); data from 2024 Bing Copilot conversations",
+    "license": "CC BY 4.0",
+    "api_key_required": false,
+    "notes": "Raw file URLs derived from repo listing (branch main); repo page fetched directly."
+  },
+  {
+    "id": "indeed_postings",
+    "name": "Indeed Hiring Lab job_postings_tracker",
+    "publisher": "Indeed Hiring Lab",
+    "tier": "P1",
+    "urls": [
+      "https://github.com/hiring-lab/job_postings_tracker",
+      "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/aggregate_job_postings_US.csv",
+      "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/job_postings_by_sector_US.csv",
+      "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/state_job_postings_us.csv",
+      "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/metro_job_postings_us.csv"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "github.com",
+      "raw.githubusercontent.com"
+    ],
+    "format": "CSV",
+    "grain": "day x geo (US/state/metro >=500k) [x Indeed occupational sector]",
+    "join_keys": [
+      "date",
+      "state (name/abbrev -> FIPS)",
+      "metro (CBSA name/code - confirm)",
+      "display_name (Indeed sector)"
+    ],
+    "vintage": "daily series, refreshed weekly",
+    "license": "CC BY 4.0 (cite Indeed Hiring Lab)",
+    "api_key_required": false,
+    "notes": "Index (Feb 2020=100), not counts. Sector taxonomy is Indeed's own; map to SOC manually (sector-job-title-examples.csv helps). Champaign/Springfield metros below 500k threshold - only Chicago metro available."
+  },
+  {
+    "id": "lightcast_open_skills",
+    "name": "Lightcast Open Skills taxonomy",
+    "publisher": "Lightcast",
+    "tier": "P2",
+    "urls": [
+      "https://lightcast.io/open-skills/access",
+      "https://docs.lightcast.io/lightcast-api/docs/api-access",
+      "https://docs.lightcast.io/lightcast-api/reference/overview-skills",
+      "https://docs.lightcast.io/lightcast-api/reference/overview-classification"
+    ],
+    "unverified_urls": [
+      "https://auth.emsicloud.com/connect/token",
+      "https://emsiservices.com/skills/versions/latest/skills"
+    ],
+    "hosts": [
+      "lightcast.io",
+      "docs.lightcast.io",
+      "auth.emsicloud.com",
+      "emsiservices.com (unverified)"
+    ],
+    "format": "JSON API (OAuth client credentials)",
+    "grain": "skill (id, name, type, category/subcategory)",
+    "join_keys": [
+      "skill_id",
+      "(Lightcast skill <-> O*NET/SOC mappings are paid)"
+    ],
+    "vintage": "taxonomy versioned (check /versions/latest)",
+    "license": "Open Skills license with attribution; free tier subject to approval (nonprofit/public-good)",
+    "api_key_required": true,
+    "notes": "Conflicting reports: official docs describe free 'lightcast_open_free' scope (approval needed, 50 extraction calls/month, 5 req/s); third-party blog says API access is now contract-only. Verify before planning."
+  },
+  {
+    "id": "esco",
+    "name": "ESCO (European Skills, Competences, Qualifications and Occupations)",
+    "publisher": "European Commission",
+    "tier": "P2",
+    "urls": [
+      "https://esco.ec.europa.eu/en/use-esco/download",
+      "https://esco.ec.europa.eu/en/structure-esco-downloadable-datasets",
+      "https://esco.ec.europa.eu/system/files/2024-05/V1.2%20Launch%20-%20ESCO%20SEC%20combined%20-%20final%20clean.pdf"
+    ],
+    "unverified_urls": [
+      "https://ec.europa.eu/esco/api"
+    ],
+    "hosts": [
+      "esco.ec.europa.eu",
+      "ec.europa.eu"
+    ],
+    "format": "CSV / ODS / SKOS-RDF (TTL) - download link emailed after form",
+    "grain": "occupation (ISCO-08 based) x skill relations",
+    "join_keys": [
+      "esco_occupation_uri",
+      "isco_08",
+      "esco_skill_uri",
+      "(ESCO<->O*NET crosswalk: check O*NET crosswalks page)"
+    ],
+    "vintage": "v1.2.x (v1.2.1 referenced)",
+    "license": "EU reuse policy (free with attribution)",
+    "api_key_required": false,
+    "notes": "Download is email-gated, so automated pipeline needs a one-time manual fetch then mirror to object storage."
+  },
+  {
+    "id": "fred",
+    "name": "FRED API (St. Louis Fed)",
+    "publisher": "Federal Reserve Bank of St. Louis",
+    "tier": "P1",
+    "urls": [
+      "https://fred.stlouisfed.org/docs/api/fred/",
+      "https://fred.stlouisfed.org/docs/api/fred/v2/",
+      "https://fred.stlouisfed.org/docs/api/api_key.html"
+    ],
+    "unverified_urls": [
+      "https://api.stlouisfed.org/fred/series/observations"
+    ],
+    "hosts": [
+      "api.stlouisfed.org",
+      "fred.stlouisfed.org"
+    ],
+    "format": "JSON/XML API",
+    "grain": "series x observation date",
+    "join_keys": [
+      "series_id",
+      "date"
+    ],
+    "vintage": "live",
+    "license": "FRED terms of use; some series third-party copyrighted",
+    "api_key_required": true,
+    "notes": "32-char key. Convenient for CPI, IL/MSA unemployment (LAUS), CES state education employment. v2 API offers bulk retrieval."
+  },
+  {
+    "id": "il_warn",
+    "name": "Illinois WARN notices",
+    "publisher": "Illinois Dept of Commerce & Economic Opportunity (DCEO) / IDES",
+    "tier": "P2",
+    "urls": [
+      "https://approjects-warn-act-notices.static.hf.space/states/illinois.html"
+    ],
+    "unverified_urls": [
+      "https://dceo.illinois.gov/workforcedevelopment/warn.html"
+    ],
+    "hosts": [
+      "dceo.illinois.gov (unverified)",
+      "approjects-warn-act-notices.static.hf.space"
+    ],
+    "format": "monthly XLSX/PDF reports (official, unconfirmed); aggregator CSV",
+    "grain": "notice (employer x location x date x workers affected)",
+    "join_keys": [
+      "employer name",
+      "city/county -> FIPS",
+      "notice_date"
+    ],
+    "vintage": "monthly",
+    "license": "Public record (official); aggregator terms vary",
+    "api_key_required": false,
+    "notes": "Official state file location not confirmed - only third-party aggregators surfaced. Low relevance for university workforce (public employers rarely file)."
+  },
+  {
+    "id": "higheredjobs",
+    "name": "HigherEdJobs (terms + historical quarterly employment report)",
+    "publisher": "HigherEdJobs Inc.",
+    "tier": "P2",
+    "urls": [
+      "https://prnewswire.com/news-releases/higher-education-employment-suffers-large-decline-in-q3-2015-300184541.html"
+    ],
+    "unverified_urls": [
+      "https://www.higheredjobs.com/",
+      "https://www.higheredjobs.com/about/terms.cfm"
+    ],
+    "hosts": [
+      "www.higheredjobs.com"
+    ],
+    "format": "HTML/PDF reports",
+    "grain": "national x quarter (posting trends + BLS employment)",
+    "join_keys": [
+      "quarter"
+    ],
+    "vintage": "quarterly reports seen 2015-2019; no current series found",
+    "license": "Proprietary; terms not verified - do not scrape",
+    "api_key_required": false,
+    "notes": "Recommend exclusion from automated lake; reference only. Third-party scrapers exist but terms compliance is the user's responsibility."
+  },
+  {
+    "id": "openpayrolls",
+    "name": "Open Payrolls (Illinois)",
+    "publisher": "OpenPayrolls / OpenTheBooks-style aggregator",
+    "tier": "P2",
+    "urls": [
+      "https://openpayrolls.com/state/illinois/page-500"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "openpayrolls.com"
+    ],
+    "format": "HTML",
+    "grain": "employee x employer x year",
+    "join_keys": [
+      "employer",
+      "year"
+    ],
+    "vintage": "through ~2024 (varies)",
+    "license": "Third-party; terms not verified - do not scrape",
+    "api_key_required": false,
+    "notes": "Duplicates official sources (Comptroller/IBHE). Prefer primary sources."
+  },
+  {
+    "id": "iccb_salary",
+    "name": "ICCB community college salary report (peer context)",
+    "publisher": "Illinois Community College Board",
+    "tier": "P2",
+    "urls": [
+      "https://www.iccb.org/wp-content/uploads/2026/06/salaryrpt26.pdf",
+      "https://www.iccb.org/divisions/research-and-analytics/2024-data-book/section-ii-faculty-and-staff-data"
+    ],
+    "unverified_urls": [],
+    "hosts": [
+      "www.iccb.org"
+    ],
+    "format": "PDF",
+    "grain": "community college x employee group x year",
+    "join_keys": [
+      "institution -> UNITID",
+      "year"
+    ],
+    "vintage": "FY2026 report (June 2026)",
+    "license": "Public report",
+    "api_key_required": false,
+    "notes": "Optional, not in original brief; Illinois public 2-year comparator."
+  }
+]

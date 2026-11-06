@@ -8,6 +8,11 @@ For the first-unit engineering workflow, see [org-chart and roster intake](DATA_
 
 For the fictional higher education IT showcase, see [the synthetic demo and agent design](SYNTHETIC_DEMO_AND_AGENT_DESIGN.md). Generate it with `python scripts/build_synthetic_demo.py`, then `python scripts/build_demo_explorer.py`. Open `output/demo/role-evolution.html` for an offline explorer. Its histories and recommendations are invented test cases, not real workforce findings or live AI-agent responses.
 
+## Public data lake and platform research (added 2026-11-06)
+
+- [Research synthesis](research/README.md): Snowflake and Databricks AI capabilities, where custom engineering wins, HR use cases and Illinois guardrails, and a 31-source public data catalog.
+- [Public HR data lake](lake/README.md): `python scripts/lake_acquire.py && python scripts/lake_build.py` builds 78 silver Parquet tables (O*NET 31.0, IPEDS HR, QCEW, Census QWI, Indeed, Anthropic Economic Index, SUCSS) and 11 portable gold views. Generated Snowflake/Databricks DDL is in `lake/ddl/`. Tests: `python -m unittest scripts/test_lake.py`.
+
 ## Run locally
 
 ```powershell

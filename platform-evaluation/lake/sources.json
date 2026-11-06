@@ -1,0 +1,516 @@
+{
+ "registry_version": "0.2",
+ "created": "2026-11-06",
+ "sources": [
+  {
+   "id": "onet_db_31_0",
+   "name": "O*NET 31.0 database (text)",
+   "publisher": "USDOL/ETA O*NET Center",
+   "tier": "P0",
+   "files": [
+    {
+     "url": "https://www.onetcenter.org/dl_files/database/db_31_0_text.zip",
+     "filename": "db_31_0_text.zip"
+    }
+   ],
+   "license": "CC BY 4.0 with O*NET exceptions; attribute USDOL/ETA",
+   "vintage": "31.0",
+   "grain": "occupation/task/element"
+  },
+  {
+   "id": "onet_soc_crosswalk",
+   "name": "O*NET-SOC 2019 to SOC 2018 crosswalk",
+   "publisher": "O*NET Center",
+   "tier": "P0",
+   "files": [
+    {
+     "url": "https://www.onetcenter.org/taxonomy/2019/soc/2019_to_SOC_Crosswalk.csv?fmt=csv",
+     "filename": "2019_to_SOC_Crosswalk.csv"
+    }
+   ],
+   "license": "CC BY 4.0",
+   "vintage": "2019 taxonomy",
+   "grain": "onetsoc_code x soc_code"
+  },
+  {
+   "id": "ipeds",
+   "name": "IPEDS complete data files (HR, directory, enrollment)",
+   "publisher": "NCES",
+   "tier": "P0",
+   "files": [
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/HD2024.zip",
+     "filename": "HD2024.zip",
+     "note": "Institutional characteristics directory"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/IC2024.zip",
+     "filename": "IC2024.zip",
+     "note": "Institutional characteristics"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/EFFY2024.zip",
+     "filename": "EFFY2024.zip",
+     "note": "12-month enrollment"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/S2023_OC.zip",
+     "filename": "S2023_OC.zip",
+     "note": "Fall staff by occupational category"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/S2023_IS.zip",
+     "filename": "S2023_IS.zip",
+     "note": "Full-time instructional staff by rank/tenure"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/S2023_SIS.zip",
+     "filename": "S2023_SIS.zip",
+     "note": "Instructional staff by faculty/tenure status"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/S2023_NH.zip",
+     "filename": "S2023_NH.zip",
+     "note": "New hires by occupational category"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/SAL2023_IS.zip",
+     "filename": "SAL2023_IS.zip",
+     "note": "Salaries: full-time instructional staff"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/SAL2023_NIS.zip",
+     "filename": "SAL2023_NIS.zip",
+     "note": "Salaries: non-instructional staff"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/EAP2023.zip",
+     "filename": "EAP2023.zip",
+     "note": "Employees by assigned position"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/HD2024_Dict.zip",
+     "filename": "HD2024_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/IC2024_Dict.zip",
+     "filename": "IC2024_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/EFFY2024_Dict.zip",
+     "filename": "EFFY2024_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/S2023_OC_Dict.zip",
+     "filename": "S2023_OC_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/S2023_IS_Dict.zip",
+     "filename": "S2023_IS_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/S2023_SIS_Dict.zip",
+     "filename": "S2023_SIS_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/S2023_NH_Dict.zip",
+     "filename": "S2023_NH_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/SAL2023_IS_Dict.zip",
+     "filename": "SAL2023_IS_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/SAL2023_NIS_Dict.zip",
+     "filename": "SAL2023_NIS_Dict.zip",
+     "note": "data dictionary"
+    },
+    {
+     "url": "https://nces.ed.gov/ipeds/datacenter/data/EAP2023_Dict.zip",
+     "filename": "EAP2023_Dict.zip",
+     "note": "data dictionary"
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "HR 2023-24 collection (Fall 2023 staff); HD/IC/EFFY 2024",
+   "grain": "institution (unitid)"
+  },
+  {
+   "id": "qcew_colleges",
+   "name": "QCEW annual averages, NAICS 611310 Colleges and universities, all areas",
+   "publisher": "BLS",
+   "tier": "P0",
+   "files": [
+    {
+     "url": "https://data.bls.gov/cew/data/api/2015/a/industry/611310.csv",
+     "filename": "2015_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2016/a/industry/611310.csv",
+     "filename": "2016_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2017/a/industry/611310.csv",
+     "filename": "2017_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2018/a/industry/611310.csv",
+     "filename": "2018_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/a/industry/611310.csv",
+     "filename": "2019_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/a/industry/611310.csv",
+     "filename": "2020_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/a/industry/611310.csv",
+     "filename": "2021_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/a/industry/611310.csv",
+     "filename": "2022_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/a/industry/611310.csv",
+     "filename": "2023_a_611310.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/a/industry/611310.csv",
+     "filename": "2024_a_611310.csv"
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "2015-2024 annual",
+   "grain": "area_fips x own_code x year"
+  },
+  {
+   "id": "qcew_il_counties",
+   "name": "QCEW annual averages for UIUC/UIC/UIS counties (Champaign, Cook, Sangamon)",
+   "publisher": "BLS",
+   "tier": "P0",
+   "files": [
+    {
+     "url": "https://data.bls.gov/cew/data/api/2015/a/area/17019.csv",
+     "filename": "2015_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2015/a/area/17031.csv",
+     "filename": "2015_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2015/a/area/17167.csv",
+     "filename": "2015_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2016/a/area/17019.csv",
+     "filename": "2016_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2016/a/area/17031.csv",
+     "filename": "2016_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2016/a/area/17167.csv",
+     "filename": "2016_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2017/a/area/17019.csv",
+     "filename": "2017_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2017/a/area/17031.csv",
+     "filename": "2017_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2017/a/area/17167.csv",
+     "filename": "2017_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2018/a/area/17019.csv",
+     "filename": "2018_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2018/a/area/17031.csv",
+     "filename": "2018_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2018/a/area/17167.csv",
+     "filename": "2018_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/a/area/17019.csv",
+     "filename": "2019_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/a/area/17031.csv",
+     "filename": "2019_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/a/area/17167.csv",
+     "filename": "2019_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/a/area/17019.csv",
+     "filename": "2020_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/a/area/17031.csv",
+     "filename": "2020_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/a/area/17167.csv",
+     "filename": "2020_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/a/area/17019.csv",
+     "filename": "2021_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/a/area/17031.csv",
+     "filename": "2021_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/a/area/17167.csv",
+     "filename": "2021_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/a/area/17019.csv",
+     "filename": "2022_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/a/area/17031.csv",
+     "filename": "2022_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/a/area/17167.csv",
+     "filename": "2022_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/a/area/17019.csv",
+     "filename": "2023_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/a/area/17031.csv",
+     "filename": "2023_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/a/area/17167.csv",
+     "filename": "2023_a_17167.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/a/area/17019.csv",
+     "filename": "2024_a_17019.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/a/area/17031.csv",
+     "filename": "2024_a_17031.csv"
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/a/area/17167.csv",
+     "filename": "2024_a_17167.csv"
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "2015-2024 annual",
+   "grain": "area_fips x own_code x industry_code x year"
+  },
+  {
+   "id": "qwi_il",
+   "name": "Census LEHD Quarterly Workforce Indicators, Illinois (state & local govt + private)",
+   "publisher": "U.S. Census Bureau LEHD",
+   "tier": "P0",
+   "files": [
+    {
+     "url": "https://lehd.ces.census.gov/data/qwi/latest_release/il/qwi_il_sa_f_gs_n4_oslp_u.csv.gz",
+     "filename": "qwi_il_sa_f_gs_n4_oslp_u.csv.gz"
+    },
+    {
+     "url": "https://lehd.ces.census.gov/data/qwi/latest_release/il/qwi_il_sa_f_gs_ns_oslp_u.csv.gz",
+     "filename": "qwi_il_sa_f_gs_ns_oslp_u.csv.gz"
+    },
+    {
+     "url": "https://lehd.ces.census.gov/data/qwi/latest_release/il/qwi_il_rh_f_gs_ns_oslp_u.csv.gz",
+     "filename": "qwi_il_rh_f_gs_ns_oslp_u.csv.gz"
+    },
+    {
+     "url": "https://lehd.ces.census.gov/data/qwi/latest_release/il/qwi_il_se_f_gs_ns_oslp_u.csv.gz",
+     "filename": "qwi_il_se_f_gs_ns_oslp_u.csv.gz"
+    },
+    {
+     "url": "https://lehd.ces.census.gov/data/qwi/latest_release/il/qwi_il_sa_f_gm_ns_oslp_u.csv.gz",
+     "filename": "qwi_il_sa_f_gm_ns_oslp_u.csv.gz"
+    },
+    {
+     "url": "https://lehd.ces.census.gov/data/qwi/latest_release/il/qwi_il.md5sum",
+     "filename": "qwi_il.md5sum"
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "latest_release",
+   "grain": "geography x industry x ownership x demographic x quarter"
+  },
+  {
+   "id": "indeed_postings",
+   "name": "Indeed Hiring Lab job postings index (US)",
+   "publisher": "Indeed Hiring Lab",
+   "tier": "P1",
+   "files": [
+    {
+     "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/aggregate_job_postings_US.csv",
+     "filename": "aggregate_job_postings_US.csv"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/job_postings_by_sector_US.csv",
+     "filename": "job_postings_by_sector_US.csv"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/state_job_postings_us.csv",
+     "filename": "state_job_postings_us.csv"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/metro_job_postings_us.csv",
+     "filename": "metro_job_postings_us.csv"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/sector-job-title-examples.csv",
+     "filename": "sector-job-title-examples.csv",
+     "optional": true
+    }
+   ],
+   "license": "CC BY 4.0 per repository (verify)",
+   "vintage": "weekly refresh",
+   "grain": "date x geography/sector"
+  },
+  {
+   "id": "anthropic_economic_index",
+   "name": "Anthropic Economic Index (AI usage by O*NET task and SOC occupation)",
+   "publisher": "Anthropic",
+   "tier": "P1",
+   "files": [
+    {
+     "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/resolve/main/labor_market_impacts/job_exposure.csv",
+     "filename": "labor_market_impacts__job_exposure.csv"
+    },
+    {
+     "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/resolve/main/labor_market_impacts/task_penetration.csv",
+     "filename": "labor_market_impacts__task_penetration.csv"
+    },
+    {
+     "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/resolve/main/release_2025_03_27/task_pct_v2.csv",
+     "filename": "release_2025_03_27__task_pct_v2.csv"
+    },
+    {
+     "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/resolve/main/release_2025_03_27/automation_vs_augmentation_by_task.csv",
+     "filename": "release_2025_03_27__automation_vs_augmentation_by_task.csv"
+    },
+    {
+     "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/resolve/main/release_2025_03_27/onet_task_statements.csv",
+     "filename": "release_2025_03_27__onet_task_statements.csv"
+    },
+    {
+     "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/resolve/main/release_2026_06_26/data_documentation.md",
+     "filename": "release_2026_06_26__data_documentation.md"
+    },
+    {
+     "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex/resolve/main/release_2026_06_26/data/aei_claude_ai_2026-06-26.csv",
+     "filename": "release_2026_06_26__data__aei_claude_ai_2026-06-26.csv"
+    }
+   ],
+   "license": "CC BY 4.0 (dataset card; verify)",
+   "vintage": "2025-03-27, 2026-06-26, labor_market_impacts",
+   "grain": "O*NET task / SOC occupation"
+  },
+  {
+   "id": "bls_oews",
+   "name": "BLS OEWS May 2024 (national/state/metro/industry)",
+   "publisher": "BLS",
+   "tier": "P0",
+   "requires": "BLS_USER_AGENT",
+   "files": [
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm24all.zip",
+     "filename": "oesm24all.zip"
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm24nat.zip",
+     "filename": "oesm24nat.zip"
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm24st.zip",
+     "filename": "oesm24st.zip"
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm24ma.zip",
+     "filename": "oesm24ma.zip"
+    },
+    {
+     "url": "https://www.bls.gov/oes/special-requests/oesm24in4.zip",
+     "filename": "oesm24in4.zip"
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "May 2024",
+   "grain": "area x industry x SOC",
+   "notes": "www.bls.gov returns HTTP 403 unless the User-Agent contains contact information (BLS policy). Set BLS_USER_AGENT='project-name your.email@domain'."
+  },
+  {
+   "id": "bls_projections",
+   "name": "BLS Employment Projections (occupation & industry-occupation matrix)",
+   "publisher": "BLS",
+   "tier": "P0",
+   "requires": "BLS_USER_AGENT",
+   "files": [
+    {
+     "url": "https://www.bls.gov/emp/ind-occ-matrix/occupation.xlsx",
+     "filename": "occupation.xlsx"
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "2024-34 (verify current vintage)",
+   "grain": "national matrix occupation"
+  },
+  {
+   "id": "bls_jolts",
+   "name": "BLS JOLTS time series flat files",
+   "publisher": "BLS",
+   "tier": "P1",
+   "requires": "BLS_USER_AGENT",
+   "files": [
+    {
+     "url": "https://download.bls.gov/pub/time.series/jt/jt.series",
+     "filename": "jt.series"
+    },
+    {
+     "url": "https://download.bls.gov/pub/time.series/jt/jt.industry",
+     "filename": "jt.industry"
+    },
+    {
+     "url": "https://download.bls.gov/pub/time.series/jt/jt.dataelement",
+     "filename": "jt.dataelement"
+    },
+    {
+     "url": "https://download.bls.gov/pub/time.series/jt/jt.state",
+     "filename": "jt.state"
+    },
+    {
+     "url": "https://download.bls.gov/pub/time.series/jt/jt.data.1.AllItems",
+     "filename": "jt.data.1.AllItems"
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "current",
+   "grain": "series x month"
+  }
+ ]
+}
