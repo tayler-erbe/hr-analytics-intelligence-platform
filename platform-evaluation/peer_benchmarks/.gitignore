@@ -1,0 +1,4 @@
+# Regenerable build outputs: python peer_benchmarks/build.py && python peer_benchmarks/render_html.py
+artifacts/*.parquet
+artifacts/peer_trends.json
+__pycache__/

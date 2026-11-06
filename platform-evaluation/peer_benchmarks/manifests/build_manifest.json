@@ -1,0 +1,746 @@
+{
+ "built_at_utc": "2026-11-06T08:29:31.207026+00:00",
+ "years": [
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023
+ ],
+ "real_dollars": true,
+ "real_dollar_base": "2023-24",
+ "source_members": [
+  {
+   "file": "S2015_OC",
+   "member": "s2015_oc_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "S2016_OC",
+   "member": "s2016_oc_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "S2017_OC",
+   "member": "s2017_oc_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "S2018_OC",
+   "member": "s2018_oc_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "S2019_OC",
+   "member": "s2019_oc_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "S2020_OC",
+   "member": "s2020_oc_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "S2021_OC",
+   "member": "s2021_oc_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "S2022_OC",
+   "member": "s2022_oc_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "S2023_OC",
+   "member": "s2023_oc.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "S2015_IS",
+   "member": "s2015_is_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "S2016_IS",
+   "member": "s2016_is_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "S2017_IS",
+   "member": "s2017_is_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "S2018_IS",
+   "member": "s2018_is_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "S2019_IS",
+   "member": "s2019_is_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "S2020_IS",
+   "member": "s2020_is_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "S2021_IS",
+   "member": "s2021_is_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "S2022_IS",
+   "member": "s2022_is_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "S2023_IS",
+   "member": "s2023_is.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "S2015_NH",
+   "member": "s2015_nh_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "S2016_NH",
+   "member": "s2016_nh_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "S2017_NH",
+   "member": "s2017_nh_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "S2018_NH",
+   "member": "s2018_nh_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "S2019_NH",
+   "member": "s2019_nh_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "S2020_NH",
+   "member": "s2020_nh_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "S2021_NH",
+   "member": "s2021_nh_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "S2022_NH",
+   "member": "s2022_nh_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "S2023_NH",
+   "member": "s2023_nh.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "SAL2015_IS",
+   "member": "sal2015_is_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "SAL2016_IS",
+   "member": "sal2016_is_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "SAL2017_IS",
+   "member": "sal2017_is_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "SAL2018_IS",
+   "member": "sal2018_is_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "SAL2019_IS",
+   "member": "sal2019_is_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "SAL2020_IS",
+   "member": "sal2020_is_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "SAL2021_IS",
+   "member": "sal2021_is_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "SAL2022_IS",
+   "member": "sal2022_is_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "SAL2023_IS",
+   "member": "sal2023_is.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "SAL2015_NIS",
+   "member": "sal2015_nis_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "SAL2016_NIS",
+   "member": "sal2016_nis_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "SAL2017_NIS",
+   "member": "sal2017_nis_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "SAL2018_NIS",
+   "member": "sal2018_nis_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "SAL2019_NIS",
+   "member": "sal2019_nis_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "SAL2020_NIS",
+   "member": "sal2020_nis_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "SAL2021_NIS",
+   "member": "sal2021_nis_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "SAL2022_NIS",
+   "member": "sal2022_nis_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "SAL2023_NIS",
+   "member": "sal2023_nis.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "EF2015A",
+   "member": "ef2015a_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "EF2016A",
+   "member": "ef2016a_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "EF2017A",
+   "member": "ef2017a_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "EF2018A",
+   "member": "ef2018a_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "EF2019A",
+   "member": "ef2019a_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "EF2020A",
+   "member": "ef2020a_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "EF2021A",
+   "member": "ef2021a_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "EF2022A",
+   "member": "ef2022a_rv.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "EF2023A",
+   "member": "ef2023a.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "EFIA2016",
+   "member": "efia2016_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "EFIA2017",
+   "member": "efia2017_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "EFIA2018",
+   "member": "efia2018_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "EFIA2019",
+   "member": "efia2019_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "EFIA2020",
+   "member": "efia2020_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "EFIA2021",
+   "member": "efia2021_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "EFIA2022",
+   "member": "efia2022_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "EFIA2023",
+   "member": "EFIA2023_RV.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "EFIA2024",
+   "member": "EFIA2024.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "EFFY2016",
+   "member": "effy2016_rv.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "EFFY2017",
+   "member": "effy2017_rv.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "EFFY2018",
+   "member": "effy2018_rv.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "EFFY2019",
+   "member": "effy2019_rv.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "EFFY2020",
+   "member": "effy2020_rv.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "EFFY2021",
+   "member": "effy2021_rv.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "EFFY2022",
+   "member": "effy2022_rv.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "EFFY2023",
+   "member": "EFFY2023_RV.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "EFFY2024",
+   "member": "EFFY2024.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "HD2015",
+   "member": "hd2015.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "HD2016",
+   "member": "hd2016.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "HD2017",
+   "member": "hd2017.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "HD2018",
+   "member": "hd2018.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "HD2019",
+   "member": "hd2019.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "HD2020",
+   "member": "hd2020.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "HD2021",
+   "member": "hd2021.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "HD2022",
+   "member": "hd2022.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "HD2023",
+   "member": "HD2023.csv",
+   "fall_year": 2023
+  },
+  {
+   "file": "FLAGS2015",
+   "member": "flags2015.csv",
+   "fall_year": 2015
+  },
+  {
+   "file": "FLAGS2016",
+   "member": "flags2016.csv",
+   "fall_year": 2016
+  },
+  {
+   "file": "FLAGS2017",
+   "member": "flags2017.csv",
+   "fall_year": 2017
+  },
+  {
+   "file": "FLAGS2018",
+   "member": "flags2018.csv",
+   "fall_year": 2018
+  },
+  {
+   "file": "FLAGS2019",
+   "member": "flags2019.csv",
+   "fall_year": 2019
+  },
+  {
+   "file": "FLAGS2020",
+   "member": "flags2020.csv",
+   "fall_year": 2020
+  },
+  {
+   "file": "FLAGS2021",
+   "member": "flags2021.csv",
+   "fall_year": 2021
+  },
+  {
+   "file": "FLAGS2022",
+   "member": "flags2022.csv",
+   "fall_year": 2022
+  },
+  {
+   "file": "FLAGS2023",
+   "member": "Flags2023.csv",
+   "fall_year": 2023
+  }
+ ],
+ "tables": {
+  "dim_institution_year": {
+   "rows": 171,
+   "columns": [
+    "unitid",
+    "year",
+    "short_name",
+    "panel_role",
+    "institution_name",
+    "state",
+    "county_fips",
+    "hospital_code",
+    "medical_school_code",
+    "system_name",
+    "hr_response_status",
+    "hr_parent_child",
+    "hr_reported_with_unitid",
+    "hr_imputation_method",
+    "salary_response_status",
+    "fall_enrollment_parent_child",
+    "enrollment_12mo_parent_child",
+    "in_directory"
+   ]
+  },
+  "fact_staff_occupation": {
+   "rows": 4167,
+   "columns": [
+    "unitid",
+    "year",
+    "group_code",
+    "occupation_group",
+    "ftpt",
+    "staffcat_code",
+    "headcount",
+    "headcount_men",
+    "headcount_women",
+    "imputation_flag",
+    "imputation_class",
+    "soc_basis"
+   ]
+  },
+  "fact_staff_totals": {
+   "rows": 169,
+   "columns": [
+    "unitid",
+    "year",
+    "published_grand_total",
+    "published_full_time",
+    "published_part_time",
+    "graduate_assistants",
+    "grand_total_imputation_flag",
+    "soc_basis"
+   ]
+  },
+  "fact_faculty_tenure": {
+   "rows": 547,
+   "columns": [
+    "unitid",
+    "year",
+    "tenure_status_code",
+    "tenure_status",
+    "fulltime_instructional_headcount",
+    "imputation_flag",
+    "imputation_class"
+   ]
+  },
+  "fact_new_hires": {
+   "rows": 2168,
+   "columns": [
+    "unitid",
+    "year",
+    "group_code",
+    "occupation_group",
+    "fulltime_new_hires",
+    "fulltime_staff_nov1",
+    "new_hires_per_100_fulltime",
+    "imputation_flag",
+    "imputation_class",
+    "soc_basis",
+    "hire_window"
+   ]
+  },
+  "fact_faculty_salary": {
+   "rows": 1018,
+   "columns": [
+    "unitid",
+    "year",
+    "academic_year",
+    "arank_code",
+    "academic_rank",
+    "n_total",
+    "n_men",
+    "n_women",
+    "avg_9mo_total",
+    "avg_9mo_men",
+    "avg_9mo_women",
+    "women_to_men_raw_ratio",
+    "small_cell",
+    "avg_9mo_total_real",
+    "avg_9mo_men_real",
+    "avg_9mo_women_real",
+    "real_dollar_base",
+    "equating_method",
+    "imputation_flag",
+    "imputation_class"
+   ]
+  },
+  "fact_noninstructional_pay": {
+   "rows": 2197,
+   "columns": [
+    "unitid",
+    "year",
+    "academic_year",
+    "group_code",
+    "occupation_group",
+    "fulltime_staff",
+    "salary_outlays",
+    "avg_salary",
+    "avg_salary_real",
+    "real_dollar_base",
+    "imputation_flag",
+    "imputation_class",
+    "soc_basis"
+   ]
+  },
+  "fact_enrollment": {
+   "rows": 171,
+   "columns": [
+    "unitid",
+    "year",
+    "academic_year",
+    "fall_headcount",
+    "fall_fulltime",
+    "fall_parttime_undergrad",
+    "fall_parttime_graduate",
+    "fall_fte_computed",
+    "fte12_undergrad",
+    "fte12_graduate",
+    "fte12_doctor_professional",
+    "fte12_total",
+    "unduplicated_12mo_headcount",
+    "fall_imputation_flag",
+    "fte12_imputation_flag",
+    "effy_imputation_flag",
+    "fall_source",
+    "fte12_source",
+    "effy_source"
+   ]
+  },
+  "fact_institution_metrics": {
+   "rows": 171,
+   "columns": [
+    "unitid",
+    "year",
+    "short_name",
+    "panel_role",
+    "staff_total",
+    "staff_fulltime",
+    "staff_parttime",
+    "graduate_assistants",
+    "management_headcount",
+    "management_fulltime",
+    "instructional_headcount",
+    "instructional_fulltime",
+    "fulltime_share_pct",
+    "management_share_pct",
+    "management_share_fulltime_pct",
+    "fte12_total",
+    "fall_fte_computed",
+    "fall_headcount",
+    "staff_per_100_fte12",
+    "fulltime_staff_per_100_fte12",
+    "staff_per_100_fall_fte",
+    "ft_instructional_per_100_fte12",
+    "management_per_100_fte12",
+    "fulltime_instructional",
+    "tenured",
+    "tenure_track",
+    "non_tenure_track",
+    "no_faculty_status",
+    "tenured_share_pct",
+    "tenure_track_share_pct",
+    "non_tenure_share_pct",
+    "ft_new_hires",
+    "new_hires_per_100_fulltime",
+    "n_imputed_staff_cells",
+    "published_grand_total"
+   ]
+  },
+  "cpi_academic_year": {
+   "rows": 9,
+   "columns": [
+    "fall_year",
+    "academic_year",
+    "cpi_u_jul_jun",
+    "months",
+    "to_2023_24_dollars"
+   ]
+  },
+  "national_occupation_share": {
+   "rows": 126,
+   "columns": [
+    "year",
+    "group_code",
+    "occupation_group",
+    "headcount",
+    "share_pct"
+   ]
+  },
+  "soc_break_test": {
+   "rows": 14,
+   "columns": [
+    "group_code",
+    "occupation_group",
+    "share_change_2017_to_2018_pp",
+    "median_abs_share_change_other_years_pp",
+    "headcount_change_2017_to_2018_pct",
+    "median_abs_headcount_change_other_years_pct",
+    "national_break_assessment"
+   ]
+  },
+  "salary_method_bridge_2016": {
+   "rows": 113,
+   "columns": [
+    "unitid",
+    "short_name",
+    "arank_code",
+    "reported_eq9_2016",
+    "derived_9x_monthly_2016",
+    "derived_minus_reported_pct"
+   ]
+  },
+  "comparability_flags": {
+   "rows": 654,
+   "columns": [
+    "unitid",
+    "year",
+    "domain",
+    "flag_code",
+    "severity",
+    "detail"
+   ]
+  },
+  "published_reconciliation": {
+   "rows": 126,
+   "columns": [
+    "file",
+    "member",
+    "fall_year",
+    "variable",
+    "published_sum",
+    "parsed_sum",
+    "published_n",
+    "parsed_n"
+   ]
+  },
+  "panel_total_reconciliation": {
+   "rows": 169,
+   "columns": [
+    "unitid",
+    "year",
+    "published_grand_total",
+    "sum_groups_all",
+    "published_full_time",
+    "sum_groups_full_time",
+    "published_part_time",
+    "sum_groups_part_time",
+    "published_fulltime_instructional",
+    "sum_tenure_status",
+    "published_fulltime_new_hires",
+    "sum_new_hire_groups",
+    "published_noninstructional_n",
+    "sum_noninstructional_n",
+    "published_noninstructional_outlays",
+    "sum_noninstructional_outlays"
+   ]
+  }
+ }
+}

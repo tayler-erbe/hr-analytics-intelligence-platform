@@ -1,0 +1,26 @@
+[
+ {
+  "title": "UIUC runs lean on staff per student; UIC sits near the top of the peer range",
+  "text": "In Fall 2023, UIUC had 21.7 staff per 100 FTE students against a Big Ten peer median of 39.6 (middle half 28.9-44.6). It was below the peer lower quartile in 9 of 9 years. UIC was at 43.3. Part of these gaps may reflect reporting scope: institutions differ in whether hospital, clinical and medical-school staff are on the payroll they report to IPEDS, so the ratio is not a like-for-like efficiency measure."
+ },
+ {
+  "title": "Management share is high at U of I, but per student UIUC is at the peer median",
+  "text": "UIUC coded 10.6% of staff as Management in Fall 2023 (peer median 5.3%); UIS rose from 10.5% to 14.8%. Per student, UIUC had 2.30 management staff per 100 FTE, close to the peer median of 2.31. Several peers recoded large blocks of staff into or out of Management between 2019 and 2022 (Purdue, Maryland, Indiana, Michigan State, Rutgers), so differences in this share say more about classification practice than about administrative size."
+ },
+ {
+  "title": "The tenured share is falling everywhere; UIUC stays above the peer median",
+  "text": "Tenured share of full-time instructional staff at UIUC went from 57.5% (Fall 2015) to 51.1% (Fall 2023). The peer median fell from 49.3% to 42.5%. UIC went from 43.2% to 39.3%."
+ },
+ {
+  "title": "Faculty pay rose in dollars but fell after inflation, at UIUC and across peers",
+  "text": "UIUC's all-ranks average 9-month salary rose +19.8% in current dollars from 2015-16 to 2023-24. In 2023-24 dollars (CPI-U, July-June average) that is -7.8%, against -8.2% for the peer median. About 90% of UIUC's real decline came between 2020-21 and 2022-23, when inflation outran raises. The all-ranks average moves with the rank mix as well as with pay."
+ },
+ {
+  "title": "The raw women-to-men faculty salary ratio narrowed at UIUC (this is not a pay-equity finding)",
+  "text": "UIUC's all-ranks ratio of women's to men's average 9-month salary rose from 0.796 to 0.831; the peer median was 0.823 in 2023. Within ranks, UIUC's 2023 ratios were professor 0.900, associate professor 0.952, assistant professor 0.921; much of the all-ranks gap reflects rank mix (men are a larger share of full professors). These are unadjusted ratios of group averages: they do not control for field, years in rank or other factors, so they cannot show whether pay is equitable."
+ },
+ {
+  "title": "Average pay in the Management category is below peers, which may reflect broader management coding",
+  "text": "UIUC's average full-time Management salary was $117,207 in 2023-24 against a peer median of $149,498. Classifying more mid-level roles as Management would both raise the management share and lower the category's average pay, so read the two together; IPEDS does not show which roles each campus codes as Management."
+ }
+]
