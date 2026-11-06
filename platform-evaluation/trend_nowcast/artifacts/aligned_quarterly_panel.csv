@@ -1,0 +1,1929 @@
+quarter,year,qtr,series_id,label,value,partial_quarter,provisional
+2020Q1,2020,1,us_total,"US, all postings",97.19166666666665,true,false
+2020Q2,2020,2,us_total,"US, all postings",67.00373626373627,false,false
+2020Q3,2020,3,us_total,"US, all postings",82.46576086956522,false,false
+2020Q4,2020,4,us_total,"US, all postings",92.94,false,false
+2021Q1,2021,1,us_total,"US, all postings",103.84922222222221,false,false
+2021Q2,2021,2,us_total,"US, all postings",128.0176923076923,false,false
+2021Q3,2021,3,us_total,"US, all postings",139.835,false,false
+2021Q4,2021,4,us_total,"US, all postings",152.35065217391303,false,false
+2022Q1,2022,1,us_total,"US, all postings",158.67277777777778,false,false
+2022Q2,2022,2,us_total,"US, all postings",159.6232967032967,false,false
+2022Q3,2022,3,us_total,"US, all postings",153.2663043478261,false,false
+2022Q4,2022,4,us_total,"US, all postings",146.8813043478261,false,false
+2023Q1,2023,1,us_total,"US, all postings",137.3958888888889,false,false
+2023Q2,2023,2,us_total,"US, all postings",134.1787912087912,false,false
+2023Q3,2023,3,us_total,"US, all postings",128.3367391304348,false,false
+2023Q4,2023,4,us_total,"US, all postings",123.15521739130433,false,false
+2024Q1,2024,1,us_total,"US, all postings",118.73120879120879,false,false
+2024Q2,2024,2,us_total,"US, all postings",116.19241758241759,false,false
+2024Q3,2024,3,us_total,"US, all postings",113.15228260869563,false,false
+2024Q4,2024,4,us_total,"US, all postings",109.94304347826088,false,false
+2025Q1,2025,1,us_total,"US, all postings",109.06522222222223,false,false
+2025Q2,2025,2,us_total,"US, all postings",105.98197802197802,false,false
+2025Q3,2025,3,us_total,"US, all postings",103.96847826086955,false,false
+2025Q4,2025,4,us_total,"US, all postings",101.73749999999998,false,false
+2026Q1,2026,1,us_total,"US, all postings",103.8791111111111,false,false
+2026Q2,2026,2,us_total,"US, all postings",101.79758241758239,false,false
+2026Q3,2026,3,us_total,"US, all postings",102.2263043478261,false,false
+2020Q1,2020,1,us_new,"US, new postings",92.80183333333335,true,false
+2020Q2,2020,2,us_new,"US, new postings",61.538791208791196,false,false
+2020Q3,2020,3,us_new,"US, new postings",95.03271739130435,false,false
+2020Q4,2020,4,us_new,"US, new postings",108.80663043478262,false,false
+2021Q1,2021,1,us_new,"US, new postings",127.44600000000001,false,false
+2021Q2,2021,2,us_new,"US, new postings",160.99263736263737,false,false
+2021Q3,2021,3,us_new,"US, new postings",166.22934782608695,false,false
+2021Q4,2021,4,us_new,"US, new postings",170.5961956521739,false,false
+2022Q1,2022,1,us_new,"US, new postings",176.36966666666666,false,false
+2022Q2,2022,2,us_new,"US, new postings",178.24626373626373,false,false
+2022Q3,2022,3,us_new,"US, new postings",171.36097826086956,false,false
+2022Q4,2022,4,us_new,"US, new postings",162.4783695652174,false,false
+2023Q1,2023,1,us_new,"US, new postings",153.45644444444446,false,false
+2023Q2,2023,2,us_new,"US, new postings",152.4082417582418,false,false
+2023Q3,2023,3,us_new,"US, new postings",147.7095652173913,false,false
+2023Q4,2023,4,us_new,"US, new postings",142.67195652173913,false,false
+2024Q1,2024,1,us_new,"US, new postings",137.49307692307693,false,false
+2024Q2,2024,2,us_new,"US, new postings",127.15373626373626,false,false
+2024Q3,2024,3,us_new,"US, new postings",119.69184782608697,false,false
+2024Q4,2024,4,us_new,"US, new postings",113.33032608695652,false,false
+2025Q1,2025,1,us_new,"US, new postings",110.90677777777779,false,false
+2025Q2,2025,2,us_new,"US, new postings",107.89516483516485,false,false
+2025Q3,2025,3,us_new,"US, new postings",107.9188043478261,false,false
+2025Q4,2025,4,us_new,"US, new postings",101.85065217391305,false,false
+2026Q1,2026,1,us_new,"US, new postings",99.97133333333335,false,false
+2026Q2,2026,2,us_new,"US, new postings",100.05505494505495,false,false
+2026Q3,2026,3,us_new,"US, new postings",97.60760869565217,false,false
+2020Q1,2020,1,il_total,"Illinois, all postings",97.46033333333331,true,false
+2020Q2,2020,2,il_total,"Illinois, all postings",64.1434065934066,false,false
+2020Q3,2020,3,il_total,"Illinois, all postings",75.07282608695652,false,false
+2020Q4,2020,4,il_total,"Illinois, all postings",85.70119565217391,false,false
+2021Q1,2021,1,il_total,"Illinois, all postings",97.23933333333332,false,false
+2021Q2,2021,2,il_total,"Illinois, all postings",119.71791208791207,false,false
+2021Q3,2021,3,il_total,"Illinois, all postings",134.39586956521742,false,false
+2021Q4,2021,4,il_total,"Illinois, all postings",149.7304347826087,false,false
+2022Q1,2022,1,il_total,"Illinois, all postings",152.50066666666666,false,false
+2022Q2,2022,2,il_total,"Illinois, all postings",149.62175824175827,false,false
+2022Q3,2022,3,il_total,"Illinois, all postings",143.41826086956522,false,false
+2022Q4,2022,4,il_total,"Illinois, all postings",136.32489130434783,false,false
+2023Q1,2023,1,il_total,"Illinois, all postings",126.55766666666665,false,false
+2023Q2,2023,2,il_total,"Illinois, all postings",120.02054945054945,false,false
+2023Q3,2023,3,il_total,"Illinois, all postings",114.10293478260868,false,false
+2023Q4,2023,4,il_total,"Illinois, all postings",111.47478260869563,false,false
+2024Q1,2024,1,il_total,"Illinois, all postings",108.97813186813187,false,false
+2024Q2,2024,2,il_total,"Illinois, all postings",104.70615384615385,false,false
+2024Q3,2024,3,il_total,"Illinois, all postings",102.8267391304348,false,false
+2024Q4,2024,4,il_total,"Illinois, all postings",100.46119565217394,false,false
+2025Q1,2025,1,il_total,"Illinois, all postings",97.94777777777779,false,false
+2025Q2,2025,2,il_total,"Illinois, all postings",92.31307692307693,false,false
+2025Q3,2025,3,il_total,"Illinois, all postings",89.78130434782608,false,false
+2025Q4,2025,4,il_total,"Illinois, all postings",88.4545652173913,false,false
+2026Q1,2026,1,il_total,"Illinois, all postings",90.22611111111111,false,false
+2026Q2,2026,2,il_total,"Illinois, all postings",87.1398901098901,false,false
+2026Q3,2026,3,il_total,"Illinois, all postings",87.53619565217392,false,false
+2020Q1,2020,1,chicago_total,"Chicago metro, all postings",97.36099999999998,true,false
+2020Q2,2020,2,chicago_total,"Chicago metro, all postings",61.77571428571428,false,false
+2020Q3,2020,3,chicago_total,"Chicago metro, all postings",72.14771739130434,false,false
+2020Q4,2020,4,chicago_total,"Chicago metro, all postings",82.51902173913045,false,false
+2021Q1,2021,1,chicago_total,"Chicago metro, all postings",95.32433333333334,false,false
+2021Q2,2021,2,chicago_total,"Chicago metro, all postings",118.70395604395605,false,false
+2021Q3,2021,3,chicago_total,"Chicago metro, all postings",134.06293478260872,false,false
+2021Q4,2021,4,chicago_total,"Chicago metro, all postings",149.1944565217391,false,false
+2022Q1,2022,1,chicago_total,"Chicago metro, all postings",152.01166666666663,false,false
+2022Q2,2022,2,chicago_total,"Chicago metro, all postings",151.68406593406593,false,false
+2022Q3,2022,3,chicago_total,"Chicago metro, all postings",144.75728260869568,false,false
+2022Q4,2022,4,chicago_total,"Chicago metro, all postings",136.51641304347828,false,false
+2023Q1,2023,1,chicago_total,"Chicago metro, all postings",125.42377777777777,false,false
+2023Q2,2023,2,chicago_total,"Chicago metro, all postings",118.05197802197802,false,false
+2023Q3,2023,3,chicago_total,"Chicago metro, all postings",111.54402173913043,false,false
+2023Q4,2023,4,chicago_total,"Chicago metro, all postings",107.87989130434784,false,false
+2024Q1,2024,1,chicago_total,"Chicago metro, all postings",106.11065934065931,false,false
+2024Q2,2024,2,chicago_total,"Chicago metro, all postings",101.49824175824178,false,false
+2024Q3,2024,3,chicago_total,"Chicago metro, all postings",98.38195652173913,false,false
+2024Q4,2024,4,chicago_total,"Chicago metro, all postings",95.6713043478261,false,false
+2025Q1,2025,1,chicago_total,"Chicago metro, all postings",93.01377777777778,false,false
+2025Q2,2025,2,chicago_total,"Chicago metro, all postings",88.00747252747252,false,false
+2025Q3,2025,3,chicago_total,"Chicago metro, all postings",85.74184782608695,false,false
+2025Q4,2025,4,chicago_total,"Chicago metro, all postings",84.66923913043478,false,false
+2026Q1,2026,1,chicago_total,"Chicago metro, all postings",86.47677777777778,false,false
+2026Q2,2026,2,chicago_total,"Chicago metro, all postings",84.25307692307693,false,false
+2026Q3,2026,3,chicago_total,"Chicago metro, all postings",84.75858695652174,false,false
+2020Q1,2020,1,sec:Accounting,Accounting,97.72616666666667,true,false
+2020Q2,2020,2,sec:Accounting,Accounting,62.00054945054944,false,false
+2020Q3,2020,3,sec:Accounting,Accounting,73.85728260869564,false,false
+2020Q4,2020,4,sec:Accounting,Accounting,103.48500000000001,false,false
+2021Q1,2021,1,sec:Accounting,Accounting,106.66166666666663,false,false
+2021Q2,2021,2,sec:Accounting,Accounting,129.73043956043952,false,false
+2021Q3,2021,3,sec:Accounting,Accounting,155.84597826086957,false,false
+2021Q4,2021,4,sec:Accounting,Accounting,189.5759782608696,false,false
+2022Q1,2022,1,sec:Accounting,Accounting,200.03577777777775,false,false
+2022Q2,2022,2,sec:Accounting,Accounting,201.9301098901099,false,false
+2022Q3,2022,3,sec:Accounting,Accounting,203.09804347826088,false,false
+2022Q4,2022,4,sec:Accounting,Accounting,192.61217391304348,false,false
+2023Q1,2023,1,sec:Accounting,Accounting,171.4068888888889,false,false
+2023Q2,2023,2,sec:Accounting,Accounting,149.50483516483516,false,false
+2023Q3,2023,3,sec:Accounting,Accounting,151.75684782608695,false,false
+2023Q4,2023,4,sec:Accounting,Accounting,145.55141304347828,false,false
+2024Q1,2024,1,sec:Accounting,Accounting,136.52296703296705,false,false
+2024Q2,2024,2,sec:Accounting,Accounting,118.79000000000002,false,false
+2024Q3,2024,3,sec:Accounting,Accounting,125.69521739130435,false,false
+2024Q4,2024,4,sec:Accounting,Accounting,128.66489130434783,false,false
+2025Q1,2025,1,sec:Accounting,Accounting,123.08366666666667,false,false
+2025Q2,2025,2,sec:Accounting,Accounting,99.08769230769228,false,false
+2025Q3,2025,3,sec:Accounting,Accounting,109.75717391304347,false,false
+2025Q4,2025,4,sec:Accounting,Accounting,110.73554347826087,false,false
+2026Q1,2026,1,sec:Accounting,Accounting,115.54844444444446,false,false
+2026Q2,2026,2,sec:Accounting,Accounting,95.4642857142857,false,false
+2026Q3,2026,3,sec:Accounting,Accounting,95.52608695652174,false,false
+2020Q1,2020,1,sec:Administrative Assistance,Administrative Assistance,96.31950000000002,true,false
+2020Q2,2020,2,sec:Administrative Assistance,Administrative Assistance,58.79472527472527,false,false
+2020Q3,2020,3,sec:Administrative Assistance,Administrative Assistance,78.38967391304347,false,false
+2020Q4,2020,4,sec:Administrative Assistance,Administrative Assistance,90.85652173913043,false,false
+2021Q1,2021,1,sec:Administrative Assistance,Administrative Assistance,106.50844444444442,false,false
+2021Q2,2021,2,sec:Administrative Assistance,Administrative Assistance,137.58285714285714,false,false
+2021Q3,2021,3,sec:Administrative Assistance,Administrative Assistance,158.26402173913044,false,false
+2021Q4,2021,4,sec:Administrative Assistance,Administrative Assistance,173.0861956521739,false,false
+2022Q1,2022,1,sec:Administrative Assistance,Administrative Assistance,180.7621111111111,false,false
+2022Q2,2022,2,sec:Administrative Assistance,Administrative Assistance,181.12252747252745,false,false
+2022Q3,2022,3,sec:Administrative Assistance,Administrative Assistance,170.98673913043478,false,false
+2022Q4,2022,4,sec:Administrative Assistance,Administrative Assistance,164.82108695652173,false,false
+2023Q1,2023,1,sec:Administrative Assistance,Administrative Assistance,153.15111111111113,false,false
+2023Q2,2023,2,sec:Administrative Assistance,Administrative Assistance,144.21593406593405,false,false
+2023Q3,2023,3,sec:Administrative Assistance,Administrative Assistance,134.56989130434783,false,false
+2023Q4,2023,4,sec:Administrative Assistance,Administrative Assistance,126.23,false,false
+2024Q1,2024,1,sec:Administrative Assistance,Administrative Assistance,122.07967032967034,false,false
+2024Q2,2024,2,sec:Administrative Assistance,Administrative Assistance,118.88923076923076,false,false
+2024Q3,2024,3,sec:Administrative Assistance,Administrative Assistance,113.66130434782609,false,false
+2024Q4,2024,4,sec:Administrative Assistance,Administrative Assistance,109.11163043478261,false,false
+2025Q1,2025,1,sec:Administrative Assistance,Administrative Assistance,105.29311111111109,false,false
+2025Q2,2025,2,sec:Administrative Assistance,Administrative Assistance,99.01901098901101,false,false
+2025Q3,2025,3,sec:Administrative Assistance,Administrative Assistance,96.13076086956522,false,false
+2025Q4,2025,4,sec:Administrative Assistance,Administrative Assistance,95.05217391304348,false,false
+2026Q1,2026,1,sec:Administrative Assistance,Administrative Assistance,97.85366666666667,false,false
+2026Q2,2026,2,sec:Administrative Assistance,Administrative Assistance,93.74142857142859,false,false
+2026Q3,2026,3,sec:Administrative Assistance,Administrative Assistance,95.26641304347827,false,false
+2020Q1,2020,1,sec:Architecture,Architecture,98.01666666666667,true,false
+2020Q2,2020,2,sec:Architecture,Architecture,56.72417582417582,false,false
+2020Q3,2020,3,sec:Architecture,Architecture,60.11195652173913,false,false
+2020Q4,2020,4,sec:Architecture,Architecture,65.885,false,false
+2021Q1,2021,1,sec:Architecture,Architecture,81.07244444444444,false,false
+2021Q2,2021,2,sec:Architecture,Architecture,105.03648351648351,false,false
+2021Q3,2021,3,sec:Architecture,Architecture,119.84608695652175,false,false
+2021Q4,2021,4,sec:Architecture,Architecture,138.1036956521739,false,false
+2022Q1,2022,1,sec:Architecture,Architecture,156.55044444444442,false,false
+2022Q2,2022,2,sec:Architecture,Architecture,167.00120879120877,false,false
+2022Q3,2022,3,sec:Architecture,Architecture,157.79445652173914,false,false
+2022Q4,2022,4,sec:Architecture,Architecture,152.81760869565215,false,false
+2023Q1,2023,1,sec:Architecture,Architecture,140.62355555555555,false,false
+2023Q2,2023,2,sec:Architecture,Architecture,130.82736263736265,false,false
+2023Q3,2023,3,sec:Architecture,Architecture,125.47978260869564,false,false
+2023Q4,2023,4,sec:Architecture,Architecture,117.26804347826089,false,false
+2024Q1,2024,1,sec:Architecture,Architecture,111.23,false,false
+2024Q2,2024,2,sec:Architecture,Architecture,107.03505494505495,false,false
+2024Q3,2024,3,sec:Architecture,Architecture,102.12402173913046,false,false
+2024Q4,2024,4,sec:Architecture,Architecture,99.88695652173914,false,false
+2025Q1,2025,1,sec:Architecture,Architecture,97.68933333333332,false,false
+2025Q2,2025,2,sec:Architecture,Architecture,90.38967032967034,false,false
+2025Q3,2025,3,sec:Architecture,Architecture,88.21836956521739,false,false
+2025Q4,2025,4,sec:Architecture,Architecture,88.47554347826086,false,false
+2026Q1,2026,1,sec:Architecture,Architecture,92.87966666666667,false,false
+2026Q2,2026,2,sec:Architecture,Architecture,89.21670329670327,false,false
+2026Q3,2026,3,sec:Architecture,Architecture,91.08663043478258,false,false
+2020Q1,2020,1,sec:Arts & Entertainment,Arts & Entertainment,95.81766666666665,true,false
+2020Q2,2020,2,sec:Arts & Entertainment,Arts & Entertainment,53.2842857142857,false,false
+2020Q3,2020,3,sec:Arts & Entertainment,Arts & Entertainment,59.97141304347825,false,false
+2020Q4,2020,4,sec:Arts & Entertainment,Arts & Entertainment,70.53934782608695,false,false
+2021Q1,2021,1,sec:Arts & Entertainment,Arts & Entertainment,82.73411111111112,false,false
+2021Q2,2021,2,sec:Arts & Entertainment,Arts & Entertainment,109.28131868131868,false,false
+2021Q3,2021,3,sec:Arts & Entertainment,Arts & Entertainment,123.73847826086956,false,false
+2021Q4,2021,4,sec:Arts & Entertainment,Arts & Entertainment,139.73,false,false
+2022Q1,2022,1,sec:Arts & Entertainment,Arts & Entertainment,145.57611111111115,false,false
+2022Q2,2022,2,sec:Arts & Entertainment,Arts & Entertainment,150.75571428571428,false,false
+2022Q3,2022,3,sec:Arts & Entertainment,Arts & Entertainment,137.19108695652173,false,false
+2022Q4,2022,4,sec:Arts & Entertainment,Arts & Entertainment,126.03141304347824,false,false
+2023Q1,2023,1,sec:Arts & Entertainment,Arts & Entertainment,109.67233333333336,false,false
+2023Q2,2023,2,sec:Arts & Entertainment,Arts & Entertainment,101.70428571428573,false,false
+2023Q3,2023,3,sec:Arts & Entertainment,Arts & Entertainment,99.2772826086957,false,false
+2023Q4,2023,4,sec:Arts & Entertainment,Arts & Entertainment,94.6120652173913,false,false
+2024Q1,2024,1,sec:Arts & Entertainment,Arts & Entertainment,93.10780219780222,false,false
+2024Q2,2024,2,sec:Arts & Entertainment,Arts & Entertainment,90.30043956043956,false,false
+2024Q3,2024,3,sec:Arts & Entertainment,Arts & Entertainment,85.89184782608696,false,false
+2024Q4,2024,4,sec:Arts & Entertainment,Arts & Entertainment,86.36717391304349,false,false
+2025Q1,2025,1,sec:Arts & Entertainment,Arts & Entertainment,83.55122222222222,false,false
+2025Q2,2025,2,sec:Arts & Entertainment,Arts & Entertainment,77.89032967032966,false,false
+2025Q3,2025,3,sec:Arts & Entertainment,Arts & Entertainment,77.00152173913042,false,false
+2025Q4,2025,4,sec:Arts & Entertainment,Arts & Entertainment,79.41097826086956,false,false
+2026Q1,2026,1,sec:Arts & Entertainment,Arts & Entertainment,84.85288888888888,false,false
+2026Q2,2026,2,sec:Arts & Entertainment,Arts & Entertainment,82.61054945054946,false,false
+2026Q3,2026,3,sec:Arts & Entertainment,Arts & Entertainment,82.23043478260868,false,false
+2020Q1,2020,1,sec:Aviation,Aviation,96.26783333333333,true,false
+2020Q2,2020,2,sec:Aviation,Aviation,61.49780219780219,false,false
+2020Q3,2020,3,sec:Aviation,Aviation,63.31695652173912,false,false
+2020Q4,2020,4,sec:Aviation,Aviation,63.98826086956522,false,false
+2021Q1,2021,1,sec:Aviation,Aviation,79.11455555555554,false,false
+2021Q2,2021,2,sec:Aviation,Aviation,99.95395604395605,false,false
+2021Q3,2021,3,sec:Aviation,Aviation,113.70989130434783,false,false
+2021Q4,2021,4,sec:Aviation,Aviation,126.86260869565216,false,false
+2022Q1,2022,1,sec:Aviation,Aviation,142.27477777777779,false,false
+2022Q2,2022,2,sec:Aviation,Aviation,157.529010989011,false,false
+2022Q3,2022,3,sec:Aviation,Aviation,155.60641304347828,false,false
+2022Q4,2022,4,sec:Aviation,Aviation,156.51695652173913,false,false
+2023Q1,2023,1,sec:Aviation,Aviation,159.92822222222225,false,false
+2023Q2,2023,2,sec:Aviation,Aviation,163.59879120879123,false,false
+2023Q3,2023,3,sec:Aviation,Aviation,160.82347826086956,false,false
+2023Q4,2023,4,sec:Aviation,Aviation,149.97271739130431,false,false
+2024Q1,2024,1,sec:Aviation,Aviation,141.15340659340657,false,false
+2024Q2,2024,2,sec:Aviation,Aviation,131.78967032967032,false,false
+2024Q3,2024,3,sec:Aviation,Aviation,122.3625,false,false
+2024Q4,2024,4,sec:Aviation,Aviation,113.1021739130435,false,false
+2025Q1,2025,1,sec:Aviation,Aviation,108.92066666666668,false,false
+2025Q2,2025,2,sec:Aviation,Aviation,106.72615384615386,false,false
+2025Q3,2025,3,sec:Aviation,Aviation,106.08380434782607,false,false
+2025Q4,2025,4,sec:Aviation,Aviation,103.22336956521738,false,false
+2026Q1,2026,1,sec:Aviation,Aviation,104.84800000000001,false,false
+2026Q2,2026,2,sec:Aviation,Aviation,107.5778021978022,false,false
+2026Q3,2026,3,sec:Aviation,Aviation,114.48543478260869,false,false
+2020Q1,2020,1,sec:Banking & Finance,Banking & Finance,102.03716666666666,true,false
+2020Q2,2020,2,sec:Banking & Finance,Banking & Finance,60.36120879120878,false,false
+2020Q3,2020,3,sec:Banking & Finance,Banking & Finance,71.22445652173911,false,false
+2020Q4,2020,4,sec:Banking & Finance,Banking & Finance,89.4626086956522,false,false
+2021Q1,2021,1,sec:Banking & Finance,Banking & Finance,101.73677777777777,false,false
+2021Q2,2021,2,sec:Banking & Finance,Banking & Finance,120.16802197802197,false,false
+2021Q3,2021,3,sec:Banking & Finance,Banking & Finance,138.12728260869568,false,false
+2021Q4,2021,4,sec:Banking & Finance,Banking & Finance,165.26521739130433,false,false
+2022Q1,2022,1,sec:Banking & Finance,Banking & Finance,180.44611111111112,false,false
+2022Q2,2022,2,sec:Banking & Finance,Banking & Finance,186.86054945054946,false,false
+2022Q3,2022,3,sec:Banking & Finance,Banking & Finance,171.9928260869565,false,false
+2022Q4,2022,4,sec:Banking & Finance,Banking & Finance,147.53771739130434,false,false
+2023Q1,2023,1,sec:Banking & Finance,Banking & Finance,126.60222222222222,false,false
+2023Q2,2023,2,sec:Banking & Finance,Banking & Finance,112.02637362637363,false,false
+2023Q3,2023,3,sec:Banking & Finance,Banking & Finance,104.5788043478261,false,false
+2023Q4,2023,4,sec:Banking & Finance,Banking & Finance,96.76423913043477,false,false
+2024Q1,2024,1,sec:Banking & Finance,Banking & Finance,96.01406593406594,false,false
+2024Q2,2024,2,sec:Banking & Finance,Banking & Finance,95.66835164835165,false,false
+2024Q3,2024,3,sec:Banking & Finance,Banking & Finance,93.04956521739132,false,false
+2024Q4,2024,4,sec:Banking & Finance,Banking & Finance,92.95021739130435,false,false
+2025Q1,2025,1,sec:Banking & Finance,Banking & Finance,94.95522222222223,false,false
+2025Q2,2025,2,sec:Banking & Finance,Banking & Finance,94.8942857142857,false,false
+2025Q3,2025,3,sec:Banking & Finance,Banking & Finance,96.8911956521739,false,false
+2025Q4,2025,4,sec:Banking & Finance,Banking & Finance,96.6229347826087,false,false
+2026Q1,2026,1,sec:Banking & Finance,Banking & Finance,102.31244444444445,false,false
+2026Q2,2026,2,sec:Banking & Finance,Banking & Finance,101.97021978021976,false,false
+2026Q3,2026,3,sec:Banking & Finance,Banking & Finance,104.36923913043479,false,false
+2020Q1,2020,1,sec:Childcare,Childcare,94.446,true,false
+2020Q2,2020,2,sec:Childcare,Childcare,46.20615384615384,false,false
+2020Q3,2020,3,sec:Childcare,Childcare,76.0833695652174,false,false
+2020Q4,2020,4,sec:Childcare,Childcare,86.18217391304347,false,false
+2021Q1,2021,1,sec:Childcare,Childcare,100.59722222222223,false,false
+2021Q2,2021,2,sec:Childcare,Childcare,130.64428571428573,false,false
+2021Q3,2021,3,sec:Childcare,Childcare,144.74608695652176,false,false
+2021Q4,2021,4,sec:Childcare,Childcare,151.44934782608695,false,false
+2022Q1,2022,1,sec:Childcare,Childcare,155.8798888888889,false,false
+2022Q2,2022,2,sec:Childcare,Childcare,156.0910989010989,false,false
+2022Q3,2022,3,sec:Childcare,Childcare,158.60097826086957,false,false
+2022Q4,2022,4,sec:Childcare,Childcare,163.8425,false,false
+2023Q1,2023,1,sec:Childcare,Childcare,161.621,false,false
+2023Q2,2023,2,sec:Childcare,Childcare,155.03615384615387,false,false
+2023Q3,2023,3,sec:Childcare,Childcare,151.72228260869565,false,false
+2023Q4,2023,4,sec:Childcare,Childcare,144.175,false,false
+2024Q1,2024,1,sec:Childcare,Childcare,136.78483516483513,false,false
+2024Q2,2024,2,sec:Childcare,Childcare,137.59,false,false
+2024Q3,2024,3,sec:Childcare,Childcare,126.59630434782608,false,false
+2024Q4,2024,4,sec:Childcare,Childcare,115.95565217391307,false,false
+2025Q1,2025,1,sec:Childcare,Childcare,112.90566666666668,false,false
+2025Q2,2025,2,sec:Childcare,Childcare,108.50692307692309,false,false
+2025Q3,2025,3,sec:Childcare,Childcare,100.98315217391307,false,false
+2025Q4,2025,4,sec:Childcare,Childcare,98.24217391304349,false,false
+2026Q1,2026,1,sec:Childcare,Childcare,102.1768888888889,false,false
+2026Q2,2026,2,sec:Childcare,Childcare,90.87637362637362,false,false
+2026Q3,2026,3,sec:Childcare,Childcare,87.89326086956522,false,false
+2020Q1,2020,1,sec:Civil Engineering,Civil Engineering,98.27233333333334,true,false
+2020Q2,2020,2,sec:Civil Engineering,Civil Engineering,69.77681318681319,false,false
+2020Q3,2020,3,sec:Civil Engineering,Civil Engineering,72.87369565217392,false,false
+2020Q4,2020,4,sec:Civil Engineering,Civil Engineering,73.32826086956523,false,false
+2021Q1,2021,1,sec:Civil Engineering,Civil Engineering,86.88155555555555,false,false
+2021Q2,2021,2,sec:Civil Engineering,Civil Engineering,107.22593406593406,false,false
+2021Q3,2021,3,sec:Civil Engineering,Civil Engineering,124.70054347826088,false,false
+2021Q4,2021,4,sec:Civil Engineering,Civil Engineering,143.74673913043478,false,false
+2022Q1,2022,1,sec:Civil Engineering,Civil Engineering,161.563,false,false
+2022Q2,2022,2,sec:Civil Engineering,Civil Engineering,180.97659340659342,false,false
+2022Q3,2022,3,sec:Civil Engineering,Civil Engineering,186.43032608695657,false,false
+2022Q4,2022,4,sec:Civil Engineering,Civil Engineering,197.31608695652173,false,false
+2023Q1,2023,1,sec:Civil Engineering,Civil Engineering,194.507,false,false
+2023Q2,2023,2,sec:Civil Engineering,Civil Engineering,193.83714285714282,false,false
+2023Q3,2023,3,sec:Civil Engineering,Civil Engineering,192.61597826086958,false,false
+2023Q4,2023,4,sec:Civil Engineering,Civil Engineering,195.77945652173915,false,false
+2024Q1,2024,1,sec:Civil Engineering,Civil Engineering,186.3013186813187,false,false
+2024Q2,2024,2,sec:Civil Engineering,Civil Engineering,180.39648351648353,false,false
+2024Q3,2024,3,sec:Civil Engineering,Civil Engineering,173.0179347826087,false,false
+2024Q4,2024,4,sec:Civil Engineering,Civil Engineering,172.7625,false,false
+2025Q1,2025,1,sec:Civil Engineering,Civil Engineering,164.27211111111112,false,false
+2025Q2,2025,2,sec:Civil Engineering,Civil Engineering,152.36043956043954,false,false
+2025Q3,2025,3,sec:Civil Engineering,Civil Engineering,152.68173913043475,false,false
+2025Q4,2025,4,sec:Civil Engineering,Civil Engineering,151.85989130434783,false,false
+2026Q1,2026,1,sec:Civil Engineering,Civil Engineering,147.0431111111111,false,false
+2026Q2,2026,2,sec:Civil Engineering,Civil Engineering,140.93450549450552,false,false
+2026Q3,2026,3,sec:Civil Engineering,Civil Engineering,149.32695652173913,false,false
+2020Q1,2020,1,sec:Cleaning & Sanitation,Cleaning & Sanitation,94.89833333333334,true,false
+2020Q2,2020,2,sec:Cleaning & Sanitation,Cleaning & Sanitation,64.75791208791208,false,false
+2020Q3,2020,3,sec:Cleaning & Sanitation,Cleaning & Sanitation,95.41010869565218,false,false
+2020Q4,2020,4,sec:Cleaning & Sanitation,Cleaning & Sanitation,101.20065217391303,false,false
+2021Q1,2021,1,sec:Cleaning & Sanitation,Cleaning & Sanitation,112.60055555555554,false,false
+2021Q2,2021,2,sec:Cleaning & Sanitation,Cleaning & Sanitation,155.3162637362637,false,false
+2021Q3,2021,3,sec:Cleaning & Sanitation,Cleaning & Sanitation,162.4007608695652,false,false
+2021Q4,2021,4,sec:Cleaning & Sanitation,Cleaning & Sanitation,164.12804347826088,false,false
+2022Q1,2022,1,sec:Cleaning & Sanitation,Cleaning & Sanitation,167.15844444444443,false,false
+2022Q2,2022,2,sec:Cleaning & Sanitation,Cleaning & Sanitation,169.38912087912087,false,false
+2022Q3,2022,3,sec:Cleaning & Sanitation,Cleaning & Sanitation,161.07195652173917,false,false
+2022Q4,2022,4,sec:Cleaning & Sanitation,Cleaning & Sanitation,157.20945652173913,false,false
+2023Q1,2023,1,sec:Cleaning & Sanitation,Cleaning & Sanitation,149.01544444444446,false,false
+2023Q2,2023,2,sec:Cleaning & Sanitation,Cleaning & Sanitation,143.39549450549453,false,false
+2023Q3,2023,3,sec:Cleaning & Sanitation,Cleaning & Sanitation,136.34434782608696,false,false
+2023Q4,2023,4,sec:Cleaning & Sanitation,Cleaning & Sanitation,127.0213043478261,false,false
+2024Q1,2024,1,sec:Cleaning & Sanitation,Cleaning & Sanitation,119.56362637362636,false,false
+2024Q2,2024,2,sec:Cleaning & Sanitation,Cleaning & Sanitation,116.46615384615383,false,false
+2024Q3,2024,3,sec:Cleaning & Sanitation,Cleaning & Sanitation,109.87369565217388,false,false
+2024Q4,2024,4,sec:Cleaning & Sanitation,Cleaning & Sanitation,106.56608695652176,false,false
+2025Q1,2025,1,sec:Cleaning & Sanitation,Cleaning & Sanitation,105.02177777777779,false,false
+2025Q2,2025,2,sec:Cleaning & Sanitation,Cleaning & Sanitation,98.809010989011,false,false
+2025Q3,2025,3,sec:Cleaning & Sanitation,Cleaning & Sanitation,99.45771739130433,false,false
+2025Q4,2025,4,sec:Cleaning & Sanitation,Cleaning & Sanitation,98.8026086956522,false,false
+2026Q1,2026,1,sec:Cleaning & Sanitation,Cleaning & Sanitation,100.41566666666667,false,false
+2026Q2,2026,2,sec:Cleaning & Sanitation,Cleaning & Sanitation,98.86142857142859,false,false
+2026Q3,2026,3,sec:Cleaning & Sanitation,Cleaning & Sanitation,99.72217391304346,false,false
+2020Q1,2020,1,sec:Community & Social Service,Community & Social Service,98.19083333333334,true,false
+2020Q2,2020,2,sec:Community & Social Service,Community & Social Service,68.88857142857142,false,false
+2020Q3,2020,3,sec:Community & Social Service,Community & Social Service,80.99206521739131,false,false
+2020Q4,2020,4,sec:Community & Social Service,Community & Social Service,93.7994565217391,false,false
+2021Q1,2021,1,sec:Community & Social Service,Community & Social Service,102.2708888888889,false,false
+2021Q2,2021,2,sec:Community & Social Service,Community & Social Service,127.54879120879123,false,false
+2021Q3,2021,3,sec:Community & Social Service,Community & Social Service,144.46554347826086,false,false
+2021Q4,2021,4,sec:Community & Social Service,Community & Social Service,155.75,false,false
+2022Q1,2022,1,sec:Community & Social Service,Community & Social Service,161.57811111111113,false,false
+2022Q2,2022,2,sec:Community & Social Service,Community & Social Service,164.36725274725273,false,false
+2022Q3,2022,3,sec:Community & Social Service,Community & Social Service,162.55489130434782,false,false
+2022Q4,2022,4,sec:Community & Social Service,Community & Social Service,162.23510869565214,false,false
+2023Q1,2023,1,sec:Community & Social Service,Community & Social Service,158.6687777777778,false,false
+2023Q2,2023,2,sec:Community & Social Service,Community & Social Service,156.2967032967033,false,false
+2023Q3,2023,3,sec:Community & Social Service,Community & Social Service,147.94119565217392,false,false
+2023Q4,2023,4,sec:Community & Social Service,Community & Social Service,142.9746739130435,false,false
+2024Q1,2024,1,sec:Community & Social Service,Community & Social Service,138.7189010989011,false,false
+2024Q2,2024,2,sec:Community & Social Service,Community & Social Service,134.80967032967033,false,false
+2024Q3,2024,3,sec:Community & Social Service,Community & Social Service,131.06423913043477,false,false
+2024Q4,2024,4,sec:Community & Social Service,Community & Social Service,125.88315217391306,false,false
+2025Q1,2025,1,sec:Community & Social Service,Community & Social Service,123.57000000000001,false,false
+2025Q2,2025,2,sec:Community & Social Service,Community & Social Service,117.31824175824178,false,false
+2025Q3,2025,3,sec:Community & Social Service,Community & Social Service,113.1379347826087,false,false
+2025Q4,2025,4,sec:Community & Social Service,Community & Social Service,111.2433695652174,false,false
+2026Q1,2026,1,sec:Community & Social Service,Community & Social Service,110.21744444444444,false,false
+2026Q2,2026,2,sec:Community & Social Service,Community & Social Service,102.64747252747254,false,false
+2026Q3,2026,3,sec:Community & Social Service,Community & Social Service,104.14750000000002,false,false
+2020Q1,2020,1,sec:Construction,Construction,96.70733333333334,true,false
+2020Q2,2020,2,sec:Construction,Construction,71.59560439560438,false,false
+2020Q3,2020,3,sec:Construction,Construction,101.16065217391305,false,false
+2020Q4,2020,4,sec:Construction,Construction,113.5070652173913,false,false
+2021Q1,2021,1,sec:Construction,Construction,128.01144444444446,false,false
+2021Q2,2021,2,sec:Construction,Construction,169.12021978021977,false,false
+2021Q3,2021,3,sec:Construction,Construction,159.49271739130435,false,false
+2021Q4,2021,4,sec:Construction,Construction,158.4288043478261,false,false
+2022Q1,2022,1,sec:Construction,Construction,164.51922222222223,false,false
+2022Q2,2022,2,sec:Construction,Construction,170.85098901098903,false,false
+2022Q3,2022,3,sec:Construction,Construction,170.35239130434786,false,false
+2022Q4,2022,4,sec:Construction,Construction,170.8879347826087,false,false
+2023Q1,2023,1,sec:Construction,Construction,164.13544444444443,false,false
+2023Q2,2023,2,sec:Construction,Construction,161.51945054945054,false,false
+2023Q3,2023,3,sec:Construction,Construction,158.49880434782608,false,false
+2023Q4,2023,4,sec:Construction,Construction,149.88010869565215,false,false
+2024Q1,2024,1,sec:Construction,Construction,140.7575824175824,false,false
+2024Q2,2024,2,sec:Construction,Construction,133.4165934065934,false,false
+2024Q3,2024,3,sec:Construction,Construction,127.10347826086957,false,false
+2024Q4,2024,4,sec:Construction,Construction,126.65586956521742,false,false
+2025Q1,2025,1,sec:Construction,Construction,126.1252222222222,false,false
+2025Q2,2025,2,sec:Construction,Construction,119.75505494505494,false,false
+2025Q3,2025,3,sec:Construction,Construction,122.34967391304347,false,false
+2025Q4,2025,4,sec:Construction,Construction,126.8591304347826,false,false
+2026Q1,2026,1,sec:Construction,Construction,134.3228888888889,false,false
+2026Q2,2026,2,sec:Construction,Construction,119.6553846153846,false,false
+2026Q3,2026,3,sec:Construction,Construction,122.32902173913043,false,false
+2020Q1,2020,1,sec:Customer Service,Customer Service,95.87499999999999,true,false
+2020Q2,2020,2,sec:Customer Service,Customer Service,62.62010989010988,false,false
+2020Q3,2020,3,sec:Customer Service,Customer Service,81.74293478260869,false,false
+2020Q4,2020,4,sec:Customer Service,Customer Service,91.59347826086957,false,false
+2021Q1,2021,1,sec:Customer Service,Customer Service,101.51755555555556,false,false
+2021Q2,2021,2,sec:Customer Service,Customer Service,130.43604395604396,false,false
+2021Q3,2021,3,sec:Customer Service,Customer Service,137.6620652173913,false,false
+2021Q4,2021,4,sec:Customer Service,Customer Service,139.2433695652174,false,false
+2022Q1,2022,1,sec:Customer Service,Customer Service,139.28633333333335,false,false
+2022Q2,2022,2,sec:Customer Service,Customer Service,136.41318681318683,false,false
+2022Q3,2022,3,sec:Customer Service,Customer Service,128.45532608695655,false,false
+2022Q4,2022,4,sec:Customer Service,Customer Service,124.93010869565217,false,false
+2023Q1,2023,1,sec:Customer Service,Customer Service,112.22877777777776,false,false
+2023Q2,2023,2,sec:Customer Service,Customer Service,108.7412087912088,false,false
+2023Q3,2023,3,sec:Customer Service,Customer Service,104.79206521739134,false,false
+2023Q4,2023,4,sec:Customer Service,Customer Service,101.80989130434781,false,false
+2024Q1,2024,1,sec:Customer Service,Customer Service,97.69824175824176,false,false
+2024Q2,2024,2,sec:Customer Service,Customer Service,94.59659340659341,false,false
+2024Q3,2024,3,sec:Customer Service,Customer Service,92.30358695652174,false,false
+2024Q4,2024,4,sec:Customer Service,Customer Service,88.94706521739131,false,false
+2025Q1,2025,1,sec:Customer Service,Customer Service,85.56933333333333,false,false
+2025Q2,2025,2,sec:Customer Service,Customer Service,82.68615384615384,false,false
+2025Q3,2025,3,sec:Customer Service,Customer Service,86.2391304347826,false,false
+2025Q4,2025,4,sec:Customer Service,Customer Service,88.66097826086957,false,false
+2026Q1,2026,1,sec:Customer Service,Customer Service,91.77255555555556,false,false
+2026Q2,2026,2,sec:Customer Service,Customer Service,88.80505494505495,false,false
+2026Q3,2026,3,sec:Customer Service,Customer Service,87.96869565217392,false,false
+2020Q1,2020,1,sec:Data & Analytics,Data & Analytics,98.07166666666667,true,false
+2020Q2,2020,2,sec:Data & Analytics,Data & Analytics,61.349999999999994,false,false
+2020Q3,2020,3,sec:Data & Analytics,Data & Analytics,62.39630434782609,false,false
+2020Q4,2020,4,sec:Data & Analytics,Data & Analytics,76.55652173913043,false,false
+2021Q1,2021,1,sec:Data & Analytics,Data & Analytics,93.611,false,false
+2021Q2,2021,2,sec:Data & Analytics,Data & Analytics,117.3556043956044,false,false
+2021Q3,2021,3,sec:Data & Analytics,Data & Analytics,141.72815217391303,false,false
+2021Q4,2021,4,sec:Data & Analytics,Data & Analytics,174.46847826086957,false,false
+2022Q1,2022,1,sec:Data & Analytics,Data & Analytics,194.6718888888889,false,false
+2022Q2,2022,2,sec:Data & Analytics,Data & Analytics,195.6295604395604,false,false
+2022Q3,2022,3,sec:Data & Analytics,Data & Analytics,170.7311956521739,false,false
+2022Q4,2022,4,sec:Data & Analytics,Data & Analytics,141.60652173913041,false,false
+2023Q1,2023,1,sec:Data & Analytics,Data & Analytics,116.25355555555555,false,false
+2023Q2,2023,2,sec:Data & Analytics,Data & Analytics,93.74681318681317,false,false
+2023Q3,2023,3,sec:Data & Analytics,Data & Analytics,81.1529347826087,false,false
+2023Q4,2023,4,sec:Data & Analytics,Data & Analytics,74.77565217391304,false,false
+2024Q1,2024,1,sec:Data & Analytics,Data & Analytics,72.18208791208791,false,false
+2024Q2,2024,2,sec:Data & Analytics,Data & Analytics,70.38120879120879,false,false
+2024Q3,2024,3,sec:Data & Analytics,Data & Analytics,69.22902173913043,false,false
+2024Q4,2024,4,sec:Data & Analytics,Data & Analytics,68.61021739130436,false,false
+2025Q1,2025,1,sec:Data & Analytics,Data & Analytics,65.45266666666666,false,false
+2025Q2,2025,2,sec:Data & Analytics,Data & Analytics,62.334395604395596,false,false
+2025Q3,2025,3,sec:Data & Analytics,Data & Analytics,60.65934782608696,false,false
+2025Q4,2025,4,sec:Data & Analytics,Data & Analytics,59.320543478260866,false,false
+2026Q1,2026,1,sec:Data & Analytics,Data & Analytics,60.925999999999995,false,false
+2026Q2,2026,2,sec:Data & Analytics,Data & Analytics,62.10318681318681,false,false
+2026Q3,2026,3,sec:Data & Analytics,Data & Analytics,61.3225,false,false
+2020Q1,2020,1,sec:Dental,Dental,94.86399999999999,true,false
+2020Q2,2020,2,sec:Dental,Dental,56.376593406593415,false,false
+2020Q3,2020,3,sec:Dental,Dental,104.09760869565218,false,false
+2020Q4,2020,4,sec:Dental,Dental,108.88847826086958,false,false
+2021Q1,2021,1,sec:Dental,Dental,120.52177777777777,false,false
+2021Q2,2021,2,sec:Dental,Dental,139.20615384615385,false,false
+2021Q3,2021,3,sec:Dental,Dental,145.28195652173912,false,false
+2021Q4,2021,4,sec:Dental,Dental,148.68130434782606,false,false
+2022Q1,2022,1,sec:Dental,Dental,145.04333333333332,false,false
+2022Q2,2022,2,sec:Dental,Dental,152.42692307692306,false,false
+2022Q3,2022,3,sec:Dental,Dental,170.7232608695652,false,false
+2022Q4,2022,4,sec:Dental,Dental,166.5470652173913,false,false
+2023Q1,2023,1,sec:Dental,Dental,171.10266666666666,false,false
+2023Q2,2023,2,sec:Dental,Dental,169.75428571428571,false,false
+2023Q3,2023,3,sec:Dental,Dental,176.30902173913043,false,false
+2023Q4,2023,4,sec:Dental,Dental,165.1333695652174,false,false
+2024Q1,2024,1,sec:Dental,Dental,151.61527472527473,false,false
+2024Q2,2024,2,sec:Dental,Dental,148.6912087912088,false,false
+2024Q3,2024,3,sec:Dental,Dental,144.8279347826087,false,false
+2024Q4,2024,4,sec:Dental,Dental,142.7934782608696,false,false
+2025Q1,2025,1,sec:Dental,Dental,148.52333333333334,false,false
+2025Q2,2025,2,sec:Dental,Dental,140.2946153846154,false,false
+2025Q3,2025,3,sec:Dental,Dental,137.35608695652172,false,false
+2025Q4,2025,4,sec:Dental,Dental,134.06804347826085,false,false
+2026Q1,2026,1,sec:Dental,Dental,135.492,false,false
+2026Q2,2026,2,sec:Dental,Dental,115.34043956043955,false,false
+2026Q3,2026,3,sec:Dental,Dental,117.0607608695652,false,false
+2020Q1,2020,1,sec:Driving,Driving,95.97316666666667,true,false
+2020Q2,2020,2,sec:Driving,Driving,85.93340659340659,false,false
+2020Q3,2020,3,sec:Driving,Driving,101.47923913043476,false,false
+2020Q4,2020,4,sec:Driving,Driving,110.56934782608695,false,false
+2021Q1,2021,1,sec:Driving,Driving,115.55655555555556,false,false
+2021Q2,2021,2,sec:Driving,Driving,135.8556043956044,false,false
+2021Q3,2021,3,sec:Driving,Driving,136.77728260869566,false,false
+2021Q4,2021,4,sec:Driving,Driving,141.73195652173916,false,false
+2022Q1,2022,1,sec:Driving,Driving,140.37533333333334,false,false
+2022Q2,2022,2,sec:Driving,Driving,137.40604395604396,false,false
+2022Q3,2022,3,sec:Driving,Driving,130.47434782608696,false,false
+2022Q4,2022,4,sec:Driving,Driving,128.1303260869565,false,false
+2023Q1,2023,1,sec:Driving,Driving,122.91533333333335,false,false
+2023Q2,2023,2,sec:Driving,Driving,122.74736263736266,false,false
+2023Q3,2023,3,sec:Driving,Driving,120.56000000000003,false,false
+2023Q4,2023,4,sec:Driving,Driving,118.41902173913044,false,false
+2024Q1,2024,1,sec:Driving,Driving,114.8091208791209,false,false
+2024Q2,2024,2,sec:Driving,Driving,109.7642857142857,false,false
+2024Q3,2024,3,sec:Driving,Driving,112.4116304347826,false,false
+2024Q4,2024,4,sec:Driving,Driving,109.33097826086957,false,false
+2025Q1,2025,1,sec:Driving,Driving,117.12666666666667,false,false
+2025Q2,2025,2,sec:Driving,Driving,109.05846153846156,false,false
+2025Q3,2025,3,sec:Driving,Driving,94.91456521739131,false,false
+2025Q4,2025,4,sec:Driving,Driving,86.24619565217391,false,false
+2026Q1,2026,1,sec:Driving,Driving,80.32144444444445,false,false
+2026Q2,2026,2,sec:Driving,Driving,79.42021978021978,false,false
+2026Q3,2026,3,sec:Driving,Driving,82.98391304347825,false,false
+2020Q1,2020,1,sec:Education & Instruction,Education & Instruction,98.03033333333335,true,false
+2020Q2,2020,2,sec:Education & Instruction,Education & Instruction,67.92725274725274,false,false
+2020Q3,2020,3,sec:Education & Instruction,Education & Instruction,75.25869565217391,false,false
+2020Q4,2020,4,sec:Education & Instruction,Education & Instruction,84.22010869565217,false,false
+2021Q1,2021,1,sec:Education & Instruction,Education & Instruction,91.57677777777779,false,false
+2021Q2,2021,2,sec:Education & Instruction,Education & Instruction,108.52637362637363,false,false
+2021Q3,2021,3,sec:Education & Instruction,Education & Instruction,126.84260869565216,false,false
+2021Q4,2021,4,sec:Education & Instruction,Education & Instruction,141.57717391304348,false,false
+2022Q1,2022,1,sec:Education & Instruction,Education & Instruction,150.05488888888888,false,false
+2022Q2,2022,2,sec:Education & Instruction,Education & Instruction,158.6964835164835,false,false
+2022Q3,2022,3,sec:Education & Instruction,Education & Instruction,163.11771739130435,false,false
+2022Q4,2022,4,sec:Education & Instruction,Education & Instruction,162.7969565217391,false,false
+2023Q1,2023,1,sec:Education & Instruction,Education & Instruction,159.3831111111111,false,false
+2023Q2,2023,2,sec:Education & Instruction,Education & Instruction,159.09912087912087,false,false
+2023Q3,2023,3,sec:Education & Instruction,Education & Instruction,145.60326086956525,false,false
+2023Q4,2023,4,sec:Education & Instruction,Education & Instruction,147.01434782608695,false,false
+2024Q1,2024,1,sec:Education & Instruction,Education & Instruction,143.85923076923078,false,false
+2024Q2,2024,2,sec:Education & Instruction,Education & Instruction,145.9063736263736,false,false
+2024Q3,2024,3,sec:Education & Instruction,Education & Instruction,137.48369565217394,false,false
+2024Q4,2024,4,sec:Education & Instruction,Education & Instruction,132.5243478260869,false,false
+2025Q1,2025,1,sec:Education & Instruction,Education & Instruction,130.995,false,false
+2025Q2,2025,2,sec:Education & Instruction,Education & Instruction,131.07736263736263,false,false
+2025Q3,2025,3,sec:Education & Instruction,Education & Instruction,121.07326086956523,false,false
+2025Q4,2025,4,sec:Education & Instruction,Education & Instruction,117.73869565217394,false,false
+2026Q1,2026,1,sec:Education & Instruction,Education & Instruction,119.32888888888887,false,false
+2026Q2,2026,2,sec:Education & Instruction,Education & Instruction,119.99725274725274,false,false
+2026Q3,2026,3,sec:Education & Instruction,Education & Instruction,110.18478260869567,false,false
+2020Q1,2020,1,sec:Electrical Engineering,Electrical Engineering,97.63483333333332,true,false
+2020Q2,2020,2,sec:Electrical Engineering,Electrical Engineering,69.37054945054945,false,false
+2020Q3,2020,3,sec:Electrical Engineering,Electrical Engineering,70.69467391304349,false,false
+2020Q4,2020,4,sec:Electrical Engineering,Electrical Engineering,79.51,false,false
+2021Q1,2021,1,sec:Electrical Engineering,Electrical Engineering,95.32355555555554,false,false
+2021Q2,2021,2,sec:Electrical Engineering,Electrical Engineering,114.92197802197802,false,false
+2021Q3,2021,3,sec:Electrical Engineering,Electrical Engineering,131.1551086956522,false,false
+2021Q4,2021,4,sec:Electrical Engineering,Electrical Engineering,154.4079347826087,false,false
+2022Q1,2022,1,sec:Electrical Engineering,Electrical Engineering,167.5588888888889,false,false
+2022Q2,2022,2,sec:Electrical Engineering,Electrical Engineering,181.85351648351647,false,false
+2022Q3,2022,3,sec:Electrical Engineering,Electrical Engineering,180.22967391304346,false,false
+2022Q4,2022,4,sec:Electrical Engineering,Electrical Engineering,175.48630434782606,false,false
+2023Q1,2023,1,sec:Electrical Engineering,Electrical Engineering,166.99055555555555,false,false
+2023Q2,2023,2,sec:Electrical Engineering,Electrical Engineering,160.68978021978023,false,false
+2023Q3,2023,3,sec:Electrical Engineering,Electrical Engineering,155.97880434782613,false,false
+2023Q4,2023,4,sec:Electrical Engineering,Electrical Engineering,150.59706521739133,false,false
+2024Q1,2024,1,sec:Electrical Engineering,Electrical Engineering,142.4321978021978,false,false
+2024Q2,2024,2,sec:Electrical Engineering,Electrical Engineering,133.68175824175825,false,false
+2024Q3,2024,3,sec:Electrical Engineering,Electrical Engineering,126.50891304347827,false,false
+2024Q4,2024,4,sec:Electrical Engineering,Electrical Engineering,120.315,false,false
+2025Q1,2025,1,sec:Electrical Engineering,Electrical Engineering,119.04377777777778,false,false
+2025Q2,2025,2,sec:Electrical Engineering,Electrical Engineering,117.07725274725276,false,false
+2025Q3,2025,3,sec:Electrical Engineering,Electrical Engineering,119.2503260869565,false,false
+2025Q4,2025,4,sec:Electrical Engineering,Electrical Engineering,117.33804347826087,false,false
+2026Q1,2026,1,sec:Electrical Engineering,Electrical Engineering,126.12744444444446,false,false
+2026Q2,2026,2,sec:Electrical Engineering,Electrical Engineering,129.55747252747256,false,false
+2026Q3,2026,3,sec:Electrical Engineering,Electrical Engineering,141.35184782608695,false,false
+2020Q1,2020,1,sec:Food Preparation & Service,Food Preparation & Service,93.57849999999999,true,false
+2020Q2,2020,2,sec:Food Preparation & Service,Food Preparation & Service,59.79263736263737,false,false
+2020Q3,2020,3,sec:Food Preparation & Service,Food Preparation & Service,78.86326086956521,false,false
+2020Q4,2020,4,sec:Food Preparation & Service,Food Preparation & Service,84.38065217391303,false,false
+2021Q1,2021,1,sec:Food Preparation & Service,Food Preparation & Service,92.40366666666667,false,false
+2021Q2,2021,2,sec:Food Preparation & Service,Food Preparation & Service,122.13450549450552,false,false
+2021Q3,2021,3,sec:Food Preparation & Service,Food Preparation & Service,132.86108695652172,false,false
+2021Q4,2021,4,sec:Food Preparation & Service,Food Preparation & Service,135.86097826086956,false,false
+2022Q1,2022,1,sec:Food Preparation & Service,Food Preparation & Service,136.4432222222222,false,false
+2022Q2,2022,2,sec:Food Preparation & Service,Food Preparation & Service,140.122967032967,false,false
+2022Q3,2022,3,sec:Food Preparation & Service,Food Preparation & Service,135.4230434782609,false,false
+2022Q4,2022,4,sec:Food Preparation & Service,Food Preparation & Service,133.53641304347826,false,false
+2023Q1,2023,1,sec:Food Preparation & Service,Food Preparation & Service,125.16277777777778,false,false
+2023Q2,2023,2,sec:Food Preparation & Service,Food Preparation & Service,127.52868131868132,false,false
+2023Q3,2023,3,sec:Food Preparation & Service,Food Preparation & Service,123.90934782608696,false,false
+2023Q4,2023,4,sec:Food Preparation & Service,Food Preparation & Service,118.50239130434782,false,false
+2024Q1,2024,1,sec:Food Preparation & Service,Food Preparation & Service,115.40934065934066,false,false
+2024Q2,2024,2,sec:Food Preparation & Service,Food Preparation & Service,111.80868131868132,false,false
+2024Q3,2024,3,sec:Food Preparation & Service,Food Preparation & Service,108.66836956521739,false,false
+2024Q4,2024,4,sec:Food Preparation & Service,Food Preparation & Service,107.77423913043478,false,false
+2025Q1,2025,1,sec:Food Preparation & Service,Food Preparation & Service,105.9291111111111,false,false
+2025Q2,2025,2,sec:Food Preparation & Service,Food Preparation & Service,102.55021978021978,false,false
+2025Q3,2025,3,sec:Food Preparation & Service,Food Preparation & Service,100.8492391304348,false,false
+2025Q4,2025,4,sec:Food Preparation & Service,Food Preparation & Service,98.99402173913045,false,false
+2026Q1,2026,1,sec:Food Preparation & Service,Food Preparation & Service,99.34044444444444,false,false
+2026Q2,2026,2,sec:Food Preparation & Service,Food Preparation & Service,95.42296703296704,false,false
+2026Q3,2026,3,sec:Food Preparation & Service,Food Preparation & Service,94.01597826086956,false,false
+2020Q1,2020,1,sec:Hospitality & Tourism,Hospitality & Tourism,90.55600000000001,true,false
+2020Q2,2020,2,sec:Hospitality & Tourism,Hospitality & Tourism,37.11439560439561,false,false
+2020Q3,2020,3,sec:Hospitality & Tourism,Hospitality & Tourism,56.94369565217391,false,false
+2020Q4,2020,4,sec:Hospitality & Tourism,Hospitality & Tourism,65.1436956521739,false,false
+2021Q1,2021,1,sec:Hospitality & Tourism,Hospitality & Tourism,70.71877777777779,false,false
+2021Q2,2021,2,sec:Hospitality & Tourism,Hospitality & Tourism,104.62604395604399,false,false
+2021Q3,2021,3,sec:Hospitality & Tourism,Hospitality & Tourism,124.19271739130434,false,false
+2021Q4,2021,4,sec:Hospitality & Tourism,Hospitality & Tourism,130.5075,false,false
+2022Q1,2022,1,sec:Hospitality & Tourism,Hospitality & Tourism,135.8995555555556,false,false
+2022Q2,2022,2,sec:Hospitality & Tourism,Hospitality & Tourism,136.789010989011,false,false
+2022Q3,2022,3,sec:Hospitality & Tourism,Hospitality & Tourism,132.2861956521739,false,false
+2022Q4,2022,4,sec:Hospitality & Tourism,Hospitality & Tourism,130.15304347826086,false,false
+2023Q1,2023,1,sec:Hospitality & Tourism,Hospitality & Tourism,124.62200000000001,false,false
+2023Q2,2023,2,sec:Hospitality & Tourism,Hospitality & Tourism,122.0634065934066,false,false
+2023Q3,2023,3,sec:Hospitality & Tourism,Hospitality & Tourism,120.73608695652175,false,false
+2023Q4,2023,4,sec:Hospitality & Tourism,Hospitality & Tourism,112.52717391304348,false,false
+2024Q1,2024,1,sec:Hospitality & Tourism,Hospitality & Tourism,105.67890109890111,false,false
+2024Q2,2024,2,sec:Hospitality & Tourism,Hospitality & Tourism,101.56373626373627,false,false
+2024Q3,2024,3,sec:Hospitality & Tourism,Hospitality & Tourism,94.80847826086956,false,false
+2024Q4,2024,4,sec:Hospitality & Tourism,Hospitality & Tourism,93.99880434782608,false,false
+2025Q1,2025,1,sec:Hospitality & Tourism,Hospitality & Tourism,92.91666666666667,false,false
+2025Q2,2025,2,sec:Hospitality & Tourism,Hospitality & Tourism,87.38153846153845,false,false
+2025Q3,2025,3,sec:Hospitality & Tourism,Hospitality & Tourism,88.46510869565218,false,false
+2025Q4,2025,4,sec:Hospitality & Tourism,Hospitality & Tourism,89.35478260869567,false,false
+2026Q1,2026,1,sec:Hospitality & Tourism,Hospitality & Tourism,89.76777777777778,false,false
+2026Q2,2026,2,sec:Hospitality & Tourism,Hospitality & Tourism,85.59505494505494,false,false
+2026Q3,2026,3,sec:Hospitality & Tourism,Hospitality & Tourism,85.7063043478261,false,false
+2020Q1,2020,1,sec:Human Resources,Human Resources,96.75333333333334,true,false
+2020Q2,2020,2,sec:Human Resources,Human Resources,49.39428571428571,false,false
+2020Q3,2020,3,sec:Human Resources,Human Resources,60.90521739130435,false,false
+2020Q4,2020,4,sec:Human Resources,Human Resources,79.82923913043479,false,false
+2021Q1,2021,1,sec:Human Resources,Human Resources,100.17377777777776,false,false
+2021Q2,2021,2,sec:Human Resources,Human Resources,142.8206593406593,false,false
+2021Q3,2021,3,sec:Human Resources,Human Resources,182.75934782608695,false,false
+2021Q4,2021,4,sec:Human Resources,Human Resources,219.1211956521739,false,false
+2022Q1,2022,1,sec:Human Resources,Human Resources,235.55399999999997,false,false
+2022Q2,2022,2,sec:Human Resources,Human Resources,225.74263736263734,false,false
+2022Q3,2022,3,sec:Human Resources,Human Resources,190.73119565217388,false,false
+2022Q4,2022,4,sec:Human Resources,Human Resources,160.13293478260871,false,false
+2023Q1,2023,1,sec:Human Resources,Human Resources,134.31933333333333,false,false
+2023Q2,2023,2,sec:Human Resources,Human Resources,120.55263736263736,false,false
+2023Q3,2023,3,sec:Human Resources,Human Resources,110.33163043478261,false,false
+2023Q4,2023,4,sec:Human Resources,Human Resources,105.12510869565217,false,false
+2024Q1,2024,1,sec:Human Resources,Human Resources,100.90945054945055,false,false
+2024Q2,2024,2,sec:Human Resources,Human Resources,97.39362637362638,false,false
+2024Q3,2024,3,sec:Human Resources,Human Resources,95.55173913043477,false,false
+2024Q4,2024,4,sec:Human Resources,Human Resources,93.2961956521739,false,false
+2025Q1,2025,1,sec:Human Resources,Human Resources,90.25133333333335,false,false
+2025Q2,2025,2,sec:Human Resources,Human Resources,85.21098901098902,false,false
+2025Q3,2025,3,sec:Human Resources,Human Resources,85.36195652173912,false,false
+2025Q4,2025,4,sec:Human Resources,Human Resources,86.0391304347826,false,false
+2026Q1,2026,1,sec:Human Resources,Human Resources,89.81855555555556,false,false
+2026Q2,2026,2,sec:Human Resources,Human Resources,91.78846153846153,false,false
+2026Q3,2026,3,sec:Human Resources,Human Resources,94.82739130434781,false,false
+2020Q1,2020,1,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",96.9375,true,false
+2020Q2,2020,2,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",68.98450549450547,false,false
+2020Q3,2020,3,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",73.13380434782609,false,false
+2020Q4,2020,4,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",80.82173913043479,false,false
+2021Q1,2021,1,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",90.70755555555556,false,false
+2021Q2,2021,2,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",109.36054945054947,false,false
+2021Q3,2021,3,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",127.85749999999999,false,false
+2021Q4,2021,4,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",146.32260869565218,false,false
+2022Q1,2022,1,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",154.15744444444448,false,false
+2022Q2,2022,2,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",157.85021978021976,false,false
+2022Q3,2022,3,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",148.4211956521739,false,false
+2022Q4,2022,4,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",132.96891304347827,false,false
+2023Q1,2023,1,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",116.38988888888889,false,false
+2023Q2,2023,2,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",105.87791208791208,false,false
+2023Q3,2023,3,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",93.88934782608698,false,false
+2023Q4,2023,4,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",86.82684782608696,false,false
+2024Q1,2024,1,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",84.41692307692308,false,false
+2024Q2,2024,2,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",80.46505494505494,false,false
+2024Q3,2024,3,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",77.13597826086956,false,false
+2024Q4,2024,4,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",74.1525,false,false
+2025Q1,2025,1,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",72.91122222222222,false,false
+2025Q2,2025,2,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",69.22967032967033,false,false
+2025Q3,2025,3,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",66.8128260869565,false,false
+2025Q4,2025,4,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",64.4625,false,false
+2026Q1,2026,1,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",67.43877777777777,false,false
+2026Q2,2026,2,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",69.80846153846153,false,false
+2026Q3,2026,3,"sec:IT Infrastructure, Operations & Support","IT Infrastructure, Operations & Support",70.45010869565218,false,false
+2020Q1,2020,1,sec:IT Systems & Solutions,IT Systems & Solutions,96.85866666666668,true,false
+2020Q2,2020,2,sec:IT Systems & Solutions,IT Systems & Solutions,62.55824175824175,false,false
+2020Q3,2020,3,sec:IT Systems & Solutions,IT Systems & Solutions,65.20228260869565,false,false
+2020Q4,2020,4,sec:IT Systems & Solutions,IT Systems & Solutions,75.57108695652173,false,false
+2021Q1,2021,1,sec:IT Systems & Solutions,IT Systems & Solutions,91.54444444444447,false,false
+2021Q2,2021,2,sec:IT Systems & Solutions,IT Systems & Solutions,112.7313186813187,false,false
+2021Q3,2021,3,sec:IT Systems & Solutions,IT Systems & Solutions,138.5565217391304,false,false
+2021Q4,2021,4,sec:IT Systems & Solutions,IT Systems & Solutions,170.4651086956522,false,false
+2022Q1,2022,1,sec:IT Systems & Solutions,IT Systems & Solutions,185.9441111111111,false,false
+2022Q2,2022,2,sec:IT Systems & Solutions,IT Systems & Solutions,192.5020879120879,false,false
+2022Q3,2022,3,sec:IT Systems & Solutions,IT Systems & Solutions,164.12978260869565,false,false
+2022Q4,2022,4,sec:IT Systems & Solutions,IT Systems & Solutions,136.95282608695652,false,false
+2023Q1,2023,1,sec:IT Systems & Solutions,IT Systems & Solutions,114.44577777777776,false,false
+2023Q2,2023,2,sec:IT Systems & Solutions,IT Systems & Solutions,98.01736263736264,false,false
+2023Q3,2023,3,sec:IT Systems & Solutions,IT Systems & Solutions,87.55108695652174,false,false
+2023Q4,2023,4,sec:IT Systems & Solutions,IT Systems & Solutions,83.78934782608695,false,false
+2024Q1,2024,1,sec:IT Systems & Solutions,IT Systems & Solutions,79.76659340659342,false,false
+2024Q2,2024,2,sec:IT Systems & Solutions,IT Systems & Solutions,79.5231868131868,false,false
+2024Q3,2024,3,sec:IT Systems & Solutions,IT Systems & Solutions,78.38652173913042,false,false
+2024Q4,2024,4,sec:IT Systems & Solutions,IT Systems & Solutions,79.22521739130435,false,false
+2025Q1,2025,1,sec:IT Systems & Solutions,IT Systems & Solutions,75.287,false,false
+2025Q2,2025,2,sec:IT Systems & Solutions,IT Systems & Solutions,69.27923076923076,false,false
+2025Q3,2025,3,sec:IT Systems & Solutions,IT Systems & Solutions,70.24891304347825,false,false
+2025Q4,2025,4,sec:IT Systems & Solutions,IT Systems & Solutions,69.31489130434782,false,false
+2026Q1,2026,1,sec:IT Systems & Solutions,IT Systems & Solutions,70.542,false,false
+2026Q2,2026,2,sec:IT Systems & Solutions,IT Systems & Solutions,71.39175824175825,false,false
+2026Q3,2026,3,sec:IT Systems & Solutions,IT Systems & Solutions,73.28880434782609,false,false
+2020Q1,2020,1,sec:Industrial Engineering,Industrial Engineering,98.60866666666669,true,false
+2020Q2,2020,2,sec:Industrial Engineering,Industrial Engineering,70.58857142857144,false,false
+2020Q3,2020,3,sec:Industrial Engineering,Industrial Engineering,73.19532608695651,false,false
+2020Q4,2020,4,sec:Industrial Engineering,Industrial Engineering,82.06619565217392,false,false
+2021Q1,2021,1,sec:Industrial Engineering,Industrial Engineering,99.06822222222223,false,false
+2021Q2,2021,2,sec:Industrial Engineering,Industrial Engineering,122.03087912087912,false,false
+2021Q3,2021,3,sec:Industrial Engineering,Industrial Engineering,142.6319565217391,false,false
+2021Q4,2021,4,sec:Industrial Engineering,Industrial Engineering,167.17739130434782,false,false
+2022Q1,2022,1,sec:Industrial Engineering,Industrial Engineering,183.9777777777778,false,false
+2022Q2,2022,2,sec:Industrial Engineering,Industrial Engineering,191.48857142857142,false,false
+2022Q3,2022,3,sec:Industrial Engineering,Industrial Engineering,182.02565217391304,false,false
+2022Q4,2022,4,sec:Industrial Engineering,Industrial Engineering,164.20380434782606,false,false
+2023Q1,2023,1,sec:Industrial Engineering,Industrial Engineering,145.4828888888889,false,false
+2023Q2,2023,2,sec:Industrial Engineering,Industrial Engineering,132.34857142857143,false,false
+2023Q3,2023,3,sec:Industrial Engineering,Industrial Engineering,123.94282608695654,false,false
+2023Q4,2023,4,sec:Industrial Engineering,Industrial Engineering,117.25739130434783,false,false
+2024Q1,2024,1,sec:Industrial Engineering,Industrial Engineering,110.73956043956045,false,false
+2024Q2,2024,2,sec:Industrial Engineering,Industrial Engineering,101.89131868131867,false,false
+2024Q3,2024,3,sec:Industrial Engineering,Industrial Engineering,95.76054347826089,false,false
+2024Q4,2024,4,sec:Industrial Engineering,Industrial Engineering,90.46239130434782,false,false
+2025Q1,2025,1,sec:Industrial Engineering,Industrial Engineering,89.3268888888889,false,false
+2025Q2,2025,2,sec:Industrial Engineering,Industrial Engineering,87.95230769230768,false,false
+2025Q3,2025,3,sec:Industrial Engineering,Industrial Engineering,90.88760869565218,false,false
+2025Q4,2025,4,sec:Industrial Engineering,Industrial Engineering,90.04652173913044,false,false
+2026Q1,2026,1,sec:Industrial Engineering,Industrial Engineering,95.74466666666665,false,false
+2026Q2,2026,2,sec:Industrial Engineering,Industrial Engineering,102.8297802197802,false,false
+2026Q3,2026,3,sec:Industrial Engineering,Industrial Engineering,115.4288043478261,false,false
+2020Q1,2020,1,sec:Installation & Maintenance,Installation & Maintenance,95.10899999999998,true,false
+2020Q2,2020,2,sec:Installation & Maintenance,Installation & Maintenance,65.5121978021978,false,false
+2020Q3,2020,3,sec:Installation & Maintenance,Installation & Maintenance,86.90032608695653,false,false
+2020Q4,2020,4,sec:Installation & Maintenance,Installation & Maintenance,100.05565217391305,false,false
+2021Q1,2021,1,sec:Installation & Maintenance,Installation & Maintenance,110.11688888888888,false,false
+2021Q2,2021,2,sec:Installation & Maintenance,Installation & Maintenance,133.8645054945055,false,false
+2021Q3,2021,3,sec:Installation & Maintenance,Installation & Maintenance,137.5625,false,false
+2021Q4,2021,4,sec:Installation & Maintenance,Installation & Maintenance,146.0583695652174,false,false
+2022Q1,2022,1,sec:Installation & Maintenance,Installation & Maintenance,153.79044444444443,false,false
+2022Q2,2022,2,sec:Installation & Maintenance,Installation & Maintenance,155.50021978021977,false,false
+2022Q3,2022,3,sec:Installation & Maintenance,Installation & Maintenance,154.08304347826086,false,false
+2022Q4,2022,4,sec:Installation & Maintenance,Installation & Maintenance,155.70434782608692,false,false
+2023Q1,2023,1,sec:Installation & Maintenance,Installation & Maintenance,150.10999999999999,false,false
+2023Q2,2023,2,sec:Installation & Maintenance,Installation & Maintenance,147.48417582417585,false,false
+2023Q3,2023,3,sec:Installation & Maintenance,Installation & Maintenance,143.12021739130435,false,false
+2023Q4,2023,4,sec:Installation & Maintenance,Installation & Maintenance,136.87467391304347,false,false
+2024Q1,2024,1,sec:Installation & Maintenance,Installation & Maintenance,129.96769230769232,false,false
+2024Q2,2024,2,sec:Installation & Maintenance,Installation & Maintenance,126.10934065934069,false,false
+2024Q3,2024,3,sec:Installation & Maintenance,Installation & Maintenance,122.62695652173913,false,false
+2024Q4,2024,4,sec:Installation & Maintenance,Installation & Maintenance,118.25021739130435,false,false
+2025Q1,2025,1,sec:Installation & Maintenance,Installation & Maintenance,119.62533333333334,false,false
+2025Q2,2025,2,sec:Installation & Maintenance,Installation & Maintenance,116.04230769230767,false,false
+2025Q3,2025,3,sec:Installation & Maintenance,Installation & Maintenance,115.06141304347825,false,false
+2025Q4,2025,4,sec:Installation & Maintenance,Installation & Maintenance,114.79815217391305,false,false
+2026Q1,2026,1,sec:Installation & Maintenance,Installation & Maintenance,117.83688888888888,false,false
+2026Q2,2026,2,sec:Installation & Maintenance,Installation & Maintenance,113.22604395604395,false,false
+2026Q3,2026,3,sec:Installation & Maintenance,Installation & Maintenance,113.46271739130434,false,false
+2020Q1,2020,1,sec:Insurance,Insurance,100.23683333333335,true,false
+2020Q2,2020,2,sec:Insurance,Insurance,69.93153846153848,false,false
+2020Q3,2020,3,sec:Insurance,Insurance,89.66576086956522,false,false
+2020Q4,2020,4,sec:Insurance,Insurance,100.16999999999999,false,false
+2021Q1,2021,1,sec:Insurance,Insurance,111.51066666666665,false,false
+2021Q2,2021,2,sec:Insurance,Insurance,138.0321978021978,false,false
+2021Q3,2021,3,sec:Insurance,Insurance,151.7236956521739,false,false
+2021Q4,2021,4,sec:Insurance,Insurance,164.16336956521738,false,false
+2022Q1,2022,1,sec:Insurance,Insurance,173.76944444444445,false,false
+2022Q2,2022,2,sec:Insurance,Insurance,174.2424175824176,false,false
+2022Q3,2022,3,sec:Insurance,Insurance,168.01934782608697,false,false
+2022Q4,2022,4,sec:Insurance,Insurance,155.9646739130435,false,false
+2023Q1,2023,1,sec:Insurance,Insurance,148.4542222222222,false,false
+2023Q2,2023,2,sec:Insurance,Insurance,140.758021978022,false,false
+2023Q3,2023,3,sec:Insurance,Insurance,135.14326086956518,false,false
+2023Q4,2023,4,sec:Insurance,Insurance,134.438152173913,false,false
+2024Q1,2024,1,sec:Insurance,Insurance,129.60582417582418,false,false
+2024Q2,2024,2,sec:Insurance,Insurance,133.8336263736264,false,false
+2024Q3,2024,3,sec:Insurance,Insurance,140.33902173913043,false,false
+2024Q4,2024,4,sec:Insurance,Insurance,139.98282608695655,false,false
+2025Q1,2025,1,sec:Insurance,Insurance,136.40177777777777,false,false
+2025Q2,2025,2,sec:Insurance,Insurance,127.59054945054945,false,false
+2025Q3,2025,3,sec:Insurance,Insurance,122.41750000000002,false,false
+2025Q4,2025,4,sec:Insurance,Insurance,122.61554347826086,false,false
+2026Q1,2026,1,sec:Insurance,Insurance,131.23999999999998,false,false
+2026Q2,2026,2,sec:Insurance,Insurance,126.55087912087915,false,false
+2026Q3,2026,3,sec:Insurance,Insurance,126.00652173913043,false,false
+2020Q1,2020,1,sec:Legal,Legal,96.40249999999999,true,false
+2020Q2,2020,2,sec:Legal,Legal,55.36670329670331,false,false
+2020Q3,2020,3,sec:Legal,Legal,64.93771739130435,false,false
+2020Q4,2020,4,sec:Legal,Legal,80.80891304347826,false,false
+2021Q1,2021,1,sec:Legal,Legal,97.8701111111111,false,false
+2021Q2,2021,2,sec:Legal,Legal,121.07945054945054,false,false
+2021Q3,2021,3,sec:Legal,Legal,140.11684782608697,false,false
+2021Q4,2021,4,sec:Legal,Legal,161.5525,false,false
+2022Q1,2022,1,sec:Legal,Legal,175.3658888888889,false,false
+2022Q2,2022,2,sec:Legal,Legal,179.69571428571427,false,false
+2022Q3,2022,3,sec:Legal,Legal,169.0461956521739,false,false
+2022Q4,2022,4,sec:Legal,Legal,157.76695652173913,false,false
+2023Q1,2023,1,sec:Legal,Legal,146.27233333333334,false,false
+2023Q2,2023,2,sec:Legal,Legal,141.5178021978022,false,false
+2023Q3,2023,3,sec:Legal,Legal,135.8966304347826,false,false
+2023Q4,2023,4,sec:Legal,Legal,130.5216304347826,false,false
+2024Q1,2024,1,sec:Legal,Legal,128.87362637362637,false,false
+2024Q2,2024,2,sec:Legal,Legal,129.0702197802198,false,false
+2024Q3,2024,3,sec:Legal,Legal,129.55054347826083,false,false
+2024Q4,2024,4,sec:Legal,Legal,128.07760869565217,false,false
+2025Q1,2025,1,sec:Legal,Legal,128.55355555555556,false,false
+2025Q2,2025,2,sec:Legal,Legal,122.85417582417583,false,false
+2025Q3,2025,3,sec:Legal,Legal,119.92565217391304,false,false
+2025Q4,2025,4,sec:Legal,Legal,120.54510869565217,false,false
+2026Q1,2026,1,sec:Legal,Legal,122.582,false,false
+2026Q2,2026,2,sec:Legal,Legal,117.42384615384616,false,false
+2026Q3,2026,3,sec:Legal,Legal,119.61760869565217,false,false
+2020Q1,2020,1,sec:Loading & Stocking,Loading & Stocking,96.21383333333333,true,false
+2020Q2,2020,2,sec:Loading & Stocking,Loading & Stocking,68.67637362637363,false,false
+2020Q3,2020,3,sec:Loading & Stocking,Loading & Stocking,103.83358695652174,false,false
+2020Q4,2020,4,sec:Loading & Stocking,Loading & Stocking,122.28945652173913,false,false
+2021Q1,2021,1,sec:Loading & Stocking,Loading & Stocking,132.16544444444443,false,false
+2021Q2,2021,2,sec:Loading & Stocking,Loading & Stocking,173.58054945054946,false,false
+2021Q3,2021,3,sec:Loading & Stocking,Loading & Stocking,181.4486956521739,false,false
+2021Q4,2021,4,sec:Loading & Stocking,Loading & Stocking,190.7891304347826,false,false
+2022Q1,2022,1,sec:Loading & Stocking,Loading & Stocking,187.27311111111112,false,false
+2022Q2,2022,2,sec:Loading & Stocking,Loading & Stocking,184.50098901098906,false,false
+2022Q3,2022,3,sec:Loading & Stocking,Loading & Stocking,174.56500000000003,false,false
+2022Q4,2022,4,sec:Loading & Stocking,Loading & Stocking,161.73467391304345,false,false
+2023Q1,2023,1,sec:Loading & Stocking,Loading & Stocking,144.21433333333331,false,false
+2023Q2,2023,2,sec:Loading & Stocking,Loading & Stocking,133.7964835164835,false,false
+2023Q3,2023,3,sec:Loading & Stocking,Loading & Stocking,126.20108695652172,false,false
+2023Q4,2023,4,sec:Loading & Stocking,Loading & Stocking,120.23065217391306,false,false
+2024Q1,2024,1,sec:Loading & Stocking,Loading & Stocking,114.19318681318681,false,false
+2024Q2,2024,2,sec:Loading & Stocking,Loading & Stocking,109.4636263736264,false,false
+2024Q3,2024,3,sec:Loading & Stocking,Loading & Stocking,108.34478260869567,false,false
+2024Q4,2024,4,sec:Loading & Stocking,Loading & Stocking,103.17934782608698,false,false
+2025Q1,2025,1,sec:Loading & Stocking,Loading & Stocking,108.10055555555557,false,false
+2025Q2,2025,2,sec:Loading & Stocking,Loading & Stocking,96.93351648351648,false,false
+2025Q3,2025,3,sec:Loading & Stocking,Loading & Stocking,97.76510869565219,false,false
+2025Q4,2025,4,sec:Loading & Stocking,Loading & Stocking,99.56652173913042,false,false
+2026Q1,2026,1,sec:Loading & Stocking,Loading & Stocking,104.24644444444445,false,false
+2026Q2,2026,2,sec:Loading & Stocking,Loading & Stocking,106.67978021978023,false,false
+2026Q3,2026,3,sec:Loading & Stocking,Loading & Stocking,108.48858695652174,false,false
+2020Q1,2020,1,sec:Logistic Support,Logistic Support,93.396,true,false
+2020Q2,2020,2,sec:Logistic Support,Logistic Support,54.355824175824175,false,false
+2020Q3,2020,3,sec:Logistic Support,Logistic Support,72.93913043478261,false,false
+2020Q4,2020,4,sec:Logistic Support,Logistic Support,86.91826086956522,false,false
+2021Q1,2021,1,sec:Logistic Support,Logistic Support,103.16511111111112,false,false
+2021Q2,2021,2,sec:Logistic Support,Logistic Support,140.34230769230768,false,false
+2021Q3,2021,3,sec:Logistic Support,Logistic Support,164.37641304347827,false,false
+2021Q4,2021,4,sec:Logistic Support,Logistic Support,193.41695652173917,false,false
+2022Q1,2022,1,sec:Logistic Support,Logistic Support,209.6342222222222,false,false
+2022Q2,2022,2,sec:Logistic Support,Logistic Support,201.26131868131867,false,false
+2022Q3,2022,3,sec:Logistic Support,Logistic Support,179.38467391304349,false,false
+2022Q4,2022,4,sec:Logistic Support,Logistic Support,163.59771739130434,false,false
+2023Q1,2023,1,sec:Logistic Support,Logistic Support,150.00255555555552,false,false
+2023Q2,2023,2,sec:Logistic Support,Logistic Support,135.10054945054944,false,false
+2023Q3,2023,3,sec:Logistic Support,Logistic Support,131.0245652173913,false,false
+2023Q4,2023,4,sec:Logistic Support,Logistic Support,135.94021739130437,false,false
+2024Q1,2024,1,sec:Logistic Support,Logistic Support,120.1807692307692,false,false
+2024Q2,2024,2,sec:Logistic Support,Logistic Support,115.15351648351647,false,false
+2024Q3,2024,3,sec:Logistic Support,Logistic Support,117.36217391304345,false,false
+2024Q4,2024,4,sec:Logistic Support,Logistic Support,111.56217391304351,false,false
+2025Q1,2025,1,sec:Logistic Support,Logistic Support,113.54588888888888,false,false
+2025Q2,2025,2,sec:Logistic Support,Logistic Support,104.87340659340657,false,false
+2025Q3,2025,3,sec:Logistic Support,Logistic Support,110.53065217391308,false,false
+2025Q4,2025,4,sec:Logistic Support,Logistic Support,110.94500000000001,false,false
+2026Q1,2026,1,sec:Logistic Support,Logistic Support,108.80611111111112,false,false
+2026Q2,2026,2,sec:Logistic Support,Logistic Support,107.07670329670329,false,false
+2026Q3,2026,3,sec:Logistic Support,Logistic Support,115.44304347826088,false,false
+2020Q1,2020,1,sec:Management,Management,96.05283333333335,true,false
+2020Q2,2020,2,sec:Management,Management,69.53967032967033,false,false
+2020Q3,2020,3,sec:Management,Management,80.90521739130433,false,false
+2020Q4,2020,4,sec:Management,Management,91.3241304347826,false,false
+2021Q1,2021,1,sec:Management,Management,97.35633333333332,false,false
+2021Q2,2021,2,sec:Management,Management,114.7834065934066,false,false
+2021Q3,2021,3,sec:Management,Management,128.06728260869565,false,false
+2021Q4,2021,4,sec:Management,Management,141.39423913043478,false,false
+2022Q1,2022,1,sec:Management,Management,146.65411111111112,false,false
+2022Q2,2022,2,sec:Management,Management,146.0385714285714,false,false
+2022Q3,2022,3,sec:Management,Management,141.3251086956522,false,false
+2022Q4,2022,4,sec:Management,Management,135.31228260869565,false,false
+2023Q1,2023,1,sec:Management,Management,122.4181111111111,false,false
+2023Q2,2023,2,sec:Management,Management,121.29285714285714,false,false
+2023Q3,2023,3,sec:Management,Management,118.39413043478261,false,false
+2023Q4,2023,4,sec:Management,Management,116.56934782608697,false,false
+2024Q1,2024,1,sec:Management,Management,113.65912087912089,false,false
+2024Q2,2024,2,sec:Management,Management,109.39802197802199,false,false
+2024Q3,2024,3,sec:Management,Management,107.4983695652174,false,false
+2024Q4,2024,4,sec:Management,Management,107.14478260869566,false,false
+2025Q1,2025,1,sec:Management,Management,105.13266666666667,false,false
+2025Q2,2025,2,sec:Management,Management,101.23593406593403,false,false
+2025Q3,2025,3,sec:Management,Management,99.865,false,false
+2025Q4,2025,4,sec:Management,Management,98.12586956521737,false,false
+2026Q1,2026,1,sec:Management,Management,101.144,false,false
+2026Q2,2026,2,sec:Management,Management,100.12604395604397,false,false
+2026Q3,2026,3,sec:Management,Management,101.3396739130435,false,false
+2020Q1,2020,1,sec:Marketing,Marketing,97.03633333333336,true,false
+2020Q2,2020,2,sec:Marketing,Marketing,48.51065934065933,false,false
+2020Q3,2020,3,sec:Marketing,Marketing,58.947391304347825,false,false
+2020Q4,2020,4,sec:Marketing,Marketing,78.8486956521739,false,false
+2021Q1,2021,1,sec:Marketing,Marketing,98.10333333333334,false,false
+2021Q2,2021,2,sec:Marketing,Marketing,129.7834065934066,false,false
+2021Q3,2021,3,sec:Marketing,Marketing,150.70619565217393,false,false
+2021Q4,2021,4,sec:Marketing,Marketing,171.12358695652176,false,false
+2022Q1,2022,1,sec:Marketing,Marketing,181.2671111111111,false,false
+2022Q2,2022,2,sec:Marketing,Marketing,174.00285714285715,false,false
+2022Q3,2022,3,sec:Marketing,Marketing,147.0551086956522,false,false
+2022Q4,2022,4,sec:Marketing,Marketing,124.89760869565217,false,false
+2023Q1,2023,1,sec:Marketing,Marketing,106.24533333333335,false,false
+2023Q2,2023,2,sec:Marketing,Marketing,96.02582417582418,false,false
+2023Q3,2023,3,sec:Marketing,Marketing,88.16304347826085,false,false
+2023Q4,2023,4,sec:Marketing,Marketing,85.20760869565218,false,false
+2024Q1,2024,1,sec:Marketing,Marketing,81.7479120879121,false,false
+2024Q2,2024,2,sec:Marketing,Marketing,80.56318681318682,false,false
+2024Q3,2024,3,sec:Marketing,Marketing,79.94804347826089,false,false
+2024Q4,2024,4,sec:Marketing,Marketing,78.52217391304347,false,false
+2025Q1,2025,1,sec:Marketing,Marketing,79.77644444444445,false,false
+2025Q2,2025,2,sec:Marketing,Marketing,75.09912087912087,false,false
+2025Q3,2025,3,sec:Marketing,Marketing,76.58989130434783,false,false
+2025Q4,2025,4,sec:Marketing,Marketing,78.67847826086955,false,false
+2026Q1,2026,1,sec:Marketing,Marketing,76.96555555555557,false,false
+2026Q2,2026,2,sec:Marketing,Marketing,74.65989010989011,false,false
+2026Q3,2026,3,sec:Marketing,Marketing,75.8108695652174,false,false
+2020Q1,2020,1,sec:Mechanical Engineering,Mechanical Engineering,97.81533333333336,true,false
+2020Q2,2020,2,sec:Mechanical Engineering,Mechanical Engineering,68.60417582417581,false,false
+2020Q3,2020,3,sec:Mechanical Engineering,Mechanical Engineering,72.2138043478261,false,false
+2020Q4,2020,4,sec:Mechanical Engineering,Mechanical Engineering,79.28097826086956,false,false
+2021Q1,2021,1,sec:Mechanical Engineering,Mechanical Engineering,96.78866666666666,false,false
+2021Q2,2021,2,sec:Mechanical Engineering,Mechanical Engineering,118.38791208791208,false,false
+2021Q3,2021,3,sec:Mechanical Engineering,Mechanical Engineering,137.0433695652174,false,false
+2021Q4,2021,4,sec:Mechanical Engineering,Mechanical Engineering,155.82391304347829,false,false
+2022Q1,2022,1,sec:Mechanical Engineering,Mechanical Engineering,169.91044444444444,false,false
+2022Q2,2022,2,sec:Mechanical Engineering,Mechanical Engineering,185.73098901098896,false,false
+2022Q3,2022,3,sec:Mechanical Engineering,Mechanical Engineering,182.17717391304348,false,false
+2022Q4,2022,4,sec:Mechanical Engineering,Mechanical Engineering,177.38880434782607,false,false
+2023Q1,2023,1,sec:Mechanical Engineering,Mechanical Engineering,162.1511111111111,false,false
+2023Q2,2023,2,sec:Mechanical Engineering,Mechanical Engineering,156.1740659340659,false,false
+2023Q3,2023,3,sec:Mechanical Engineering,Mechanical Engineering,152.4361956521739,false,false
+2023Q4,2023,4,sec:Mechanical Engineering,Mechanical Engineering,147.88695652173917,false,false
+2024Q1,2024,1,sec:Mechanical Engineering,Mechanical Engineering,144.95252747252746,false,false
+2024Q2,2024,2,sec:Mechanical Engineering,Mechanical Engineering,135.0012087912088,false,false
+2024Q3,2024,3,sec:Mechanical Engineering,Mechanical Engineering,126.37913043478262,false,false
+2024Q4,2024,4,sec:Mechanical Engineering,Mechanical Engineering,122.72108695652175,false,false
+2025Q1,2025,1,sec:Mechanical Engineering,Mechanical Engineering,118.04222222222224,false,false
+2025Q2,2025,2,sec:Mechanical Engineering,Mechanical Engineering,114.60571428571431,false,false
+2025Q3,2025,3,sec:Mechanical Engineering,Mechanical Engineering,118.5144565217391,false,false
+2025Q4,2025,4,sec:Mechanical Engineering,Mechanical Engineering,120.23902173913044,false,false
+2026Q1,2026,1,sec:Mechanical Engineering,Mechanical Engineering,128.9081111111111,false,false
+2026Q2,2026,2,sec:Mechanical Engineering,Mechanical Engineering,142.45769230769233,false,false
+2026Q3,2026,3,sec:Mechanical Engineering,Mechanical Engineering,156.335,false,false
+2020Q1,2020,1,sec:Media & Communications,Media & Communications,97.66200000000002,true,false
+2020Q2,2020,2,sec:Media & Communications,Media & Communications,54.74461538461538,false,false
+2020Q3,2020,3,sec:Media & Communications,Media & Communications,61.21423913043477,false,false
+2020Q4,2020,4,sec:Media & Communications,Media & Communications,76.65858695652175,false,false
+2021Q1,2021,1,sec:Media & Communications,Media & Communications,90.222,false,false
+2021Q2,2021,2,sec:Media & Communications,Media & Communications,114.45725274725274,false,false
+2021Q3,2021,3,sec:Media & Communications,Media & Communications,135.45586956521737,false,false
+2021Q4,2021,4,sec:Media & Communications,Media & Communications,160.05913043478262,false,false
+2022Q1,2022,1,sec:Media & Communications,Media & Communications,166.3458888888889,false,false
+2022Q2,2022,2,sec:Media & Communications,Media & Communications,165.05,false,false
+2022Q3,2022,3,sec:Media & Communications,Media & Communications,144.13880434782607,false,false
+2022Q4,2022,4,sec:Media & Communications,Media & Communications,128.72054347826088,false,false
+2023Q1,2023,1,sec:Media & Communications,Media & Communications,109.22099999999999,false,false
+2023Q2,2023,2,sec:Media & Communications,Media & Communications,101.23406593406595,false,false
+2023Q3,2023,3,sec:Media & Communications,Media & Communications,89.70815217391304,false,false
+2023Q4,2023,4,sec:Media & Communications,Media & Communications,86.57347826086955,false,false
+2024Q1,2024,1,sec:Media & Communications,Media & Communications,84.72406593406593,false,false
+2024Q2,2024,2,sec:Media & Communications,Media & Communications,81.01692307692308,false,false
+2024Q3,2024,3,sec:Media & Communications,Media & Communications,77.45510869565216,false,false
+2024Q4,2024,4,sec:Media & Communications,Media & Communications,75.05956521739131,false,false
+2025Q1,2025,1,sec:Media & Communications,Media & Communications,70.28422222222223,false,false
+2025Q2,2025,2,sec:Media & Communications,Media & Communications,63.408131868131875,false,false
+2025Q3,2025,3,sec:Media & Communications,Media & Communications,62.899565217391306,false,false
+2025Q4,2025,4,sec:Media & Communications,Media & Communications,65.02717391304347,false,false
+2026Q1,2026,1,sec:Media & Communications,Media & Communications,65.747,false,false
+2026Q2,2026,2,sec:Media & Communications,Media & Communications,62.51791208791209,false,false
+2026Q3,2026,3,sec:Media & Communications,Media & Communications,69.12565217391305,false,false
+2020Q1,2020,1,sec:Medical Information,Medical Information,99.91583333333334,true,false
+2020Q2,2020,2,sec:Medical Information,Medical Information,57.27571428571429,false,false
+2020Q3,2020,3,sec:Medical Information,Medical Information,86.0404347826087,false,false
+2020Q4,2020,4,sec:Medical Information,Medical Information,107.40619565217392,false,false
+2021Q1,2021,1,sec:Medical Information,Medical Information,121.02611111111108,false,false
+2021Q2,2021,2,sec:Medical Information,Medical Information,144.0818681318681,false,false
+2021Q3,2021,3,sec:Medical Information,Medical Information,167.6966304347826,false,false
+2021Q4,2021,4,sec:Medical Information,Medical Information,187.64684782608694,false,false
+2022Q1,2022,1,sec:Medical Information,Medical Information,188.39000000000001,false,false
+2022Q2,2022,2,sec:Medical Information,Medical Information,181.18813186813185,false,false
+2022Q3,2022,3,sec:Medical Information,Medical Information,181.7248913043478,false,false
+2022Q4,2022,4,sec:Medical Information,Medical Information,172.49673913043478,false,false
+2023Q1,2023,1,sec:Medical Information,Medical Information,162.60433333333336,false,false
+2023Q2,2023,2,sec:Medical Information,Medical Information,147.29032967032967,false,false
+2023Q3,2023,3,sec:Medical Information,Medical Information,134.65010869565216,false,false
+2023Q4,2023,4,sec:Medical Information,Medical Information,125.00010869565217,false,false
+2024Q1,2024,1,sec:Medical Information,Medical Information,119.43307692307694,false,false
+2024Q2,2024,2,sec:Medical Information,Medical Information,113.7265934065934,false,false
+2024Q3,2024,3,sec:Medical Information,Medical Information,109.6529347826087,false,false
+2024Q4,2024,4,sec:Medical Information,Medical Information,106.00326086956521,false,false
+2025Q1,2025,1,sec:Medical Information,Medical Information,102.02011111111112,false,false
+2025Q2,2025,2,sec:Medical Information,Medical Information,97.57615384615387,false,false
+2025Q3,2025,3,sec:Medical Information,Medical Information,95.57000000000001,false,false
+2025Q4,2025,4,sec:Medical Information,Medical Information,94.66065217391304,false,false
+2026Q1,2026,1,sec:Medical Information,Medical Information,92.33022222222222,false,false
+2026Q2,2026,2,sec:Medical Information,Medical Information,90.61362637362637,false,false
+2026Q3,2026,3,sec:Medical Information,Medical Information,87.99902173913044,false,false
+2020Q1,2020,1,sec:Medical Technician,Medical Technician,99.0765,true,false
+2020Q2,2020,2,sec:Medical Technician,Medical Technician,64.95021978021978,false,false
+2020Q3,2020,3,sec:Medical Technician,Medical Technician,87.8808695652174,false,false
+2020Q4,2020,4,sec:Medical Technician,Medical Technician,108.88989130434781,false,false
+2021Q1,2021,1,sec:Medical Technician,Medical Technician,119.42377777777777,false,false
+2021Q2,2021,2,sec:Medical Technician,Medical Technician,134.80813186813188,false,false
+2021Q3,2021,3,sec:Medical Technician,Medical Technician,153.6695652173913,false,false
+2021Q4,2021,4,sec:Medical Technician,Medical Technician,178.025,false,false
+2022Q1,2022,1,sec:Medical Technician,Medical Technician,187.08922222222222,false,false
+2022Q2,2022,2,sec:Medical Technician,Medical Technician,183.06802197802196,false,false
+2022Q3,2022,3,sec:Medical Technician,Medical Technician,180.29054347826082,false,false
+2022Q4,2022,4,sec:Medical Technician,Medical Technician,181.32293478260868,false,false
+2023Q1,2023,1,sec:Medical Technician,Medical Technician,176.2938888888889,false,false
+2023Q2,2023,2,sec:Medical Technician,Medical Technician,167.20131868131867,false,false
+2023Q3,2023,3,sec:Medical Technician,Medical Technician,160.97978260869564,false,false
+2023Q4,2023,4,sec:Medical Technician,Medical Technician,154.52326086956523,false,false
+2024Q1,2024,1,sec:Medical Technician,Medical Technician,149.09153846153845,false,false
+2024Q2,2024,2,sec:Medical Technician,Medical Technician,143.66934065934066,false,false
+2024Q3,2024,3,sec:Medical Technician,Medical Technician,140.8875,false,false
+2024Q4,2024,4,sec:Medical Technician,Medical Technician,136.93163043478265,false,false
+2025Q1,2025,1,sec:Medical Technician,Medical Technician,134.94666666666666,false,false
+2025Q2,2025,2,sec:Medical Technician,Medical Technician,131.21846153846153,false,false
+2025Q3,2025,3,sec:Medical Technician,Medical Technician,130.69152173913045,false,false
+2025Q4,2025,4,sec:Medical Technician,Medical Technician,127.00673913043475,false,false
+2026Q1,2026,1,sec:Medical Technician,Medical Technician,125.17455555555557,false,false
+2026Q2,2026,2,sec:Medical Technician,Medical Technician,120.23835164835165,false,false
+2026Q3,2026,3,sec:Medical Technician,Medical Technician,120.04815217391305,false,false
+2020Q1,2020,1,sec:Nursing,Nursing,99.23049999999999,true,false
+2020Q2,2020,2,sec:Nursing,Nursing,78.81395604395603,false,false
+2020Q3,2020,3,sec:Nursing,Nursing,92.91010869565218,false,false
+2020Q4,2020,4,sec:Nursing,Nursing,111.26793478260869,false,false
+2021Q1,2021,1,sec:Nursing,Nursing,121.78833333333333,false,false
+2021Q2,2021,2,sec:Nursing,Nursing,133.03142857142856,false,false
+2021Q3,2021,3,sec:Nursing,Nursing,146.11271739130436,false,false
+2021Q4,2021,4,sec:Nursing,Nursing,165.79358695652175,false,false
+2022Q1,2022,1,sec:Nursing,Nursing,174.77022222222223,false,false
+2022Q2,2022,2,sec:Nursing,Nursing,169.5956043956044,false,false
+2022Q3,2022,3,sec:Nursing,Nursing,168.57804347826087,false,false
+2022Q4,2022,4,sec:Nursing,Nursing,168.68489130434784,false,false
+2023Q1,2023,1,sec:Nursing,Nursing,166.02866666666668,false,false
+2023Q2,2023,2,sec:Nursing,Nursing,159.06615384615387,false,false
+2023Q3,2023,3,sec:Nursing,Nursing,154.62130434782605,false,false
+2023Q4,2023,4,sec:Nursing,Nursing,147.36652173913043,false,false
+2024Q1,2024,1,sec:Nursing,Nursing,135.5854945054945,false,false
+2024Q2,2024,2,sec:Nursing,Nursing,130.2891208791209,false,false
+2024Q3,2024,3,sec:Nursing,Nursing,125.3304347826087,false,false
+2024Q4,2024,4,sec:Nursing,Nursing,120.32771739130436,false,false
+2025Q1,2025,1,sec:Nursing,Nursing,118.4571111111111,false,false
+2025Q2,2025,2,sec:Nursing,Nursing,116.31153846153845,false,false
+2025Q3,2025,3,sec:Nursing,Nursing,114.97793478260868,false,false
+2025Q4,2025,4,sec:Nursing,Nursing,111.26315217391303,false,false
+2026Q1,2026,1,sec:Nursing,Nursing,107.93066666666667,false,false
+2026Q2,2026,2,sec:Nursing,Nursing,102.49186813186813,false,false
+2026Q3,2026,3,sec:Nursing,Nursing,104.78967391304347,false,false
+2020Q1,2020,1,sec:Personal Care & Home Health,Personal Care & Home Health,101.53416666666665,true,false
+2020Q2,2020,2,sec:Personal Care & Home Health,Personal Care & Home Health,89.0768131868132,false,false
+2020Q3,2020,3,sec:Personal Care & Home Health,Personal Care & Home Health,110.02315217391306,false,false
+2020Q4,2020,4,sec:Personal Care & Home Health,Personal Care & Home Health,119.90836956521741,false,false
+2021Q1,2021,1,sec:Personal Care & Home Health,Personal Care & Home Health,131.597,false,false
+2021Q2,2021,2,sec:Personal Care & Home Health,Personal Care & Home Health,156.55714285714288,false,false
+2021Q3,2021,3,sec:Personal Care & Home Health,Personal Care & Home Health,168.58847826086955,false,false
+2021Q4,2021,4,sec:Personal Care & Home Health,Personal Care & Home Health,176.1226086956522,false,false
+2022Q1,2022,1,sec:Personal Care & Home Health,Personal Care & Home Health,182.18944444444443,false,false
+2022Q2,2022,2,sec:Personal Care & Home Health,Personal Care & Home Health,177.64736263736262,false,false
+2022Q3,2022,3,sec:Personal Care & Home Health,Personal Care & Home Health,173.72369565217392,false,false
+2022Q4,2022,4,sec:Personal Care & Home Health,Personal Care & Home Health,179.8267391304348,false,false
+2023Q1,2023,1,sec:Personal Care & Home Health,Personal Care & Home Health,179.1948888888889,false,false
+2023Q2,2023,2,sec:Personal Care & Home Health,Personal Care & Home Health,175.48054945054943,false,false
+2023Q3,2023,3,sec:Personal Care & Home Health,Personal Care & Home Health,168.3795652173913,false,false
+2023Q4,2023,4,sec:Personal Care & Home Health,Personal Care & Home Health,163.95076086956522,false,false
+2024Q1,2024,1,sec:Personal Care & Home Health,Personal Care & Home Health,162.6202197802198,false,false
+2024Q2,2024,2,sec:Personal Care & Home Health,Personal Care & Home Health,159.43703296703296,false,false
+2024Q3,2024,3,sec:Personal Care & Home Health,Personal Care & Home Health,158.4217391304348,false,false
+2024Q4,2024,4,sec:Personal Care & Home Health,Personal Care & Home Health,154.2686956521739,false,false
+2025Q1,2025,1,sec:Personal Care & Home Health,Personal Care & Home Health,153.146,false,false
+2025Q2,2025,2,sec:Personal Care & Home Health,Personal Care & Home Health,148.75186813186812,false,false
+2025Q3,2025,3,sec:Personal Care & Home Health,Personal Care & Home Health,149.05902173913043,false,false
+2025Q4,2025,4,sec:Personal Care & Home Health,Personal Care & Home Health,149.59978260869568,false,false
+2026Q1,2026,1,sec:Personal Care & Home Health,Personal Care & Home Health,146.05066666666667,false,false
+2026Q2,2026,2,sec:Personal Care & Home Health,Personal Care & Home Health,135.39615384615385,false,false
+2026Q3,2026,3,sec:Personal Care & Home Health,Personal Care & Home Health,149.8726086956522,false,false
+2020Q1,2020,1,sec:Pharmacy,Pharmacy,100.57133333333333,true,false
+2020Q2,2020,2,sec:Pharmacy,Pharmacy,82.3154945054945,false,false
+2020Q3,2020,3,sec:Pharmacy,Pharmacy,89.15478260869565,false,false
+2020Q4,2020,4,sec:Pharmacy,Pharmacy,98.16130434782607,false,false
+2021Q1,2021,1,sec:Pharmacy,Pharmacy,134.31733333333335,false,false
+2021Q2,2021,2,sec:Pharmacy,Pharmacy,149.22549450549448,false,false
+2021Q3,2021,3,sec:Pharmacy,Pharmacy,152.47586956521738,false,false
+2021Q4,2021,4,sec:Pharmacy,Pharmacy,184.5423913043478,false,false
+2022Q1,2022,1,sec:Pharmacy,Pharmacy,170.44888888888892,false,false
+2022Q2,2022,2,sec:Pharmacy,Pharmacy,167.1442857142857,false,false
+2022Q3,2022,3,sec:Pharmacy,Pharmacy,178.54239130434783,false,false
+2022Q4,2022,4,sec:Pharmacy,Pharmacy,175.23478260869564,false,false
+2023Q1,2023,1,sec:Pharmacy,Pharmacy,163.56255555555558,false,false
+2023Q2,2023,2,sec:Pharmacy,Pharmacy,166.88626373626371,false,false
+2023Q3,2023,3,sec:Pharmacy,Pharmacy,156.64771739130433,false,false
+2023Q4,2023,4,sec:Pharmacy,Pharmacy,167.64065217391303,false,false
+2024Q1,2024,1,sec:Pharmacy,Pharmacy,156.28692307692305,false,false
+2024Q2,2024,2,sec:Pharmacy,Pharmacy,137.872967032967,false,false
+2024Q3,2024,3,sec:Pharmacy,Pharmacy,133.85043478260872,false,false
+2024Q4,2024,4,sec:Pharmacy,Pharmacy,124.38815217391303,false,false
+2025Q1,2025,1,sec:Pharmacy,Pharmacy,123.59688888888888,false,false
+2025Q2,2025,2,sec:Pharmacy,Pharmacy,128.6710989010989,false,false
+2025Q3,2025,3,sec:Pharmacy,Pharmacy,125.08000000000001,false,false
+2025Q4,2025,4,sec:Pharmacy,Pharmacy,117.92815217391303,false,false
+2026Q1,2026,1,sec:Pharmacy,Pharmacy,125.73377777777779,false,false
+2026Q2,2026,2,sec:Pharmacy,Pharmacy,132.37428571428572,false,false
+2026Q3,2026,3,sec:Pharmacy,Pharmacy,131.62858695652173,false,false
+2020Q1,2020,1,sec:Physicians & Surgeons,Physicians & Surgeons,101.08083333333336,true,false
+2020Q2,2020,2,sec:Physicians & Surgeons,Physicians & Surgeons,80.55681318681319,false,false
+2020Q3,2020,3,sec:Physicians & Surgeons,Physicians & Surgeons,82.06478260869564,false,false
+2020Q4,2020,4,sec:Physicians & Surgeons,Physicians & Surgeons,95.16228260869568,false,false
+2021Q1,2021,1,sec:Physicians & Surgeons,Physicians & Surgeons,104.45777777777779,false,false
+2021Q2,2021,2,sec:Physicians & Surgeons,Physicians & Surgeons,114.4332967032967,false,false
+2021Q3,2021,3,sec:Physicians & Surgeons,Physicians & Surgeons,131.5108695652174,false,false
+2021Q4,2021,4,sec:Physicians & Surgeons,Physicians & Surgeons,156.92108695652172,false,false
+2022Q1,2022,1,sec:Physicians & Surgeons,Physicians & Surgeons,172.30577777777776,false,false
+2022Q2,2022,2,sec:Physicians & Surgeons,Physicians & Surgeons,176.00626373626372,false,false
+2022Q3,2022,3,sec:Physicians & Surgeons,Physicians & Surgeons,184.13119565217394,false,false
+2022Q4,2022,4,sec:Physicians & Surgeons,Physicians & Surgeons,184.8692391304348,false,false
+2023Q1,2023,1,sec:Physicians & Surgeons,Physicians & Surgeons,187.86500000000004,false,false
+2023Q2,2023,2,sec:Physicians & Surgeons,Physicians & Surgeons,185.16142857142856,false,false
+2023Q3,2023,3,sec:Physicians & Surgeons,Physicians & Surgeons,189.81336956521736,false,false
+2023Q4,2023,4,sec:Physicians & Surgeons,Physicians & Surgeons,189.74021739130433,false,false
+2024Q1,2024,1,sec:Physicians & Surgeons,Physicians & Surgeons,181.87142857142857,false,false
+2024Q2,2024,2,sec:Physicians & Surgeons,Physicians & Surgeons,184.11054945054943,false,false
+2024Q3,2024,3,sec:Physicians & Surgeons,Physicians & Surgeons,182.33521739130438,false,false
+2024Q4,2024,4,sec:Physicians & Surgeons,Physicians & Surgeons,185.91717391304348,false,false
+2025Q1,2025,1,sec:Physicians & Surgeons,Physicians & Surgeons,186.26055555555556,false,false
+2025Q2,2025,2,sec:Physicians & Surgeons,Physicians & Surgeons,188.1256043956044,false,false
+2025Q3,2025,3,sec:Physicians & Surgeons,Physicians & Surgeons,187.67760869565222,false,false
+2025Q4,2025,4,sec:Physicians & Surgeons,Physicians & Surgeons,185.0046739130435,false,false
+2026Q1,2026,1,sec:Physicians & Surgeons,Physicians & Surgeons,183.53944444444443,false,false
+2026Q2,2026,2,sec:Physicians & Surgeons,Physicians & Surgeons,180.64780219780218,false,false
+2026Q3,2026,3,sec:Physicians & Surgeons,Physicians & Surgeons,185.9160869565217,false,false
+2020Q1,2020,1,sec:Production & Manufacturing,Production & Manufacturing,97.87583333333335,true,false
+2020Q2,2020,2,sec:Production & Manufacturing,Production & Manufacturing,69.96747252747252,false,false
+2020Q3,2020,3,sec:Production & Manufacturing,Production & Manufacturing,90.96347826086958,false,false
+2020Q4,2020,4,sec:Production & Manufacturing,Production & Manufacturing,112.34826086956525,false,false
+2021Q1,2021,1,sec:Production & Manufacturing,Production & Manufacturing,133.22466666666665,false,false
+2021Q2,2021,2,sec:Production & Manufacturing,Production & Manufacturing,169.47824175824175,false,false
+2021Q3,2021,3,sec:Production & Manufacturing,Production & Manufacturing,179.28532608695653,false,false
+2021Q4,2021,4,sec:Production & Manufacturing,Production & Manufacturing,191.5977173913043,false,false
+2022Q1,2022,1,sec:Production & Manufacturing,Production & Manufacturing,198.03077777777779,false,false
+2022Q2,2022,2,sec:Production & Manufacturing,Production & Manufacturing,195.36417582417582,false,false
+2022Q3,2022,3,sec:Production & Manufacturing,Production & Manufacturing,186.64304347826084,false,false
+2022Q4,2022,4,sec:Production & Manufacturing,Production & Manufacturing,179.9469565217391,false,false
+2023Q1,2023,1,sec:Production & Manufacturing,Production & Manufacturing,165.26133333333334,false,false
+2023Q2,2023,2,sec:Production & Manufacturing,Production & Manufacturing,158.10142857142856,false,false
+2023Q3,2023,3,sec:Production & Manufacturing,Production & Manufacturing,150.11967391304347,false,false
+2023Q4,2023,4,sec:Production & Manufacturing,Production & Manufacturing,140.69597826086957,false,false
+2024Q1,2024,1,sec:Production & Manufacturing,Production & Manufacturing,132.7520879120879,false,false
+2024Q2,2024,2,sec:Production & Manufacturing,Production & Manufacturing,125.4098901098901,false,false
+2024Q3,2024,3,sec:Production & Manufacturing,Production & Manufacturing,116.56989130434779,false,false
+2024Q4,2024,4,sec:Production & Manufacturing,Production & Manufacturing,111.22,false,false
+2025Q1,2025,1,sec:Production & Manufacturing,Production & Manufacturing,111.56833333333336,false,false
+2025Q2,2025,2,sec:Production & Manufacturing,Production & Manufacturing,109.58923076923078,false,false
+2025Q3,2025,3,sec:Production & Manufacturing,Production & Manufacturing,111.04315217391304,false,false
+2025Q4,2025,4,sec:Production & Manufacturing,Production & Manufacturing,111.69217391304348,false,false
+2026Q1,2026,1,sec:Production & Manufacturing,Production & Manufacturing,116.36077777777781,false,false
+2026Q2,2026,2,sec:Production & Manufacturing,Production & Manufacturing,114.49406593406594,false,false
+2026Q3,2026,3,sec:Production & Manufacturing,Production & Manufacturing,120.52608695652174,false,false
+2020Q1,2020,1,sec:Project Management,Project Management,98.712,true,false
+2020Q2,2020,2,sec:Project Management,Project Management,64.69846153846154,false,false
+2020Q3,2020,3,sec:Project Management,Project Management,66.905,false,false
+2020Q4,2020,4,sec:Project Management,Project Management,76.57097826086958,false,false
+2021Q1,2021,1,sec:Project Management,Project Management,93.48577777777777,false,false
+2021Q2,2021,2,sec:Project Management,Project Management,118.88439560439559,false,false
+2021Q3,2021,3,sec:Project Management,Project Management,141.1154347826087,false,false
+2021Q4,2021,4,sec:Project Management,Project Management,164.47934782608695,false,false
+2022Q1,2022,1,sec:Project Management,Project Management,180.0028888888889,false,false
+2022Q2,2022,2,sec:Project Management,Project Management,186.58142857142857,false,false
+2022Q3,2022,3,sec:Project Management,Project Management,172.3754347826087,false,false
+2022Q4,2022,4,sec:Project Management,Project Management,157.59652173913045,false,false
+2023Q1,2023,1,sec:Project Management,Project Management,142.17955555555557,false,false
+2023Q2,2023,2,sec:Project Management,Project Management,132.73296703296703,false,false
+2023Q3,2023,3,sec:Project Management,Project Management,127.10152173913046,false,false
+2023Q4,2023,4,sec:Project Management,Project Management,120.73304347826085,false,false
+2024Q1,2024,1,sec:Project Management,Project Management,118.09637362637363,false,false
+2024Q2,2024,2,sec:Project Management,Project Management,116.08868131868131,false,false
+2024Q3,2024,3,sec:Project Management,Project Management,112.9071739130435,false,false
+2024Q4,2024,4,sec:Project Management,Project Management,110.32989130434783,false,false
+2025Q1,2025,1,sec:Project Management,Project Management,106.98899999999998,false,false
+2025Q2,2025,2,sec:Project Management,Project Management,100.57791208791211,false,false
+2025Q3,2025,3,sec:Project Management,Project Management,99.69826086956523,false,false
+2025Q4,2025,4,sec:Project Management,Project Management,102.09108695652174,false,false
+2026Q1,2026,1,sec:Project Management,Project Management,106.30711111111113,false,false
+2026Q2,2026,2,sec:Project Management,Project Management,107.21824175824175,false,false
+2026Q3,2026,3,sec:Project Management,Project Management,113.31,false,false
+2020Q1,2020,1,sec:Retail,Retail,96.26016666666666,true,false
+2020Q2,2020,2,sec:Retail,Retail,69.73373626373626,false,false
+2020Q3,2020,3,sec:Retail,Retail,88.51500000000001,false,false
+2020Q4,2020,4,sec:Retail,Retail,93.49880434782608,false,false
+2021Q1,2021,1,sec:Retail,Retail,100.9678888888889,false,false
+2021Q2,2021,2,sec:Retail,Retail,123.2821978021978,false,false
+2021Q3,2021,3,sec:Retail,Retail,129.0608695652174,false,false
+2021Q4,2021,4,sec:Retail,Retail,137.05478260869566,false,false
+2022Q1,2022,1,sec:Retail,Retail,133.23255555555556,false,false
+2022Q2,2022,2,sec:Retail,Retail,131.86362637362637,false,false
+2022Q3,2022,3,sec:Retail,Retail,128.92652173913046,false,false
+2022Q4,2022,4,sec:Retail,Retail,129.4351086956522,false,false
+2023Q1,2023,1,sec:Retail,Retail,118.99855555555557,false,false
+2023Q2,2023,2,sec:Retail,Retail,118.65582417582418,false,false
+2023Q3,2023,3,sec:Retail,Retail,115.98771739130434,false,false
+2023Q4,2023,4,sec:Retail,Retail,113.42391304347827,false,false
+2024Q1,2024,1,sec:Retail,Retail,106.79769230769233,false,false
+2024Q2,2024,2,sec:Retail,Retail,105.83560439560439,false,false
+2024Q3,2024,3,sec:Retail,Retail,104.73684782608694,false,false
+2024Q4,2024,4,sec:Retail,Retail,101.83391304347825,false,false
+2025Q1,2025,1,sec:Retail,Retail,99.35466666666669,false,false
+2025Q2,2025,2,sec:Retail,Retail,94.97923076923078,false,false
+2025Q3,2025,3,sec:Retail,Retail,91.22358695652171,false,false
+2025Q4,2025,4,sec:Retail,Retail,86.7995652173913,false,false
+2026Q1,2026,1,sec:Retail,Retail,87.39,false,false
+2026Q2,2026,2,sec:Retail,Retail,89.32758241758242,false,false
+2026Q3,2026,3,sec:Retail,Retail,88.11380434782606,false,false
+2020Q1,2020,1,sec:Sales,Sales,96.824,true,false
+2020Q2,2020,2,sec:Sales,Sales,56.680769230769236,false,false
+2020Q3,2020,3,sec:Sales,Sales,72.56065217391303,false,false
+2020Q4,2020,4,sec:Sales,Sales,83.03423913043478,false,false
+2021Q1,2021,1,sec:Sales,Sales,93.89844444444446,false,false
+2021Q2,2021,2,sec:Sales,Sales,117.39021978021978,false,false
+2021Q3,2021,3,sec:Sales,Sales,120.55206521739132,false,false
+2021Q4,2021,4,sec:Sales,Sales,130.15565217391304,false,false
+2022Q1,2022,1,sec:Sales,Sales,134.13122222222225,false,false
+2022Q2,2022,2,sec:Sales,Sales,131.57901098901098,false,false
+2022Q3,2022,3,sec:Sales,Sales,126.64630434782607,false,false
+2022Q4,2022,4,sec:Sales,Sales,118.63032608695654,false,false
+2023Q1,2023,1,sec:Sales,Sales,107.57611111111112,false,false
+2023Q2,2023,2,sec:Sales,Sales,105.87813186813185,false,false
+2023Q3,2023,3,sec:Sales,Sales,100.93423913043479,false,false
+2023Q4,2023,4,sec:Sales,Sales,96.88326086956522,false,false
+2024Q1,2024,1,sec:Sales,Sales,94.19670329670329,false,false
+2024Q2,2024,2,sec:Sales,Sales,93.77230769230772,false,false
+2024Q3,2024,3,sec:Sales,Sales,92.61347826086956,false,false
+2024Q4,2024,4,sec:Sales,Sales,93.09445652173912,false,false
+2025Q1,2025,1,sec:Sales,Sales,93.93333333333334,false,false
+2025Q2,2025,2,sec:Sales,Sales,93.86483516483517,false,false
+2025Q3,2025,3,sec:Sales,Sales,92.59228260869563,false,false
+2025Q4,2025,4,sec:Sales,Sales,93.06119565217392,false,false
+2026Q1,2026,1,sec:Sales,Sales,97.93166666666667,false,false
+2026Q2,2026,2,sec:Sales,Sales,92.29362637362638,false,false
+2026Q3,2026,3,sec:Sales,Sales,91.0416304347826,false,false
+2020Q1,2020,1,sec:Scientific Research & Development,Scientific Research & Development,99.85050000000001,true,false
+2020Q2,2020,2,sec:Scientific Research & Development,Scientific Research & Development,69.14120879120881,false,false
+2020Q3,2020,3,sec:Scientific Research & Development,Scientific Research & Development,80.85532608695652,false,false
+2020Q4,2020,4,sec:Scientific Research & Development,Scientific Research & Development,97.30271739130433,false,false
+2021Q1,2021,1,sec:Scientific Research & Development,Scientific Research & Development,113.68955555555554,false,false
+2021Q2,2021,2,sec:Scientific Research & Development,Scientific Research & Development,133.15395604395604,false,false
+2021Q3,2021,3,sec:Scientific Research & Development,Scientific Research & Development,149.26304347826087,false,false
+2021Q4,2021,4,sec:Scientific Research & Development,Scientific Research & Development,169.59119565217392,false,false
+2022Q1,2022,1,sec:Scientific Research & Development,Scientific Research & Development,182.48055555555555,false,false
+2022Q2,2022,2,sec:Scientific Research & Development,Scientific Research & Development,177.74747252747252,false,false
+2022Q3,2022,3,sec:Scientific Research & Development,Scientific Research & Development,163.63000000000002,false,false
+2022Q4,2022,4,sec:Scientific Research & Development,Scientific Research & Development,150.86260869565217,false,false
+2023Q1,2023,1,sec:Scientific Research & Development,Scientific Research & Development,138.79655555555553,false,false
+2023Q2,2023,2,sec:Scientific Research & Development,Scientific Research & Development,127.1132967032967,false,false
+2023Q3,2023,3,sec:Scientific Research & Development,Scientific Research & Development,117.9696739130435,false,false
+2023Q4,2023,4,sec:Scientific Research & Development,Scientific Research & Development,109.4532608695652,false,false
+2024Q1,2024,1,sec:Scientific Research & Development,Scientific Research & Development,104.60252747252747,false,false
+2024Q2,2024,2,sec:Scientific Research & Development,Scientific Research & Development,98.74384615384616,false,false
+2024Q3,2024,3,sec:Scientific Research & Development,Scientific Research & Development,92.26532608695652,false,false
+2024Q4,2024,4,sec:Scientific Research & Development,Scientific Research & Development,89.18815217391304,false,false
+2025Q1,2025,1,sec:Scientific Research & Development,Scientific Research & Development,82.60811111111111,false,false
+2025Q2,2025,2,sec:Scientific Research & Development,Scientific Research & Development,72.07648351648352,false,false
+2025Q3,2025,3,sec:Scientific Research & Development,Scientific Research & Development,70.27630434782608,false,false
+2025Q4,2025,4,sec:Scientific Research & Development,Scientific Research & Development,70.25304347826086,false,false
+2026Q1,2026,1,sec:Scientific Research & Development,Scientific Research & Development,74.09811111111111,false,false
+2026Q2,2026,2,sec:Scientific Research & Development,Scientific Research & Development,77.73186813186814,false,false
+2026Q3,2026,3,sec:Scientific Research & Development,Scientific Research & Development,79.76934782608696,false,false
+2020Q1,2020,1,sec:Security & Public Safety,Security & Public Safety,97.59283333333333,true,false
+2020Q2,2020,2,sec:Security & Public Safety,Security & Public Safety,78.51417582417582,false,false
+2020Q3,2020,3,sec:Security & Public Safety,Security & Public Safety,99.68880434782608,false,false
+2020Q4,2020,4,sec:Security & Public Safety,Security & Public Safety,99.43249999999999,false,false
+2021Q1,2021,1,sec:Security & Public Safety,Security & Public Safety,107.95066666666666,false,false
+2021Q2,2021,2,sec:Security & Public Safety,Security & Public Safety,134.74208791208792,false,false
+2021Q3,2021,3,sec:Security & Public Safety,Security & Public Safety,152.7271739130435,false,false
+2021Q4,2021,4,sec:Security & Public Safety,Security & Public Safety,160.04717391304348,false,false
+2022Q1,2022,1,sec:Security & Public Safety,Security & Public Safety,168.028,false,false
+2022Q2,2022,2,sec:Security & Public Safety,Security & Public Safety,172.74274725274728,false,false
+2022Q3,2022,3,sec:Security & Public Safety,Security & Public Safety,160.85228260869567,false,false
+2022Q4,2022,4,sec:Security & Public Safety,Security & Public Safety,156.01010869565218,false,false
+2023Q1,2023,1,sec:Security & Public Safety,Security & Public Safety,151.92433333333335,false,false
+2023Q2,2023,2,sec:Security & Public Safety,Security & Public Safety,150.22571428571428,false,false
+2023Q3,2023,3,sec:Security & Public Safety,Security & Public Safety,142.19478260869565,false,false
+2023Q4,2023,4,sec:Security & Public Safety,Security & Public Safety,136.13336956521738,false,false
+2024Q1,2024,1,sec:Security & Public Safety,Security & Public Safety,131.0391208791209,false,false
+2024Q2,2024,2,sec:Security & Public Safety,Security & Public Safety,127.6176923076923,false,false
+2024Q3,2024,3,sec:Security & Public Safety,Security & Public Safety,125.3729347826087,false,false
+2024Q4,2024,4,sec:Security & Public Safety,Security & Public Safety,122.85717391304348,false,false
+2025Q1,2025,1,sec:Security & Public Safety,Security & Public Safety,117.55011111111111,false,false
+2025Q2,2025,2,sec:Security & Public Safety,Security & Public Safety,114.14560439560438,false,false
+2025Q3,2025,3,sec:Security & Public Safety,Security & Public Safety,114.2794565217391,false,false
+2025Q4,2025,4,sec:Security & Public Safety,Security & Public Safety,114.1291304347826,false,false
+2026Q1,2026,1,sec:Security & Public Safety,Security & Public Safety,114.86366666666666,false,false
+2026Q2,2026,2,sec:Security & Public Safety,Security & Public Safety,112.25395604395607,false,false
+2026Q3,2026,3,sec:Security & Public Safety,Security & Public Safety,115.00141304347827,false,false
+2020Q1,2020,1,sec:Social Science,Social Science,97.4295,true,false
+2020Q2,2020,2,sec:Social Science,Social Science,69.17428571428572,false,false
+2020Q3,2020,3,sec:Social Science,Social Science,77.31771739130436,false,false
+2020Q4,2020,4,sec:Social Science,Social Science,91.37195652173911,false,false
+2021Q1,2021,1,sec:Social Science,Social Science,106.1,false,false
+2021Q2,2021,2,sec:Social Science,Social Science,135.9881318681319,false,false
+2021Q3,2021,3,sec:Social Science,Social Science,156.77510869565216,false,false
+2021Q4,2021,4,sec:Social Science,Social Science,169.74402173913043,false,false
+2022Q1,2022,1,sec:Social Science,Social Science,177.847,false,false
+2022Q2,2022,2,sec:Social Science,Social Science,179.8714285714286,false,false
+2022Q3,2022,3,sec:Social Science,Social Science,179.87239130434781,false,false
+2022Q4,2022,4,sec:Social Science,Social Science,183.741847826087,false,false
+2023Q1,2023,1,sec:Social Science,Social Science,183.14144444444443,false,false
+2023Q2,2023,2,sec:Social Science,Social Science,186.36120879120878,false,false
+2023Q3,2023,3,sec:Social Science,Social Science,183.91815217391306,false,false
+2023Q4,2023,4,sec:Social Science,Social Science,177.4216304347826,false,false
+2024Q1,2024,1,sec:Social Science,Social Science,171.51362637362638,false,false
+2024Q2,2024,2,sec:Social Science,Social Science,169.08560439560438,false,false
+2024Q3,2024,3,sec:Social Science,Social Science,162.16010869565216,false,false
+2024Q4,2024,4,sec:Social Science,Social Science,159.47728260869565,false,false
+2025Q1,2025,1,sec:Social Science,Social Science,157.2467777777778,false,false
+2025Q2,2025,2,sec:Social Science,Social Science,143.45527472527473,false,false
+2025Q3,2025,3,sec:Social Science,Social Science,135.91152173913045,false,false
+2025Q4,2025,4,sec:Social Science,Social Science,131.10728260869564,false,false
+2026Q1,2026,1,sec:Social Science,Social Science,127.56488888888887,false,false
+2026Q2,2026,2,sec:Social Science,Social Science,125.39384615384614,false,false
+2026Q3,2026,3,sec:Social Science,Social Science,124.4125,false,false
+2020Q1,2020,1,sec:Software Development,Software Development,98.9095,true,false
+2020Q2,2020,2,sec:Software Development,Software Development,69.70538461538462,false,false
+2020Q3,2020,3,sec:Software Development,Software Development,70.0866304347826,false,false
+2020Q4,2020,4,sec:Software Development,Software Development,83.79891304347825,false,false
+2021Q1,2021,1,sec:Software Development,Software Development,102.77411111111111,false,false
+2021Q2,2021,2,sec:Software Development,Software Development,129.77384615384616,false,false
+2021Q3,2021,3,sec:Software Development,Software Development,159.01869565217388,false,false
+2021Q4,2021,4,sec:Software Development,Software Development,200.84565217391304,false,false
+2022Q1,2022,1,sec:Software Development,Software Development,224.51200000000003,false,false
+2022Q2,2022,2,sec:Software Development,Software Development,223.1386813186813,false,false
+2022Q3,2022,3,sec:Software Development,Software Development,187.91728260869567,false,false
+2022Q4,2022,4,sec:Software Development,Software Development,147.68293478260867,false,false
+2023Q1,2023,1,sec:Software Development,Software Development,114.33011111111112,false,false
+2023Q2,2023,2,sec:Software Development,Software Development,94.17175824175821,false,false
+2023Q3,2023,3,sec:Software Development,Software Development,80.08728260869565,false,false
+2023Q4,2023,4,sec:Software Development,Software Development,73.53576086956521,false,false
+2024Q1,2024,1,sec:Software Development,Software Development,71.22967032967034,false,false
+2024Q2,2024,2,sec:Software Development,Software Development,69.7834065934066,false,false
+2024Q3,2024,3,sec:Software Development,Software Development,69.3061956521739,false,false
+2024Q4,2024,4,sec:Software Development,Software Development,67.80076086956522,false,false
+2025Q1,2025,1,sec:Software Development,Software Development,64.87155555555555,false,false
+2025Q2,2025,2,sec:Software Development,Software Development,63.84241758241758,false,false
+2025Q3,2025,3,sec:Software Development,Software Development,65.44565217391305,false,false
+2025Q4,2025,4,sec:Software Development,Software Development,66.02597826086956,false,false
+2026Q1,2026,1,sec:Software Development,Software Development,69.97855555555556,false,false
+2026Q2,2026,2,sec:Software Development,Software Development,73.37153846153846,false,false
+2026Q3,2026,3,sec:Software Development,Software Development,75.47467391304347,false,false
+2020Q1,2020,1,sec:Therapy,Therapy,94.09766666666665,true,false
+2020Q2,2020,2,sec:Therapy,Therapy,55.9587912087912,false,false
+2020Q3,2020,3,sec:Therapy,Therapy,69.04478260869566,false,false
+2020Q4,2020,4,sec:Therapy,Therapy,90.4529347826087,false,false
+2021Q1,2021,1,sec:Therapy,Therapy,101.60988888888889,false,false
+2021Q2,2021,2,sec:Therapy,Therapy,125.00725274725275,false,false
+2021Q3,2021,3,sec:Therapy,Therapy,142.10858695652175,false,false
+2021Q4,2021,4,sec:Therapy,Therapy,160.38576086956525,false,false
+2022Q1,2022,1,sec:Therapy,Therapy,166.56588888888888,false,false
+2022Q2,2022,2,sec:Therapy,Therapy,169.0835164835165,false,false
+2022Q3,2022,3,sec:Therapy,Therapy,174.33260869565217,false,false
+2022Q4,2022,4,sec:Therapy,Therapy,183.46315217391304,false,false
+2023Q1,2023,1,sec:Therapy,Therapy,185.33755555555553,false,false
+2023Q2,2023,2,sec:Therapy,Therapy,187.05274725274728,false,false
+2023Q3,2023,3,sec:Therapy,Therapy,185.0941304347826,false,false
+2023Q4,2023,4,sec:Therapy,Therapy,184.76695652173913,false,false
+2024Q1,2024,1,sec:Therapy,Therapy,181.67054945054946,false,false
+2024Q2,2024,2,sec:Therapy,Therapy,184.16648351648348,false,false
+2024Q3,2024,3,sec:Therapy,Therapy,184.74054347826092,false,false
+2024Q4,2024,4,sec:Therapy,Therapy,183.14010869565217,false,false
+2025Q1,2025,1,sec:Therapy,Therapy,183.6016666666667,false,false
+2025Q2,2025,2,sec:Therapy,Therapy,180.65626373626375,false,false
+2025Q3,2025,3,sec:Therapy,Therapy,181.98597826086956,false,false
+2025Q4,2025,4,sec:Therapy,Therapy,184.7842391304348,false,false
+2026Q1,2026,1,sec:Therapy,Therapy,185.82666666666665,false,false
+2026Q2,2026,2,sec:Therapy,Therapy,167.53670329670328,false,false
+2026Q3,2026,3,sec:Therapy,Therapy,176.19369565217394,false,false
+2019Q1,2019,1,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",72014.33333333333,false,false
+2019Q2,2019,2,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",71336.0,false,false
+2019Q3,2019,3,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",67522.33333333333,false,false
+2019Q4,2019,4,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",72810.66666666667,false,false
+2020Q1,2020,1,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",71852.33333333333,false,false
+2020Q2,2020,2,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",65543.66666666667,false,false
+2020Q3,2020,3,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",61465.666666666664,false,false
+2020Q4,2020,4,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",67435.33333333333,false,false
+2021Q1,2021,1,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",67473.0,false,false
+2021Q2,2021,2,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",68164.0,false,false
+2021Q3,2021,3,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",63026.666666666664,false,false
+2021Q4,2021,4,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",70139.33333333333,false,false
+2022Q1,2022,1,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",69063.0,false,false
+2022Q2,2022,2,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",69087.33333333333,false,false
+2022Q3,2022,3,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",64942.0,false,false
+2022Q4,2022,4,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",72305.33333333333,false,false
+2023Q1,2023,1,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",70560.66666666667,false,false
+2023Q2,2023,2,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",69447.66666666667,false,false
+2023Q3,2023,3,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",64941.666666666664,false,false
+2023Q4,2023,4,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",72216.0,false,false
+2024Q1,2024,1,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",71192.66666666667,false,false
+2024Q2,2024,2,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",70284.33333333333,false,false
+2024Q3,2024,3,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",65865.33333333333,false,false
+2024Q4,2024,4,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",72937.66666666667,false,false
+2025Q1,2025,1,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",72242.33333333333,false,false
+2025Q2,2025,2,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",71352.33333333333,false,false
+2025Q3,2025,3,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",66501.0,false,false
+2025Q4,2025,4,qcew_il_priv_emp,"QCEW IL colleges & universities, private: employment (3-month avg)",73178.66666666667,false,false
+2019Q1,2019,1,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1298.0,false,false
+2019Q2,2019,2,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1298.0,false,false
+2019Q3,2019,3,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1518.0,false,false
+2019Q4,2019,4,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1335.0,false,false
+2020Q1,2020,1,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1325.0,false,false
+2020Q2,2020,2,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1412.0,false,false
+2020Q3,2020,3,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1626.0,false,false
+2020Q4,2020,4,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1475.0,false,false
+2021Q1,2021,1,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1357.0,false,false
+2021Q2,2021,2,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1401.0,false,false
+2021Q3,2021,3,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1659.0,false,false
+2021Q4,2021,4,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1477.0,false,false
+2022Q1,2022,1,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1384.0,false,false
+2022Q2,2022,2,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1451.0,false,false
+2022Q3,2022,3,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1722.0,false,false
+2022Q4,2022,4,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1485.0,false,false
+2023Q1,2023,1,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1474.0,false,false
+2023Q2,2023,2,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1532.0,false,false
+2023Q3,2023,3,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1747.0,false,false
+2023Q4,2023,4,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1613.0,false,false
+2024Q1,2024,1,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1530.0,false,false
+2024Q2,2024,2,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1585.0,false,false
+2024Q3,2024,3,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1825.0,false,false
+2024Q4,2024,4,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1656.0,false,false
+2025Q1,2025,1,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1564.0,false,false
+2025Q2,2025,2,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1633.0,false,false
+2025Q3,2025,3,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1916.0,false,false
+2025Q4,2025,4,qcew_il_priv_wage,"QCEW IL colleges & universities, private: avg weekly wage",1715.0,false,false
+2019Q1,2019,1,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",51363.333333333336,false,false
+2019Q2,2019,2,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",51328.333333333336,false,false
+2019Q3,2019,3,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",50588.333333333336,false,false
+2019Q4,2019,4,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",52946.666666666664,false,false
+2020Q1,2020,1,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",52588.666666666664,false,false
+2020Q2,2020,2,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",50429.333333333336,false,false
+2020Q3,2020,3,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",49755.333333333336,false,false
+2020Q4,2020,4,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",51933.0,false,false
+2021Q1,2021,1,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",51509.0,false,false
+2021Q2,2021,2,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",51315.0,false,false
+2021Q3,2021,3,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",50033.0,false,false
+2021Q4,2021,4,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",51842.333333333336,false,false
+2022Q1,2022,1,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",51326.333333333336,false,false
+2022Q2,2022,2,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",50999.0,false,false
+2022Q3,2022,3,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",50370.333333333336,false,false
+2022Q4,2022,4,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",52217.0,false,false
+2023Q1,2023,1,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",53016.333333333336,false,false
+2023Q2,2023,2,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",53160.333333333336,false,false
+2023Q3,2023,3,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",53288.333333333336,false,false
+2023Q4,2023,4,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",55283.0,false,false
+2024Q1,2024,1,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",55679.666666666664,false,false
+2024Q2,2024,2,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",55692.0,false,false
+2024Q3,2024,3,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",55452.333333333336,false,false
+2024Q4,2024,4,qcew_il_state_emp,"QCEW IL colleges & universities, state govt: employment (3-month avg)",56729.333333333336,false,false
+2019Q1,2019,1,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1306.0,false,false
+2019Q2,2019,2,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1349.0,false,false
+2019Q3,2019,3,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1358.0,false,false
+2019Q4,2019,4,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1295.0,false,false
+2020Q1,2020,1,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1317.0,false,false
+2020Q2,2020,2,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1437.0,false,false
+2020Q3,2020,3,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1478.0,false,false
+2020Q4,2020,4,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1291.0,false,false
+2021Q1,2021,1,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1439.0,false,false
+2021Q2,2021,2,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1400.0,false,false
+2021Q3,2021,3,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1507.0,false,false
+2021Q4,2021,4,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1349.0,false,false
+2022Q1,2022,1,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1482.0,false,false
+2022Q2,2022,2,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1458.0,false,false
+2022Q3,2022,3,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1588.0,false,false
+2022Q4,2022,4,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1398.0,false,false
+2023Q1,2023,1,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1550.0,false,false
+2023Q2,2023,2,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1530.0,false,false
+2023Q3,2023,3,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1639.0,false,false
+2023Q4,2023,4,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1457.0,false,false
+2024Q1,2024,1,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1578.0,false,false
+2024Q2,2024,2,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1555.0,false,false
+2024Q3,2024,3,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1679.0,false,false
+2024Q4,2024,4,qcew_il_state_wage,"QCEW IL colleges & universities, state govt: avg weekly wage",1580.0,false,false
+2019Q1,2019,1,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1276210.6666666667,false,false
+2019Q2,2019,2,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1247290.0,false,false
+2019Q3,2019,3,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1191147.3333333333,false,false
+2019Q4,2019,4,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1307425.6666666667,false,false
+2020Q1,2020,1,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1272696.0,false,false
+2020Q2,2020,2,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1170725.6666666667,false,false
+2020Q3,2020,3,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1114018.0,false,false
+2020Q4,2020,4,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1218750.3333333333,false,false
+2021Q1,2021,1,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1202740.6666666667,false,false
+2021Q2,2021,2,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1187250.6666666667,false,false
+2021Q3,2021,3,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1137662.0,false,false
+2021Q4,2021,4,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1264171.0,false,false
+2022Q1,2022,1,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1242020.0,false,false
+2022Q2,2022,2,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1213818.0,false,false
+2022Q3,2022,3,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1173610.6666666667,false,false
+2022Q4,2022,4,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1292235.0,false,false
+2023Q1,2023,1,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1271105.6666666667,false,false
+2023Q2,2023,2,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1248207.3333333333,false,false
+2023Q3,2023,3,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1199753.6666666667,false,false
+2023Q4,2023,4,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1321274.0,false,false
+2024Q1,2024,1,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1289943.0,false,false
+2024Q2,2024,2,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1261474.6666666667,false,false
+2024Q3,2024,3,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1213326.3333333333,false,false
+2024Q4,2024,4,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1336348.6666666667,false,false
+2025Q1,2025,1,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1308267.0,false,false
+2025Q2,2025,2,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1276859.3333333333,false,false
+2025Q3,2025,3,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1221903.6666666667,false,false
+2025Q4,2025,4,qcew_us_priv_emp,"QCEW US colleges & universities, private: employment (3-month avg)",1332939.3333333333,false,false
+2019Q1,2019,1,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1260.0,false,false
+2019Q2,2019,2,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1309.0,false,false
+2019Q3,2019,3,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1397.0,false,false
+2019Q4,2019,4,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1319.0,false,false
+2020Q1,2020,1,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1311.0,false,false
+2020Q2,2020,2,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1404.0,false,false
+2020Q3,2020,3,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1484.0,false,false
+2020Q4,2020,4,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1423.0,false,false
+2021Q1,2021,1,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1348.0,false,false
+2021Q2,2021,2,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1428.0,false,false
+2021Q3,2021,3,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1537.0,false,false
+2021Q4,2021,4,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1457.0,false,false
+2022Q1,2022,1,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1391.0,false,false
+2022Q2,2022,2,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1477.0,false,false
+2022Q3,2022,3,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1623.0,false,false
+2022Q4,2022,4,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1486.0,false,false
+2023Q1,2023,1,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1487.0,false,false
+2023Q2,2023,2,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1530.0,false,false
+2023Q3,2023,3,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1666.0,false,false
+2023Q4,2023,4,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1549.0,false,false
+2024Q1,2024,1,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1552.0,false,false
+2024Q2,2024,2,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1608.0,false,false
+2024Q3,2024,3,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1740.0,false,false
+2024Q4,2024,4,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1627.0,false,false
+2025Q1,2025,1,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1615.0,false,false
+2025Q2,2025,2,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1668.0,false,false
+2025Q3,2025,3,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1796.0,false,false
+2025Q4,2025,4,qcew_us_priv_wage,"QCEW US colleges & universities, private: avg weekly wage",1685.0,false,false
+2019Q1,2019,1,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1698114.0,false,false
+2019Q2,2019,2,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1694606.6666666667,false,false
+2019Q3,2019,3,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1671691.0,false,false
+2019Q4,2019,4,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1746390.0,false,false
+2020Q1,2020,1,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1723268.3333333333,false,false
+2020Q2,2020,2,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1652435.3333333333,false,false
+2020Q3,2020,3,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1603553.0,false,false
+2020Q4,2020,4,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1664422.3333333333,false,false
+2021Q1,2021,1,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1643370.3333333333,false,false
+2021Q2,2021,2,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1636959.6666666667,false,false
+2021Q3,2021,3,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1605749.6666666667,false,false
+2021Q4,2021,4,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1675791.3333333333,false,false
+2022Q1,2022,1,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1657548.3333333333,false,false
+2022Q2,2022,2,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1660238.6666666667,false,false
+2022Q3,2022,3,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1645646.0,false,false
+2022Q4,2022,4,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1710165.3333333333,false,false
+2023Q1,2023,1,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1702046.0,false,false
+2023Q2,2023,2,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1714705.0,false,false
+2023Q3,2023,3,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1697801.0,false,false
+2023Q4,2023,4,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1772867.0,false,false
+2024Q1,2024,1,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1752567.6666666667,false,false
+2024Q2,2024,2,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1758453.3333333333,false,false
+2024Q3,2024,3,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1730703.0,false,false
+2024Q4,2024,4,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1796460.6666666667,false,false
+2025Q1,2025,1,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1786411.3333333333,false,false
+2025Q2,2025,2,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1777053.0,false,false
+2025Q3,2025,3,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1746632.3333333333,false,false
+2025Q4,2025,4,qcew_us_state_emp,"QCEW US colleges & universities, state govt: employment (3-month avg)",1813851.3333333333,false,false
+2019Q1,2019,1,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1292.0,false,false
+2019Q2,2019,2,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1301.0,false,false
+2019Q3,2019,3,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1325.0,false,false
+2019Q4,2019,4,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1312.0,false,false
+2020Q1,2020,1,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1331.0,false,false
+2020Q2,2020,2,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1378.0,false,false
+2020Q3,2020,3,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1399.0,false,false
+2020Q4,2020,4,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1392.0,false,false
+2021Q1,2021,1,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1366.0,false,false
+2021Q2,2021,2,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1394.0,false,false
+2021Q3,2021,3,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1447.0,false,false
+2021Q4,2021,4,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1456.0,false,false
+2022Q1,2022,1,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1416.0,false,false
+2022Q2,2022,2,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1448.0,false,false
+2022Q3,2022,3,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1568.0,false,false
+2022Q4,2022,4,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1449.0,false,false
+2023Q1,2023,1,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1546.0,false,false
+2023Q2,2023,2,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1507.0,false,false
+2023Q3,2023,3,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1571.0,false,false
+2023Q4,2023,4,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1508.0,false,false
+2024Q1,2024,1,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1572.0,false,false
+2024Q2,2024,2,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1579.0,false,false
+2024Q3,2024,3,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1631.0,false,false
+2024Q4,2024,4,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1638.0,false,false
+2025Q1,2025,1,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1619.0,false,false
+2025Q2,2025,2,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1632.0,false,false
+2025Q3,2025,3,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1689.0,false,false
+2025Q4,2025,4,qcew_us_state_wage,"QCEW US colleges & universities, state govt: avg weekly wage",1677.0,false,false
+2019Q1,2019,1,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3044320.0,false,false
+2019Q2,2019,2,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3013920.3333333335,false,false
+2019Q3,2019,3,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2928301.0,false,false
+2019Q4,2019,4,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3129954.6666666665,false,false
+2020Q1,2020,1,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3074468.0,false,false
+2020Q2,2020,2,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2897054.6666666665,false,false
+2020Q3,2020,3,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2783598.6666666665,false,false
+2020Q4,2020,4,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2955378.6666666665,false,false
+2021Q1,2021,1,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2919006.6666666665,false,false
+2021Q2,2021,2,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2896050.3333333335,false,false
+2021Q3,2021,3,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2809930.3333333335,false,false
+2021Q4,2021,4,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3013713.6666666665,false,false
+2022Q1,2022,1,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2973242.3333333335,false,false
+2022Q2,2022,2,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2947029.0,false,false
+2022Q3,2022,3,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2886340.6666666665,false,false
+2022Q4,2022,4,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3078554.6666666665,false,false
+2023Q1,2023,1,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3050359.3333333335,false,false
+2023Q2,2023,2,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3037096.6666666665,false,false
+2023Q3,2023,3,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",2967543.0,false,false
+2023Q4,2023,4,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3173619.0,false,false
+2024Q1,2024,1,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3123121.666666667,false,false
+2024Q2,2024,2,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3098771.6666666665,false,false
+2024Q3,2024,3,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3017892.0,false,false
+2024Q4,2024,4,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3217268.666666667,false,false
+2025Q1,2025,1,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3179017.0,false,false
+2025Q2,2025,2,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3138040.6666666665,false,false
+2025Q3,2025,3,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3050122.3333333335,false,false
+2025Q4,2025,4,qcew_us_total_emp,"QCEW US colleges & universities, all ownerships: employment",3233549.333333333,false,false
+2019Q1,2019,1,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",117278.0,false,false
+2019Q2,2019,2,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",121394.0,false,false
+2019Q3,2019,3,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",115778.0,false,false
+2019Q4,2019,4,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",119012.0,false,false
+2020Q1,2020,1,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",118520.0,false,false
+2020Q2,2020,2,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",116582.0,false,false
+2020Q3,2020,3,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",109785.0,false,false
+2020Q4,2020,4,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",112722.0,false,false
+2021Q1,2021,1,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",112632.0,false,false
+2021Q2,2021,2,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",117080.0,false,false
+2021Q3,2021,3,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",111755.0,false,false
+2021Q4,2021,4,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",115314.0,false,false
+2022Q1,2022,1,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",115365.0,false,false
+2022Q2,2022,2,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",117920.0,false,false
+2022Q3,2022,3,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",113724.0,false,false
+2022Q4,2022,4,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",117930.0,false,false
+2023Q1,2023,1,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",118113.0,false,false
+2023Q2,2023,2,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",121094.0,false,false
+2023Q3,2023,3,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",116611.0,false,false
+2023Q4,2023,4,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",120709.0,false,false
+2024Q1,2024,1,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",121497.0,false,false
+2024Q2,2024,2,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",124161.0,false,false
+2024Q3,2024,3,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",120873.0,false,false
+2024Q4,2024,4,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",124297.0,false,false
+2025Q1,2025,1,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",123922.0,false,false
+2025Q2,2025,2,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",125973.0,false,false
+2025Q3,2025,3,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",120513.0,false,true
+2025Q4,2025,4,qwi_il_emp,"QWI Illinois higher ed (NAICS 6113, all ownerships): beginning-of-quarter employment",123392.0,false,true
+2019Q1,2019,1,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),12181.0,false,false
+2019Q2,2019,2,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),11670.0,false,false
+2019Q3,2019,3,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),18511.0,false,false
+2019Q4,2019,4,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),12307.0,false,false
+2020Q1,2020,1,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),12043.0,false,false
+2020Q2,2020,2,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),7659.0,false,false
+2020Q3,2020,3,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),14207.0,false,false
+2020Q4,2020,4,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),10171.0,false,false
+2021Q1,2021,1,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),10898.0,false,false
+2021Q2,2021,2,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),11902.0,false,false
+2021Q3,2021,3,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),17408.0,false,false
+2021Q4,2021,4,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),12604.0,false,false
+2022Q1,2022,1,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),10858.0,false,false
+2022Q2,2022,2,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),12484.0,false,false
+2022Q3,2022,3,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),19277.0,false,false
+2022Q4,2022,4,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),11921.0,false,false
+2023Q1,2023,1,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),11025.0,false,false
+2023Q2,2023,2,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),12137.0,false,false
+2023Q3,2023,3,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),17992.0,false,false
+2023Q4,2023,4,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),13622.0,false,false
+2024Q1,2024,1,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),10513.0,false,false
+2024Q2,2024,2,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),14594.0,false,false
+2024Q3,2024,3,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),17123.0,false,false
+2024Q4,2024,4,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),11519.0,false,false
+2025Q1,2025,1,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),9794.0,false,false
+2025Q2,2025,2,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),10498.0,false,false
+2025Q3,2025,3,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),16286.0,false,true
+2025Q4,2025,4,qwi_il_hires,QWI Illinois higher ed: all hires (HirA),10853.0,false,true
+2019Q1,2019,1,qwi_il_seps,QWI Illinois higher ed: separations (Sep),8143.0,false,false
+2019Q2,2019,2,qwi_il_seps,QWI Illinois higher ed: separations (Sep),16604.0,false,false
+2019Q3,2019,3,qwi_il_seps,QWI Illinois higher ed: separations (Sep),15926.0,false,false
+2019Q4,2019,4,qwi_il_seps,QWI Illinois higher ed: separations (Sep),12467.0,false,false
+2020Q1,2020,1,qwi_il_seps,QWI Illinois higher ed: separations (Sep),14287.0,false,false
+2020Q2,2020,2,qwi_il_seps,QWI Illinois higher ed: separations (Sep),14506.0,false,false
+2020Q3,2020,3,qwi_il_seps,QWI Illinois higher ed: separations (Sep),11270.0,false,false
+2020Q4,2020,4,qwi_il_seps,QWI Illinois higher ed: separations (Sep),9843.0,false,false
+2021Q1,2021,1,qwi_il_seps,QWI Illinois higher ed: separations (Sep),6711.0,false,false
+2021Q2,2021,2,qwi_il_seps,QWI Illinois higher ed: separations (Sep),17175.0,false,false
+2021Q3,2021,3,qwi_il_seps,QWI Illinois higher ed: separations (Sep),13860.0,false,false
+2021Q4,2021,4,qwi_il_seps,QWI Illinois higher ed: separations (Sep),12570.0,false,false
+2022Q1,2022,1,qwi_il_seps,QWI Illinois higher ed: separations (Sep),8296.0,false,false
+2022Q2,2022,2,qwi_il_seps,QWI Illinois higher ed: separations (Sep),16653.0,false,false
+2022Q3,2022,3,qwi_il_seps,QWI Illinois higher ed: separations (Sep),15079.0,false,false
+2022Q4,2022,4,qwi_il_seps,QWI Illinois higher ed: separations (Sep),11572.0,false,false
+2023Q1,2023,1,qwi_il_seps,QWI Illinois higher ed: separations (Sep),8072.0,false,false
+2023Q2,2023,2,qwi_il_seps,QWI Illinois higher ed: separations (Sep),16628.0,false,false
+2023Q3,2023,3,qwi_il_seps,QWI Illinois higher ed: separations (Sep),13957.0,false,false
+2023Q4,2023,4,qwi_il_seps,QWI Illinois higher ed: separations (Sep),13111.0,false,false
+2024Q1,2024,1,qwi_il_seps,QWI Illinois higher ed: separations (Sep),7874.0,false,false
+2024Q2,2024,2,qwi_il_seps,QWI Illinois higher ed: separations (Sep),17903.0,false,false
+2024Q3,2024,3,qwi_il_seps,QWI Illinois higher ed: separations (Sep),13707.0,false,false
+2024Q4,2024,4,qwi_il_seps,QWI Illinois higher ed: separations (Sep),12143.0,false,false
+2025Q1,2025,1,qwi_il_seps,QWI Illinois higher ed: separations (Sep),7705.0,false,false
+2025Q2,2025,2,qwi_il_seps,QWI Illinois higher ed: separations (Sep),15958.0,false,false
+2025Q3,2025,3,qwi_il_seps,QWI Illinois higher ed: separations (Sep),13451.0,false,true
+2019Q1,2019,1,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",5814.0,false,false
+2019Q2,2019,2,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",5999.0,false,false
+2019Q3,2019,3,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6317.0,false,false
+2019Q4,2019,4,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6115.0,false,false
+2020Q1,2020,1,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6146.0,false,false
+2020Q2,2020,2,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6403.0,false,false
+2020Q3,2020,3,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6780.0,false,false
+2020Q4,2020,4,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6475.0,false,false
+2021Q1,2021,1,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6388.0,false,false
+2021Q2,2021,2,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6601.0,false,false
+2021Q3,2021,3,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7079.0,false,false
+2021Q4,2021,4,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6720.0,false,false
+2022Q1,2022,1,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6547.0,false,false
+2022Q2,2022,2,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6798.0,false,false
+2022Q3,2022,3,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7396.0,false,false
+2022Q4,2022,4,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6814.0,false,false
+2023Q1,2023,1,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",6924.0,false,false
+2023Q2,2023,2,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7135.0,false,false
+2023Q3,2023,3,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7560.0,false,false
+2023Q4,2023,4,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7239.0,false,false
+2024Q1,2024,1,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7082.0,false,false
+2024Q2,2024,2,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7243.0,false,false
+2024Q3,2024,3,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7727.0,false,false
+2024Q4,2024,4,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7443.0,false,false
+2025Q1,2025,1,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7161.0,false,false
+2025Q2,2025,2,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",7538.0,false,false
+2025Q3,2025,3,qwi_il_earn,"QWI Illinois higher ed: avg monthly earnings, stable jobs",8225.0,false,true
+2019Q1,2019,1,cpi_u,"CPI-U, U.S. city average (NSA)",252.89666666666668,false,false
+2019Q2,2019,2,cpi_u,"CPI-U, U.S. city average (NSA)",255.92766666666662,false,false
+2019Q3,2019,3,cpi_u,"CPI-U, U.S. city average (NSA)",256.62933333333336,false,false
+2019Q4,2019,4,cpi_u,"CPI-U, U.S. city average (NSA)",257.176,false,false
+2020Q1,2020,1,cpi_u,"CPI-U, U.S. city average (NSA)",258.25466666666665,false,false
+2020Q2,2020,2,cpi_u,"CPI-U, U.S. city average (NSA)",256.86,false,false
+2020Q3,2020,3,cpi_u,"CPI-U, U.S. city average (NSA)",259.7663333333333,false,false
+2020Q4,2020,4,cpi_u,"CPI-U, U.S. city average (NSA)",260.36366666666663,false,false
+2021Q1,2021,1,cpi_u,"CPI-U, U.S. city average (NSA)",263.15766666666667,false,false
+2021Q2,2021,2,cpi_u,"CPI-U, U.S. city average (NSA)",269.315,false,false
+2021Q3,2021,3,cpi_u,"CPI-U, U.S. city average (NSA)",273.6266666666666,false,false
+2021Q4,2021,4,cpi_u,"CPI-U, U.S. city average (NSA)",277.7796666666667,false,false
+2022Q1,2022,1,cpi_u,"CPI-U, U.S. city average (NSA)",284.1226666666667,false,false
+2022Q2,2022,2,cpi_u,"CPI-U, U.S. city average (NSA)",292.57199999999995,false,false
+2022Q3,2022,3,cpi_u,"CPI-U, U.S. city average (NSA)",296.41833333333335,false,false
+2022Q4,2022,4,cpi_u,"CPI-U, U.S. city average (NSA)",297.50666666666666,false,false
+2023Q1,2023,1,cpi_u,"CPI-U, U.S. city average (NSA)",300.61533333333335,false,false
+2023Q2,2023,2,cpi_u,"CPI-U, U.S. city average (NSA)",304.19966666666664,false,false
+2023Q3,2023,3,cpi_u,"CPI-U, U.S. city average (NSA)",306.8353333333333,false,false
+2023Q4,2023,4,cpi_u,"CPI-U, U.S. city average (NSA)",307.156,false,false
+2024Q1,2024,1,cpi_u,"CPI-U, U.S. city average (NSA)",310.3583333333333,false,false
+2024Q2,2024,2,cpi_u,"CPI-U, U.S. city average (NSA)",313.93066666666664,false,false
+2024Q3,2024,3,cpi_u,"CPI-U, U.S. city average (NSA)",314.87899999999996,false,false
+2024Q4,2024,4,cpi_u,"CPI-U, U.S. city average (NSA)",315.58733333333333,false,false
+2025Q1,2025,1,cpi_u,"CPI-U, U.S. city average (NSA)",318.85066666666665,false,false
+2025Q2,2025,2,cpi_u,"CPI-U, U.S. city average (NSA)",321.60699999999997,false,false
+2025Q3,2025,3,cpi_u,"CPI-U, U.S. city average (NSA)",323.9413333333334,false,false
+2026Q1,2026,1,cpi_u,"CPI-U, U.S. city average (NSA)",327.4166666666667,false,false
+2026Q2,2026,2,cpi_u,"CPI-U, U.S. city average (NSA)",334.0316666666667,false,false
+2026Q3,2026,3,cpi_u,"CPI-U, U.S. city average (NSA)",335.27933333333334,false,false
+2019Q1,2019,1,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",85.7,false,false
+2019Q2,2019,2,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",84.43333333333332,false,false
+2019Q3,2019,3,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",76.26666666666667,false,false
+2019Q4,2019,4,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",85.06666666666666,false,false
+2020Q1,2020,1,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",85.73333333333333,false,false
+2020Q2,2020,2,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",79.93333333333334,false,false
+2020Q3,2020,3,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",70.13333333333334,false,false
+2020Q4,2020,4,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",79.33333333333334,false,false
+2021Q1,2021,1,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",81.16666666666667,false,false
+2021Q2,2021,2,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",82.76666666666667,false,false
+2021Q3,2021,3,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",72.0,false,false
+2021Q4,2021,4,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",82.8,false,false
+2022Q1,2022,1,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",84.23333333333333,false,false
+2022Q2,2022,2,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",83.46666666666665,false,false
+2022Q3,2022,3,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",74.36666666666667,false,false
+2022Q4,2022,4,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",84.93333333333334,false,false
+2023Q1,2023,1,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",85.63333333333333,false,false
+2023Q2,2023,2,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",83.39999999999999,false,false
+2023Q3,2023,3,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",74.13333333333333,false,false
+2023Q4,2023,4,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",84.60000000000001,false,false
+2024Q1,2024,1,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",85.93333333333334,false,false
+2024Q2,2024,2,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",84.36666666666666,false,false
+2024Q3,2024,3,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",75.36666666666666,false,false
+2024Q4,2024,4,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",85.83333333333333,false,false
+2025Q1,2025,1,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",87.39999999999999,false,false
+2025Q2,2025,2,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",85.73333333333333,false,false
+2025Q3,2025,3,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",76.13333333333334,false,false
+2025Q4,2025,4,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",87.83333333333333,false,false
+2026Q1,2026,1,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",85.83333333333333,false,false
+2026Q2,2026,2,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",84.03333333333335,false,false
+2026Q3,2026,3,ces_il_priv_emp,"CES Illinois private colleges & universities (NAICS 6112-6113), NSA, thousands",76.03333333333335,false,false
+2019Q1,2019,1,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1882.0,false,false
+2019Q2,2019,2,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1805.7,false,false
+2019Q3,2019,3,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1675.0,false,false
+2019Q4,2019,4,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1955.6666666666667,false,false
+2020Q1,2020,1,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1879.0,false,false
+2020Q2,2020,2,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1659.8666666666668,false,false
+2020Q3,2020,3,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1578.6000000000001,false,false
+2020Q4,2020,4,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1777.2,false,false
+2021Q1,2021,1,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1755.5333333333335,false,false
+2021Q2,2021,2,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1722.1000000000001,false,false
+2021Q3,2021,3,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1620.5999999999997,false,false
+2021Q4,2021,4,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1895.0666666666666,false,false
+2022Q1,2022,1,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1824.0333333333335,false,false
+2022Q2,2022,2,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1753.0333333333335,false,false
+2022Q3,2022,3,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1631.2333333333333,false,false
+2022Q4,2022,4,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1855.3,false,false
+2023Q1,2023,1,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1777.6333333333332,false,false
+2023Q2,2023,2,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1724.7,false,false
+2023Q3,2023,3,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1632.6333333333332,false,false
+2023Q4,2023,4,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1885.7666666666667,false,false
+2024Q1,2024,1,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1843.9333333333334,false,false
+2024Q2,2024,2,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1767.1000000000001,false,false
+2024Q3,2024,3,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1685.4666666666665,false,false
+2024Q4,2024,4,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1939.4333333333334,false,false
+2025Q1,2025,1,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1898.0666666666666,false,false
+2025Q2,2025,2,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1820.9666666666665,false,false
+2025Q3,2025,3,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1701.2,false,false
+2025Q4,2025,4,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1905.4333333333332,false,false
+2026Q1,2026,1,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1858.0666666666666,false,false
+2026Q2,2026,2,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1780.4333333333334,false,false
+2026Q3,2026,3,ces_us_priv_emp,"CES U.S. private colleges & universities, NSA, thousands",1673.0333333333335,false,false
+2019Q1,2019,1,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1720.8315965677682,false,false
+2019Q2,2019,2,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1700.4514608945499,false,false
+2019Q3,2019,3,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1983.2262406999457,false,false
+2019Q4,2019,4,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1740.4342162565715,false,false
+2020Q1,2020,1,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1720.182339396255,false,false
+2020Q2,2020,2,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1843.0834644034362,false,false
+2020Q3,2020,3,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",2098.671482960969,false,false
+2020Q4,2020,4,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1899.4087116609976,false,false
+2021Q1,2021,1,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1728.9029086491873,false,false
+2021Q2,2021,2,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1744.1521861017768,false,false
+2021Q3,2021,3,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",2032.800460481435,false,false
+2021Q4,2021,4,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1782.7351486009895,false,false
+2022Q1,2022,1,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1633.191053629418,false,false
+2022Q2,2022,2,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1662.8054382055248,false,false
+2022Q3,2022,3,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1947.7574329073211,false,false
+2022Q4,2022,4,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1673.5416909424998,false,false
+2023Q1,2023,1,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1643.9671651257531,false,false
+2023Q2,2023,2,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1688.522358670128,false,false
+2023Q3,2023,3,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1908.948975889348,false,false
+2023Q4,2023,4,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1760.686962542378,false,false
+2024Q1,2024,1,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1652.855183524421,false,false
+2024Q2,2024,2,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1692.7869741938773,false,false
+2024Q3,2024,3,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1943.2378257468215,false,false
+2024Q4,2024,4,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1759.3309913156634,false,false
+2025Q1,2025,1,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1644.5845411436076,false,false
+2025Q2,2025,2,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1702.4229924514498,false,false
+2025Q3,2025,3,qcew_il_priv_wage_real,"QCEW IL colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1983.0603154480646,false,false
+2019Q1,2019,1,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1731.4376464695724,false,false
+2019Q2,2019,2,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1767.264268680083,false,false
+2019Q3,2019,3,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1774.1905368053533,false,false
+2019Q4,2019,4,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1688.2863745709815,false,false
+2020Q1,2020,1,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1709.7963328187682,false,false
+2020Q2,2020,2,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1875.7159620026473,false,false
+2020Q3,2020,3,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1907.6484943519754,false,false
+2020Q4,2020,4,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1662.4655232232867,false,false
+2021Q1,2021,1,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1833.376039459234,false,false
+2021Q2,2021,2,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1742.9072523500981,false,false
+2021Q3,2021,3,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1846.5523170256315,false,false
+2021Q4,2021,4,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1628.2394823715197,false,false
+2022Q1,2022,1,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1748.8360848835243,false,false
+2022Q2,2022,2,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1670.8272425249172,false,false
+2022Q3,2022,3,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1796.1897813338132,false,false
+2022Q4,2022,4,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1575.495814099404,false,false
+2023Q1,2023,1,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1728.7307367333224,false,false
+2023Q2,2023,2,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1686.3180213872688,false,false
+2023Q3,2023,3,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1790.9372475573218,false,false
+2023Q4,2023,4,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1590.4035365308398,false,false
+2024Q1,2024,1,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1704.709463791854,false,false
+2024Q2,2024,2,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1660.7468421902079,false,false
+2024Q3,2024,3,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1787.7787996870757,false,false
+2024Q4,2024,4,qcew_il_state_wage_real,"QCEW IL colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1678.5887477528672,false,false
+2019Q1,2019,1,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1670.4528595341972,false,false
+2019Q2,2019,2,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1714.8620664953512,false,false
+2019Q3,2019,3,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1825.1429896296602,false,false
+2019Q4,2019,4,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1719.5750795823353,false,false
+2020Q1,2020,1,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1702.0068278856531,false,false
+2020Q2,2020,2,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1832.6410651716888,false,false
+2020Q3,2020,3,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1915.3926695658538,false,false
+2020Q4,2020,4,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1832.4465062329489,false,false
+2021Q1,2021,1,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1717.4363455114994,false,false
+2021Q2,2021,2,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1777.7653973971003,false,false
+2021Q3,2021,3,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1883.3118190234875,false,false
+2021Q4,2021,4,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1758.5952007526348,false,false
+2022Q1,2022,1,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1641.4514130047114,false,false
+2022Q2,2022,2,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1692.6007113918402,false,false
+2022Q3,2022,3,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1835.7783470433114,false,false
+2022Q4,2022,4,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1674.6686550441448,false,false
+2023Q1,2023,1,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1658.4661971112585,false,false
+2023Q2,2023,2,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1686.3180213872688,false,false
+2023Q3,2023,3,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1820.4401796403283,false,false
+2023Q4,2023,4,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1690.8270954607215,false,false
+2024Q1,2024,1,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1676.6217286469944,false,false
+2024Q2,2024,2,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1717.351075396691,false,false
+2024Q3,2024,3,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1852.7308585202572,false,false
+2024Q4,2024,4,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1728.521451008807,false,false
+2025Q1,2025,1,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1698.2122979200294,false,false
+2025Q2,2025,2,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1738.9109316650447,false,false
+2025Q3,2025,3,qcew_us_priv_wage_real,"QCEW US colleges & universities, private: avg weekly wage (real, 2026Q3 CPI-U dollars)",1858.8602956914008,false,false
+2019Q1,2019,1,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1712.877059141415,false,false
+2019Q2,2019,2,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1704.381626058405,false,false
+2019Q3,2019,3,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1731.0769228770937,false,false
+2019Q4,2019,4,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1710.449207287357,false,false
+2020Q1,2020,1,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1727.97184432937,false,false
+2020Q2,2020,2,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1798.7032676685094,false,false
+2020Q3,2020,3,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1805.6835207025804,false,false
+2020Q4,2020,4,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1792.5267299200736,false,false
+2021Q1,2021,1,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1740.3694717868755,false,false
+2021Q2,2021,2,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1735.4376498400263,false,false
+2021Q3,2021,3,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1773.0333130299196,false,false
+2021Q4,2021,4,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1757.3882033602172,false,false
+2022Q1,2022,1,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1670.952696487902,false,false
+2022Q2,2022,2,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1659.3675220686423,false,false
+2022Q3,2022,3,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1773.5677437855284,false,false
+2022Q4,2022,4,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1632.9709832832878,false,false
+2023Q1,2023,1,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1724.2694961223976,false,false
+2023Q2,2023,2,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1660.9681426343884,false,false
+2023Q3,2023,3,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1716.633566755676,false,false
+2023Q4,2023,4,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1646.073118111535,false,false
+2024Q1,2024,1,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1698.2276787584244,false,false
+2024Q2,2024,2,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1686.3789477931434,false,false
+2024Q3,2024,3,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1736.6689829003103,false,false
+2024Q4,2024,4,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1740.20782836658,false,false
+2025Q1,2025,1,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1702.4183964907293,false,false
+2025Q2,2025,2,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1701.3804799024897,false,false
+2025Q3,2025,3,qcew_us_state_wage_real,"QCEW US colleges & universities, state govt: avg weekly wage (real, 2026Q3 CPI-U dollars)",1748.1152780750422,false,false

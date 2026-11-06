@@ -1,0 +1,105 @@
+{
+ "updated_at_utc": "2026-11-06T14:22:10.719111+00:00",
+ "raw_dir": "data/raw",
+ "not_reachable": {
+  "fred.stlouisfed.org": "proxy refused CONNECT (403) on 2026-11-06"
+ },
+ "files": [
+  {
+   "filename": "bls_CES6561130001.html",
+   "url": "https://data.bls.gov/timeseries/CES6561130001?output_view=data&include_graphs=false&years_option=specific_years&from_year=2015&to_year=2026",
+   "description": "CES all employees, private colleges and universities, U.S., SA (thousands)",
+   "path": "data/raw/bls_CES6561130001.html",
+   "status": "downloaded",
+   "http_status": 200,
+   "content_type": "text/html;charset=ISO-8859-1",
+   "retrieved_at_utc": "2026-11-06T14:11:06.778929+00:00",
+   "bytes": 66231,
+   "sha256": "ddae82253066c4b03f6ed248a3706eba27667ebaac41d8dcaef345299f085e70"
+  },
+  {
+   "filename": "bls_CEU6561130001.html",
+   "url": "https://data.bls.gov/timeseries/CEU6561130001?output_view=data&include_graphs=false&years_option=specific_years&from_year=2015&to_year=2026",
+   "description": "CES all employees, private colleges and universities, U.S., NSA (thousands)",
+   "path": "data/raw/bls_CEU6561130001.html",
+   "status": "downloaded",
+   "http_status": 200,
+   "content_type": "text/html;charset=ISO-8859-1",
+   "retrieved_at_utc": "2026-11-06T14:11:06.417527+00:00",
+   "bytes": 66135,
+   "sha256": "2bea8fb03ed591448485a2e77a835b6889fc2e47cf58fb400df3cdb79e0110fe"
+  },
+  {
+   "filename": "bls_CUUR0000SA0.html",
+   "url": "https://data.bls.gov/timeseries/CUUR0000SA0?output_view=data&include_graphs=false&years_option=specific_years&from_year=2015&to_year=2026",
+   "description": "CPI-U, U.S. city average, all items, NSA",
+   "path": "data/raw/bls_CUUR0000SA0.html",
+   "status": "downloaded",
+   "http_status": 200,
+   "content_type": "text/html;charset=ISO-8859-1",
+   "retrieved_at_utc": "2026-11-06T14:11:05.918915+00:00",
+   "bytes": 68430,
+   "sha256": "6874203f19f6865b4aff177eb860c22e4b8e26acba8f9a13c063a91ee7a1c76b"
+  },
+  {
+   "filename": "bls_SMU17000006561130001.html",
+   "url": "https://data.bls.gov/timeseries/SMU17000006561130001?output_view=data&include_graphs=false&years_option=specific_years&from_year=2015&to_year=2026",
+   "description": "CES all employees, private colleges and universities, Illinois, NSA (thousands)",
+   "path": "data/raw/bls_SMU17000006561130001.html",
+   "status": "downloaded",
+   "http_status": 200,
+   "content_type": "text/html;charset=ISO-8859-1",
+   "retrieved_at_utc": "2026-11-06T14:11:07.178850+00:00",
+   "bytes": 64282,
+   "sha256": "13d1b18c68af80df1fefec7efb1f3c823c6a933bf7fb0e624debfe6a97f067b3"
+  },
+  {
+   "filename": "indeed_aggregate_job_postings_US.csv",
+   "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/aggregate_job_postings_US.csv",
+   "description": "Indeed Hiring Lab job postings index (CC BY 4.0)",
+   "path": "data/raw/indeed_aggregate_job_postings_US.csv",
+   "status": "downloaded",
+   "http_status": 200,
+   "content_type": "text/plain; charset=utf-8",
+   "retrieved_at_utc": "2026-11-06T14:11:07.662791+00:00",
+   "bytes": 204407,
+   "sha256": "6168f3e7fd08c9c84ac11fac9c04bcc2810fa4ec9e6a8a07f412e06e5ae69e4d"
+  },
+  {
+   "filename": "indeed_job_postings_by_sector_US.csv",
+   "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/job_postings_by_sector_US.csv",
+   "description": "Indeed Hiring Lab job postings index (CC BY 4.0)",
+   "path": "data/raw/indeed_job_postings_by_sector_US.csv",
+   "status": "downloaded",
+   "http_status": 200,
+   "content_type": "text/plain; charset=utf-8",
+   "retrieved_at_utc": "2026-11-06T14:11:07.826583+00:00",
+   "bytes": 12206341,
+   "sha256": "d3c8d54151c0dd37d3536ee750df109a65c8640d34fe74c0afd99c4fe1a36675"
+  },
+  {
+   "filename": "indeed_metro_job_postings_us.csv",
+   "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/metro_job_postings_us.csv",
+   "description": "Indeed Hiring Lab job postings index (CC BY 4.0)",
+   "path": "data/raw/indeed_metro_job_postings_us.csv",
+   "status": "downloaded",
+   "http_status": 200,
+   "content_type": "text/plain; charset=utf-8",
+   "retrieved_at_utc": "2026-11-06T14:11:08.877589+00:00",
+   "bytes": 63207520,
+   "sha256": "e9489b20feb4280857aeeb58815b0eb252295431a70145aea4e57d499aa732b9"
+  },
+  {
+   "filename": "indeed_state_job_postings_us.csv",
+   "url": "https://raw.githubusercontent.com/hiring-lab/job_postings_tracker/master/US/state_job_postings_us.csv",
+   "description": "Indeed Hiring Lab job postings index (CC BY 4.0)",
+   "path": "data/raw/indeed_state_job_postings_us.csv",
+   "status": "downloaded",
+   "http_status": 200,
+   "content_type": "text/plain; charset=utf-8",
+   "retrieved_at_utc": "2026-11-06T14:11:08.570718+00:00",
+   "bytes": 2595912,
+   "sha256": "45655f350c930d46e083cde5860d99838b6027730653ab64404a6176e561f869"
+  }
+ ]
+}

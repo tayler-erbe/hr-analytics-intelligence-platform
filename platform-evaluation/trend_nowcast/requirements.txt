@@ -1,0 +1,8 @@
+# Tested with Python 3.13 and the versions in comments.
+duckdb>=1.1        # 2.0.0
+pyarrow>=17        # 26.0.1
+numpy>=2.0         # 2.4.6
+scipy>=1.13        # 1.18.1 (installed with statsmodels)
+statsmodels>=0.14  # 0.15.0
+scikit-learn>=1.5  # 1.9.1
+# Screenshots: node with the `playwright` npm package (require('playwright')).
