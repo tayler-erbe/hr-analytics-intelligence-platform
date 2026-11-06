@@ -1,0 +1,4 @@
+artifacts/survey_text.duckdb
+artifacts/survey_text.duckdb.wal
+__pycache__/
+tests/__pycache__/

@@ -1,0 +1,102 @@
+# Survey text codebook v0.1 (DRAFT, for SP&P / HR Analytics review)
+#
+# Multi-label: a comment may carry any number of themes, or none.
+# Code a theme when the comment is ABOUT that topic, whatever the sentiment
+# ("pay is fair" and "pay is too low" are both `pay`).
+#
+# `lexicon` drives the deterministic baseline coder (lexicon.py). Entries are
+# lower-case regular-expression fragments matched on word boundaries against
+# REDACTED text. `exclude` patterns veto a match in the same sentence.
+# The lexicon was written from the theme definitions, but the synthetic
+# generator was written by the same author, so scores on synthetic data are an
+# optimistic pipeline check, not an accuracy estimate (see README §Evaluation).
+version: "0.1"
+status: draft-unreviewed
+min_cell_size: 10
+themes:
+  - id: workload
+    label: Workload and staffing
+    definition: Volume of work, hours, understaffing, unfilled positions, burnout, pace.
+    include_examples: ["we are short-staffed", "too much on my plate", "burned out"]
+    exclude_note: Process friction without volume (use bureaucracy).
+    lexicon: ['workload', 'work load', 'short[- ]staffed', 'understaffed', 'burn(?:ed|t)? ?out', 'overtime',
+              'too much work', 'on my plate', 'exhaust\w*', 'overwhelm\w*', 'unfilled', 'vacan(?:t|cies)',
+              'covering (?:for|two|three)', 'two jobs', 'stretched thin', 'unsustainable', 'pace',
+              'evenings and weekends', 'nights and weekends', 'staffing']
+    exclude: []
+  - id: pay
+    label: Pay and benefits
+    definition: Salary, raises, compression, equity, cost of living, benefits, pension.
+    include_examples: ["salary has not kept up", "the raise pool was tiny"]
+    exclude_note: Retirement as a reason for leaving goes to relocation_retirement.
+    lexicon: ['pay', 'paid', 'salar(?:y|ies)', 'raises?', 'compensation', 'wages?', 'cost of living',
+              'compression', 'underpaid', 'benefits', 'inflation', 'market rate', 'money', 'paycheck',
+              'stipend', 'pay range', 'merit increase']
+    exclude: ['pay attention', 'paid off']
+  - id: career_growth
+    label: Career growth and promotion
+    definition: Advancement, promotion paths, development, reclassification, learning opportunities.
+    include_examples: ["no path to promotion", "reclassification has been pending for a year"]
+    exclude_note: AI-specific training goes to ai_tools.
+    lexicon: ['career', 'promot\w*', 'advancement', 'advance', 'growth', 'reclass\w*', 'ladder',
+              'professional development', 'grow', 'dead[- ]end', 'stuck in', 'next step', 'mentor\w*',
+              'upward', 'progression', 'stagnat\w*']
+    exclude: []
+  - id: manager_support
+    label: Manager and supervisor support
+    definition: Direct supervisor or manager behavior, communication, support, fairness, trust.
+    include_examples: ["my supervisor has my back", "my manager never gives feedback"]
+    exclude_note: Senior leadership in general without a supervisor relationship goes to culture.
+    lexicon: ['manager', 'supervisor', 'boss', 'my lead', 'team lead', 'director', 'micromanag\w*',
+              'one[- ]on[- ]ones?', '1:1s?', 'feedback', 'has my back', 'supervision', 'chair']
+    exclude: []
+  - id: remote_hybrid
+    label: Remote and hybrid work
+    definition: Telework, hybrid schedules, return-to-office, flexibility of location or hours.
+    include_examples: ["hybrid schedule makes this job workable", "the return-to-office mandate"]
+    exclude_note: ""
+    lexicon: ['remote', 'hybrid', 'telework\w*', 'work from home', 'wfh', 'return[- ]to[- ](?:office|campus)',
+              'in[- ]person', 'commut\w*', 'flexib\w*', 'days on campus', 'in the office', 'from home']
+    exclude: []
+  - id: recognition
+    label: Recognition and appreciation
+    definition: Feeling valued, credit for work, thanks, awards, visibility of contributions.
+    include_examples: ["nobody notices the extra effort", "I feel appreciated"]
+    exclude_note: ""
+    lexicon: ['recogni\w*', 'apprecia\w*', 'valued', 'thank(?:s|ed| you)?', 'credit', 'acknowledg\w*',
+              'unnoticed', 'invisible', 'taken for granted', 'awards?', 'kudos', 'notices?']
+    exclude: ['thank you for (?:the|this) survey']
+  - id: bureaucracy
+    label: Bureaucracy and process
+    definition: Approvals, forms, paperwork, slow or unclear processes, systems friction, red tape.
+    include_examples: ["six signatures for a purchase", "the hiring process takes months"]
+    exclude_note: Staffing shortages caused by slow hiring may also carry workload.
+    lexicon: ['bureaucra\w*', 'red tape', 'paperwork', 'approvals?', 'signatures?', 'forms?', 'process(?:es)?',
+              'policies', 'policy', 'procedures?', 'tickets?', 'hoops', 'silos?', 'redundant', 'workflow',
+              'banner screens', 'sign[- ]off', 'layers']
+    exclude: []
+  - id: ai_tools
+    label: AI tools and training
+    definition: Generative AI tools, copilots, chat tools, AI training, guidance or anxiety about AI.
+    include_examples: ["Copilot saves me an hour a day", "no guidance on what AI we may use"]
+    exclude_note: ""
+    lexicon: ['ai', 'a\.i\.', 'artificial intelligence', 'copilot', 'chatgpt', 'chat ?bot', 'genai',
+              'generative', 'llm', 'prompt\w*', 'automat\w*', 'machine learning']
+    exclude: []
+  - id: culture_belonging
+    label: Culture, belonging and inclusion
+    definition: Team climate, inclusion, respect, belonging, morale, collegiality, leadership culture.
+    include_examples: ["I feel like I belong here", "cliques in our unit"]
+    exclude_note: Supervisor-specific behavior goes to manager_support.
+    lexicon: ['culture', 'belong\w*', 'inclusi\w*', 'included', 'excluded', 'respect\w*', 'morale', 'toxic',
+              'cliques?', 'collegial\w*', 'colleagues', 'coworkers', 'co-workers', 'team spirit', 'diversity',
+              'welcom\w*', 'community', 'trust', 'leadership', 'mission']
+    exclude: []
+  - id: relocation_retirement
+    label: Relocation, retirement and life events
+    definition: Leaving or planning to leave for retirement, a move, a partner's job, family care, health.
+    include_examples: ["retiring after 28 years", "my spouse took a job out of state"]
+    exclude_note: Pension as a pay topic goes to pay.
+    lexicon: ['retir\w*', 'reloca\w*', 'moving', 'move (?:to|out|closer|back)', 'spouse', 'partner', 'family',
+              'out of state', 'closer to', 'pension eligib\w*', 'surs', 'caregiv\w*', 'personal reasons', 'health']
+    exclude: []

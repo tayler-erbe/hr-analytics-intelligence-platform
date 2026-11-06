@@ -1,0 +1,2120 @@
+{
+ "codebook_status": "draft-unreviewed",
+ "codebook_version": "0.1",
+ "counts": {
+  "exit_comments": 704,
+  "exit_responses": 800,
+  "ws_comments": 2444,
+  "ws_responses": 3000
+ },
+ "data_label": "SYNTHETIC DEMONSTRATION DATA - not real survey responses",
+ "drivers": {
+  "logistic": {
+   "dropped_small_themes": [],
+   "n": 2444,
+   "outcome": "detractor",
+   "terms": [
+    {
+     "hi": 4.958,
+     "lo": 3.334,
+     "or": 4.066,
+     "term": "workload"
+    },
+    {
+     "hi": 2.435,
+     "lo": 1.624,
+     "or": 1.989,
+     "term": "pay"
+    },
+    {
+     "hi": 2.616,
+     "lo": 1.635,
+     "or": 2.068,
+     "term": "career_growth"
+    },
+    {
+     "hi": 1.709,
+     "lo": 1.061,
+     "or": 1.347,
+     "term": "manager_support"
+    },
+    {
+     "hi": 1.042,
+     "lo": 0.659,
+     "or": 0.829,
+     "term": "remote_hybrid"
+    },
+    {
+     "hi": 1.891,
+     "lo": 1.248,
+     "or": 1.536,
+     "term": "recognition"
+    },
+    {
+     "hi": 2.167,
+     "lo": 1.397,
+     "or": 1.74,
+     "term": "bureaucracy"
+    },
+    {
+     "hi": 1.951,
+     "lo": 1.104,
+     "or": 1.467,
+     "term": "ai_tools"
+    },
+    {
+     "hi": 2.371,
+     "lo": 1.465,
+     "or": 1.863,
+     "term": "culture_belonging"
+    },
+    {
+     "hi": 1.6,
+     "lo": 0.546,
+     "or": 0.935,
+     "term": "relocation_retirement"
+    },
+    {
+     "hi": 1.22,
+     "lo": 0.863,
+     "or": 1.026,
+     "term": "survey_wave=2026"
+    }
+   ]
+  },
+  "relative_risk": [
+   {
+    "hi": 1.991,
+    "lo": 1.683,
+    "n_mention": 646,
+    "rate_with": 0.6517,
+    "rate_without": 0.356,
+    "rr": 1.831,
+    "suppressed": false,
+    "theme": "workload"
+   },
+   {
+    "hi": 1.416,
+    "lo": 1.17,
+    "n_mention": 573,
+    "rate_with": 0.5236,
+    "rate_without": 0.4067,
+    "rr": 1.287,
+    "suppressed": false,
+    "theme": "pay"
+   },
+   {
+    "hi": 1.447,
+    "lo": 1.17,
+    "n_mention": 378,
+    "rate_with": 0.5397,
+    "rate_without": 0.4148,
+    "rr": 1.301,
+    "suppressed": false,
+    "theme": "career_growth"
+   },
+   {
+    "hi": 1.247,
+    "lo": 0.986,
+    "n_mention": 376,
+    "rate_with": 0.4734,
+    "rate_without": 0.427,
+    "rr": 1.109,
+    "suppressed": false,
+    "theme": "manager_support"
+   },
+   {
+    "hi": 1.027,
+    "lo": 0.797,
+    "n_mention": 423,
+    "rate_with": 0.3995,
+    "rate_without": 0.4414,
+    "rr": 0.905,
+    "suppressed": false,
+    "theme": "remote_hybrid"
+   },
+   {
+    "hi": 1.291,
+    "lo": 1.054,
+    "n_mention": 532,
+    "rate_with": 0.4887,
+    "rate_without": 0.4189,
+    "rr": 1.167,
+    "suppressed": false,
+    "theme": "recognition"
+   },
+   {
+    "hi": 1.372,
+    "lo": 1.115,
+    "n_mention": 451,
+    "rate_with": 0.5144,
+    "rate_without": 0.416,
+    "rr": 1.237,
+    "suppressed": false,
+    "theme": "bureaucracy"
+   },
+   {
+    "hi": 1.363,
+    "lo": 1.045,
+    "n_mention": 242,
+    "rate_with": 0.5083,
+    "rate_without": 0.426,
+    "rr": 1.193,
+    "suppressed": false,
+    "theme": "ai_tools"
+   },
+   {
+    "hi": 1.415,
+    "lo": 1.135,
+    "n_mention": 357,
+    "rate_with": 0.5294,
+    "rate_without": 0.4178,
+    "rr": 1.267,
+    "suppressed": false,
+    "theme": "culture_belonging"
+   },
+   {
+    "hi": 1.223,
+    "lo": 0.659,
+    "n_mention": 64,
+    "rate_with": 0.3906,
+    "rate_without": 0.4353,
+    "rr": 0.897,
+    "suppressed": false,
+    "theme": "relocation_retirement"
+   }
+  ]
+ },
+ "enps": {
+  "by_role_family": [
+   {
+    "detractors": 37.5,
+    "enps": -6.6,
+    "hi": 1.7,
+    "lo": -14.9,
+    "n": 379,
+    "promoters": 30.9,
+    "reason": null,
+    "segment": "Academic Professional",
+    "suppressed": false
+   },
+   {
+    "detractors": 47.1,
+    "enps": -27.9,
+    "hi": -20.1,
+    "lo": -35.8,
+    "n": 365,
+    "promoters": 19.2,
+    "reason": null,
+    "segment": "Civil Service - Admin/Clerical",
+    "suppressed": false
+   },
+   {
+    "detractors": 39.0,
+    "enps": -12.3,
+    "hi": -1.1,
+    "lo": -23.5,
+    "n": 195,
+    "promoters": 26.7,
+    "reason": null,
+    "segment": "Civil Service - Technical",
+    "suppressed": false
+   },
+   {
+    "detractors": 59.5,
+    "enps": -41.1,
+    "hi": -29.8,
+    "lo": -52.3,
+    "n": 185,
+    "promoters": 18.4,
+    "reason": null,
+    "segment": "Civil Service - Trades/Building",
+    "suppressed": false
+   },
+   {
+    "detractors": 35.0,
+    "enps": -1.5,
+    "hi": 8.5,
+    "lo": -11.6,
+    "n": 260,
+    "promoters": 33.5,
+    "reason": null,
+    "segment": "Faculty",
+    "suppressed": false
+   },
+   {
+    "detractors": 39.7,
+    "enps": -9.5,
+    "hi": 5.6,
+    "lo": -24.6,
+    "n": 116,
+    "promoters": 30.2,
+    "reason": null,
+    "segment": "Postdoc/Research Staff",
+    "suppressed": false
+   }
+  ],
+  "by_tenure_band": [
+   {
+    "detractors": 43.6,
+    "enps": -16.1,
+    "hi": -2.8,
+    "lo": -29.4,
+    "n": 149,
+    "promoters": 27.5,
+    "reason": null,
+    "segment": "<1 yr",
+    "suppressed": false
+   },
+   {
+    "detractors": 42.5,
+    "enps": -16.5,
+    "hi": -7.7,
+    "lo": -25.3,
+    "n": 327,
+    "promoters": 26.0,
+    "reason": null,
+    "segment": "1-3 yrs",
+    "suppressed": false
+   },
+   {
+    "detractors": 46.5,
+    "enps": -23.1,
+    "hi": -13.5,
+    "lo": -32.6,
+    "n": 273,
+    "promoters": 23.4,
+    "reason": null,
+    "segment": "3-5 yrs",
+    "suppressed": false
+   },
+   {
+    "detractors": 42.3,
+    "enps": -14.5,
+    "hi": -5.6,
+    "lo": -23.4,
+    "n": 331,
+    "promoters": 27.8,
+    "reason": null,
+    "segment": "5-10 yrs",
+    "suppressed": false
+   },
+   {
+    "detractors": 40.1,
+    "enps": -13.5,
+    "hi": -4.1,
+    "lo": -22.9,
+    "n": 282,
+    "promoters": 26.6,
+    "reason": null,
+    "segment": "10-20 yrs",
+    "suppressed": false
+   },
+   {
+    "detractors": 38.4,
+    "enps": -10.9,
+    "hi": 2.6,
+    "lo": -24.3,
+    "n": 138,
+    "promoters": 27.5,
+    "reason": null,
+    "segment": "20+ yrs",
+    "suppressed": false
+   }
+  ],
+  "by_unit": [
+   {
+    "detractors": 37.8,
+    "enps": -3.6,
+    "hi": 7.6,
+    "lo": -14.8,
+    "n": 222,
+    "promoters": 34.2,
+    "reason": null,
+    "segment": "Applied Sciences College",
+    "suppressed": false
+   },
+   {
+    "detractors": 43.0,
+    "enps": -15.6,
+    "hi": -1.7,
+    "lo": -29.5,
+    "n": 135,
+    "promoters": 27.4,
+    "reason": null,
+    "segment": "Arts & Humanities College",
+    "suppressed": false
+   },
+   {
+    "detractors": 44.3,
+    "enps": -21.4,
+    "hi": -2.9,
+    "lo": -40.0,
+    "n": 70,
+    "promoters": 22.9,
+    "reason": null,
+    "segment": "Athletics Operations",
+    "suppressed": false
+   },
+   {
+    "detractors": 21.1,
+    "enps": 23.2,
+    "hi": 38.7,
+    "lo": 7.6,
+    "n": 95,
+    "promoters": 44.2,
+    "reason": null,
+    "segment": "Business School",
+    "suppressed": false
+   },
+   {
+    "detractors": 62.5,
+    "enps": -49.1,
+    "hi": -39.5,
+    "lo": -58.7,
+    "n": 216,
+    "promoters": 13.4,
+    "reason": null,
+    "segment": "Facilities & Services",
+    "suppressed": false
+   },
+   {
+    "n": null,
+    "reason": "n<k",
+    "segment": "Field Research Station",
+    "suppressed": true
+   },
+   {
+    "detractors": 50.0,
+    "enps": -32.0,
+    "hi": -19.8,
+    "lo": -44.2,
+    "n": 150,
+    "promoters": 18.0,
+    "reason": null,
+    "segment": "Health Sciences College",
+    "suppressed": false
+   },
+   {
+    "n": null,
+    "reason": "complementary",
+    "segment": "Human Resources Office",
+    "suppressed": true
+   },
+   {
+    "detractors": 45.0,
+    "enps": -27.0,
+    "hi": -13.1,
+    "lo": -40.9,
+    "n": 111,
+    "promoters": 18.0,
+    "reason": null,
+    "segment": "Research Administration",
+    "suppressed": false
+   },
+   {
+    "detractors": 41.7,
+    "enps": -14.3,
+    "hi": -1.9,
+    "lo": -26.7,
+    "n": 168,
+    "promoters": 27.4,
+    "reason": null,
+    "segment": "Student Affairs",
+    "suppressed": false
+   },
+   {
+    "detractors": 34.1,
+    "enps": -4.9,
+    "hi": 7.3,
+    "lo": -17.0,
+    "n": 164,
+    "promoters": 29.3,
+    "reason": null,
+    "segment": "Technology Services",
+    "suppressed": false
+   },
+   {
+    "detractors": 27.2,
+    "enps": 10.7,
+    "hi": 26.1,
+    "lo": -4.8,
+    "n": 103,
+    "promoters": 37.9,
+    "reason": null,
+    "segment": "University Libraries",
+    "suppressed": false
+   }
+  ],
+  "latest_wave": 2026,
+  "overall_by_wave": [
+   {
+    "detractors": 42.8,
+    "enps": -14.5,
+    "hi": -10.3,
+    "lo": -18.7,
+    "n": 1500,
+    "promoters": 28.3,
+    "reason": null,
+    "segment": 2025,
+    "suppressed": false
+   },
+   {
+    "detractors": 42.5,
+    "enps": -16.1,
+    "hi": -12.0,
+    "lo": -20.3,
+    "n": 1500,
+    "promoters": 26.3,
+    "reason": null,
+    "segment": 2026,
+    "suppressed": false
+   }
+  ]
+ },
+ "evaluation": {
+  "coders": {
+   "lexicon_v0.1": {
+    "exact_match": 0.6825,
+    "macro_f1": 0.8841,
+    "micro": {
+     "f1": 0.8882,
+     "precision": 0.9017,
+     "recall": 0.8752
+    },
+    "n_responses": 400,
+    "per_theme": [
+     {
+      "f1": 0.9339,
+      "fn": 14,
+      "fp": 2,
+      "kappa": 0.9053,
+      "precision": 0.9826,
+      "predicted": 115,
+      "recall": 0.8898,
+      "support": 127,
+      "theme": "workload",
+      "tp": 113
+     },
+     {
+      "f1": 0.9261,
+      "fn": 10,
+      "fp": 5,
+      "kappa": 0.901,
+      "precision": 0.9495,
+      "predicted": 99,
+      "recall": 0.9038,
+      "support": 104,
+      "theme": "pay",
+      "tp": 94
+     },
+     {
+      "f1": 0.9333,
+      "fn": 10,
+      "fp": 0,
+      "kappa": 0.918,
+      "precision": 1.0,
+      "predicted": 70,
+      "recall": 0.875,
+      "support": 80,
+      "theme": "career_growth",
+      "tp": 70
+     },
+     {
+      "f1": 0.8205,
+      "fn": 14,
+      "fp": 7,
+      "kappa": 0.7899,
+      "precision": 0.8727,
+      "predicted": 55,
+      "recall": 0.7742,
+      "support": 62,
+      "theme": "manager_support",
+      "tp": 48
+     },
+     {
+      "f1": 0.8496,
+      "fn": 12,
+      "fp": 5,
+      "kappa": 0.8249,
+      "precision": 0.9057,
+      "predicted": 53,
+      "recall": 0.8,
+      "support": 60,
+      "theme": "remote_hybrid",
+      "tp": 48
+     },
+     {
+      "f1": 0.7402,
+      "fn": 1,
+      "fp": 32,
+      "kappa": 0.6946,
+      "precision": 0.5949,
+      "predicted": 79,
+      "recall": 0.9792,
+      "support": 48,
+      "theme": "recognition",
+      "tp": 47
+     },
+     {
+      "f1": 0.9313,
+      "fn": 4,
+      "fp": 5,
+      "kappa": 0.9178,
+      "precision": 0.9242,
+      "predicted": 66,
+      "recall": 0.9385,
+      "support": 65,
+      "theme": "bureaucracy",
+      "tp": 61
+     },
+     {
+      "f1": 0.8861,
+      "fn": 9,
+      "fp": 0,
+      "kappa": 0.8738,
+      "precision": 1.0,
+      "predicted": 35,
+      "recall": 0.7955,
+      "support": 44,
+      "theme": "ai_tools",
+      "tp": 35
+     },
+     {
+      "f1": 0.8571,
+      "fn": 9,
+      "fp": 9,
+      "kappa": 0.8304,
+      "precision": 0.8571,
+      "predicted": 63,
+      "recall": 0.8571,
+      "support": 63,
+      "theme": "culture_belonging",
+      "tp": 54
+     },
+     {
+      "f1": 0.963,
+      "fn": 2,
+      "fp": 0,
+      "kappa": 0.9603,
+      "precision": 1.0,
+      "predicted": 26,
+      "recall": 0.9286,
+      "support": 28,
+      "theme": "relocation_retirement",
+      "tp": 26
+     }
+    ]
+   }
+  },
+  "gold_file": "gold_sample.csv",
+  "inter_rater": {
+   "coders": [
+    "coder_A_SIMULATED",
+    "coder_B_SIMULATED"
+   ],
+   "n_responses": 400,
+   "per_theme": [
+    {
+     "kappa": 0.8911,
+     "theme": "workload"
+    },
+    {
+     "kappa": 0.9052,
+     "theme": "pay"
+    },
+    {
+     "kappa": 0.8534,
+     "theme": "career_growth"
+    },
+    {
+     "kappa": 0.8971,
+     "theme": "manager_support"
+    },
+    {
+     "kappa": 0.8784,
+     "theme": "remote_hybrid"
+    },
+    {
+     "kappa": 0.8718,
+     "theme": "recognition"
+    },
+    {
+     "kappa": 0.8869,
+     "theme": "bureaucracy"
+    },
+    {
+     "kappa": 0.7759,
+     "theme": "ai_tools"
+    },
+    {
+     "kappa": 0.8761,
+     "theme": "culture_belonging"
+    },
+    {
+     "kappa": 0.7238,
+     "theme": "relocation_retirement"
+    }
+   ]
+  },
+  "simulated_gold": true
+ },
+ "exit_reasons": [
+  "Better pay elsewhere",
+  "Career advancement elsewhere",
+  "Other",
+  "Relocation / family",
+  "Remote or flexible work elsewhere",
+  "Retirement",
+  "Supervisor relationship",
+  "Unit culture",
+  "Workload / burnout"
+ ],
+ "exit_trend": [
+  {
+   "category": "Better pay elsewhere",
+   "count": 34,
+   "group": "2024H1",
+   "n": 152,
+   "share": 0.2237,
+   "suppressed": false
+  },
+  {
+   "category": "Career advancement elsewhere",
+   "count": 25,
+   "group": "2024H1",
+   "n": 152,
+   "share": 0.1645,
+   "suppressed": false
+  },
+  {
+   "category": "Other",
+   "count": 12,
+   "group": "2024H1",
+   "n": 152,
+   "share": 0.0789,
+   "suppressed": false
+  },
+  {
+   "category": "Relocation / family",
+   "count": 14,
+   "group": "2024H1",
+   "n": 152,
+   "share": 0.0921,
+   "suppressed": false
+  },
+  {
+   "category": "Remote or flexible work elsewhere",
+   "count": null,
+   "group": "2024H1",
+   "n": 152,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Retirement",
+   "count": null,
+   "group": "2024H1",
+   "n": 152,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Supervisor relationship",
+   "count": 14,
+   "group": "2024H1",
+   "n": 152,
+   "share": 0.0921,
+   "suppressed": false
+  },
+  {
+   "category": "Unit culture",
+   "count": 11,
+   "group": "2024H1",
+   "n": 152,
+   "share": 0.0724,
+   "suppressed": false
+  },
+  {
+   "category": "Workload / burnout",
+   "count": 24,
+   "group": "2024H1",
+   "n": 152,
+   "share": 0.1579,
+   "suppressed": false
+  },
+  {
+   "category": "Better pay elsewhere",
+   "count": 32,
+   "group": "2024H2",
+   "n": 144,
+   "share": 0.2222,
+   "suppressed": false
+  },
+  {
+   "category": "Career advancement elsewhere",
+   "count": 17,
+   "group": "2024H2",
+   "n": 144,
+   "share": 0.1181,
+   "suppressed": false
+  },
+  {
+   "category": "Other",
+   "count": null,
+   "group": "2024H2",
+   "n": 144,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Relocation / family",
+   "count": 16,
+   "group": "2024H2",
+   "n": 144,
+   "share": 0.1111,
+   "suppressed": false
+  },
+  {
+   "category": "Remote or flexible work elsewhere",
+   "count": 16,
+   "group": "2024H2",
+   "n": 144,
+   "share": 0.1111,
+   "suppressed": false
+  },
+  {
+   "category": "Retirement",
+   "count": null,
+   "group": "2024H2",
+   "n": 144,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Supervisor relationship",
+   "count": 10,
+   "group": "2024H2",
+   "n": 144,
+   "share": 0.0694,
+   "suppressed": false
+  },
+  {
+   "category": "Unit culture",
+   "count": 13,
+   "group": "2024H2",
+   "n": 144,
+   "share": 0.0903,
+   "suppressed": false
+  },
+  {
+   "category": "Workload / burnout",
+   "count": 28,
+   "group": "2024H2",
+   "n": 144,
+   "share": 0.1944,
+   "suppressed": false
+  },
+  {
+   "category": "Better pay elsewhere",
+   "count": 25,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.1712,
+   "suppressed": false
+  },
+  {
+   "category": "Career advancement elsewhere",
+   "count": 19,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.1301,
+   "suppressed": false
+  },
+  {
+   "category": "Other",
+   "count": 13,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.089,
+   "suppressed": false
+  },
+  {
+   "category": "Relocation / family",
+   "count": 10,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.0685,
+   "suppressed": false
+  },
+  {
+   "category": "Remote or flexible work elsewhere",
+   "count": 14,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.0959,
+   "suppressed": false
+  },
+  {
+   "category": "Retirement",
+   "count": 18,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.1233,
+   "suppressed": false
+  },
+  {
+   "category": "Supervisor relationship",
+   "count": 19,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.1301,
+   "suppressed": false
+  },
+  {
+   "category": "Unit culture",
+   "count": 11,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.0753,
+   "suppressed": false
+  },
+  {
+   "category": "Workload / burnout",
+   "count": 17,
+   "group": "2025H1",
+   "n": 146,
+   "share": 0.1164,
+   "suppressed": false
+  },
+  {
+   "category": "Better pay elsewhere",
+   "count": 32,
+   "group": "2025H2",
+   "n": 142,
+   "share": 0.2254,
+   "suppressed": false
+  },
+  {
+   "category": "Career advancement elsewhere",
+   "count": 20,
+   "group": "2025H2",
+   "n": 142,
+   "share": 0.1408,
+   "suppressed": false
+  },
+  {
+   "category": "Other",
+   "count": null,
+   "group": "2025H2",
+   "n": 142,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Relocation / family",
+   "count": 12,
+   "group": "2025H2",
+   "n": 142,
+   "share": 0.0845,
+   "suppressed": false
+  },
+  {
+   "category": "Remote or flexible work elsewhere",
+   "count": 15,
+   "group": "2025H2",
+   "n": 142,
+   "share": 0.1056,
+   "suppressed": false
+  },
+  {
+   "category": "Retirement",
+   "count": 12,
+   "group": "2025H2",
+   "n": 142,
+   "share": 0.0845,
+   "suppressed": false
+  },
+  {
+   "category": "Supervisor relationship",
+   "count": 16,
+   "group": "2025H2",
+   "n": 142,
+   "share": 0.1127,
+   "suppressed": false
+  },
+  {
+   "category": "Unit culture",
+   "count": 13,
+   "group": "2025H2",
+   "n": 142,
+   "share": 0.0915,
+   "suppressed": false
+  },
+  {
+   "category": "Workload / burnout",
+   "count": 18,
+   "group": "2025H2",
+   "n": 142,
+   "share": 0.1268,
+   "suppressed": false
+  },
+  {
+   "category": "Better pay elsewhere",
+   "count": 36,
+   "group": "2026H1",
+   "n": 145,
+   "share": 0.2483,
+   "suppressed": false
+  },
+  {
+   "category": "Career advancement elsewhere",
+   "count": 20,
+   "group": "2026H1",
+   "n": 145,
+   "share": 0.1379,
+   "suppressed": false
+  },
+  {
+   "category": "Other",
+   "count": null,
+   "group": "2026H1",
+   "n": 145,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Relocation / family",
+   "count": 14,
+   "group": "2026H1",
+   "n": 145,
+   "share": 0.0966,
+   "suppressed": false
+  },
+  {
+   "category": "Remote or flexible work elsewhere",
+   "count": 19,
+   "group": "2026H1",
+   "n": 145,
+   "share": 0.131,
+   "suppressed": false
+  },
+  {
+   "category": "Retirement",
+   "count": null,
+   "group": "2026H1",
+   "n": 145,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Supervisor relationship",
+   "count": 11,
+   "group": "2026H1",
+   "n": 145,
+   "share": 0.0759,
+   "suppressed": false
+  },
+  {
+   "category": "Unit culture",
+   "count": null,
+   "group": "2026H1",
+   "n": 145,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Workload / burnout",
+   "count": 20,
+   "group": "2026H1",
+   "n": 145,
+   "share": 0.1379,
+   "suppressed": false
+  },
+  {
+   "category": "Better pay elsewhere",
+   "count": 17,
+   "group": "2026H2",
+   "n": 71,
+   "share": 0.2394,
+   "suppressed": false
+  },
+  {
+   "category": "Career advancement elsewhere",
+   "count": 12,
+   "group": "2026H2",
+   "n": 71,
+   "share": 0.169,
+   "suppressed": false
+  },
+  {
+   "category": "Other",
+   "count": null,
+   "group": "2026H2",
+   "n": 71,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Relocation / family",
+   "count": null,
+   "group": "2026H2",
+   "n": 71,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Remote or flexible work elsewhere",
+   "count": null,
+   "group": "2026H2",
+   "n": 71,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Retirement",
+   "count": null,
+   "group": "2026H2",
+   "n": 71,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Supervisor relationship",
+   "count": null,
+   "group": "2026H2",
+   "n": 71,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Unit culture",
+   "count": null,
+   "group": "2026H2",
+   "n": 71,
+   "share": null,
+   "suppressed": true
+  },
+  {
+   "category": "Workload / burnout",
+   "count": 12,
+   "group": "2026H2",
+   "n": 71,
+   "share": 0.169,
+   "suppressed": false
+  }
+ ],
+ "llm": {
+  "enabled": false,
+  "endpoint": null,
+  "model": null
+ },
+ "min_cell_size": 10,
+ "prevalence": {
+  "exit_all": [
+   {
+    "count": 195,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.277,
+    "suppressed": false,
+    "theme": "workload"
+   },
+   {
+    "count": 213,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.3026,
+    "suppressed": false,
+    "theme": "pay"
+   },
+   {
+    "count": 147,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.2088,
+    "suppressed": false,
+    "theme": "career_growth"
+   },
+   {
+    "count": 115,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.1634,
+    "suppressed": false,
+    "theme": "manager_support"
+   },
+   {
+    "count": 114,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.1619,
+    "suppressed": false,
+    "theme": "remote_hybrid"
+   },
+   {
+    "count": 98,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.1392,
+    "suppressed": false,
+    "theme": "recognition"
+   },
+   {
+    "count": 64,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.0909,
+    "suppressed": false,
+    "theme": "bureaucracy"
+   },
+   {
+    "count": 33,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.0469,
+    "suppressed": false,
+    "theme": "ai_tools"
+   },
+   {
+    "count": 109,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.1548,
+    "suppressed": false,
+    "theme": "culture_belonging"
+   },
+   {
+    "count": 120,
+    "group": "all",
+    "n_comments": 704,
+    "share": 0.1705,
+    "suppressed": false,
+    "theme": "relocation_retirement"
+   }
+  ],
+  "exit_by_year": [
+   {
+    "count": 65,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.2529,
+    "suppressed": false,
+    "theme": "workload"
+   },
+   {
+    "count": 78,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.3035,
+    "suppressed": false,
+    "theme": "pay"
+   },
+   {
+    "count": 55,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.214,
+    "suppressed": false,
+    "theme": "career_growth"
+   },
+   {
+    "count": 32,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.1245,
+    "suppressed": false,
+    "theme": "manager_support"
+   },
+   {
+    "count": 37,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.144,
+    "suppressed": false,
+    "theme": "remote_hybrid"
+   },
+   {
+    "count": 33,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.1284,
+    "suppressed": false,
+    "theme": "recognition"
+   },
+   {
+    "count": 26,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.1012,
+    "suppressed": false,
+    "theme": "bureaucracy"
+   },
+   {
+    "count": 10,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.0389,
+    "suppressed": false,
+    "theme": "ai_tools"
+   },
+   {
+    "count": 39,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.1518,
+    "suppressed": false,
+    "theme": "culture_belonging"
+   },
+   {
+    "count": 41,
+    "group": 2024,
+    "n_comments": 257,
+    "share": 0.1595,
+    "suppressed": false,
+    "theme": "relocation_retirement"
+   },
+   {
+    "count": 70,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.2778,
+    "suppressed": false,
+    "theme": "workload"
+   },
+   {
+    "count": 80,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.3175,
+    "suppressed": false,
+    "theme": "pay"
+   },
+   {
+    "count": 47,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.1865,
+    "suppressed": false,
+    "theme": "career_growth"
+   },
+   {
+    "count": 54,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.2143,
+    "suppressed": false,
+    "theme": "manager_support"
+   },
+   {
+    "count": 39,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.1548,
+    "suppressed": false,
+    "theme": "remote_hybrid"
+   },
+   {
+    "count": 41,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.1627,
+    "suppressed": false,
+    "theme": "recognition"
+   },
+   {
+    "count": 21,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.0833,
+    "suppressed": false,
+    "theme": "bureaucracy"
+   },
+   {
+    "count": 11,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.0437,
+    "suppressed": false,
+    "theme": "ai_tools"
+   },
+   {
+    "count": 39,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.1548,
+    "suppressed": false,
+    "theme": "culture_belonging"
+   },
+   {
+    "count": 46,
+    "group": 2025,
+    "n_comments": 252,
+    "share": 0.1825,
+    "suppressed": false,
+    "theme": "relocation_retirement"
+   },
+   {
+    "count": 60,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.3077,
+    "suppressed": false,
+    "theme": "workload"
+   },
+   {
+    "count": 55,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.2821,
+    "suppressed": false,
+    "theme": "pay"
+   },
+   {
+    "count": 45,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.2308,
+    "suppressed": false,
+    "theme": "career_growth"
+   },
+   {
+    "count": 29,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.1487,
+    "suppressed": false,
+    "theme": "manager_support"
+   },
+   {
+    "count": 38,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.1949,
+    "suppressed": false,
+    "theme": "remote_hybrid"
+   },
+   {
+    "count": 24,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.1231,
+    "suppressed": false,
+    "theme": "recognition"
+   },
+   {
+    "count": 17,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.0872,
+    "suppressed": false,
+    "theme": "bureaucracy"
+   },
+   {
+    "count": 12,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.0615,
+    "suppressed": false,
+    "theme": "ai_tools"
+   },
+   {
+    "count": 31,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.159,
+    "suppressed": false,
+    "theme": "culture_belonging"
+   },
+   {
+    "count": 33,
+    "group": 2026,
+    "n_comments": 195,
+    "share": 0.1692,
+    "suppressed": false,
+    "theme": "relocation_retirement"
+   }
+  ],
+  "ws_all": [
+   {
+    "count": 646,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.2643,
+    "suppressed": false,
+    "theme": "workload"
+   },
+   {
+    "count": 573,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.2345,
+    "suppressed": false,
+    "theme": "pay"
+   },
+   {
+    "count": 378,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.1547,
+    "suppressed": false,
+    "theme": "career_growth"
+   },
+   {
+    "count": 376,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.1538,
+    "suppressed": false,
+    "theme": "manager_support"
+   },
+   {
+    "count": 423,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.1731,
+    "suppressed": false,
+    "theme": "remote_hybrid"
+   },
+   {
+    "count": 532,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.2177,
+    "suppressed": false,
+    "theme": "recognition"
+   },
+   {
+    "count": 451,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.1845,
+    "suppressed": false,
+    "theme": "bureaucracy"
+   },
+   {
+    "count": 242,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.099,
+    "suppressed": false,
+    "theme": "ai_tools"
+   },
+   {
+    "count": 357,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.1461,
+    "suppressed": false,
+    "theme": "culture_belonging"
+   },
+   {
+    "count": 64,
+    "group": "all",
+    "n_comments": 2444,
+    "share": 0.0262,
+    "suppressed": false,
+    "theme": "relocation_retirement"
+   }
+  ],
+  "ws_by_wave": [
+   {
+    "count": 322,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.2618,
+    "suppressed": false,
+    "theme": "workload"
+   },
+   {
+    "count": 294,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.239,
+    "suppressed": false,
+    "theme": "pay"
+   },
+   {
+    "count": 195,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.1585,
+    "suppressed": false,
+    "theme": "career_growth"
+   },
+   {
+    "count": 209,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.1699,
+    "suppressed": false,
+    "theme": "manager_support"
+   },
+   {
+    "count": 188,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.1528,
+    "suppressed": false,
+    "theme": "remote_hybrid"
+   },
+   {
+    "count": 286,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.2325,
+    "suppressed": false,
+    "theme": "recognition"
+   },
+   {
+    "count": 227,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.1846,
+    "suppressed": false,
+    "theme": "bureaucracy"
+   },
+   {
+    "count": 71,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.0577,
+    "suppressed": false,
+    "theme": "ai_tools"
+   },
+   {
+    "count": 182,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.148,
+    "suppressed": false,
+    "theme": "culture_belonging"
+   },
+   {
+    "count": 37,
+    "group": 2025,
+    "n_comments": 1230,
+    "share": 0.0301,
+    "suppressed": false,
+    "theme": "relocation_retirement"
+   },
+   {
+    "count": 324,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.2669,
+    "suppressed": false,
+    "theme": "workload"
+   },
+   {
+    "count": 279,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.2298,
+    "suppressed": false,
+    "theme": "pay"
+   },
+   {
+    "count": 183,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.1507,
+    "suppressed": false,
+    "theme": "career_growth"
+   },
+   {
+    "count": 167,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.1376,
+    "suppressed": false,
+    "theme": "manager_support"
+   },
+   {
+    "count": 235,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.1936,
+    "suppressed": false,
+    "theme": "remote_hybrid"
+   },
+   {
+    "count": 246,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.2026,
+    "suppressed": false,
+    "theme": "recognition"
+   },
+   {
+    "count": 224,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.1845,
+    "suppressed": false,
+    "theme": "bureaucracy"
+   },
+   {
+    "count": 171,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.1409,
+    "suppressed": false,
+    "theme": "ai_tools"
+   },
+   {
+    "count": 175,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.1442,
+    "suppressed": false,
+    "theme": "culture_belonging"
+   },
+   {
+    "count": 27,
+    "group": 2026,
+    "n_comments": 1214,
+    "share": 0.0222,
+    "suppressed": false,
+    "theme": "relocation_retirement"
+   }
+  ]
+ },
+ "quotes": {
+  "approved": [],
+  "status_counts": {
+   "pending": 30
+  }
+ },
+ "redaction": {
+  "decoy_eval": {
+   "decoy_values": 281,
+   "layers": {
+    "regex": {
+     "by_type": {
+      "EMAIL": 1.0,
+      "PERSON": 0.0,
+      "PHONE": 1.0,
+      "UIN": 1.0
+     },
+     "recall": 0.3167
+    },
+    "regex+cue": {
+     "by_type": {
+      "EMAIL": 1.0,
+      "PERSON": 0.8542,
+      "PHONE": 1.0,
+      "UIN": 1.0
+     },
+     "recall": 0.9004
+    },
+    "regex+cue+roster": {
+     "by_type": {
+      "EMAIL": 1.0,
+      "PERSON": 1.0,
+      "PHONE": 1.0,
+      "UIN": 1.0
+     },
+     "recall": 1.0
+    },
+    "regex+cue+roster+presidio": {
+     "by_type": {
+      "EMAIL": 1.0,
+      "PERSON": 1.0,
+      "PHONE": 1.0,
+      "UIN": 1.0
+     },
+     "recall": 1.0
+    }
+   }
+  },
+  "layers": [
+   "regex",
+   "cue",
+   "roster",
+   "presidio"
+  ],
+  "presidio_model": "en_core_web_sm",
+  "spans_by_layer": {
+   "cue:PERSON": 164,
+   "regex:EMAIL": 28,
+   "regex:PHONE": 27,
+   "regex:UIN": 34,
+   "roster:PERSON": 28
+  }
+ },
+ "synthetic": true,
+ "theme_source": "lexicon",
+ "themes": [
+  {
+   "id": "workload",
+   "label": "Workload and staffing"
+  },
+  {
+   "id": "pay",
+   "label": "Pay and benefits"
+  },
+  {
+   "id": "career_growth",
+   "label": "Career growth and promotion"
+  },
+  {
+   "id": "manager_support",
+   "label": "Manager and supervisor support"
+  },
+  {
+   "id": "remote_hybrid",
+   "label": "Remote and hybrid work"
+  },
+  {
+   "id": "recognition",
+   "label": "Recognition and appreciation"
+  },
+  {
+   "id": "bureaucracy",
+   "label": "Bureaucracy and process"
+  },
+  {
+   "id": "ai_tools",
+   "label": "AI tools and training"
+  },
+  {
+   "id": "culture_belonging",
+   "label": "Culture, belonging and inclusion"
+  },
+  {
+   "id": "relocation_retirement",
+   "label": "Relocation, retirement and life events"
+  }
+ ],
+ "title": "Survey text intelligence - Workplace Satisfaction and exit survey",
+ "topics": {
+  "min_df": 10,
+  "n_docs": 3148,
+  "reconstruction_err": 48.4522,
+  "seed": 0,
+  "topics": [
+   {
+    "mapped_theme": "workload",
+    "mapped_votes": 2,
+    "n_docs_dominant": 655,
+    "share": 0.2081,
+    "top_terms": [
+     "people",
+     "office",
+     "positions",
+     "year",
+     "covering",
+     "unfilled",
+     "workload",
+     "compared"
+    ],
+    "topic": 0
+   },
+   {
+    "mapped_theme": "bureaucracy",
+    "mapped_votes": 2,
+    "n_docs_dominant": 154,
+    "share": 0.0489,
+    "top_terms": [
+     "hope",
+     "survey",
+     "leads",
+     "change",
+     "explain",
+     "policies",
+     "notice",
+     "process"
+    ],
+    "topic": 1
+   },
+   {
+    "mapped_theme": "relocation_retirement",
+    "mapped_votes": 1,
+    "n_docs_dominant": 227,
+    "share": 0.0721,
+    "top_terms": [
+     "good",
+     "things",
+     "memories",
+     "retiring",
+     "place",
+     "work",
+     "invisible",
+     "unrecognized"
+    ],
+    "topic": 2
+   },
+   {
+    "mapped_theme": "bureaucracy",
+    "mapped_votes": 1,
+    "n_docs_dominant": 144,
+    "share": 0.0457,
+    "top_terms": [
+     "hard",
+     "box",
+     "summarize",
+     "documents",
+     "policy",
+     "illinois-style",
+     "chat",
+     "tools"
+    ],
+    "topic": 3
+   },
+   {
+    "mapped_theme": "recognition",
+    "mapped_votes": 1,
+    "n_docs_dominant": 108,
+    "share": 0.0343,
+    "top_terms": [
+     "asking",
+     "thanks",
+     "word",
+     "leadership",
+     "simple",
+     "way",
+     "long",
+     "goes"
+    ],
+    "topic": 4
+   },
+   {
+    "mapped_theme": "relocation_retirement",
+    "mapped_votes": 1,
+    "n_docs_dominant": 124,
+    "share": 0.0394,
+    "top_terms": [
+     "place",
+     "okay",
+     "overall",
+     "work",
+     "memories",
+     "retiring",
+     "sight",
+     "relief"
+    ],
+    "topic": 5
+   },
+   {
+    "mapped_theme": "pay",
+    "mapped_votes": 1,
+    "n_docs_dominant": 166,
+    "share": 0.0527,
+    "top_terms": [
+     "tiny",
+     "employer",
+     "pool",
+     "far",
+     "private",
+     "make",
+     "raise",
+     "week"
+    ],
+    "topic": 6
+   },
+   {
+    "mapped_theme": "manager_support",
+    "mapped_votes": 1,
+    "n_docs_dominant": 105,
+    "share": 0.0334,
+    "top_terms": [
+     "add",
+     "sight",
+     "plate",
+     "relief",
+     "simply",
+     "supervisor",
+     "reason",
+     "stay"
+    ],
+    "topic": 7
+   },
+   {
+    "mapped_theme": "remote_hybrid",
+    "mapped_votes": 2,
+    "n_docs_dominant": 329,
+    "share": 0.1045,
+    "top_terms": [
+     "requests",
+     "regularly",
+     "basic",
+     "just",
+     "overtime",
+     "work",
+     "telework",
+     "commute"
+    ],
+    "topic": 8
+   },
+   {
+    "mapped_theme": "pay",
+    "mapped_votes": 1,
+    "n_docs_dominant": 123,
+    "share": 0.0391,
+    "top_terms": [
+     "cost",
+     "living",
+     "keeps",
+     "going",
+     "wages",
+     "simple",
+     "signatures",
+     "purchase"
+    ],
+    "topic": 9
+   },
+   {
+    "mapped_theme": "relocation_retirement",
+    "mapped_votes": 1,
+    "n_docs_dominant": 629,
+    "share": 0.1998,
+    "top_terms": [
+     "job",
+     "weekends",
+     "burned",
+     "expected",
+     "evenings",
+     "like",
+     "relocating",
+     "reasons"
+    ],
+    "topic": 10
+   },
+   {
+    "mapped_theme": "pay",
+    "mapped_votes": 3,
+    "n_docs_dominant": 384,
+    "share": 0.122,
+    "top_terms": [
+     "salary",
+     "years",
+     "new",
+     "compression",
+     "earn",
+     "hires",
+     "means",
+     "inflation"
+    ],
+    "topic": 11
+   }
+  ],
+  "vocab_size": 384
+ },
+ "unit_join": [
+  {
+   "enps": -3.6,
+   "enps_hi": 7.6,
+   "enps_lo": -14.8,
+   "exit_responses": 28,
+   "headcount": 1415,
+   "suppressed": false,
+   "turnover_rate": 0.0721,
+   "unit": "Applied Sciences College"
+  },
+  {
+   "enps": -15.6,
+   "enps_hi": -1.7,
+   "enps_lo": -29.5,
+   "exit_responses": 31,
+   "headcount": 814,
+   "suppressed": false,
+   "turnover_rate": 0.0663,
+   "unit": "Arts & Humanities College"
+  },
+  {
+   "enps": -21.4,
+   "enps_hi": -2.9,
+   "enps_lo": -40.0,
+   "exit_responses": null,
+   "headcount": 291,
+   "suppressed": false,
+   "turnover_rate": 0.0825,
+   "unit": "Athletics Operations"
+  },
+  {
+   "enps": 23.2,
+   "enps_hi": 38.7,
+   "enps_lo": 7.6,
+   "exit_responses": 15,
+   "headcount": 532,
+   "suppressed": false,
+   "turnover_rate": 0.0545,
+   "unit": "Business School"
+  },
+  {
+   "enps": -49.1,
+   "enps_hi": -39.5,
+   "enps_lo": -58.7,
+   "exit_responses": 32,
+   "headcount": 1311,
+   "suppressed": false,
+   "turnover_rate": 0.0915,
+   "unit": "Facilities & Services"
+  },
+  {
+   "enps": null,
+   "enps_hi": null,
+   "enps_lo": null,
+   "suppressed": true,
+   "unit": "Field Research Station"
+  },
+  {
+   "enps": -32.0,
+   "enps_hi": -19.8,
+   "enps_lo": -44.2,
+   "exit_responses": 30,
+   "headcount": 1014,
+   "suppressed": false,
+   "turnover_rate": 0.0799,
+   "unit": "Health Sciences College"
+  },
+  {
+   "enps": null,
+   "enps_hi": null,
+   "enps_lo": null,
+   "suppressed": true,
+   "unit": "Human Resources Office"
+  },
+  {
+   "enps": -27.0,
+   "enps_hi": -13.1,
+   "enps_lo": -40.9,
+   "exit_responses": 10,
+   "headcount": 408,
+   "suppressed": false,
+   "turnover_rate": 0.0858,
+   "unit": "Research Administration"
+  },
+  {
+   "enps": -14.3,
+   "enps_hi": -1.9,
+   "enps_lo": -26.7,
+   "exit_responses": 18,
+   "headcount": 836,
+   "suppressed": false,
+   "turnover_rate": 0.0718,
+   "unit": "Student Affairs"
+  },
+  {
+   "enps": -4.9,
+   "enps_hi": 7.3,
+   "enps_lo": -17.0,
+   "exit_responses": 24,
+   "headcount": 775,
+   "suppressed": false,
+   "turnover_rate": 0.0748,
+   "unit": "Technology Services"
+  },
+  {
+   "enps": 10.7,
+   "enps_hi": 26.1,
+   "enps_lo": -4.8,
+   "exit_responses": 13,
+   "headcount": 476,
+   "suppressed": false,
+   "turnover_rate": 0.063,
+   "unit": "University Libraries"
+  }
+ ]
+}

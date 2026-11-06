@@ -1,0 +1,23 @@
+{
+ "published_sha256": "f7fc406ceb6aa895decab28c1eda9fd7d5f4ac03b6120d8a9556a962c4720a61",
+ "built_at": "2026-11-06T08:26:23+00:00",
+ "inputs": {
+  "exit_export.csv": "d3d489b9705a0cd127ddbf0cc1c1d54ef5063a2d377a2c6b4c3cd807f7a695e6",
+  "roster_names.csv": "f079b1e8bd41654ec405a1167f90097d956187ff7da070214a701b0bb8bda5d5",
+  "theme_truth.csv": "ed3dcbe58f7edb193520b0b5678ab466b5d8103f5bcaf3c8a159226ee550b46d",
+  "unit_headcount.csv": "21791dab283b756f8596109cd57b1af84cd46ba2522b69a2cf32b575cca4c66a",
+  "ws_export.csv": "3c214d805bc2caa4b68afac61027ab8126f4020e01e0241e9a96d7e90f28bd68"
+ },
+ "redaction_layers": [
+  "regex",
+  "cue",
+  "roster",
+  "presidio"
+ ],
+ "theme_source": "lexicon",
+ "llm": {
+  "enabled": false,
+  "endpoint": null,
+  "model": null
+ }
+}
