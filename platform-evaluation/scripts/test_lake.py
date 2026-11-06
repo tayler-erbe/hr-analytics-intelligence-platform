@@ -99,5 +99,81 @@ class LakeInvariants(unittest.TestCase):
         self.assertLess(hi, 1)
 
 
+CONTRACT = ROOT / "data" / "lake" / "contract"
+
+
+@unittest.skipUnless(duckdb and (CONTRACT / "ipeds_institution.parquet").exists(), "contract layer not built")
+class ContractInvariants(unittest.TestCase):
+    """The contract layer must reproduce IPEDS published totals exactly (no double counting)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.con = duckdb.connect()
+        for p in CONTRACT.glob("*.parquet"):
+            cls.con.sql(f"CREATE VIEW c_{p.stem} AS SELECT * FROM '{p}'")
+        silver = ROOT / "data" / "lake" / "silver"
+        for t in ("ipeds_s2023_oc", "ipeds_sal2023_nis", "ipeds_sal2023_is", "ipeds_eap2023"):
+            cls.con.sql(f"CREATE VIEW s_{t} AS SELECT * FROM '{silver / (t + '.parquet')}'")
+
+    def zero(self, sql, msg):
+        self.assertEqual(self.con.sql(sql).fetchall()[0][0], 0, msg)
+
+    def test_every_table_has_provenance(self):
+        for p in CONTRACT.glob("*.parquet"):
+            cols = self.con.sql(f"SELECT * FROM 'c_{p.stem}' LIMIT 0".replace("'", "")).columns
+            self.assertIn("source_id", cols, p.stem)
+            self.assertIn("source_vintage", cols, p.stem)
+
+    def test_staff_detail_partition_equals_grand_total(self):
+        self.zero("""SELECT count(*) FROM (
+              SELECT unitid, left(staffcat_code, 1) AS ftpt,
+                     sum(CASE WHEN NOT is_category_total THEN headcount END) AS parts,
+                     max(CASE WHEN category_level = 'total' THEN headcount END) AS total
+              FROM c_ipeds_staff_by_occupation
+              WHERE sex = 'Total' AND race_ethnicity = 'Total' AND category_level <> 'graduate_assistant'
+              GROUP BY 1, 2) WHERE total IS NOT NULL AND parts <> total""", "staff detail != total")
+
+    def test_staff_totals_match_published(self):
+        self.zero("""SELECT count(*) FROM c_ipeds_staff_by_occupation a JOIN s_ipeds_s2023_oc b
+              ON a.unitid = b.unitid AND a.staffcat_code = CAST(b.staffcat AS VARCHAR)
+              WHERE a.sex = 'Total' AND a.race_ethnicity = 'Total' AND a.headcount <> b.hrtotlt""", "staff totals")
+
+    def test_race_detail_sums_to_total(self):
+        self.zero("""SELECT count(*) FROM (
+              SELECT unitid, staffcat_code, sex,
+                     sum(CASE WHEN race_ethnicity <> 'Total' THEN headcount END) AS r,
+                     max(CASE WHEN race_ethnicity = 'Total' THEN headcount END) AS t
+              FROM c_ipeds_staff_by_occupation GROUP BY 1, 2, 3) WHERE r <> t""", "race detail != total")
+
+    def test_noninstructional_salary_partition(self):
+        self.zero("""SELECT count(*) FROM (SELECT unitid, sum(staff_count) n, sum(salary_outlays) o
+              FROM c_ipeds_salary_noninstructional GROUP BY 1) a JOIN s_ipeds_sal2023_nis b USING (unitid)
+              WHERE a.n <> b.sanin01 OR a.o <> b.sanit01""", "NIS groups != institution total")
+
+    def test_instructional_salary_partition(self):
+        self.zero("""SELECT count(*) FROM (SELECT unitid, arank_code, sum(staff_count) n
+              FROM c_ipeds_salary_instructional GROUP BY 1, 2) a JOIN s_ipeds_sal2023_is b
+              ON a.unitid = b.unitid AND a.arank_code = CAST(b.arank AS VARCHAR) WHERE a.n <> b.satotlt""",
+                  "contract lengths != rank total")
+
+    def test_eap_partition(self):
+        self.zero("""SELECT count(*) FROM (SELECT unitid,
+                     sum(CASE WHEN NOT is_category_total THEN total_employees END) s,
+                     max(CASE WHEN eapcat_code = '10000' THEN total_employees END) t
+              FROM c_ipeds_employees_by_position GROUP BY 1) WHERE t IS NOT NULL AND s <> t""", "EAP partition")
+
+    def test_qcew_suppressed_is_null(self):
+        self.zero("SELECT count(*) FROM c_qcew_industry WHERE disclosure_code = 'N' AND month3_emplvl IS NOT NULL",
+                  "suppressed QCEW value leaked")
+
+    def test_contract_keys_unique(self):
+        for table, cols in {"onet_occupation": "onetsoc_code", "onet_task_statement": "onetsoc_code, task_id",
+                            "ipeds_institution": "unitid", "sucss_class": "source_record_id",
+                            "qcew_industry": "area_fips, own_code, industry_code, size_code, year, qtr",
+                            "qwi_higher_ed": "geography, industry, ownercode, sex, agegrp, year, quarter"}.items():
+            self.zero(f"SELECT count(*) FROM (SELECT {cols} FROM c_{table} GROUP BY {cols} HAVING count(*) > 1)",
+                      f"{table} key not unique")
+
+
 if __name__ == "__main__":
     unittest.main()

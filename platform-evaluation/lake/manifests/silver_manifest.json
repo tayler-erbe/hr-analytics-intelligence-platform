@@ -1,5 +1,5 @@
 {
- "built_at_utc": "2026-11-06T06:48:35.423341+00:00",
+ "built_at_utc": "2026-11-06T06:59:20.061425+00:00",
  "duckdb_version": "2.0.0",
  "tables": {
   "aei_automation_vs_augmentation_by_task": {
@@ -5212,6 +5212,242 @@
     "data/lake/raw/qcew_colleges/2024_a_611310.csv": "cbaa512f7e7b0abb8d01feced5b676e8ba4fa3f4f65037b9b57b6c39752a57d0"
    }
   },
+  "qcew_colleges_quarterly": {
+   "domain": "bls_qcew",
+   "rows": 91368,
+   "bytes": 2506293,
+   "note": "NAICS 611310, all areas/ownerships, quarterly",
+   "columns": [
+    {
+     "name": "area_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "own_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agglvl_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "size_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "qtr",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "qtrly_estabs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month1_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month2_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month3_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_qtrly_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "taxable_qtrly_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "qtrly_contributions",
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_wkly_wage",
+     "type": "BIGINT"
+    },
+    {
+     "name": "lq_disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lq_qtrly_estabs",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_month1_emplvl",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_month2_emplvl",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_month3_emplvl",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_total_qtrly_wages",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_taxable_qtrly_wages",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_qtrly_contributions",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_avg_wkly_wage",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "oty_qtrly_estabs_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_qtrly_estabs_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_month1_emplvl_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_month1_emplvl_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_month2_emplvl_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_month2_emplvl_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_month3_emplvl_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_month3_emplvl_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_total_qtrly_wages_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_total_qtrly_wages_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_taxable_qtrly_wages_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_taxable_qtrly_wages_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_qtrly_contributions_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_qtrly_contributions_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_avg_wkly_wage_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_avg_wkly_wage_pct_chg",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qcew_colleges_qtr/2019_q1_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2019_q2_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2019_q3_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2019_q4_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2020_q1_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2020_q2_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2020_q3_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2020_q4_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2021_q1_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2021_q2_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2021_q3_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2021_q4_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2022_q1_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2022_q2_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2022_q3_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2022_q4_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2023_q1_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2023_q2_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2023_q3_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2023_q4_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2024_q1_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2024_q2_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2024_q3_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2024_q4_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2025_q1_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2025_q2_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2025_q3_611310.csv",
+    "data/lake/raw/qcew_colleges_qtr/2025_q4_611310.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qcew_colleges_qtr/2019_q1_611310.csv": "966bdf04873f712687c9b7aca2bd7886e2e3e31144a2e4fcfd434267a3c99217",
+    "data/lake/raw/qcew_colleges_qtr/2019_q2_611310.csv": "3d066b4fb6f6754c199c3d5c414711a977b5ff631cef83344153a4fac6c61429",
+    "data/lake/raw/qcew_colleges_qtr/2019_q3_611310.csv": "bc732d6817fb23ab04d2287fa7e06312b057b5c2dc10f91eaf0feb760d99522e",
+    "data/lake/raw/qcew_colleges_qtr/2019_q4_611310.csv": "a0a19dbfd88a5df37fa7805d4a751e0f77186408db9a6441e6bf80106069e4d4",
+    "data/lake/raw/qcew_colleges_qtr/2020_q1_611310.csv": "4a9ce982e07e7936bd0170b5d60c4a820e79fcdf729ee6aab06af1ef46522f8b",
+    "data/lake/raw/qcew_colleges_qtr/2020_q2_611310.csv": "73e0bf477ec843319363b433a88756b61441e102b934ab79c323444772263a75",
+    "data/lake/raw/qcew_colleges_qtr/2020_q3_611310.csv": "a07292eaf8a55001acd1590277fa3431b0ebe15c5597b7262649edd714cd2c93",
+    "data/lake/raw/qcew_colleges_qtr/2020_q4_611310.csv": "a95190b6aec29abb07392cbc7a3681f84544f10b682a48ec2b129fa6bb1680db",
+    "data/lake/raw/qcew_colleges_qtr/2021_q1_611310.csv": "d4f4d212e24b27580b6b6c10a211657cd416279d94244fd7737d2b1b01917008",
+    "data/lake/raw/qcew_colleges_qtr/2021_q2_611310.csv": "27f68886e186c5cb6ff9f12d66c8262505a438333d22c013360bd62360d13365",
+    "data/lake/raw/qcew_colleges_qtr/2021_q3_611310.csv": "243ffcd266a7a7624d5926c948cb422dd26d71f42f55addd80d681e0ffbc37cb",
+    "data/lake/raw/qcew_colleges_qtr/2021_q4_611310.csv": "fe3a5612484495e722cf662537b3dfc83c3d478baa8fe38f39243239489ecde4",
+    "data/lake/raw/qcew_colleges_qtr/2022_q1_611310.csv": "a262a0486cb9e5fa64de6c9242cc47922c36323c8e7aeebb08427495d5140e2f",
+    "data/lake/raw/qcew_colleges_qtr/2022_q2_611310.csv": "4b4597384968919ebbf0bea001e38d6a04ae81d5e8b1446f4ee22c5cb42d5463",
+    "data/lake/raw/qcew_colleges_qtr/2022_q3_611310.csv": "f9b0a9b53aba28ad112a34c76a8c079a3620020cca84a2d9907205fa54c8a014",
+    "data/lake/raw/qcew_colleges_qtr/2022_q4_611310.csv": "3b1e19c243d484074c8e9df55073ddbc287257615afb8fbe87085755f7bdab49",
+    "data/lake/raw/qcew_colleges_qtr/2023_q1_611310.csv": "ec97b5ad0a216b0e24ce525d45bc12cf3d1e9eb49cc0b9420f3a40734c87f05a",
+    "data/lake/raw/qcew_colleges_qtr/2023_q2_611310.csv": "097866d7d9f78633c8ff10cad69de088cc0daf884d33fa7bd9314aadb90e9fd2",
+    "data/lake/raw/qcew_colleges_qtr/2023_q3_611310.csv": "8b26f2c9b350a25f38ce7862bb811476396559c7de07a46c27862ea1013d3969",
+    "data/lake/raw/qcew_colleges_qtr/2023_q4_611310.csv": "4324eb08d6a8dcb796bced467460bb7d5acecf8fae1f4be9b9132823054cf7ce",
+    "data/lake/raw/qcew_colleges_qtr/2024_q1_611310.csv": "71e22381c27f6705bbe2f0fba51153ea740462cfdf2112c92dbc0dd34b56b183",
+    "data/lake/raw/qcew_colleges_qtr/2024_q2_611310.csv": "7170a84c34f8da624978278242c5c1f2b6386576719cc236ac3b249e19aafc62",
+    "data/lake/raw/qcew_colleges_qtr/2024_q3_611310.csv": "71f9af162abc9eae0d3b85452a3ea583c35af643d65978a44f2db99bbae44b9b",
+    "data/lake/raw/qcew_colleges_qtr/2024_q4_611310.csv": "dc0f29706c1cbfdfe42bdc5b228e5b1c0e5f20b0c65faa2e67fa625ad604b34f",
+    "data/lake/raw/qcew_colleges_qtr/2025_q1_611310.csv": "bc766589eafac8444d3cdd0f4b9b51ba2ee02040b364e6f59324bd83e6bab56a",
+    "data/lake/raw/qcew_colleges_qtr/2025_q2_611310.csv": "fd3975d592875d37a50583c6a46940f45695cd69a464a97e88861f30118e7a13",
+    "data/lake/raw/qcew_colleges_qtr/2025_q3_611310.csv": "8e43e964eb696298ed3ddadebc8179bb74555803569f267415558055d82f4cc8",
+    "data/lake/raw/qcew_colleges_qtr/2025_q4_611310.csv": "58f2c8e71382ef3b907a8675b55cbee5c5b4bcc54a4d5dd3649bc5e6782368b6"
+   }
+  },
   "qcew_il_county_annual": {
    "domain": "bls_qcew",
    "rows": 53858,
@@ -5434,6 +5670,354 @@
     "data/lake/raw/qcew_il_counties/2024_a_17019.csv": "816f5450c014a555d60790fd208bf422e9176aa22ecb89c87899a439212b933c",
     "data/lake/raw/qcew_il_counties/2024_a_17031.csv": "e42e2d30ab4b779b7213a68cf72bb3064bc7316681323e2dfb448982f9473370",
     "data/lake/raw/qcew_il_counties/2024_a_17167.csv": "3f2a7ac93f0a11a13734f23b8d8029ce883e6f99a31daa2fc7048cfc274ac0cf"
+   }
+  },
+  "qcew_il_county_quarterly": {
+   "domain": "bls_qcew",
+   "rows": 149984,
+   "bytes": 5743160,
+   "note": "Champaign/Cook/Sangamon, all industries, quarterly",
+   "columns": [
+    {
+     "name": "area_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "own_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agglvl_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "size_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "qtr",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "qtrly_estabs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month1_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month2_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month3_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_qtrly_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "taxable_qtrly_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "qtrly_contributions",
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_wkly_wage",
+     "type": "BIGINT"
+    },
+    {
+     "name": "lq_disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "lq_qtrly_estabs",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_month1_emplvl",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_month2_emplvl",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_month3_emplvl",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_total_qtrly_wages",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_taxable_qtrly_wages",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_qtrly_contributions",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lq_avg_wkly_wage",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "oty_qtrly_estabs_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_qtrly_estabs_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_month1_emplvl_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_month1_emplvl_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_month2_emplvl_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_month2_emplvl_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_month3_emplvl_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_month3_emplvl_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_total_qtrly_wages_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_total_qtrly_wages_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_taxable_qtrly_wages_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_taxable_qtrly_wages_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_qtrly_contributions_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_qtrly_contributions_pct_chg",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "oty_avg_wkly_wage_chg",
+     "type": "BIGINT"
+    },
+    {
+     "name": "oty_avg_wkly_wage_pct_chg",
+     "type": "DOUBLE"
+    }
+   ],
+   "sources": [
+    "data/lake/raw/qcew_il_counties_qtr/2019_q1_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q1_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q1_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q2_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q2_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q2_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q3_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q3_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q3_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q4_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q4_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q4_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q1_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q1_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q1_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q2_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q2_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q2_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q3_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q3_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q3_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q4_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q4_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q4_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q1_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q1_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q1_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q2_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q2_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q2_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q3_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q3_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q3_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q4_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q4_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q4_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q1_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q1_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q1_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q2_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q2_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q2_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q3_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q3_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q3_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q4_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q4_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q4_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q1_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q1_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q1_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q2_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q2_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q2_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q3_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q3_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q3_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q4_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q4_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q4_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q1_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q1_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q1_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q2_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q2_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q2_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q3_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q3_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q3_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q4_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q4_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q4_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q1_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q1_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q1_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q2_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q2_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q2_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q3_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q3_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q3_17167.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q4_17019.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q4_17031.csv",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q4_17167.csv"
+   ],
+   "source_sha256": {
+    "data/lake/raw/qcew_il_counties_qtr/2019_q1_17019.csv": "d0aaf9a48a675d6a9592e6047b58f76cd4ac1cdaffc420e7535db1a4236bf961",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q1_17031.csv": "975c2e5c04765f7e24987d91255d41b1ad661d77656dfdb8d388ca4e93a97fe5",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q1_17167.csv": "ff849836f370ba7d7a9d5d3c91120d75999f7860dddb8ae1f859846cb560e141",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q2_17019.csv": "6f9485f8c0f1ce0fad1028ef477635a88509dc2f1af6de868051bc7267578e9b",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q2_17031.csv": "c6ede39bdef6ad8b3fc4a55d74e34b5ab9208a7a7074b867c428aa91bf144de4",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q2_17167.csv": "6c9dde54641e833e495d43d5feae46c42da5e9cde03d9ed68a0acbddcc642946",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q3_17019.csv": "fc1fa4a08996cd9cacb1c0f3171ebaae0b6de3d19e169cd7551dd5302cfe9136",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q3_17031.csv": "522acea72b18f6c7a8b8c22298972727405a0a134f4e954b9455333471549ec2",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q3_17167.csv": "8e067096a0321b097bfa9a1a2f8e0737a2accd070d81d71589dd82d3ec125b49",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q4_17019.csv": "3e92e124fabbc687799f09e239acde8efb3ae353cd85bef4232a25622f50d604",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q4_17031.csv": "b669db836d5d6e37a7e33a4d07708af9acd904e909ef65e8b1152f445e42f9d7",
+    "data/lake/raw/qcew_il_counties_qtr/2019_q4_17167.csv": "ca22421f6cf116ed227acc5a7cc59e32fe03e8b7db1c614330d55589f2df5f00",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q1_17019.csv": "1ab94c15f12b3a83de1ea71fef2088327c62fe94e71768d164ecb12d3e253d3d",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q1_17031.csv": "acebc6558ab7e41b3a7685319257b968289e953ea52f681b95897a226a24a358",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q1_17167.csv": "348a61e7043add8549a9feff61e0817ba8f651c01e4694cb63f5b272dcd9a22d",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q2_17019.csv": "65df9c7a84f630eaaf950853ca03bc04373531eadd91c4235730de4f671ab6c9",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q2_17031.csv": "c81468475b72c013ade13d5ac26eba0e959e3173f55528596bef48a33d41d0c3",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q2_17167.csv": "7e46867bd8f55ea877c8e4c09f01e30ddc248a60ab61a05ab92e6d7b44e31566",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q3_17019.csv": "0a169f64990fb6edd56948e113f7f5409d30c635d83eb2566d4415feb993808c",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q3_17031.csv": "996d0bca50e077811ae388efd736c1adce1214b76904f30621eba3d3dd943cef",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q3_17167.csv": "ecbded4a074a45d321132b443ddcd690874046676dd23a92ceb844d9b58ca248",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q4_17019.csv": "771232f89c1fe8540b043b9c50277d0e82dea62e10dda4c806808c553e52f5de",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q4_17031.csv": "5bd2f12dfb78750370ede5d0027103cb35279bc5f3ce98ea7629df0883be1d17",
+    "data/lake/raw/qcew_il_counties_qtr/2020_q4_17167.csv": "f1a56e0c37bef8ac74302e204031ee227327488c8e168a261a40c5a7a0eace2a",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q1_17019.csv": "6f271f2e1033071f5206e44538b14c267e9132cccae9be6baf9af20a2046e30c",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q1_17031.csv": "16e06effaf53629dba45d12cbc41053ad077ec13db588f41fedddb0dea76a67c",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q1_17167.csv": "95a1e3da1b87727ff141d3b5e8da2a29f0c0b5d054291dd9f5c0e50b5d1bbaf4",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q2_17019.csv": "9b62753955771ad485cce8849e2bd6c5d3490ee07a6b9450baf9aa582049acb7",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q2_17031.csv": "e43210f4d0f4ef77ae691a9023c36c9e88fbc4e78f50e637d572f9c41f160476",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q2_17167.csv": "809b83966d70a3ee3dea09d0c64681adc9618214092c9ee7fb381901e2e1ffbc",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q3_17019.csv": "640426d9e76d2db4f375c5ee3b8889c4017e29c969eb185ff2fe0ba0cc6eb509",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q3_17031.csv": "b1ba502b96bb04205b23db919839a0caac88676cf7aa06bfbfb35e2df6319166",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q3_17167.csv": "dddde10aaaa8f9c3ff2049b11d0044e06e87b55bedc18ef2bb69d673a1e41c07",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q4_17019.csv": "cffef4ed27a66f65a95b87df697eb9c210d80f9856367b4869b364a62430f792",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q4_17031.csv": "37dd03de6ebd87b602f4168603ac67a70e5213b36a9d589decba0def2afcd40d",
+    "data/lake/raw/qcew_il_counties_qtr/2021_q4_17167.csv": "48b88f88980ed532e03dc6190f46ad610213af3ca16d50ef125b7dd062d77c79",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q1_17019.csv": "2b375592e964eb08dcaaf99204a99dbf11494932ad73c7c77cf9423c6dd542fa",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q1_17031.csv": "838817c10e56e469c413f976cbd36f99d10acf7a1fad4200811939ccb63e0063",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q1_17167.csv": "8f9a0cf58eb3954849347ccf46eeba9cc9cb5bb084b269b553bab2da20e46cf3",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q2_17019.csv": "15779be185d688d013eafc789d4e40cfa8c68c94acbef1894ca90408729b98e3",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q2_17031.csv": "782ff7d19c3f8a661ee336ef3491f4f90abaf6e6c351d08d6e2bb4a982fef9fa",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q2_17167.csv": "d68edd7fe685d74da1f262c87124b8b1bff8fc6865f55b33c9bd5f1a72af0e6c",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q3_17019.csv": "47f9efdac05e13dcbe7a453f2560f33ecfb660aaef0b43a5bc45ee85a92aac4d",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q3_17031.csv": "281745985767b1072fb731f03a108f2d1f87dd415945029155e8ac4a82f6e32d",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q3_17167.csv": "949ade9f9a890baa96dc82cad75a83d7736276a5211ede2e221ef205e568b208",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q4_17019.csv": "327ac59215a2cae092fb9a834551f23bb7e7182f0e2d1211ffb91e5ebbe4b75e",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q4_17031.csv": "d78b4281030b0d2b8e1207fbbd4410042532d7ccb0c566709ec6ce80926d45ec",
+    "data/lake/raw/qcew_il_counties_qtr/2022_q4_17167.csv": "bd0700d635eed0daacf0c9d23fd9f61f7c364e1a8d8af2025fb820af1fbe0ce9",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q1_17019.csv": "fd8068cbc3d4fcb3e0003bb6101d9fa2d63a199585b59258ca6d4fd4ed208c14",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q1_17031.csv": "5f57263fa3fc72e4406948bba62421a35181e94a7847e62671fecbbc8528861f",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q1_17167.csv": "a7772abe5f1b4e24699ca28c38d72f337231fe7a823045587aef1e7d2b035991",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q2_17019.csv": "a6fa5dd13a832cd9b8466859ddbfc2f9e6c4e36f81ad6d598509863073503c1a",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q2_17031.csv": "a05c6579ce147964b2fde99bdbae2e1addb5a009fe34be21ba5d47900b8305d4",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q2_17167.csv": "654b2fa7abc117b98c136a8e09c17ba659f0bbf9a26e1c596da2385da49c35d1",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q3_17019.csv": "3fceedb33b8bf541e10b75026eecd50d9826b12ee8a7cdff9f7cb3d55a51b973",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q3_17031.csv": "a1c659ccfa41f8be10a20f0fb3369f578d89edce7e590551a0b7c59b1d4c19e4",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q3_17167.csv": "290e93af50ba16897724d186e5e0953cb3d9a804bfe836080b2859cd54b3a96f",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q4_17019.csv": "203d085a77239ac7cbed257bf257dc2c92aa55d368ec21fb1d90cd3db4faf234",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q4_17031.csv": "154bfff756f734896ca323bc43accaf590b9d55fa0bd07c8f435bd315ab8bc4c",
+    "data/lake/raw/qcew_il_counties_qtr/2023_q4_17167.csv": "9aea35882ef1171400edaa18ea0da80c990ac782b9bf647f309362644e705f29",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q1_17019.csv": "c5770dff41c3388d70b1741dbe6fda8f5d9e47dd21c385615f0e8b56e355d621",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q1_17031.csv": "e23760cbf2c82acf858688241d33a04ea1faf6f1b3633f6c6cb4073dd7b85cb5",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q1_17167.csv": "9854370e7848682bc5d86d11fc83dd6ca8ae7435b49bc2e735bb03c5b6676834",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q2_17019.csv": "14acdf28584733ba325f7b86419b8b784d261531c4c94ebf1f36047cd66d5823",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q2_17031.csv": "af23d9940ffcdd7041c8581c246a61e94a21ae87ca9146d4bacdd4ad667793e5",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q2_17167.csv": "e34084d0fe5ead624bfcfcaab5c2cf874cc1db54a5287fa696b42ce40bc0a4ba",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q3_17019.csv": "c9100cd26ea98e42d23faec1b091ee6972fd15ccadcf77fa3f45ad6c8081f2e1",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q3_17031.csv": "3380a10485197c36ef5289e0f072c4c048beaca24fdfd4dd902c949177a15448",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q3_17167.csv": "a939d3edc32e5e5634f93afb3b9068c507f211173dce7c550b25f6faee275634",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q4_17019.csv": "90cff53ccb6f7996e77f68b53c2b32daebf218484313fb5452ba61744ed7e8ed",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q4_17031.csv": "73f2e853d7d265b91a095197524b7d902fee03f1dd06cb251186bc4f50bfd545",
+    "data/lake/raw/qcew_il_counties_qtr/2024_q4_17167.csv": "49b0c03e2fb8e684cb2cfb40c81d0940915db342d45be03e5db9bd07540f0e80",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q1_17019.csv": "d049e7ad5b407d05a67c75f936155b754e1c68721273392bdd380708976d3303",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q1_17031.csv": "0a926bfbb6d4624531815cb7e88b14f4c387eda68793bcc08ef5d7d6187b2e34",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q1_17167.csv": "d2771b237db8c7e546ec74e34a9a1e0b7837492ef6fac741d0253cf547236089",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q2_17019.csv": "50a3057aaecab3199e5192a1891930905f28b467f26c2b7e86cf834ad00b33e4",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q2_17031.csv": "26c97101cb969fa683d935212f84a8f567dd046dff3402aea6a846d2d0829351",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q2_17167.csv": "886d152e16389bd1d8751ed9a985e65f1ed90f0ccac0a6d93e5da9ac276301d6",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q3_17019.csv": "cd8bf2f5af6d2dc009cc838e2c9e7768e2fadc90e22263edd38adb7e3acd6c46",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q3_17031.csv": "27bf8b4b0f3cf6b04e42056f712d9e5e43c0cc05b3f695f65dd55663856ee496",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q3_17167.csv": "def808a9f75de85d65fd0fbae4f81ed0c8371c19503ace10303e70bea44cca7d",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q4_17019.csv": "4b7bf289a2a04e5c8570fa8e3b0993495aa9e0c68673bbd06e6332caf6ae91af",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q4_17031.csv": "469b01e717dae20b5c64569a2abc132d36e07f3b3661454a18228253e0d932d2",
+    "data/lake/raw/qcew_il_counties_qtr/2025_q4_17167.csv": "aa093397dfab18612097cd1ea810804c9c7049420da0206ee598be21a4377aa9"
    }
   },
   "qwi_il_rh_gs_ns_oslp": {

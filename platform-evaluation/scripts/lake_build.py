@@ -183,7 +183,11 @@ QCEW_TYPES = "{'area_fips':'VARCHAR','own_code':'VARCHAR','industry_code':'VARCH
 
 def build_qcew(b: Builder):
     for src, table, note in [("qcew_colleges", "qcew_colleges_annual", "NAICS 611310, all areas/ownerships, annual"),
-                             ("qcew_il_counties", "qcew_il_county_annual", "Champaign/Cook/Sangamon, all industries, annual")]:
+                             ("qcew_il_counties", "qcew_il_county_annual", "Champaign/Cook/Sangamon, all industries, annual"),
+                             ("qcew_colleges_qtr", "qcew_colleges_quarterly", "NAICS 611310, all areas/ownerships, quarterly"),
+                             ("qcew_il_counties_qtr", "qcew_il_county_quarterly", "Champaign/Cook/Sangamon, all industries, quarterly")]:
+        if not (RAW / src).exists():
+            continue
         files = sorted((RAW / src).glob("*.csv"))
         glob = q(RAW / src) + "/*.csv"
         b.write(table, f"SELECT * FROM read_csv('{glob}', header=true, types={QCEW_TYPES}, union_by_name=true)",

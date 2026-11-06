@@ -1,0 +1,1278 @@
+{
+ "contract_version": "1.0",
+ "built_at_utc": "2026-11-06T07:00:16.126460+00:00",
+ "tables": {
+  "onet_occupation": {
+   "rows": 1016,
+   "bytes": 86062,
+   "source_id": "onet_db_31_0",
+   "source_vintage": "O*NET 31.0",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "description",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "onet_task_statement": {
+   "rows": 18838,
+   "bytes": 614018,
+   "source_id": "onet_db_31_0",
+   "source_vintage": "O*NET 31.0",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_type",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "incumbents_responding",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "onet_task_rating": {
+   "rows": 165780,
+   "bytes": 537062,
+   "source_id": "onet_db_31_0",
+   "source_vintage": "O*NET 31.0",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "task_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "onet_element_rating": {
+   "rows": 411893,
+   "bytes": 1944626,
+   "source_id": "onet_db_31_0",
+   "source_vintage": "O*NET 31.0",
+   "columns": [
+    {
+     "name": "domain",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "element_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "scale_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "data_value",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "n",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "standard_error",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "lower_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "upper_ci_bound",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "recommend_suppress",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "not_relevant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "date",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "domain_source",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "onet_technology_skill": {
+   "rows": 31821,
+   "bytes": 227694,
+   "source_id": "onet_db_31_0",
+   "source_vintage": "O*NET 31.0",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "example",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "commodity_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "commodity_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hot_technology",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "in_demand",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "onet_alternate_title": {
+   "rows": 54269,
+   "bytes": 514742,
+   "source_id": "onet_db_31_0",
+   "source_vintage": "O*NET 31.0",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "alternate_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "short_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "onet_job_zone": {
+   "rows": 923,
+   "bytes": 3160,
+   "source_id": "onet_db_31_0",
+   "source_vintage": "O*NET 31.0",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "job_zone",
+     "type": "BIGINT"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "onet_soc_crosswalk": {
+   "rows": 1016,
+   "bytes": 28631,
+   "source_id": "onet_soc_crosswalk",
+   "source_vintage": "O*NET-SOC 2019 to SOC 2018",
+   "columns": [
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "onetsoc_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "soc_2018_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "soc_2018_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "sucss_class": {
+   "rows": 883,
+   "bytes": 13081,
+   "source_id": "sucss_catalog",
+   "source_vintage": "acquired 2026-10-29",
+   "columns": [
+    {
+     "name": "source_record_id",
+     "type": "BIGINT"
+    },
+    {
+     "name": "class_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "class_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupational_line",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "sucss_onet_candidate": {
+   "rows": 2649,
+   "bytes": 52736,
+   "source_id": "sucss_catalog",
+   "source_vintage": "title_lexical_baseline_v1",
+   "columns": [
+    {
+     "name": "source_record_id",
+     "type": "BIGINT"
+    },
+    {
+     "name": "class_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "class_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "onetsoc_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupation_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "candidate_rank",
+     "type": "BIGINT"
+    },
+    {
+     "name": "rank",
+     "type": "BIGINT"
+    },
+    {
+     "name": "title_similarity",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "score",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "method",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "review_status",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "warning",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "ipeds_institution": {
+   "rows": 6072,
+   "bytes": 279483,
+   "source_id": "ipeds",
+   "source_vintage": "HD2024",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "institution_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "state",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "state_abbr",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sector_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sector",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "carnegie_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "carnegie",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "carnegie_class",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "county_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "cbsa_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "system_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "hospital",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "land_grant",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "latitude",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "longitude",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "ipeds_staff_by_occupation": {
+   "rows": 5407980,
+   "bytes": 12397201,
+   "source_id": "ipeds",
+   "source_vintage": "S2023_OC (Fall 2023)",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "snapshot_date",
+     "type": "DATE"
+    },
+    {
+     "name": "staffcat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupation_category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ftpt_status",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupcat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "is_category_total",
+     "type": "BOOLEAN"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "race_ethnicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "headcount",
+     "type": "BIGINT"
+    },
+    {
+     "name": "staff_count",
+     "type": "BIGINT"
+    },
+    {
+     "name": "imputation_flag",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "ipeds_instructional_staff": {
+   "rows": 1911960,
+   "bytes": 4847194,
+   "source_id": "ipeds",
+   "source_vintage": "S2023_IS (Fall 2023)",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "siscat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "facstat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "faculty_status",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "arank_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "academic_rank",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "is_category_total",
+     "type": "BOOLEAN"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "race_ethnicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "headcount",
+     "type": "BIGINT"
+    },
+    {
+     "name": "imputation_flag",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "ipeds_new_hires": {
+   "rows": 1234230,
+   "bytes": 2030296,
+   "source_id": "ipeds",
+   "source_vintage": "S2023_NH (Fall 2023)",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "snhcat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupation_category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupcat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "facstat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "is_category_total",
+     "type": "BOOLEAN"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "race_ethnicity",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "headcount",
+     "type": "BIGINT"
+    },
+    {
+     "name": "imputation_flag",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "ipeds_salary_instructional": {
+   "rows": 45928,
+   "bytes": 457818,
+   "source_id": "ipeds",
+   "source_vintage": "SAL2023_IS (2023-24)",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "arank_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "academic_rank",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "contract_length",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "staff_count",
+     "type": "BIGINT"
+    },
+    {
+     "name": "staff_count_men",
+     "type": "BIGINT"
+    },
+    {
+     "name": "staff_count_women",
+     "type": "BIGINT"
+    },
+    {
+     "name": "salary_outlays",
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_salary_outlays",
+     "type": "BIGINT"
+    },
+    {
+     "name": "salary_outlays_men",
+     "type": "BIGINT"
+    },
+    {
+     "name": "salary_outlays_women",
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_salary",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "ipeds_salary_noninstructional": {
+   "rows": 51493,
+   "bytes": 425803,
+   "source_id": "ipeds",
+   "source_vintage": "SAL2023_NIS (2023-24)",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "occupation_category_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupation_category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "staff_count",
+     "type": "BIGINT"
+    },
+    {
+     "name": "salary_outlays",
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_salary_outlays",
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_salary",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "ipeds_employees_by_position": {
+   "rows": 288192,
+   "bytes": 1162823,
+   "source_id": "ipeds",
+   "source_vintage": "EAP2023 (Fall 2023)",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "eapcat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "position_category",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "occupcat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "facstat_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "total_employees",
+     "type": "BIGINT"
+    },
+    {
+     "name": "full_time",
+     "type": "BIGINT"
+    },
+    {
+     "name": "part_time",
+     "type": "BIGINT"
+    },
+    {
+     "name": "medical_school_employees",
+     "type": "BIGINT"
+    },
+    {
+     "name": "is_all_faculty_status",
+     "type": "BOOLEAN"
+    },
+    {
+     "name": "is_category_total",
+     "type": "BOOLEAN"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "ipeds_enrollment_12mo": {
+   "rows": 115026,
+   "bytes": 860354,
+   "source_id": "ipeds",
+   "source_vintage": "EFFY2024 (2023-24)",
+   "columns": [
+    {
+     "name": "unitid",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "survey_year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "level_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "student_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "enrollment_total",
+     "type": "BIGINT"
+    },
+    {
+     "name": "enrollment_men",
+     "type": "BIGINT"
+    },
+    {
+     "name": "enrollment_women",
+     "type": "BIGINT"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "qcew_industry": {
+   "rows": 91368,
+   "bytes": 596464,
+   "source_id": "qcew_colleges_qtr",
+   "source_vintage": "2019Q1 onward",
+   "columns": [
+    {
+     "name": "area_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "own_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agglvl_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "size_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "qtr",
+     "type": "INTEGER"
+    },
+    {
+     "name": "disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "qtrly_estabs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month1_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month2_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month3_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_qtrly_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_wkly_wage",
+     "type": "BIGINT"
+    },
+    {
+     "name": "quarter_start",
+     "type": "DATE"
+    },
+    {
+     "name": "area_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "qcew_area": {
+   "rows": 149984,
+   "bytes": 1307668,
+   "source_id": "qcew_il_counties_qtr",
+   "source_vintage": "2019Q1 onward",
+   "columns": [
+    {
+     "name": "area_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "own_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agglvl_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "size_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "BIGINT"
+    },
+    {
+     "name": "qtr",
+     "type": "INTEGER"
+    },
+    {
+     "name": "disclosure_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "qtrly_estabs",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month1_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month2_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "month3_emplvl",
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_qtrly_wages",
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_wkly_wage",
+     "type": "BIGINT"
+    },
+    {
+     "name": "quarter_start",
+     "type": "DATE"
+    },
+    {
+     "name": "area_title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "qwi_higher_ed": {
+   "rows": 3537,
+   "bytes": 58604,
+   "source_id": "qwi_il",
+   "source_vintage": "LEHD latest_release",
+   "columns": [
+    {
+     "name": "geography",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "geo_level",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "state_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "county_fips",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "industry",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "ownercode",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "sex",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "agegrp",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "year",
+     "type": "INTEGER"
+    },
+    {
+     "name": "quarter",
+     "type": "INTEGER"
+    },
+    {
+     "name": "quarter_start",
+     "type": "DATE"
+    },
+    {
+     "name": "emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "emp_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hira",
+     "type": "BIGINT"
+    },
+    {
+     "name": "hirn",
+     "type": "BIGINT"
+    },
+    {
+     "name": "sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "turnovrs",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "earns",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_emp",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_hir_a",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_sep",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_turn_ovr_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "s_earn_s",
+     "type": "BIGINT"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "aei_task_usage": {
+   "rows": 21363,
+   "bytes": 702906,
+   "source_id": "anthropic_economic_index",
+   "source_vintage": "release_2025_03_27 + labor_market_impacts",
+   "columns": [
+    {
+     "name": "task_name",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "release",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "usage_pct",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "penetration",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "directive",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "feedback_loop",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "task_iteration",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "validation",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "learning",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "filtered",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  },
+  "aei_occupation_exposure": {
+   "rows": 756,
+   "bytes": 14736,
+   "source_id": "anthropic_economic_index",
+   "source_vintage": "labor_market_impacts",
+   "columns": [
+    {
+     "name": "soc_2018_code",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "title",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "observed_exposure",
+     "type": "DOUBLE"
+    },
+    {
+     "name": "source_id",
+     "type": "VARCHAR"
+    },
+    {
+     "name": "source_vintage",
+     "type": "VARCHAR"
+    }
+   ]
+  }
+ }
+}

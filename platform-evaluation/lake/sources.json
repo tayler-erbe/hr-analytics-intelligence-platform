@@ -1,5 +1,5 @@
 {
- "registry_version": "0.2",
+ "registry_version": "0.3",
  "created": "2026-11-06",
  "sources": [
   {
@@ -511,6 +511,588 @@
    "license": "U.S. federal public data",
    "vintage": "current",
    "grain": "series x month"
+  },
+  {
+   "id": "qcew_colleges_qtr",
+   "name": "QCEW quarterly, NAICS 611310 Colleges and universities, all areas",
+   "publisher": "BLS",
+   "tier": "P0",
+   "files": [
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/1/industry/611310.csv",
+     "filename": "2019_q1_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/2/industry/611310.csv",
+     "filename": "2019_q2_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/3/industry/611310.csv",
+     "filename": "2019_q3_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/4/industry/611310.csv",
+     "filename": "2019_q4_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/1/industry/611310.csv",
+     "filename": "2020_q1_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/2/industry/611310.csv",
+     "filename": "2020_q2_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/3/industry/611310.csv",
+     "filename": "2020_q3_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/4/industry/611310.csv",
+     "filename": "2020_q4_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/1/industry/611310.csv",
+     "filename": "2021_q1_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/2/industry/611310.csv",
+     "filename": "2021_q2_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/3/industry/611310.csv",
+     "filename": "2021_q3_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/4/industry/611310.csv",
+     "filename": "2021_q4_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/1/industry/611310.csv",
+     "filename": "2022_q1_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/2/industry/611310.csv",
+     "filename": "2022_q2_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/3/industry/611310.csv",
+     "filename": "2022_q3_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/4/industry/611310.csv",
+     "filename": "2022_q4_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/1/industry/611310.csv",
+     "filename": "2023_q1_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/2/industry/611310.csv",
+     "filename": "2023_q2_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/3/industry/611310.csv",
+     "filename": "2023_q3_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/4/industry/611310.csv",
+     "filename": "2023_q4_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/1/industry/611310.csv",
+     "filename": "2024_q1_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/2/industry/611310.csv",
+     "filename": "2024_q2_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/3/industry/611310.csv",
+     "filename": "2024_q3_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/4/industry/611310.csv",
+     "filename": "2024_q4_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/1/industry/611310.csv",
+     "filename": "2025_q1_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/2/industry/611310.csv",
+     "filename": "2025_q2_611310.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/3/industry/611310.csv",
+     "filename": "2025_q3_611310.csv",
+     "optional": true
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/4/industry/611310.csv",
+     "filename": "2025_q4_611310.csv",
+     "optional": true
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "2019Q1 onward",
+   "grain": "area_fips x own_code x year x qtr"
+  },
+  {
+   "id": "qcew_il_counties_qtr",
+   "name": "QCEW quarterly for Champaign, Cook, Sangamon counties",
+   "publisher": "BLS",
+   "tier": "P0",
+   "files": [
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/1/area/17019.csv",
+     "filename": "2019_q1_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/1/area/17031.csv",
+     "filename": "2019_q1_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/1/area/17167.csv",
+     "filename": "2019_q1_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/2/area/17019.csv",
+     "filename": "2019_q2_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/2/area/17031.csv",
+     "filename": "2019_q2_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/2/area/17167.csv",
+     "filename": "2019_q2_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/3/area/17019.csv",
+     "filename": "2019_q3_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/3/area/17031.csv",
+     "filename": "2019_q3_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/3/area/17167.csv",
+     "filename": "2019_q3_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/4/area/17019.csv",
+     "filename": "2019_q4_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/4/area/17031.csv",
+     "filename": "2019_q4_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2019/4/area/17167.csv",
+     "filename": "2019_q4_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/1/area/17019.csv",
+     "filename": "2020_q1_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/1/area/17031.csv",
+     "filename": "2020_q1_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/1/area/17167.csv",
+     "filename": "2020_q1_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/2/area/17019.csv",
+     "filename": "2020_q2_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/2/area/17031.csv",
+     "filename": "2020_q2_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/2/area/17167.csv",
+     "filename": "2020_q2_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/3/area/17019.csv",
+     "filename": "2020_q3_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/3/area/17031.csv",
+     "filename": "2020_q3_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/3/area/17167.csv",
+     "filename": "2020_q3_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/4/area/17019.csv",
+     "filename": "2020_q4_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/4/area/17031.csv",
+     "filename": "2020_q4_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2020/4/area/17167.csv",
+     "filename": "2020_q4_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/1/area/17019.csv",
+     "filename": "2021_q1_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/1/area/17031.csv",
+     "filename": "2021_q1_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/1/area/17167.csv",
+     "filename": "2021_q1_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/2/area/17019.csv",
+     "filename": "2021_q2_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/2/area/17031.csv",
+     "filename": "2021_q2_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/2/area/17167.csv",
+     "filename": "2021_q2_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/3/area/17019.csv",
+     "filename": "2021_q3_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/3/area/17031.csv",
+     "filename": "2021_q3_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/3/area/17167.csv",
+     "filename": "2021_q3_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/4/area/17019.csv",
+     "filename": "2021_q4_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/4/area/17031.csv",
+     "filename": "2021_q4_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2021/4/area/17167.csv",
+     "filename": "2021_q4_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/1/area/17019.csv",
+     "filename": "2022_q1_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/1/area/17031.csv",
+     "filename": "2022_q1_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/1/area/17167.csv",
+     "filename": "2022_q1_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/2/area/17019.csv",
+     "filename": "2022_q2_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/2/area/17031.csv",
+     "filename": "2022_q2_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/2/area/17167.csv",
+     "filename": "2022_q2_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/3/area/17019.csv",
+     "filename": "2022_q3_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/3/area/17031.csv",
+     "filename": "2022_q3_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/3/area/17167.csv",
+     "filename": "2022_q3_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/4/area/17019.csv",
+     "filename": "2022_q4_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/4/area/17031.csv",
+     "filename": "2022_q4_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2022/4/area/17167.csv",
+     "filename": "2022_q4_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/1/area/17019.csv",
+     "filename": "2023_q1_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/1/area/17031.csv",
+     "filename": "2023_q1_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/1/area/17167.csv",
+     "filename": "2023_q1_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/2/area/17019.csv",
+     "filename": "2023_q2_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/2/area/17031.csv",
+     "filename": "2023_q2_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/2/area/17167.csv",
+     "filename": "2023_q2_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/3/area/17019.csv",
+     "filename": "2023_q3_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/3/area/17031.csv",
+     "filename": "2023_q3_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/3/area/17167.csv",
+     "filename": "2023_q3_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/4/area/17019.csv",
+     "filename": "2023_q4_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/4/area/17031.csv",
+     "filename": "2023_q4_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2023/4/area/17167.csv",
+     "filename": "2023_q4_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/1/area/17019.csv",
+     "filename": "2024_q1_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/1/area/17031.csv",
+     "filename": "2024_q1_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/1/area/17167.csv",
+     "filename": "2024_q1_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/2/area/17019.csv",
+     "filename": "2024_q2_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/2/area/17031.csv",
+     "filename": "2024_q2_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/2/area/17167.csv",
+     "filename": "2024_q2_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/3/area/17019.csv",
+     "filename": "2024_q3_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/3/area/17031.csv",
+     "filename": "2024_q3_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/3/area/17167.csv",
+     "filename": "2024_q3_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/4/area/17019.csv",
+     "filename": "2024_q4_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/4/area/17031.csv",
+     "filename": "2024_q4_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2024/4/area/17167.csv",
+     "filename": "2024_q4_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/1/area/17019.csv",
+     "filename": "2025_q1_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/1/area/17031.csv",
+     "filename": "2025_q1_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/1/area/17167.csv",
+     "filename": "2025_q1_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/2/area/17019.csv",
+     "filename": "2025_q2_17019.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/2/area/17031.csv",
+     "filename": "2025_q2_17031.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/2/area/17167.csv",
+     "filename": "2025_q2_17167.csv",
+     "optional": false
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/3/area/17019.csv",
+     "filename": "2025_q3_17019.csv",
+     "optional": true
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/3/area/17031.csv",
+     "filename": "2025_q3_17031.csv",
+     "optional": true
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/3/area/17167.csv",
+     "filename": "2025_q3_17167.csv",
+     "optional": true
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/4/area/17019.csv",
+     "filename": "2025_q4_17019.csv",
+     "optional": true
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/4/area/17031.csv",
+     "filename": "2025_q4_17031.csv",
+     "optional": true
+    },
+    {
+     "url": "https://data.bls.gov/cew/data/api/2025/4/area/17167.csv",
+     "filename": "2025_q4_17167.csv",
+     "optional": true
+    }
+   ],
+   "license": "U.S. federal public data",
+   "vintage": "2019Q1 onward",
+   "grain": "area_fips x own_code x industry_code x year x qtr"
   }
  ]
 }

@@ -1,0 +1,4 @@
+# Pin versions you actually deploy and record them in the evidence log.
+streamlit
+databricks-sdk
+pandas

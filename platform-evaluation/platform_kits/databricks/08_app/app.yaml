@@ -1,0 +1,12 @@
+# Databricks App manifest (verify keys against "Configure Databricks app execution with app.yaml").
+# Databricks does not run `command` in a shell: environment variables must be declared here.
+command: ["streamlit", "run", "app.py"]
+env:
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: sql-warehouse          # resource key added in the App UI (permission: Can use)
+  - name: KIT_CATALOG
+    value: "workspace"                # change to your catalog
+  - name: KIT_SCHEMA
+    value: "hr_public"
+  - name: KIT_EVAL_SCHEMA
+    value: "hr_eval_results"

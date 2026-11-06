@@ -1,0 +1,2 @@
+source_record_id,class_code,class_title,approved_onetsoc_code,reviewer_decision,reviewer,reviewed_on,evidence_note
+4092,4755,Academic Contract Specialist,,unreviewed,,,"Fill approved_onetsoc_code only after reading the SUCSS class specification and the O*NET description; reviewer_decision in (approved, no_good_match, needs_spec, unreviewed)"

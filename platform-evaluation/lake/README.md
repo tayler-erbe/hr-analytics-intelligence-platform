@@ -2,7 +2,7 @@
 
 A reproducible, versioned lake of **public** workforce and labor-market data, built once and loaded identically into a local DuckDB stack, Snowflake and Databricks. It is the shared fixture for the platform comparison and the external evidence layer for HR decision support. It holds no university employee data.
 
-Built 2026-11-06: **78 silver tables, 8.07 million rows, 203 MB of Parquet, 11 gold views.** Counts per table are in [manifests/silver_manifest.json](manifests/silver_manifest.json).
+Built 2026-11-06: **80 silver tables (8.3 million rows, 211 MB of Parquet), 11 gold views, and 23 contract tables** for the platform kits ([CONTRACT.md](CONTRACT.md)). Counts per table are in [manifests/silver_manifest.json](manifests/silver_manifest.json).
 
 ## Run it
 
@@ -10,6 +10,7 @@ Built 2026-11-06: **78 silver tables, 8.07 million rows, 203 MB of Parquet, 11 g
 pip install duckdb pyarrow openpyxl
 python scripts/lake_acquire.py        # download raw files and hash them (~300 MB, under 1 minute on a good link)
 python scripts/lake_build.py          # raw -> silver Parquet -> DuckDB catalog with gold views (~2 minutes)
+python scripts/lake_contract.py       # silver -> contract tables the Snowflake/Databricks kits load
 python -m unittest scripts/test_lake.py -v
 ```
 
@@ -22,6 +23,7 @@ Run from `platform-evaluation/`. Raw files, Parquet and the DuckDB file go to `d
 | Registry | `lake/sources.json` | Every source file: URL, publisher, license, vintage, grain, tier |
 | Raw | `data/lake/raw/<source>/` | Byte-for-byte downloads, never edited. Each attempt is recorded in `manifests/acquisition_manifest.json` with HTTP status, size, SHA-256 and timestamp |
 | Silver | `data/lake/silver/<table>.parquet` | One typed table per published file, snake_case columns. Code columns (FIPS, NAICS, UNITID, SOC) stay strings. Suppression and imputation flags are kept |
+| Contract | `data/lake/contract/<table>.parquet` | Stable, tidy tables with fixed grains and names, loaded identically by the Snowflake kit, Databricks kit and custom stack. Rules in [CONTRACT.md](CONTRACT.md) |
 | Gold | `lake/gold/gold_views.sql` | Analytic views in portable SQL, each with a stated grain, for replay on Snowflake and Databricks |
 | DDL | `lake/ddl/` | Generated `CREATE TABLE` statements for Snowflake and Databricks from the same silver schemas |
 
@@ -31,7 +33,7 @@ Run from `platform-evaluation/`. Raw files, Parquet and the DuckDB file go to `d
 |---|---|---|
 | O*NET 31.0 (USDOL/ETA) | 45 `onet_*` tables, plus `onet_element_rating` (412K rows across all rating domains) and `onet_soc_crosswalk` | Task, skill, knowledge, work-activity and technology profiles for any role; job zones; alternate titles for title matching |
 | IPEDS (NCES), Fall 2023 HR and 2024 directory | `ipeds_s2023_oc`, `_is`, `_sis`, `_nh`, `ipeds_sal2023_is`, `_nis`, `ipeds_eap2023`, `ipeds_hd2024`, `ipeds_ic2024`, `ipeds_effy2024`, `ipeds_value_label`, `ipeds_variable` | Peer staffing mix, new hires, faculty pay by rank and sex, non-instructional pay by occupation group, staff-to-student ratios for every U.S. institution |
-| BLS QCEW, 2015–2024 | `qcew_colleges_annual` (NAICS 611310, all areas), `qcew_il_county_annual` (Champaign, Cook, Sangamon) | Higher-ed employment and pay trends by ownership; local labor-market competition |
+| BLS QCEW, annual 2015–2024 and quarterly 2019 Q1–2025 Q4 | `qcew_colleges_annual`/`_quarterly` (NAICS 611310, all areas), `qcew_il_county_annual`/`_quarterly` (Champaign, Cook, Sangamon) | Higher-ed employment and pay trends by ownership; local labor-market competition |
 | Census LEHD QWI, Illinois, through 2025 | `qwi_il_*` (5 tables, 3.8M rows) | Hires, separations and turnover for Illinois colleges and universities (NAICS 6113), by quarter, age, sex, race and education, back to 1993 |
 | Indeed Hiring Lab | `indeed_*` | Daily posting-index trends by sector, state and metro (Chicago only; Champaign and Springfield metros are too small to be covered) |
 | Anthropic Economic Index | `aei_*` | Observed AI usage by O*NET task and SOC occupation, kept as evidence and never presented as a displacement forecast |

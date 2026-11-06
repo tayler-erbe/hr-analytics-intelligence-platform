@@ -1,0 +1,396 @@
+# Semantic model for Cortex Analyst / semantic view HR_KIT.CURATED.HR_PUBLIC_SV
+# Kit v0.1 (2026-11-06). PUBLIC DATA ONLY (IPEDS, BLS QCEW, Census QWI).
+# Loaded by 04_semantic_view_and_analyst.sql via SYSTEM$CREATE_SEMANTIC_VIEW_FROM_YAML.
+#
+# IMPORTANT
+# - Column names follow HR_KIT.CURATED views (01_load_lake.sql STEP D). If the lake
+#   uses different names, fix the views, not this file.
+# - The verified_queries below are KIT DRAFTS. Run each one, check the result
+#   against the source, then set verified_by / verified_at yourself. Until then
+#   they are "unverified examples" and must be recorded that way in evidence.
+# - None of these verified queries duplicates the 15 accuracy-test questions in
+#   04_semantic_view_and_analyst.sql (test contamination). Keep it that way.
+# - Verified-query SQL uses logical table names prefixed with "__" (Cortex Analyst
+#   convention) — verify in account; if rejected, use the generated DDL syntax.
+# - data_type values assume the lake types; adjust if verify_only reports a mismatch.
+
+name: hr_public_sv
+description: >-
+  Public higher-education workforce context for Illinois: IPEDS institution staffing
+  and salaries (institution-reported, fall/academic-year surveys), BLS QCEW
+  establishment counts, employment and wages for colleges and universities, and Census
+  QWI hires, separations, turnover and earnings for NAICS 6113. Not university HR
+  records; contains no individual employees.
+
+tables:
+  - name: institution
+    description: IPEDS institution directory (HD). One row per institution (unitid).
+    base_table: {database: HR_KIT, schema: CURATED, table: V_IPEDS_INSTITUTION}
+    primary_key: {columns: [unitid]}
+    dimensions:
+      - name: unitid
+        expr: unitid
+        data_type: varchar
+        description: IPEDS unit id. 145637 = University of Illinois Urbana-Champaign, 145600 = University of Illinois Chicago, 145813 = University of Illinois Springfield.
+        synonyms: [institution id, ipeds id]
+      - name: institution_name
+        expr: institution_name
+        data_type: varchar
+        synonyms: [university, college, school, campus]
+      - name: state_abbr
+        expr: state_abbr
+        data_type: varchar
+        description: Two-letter postal state code, e.g. IL.
+        synonyms: [state]
+      - name: sector
+        expr: sector
+        data_type: varchar
+        description: IPEDS sector code. 1 = public 4-year or above, 2 = private nonprofit 4-year, 3 = private for-profit 4-year, 4 = public 2-year.
+        synonyms: [control, institution type]
+      - name: carnegie_class
+        expr: carnegie_class
+        data_type: varchar
+        synonyms: [carnegie classification]
+
+  - name: nonin_salary
+    description: >-
+      IPEDS SAL_NIS. Full-time non-instructional staff count and total salary outlays by
+      institution, survey year and occupation category. Average salary must be computed as
+      total outlays / total staff (weighted), never as an average of averages.
+    base_table: {database: HR_KIT, schema: CURATED, table: V_IPEDS_SALARY_NONINSTR}
+    primary_key: {columns: [unitid, survey_year, occupation_category]}
+    dimensions:
+      - name: unitid
+        expr: unitid
+        data_type: varchar
+      - name: occupation_category
+        expr: occupation_category
+        data_type: varchar
+        synonyms: [staff category, occupational category, job category]
+    time_dimensions:
+      - name: survey_year
+        expr: survey_year
+        data_type: number
+        description: IPEDS survey/collection year as stored in the lake. Ask which year if the user does not specify; default to the latest available only if the user says "latest".
+        synonyms: [year, academic year]
+    facts:
+      - name: staff_count
+        expr: staff_count
+        data_type: number
+      - name: salary_outlays
+        expr: salary_outlays
+        data_type: number
+    metrics:
+      - name: total_noninstructional_staff
+        expr: SUM(nonin_salary.staff_count)
+        description: Full-time non-instructional staff (IPEDS SAL_NIS). Not headcount of all employees.
+      - name: total_noninstructional_outlays
+        expr: SUM(nonin_salary.salary_outlays)
+      - name: avg_noninstructional_salary
+        expr: SUM(nonin_salary.salary_outlays) / NULLIF(SUM(nonin_salary.staff_count), 0)
+        description: Weighted average annual salary outlay per full-time non-instructional staff member.
+        synonyms: [average salary, mean pay]
+
+  - name: instr_salary
+    description: >-
+      IPEDS SAL_IS. Full-time instructional staff count and salary outlays by academic rank
+      and contract length. Average salary is weighted (outlays / staff).
+    base_table: {database: HR_KIT, schema: CURATED, table: V_IPEDS_SALARY_INSTR}
+    primary_key: {columns: [unitid, survey_year, academic_rank, contract_length]}
+    dimensions:
+      - name: unitid
+        expr: unitid
+        data_type: varchar
+      - name: academic_rank
+        expr: academic_rank
+        data_type: varchar
+        synonyms: [faculty rank, rank]
+      - name: contract_length
+        expr: contract_length
+        data_type: varchar
+        synonyms: [contract months, 9-month, 12-month]
+    time_dimensions:
+      - name: survey_year
+        expr: survey_year
+        data_type: number
+    facts:
+      - name: staff_count
+        expr: staff_count
+        data_type: number
+      - name: salary_outlays
+        expr: salary_outlays
+        data_type: number
+    metrics:
+      - name: total_instructional_staff
+        expr: SUM(instr_salary.staff_count)
+      - name: avg_instructional_salary
+        expr: SUM(instr_salary.salary_outlays) / NULLIF(SUM(instr_salary.staff_count), 0)
+        synonyms: [faculty salary, average faculty pay]
+
+  - name: staff
+    description: IPEDS S_OC fall staff headcount by occupation category (all sexes/races combined).
+    base_table: {database: HR_KIT, schema: CURATED, table: V_IPEDS_STAFF}
+    primary_key: {columns: [unitid, survey_year, occupation_category]}
+    dimensions:
+      - name: unitid
+        expr: unitid
+        data_type: varchar
+      - name: occupation_category
+        expr: occupation_category
+        data_type: varchar
+    time_dimensions:
+      - name: survey_year
+        expr: survey_year
+        data_type: number
+    facts:
+      - name: headcount
+        expr: headcount
+        data_type: number
+    metrics:
+      - name: total_staff_headcount
+        expr: SUM(staff.headcount)
+        description: IPEDS fall staff headcount (institution-reported). Not FTE, not payroll count.
+        synonyms: [staff count, number of staff, employees per IPEDS]
+
+  - name: area
+    description: Area lookup for QCEW/QWI geographies used in this kit.
+    base_table: {database: HR_KIT, schema: CURATED, table: AREA_DIM}
+    primary_key: {columns: [area_fips]}
+    dimensions:
+      - name: area_fips
+        expr: area_fips
+        data_type: varchar
+      - name: area_name
+        expr: area_name
+        data_type: varchar
+        synonyms: [county, region, geography]
+        sample_values: [Champaign County IL, Cook County IL, Sangamon County IL, Illinois, United States]
+      - name: area_level
+        expr: area_level
+        data_type: varchar
+        sample_values: [county, state, nation]
+
+  - name: qcew
+    description: >-
+      BLS QCEW quarterly establishments, month-3 employment and wages. industry_code 611310 =
+      colleges, universities and professional schools. own_code 0 total, 1 federal, 2 state,
+      3 local government, 5 private. Suppressed cells are NULL, not zero.
+    base_table: {database: HR_KIT, schema: CURATED, table: V_QCEW}
+    dimensions:
+      - name: area_fips
+        expr: area_fips
+        data_type: varchar
+      - name: own_code
+        expr: own_code
+        data_type: varchar
+        synonyms: [ownership]
+      - name: industry_code
+        expr: industry_code
+        data_type: varchar
+        synonyms: [naics]
+      - name: year
+        expr: year
+        data_type: number
+      - name: qtr
+        expr: qtr
+        data_type: number
+        synonyms: [quarter]
+    time_dimensions:
+      - name: quarter_start
+        expr: quarter_start
+        data_type: date
+    facts:
+      - name: month3_emplvl
+        expr: month3_emplvl
+        data_type: number
+      - name: avg_wkly_wage
+        expr: avg_wkly_wage
+        data_type: number
+      - name: total_qtrly_wages
+        expr: total_qtrly_wages
+        data_type: number
+      - name: qtrly_estabs
+        expr: qtrly_estabs
+        data_type: number
+    metrics:
+      - name: qcew_employment
+        expr: SUM(qcew.month3_emplvl)
+        description: Employment in the third month of the quarter. Do not sum across quarters.
+      - name: qcew_total_wages
+        expr: SUM(qcew.total_qtrly_wages)
+      - name: qcew_establishments
+        expr: SUM(qcew.qtrly_estabs)
+
+  - name: qwi
+    description: >-
+      Census QWI for NAICS 6113 (colleges and universities), all sexes and ages. emp =
+      beginning-of-quarter employment; hira = all hires; sep = separations; turnovrs = stable
+      turnover rate; earns = average monthly earnings of stable employees. Rates are not
+      summable; average them only with an explicit statement of the method.
+    base_table: {database: HR_KIT, schema: CURATED, table: V_QWI_HIGHER_ED}
+    dimensions:
+      - name: county_fips
+        expr: county_fips
+        data_type: varchar
+        description: 5-digit county FIPS; NULL for statewide rows (assumed lake convention — verify).
+      - name: state_fips
+        expr: state_fips
+        data_type: varchar
+      - name: year
+        expr: year
+        data_type: number
+      - name: quarter
+        expr: quarter
+        data_type: number
+    time_dimensions:
+      - name: quarter_start
+        expr: quarter_start
+        data_type: date
+    facts:
+      - name: emp
+        expr: emp
+        data_type: number
+      - name: hira
+        expr: hira
+        data_type: number
+      - name: sep
+        expr: sep
+        data_type: number
+      - name: turnovrs
+        expr: turnovrs
+        data_type: number
+      - name: earns
+        expr: earns
+        data_type: number
+    metrics:
+      - name: qwi_hires
+        expr: SUM(qwi.hira)
+      - name: qwi_separations
+        expr: SUM(qwi.sep)
+      - name: qwi_avg_turnover_rate
+        expr: AVG(qwi.turnovrs)
+        description: Unweighted mean of quarterly stable turnover rates across the selected rows.
+
+relationships:
+  - name: nonin_salary_to_institution
+    left_table: nonin_salary
+    right_table: institution
+    relationship_columns: [{left_column: unitid, right_column: unitid}]
+    join_type: left_outer
+    relationship_type: many_to_one
+  - name: instr_salary_to_institution
+    left_table: instr_salary
+    right_table: institution
+    relationship_columns: [{left_column: unitid, right_column: unitid}]
+    join_type: left_outer
+    relationship_type: many_to_one
+  - name: staff_to_institution
+    left_table: staff
+    right_table: institution
+    relationship_columns: [{left_column: unitid, right_column: unitid}]
+    join_type: left_outer
+    relationship_type: many_to_one
+  - name: qcew_to_area
+    left_table: qcew
+    right_table: area
+    relationship_columns: [{left_column: area_fips, right_column: area_fips}]
+    join_type: left_outer
+    relationship_type: many_to_one
+  - name: qwi_to_area
+    left_table: qwi
+    right_table: area
+    relationship_columns: [{left_column: county_fips, right_column: area_fips}]
+    join_type: left_outer
+    relationship_type: many_to_one
+
+# 10 verified-query DRAFTS (set verified_by/verified_at only after you check results)
+verified_queries:
+  - name: vq01_institutions_per_state
+    question: How many IPEDS institutions are there in each state?
+    use_as_onboarding_question: true
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT state_abbr, COUNT(DISTINCT unitid) AS institutions
+      FROM __institution GROUP BY state_abbr ORDER BY institutions DESC
+  - name: vq02_uis_noninstr_staff_by_category
+    question: For the latest survey year, how many full-time non-instructional staff does the University of Illinois Springfield report in each occupation category?
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT occupation_category, SUM(staff_count) AS total_noninstructional_staff
+      FROM __nonin_salary
+      WHERE unitid = '145813'
+        AND survey_year = (SELECT MAX(survey_year) FROM __nonin_salary WHERE unitid = '145813')
+      GROUP BY occupation_category ORDER BY total_noninstructional_staff DESC
+  - name: vq03_uic_faculty_salary_by_rank
+    question: What is the weighted average instructional salary by academic rank at the University of Illinois Chicago in the latest survey year?
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT academic_rank, SUM(salary_outlays) / NULLIF(SUM(staff_count), 0) AS avg_instructional_salary
+      FROM __instr_salary
+      WHERE unitid = '145600'
+        AND survey_year = (SELECT MAX(survey_year) FROM __instr_salary WHERE unitid = '145600')
+      GROUP BY academic_rank ORDER BY academic_rank
+  - name: vq04_uic_staff_headcount_by_year
+    question: Show total IPEDS staff headcount for the University of Illinois Chicago by survey year.
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT survey_year, SUM(headcount) AS total_staff_headcount
+      FROM __staff WHERE unitid = '145600' GROUP BY survey_year ORDER BY survey_year
+  - name: vq05_us_qcew_611310_wages_latest
+    question: What were total quarterly wages for colleges and universities nationally in the latest quarter, by ownership?
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT own_code, SUM(total_qtrly_wages) AS qcew_total_wages
+      FROM __qcew
+      WHERE area_fips = 'US000' AND industry_code = '611310'
+        AND quarter_start = (SELECT MAX(quarter_start) FROM __qcew WHERE area_fips = 'US000' AND industry_code = '611310')
+      GROUP BY own_code ORDER BY own_code
+  - name: vq06_sangamon_establishments
+    question: How many college and university establishments were in Sangamon County in the latest quarter, by ownership?
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT own_code, SUM(qtrly_estabs) AS qcew_establishments
+      FROM __qcew
+      WHERE area_fips = '17167' AND industry_code = '611310'
+        AND quarter_start = (SELECT MAX(quarter_start) FROM __qcew WHERE area_fips = '17167' AND industry_code = '611310')
+      GROUP BY own_code ORDER BY own_code
+  - name: vq07_sangamon_qwi_emp_by_quarter
+    question: Show beginning-of-quarter higher-education employment in Sangamon County by quarter.
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT quarter_start, SUM(emp) AS employment
+      FROM __qwi WHERE county_fips = '17167' GROUP BY quarter_start ORDER BY quarter_start
+  - name: vq08_qwi_hires_latest_year_by_county
+    question: How many higher-education hires were there in each county in the latest complete year?
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      WITH y AS (
+        SELECT MAX(year) AS yr FROM (
+          SELECT year FROM __qwi WHERE county_fips IS NOT NULL
+          GROUP BY year HAVING COUNT(DISTINCT quarter) = 4))
+      SELECT county_fips, SUM(hira) AS qwi_hires
+      FROM __qwi WHERE county_fips IS NOT NULL AND year = (SELECT yr FROM y)
+      GROUP BY county_fips ORDER BY qwi_hires DESC
+  - name: vq09_uiuc_mgmt_noninstr_salary_trend
+    question: How has the weighted average salary of full-time management staff at UIUC changed by survey year?
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT survey_year, SUM(salary_outlays) / NULLIF(SUM(staff_count), 0) AS avg_noninstructional_salary
+      FROM __nonin_salary
+      WHERE unitid = '145637' AND occupation_category ILIKE '%management%'
+      GROUP BY survey_year ORDER BY survey_year
+  - name: vq10_champaign_qwi_separations_by_year
+    question: Show total higher-education separations in Champaign County by year.
+    use_as_onboarding_question: false
+    verified_by: UNVERIFIED_KIT_DRAFT
+    sql: |
+      SELECT year, SUM(sep) AS qwi_separations, COUNT(DISTINCT quarter) AS quarters_present
+      FROM __qwi WHERE county_fips = '17019' GROUP BY year ORDER BY year
