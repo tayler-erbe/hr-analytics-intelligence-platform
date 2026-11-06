@@ -1,7 +1,7 @@
 # HR Workforce Analytics Intelligence Platform
 
 **University of Illinois System · AITS Decision Support**
-Developed by [Tayler Erbe](https://terbe2022.github.io/tayler-portfolio/) in partnership with [Luanne Mayorga](https://www.linkedin.com/in/luannemayorga/), Assistant Chancellor for Illinois HR
+Developed by [Tayler Erbe](https://terbe2022.github.io/tayler-portfolio/) in partnership with [Luanne Mayorga, Ed.D., MBA](https://www.linkedin.com/in/luannemayorga/), Assistant Chancellor, Strategic Programs & Partnerships, Illinois Human Resources (University of Illinois Urbana-Champaign), and Senior Enterprise AI Advisor, Office of the Chief Information Officer
 
 > POC workstreams complete. Full production build currently under review.
 
@@ -220,7 +220,7 @@ POC notebooks and analytical artifacts are maintained in a separate internal Box
 **Tayler Erbe** · Senior Data Scientist · AITS, University of Illinois System
 [Portfolio](https://terbe2022.github.io/tayler-portfolio/) · [LinkedIn](https://www.linkedin.com/in/tayler-erbe/)
 
-HR Stakeholder: [Luanne Mayorga](https://www.linkedin.com/in/luannemayorga/), Assistant Chancellor for Illinois HR
+HR Stakeholder: [Luanne Mayorga, Ed.D., MBA](https://www.linkedin.com/in/luannemayorga/), Assistant Chancellor, Strategic Programs & Partnerships, Illinois Human Resources (University of Illinois Urbana-Champaign), and Senior Enterprise AI Advisor, Office of the Chief Information Officer
 
 
 ## Platform evaluation and synthetic practice run

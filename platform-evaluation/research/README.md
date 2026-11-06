@@ -65,6 +65,6 @@ From HR_USE_CASES_AND_GUARDRAILS.md (each item needs counsel or HR confirmation 
 
 ## Corrections surfaced by the research
 
-- **Luanne Mayorga's title.** Public org charts list her as Assistant Chancellor for Strategic Programs & Partnerships within Illinois Human Resources. The repository README says "Assistant Chancellor for Illinois HR". Confirm before external use.
+- **Luanne Mayorga's title (confirmed 2026-11-06 from her LinkedIn profile, provided by the project lead).** Assistant Chancellor, Strategic Programs & Partnerships, Illinois Human Resources, UIUC (since October 2023), and Senior Enterprise AI Advisor, Office of the CIO. She sits on the IHR Cabinet and leads Strategic Transformation, HR Data & Analytics, Strategic Workforce Planning, Talent Mobility, Succession Planning, AI Professional Development and Reskilling. She reports within IHR to Shari Mickey-Boggs, Senior Associate Chancellor for Human Resources. The repository README previously said "Assistant Chancellor for Illinois HR"; it has been corrected. Her role is UIUC (Illinois HR), which is distinct from System Office HR (System Human Resource Services).
 - **ERP replacement.** No vendor choice or go-live date was found publicly. The candidates discussed are Ellucian Cloud, Workday and Oracle.
 - **Workday zero-copy integration.** It reached GA on both platforms (Snowflake 2026-10-07; Databricks has a similar partnership), so it differentiates neither. It matters only if Workday becomes the HR system of record.
