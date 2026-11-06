@@ -1,0 +1,210 @@
+{
+  "rubric_version": "1.0",
+  "benchmark_version": "1.0",
+  "platform": "custom",
+  "track": "platform_native",
+  "status": "not_tested",
+  "environment": null,
+  "reviewer": null,
+  "gate_results": {},
+  "criteria": [
+    {
+      "criterion_id": "I1",
+      "category": "ERP ingestion",
+      "criterion": "Source integration",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "I2",
+      "category": "ERP ingestion",
+      "criterion": "Temporal/grain correctness",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "I3",
+      "category": "ERP ingestion",
+      "criterion": "Incremental recovery",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "B1",
+      "category": "Business definitions",
+      "criterion": "Metric reconciliation",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "B2",
+      "category": "Business definitions",
+      "criterion": "Cross-domain joins",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "B3",
+      "category": "Business definitions",
+      "criterion": "Traceability",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "A1",
+      "category": "AI tools",
+      "criterion": "Structured question accuracy",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "A2",
+      "category": "AI tools",
+      "criterion": "Evidence and abstention",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "A3",
+      "category": "AI tools",
+      "criterion": "Controlled tools and context",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "M1",
+      "category": "Data science",
+      "criterion": "Reproducible features",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "M2",
+      "category": "Data science",
+      "criterion": "Valid evaluation",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "M3",
+      "category": "Data science",
+      "criterion": "Deployment/monitoring",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "D1",
+      "category": "Dashboards",
+      "criterion": "Initial authoring",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "D2",
+      "category": "Dashboards",
+      "criterion": "Iterative change",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "D3",
+      "category": "Dashboards",
+      "criterion": "Faithful migration",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "D4",
+      "category": "Dashboards",
+      "criterion": "Consumption/delivery",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "G1",
+      "category": "Governance",
+      "criterion": "Identity and row/column controls",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "G2",
+      "category": "Governance",
+      "criterion": "Lineage/audit and AI boundaries",
+      "weight": 5,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "O1",
+      "category": "Operations",
+      "criterion": "Deployment/recovery",
+      "weight": 3,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "O2",
+      "category": "Operations",
+      "criterion": "Independent handover",
+      "weight": 2,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "C1",
+      "category": "Cost/exit",
+      "criterion": "Measured operating cost",
+      "weight": 3,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    },
+    {
+      "criterion_id": "C2",
+      "category": "Cost/exit",
+      "criterion": "Portability/recovery",
+      "weight": 2,
+      "rating": null,
+      "evidence": [],
+      "limitations": null
+    }
+  ]
+}

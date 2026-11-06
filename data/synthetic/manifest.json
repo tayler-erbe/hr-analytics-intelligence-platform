@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "organization": "Demo University Shared IT",
+  "positions_per_snapshot": 57,
+  "people": 57,
+  "role_versions": 171,
+  "recommendations": 48,
+  "renamed_positions_2025_to_2026": 36,
+  "same_title_changed_duties_2025_to_2026": 12,
+  "warning": "All people, tools, histories, staffing and recommendations are fictional. No inferred employee assessment or measured market trends.",
+  "source_use": "Broad functional inspiration only. No source names, person mapping, original topology or FTE totals reproduced.",
+  "agent_status": "Design contracts only; recommendation generator is deterministic, not an autonomous agent."
+}
