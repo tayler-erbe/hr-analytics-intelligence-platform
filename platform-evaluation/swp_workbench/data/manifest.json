@@ -1,0 +1,35 @@
+{
+  "input_sha256": {
+    "contract/onet_element_rating": "b3a461a7eb3990c56c45fb1b82b81ada32e3c97db7b849a47477d1aa6f50528f",
+    "contract/onet_technology_skill": "c5f264d58069dd4253fc488f3dd1c8b32783877af88bee7061f69304cd8d5452",
+    "reskilling/adjacent_role": "778eee22121dec2200dc2beb485b83986ae85ec43c19db276d16711db11f660f",
+    "reskilling/learning_theme": "64f1f463400a8049204484ccd8f50da431c89c82930ebd30ae40afcf40b324a2",
+    "reskilling/manifest": "79849dcfb18fb3853f26fc99c00a0ab38d173d82a8c209caafc28fd4f602030c",
+    "reskilling/role_activity_augmentation": "3b9035da6b2487dbae9697771b3bd25a9768ed886cbc29cfd597ef15c6a4df27",
+    "reskilling/role_profile": "28df70ed4b7b379f112d28411072ea6f43ba5f52a446ce156d8ed6bba0ab6f4f",
+    "reskilling/role_skill_durability": "bef39bc4e928c1a866e4c9051e93b808dc2a00a5b7065268b77643eaaf65a00b",
+    "reskilling/role_task_split": "5b3aca7f90f0e233010156954b0bbb190166549841da070392676523d706e62f",
+    "synthetic/appointment.parquet": "dfb391ff61427e78f6f2b8e245196e37cb64e6b78f3b573c4e4b3cdfaeb58fb6",
+    "synthetic/person.parquet": "11196c17f35275a32020f2291ef8436e9ac64e9214cae5d715b3f8a6a27128be",
+    "synthetic/position.parquet": "2a17f0581735c8d789557fcb77c11935f5cf05a1ecbcde0ebac755428c8fc378",
+    "workforce_sim/calibration.json": "7ad459ab4ead632bb83946d5c152654284cdd6a50edb27fcf615560bcc7875fd"
+  },
+  "outputs": {
+    "workbench.json": "f3fd6dc59286bad85cfc0064f5a25ba74a1ef2dc451df9a5c3d4f4392f3938c8"
+  },
+  "protocol": "swp_workbench_v1",
+  "reconciliation": {
+    "authorized_primary_lines": 13101,
+    "critical_lines": 1548,
+    "critical_lines_filled": 1519,
+    "filled_primary_lines": 12905,
+    "headcount_distinct_persons": 12905,
+    "ipeds_fall_2023_headcount": 12905,
+    "primary_fte_total": 12308.5,
+    "secondary_appointments": 155,
+    "sum_of_retirement_band_cells": 12905,
+    "sum_of_service_band_cells": 12905,
+    "sum_of_unit_headcounts": 12905
+  },
+  "synthetic_source": "workforce_sim/data/synthetic (manifest hashes verified)"
+}
