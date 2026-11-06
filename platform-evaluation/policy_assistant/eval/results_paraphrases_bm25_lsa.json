@@ -1,0 +1,193 @@
+{
+  "metrics": {
+    "n_questions": 12,
+    "n_answerable": 9,
+    "n_abstain_expected": 3,
+    "retrieval_mode": "bm25+lsa",
+    "retrieval_hit@1": 0.667,
+    "answer_hit@1": 0.222,
+    "retrieval_hit@3": 0.778,
+    "answer_hit@3": 0.333,
+    "retrieval_hit@5": 0.778,
+    "answer_hit@5": 0.333,
+    "retrieval_mrr@5": 0.722,
+    "abstention_precision": 0.333,
+    "abstention_recall": 1.0,
+    "unsafe_answers": 0,
+    "over_abstentions": 6,
+    "answered_wrong_source": 0,
+    "policy_refusals_correct": 3,
+    "median_latency_ms": 15.2
+  },
+  "rows": [
+    {
+      "id": "P01",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "abstain",
+      "reason": "individual_advice",
+      "retrieval_rank": 1,
+      "answer_rank": null,
+      "top_bm25": null,
+      "top_coverage": null,
+      "cited_urls": [],
+      "latency_ms": 0.1
+    },
+    {
+      "id": "P02",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "abstain",
+      "reason": "weak_evidence",
+      "retrieval_rank": null,
+      "answer_rank": null,
+      "top_bm25": 10.474,
+      "top_coverage": 0.287,
+      "cited_urls": [],
+      "latency_ms": 26.9
+    },
+    {
+      "id": "P03",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "abstain",
+      "reason": "weak_evidence",
+      "retrieval_rank": null,
+      "answer_rank": null,
+      "top_bm25": 8.739,
+      "top_coverage": 0.589,
+      "cited_urls": [],
+      "latency_ms": 12.3
+    },
+    {
+      "id": "P04",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "abstain",
+      "reason": "weak_evidence",
+      "retrieval_rank": 1,
+      "answer_rank": null,
+      "top_bm25": 11.581,
+      "top_coverage": 0.481,
+      "cited_urls": [],
+      "latency_ms": 15.2
+    },
+    {
+      "id": "P05",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "answer",
+      "reason": "supported",
+      "retrieval_rank": 1,
+      "answer_rank": 1,
+      "top_bm25": 17.932,
+      "top_coverage": 0.781,
+      "cited_urls": [
+        "https://humanresources.illinois.edu/about/administration/policy-design-administration/",
+        "https://humanresources.illinois.edu/services-and-information/policies/a-z-index/",
+        "https://humanresources.illinois.edu/job-seekers/why-work-at-illinois/",
+        "https://humanresources.illinois.edu/services-and-information/policies/"
+      ],
+      "latency_ms": 15.7
+    },
+    {
+      "id": "P06",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "answer",
+      "reason": "supported",
+      "retrieval_rank": 2,
+      "answer_rank": 2,
+      "top_bm25": 24.68,
+      "top_coverage": 0.688,
+      "cited_urls": [
+        "https://humanresources.illinois.edu/employee-experience/current-employee/",
+        "https://humanresources.illinois.edu/about/centers-of-expertise/talent/extra-help/",
+        "https://humanresources.illinois.edu/about/centers-of-expertise/"
+      ],
+      "latency_ms": 17.7
+    },
+    {
+      "id": "P07",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "abstain",
+      "reason": "individual_advice",
+      "retrieval_rank": 1,
+      "answer_rank": null,
+      "top_bm25": null,
+      "top_coverage": null,
+      "cited_urls": [],
+      "latency_ms": 0.1
+    },
+    {
+      "id": "P08",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "answer",
+      "reason": "supported",
+      "retrieval_rank": 1,
+      "answer_rank": 1,
+      "top_bm25": 12.078,
+      "top_coverage": 0.753,
+      "cited_urls": [
+        "https://humanresources.illinois.edu/ai-professional-development-series/",
+        "https://humanresources.illinois.edu/ai-professional-development-series/",
+        "https://humanresources.illinois.edu/ivp/"
+      ],
+      "latency_ms": 15.4
+    },
+    {
+      "id": "P09",
+      "expect": "answer",
+      "category": "paraphrase",
+      "status": "abstain",
+      "reason": "individual_advice",
+      "retrieval_rank": 1,
+      "answer_rank": null,
+      "top_bm25": null,
+      "top_coverage": null,
+      "cited_urls": [],
+      "latency_ms": 0.1
+    },
+    {
+      "id": "P10",
+      "expect": "abstain",
+      "category": "out_of_scope_or_policy",
+      "status": "abstain",
+      "reason": "weak_evidence",
+      "retrieval_rank": null,
+      "answer_rank": null,
+      "top_bm25": 8.138,
+      "top_coverage": 0.31,
+      "cited_urls": [],
+      "latency_ms": 12.6
+    },
+    {
+      "id": "P11",
+      "expect": "abstain",
+      "category": "out_of_scope_or_policy",
+      "status": "abstain",
+      "reason": "weak_evidence",
+      "retrieval_rank": null,
+      "answer_rank": null,
+      "top_bm25": 13.626,
+      "top_coverage": 0.465,
+      "cited_urls": [],
+      "latency_ms": 19.5
+    },
+    {
+      "id": "P12",
+      "expect": "abstain",
+      "category": "out_of_scope_or_policy",
+      "status": "abstain",
+      "reason": "individual_advice",
+      "retrieval_rank": null,
+      "answer_rank": null,
+      "top_bm25": null,
+      "top_coverage": null,
+      "cited_urls": [],
+      "latency_ms": 0.1
+    }
+  ]
+}

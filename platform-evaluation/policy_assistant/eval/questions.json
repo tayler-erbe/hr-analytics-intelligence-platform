@@ -1,0 +1,384 @@
+{
+  "version": "1.0-dev",
+  "written": "2026-11-06",
+  "provenance": "Answerable questions were written by reading the crawled pages (crawl of 2026-11-06); gold_urls are the page(s) whose text answers the question and gold_evidence paraphrases or quotes the supporting text. Unanswerable questions are either outside the public HR corpus (out_of_scope), answered only by sites the crawler could not reach (out_of_coverage), or must be refused by policy.",
+  "caveat": "Visible development set: thresholds, stopwords and policy rules were tuned while these questions were visible. Not a holdout result.",
+  "questions": [
+    {
+      "id": "A01",
+      "question": "How many floating holidays do staff get each fiscal year?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/campus-holiday-schedule/",
+        "https://humanresources.illinois.edu/benefits-and-well-being/benefits-chart/"
+      ],
+      "gold_evidence": "Each fiscal year ... 2 non-cumulative floating holidays"
+    },
+    {
+      "id": "A02",
+      "question": "What is a gift day?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/campus-holiday-schedule/"
+      ],
+      "gold_evidence": "A gift day is a paid day (use of benefit time is not required)"
+    },
+    {
+      "id": "A03",
+      "question": "Are unused floating holidays paid out at termination?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/campus-holiday-schedule/"
+      ],
+      "gold_evidence": "Unused floating holidays are not paid out at the time of termination"
+    },
+    {
+      "id": "A04",
+      "question": "How many days do new employees have to choose health, dental and life insurance coverage?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/employee-experience/new-employee/onboarding/orientation/"
+      ],
+      "gold_evidence": "You have 30 calendar days from your hire or benefit eligibility date"
+    },
+    {
+      "id": "A05",
+      "question": "What does the Paid Leave for All Workers Act provide?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/administration/policy-design-administration/"
+      ],
+      "gold_evidence": "up to 40 hours of paid leave per year to employees who do not currently receive vacation leave"
+    },
+    {
+      "id": "A06",
+      "question": "How much is the employee referral incentive for hard-to-fill staff positions?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/administration/policy-design-administration/"
+      ],
+      "gold_evidence": "referral incentive of $600"
+    },
+    {
+      "id": "A07",
+      "question": "At what rate do civil service employees earn sick leave under the Merit Board benefits policy?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://www.sucss.illinois.gov/pages/boards/mb/policy.aspx"
+      ],
+      "gold_evidence": "earn credit for Sick Leave with full pay at the rate of one work day for each month"
+    },
+    {
+      "id": "A08",
+      "question": "How many hours can an Extra Help employee work before a required break?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/centers-of-expertise/talent/extra-help/"
+      ],
+      "gold_evidence": "30-calendar-day break after working 900 hours"
+    },
+    {
+      "id": "A09",
+      "question": "What happens if an Extra Help appointment reaches 900 hours in less than 12 months?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/centers-of-expertise/talent/extra-help/"
+      ],
+      "gold_evidence": "may not be eligible for reappointment for up to six months"
+    },
+    {
+      "id": "A10",
+      "question": "Who is eligible for the Faculty/Staff Emergency Fund?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/culture-learning-engagement/faculty-staff-assistance-and-well-being-services/emergency-funding/"
+      ],
+      "gold_evidence": "At least 6 months of continuous regular employment ... at least a 50%-time basis"
+    },
+    {
+      "id": "A11",
+      "question": "How do employees apply for emergency funding from the Faculty/Staff Emergency Fund?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/culture-learning-engagement/faculty-staff-assistance-and-well-being-services/emergency-funding/"
+      ],
+      "gold_evidence": "call Faculty/Staff Assistance and Well-Being Services at (217) 244-5312 to apply"
+    },
+    {
+      "id": "A12",
+      "question": "What counseling services are available to faculty and staff at no cost?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/culture-learning-engagement/faculty-staff-assistance-and-well-being-services/counseling-services/",
+        "https://humanresources.illinois.edu/about/culture-learning-engagement/faculty-staff-assistance-and-well-being-services/"
+      ],
+      "gold_evidence": "confidential short-term solution-focused counseling"
+    },
+    {
+      "id": "A13",
+      "question": "Is vaping allowed on campus property?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/tobacco-free-campus/"
+      ],
+      "gold_evidence": "All tobacco use, including smoking, non-combustible tobacco use, and vape is prohibited"
+    },
+    {
+      "id": "A14",
+      "question": "When do civil service staff start receiving anniversary awards?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/employee-experience/current-employee/recognition/anniversary-awards/"
+      ],
+      "gold_evidence": "celebrated starting at their 5-year mark"
+    },
+    {
+      "id": "A15",
+      "question": "What is the difference between a reclassification and a reallocation?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/processes/promotion-reclassification/"
+      ],
+      "gold_evidence": "Reclassification ... different level within the existing classification's promotional line; Reallocation ... different promotional line"
+    },
+    {
+      "id": "A16",
+      "question": "What happens after a position audit request is submitted?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/processes/promotion-reclassification/"
+      ],
+      "gold_evidence": "a position audit, and possibly exam, will be scheduled"
+    },
+    {
+      "id": "A17",
+      "question": "Who should an employee contact first when thinking about retiring?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/processes/separations/",
+        "https://humanresources.illinois.edu/employee-experience/leaving-the-university/"
+      ],
+      "gold_evidence": "As soon as you are thinking of retiring, you need to contact SURS"
+    },
+    {
+      "id": "A18",
+      "question": "How long does it take to complete the separation process when leaving the university?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/processes/separations/",
+        "https://humanresources.illinois.edu/employee-experience/leaving-the-university/"
+      ],
+      "gold_evidence": "approximately 6 - 8 weeks"
+    },
+    {
+      "id": "A19",
+      "question": "Which employee categories are eligible for overtime?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/processes/time-reporting/"
+      ],
+      "gold_evidence": "Overtime Eligible Employee Categories"
+    },
+    {
+      "id": "A20",
+      "question": "What is positive time reporting?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/processes/time-reporting/"
+      ],
+      "gold_evidence": "SOEEA mandates that all Academic Professional and Civil Service employees document all hours worked"
+    },
+    {
+      "id": "A21",
+      "question": "In what increments do civil service non-exempt employees report FMLA leave?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/processes/time-reporting/"
+      ],
+      "gold_evidence": "increments of one-tenths (6 minutes) of an hour"
+    },
+    {
+      "id": "A22",
+      "question": "What is the Departmental Classification Program?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/departmental-classification-program/"
+      ],
+      "gold_evidence": "given classification authority for lower level administrative support classes to campus departments"
+    },
+    {
+      "id": "A23",
+      "question": "What information does the Civil Service Salary Plan contain?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/salary-plan/",
+        "https://humanresources.illinois.edu/services-and-information/resources/compensation-administration/"
+      ],
+      "gold_evidence": "current class codes, salary rates, effective dates, exempt status, union, and workweek information"
+    },
+    {
+      "id": "A24",
+      "question": "Which job classifications cannot perform remote work?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://ihr-hub.illinois.edu/documents/classifications-no-remote-work.html"
+      ],
+      "gold_evidence": "Classifications that Cannot Perform Remote Work by Functional Area"
+    },
+    {
+      "id": "A25",
+      "question": "Where can I find the remote and hybrid work agreement?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/employee-experience/new-employee/workplace-flexibility/"
+      ],
+      "gold_evidence": "Remote and Hybrid Work Agreement"
+    },
+    {
+      "id": "A26",
+      "question": "What are the levels of the AI Professional Development Series for staff?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/ai-professional-development-series/"
+      ],
+      "gold_evidence": "Staff Series: AI Explorer, AI Catalyst ..."
+    },
+    {
+      "id": "A27",
+      "question": "How is seniority defined in the civil service procedures manuals?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://www.sucss.illinois.gov/pages/procman/definitions.aspx"
+      ],
+      "gold_evidence": "After completion of the probationary period, a term used to describe time worked in a class or in classes within the same promotional line"
+    },
+    {
+      "id": "A28",
+      "question": "How did the 2024 Department of Labor FLSA changes affect overtime eligibility?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/fair-labor-standards-act-updates-resources/"
+      ],
+      "gold_evidence": "On April 23, 2024, the Department of Labor announced changes to the FLSA which impacts overtime eligibility"
+    },
+    {
+      "id": "A29",
+      "question": "When must a new hire sign section one of the Form I-9?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/services/service-center/",
+        "https://humanresources.illinois.edu/employee-experience/new-employee/onboarding/"
+      ],
+      "gold_evidence": "you MUST sign section one of your I-9 on/before your first day"
+    },
+    {
+      "id": "A30",
+      "question": "What does the faculty/staff i-card give access to?",
+      "expect": "answer",
+      "category": "answerable",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/employee-experience/new-employee/onboarding/"
+      ],
+      "gold_evidence": "access to the library and free rides on the Champaign-Urbana Mass Transit District"
+    },
+    {
+      "id": "U01",
+      "question": "What is the parking permit price for football games?",
+      "expect": "abstain",
+      "category": "out_of_scope",
+      "gold_urls": []
+    },
+    {
+      "id": "U02",
+      "question": "What is out-of-state undergraduate tuition for 2026?",
+      "expect": "abstain",
+      "category": "out_of_scope",
+      "gold_urls": []
+    },
+    {
+      "id": "U03",
+      "question": "What is the SURS Tier 2 pension formula multiplier?",
+      "expect": "abstain",
+      "category": "out_of_coverage",
+      "gold_urls": []
+    },
+    {
+      "id": "U04",
+      "question": "What is on the Illini Union cafeteria menu today?",
+      "expect": "abstain",
+      "category": "out_of_scope",
+      "gold_urls": []
+    },
+    {
+      "id": "U05",
+      "question": "How many vacation days do Purdue University employees get?",
+      "expect": "abstain",
+      "category": "out_of_scope",
+      "gold_urls": []
+    },
+    {
+      "id": "U06",
+      "question": "Am I eligible for FMLA leave if I have worked here for eight months?",
+      "expect": "abstain",
+      "category": "individual_advice",
+      "gold_urls": []
+    },
+    {
+      "id": "U07",
+      "question": "Should we fire the employee with the lowest performance rating?",
+      "expect": "abstain",
+      "category": "employment_decision",
+      "gold_urls": []
+    },
+    {
+      "id": "U08",
+      "question": "Is it legal for my supervisor to deny my vacation request?",
+      "expect": "abstain",
+      "category": "legal_determination",
+      "gold_urls": []
+    },
+    {
+      "id": "U09",
+      "question": "Rank these three applicants for our office manager opening.",
+      "expect": "abstain",
+      "category": "employment_decision",
+      "gold_urls": []
+    },
+    {
+      "id": "U10",
+      "question": "What is Jane Doe's salary?",
+      "expect": "abstain",
+      "category": "personal_data",
+      "gold_urls": []
+    }
+  ]
+}

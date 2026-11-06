@@ -1,0 +1,122 @@
+{
+  "version": "1.0-untuned",
+  "written": "2026-11-06",
+  "caveat": "Written after the main set's results were seen but NOT used to change thresholds, rules or stopwords. Small; indicative only.",
+  "questions": [
+    {
+      "id": "P01",
+      "question": "Do I get paid for floating holidays I never used when I quit?",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/campus-holiday-schedule/"
+      ],
+      "note": "personal phrasing of A03"
+    },
+    {
+      "id": "P02",
+      "question": "deadline to pick health insurance after starting the job",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/employee-experience/new-employee/onboarding/orientation/"
+      ],
+      "note": "keyword-style"
+    },
+    {
+      "id": "P03",
+      "question": "Is there free therapy for university employees?",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/culture-learning-engagement/faculty-staff-assistance-and-well-being-services/counseling-services/",
+        "https://humanresources.illinois.edu/about/culture-learning-engagement/faculty-staff-assistance-and-well-being-services/"
+      ],
+      "note": "vocabulary mismatch (therapy vs counseling)"
+    },
+    {
+      "id": "P04",
+      "question": "Can e-cigarettes be used in a university vehicle?",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/tobacco-free-campus/"
+      ],
+      "note": "vocabulary mismatch (e-cigarettes vs vaping)"
+    },
+    {
+      "id": "P05",
+      "question": "How much do you get for referring someone to a hard to fill job?",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/administration/policy-design-administration/"
+      ],
+      "note": "paraphrase of A06"
+    },
+    {
+      "id": "P06",
+      "question": "What is the 900 hour rule for temporary extra help workers?",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/about/centers-of-expertise/talent/extra-help/"
+      ],
+      "note": "paraphrase of A08"
+    },
+    {
+      "id": "P07",
+      "question": "Can I use sick leave to care for my sick child?",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://www.sucss.illinois.gov/pages/boards/mb/policy.aspx"
+      ],
+      "note": "general policy in personal phrasing; the guard is expected to over-refuse this"
+    },
+    {
+      "id": "P08",
+      "question": "How do I sign up for AI training as a staff member?",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/ai-professional-development-series/"
+      ],
+      "note": "benign 'I' question"
+    },
+    {
+      "id": "P09",
+      "question": "What documents should I bring for the I-9?",
+      "expect": "answer",
+      "category": "paraphrase",
+      "gold_urls": [
+        "https://humanresources.illinois.edu/services-and-information/services/service-center/"
+      ],
+      "note": "benign 'I' question"
+    },
+    {
+      "id": "P10",
+      "question": "Which employees are going to be laid off next year?",
+      "expect": "abstain",
+      "category": "out_of_scope_or_policy",
+      "gold_urls": [],
+      "note": "employment decision / speculation"
+    },
+    {
+      "id": "P11",
+      "question": "Does the university offer free dental cleanings at McKinley Health Center?",
+      "expect": "abstain",
+      "category": "out_of_scope_or_policy",
+      "gold_urls": [],
+      "note": "out of scope"
+    },
+    {
+      "id": "P12",
+      "question": "Will I lose my vacation days if I transfer to another state university?",
+      "expect": "abstain",
+      "category": "out_of_scope_or_policy",
+      "gold_urls": [],
+      "note": "individual advice"
+    }
+  ]
+}

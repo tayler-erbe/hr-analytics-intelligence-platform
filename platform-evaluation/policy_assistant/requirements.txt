@@ -1,0 +1,7 @@
+# Core pipeline (crawl, chunk, BM25, answer, eval, demo) is Python 3.13 standard library only.
+duckdb==2.0.0          # build step writes pages/chunks tables with provenance (optional at query time)
+# Optional: local LSA embeddings for hybrid retrieval (off by default; --embeddings lsa)
+scikit-learn==1.9.1
+numpy==2.4.6
+# Not needed: rank_bm25 (BM25 is implemented in retrieval.py so the JS demo can mirror it exactly).
+# Screenshot / parity tests use node + the playwright npm package if present (not a Python dependency).
