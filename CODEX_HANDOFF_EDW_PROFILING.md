@@ -2,6 +2,10 @@
 
 Prepared 2026-11-06 for Codex, working with Tayler Erbe (AITS Decision Support) on a University-approved AITS machine with EDW access. Read [`AGENTS.md`](AGENTS.md) and [`platform-evaluation/ARCHITECTURE.md`](platform-evaluation/ARCHITECTURE.md) first. This task comes **before** [`CODEX_HANDOFF.md`](CODEX_HANDOFF.md) (the real succession run) and makes it easier.
 
+## 0. Update 2026-11-06
+
+Six tables are already transcribed from the Data Cookbook (`platform-evaluation/integration/edw_cookbook_reference/`), with a verified mapping (`integration/edw_mapping_cookbook.yaml`) and a matching synthetic pack (`sample_datasets/v3_cookbook/`). Step 1 (schema inventory) and Step 2 (mapping) are therefore largely done for those tables: confirm them against `ALL_TAB_COLUMNS`, fill in the remaining reference tables and code lists, and move straight to the Step 3 statistical profile. Extend `integration/edw_mapping_cookbook.yaml` rather than creating a new mapping file.
+
 ## 1. Why we are doing this
 
 This repository already has many HR analytics modules (succession models, ERP readiness checks, workforce planning workbench, scenario simulator, faculty pipeline and others). Their synthetic data was invented from public aggregates and guessed EDW layouts. The column names, code values and history patterns are guesses.

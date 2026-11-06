@@ -2,6 +2,17 @@
 
 Prepared 2026-11-06 for Codex, working with Tayler Erbe (AITS Decision Support) on a University-approved AITS machine. This document is the task. Read it fully, then read [`AGENTS.md`](AGENTS.md), [`platform-evaluation/ARCHITECTURE.md`](platform-evaluation/ARCHITECTURE.md) and [`platform-evaluation/succession_models/run_real.md`](platform-evaluation/succession_models/run_real.md) before changing anything.
 
+
+## 0. Update 2026-11-06: start from the Cookbook-verified layout
+
+Six EDW tables are now transcribed from the Data Cookbook in `platform-evaluation/integration/edw_cookbook_reference/` (T_JOB_DETL_HIST, T_EMPEE_HIST, T_EMPEE_HIST_5, T_POSN_HIST, T_PERS_HIST, T_PAYR_ACCTG_DETL), with conventions and handling rules in its README. `platform-evaluation/integration/edw_mapping_cookbook.yaml` maps every canonical concept to those verified names, and `platform-evaluation/sample_datasets/v3_cookbook/` is synthetic data in exactly that layout.
+
+Consequences for this task:
+- Bind `succession_models/config.SOURCE_MAP` and `extract.sql` to the Cookbook names. `sample_datasets/v3_cookbook/README.md` lists the exact edits (row-version end dates from `JOB_DETL_HIST_EFF_DT` via a window function, terminations from T_EMPEE_HIST, status comparisons on descriptions). Prove the edits on v3 first; then point at EDW.
+- Settled: `*_EXP_DT` is inclusive with 12/31/9999 open end; current indicators are Y/N/D; terminations and the retirement flag (TR/TF) are in T_EMPEE_HIST (secured copy in T_EMPEE_HIST_5); vacancy is `OPEN_POSN_IND`; position status A/C/F/I.
+- Still to confirm on real metadata or data: FTE stored as fraction vs percent; meaning of `JOB_DETL_HIST_EFF_DT`; terminated status letter; `PAPE_CIV_SVC_ID` value format; code lists for termination and job-change reasons; position-class and org reference tables.
+- Person fields such as UIN, SSN, names and birthplace are never extracted (see the reference README).
+
 ## 1. Goal
 
 Run the succession planning pipeline in `platform-evaluation/succession_models/` on real EDW HR history. It must produce validated, **role- and unit-level** succession outputs that Illinois HR can use for planning:
