@@ -1,0 +1,372 @@
+{
+ "T_POSN_CLS_HIST": [
+  {
+   "name": "POSN_CLS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "CLS_SOURCE",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "POSN_CLS_DESC",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "MIN_ANNUAL_AMT",
+   "type": "DECIMAL(12,2)"
+  },
+  {
+   "name": "MAX_ANNUAL_AMT",
+   "type": "DECIMAL(12,2)"
+  },
+  {
+   "name": "file_row_number",
+   "type": "BIGINT"
+  }
+ ],
+ "REF_ORG": [
+  {
+   "name": "ORG_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "PARENT_ORG_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ORG_STATUS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ORG_TITLE",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "file_row_number",
+   "type": "BIGINT"
+  }
+ ],
+ "REF_ROLE_FAMILY": [
+  {
+   "name": "CLS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ROLE_FAMILY",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ROLE_LEVEL",
+   "type": "INTEGER"
+  },
+  {
+   "name": "CRITICAL_IND",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "file_row_number",
+   "type": "BIGINT"
+  }
+ ],
+ "T_EMPEE_HIST": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "EMPEE_EFF_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "EMPEE_EXP_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "EMPEE_STATUS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "EMPEE_CLS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "FIRST_HIRE_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "CUR_HIRE_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "HOME_ORG_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "HR_CAMPUS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ROW_REC_START_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "ROW_REC_END_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "file_row_number",
+   "type": "BIGINT"
+  },
+  {
+   "name": "EMPEE_CUR_INFO_IND",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ACTIVE_EMPEE_IND",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "COA_CD",
+   "type": "VARCHAR"
+  }
+ ],
+ "T_EMPEE_HIST_5": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "TERM_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "TERM_REASON_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "SURS_RETIR_IND",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ROW_REC_START_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "ROW_REC_END_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "file_row_number",
+   "type": "BIGINT"
+  }
+ ],
+ "T_JOB_DETL_HIST": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "POSN_NBR",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "JOB_SUFFIX",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "JOB_DETL_EFF_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "JOB_DETL_EXP_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "JOB_CONTRACT_TYPE_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "JOB_DETL_STATUS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "JOB_DETL_FTE",
+   "type": "DECIMAL(6,3)"
+  },
+  {
+   "name": "JOB_DETL_ANNUAL_SAL",
+   "type": "DECIMAL(12,2)"
+  },
+  {
+   "name": "POSN_CLS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "JOB_DETL_EMPEE_CLS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "JOB_ORG_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "SUPERVISOR_PERS_ID",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ROW_REC_START_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "ROW_REC_END_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "file_row_number",
+   "type": "BIGINT"
+  },
+  {
+   "name": "JOB_DETL_STATUS_DESC",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "JOB_DETL_APPT_PCT",
+   "type": "DECIMAL(6,2)"
+  },
+  {
+   "name": "EMPEE_GROUP_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "EMPEE_GROUP_DESC",
+   "type": "VARCHAR"
+  }
+ ],
+ "T_PERS_HIST": [
+  {
+   "name": "EDW_PERS_ID",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "PERS_EFF_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "PERS_EXP_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "BIRTH_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "SEX_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "RACE_ETH_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ROW_REC_START_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "ROW_REC_END_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "file_row_number",
+   "type": "BIGINT"
+  },
+  {
+   "name": "PERS_CUR_INFO_IND",
+   "type": "VARCHAR"
+  }
+ ],
+ "T_POSN_HIST": [
+  {
+   "name": "POSN_NBR",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "POSN_EFF_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "POSN_EXP_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "POSN_STATUS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "POSN_CLS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "POSN_ORG_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "POSN_BUDGET_FTE",
+   "type": "DECIMAL(6,3)"
+  },
+  {
+   "name": "POSN_TITLE",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "ROW_REC_START_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "ROW_REC_END_DT",
+   "type": "DATE"
+  },
+  {
+   "name": "file_row_number",
+   "type": "BIGINT"
+  },
+  {
+   "name": "POSN_STATUS_DESC",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "POSN_MIN_SAL",
+   "type": "DECIMAL(12,2)"
+  },
+  {
+   "name": "POSN_MAX_SAL",
+   "type": "DECIMAL(12,2)"
+  }
+ ],
+ "REF_ECLS_PUBLIC": [
+  {
+   "name": "EMPEE_CLS_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "EMPEE_CLS_DESC",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "EMPEE_CLS_GROUP",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "JOB_END_DATE_RULE",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "LEAVE_CATGRY_CD",
+   "type": "VARCHAR"
+  },
+  {
+   "name": "SOURCE_KEY",
+   "type": "VARCHAR"
+  }
+ ]
+}

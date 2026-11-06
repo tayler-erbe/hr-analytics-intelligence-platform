@@ -1,0 +1,447 @@
+# Code values and coding rules for University of Illinois HR data, from PUBLIC sources only.
+#
+# Every group names its source key(s) (see sources.yaml). A value-level `source` overrides the group.
+# `confidence` follows README.md: high = value printed in a fully read document or KB article;
+# medium = rule stated in a full document but the EDW column holding it is inferred; low = snippet only.
+# Dates matter: rc2009 is from 2009, the job aids from 2008-2016, the KB articles were updated in 2024-2026.
+# Where an older and a newer source disagree, both are kept under `drift`.
+#
+# These are Banner HR code domains as described for reporting. That the EDW stores the same codes in
+# the columns named in field_inventory.csv is stated for some fields (rc2009) and inferred for others.
+
+domains_version: "1.0"
+retrieval_date: "2026-11-06"
+
+# --------------------------------------------------------------------------------------------- E-Class
+e_class:
+  description: Two-character employee class. Found at person (Employee History 1), position (Position History) and job (Job Detail History 1) level (rc2009 footnote 4).
+  source: kb120378
+  also_in: [eclass2015]
+  confidence: high
+  columns: ["V_EMPEE_HIST_1.EMPEE_CLS_CD (person level)", "T_POSN_HIST.POSN_EMPEE_CLS_CD (position level)", "V_JOB_DETL_HIST_1.JOB_DETL_EMPEE_CLS_CD (job level)"]
+  legend: {"<9mth": works less than 9 months, "9/9mth": works 9 months paid over 9, "9/12mth": works 9 months paid over 12, "10/10mth": works 10 paid over 10, "10/12mth": works 10 paid over 12, "12mth": works 12 paid over 12, "75Hr/pay": 75-hour pay period, "80Hr/pay": 80-hour pay period, ExA: Exempt A, ExC: Exempt C, N/E: Non-Exempt, FS: Feeder System, IN: Ineligible}
+  standard_dates: {"9/9 and 9/12 service": "August 16 - May 15", "12 month service": "August 16 - August 15"}
+  groups:
+    faculty:
+      AA: {desc: "Acad 9/12mth Ben Elig", job_end_date: Standard, leave_category: A3}
+      AB: {desc: "Acad 9/12mth NonBen Elig", job_end_date: Standard, leave_category: A7}
+      AC: {desc: "Acad 9/9mth Ben Elig", job_end_date: Required, leave_category: E3}
+      AD: {desc: "Acad 9/9mth NonBen Elig", job_end_date: Required, leave_category: E7}
+      AE: {desc: "Acad <9mth Ben Elig", job_end_date: Required, leave_category: E3}
+      AF: {desc: "Acad <9mth NonBen Elig", job_end_date: Required, leave_category: E7}
+      AG: {desc: "Acad 10/12mth Ben Elig", job_end_date: Not required, leave_category: B3}
+      AH: {desc: "Acad 10/12mth NonBen Elig", job_end_date: Not required, leave_category: B7}
+      AL: {desc: "Acad 12mth Ben Elig", job_end_date: Standard, leave_category: Y3}
+      AM: {desc: "Acad 12mth NonBen Elig", job_end_date: Standard, leave_category: Y7}
+      AN: {desc: "Acad 10mth Ben Elig", job_end_date: Required, leave_category: B3}
+      AQ: {desc: "Acad 10mth NonBen Elig", job_end_date: Required, leave_category: B7}
+    virtual:
+      VI: {desc: "Virtual Instructor", job_end_date: Not required, leave_category: IN}
+    post_docs_and_interns:
+      PA: {desc: "Post Dr Intern Ben Elig", job_end_date: Required, leave_category: Y5}
+      PB: {desc: "Post Dr Intern NonBen Elig", job_end_date: Required, leave_category: Y7}
+      PC: {desc: "Post Doctoral Fellow", job_end_date: Required, leave_category: IN}
+    residents:
+      RA: {desc: "Med Res Ben Elig", job_end_date: Required, leave_category: Y9}
+      RB: {desc: "Medical Resident NonBenElig", job_end_date: Required, leave_category: Y7}
+    academic_professionals:
+      BA: {desc: "Acad/Pro 12mth Ben Elig", job_end_date: Standard, leave_category: Y3}
+      BB: {desc: "Acad/Pro 12mth NonBen Elig", job_end_date: Standard, leave_category: Y7}
+      BC: {desc: "Acad/Pro 9/12mth Ben Elig", job_end_date: Standard, leave_category: A3}
+      BD: {desc: "Acad/Pro 9/12mth NonBen Elig", job_end_date: Standard, leave_category: A7}
+      BE: {desc: "Acad/Pro 9/9mth Ben Elig", job_end_date: Required, leave_category: E3}
+      BF: {desc: "Acad/Pro 9/9mth NonBen Elig", job_end_date: Required, leave_category: E7}
+      BG: {desc: "Acad/Pro 10/12mth Ben Elig", job_end_date: Not required, leave_category: B3}
+      BH: {desc: "Acad/Pro 10/12mth NonBen Elig", job_end_date: Not required, leave_category: B7}
+      BJ: {desc: "Acad/Pro <9mth Ben Elig", job_end_date: Required, leave_category: E3}
+      BK: {desc: "Acad/Pro <9mth NonBen Elig", job_end_date: Required, leave_category: E7}
+      BL: {desc: "Acad/Pro 10/10mth Ben Elig", job_end_date: Required, leave_category: B3}
+      BM: {desc: "Acad/Pro 10/10mth NonBen Elig", job_end_date: Required, leave_category: B5}
+      BN: {desc: "Acad/Survey 12mth Ben Elig", job_end_date: Not required, leave_category: Y7}
+      BP: {desc: "Acad/Survey 12mth NonBen Elig", job_end_date: Not required, leave_category: Y7}
+    grads_and_pre_doc_fellows:
+      GA: {desc: "Graduate Assistants", job_end_date: Required, leave_category: E5}
+      GB: {desc: "Pre Doctoral Fellows", job_end_date: Required, leave_category: IN}
+    academic_unpaid:
+      UA: {desc: "Unpaid", job_end_date: Not required, leave_category: IN}
+    civil_service:
+      CA: {desc: "CS 75Hr/pay N/E Ben Elig", job_end_date: Not required, leave_category: "13"}
+      CB: {desc: "CS 75Hr/pay N/E NonBen Elig", job_end_date: Not required, leave_category: "13"}
+      CC: {desc: "CS 75Hr/pay ExA Ben Elig", job_end_date: Not required, leave_category: "11"}
+      CD: {desc: "CS 75Hr/pay ExA NonBen Elig", job_end_date: Not required, leave_category: "11"}
+      DA: {desc: "CS 75Hr/pay N/E Ben Elig FS", job_end_date: Not required, leave_category: "13"}
+      DB: {desc: "CS 75Hr/pay N/E NonBenElig FS", job_end_date: Not required, leave_category: "13"}
+      CE: {desc: "CS 75Hr/pay ExC BenElig", job_end_date: Not required, leave_category: "11"}
+      CF: {desc: "CS 75Hr/pay ExC NonBenElig", job_end_date: Not required, leave_category: "11"}
+      DD: {desc: "CS 75Hr/pay ExA Ben Elig FS", job_end_date: Not required, leave_category: "11"}
+      DE: {desc: "CS 75Hr/pay ExA NonBenElig FS", job_end_date: Not required, leave_category: "11"}
+      DG: {desc: "CS 75Hr/pay ExC BenElig FS", job_end_date: Not required, leave_category: "11"}
+      DH: {desc: "CS 75Hr/pay ExC NonBen FS", job_end_date: Not required, leave_category: "11"}
+      CG: {desc: "CS 80Hr/pay N/E BenElig", job_end_date: Not required, leave_category: "17"}
+      CH: {desc: "CS 80Hr/pay N/E NonBenElig", job_end_date: Not required, leave_category: "17"}
+      DK: {desc: "CS 80Hr/pay N/E Ben Elig FS", job_end_date: Not required, leave_category: "17"}
+      DL: {desc: "CS 80Hr/pay N/E NonBenElig FS", job_end_date: Not required, leave_category: "17"}
+      CJ: {desc: "CS 80Hr/pay ExA BenElig", job_end_date: Not required, leave_category: "15"}
+      CK: {desc: "CS 80Hr/pay ExA NonBenElig", job_end_date: Not required, leave_category: "15"}
+      DN: {desc: "CS 80Hr/pay ExA BenElig FS", job_end_date: Not required, leave_category: "15"}
+      DP: {desc: "CS 80Hr/pay ExA NonBenElig FS", job_end_date: Not required, leave_category: "15"}
+      CL: {desc: "CS 80Hr/pay INA N/E Ben", job_end_date: Not required, leave_category: "51"}
+      CM: {desc: "CS 80Hr/pay INA N/E NonBen", job_end_date: Not required, leave_category: "51"}
+      DR: {desc: "CS 80Hr/pay INA N/E Ben FS", job_end_date: Not required, leave_category: "51"}
+      DS: {desc: "CS 80Hr/pay INA N/E NonBen FS", job_end_date: Not required, leave_category: "51"}
+    others:
+      EH: {desc: "CS Extra Help", job_end_date: Not required, leave_category: "70"}
+      ES: {desc: "CS Seasonal Extra Help", job_end_date: Not required, leave_category: "70"}
+      HA: {desc: "Hrly Faculty/Clinical/Research", job_end_date: Not required, leave_category: IN}
+      HG: {desc: "Grad Hourly", job_end_date: Not required, leave_category: IN}
+      LP: {desc: "Lump Sum", job_end_date: Required, leave_category: IN}
+      MM: {desc: "Summer Pay", job_end_date: Required, leave_category: IN}
+      SA: {desc: "Student", job_end_date: "Not required (except Federal Work Study students)", leave_category: IN}
+      TR: {desc: "Retiree", job_end_date: Required, leave_category: IN}
+      WT: {desc: "One Time Pay", job_end_date: Required, leave_category: IN}
+  drift:
+    - codes: [CL, CM, DR, DS]
+      eclass2015: "CS 80Hr/pay ExC ... (Exempt C), leave category 15"
+      kb120378_2026: "CS 80Hr/pay INA N/E ..., leave category 51"
+      rc2009: "listed among Exempt Civil Service and 40 Hour Week"
+      note: The exempt/non-exempt meaning of these four codes changed after 2015. Real data spanning the change needs an as-of rule.
+  reporting_groups:          # rc2009 page 1-2 selection criteria (2009)
+    source: rc2009
+    confidence: high
+    academic_any: {rule: "E-Class begins with A, B, R, G, U, or H"}
+    faculty: {rule: "E-Class begins with A"}
+    academic_less_than_9_month: [AE, AF, BJ, BK]
+    academic_9_12_month: [AA, AB, AC, AD, BC, BD, BE, BF]
+    academic_10_12_month: [AG, AH, BG, BH]
+    academic_10_10_month: [AN, AQ, BL, BM]
+    academic_12_12_month: [AL, AM, BA, BB]
+    post_docs_and_interns: [PA, PB, PC]
+    residents: [RA, RB]
+    academic_professionals: {rule: "E-Class begins with B, P-Class begins with E - U"}
+    graduate_assistants: {rule: "E-Class = GA, P-Class 1st char = C, 3rd char = S"}
+    academic_unpaid: [UA]
+    academic_hourly: [HA]
+    grad_hourly: [HG]
+    status_civil_service: {rule: "E-Class begins with C or D, Position Class Description Code not in 10001, 20001, 30001, 40001, 50001, 50002, 60001, 70001, 80001, 90001"}
+    civil_service_exempt: [CC, CD, CE, CF, DD, DE, DG, DH, CJ, CK, DN, DP, CL, CM, DR, DS]
+    civil_service_non_exempt: [CA, CB, DA, DB, CG, CH, DK, DL]
+    civil_service_extra_help: [EH, ES]
+    student: [SA]
+    retiree: [TR]
+    excluded_from_headcount: {one_time_pay: WT, summer_pay: MM, lump_sum: LP, note: "not included in staff counts (rc2009 p5)"}
+  hours_per_week:            # rc2009 p2
+    source: rc2009
+    confidence: high
+    "37.5": [CA, CB, CC, CD, DA, DB, CE, CF, DD, DE, DG, DH]
+    "40": [CG, CH, DK, DL, CJ, CK, DN, DP, CL, CM, DR, DS]
+    "42": {rule: "40-hour E-Classes AND Position Class Code 32881 (Crash and Rescue Security Specialist I (LU)) or 45911 (Crash and Rescue Security Specialist II (LU))"}
+  pay_factor:                # rc2009 p5 "Job Detail Annual Pay Count"
+    source: rc2009
+    confidence: high
+    civil_service: 26
+    "12/12 appointment": 12
+    "9/9 appointment": 9
+
+# --------------------------------------------------------------------------------------------- P-Class
+p_class:
+  description: Five-character position class code. Found at position class (T_POSN_CLS_HIST), position (Position History) and job (Job Detail History 1) level; academic job P-Class may differ from the position's (interim, acting, adjunct, visiting, emeritus, retire/rehire); civil service P-Class should not differ (rc2009 footnote 7).
+  source: kb120569
+  confidence: high
+  faculty_and_other_academics:
+    positions:
+      "1": {meaning: Employee Class, values: {A: Tenure/Tenure Track Faculty, B: Other Academics, C: "Assistants & Fellows", D: Practicing Faculty}}
+      "2": {meaning: Service Reference, values: {A: 9 Month, B: 10 Month, C: 12 Month, D: "< 9 Month", E: Non Service, F: Hourly, G-Z: Reserved for Growth}}
+      "3": {meaning: Rank, values: {A: Professor, B: Associate Professor, C: Assistant Professor, D: Instructor, E: Lecturer, F: Scholar, G: Artist-In-Residence, H: Inst/ Dept. Affiliate, J: Associate (non student), K: Post Doc Research Assoc, L: Patient Care, M: Resident, N: Intern/Extern, P: Librarian, Q: Education Specialist, R: Trainee, S: Grad Appt, T: UnderGrad Appt, U: Post Doc Fellow, V: Pre Doc Fellow, W: Assistant (non student), X-Z: Reserved for Growth}}
+      "4": {meaning: Rank modifier, values: {A: N/A, B: Extension, C: Library, D: Military, E: "Endowed, Named or Distinguished", F: Clinical, G: Research, H: Teaching, J: Medical, K: Pharmacy, L: Non-Medical Intern, M: Physical Therapy, N: Senior, Q: Extension/Teaching, R: Dental, V: Veterinary Resident/Intern, W: Teaching/Research, X: Pre-Professional, Y: Teaching Required, Z: Resident Advisor/Counselor}}
+      "5": {meaning: Status Modifier, values: {A: N/A, B: Interim, C: Acting, D: Adjunct, E: Visiting Adjunct, F: Visiting, G: Emerita/us, H: Retire/Rehire, J-Z: Reserved for Growth}}
+    exception: "Per Change Request - as of 2/20/08 these rules are not strictly followed for B**** & C**** P-Classes (esp. in terms of the segment order of the description)."
+    reporting_rules:   # rc2009 p1 (2009)
+      source: rc2009
+      professor: "E-Class begins with A, P-Class 1st char = A, 3rd char = A (or rank table Institutional Rank Code 1; 4 = Research Professor)"
+      associate_professor: "E-Class begins with A, P-Class 1st char = A, 3rd char = B (or Institutional Rank Code 2; 5 = Research Associate Professor)"
+      assistant_professor: "E-Class begins with A, P-Class 1st char = A, 3rd char = C (or Institutional Rank Code 3)"
+      rank_modifier: "P-Class 1st char A, B or C; 4th char"
+      status_modifier: "P-Class 1st char A, B or C; 5th char"
+      adjunct: "5th char = D"
+      interim: "5th char = B"
+      acting: "5th char = C"
+      visiting: "5th char = F"
+      visiting_adjunct: "5th char = E"
+      emeritus: "5th char = G"
+  academic_professional:
+    positions:
+      "1": {meaning: Title Designation, values: {A-D: Reserved for Faculty and Other Academic Position Class Codes, E: President, F: Vice President, G: Chancellor, H: Provost, J: Vice Chancellor, K: Vice Provost, L: Dean, M: "Executive Director (Exec. Level)", N: Director, P: Department Head, Q: Unique Administrator Title, R: Coordinator, S: Specialist, T: Unique Professional Title, U: Department Chair, V-Z: Reserved for Growth}}
+      "2": {meaning: Title Modifier, values: {A: N/A, B: Executive, C: Executive Associate, D: Executive Assistant, E: Associate, F: Assistant, G: Senior, H: Sr. Associate, J: Sr. Assistant, K: Executive Asst. to, L: Asst. to, M: Asst. to, N: Asst. to Associate, P: Asst. to Assistant, Q: Principal, R: Deputy, S: Vice, T: Lead, U-Z: Reserved for Growth}}
+      "3": {meaning: Function Indicator, values: {A: N/A, B: Athletics/Recreation, C: Business and Finance, D: Communications/Public Relations/Advancement, E: Community/Human Services, F: Creative/Fine Arts, G: Educational, H: Facilities/Public Safety, J: General Administration, K: Health/Medical, L: Human Resources, M: Information Technology Systems, N: Library and/or Research Information, P: Research Support, Q: Research Disciplines, R: Student Services, S-Y: Reserved for Growth, Z: State Surveys}}
+      "4": {meaning: Function Descriptor, values: "depends on the 3rd character; see function_descriptors"}
+      "5": {meaning: Status Modifier, values: {A: N/A, B: Interim, C: Acting, D: Adjunct, E: Visiting Adjunct, F: Visiting, G: Emerita/us, H: Retire/Rehire, J-Z: Reserved for Growth}}
+    parse_caveat: "Title-modifier rows K-P were extracted from a table whose cells wrap across lines; K/L/M/N/P labels are the best reading of the published table and should be re-checked against the page."
+    function_descriptors:
+      B: {B: Adaptive Sports Programs, C: Administration, D: Athletics-Intercollegiate, E: Campus Recreation Programming, F: Coaching, G: Compliance, H: Intramural Coaching, J: Strength Coaching, K: Training-Athletic, L: Sports Programs-Intramural, M: Sports Operations}
+      C: {B: Accounting, C: "Budgeting/ Planning/ Budget Analysis/ Reporting", D: "Cash Management/ Investments", E: "Claims/ Risk Management/ Insurance/ Actuary", F: "Credit/ Collections", G: "Financial/ Economic Analysis", H: "Grants/ Contracts/ Sponsored Programs", J: Internal Audits, K: Payables, L: Payroll, M: "Purchasing/ Materials & Services", N: Real Estate, P: "Retail Management/ Sales", Q: Student Accounts Receivable, R: Project Management, S: Tax Compliance, T: Human Resources}
+      D: {B: Alumni Affairs, C: Broadcasting, D: "Conventions/ Programs/ Special Events/ Meetings/ Events Planning", E: "Corporate/ Foundation Relations", F: "Development/ Advancement", G: "Editing/ Reporting/ Writing/ Publishing", H: "Governmental/ Legislative Relations", J: "Marketing/ Sales/ Advertising", K: "Member Services/ Relations", L: "Public Relations/ Publicity/ Public Information", M: "Scientific/ Technical Writing", N: Technical Writing, P: Graphic Design, Q: Publication Design/Layout}
+      E: {B: Accommodation Services, C: Community Services, D: Counseling, E: Social Work}
+      F: {B: Architecture, C: "Art Museum Staff/ Collections/ Exhibits", D: Dance, E: "Media: Audio/ Video/ Cinema", F: Music, G: "Performing Arts/ Production", H: Theater, J: "Visual Arts & Design"}
+      G: {B: "Continuing Education/ Seminars/ Programs/ Workshops", C: "Cooperative Education Programs/ Internships", D: "Curriculum/ Academic Program/ Course Development/ Evaluation", E: Instructional Media Services, F: Public Service Education and Outreach, G: Student Health Education, H: "Teaching/ Training", J: Academic Affairs, K: Faculty Affairs, L: Diversity/Minority/Womens Programs, M: International Activites, N: Aviation}
+      H: {B: Construction, C: "Environmental/ Occupational Health & Safety/ Risk Management", D: Facility Operations, E: "Landscape/ Grounds", F: "Mail/ Distribution Services", G: Materials Operations, H: "Security/ Police", J: "Site Planning/ Design", K: Project Management, L: Capital Projects, M: "Utilities/ Physical Plant"}
+      J: {B: Attorney/Legal, C: Board of Trustees, D: "President's Office", E: Ethics/Compliance}
+      K: {B: Psychiatry/Clinical Psychology, C: Dentistry, D: Hospital Administration, E: Pathology/Clinical Laboratory, F: Nursing, G: "Nutrition/ Dietetics", H: Occupational Therapy, J: Pharmacy, K: Physical Therapy, L: Patient Services, M: Public Health, N: Student Health Services, P: "Veterinary Medicine/ Animal Health Care", Q: Technical, R: Management Technical, S: Social Work, T: Audiology/Speech Pathology, U: Health Information Management, V: Project Management, W: Physician, X: Physician Surgeon}
+      L: {B: "Affirmative Action/ EEO", C: Benefits, D: Compensation, E: International Staff Services, F: Labor and Employee Relations, G: "Staffing/ Recruitment", H: Training and Professional Development, J: Project Management, K: Data Analysis/Reporting}
+      M: {B: "Applications Analyst/ Programmer", C: Database Administration, D: Hardware Specialist, E: "Information Systems, Design/Analysis", F: Network Administration, G: "Operating Systems/ Software Programming", H: "PC Specialist/ Microcomputers", J: Project Management, K: "Scientific/ Research Programming", L: Software Specialist, M: "Systems Analyst/ Programmer", N: "Telecommunications/ Networks", P: "User Support/ Consulting", Q: Web Specialist, R: Quality Assurance, S: Security, T: Reporting/Data Management, U: Business Analysis}
+      N: {B: "Collections (academic, not art collections)", C: "Information Systems & Records Management", D: "Data Analysis/ Institutional Research", E: Library and Information Services, F: "Research Data Analysis/ Support"}
+      P: {B: "Grant Preparation/ Development of Research Initiatives", C: "Project Coordination/ Execution/ Support", D: Research Administration, E: Technology Management, F: Technical User Support, G: Education/Outreach/Training, H: Commercialization}
+      Q: {B: Basic and Applied Life Sciences, C: Behavioral and Social Sciences, D: Engineering, E: Physical and Mathematical Sciences, F: Professional Programs, G: Health Sciences, H: Humanities, I: Agriculture}
+      R: {B: Academic Advising, C: "Admissions/ Registrar", D: "Career Development/ Placement", E: Dining Services, F: "Diversity/ Minority/ Women's Services", G: Financial Aid, H: Housing, J: International, K: Student Programming, L: Project Management, M: Recruitment}
+      all: {A: Not Applicable}
+    reporting_rules:  # rc2009 p2
+      source: rc2009
+      ap_functional_indicator: "P-Class begins with E-U, 3rd char indicates Function"
+      ap_functional_descriptor: "P-Class begins with E-U, 4th char modifies the 3rd char function"
+      ap_status_modifier: "P-Class begins with E-U, 5th char (VISTN=Visiting, INTRM=Interim, ADJNT=Adjunct, etc.)"
+      survey_positions: "AP survey positions: P-Class 3rd char = Z"
+  student:
+    positions:
+      "1": {meaning: Placeholder, values: {"8": Student classification}}
+      "2": {meaning: Funding Reference, values: {N: Non Work Study, W: Work Study}}
+      "3": {meaning: Salary Grouping, values: {Urbana and Springfield: {A: Group A, B: Group B, C: Group C, D: Group D, E: Work study Co-op Positions (Group E), F: Service Rendered}, Springfield: {G: Non Work Study, H: Work Study}, Chicago: {L: Group L, M: Group M, N: Group N, P: Group P, Q: Group Q, R: Work study Co-op Positions (Group R), S: Group S, T: Group T, U: Group U, V: Group V}}}
+      "4-5": {meaning: Placeholder/Unique Title Indicator, values: "Urbana and Springfield: 1 = Urbana, 2 = Springfield; Chicago: one-up numbering of unique titles within each UIC salary grouping"}
+  reserved:
+    student_classifications: {classes: "8 + alpha (8A% - 8Z%)", campus: All}
+    uic_it_custom_classes: {classes: "80%, 81%, 82%", campus: Chicago}
+    flsa_time_reporting: {classes: ZFLSA, campus: All}
+  examples_verbatim:
+    source: kb120369
+    values: {"00581": "Adminv Aide (LU)", "01716": "Adminv Asst 1 (LC)", "07712": "Libr Clerk 1 (LS)", AAAAA: "Tenur 9-mo Professors", BAAEG: "OthAc 9-mo Professors Endow Emertis", FEAAA: "Vice President", LAAAA: "Dean", HAAAA: "Provost", NAAAA: "Director"}
+    note: "Civil-service P-Classes are five digits (00581, 32881, 45911); how they relate to the four-character SUCSS class codes used by this repository is NOT documented publicly."
+  apprentice_learner_trainee:
+    source: rc2009
+    rule: "T_POSN_CLS_HIST.POSN_CLS_DESC contains 10001-90001"
+    codes: ["10001", "20001", "30001", "40001", "50001", "50002", "60001", "70001", "80001", "90001"]
+
+# --------------------------------------------------------------------------------------------- rank and tenure
+tenure_code:
+  source: tenure2008
+  confidence: high
+  values: {A: Indefinite Tenure, L: Initial/Partial Term MYC, M: Multi-Year Contract Agreement, N: Initial/Partial Term, P: Probationary/On Tenure Track, Q: Q Probation, T: Terminal Year, X: Terminal MYC}
+  current_kb_subset: {source: kb120574, values: {A: Indefinite Tenure, N: Initial/Partial Term, P: Probationary/On Tenure Track, Q: Q Probation}}
+  reporting_rules: {source: rc2009, tenured: "E-Class begins with A, Tenure Code = A", tenure_track: "Tenure Code = P or Q", non_tenured: "Tenure Code = N"}
+  drift: "L, M, T, X appear in the 2008 job aid but not in the 2026 KB article."
+institutional_rank_code:
+  source: tenure2008
+  confidence: high
+  values: {"1": Professor, "2": Associate Professor, "3": Assistant Professor, "4": Research Professor, "5": Research Associate Professor, "6": Research Assistant Professor, "9": Unreported, A: Administrative}
+  current_kb_subset: {source: kb120574, values: ["1", "2", "3", "4", "5", A]}
+
+# --------------------------------------------------------------------------------------------- salary tables
+salary_table_code:
+  source: rc2009
+  confidence: high
+  columns: ["T_POSN_HIST: Position Salary Table Code", "V_JOB_DETL_HIST_1: Job Detail Salary Table Code"]
+  open_range: {CA: Chicago, DA: Springfield, EA: Urbana}
+  open_range_pilot: {CB: Chicago, DB: Springfield}
+  established: {rule: "begins with T"}
+  prevailing: {rule: "begins with Q (Chicago), R (Springfield) or S (Urbana)"}
+  negotiated: {rule: "begins with G (Chicago), K (Springfield) or M (Urbana)"}
+  note: "Salary table CA/CB/DA/DB are different code domains from E-Class CA/CB/DA/DB; same letters, different columns."
+  related: {salary_grade: "Position Salary Grade Code / Job Detail Salary Grade Code", range_min: T_POSN_HIST.POSN_MIN_SAL, range_max: T_POSN_HIST.POSN_MAX_SAL}
+
+# --------------------------------------------------------------------------------------------- civil service descriptors
+civil_service_flex_year:
+  source: kb120570
+  also_in: [rc2009]
+  confidence: high
+  values: {PFX08: "8-Month Flex Year (4 months non-work)", PFX09: "9-Month Flex Year (3 months non-work)", PFX10: "10-Month Flex Year (2 months non-work)", PFX11: "11-Month Flex Year (1 month non-work)"}
+  reporting_rules: {source: rc2009, nine_month_staff: PFX09, ten_month_staff: PFX10, twelve_month_staff: "not PFX08, PFX09, PFX10, PFX11"}
+civil_service_place_of_employment:
+  source: rc2009
+  confidence: high
+  rule: "Position Class Description Code begins with L"
+  examples: {LC: Chicago, LS: Springfield, LU: Urbana-Champaign, LCR: Chicago Rockford College of Medicine, LUA: Urbana Robert Allerton House, LCH: "Chicago Hospital (rc2009: Hospital positions = Position Class Attribute LCH)"}
+position_class_attribute_codes:
+  source: kb120570
+  also_in: [rc2009]
+  confidence: high
+  description: "Position/job descriptors (Banner NBAPOSN). EDW: Position Class Attribute table, Position Class Attribute Code, linked on Position Class Code (rc2009 footnote 5)."
+  authority: {ABDRS: Has budget approval authority, APAL: "Has purchase authority of $5,000 or more", ARAMP: RAMP Administrator, ASLT: Supervises less than 20 employees, ASMT: Supervises 20 employees or more}
+  position_defining: {PHRCP: "HR Contact Person (job level)", PDIPC: Direct Patient Care, PEXAM: Physical Examination Required, PSENS: Security Sensitive}
+  civil_service_only: {PCAWW: Chicago Alternative Work Week, PCERT: Selective Certification, PCONF: Confidential Employee, PCONT: Contract Position, PFX08: 8-Month Flex Year, PFX09: 9-Month Flex Year, PFX10: 10-Month Flex Year, PFX11: 11-Month Flex Year}
+  urbana_graduate_assistant: {GA001: Clerical Support, GA002: Technical/Support Services, GA003: Advising, GA004: Outreach Duties, GP001: Internship/Pre-Professional, GR001: Conducting Experiments, GR002: Organizing or Analyzing Data, GR003: Presenting Findings in a Publication or Dissertation, GR004: Collaborating with Faculty in Preparing Publications, GR005: Overseeing Work of Other RAs, GR006: Other Research Activities, GT001: Teaching Classes, GT002: Grading Student Assignments, GT003: Leading Lab or Discussion Group in a Course Setting, GT004: Developing Academic Instructional Materials, GT005: Accompanying/Coaching Musical or Vocal Performances, GT006: Providing Artistic Instruction, GT007: Proctoring Exams, GT008: Overseeing/Coordinating the Work of Other TAs, GT009: Holding Office Hours, GT010: Tutoring Students}
+  other_required_unlisted: "Civil Service Location Code, SUCSS Occupational Codes, SUCSS Work Area Codes, Lesser Units codes (Urbana) - required but values not listed in the article"
+pape_code:
+  source: rc2009
+  confidence: high
+  description: "Standard PAPE titles; National Occupation code (PAPE code). EDW: Position History Table, PAPE Civil Service Identifier field"
+  values: ["49901", "49902", "49903", "49904", "49905", "49906", "49907", "49908", "49909", "49910", "49911", "49912", "49913", "49914", "49915", "49916", "49917", "49918", "49919", "49920"]
+
+# --------------------------------------------------------------------------------------------- campus / org / funding
+chart_of_accounts:
+  source: kb118751
+  confidence: high
+  description: "C-FOAPAL chart code. rc2009: Home Campus Code = Employee History 1 Table, Chart of Accounts Code field."
+  values: {"1": Urbana/Champaign, "2": Chicago, "4": Springfield, "9": System Offices}
+organization_levels:
+  source: kb118751
+  confidence: high
+  values: {"1": University, "2": Administrative Rollup, "3": College, "4": School/Sub-College, "5": Department Rollup, "6": Department / Sub-Org, "7": Sub-Org User Defined, "8": Sub-Org User Defined}
+fund_code_prefix:
+  source: rc2009
+  confidence: high
+  description: "Payroll Accounting Detail Public, Financial Fund Code first character"
+  values: {"1": State Funds, "2": Institutional Funds, "3": Self-Supporting, "4": Grants and Contracts}
+position_number_format:
+  source: snip_hr_nbajobs
+  confidence: low
+  rule: "begins with a letter indicating the campus (C, S, U, or G), followed by five numeric digits"
+  note: "Snippet only. G is not explained in the snippet. The v2 synthetic pack deliberately does NOT use this format, so synthetic IDs cannot collide with real position numbers."
+
+# --------------------------------------------------------------------------------------------- jobs
+job_type:
+  source: rc2009
+  confidence: high
+  values: {P: Primary Job, O: Overload Job}
+  rules: ["Overload jobs with a 0 FTE are excluded from headcount and FTE reporting", "headcount is reported by active employees' primary job"]
+  secondary_note: {source: snip_fte_cube_2023, text: "Contract Primary Job Ind: Primary (Y) or Secondary/Overload (N)", confidence: low}
+  v1_value_S: "The v1 sample also uses S (secondary). S is not in the public sources read here; kept as an unresolved value."
+job_suffix:
+  source: snip_hr_nbajobs
+  confidence: low
+  rules: ["first job on a position has suffix '00', the second '01', and so on", "jobs with E-Class MM or LP, or a suffix beginning with T, must have job type Overload"]
+  link_rules: {source: rc2009, confidence: high, bargaining_unit: "Position History and Job tables linked by position number and job suffix", payroll_hours: "Payroll Accounting Detail Public linked by Position Number and Job Suffix"}
+fte:
+  source: rc2009
+  confidence: high
+  rules:
+    - "Civil Service employees working 37.5, 40 or 42 hours per week are all considered 1 FTE"
+    - "Actual FTE Worked = Job FTE * Appointment Percent"
+    - "Annualized Salary = (1.0 FTE / Job FTE) * Job annual salary * (Job FTE * ApptPct)"
+    - "Position FTE is the FTE of the position; Job FTE is the FTE of the job (footnote 10)"
+    - "FTE reports normally exclude Extra Help, temporary employees, one time payments, summer pay, lump sum payments and 0-FTE overload jobs"
+  snippet_rule: {source: snip_hr_nbajobs, confidence: low, text: "total FTE of all active jobs for an employee should not be greater than 1 (not including summer jobs with E-class of 'MM')"}
+job_status:
+  source: rc2009
+  confidence: medium
+  rule: "Active Job: Job Detail Status Description does not equal 'Terminated'"
+  values_described: {Terminated: Terminated}
+  code_letters: "A/T letters are the v1 sample's; the public source gives only the description 'Terminated'."
+employee_status:
+  source: rc2009
+  confidence: high
+  rule: "Active employee (including on leave): Employee Status Code <> T; excluding leave: Employee Status Code = A"
+  values: {A: Active, T: Terminated}
+  note: Leave status letters exist but are not listed in public sources read here.
+position_status:
+  source: rc2009
+  confidence: high
+  description_values: [Active, Inactive, Frozen, Cancelled]
+  rules: {active: "Position Status Description = 'Active'", include_frozen_inactive: "Position Status Description <> 'Cancelled'", vacant_candidates: "'Active' or 'Inactive'"}
+  code_letters: "Position Status Code letters (v1 uses A/I) are not in public sources."
+position_type:
+  source: rc2009
+  confidence: high
+  values: [Single, Pooled]
+contract_type_code:
+  source: rc2009
+  also_in: [kb120563]
+  confidence: high
+  values: {NONR: initial notice of nonreappointment, EXTN: notice period extended, TWNF: truncated for loss of funds with notice due, TWOF: truncated for loss of funds without notice, ENPR: "early return to regular status (kb120563 NR002)", RESC: "rescind notice (kb120563 NR003)", ENER: "return to regular status (kb120563 NR008)"}
+current_info_indicator:
+  source: rc2009
+  confidence: medium
+  rule: "Current active employee: Employee History 1 EMPEE_CUR_INFO_IND = Y, ACTIVE_EMPEE_IND = Y; Employee Person History 1 PERS_CUR_INFO_IND = Y"
+  physical_names_source: req_uis_gitlist
+  values_seen: {Y: Current, D: "Delete (snip_usage_prr_stuattr, student attribute table; HR use not confirmed)"}
+  not_current_value: "unknown publicly; the v2 synthetic pack uses N"
+
+# --------------------------------------------------------------------------------------------- separations
+termination_code:
+  source: kb120385
+  also_in: [term2014]
+  confidence: high
+  description: Employee-level termination code (Banner). The EDW column/table holding it is not publicly documented.
+  values:
+    TD: {desc: Deceased, group: All}
+    TE: {desc: Terminated/Expired, group: "Faculty, Other Academics, Academic Professionals", usage: "non-notice eligible appointment expires"}
+    TF: {desc: Federal Retired, group: "Faculty, Other Academics, Academic Professionals"}
+    TJ: {desc: Truncate Job with Notice of Non-Reappointment, group: "Faculty, Other Academics, Academic Professionals"}
+    TK: {desc: Discharged (Civil Service), group: Civil Service Only}
+    TL: {desc: Indefinite Layoff (Civil Service), group: Civil Service Only}
+    TM: {desc: Employer Termination, group: All}
+    TN: {desc: Truncate appt w/o Notice of Non-Reappointment, group: "Faculty, Other Academics, Academic Professionals"}
+    TP: {desc: Dismissed, group: Civil Service Only, usage: dismissed during probation}
+    TQ: {desc: Employee Resigned, group: All}
+    TR: {desc: Retired, group: "Faculty, Other Academics, Academic Professionals, Civil Service", usage: "retired and is a SURS annuitant"}
+    TS: {desc: Notice of Non-Reappointment Ended, group: "Faculty, Other Academics, Academic Professionals"}
+    TT: {desc: Terminated Employment, group: "Academic/Graduate Hourly, Graduate Assistantship, Student, Unpaid"}
+    TU: {desc: SSN/UIN is incorrect, group: All, usage: FOR AITS USE ONLY}
+    TV: {desc: Employment eligibility expired, group: All}
+    TW: {desc: New Hire Error, group: All, source: kb120385}
+    TX: {desc: Student Enrollment Violation, group: "Graduate, Graduate Hourly, Student"}
+    TY: {desc: E-Verify Final Nonconfirm Recvd, group: All}
+    TZ: {desc: Terminated - Never Worked, group: All}
+    TA: {desc: SURS Disability Retirement Allowance, group: "Civil Service only prior to Banner. Do Not Use"}
+  drift: "TW (New Hire Error) is in the 2020-revised KB list, not in the 2014 job aid."
+  analytic_groups:   # inferred grouping for flows; not a published grouping
+    provenance: inferred_from_public_pattern
+    retirement: [TR, TF]
+    resignation: [TQ]
+    end_of_appointment: [TE, TS, TT, TJ, TN]
+    involuntary: [TK, TL, TM, TP, TV, TX, TY]
+    death: [TD]
+    administrative_exclude: [TU, TW, TZ, TA]
+surs:
+  source: rc2009
+  confidence: high
+  benefit_category_code:
+    benefit_eligible_staff: [M1, M2, B1, B2]
+    surs_eligible: [M1, M2, M3, B1, B2, B3]
+    tax_deferred_retirement_eligible: [M1, M2, M3, M4, B1, B2, B3, B4]
+  retired_annuitant: "termination code TR = retired and a SURS annuitant (kb120385)"
+  job_change_reasons: {JB013: Add Job SURS Annuitant, HR003: Rehire SURS Retiree, RA003: Reappt of SURS Annuitant, SP003: Retired}
+  note: A SURS retirement indicator column is NOT documented publicly; tier and service credit fields are not documented.
+
+# --------------------------------------------------------------------------------------------- job change reasons
+job_change_reason:
+  source: kb120563
+  also_in: [jobchg2016]
+  confidence: high
+  description: Job change reason codes (116 codes, same set in the 2016 job aid and the 2026 KB). Prefix families listed; full list in the KB.
+  families: {JB: adding a job, EJ: ending a job, FA: faculty change, FT: FTE, LD: labor distribution, LV: leave of absence, HR: new hire / rehire, NR: non-reappointment, RA: reappointment, RC: reclassification / reallocation / reassignment (CS), SA: salary and pay, SP: separation, OT: miscellaneous, CV: conversion (informational)}
+  analytic_relevant:
+    HR001: New Hire
+    HR002: Rehire (within 1 year of previous separation)
+    EJ002: Employee Resignation
+    EJ001: End Job
+    EJ004: Indefinite Layoff (CS)
+    EJ008: Dismissed (CS)
+    SP001: Deceased
+    SP002: Discharged (CS)
+    SP003: Retired
+    OT010: Promotion (CS)
+    FA002: Faculty Promotion
+    RC001: Reclassification (CS)
+    RC002: Reallocation (CS)
+    RC003: Reassignment (CS)
+    OT009: Campus Transfer
+    OT012: Lateral Transfer (CS)
+    OT013: Department Org Change
+    OT008: Employee Group Change
+    FT001: FTE Change
+    LV001: Leave of Absence
+
+# --------------------------------------------------------------------------------------------- payroll
+earn_code_families:
+  source: rc2009
+  confidence: high
+  shift_pay: "SFL to SFE, SF1 through SF9, SFA through SFL, SHF"
+  premium_pay: "P01 through P14"
+  overtime_hours: "begin with O, excluding ORT, OD1, OD2, OPL, OPR, ORO"
+  sick_termination_payout: [ASI, ATS]
+  vacation_termination_payout: [ASV, ATV]
+  compensatory_time: [CME, CMR, CMU, CSE, CSU]
+  taxable_perquisites: "begin with T, excluding TIP and TUP"
+  regular_pay: "not listed publicly; v1 REG kept as an unresolved value"
+deductions:
+  source: rc2009
+  confidence: high
+  retirement_403b: "Retirement Deduction Code begins with T"
+  health_plans: "Medical Ded Code begins with H; Quality Care begins with HQ"

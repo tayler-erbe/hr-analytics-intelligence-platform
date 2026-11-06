@@ -1,0 +1,56 @@
+{
+ "set": "longitudinal",
+ "source": "sample_datasets/v1/longitudinal",
+ "tables": {
+  "REF_ECLS_PUBLIC": {
+   "content_sha256": "723e2ba5464f1a36bd67bddc885f7ba8788fbcdf64452479477f2e899e4e2637",
+   "rows": 68,
+   "v1_table": null
+  },
+  "REF_ORG": {
+   "content_sha256": "99466f45ed4381b18cc82120d6dfff87f9fe40198e933cd3dff77d75b7c17321",
+   "rows": 52,
+   "v1_table": "REF_ORG"
+  },
+  "REF_ROLE_FAMILY": {
+   "content_sha256": "84c25936ec6f1485ae8307a7b18ed5d6315fd2de785e52875d8e09aa6410a8c9",
+   "rows": 38,
+   "v1_table": "REF_ROLE_FAMILY"
+  },
+  "T_EMPEE_HIST": {
+   "content_sha256": "4202e52befad30eff06750af3d28b71420ce6cfbdd4602626a8d1e4c41b6754e",
+   "rows": 5257,
+   "v1_table": "T_EMPEE_HIST"
+  },
+  "T_EMPEE_HIST_5": {
+   "content_sha256": "92b4c5b499ce44fb1dc42220bff213220542b6fc520e9562ed0db174d8e8dfc7",
+   "rows": 1480,
+   "v1_table": "T_EMPEE_HIST_5"
+  },
+  "T_JOB_DETL_HIST": {
+   "content_sha256": "7e4bb9c3e156725ccd51a4907dcda26ea8946233450f9d25cf1fd560079bd536",
+   "rows": 36699,
+   "v1_table": "T_JOB_DETL_HIST"
+  },
+  "T_PERS_HIST": {
+   "content_sha256": "4da901ea4e8e337bd81571aa2494776c63b5e800994f1abd5fb5b402c64e4b48",
+   "rows": 2302,
+   "v1_table": "T_PERS_HIST"
+  },
+  "T_POSN_CLS_HIST": {
+   "content_sha256": "fce4e1880b15d75c8abcc6af9b3e96f6fa92ba98a725a38908eabb0d679d5313",
+   "rows": 38,
+   "v1_table": "REF_JOB_CLASS"
+  },
+  "T_POSN_HIST": {
+   "content_sha256": "be74ee6ca4d9e76f6ca3e29812fe6b207502d475fde2b7d972692bf52edd49b1",
+   "rows": 1256,
+   "v1_table": "T_POSN_HIST"
+  }
+ },
+ "views": {
+  "V_EMPEE_HIST_1": "SELECT * FROM T_EMPEE_HIST",
+  "V_EMPEE_PERS_HIST_1": "SELECT EDW_PERS_ID, PERS_EFF_DT, PERS_EXP_DT, PERS_CUR_INFO_IND FROM T_PERS_HIST",
+  "V_JOB_DETL_HIST_1": "SELECT * FROM T_JOB_DETL_HIST"
+ }
+}

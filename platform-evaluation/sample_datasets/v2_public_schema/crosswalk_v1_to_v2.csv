@@ -1,0 +1,178 @@
+set,change,v1_table,v1_column,v2_table,v2_column,v1_value,v2_value,rule,source_key
+longitudinal,table_renamed,REF_JOB_CLASS,,T_POSN_CLS_HIST,,,,,rc2009
+longitudinal,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP02,SAMBA,Specialist - IT Applications Analyst/Programmer (synthetic),kb120569
+longitudinal,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP04,TAMTA,Professional Title - IT Reporting/Data Management (synthetic),kb120569
+longitudinal,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP06,NFJAA,Assistant Director - General Administration (synthetic),kb120569
+longitudinal,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP08,NAAAA,Director (synthetic),kb120569
+longitudinal,column_renamed,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,,,,kb120569
+longitudinal,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 2 (synthetic),Specialist - IT Applications Analyst/Programmer (synthetic),description of AP02 -> SAMBA,kb120569
+longitudinal,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 4 (synthetic),Professional Title - IT Reporting/Data Management (synthetic),description of AP04 -> TAMTA,kb120569
+longitudinal,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 6 (synthetic),Assistant Director - General Administration (synthetic),description of AP06 -> NFJAA,kb120569
+longitudinal,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 8 (synthetic),Director (synthetic),description of AP08 -> NAAAA,kb120569
+longitudinal,column_renamed,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,,,,rc2009
+longitudinal,table_kept,REF_ORG,,REF_ORG,,,,,
+longitudinal,table_kept,REF_ROLE_FAMILY,,REF_ROLE_FAMILY,,,,,
+longitudinal,value_recoded,REF_ROLE_FAMILY,CLS_CD,REF_ROLE_FAMILY,CLS_CD,AP02,SAMBA,Specialist - IT Applications Analyst/Programmer (synthetic),kb120569
+longitudinal,value_recoded,REF_ROLE_FAMILY,CLS_CD,REF_ROLE_FAMILY,CLS_CD,AP04,TAMTA,Professional Title - IT Reporting/Data Management (synthetic),kb120569
+longitudinal,value_recoded,REF_ROLE_FAMILY,CLS_CD,REF_ROLE_FAMILY,CLS_CD,AP06,NFJAA,Assistant Director - General Administration (synthetic),kb120569
+longitudinal,value_recoded,REF_ROLE_FAMILY,CLS_CD,REF_ROLE_FAMILY,CLS_CD,AP08,NAAAA,Director (synthetic),kb120569
+longitudinal,table_kept,T_EMPEE_HIST,,T_EMPEE_HIST,,,,,
+longitudinal,value_recoded,T_EMPEE_HIST,EMPEE_CLS_CD,T_EMPEE_HIST,EMPEE_CLS_CD,C1,CA,"civil service salaried -> CA 'CS 75Hr/pay N/E Ben Elig' (non-exempt, 37.5 h/week)",kb120378
+longitudinal,column_renamed,T_EMPEE_HIST,CAMPUS_CD,T_EMPEE_HIST,HR_CAMPUS_CD,,,,rc2009
+longitudinal,column_added,T_EMPEE_HIST,,T_EMPEE_HIST,EMPEE_CUR_INFO_IND,,,Y on the latest effective row among currently recorded rows of each person; N otherwise,rc2009
+longitudinal,column_added,T_EMPEE_HIST,,T_EMPEE_HIST,ACTIVE_EMPEE_IND,,,Y when Employee Status Code <> T (rc2009 active incl. leave),rc2009
+longitudinal,column_added,T_EMPEE_HIST,,T_EMPEE_HIST,COA_CD,,,"home campus chart code from the synthetic campus (U1->1, U2->2, U3->4, U0->9; bridges.yaml synthetic assignment)",kb118751
+longitudinal,table_kept,T_EMPEE_HIST_5,,T_EMPEE_HIST_5,,,,,
+longitudinal,value_recoded,T_EMPEE_HIST_5,TERM_REASON_CD,T_EMPEE_HIST_5,TERM_REASON_CD,END,TE,end of appointment -> TE Terminated/Expired (public group: academic; no CS-specific end code exists),kb120385
+longitudinal,value_recoded,T_EMPEE_HIST_5,TERM_REASON_CD,T_EMPEE_HIST_5,TERM_REASON_CD,RES,TQ,resignation -> TQ Employee Resigned,kb120385
+longitudinal,value_recoded,T_EMPEE_HIST_5,TERM_REASON_CD,T_EMPEE_HIST_5,TERM_REASON_CD,RET,TR,retirement -> TR Retired (SURS annuitant),kb120385
+longitudinal,table_kept,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,,,,,
+longitudinal,column_renamed,T_JOB_DETL_HIST,JOB_STATUS_CD,T_JOB_DETL_HIST,JOB_DETL_STATUS_CD,,,,rc2009
+longitudinal,column_renamed,T_JOB_DETL_HIST,JOB_FTE,T_JOB_DETL_HIST,JOB_DETL_FTE,,,,rc2009
+longitudinal,column_renamed,T_JOB_DETL_HIST,JOB_ANNUAL_SAL_AMT,T_JOB_DETL_HIST,JOB_DETL_ANNUAL_SAL,,,,rc2009
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP02,SAMBA,Specialist - IT Applications Analyst/Programmer (synthetic),kb120569
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP04,TAMTA,Professional Title - IT Reporting/Data Management (synthetic),kb120569
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP06,NFJAA,Assistant Director - General Administration (synthetic),kb120569
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP08,NAAAA,Director (synthetic),kb120569
+longitudinal,column_renamed,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,,,,kb120569
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_ECLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,C1,CA,"civil service salaried -> CA 'CS 75Hr/pay N/E Ben Elig' (non-exempt, 37.5 h/week)",rc2009
+longitudinal,column_renamed,T_JOB_DETL_HIST,JOB_ECLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,,,,rc2009
+longitudinal,column_added,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,JOB_DETL_STATUS_DESC,,,"A -> Active, T -> Terminated",rc2009
+longitudinal,column_added,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,JOB_DETL_APPT_PCT,,,100 (v1 has no appointment percent),rc2009
+longitudinal,column_added,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,EMPEE_GROUP_CD,,,from the job E-Class; values are the v1 group codes (real EMPEE_GROUP_CD values are not public),snip_rn_2010_09
+longitudinal,column_added,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,EMPEE_GROUP_DESC,,,E-Class group heading in kb120378,snip_rn_2010_09
+longitudinal,table_kept,T_PERS_HIST,,T_PERS_HIST,,,,,
+longitudinal,column_added,T_PERS_HIST,,T_PERS_HIST,PERS_CUR_INFO_IND,,,Y on the latest effective row among currently recorded rows of each person; N otherwise,rc2009
+longitudinal,table_kept,T_POSN_HIST,,T_POSN_HIST,,,,,
+longitudinal,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP02,SAMBA,Specialist - IT Applications Analyst/Programmer (synthetic),kb120569
+longitudinal,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP04,TAMTA,Professional Title - IT Reporting/Data Management (synthetic),kb120569
+longitudinal,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP06,NFJAA,Assistant Director - General Administration (synthetic),kb120569
+longitudinal,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP08,NAAAA,Director (synthetic),kb120569
+longitudinal,column_added,T_POSN_HIST,,T_POSN_HIST,POSN_STATUS_DESC,,,"A -> Active, I -> Inactive",rc2009
+longitudinal,column_added,T_POSN_HIST,,T_POSN_HIST,POSN_MIN_SAL,,,class range minimum of the position's class (synthetic ranges),rc2009
+longitudinal,column_added,T_POSN_HIST,,T_POSN_HIST,POSN_MAX_SAL,,,class range maximum of the position's class (synthetic ranges),rc2009
+longitudinal,table_added,,,REF_ECLS_PUBLIC,,,,all published E-Class codes,kb120378
+longitudinal,view_redefined,V_EMPEE_HIST_1,,V_EMPEE_HIST_1,,,,"SELECT * FROM T_EMPEE_HIST; v1 view was a current-effective filter as of 2026-10-31, v2 is the full history (filter EMPEE_CUR_INFO_IND = 'Y')",rc2009
+longitudinal,view_added,,,V_JOB_DETL_HIST_1,,,,SELECT * FROM T_JOB_DETL_HIST,rc2009
+longitudinal,view_added,,,V_EMPEE_PERS_HIST_1,,,,"SELECT EDW_PERS_ID, PERS_EFF_DT, PERS_EXP_DT, PERS_CUR_INFO_IND FROM T_PERS_HIST",rc2009
+CLEAN,table_kept,REF_EMPEE_CLS,,REF_EMPEE_CLS,,,,,
+CLEAN,value_recoded,REF_EMPEE_CLS,ECLS_CD,REF_EMPEE_CLS,ECLS_CD,A1,BA,academic professional -> BA 'Acad/Pro 12mth Ben Elig',kb120378
+CLEAN,value_recoded,REF_EMPEE_CLS,ECLS_CD,REF_EMPEE_CLS,ECLS_CD,C1,CA,"civil service salaried -> CA 'CS 75Hr/pay N/E Ben Elig' (non-exempt, 37.5 h/week)",kb120378
+CLEAN,value_recoded,REF_EMPEE_CLS,ECLS_CD,REF_EMPEE_CLS,ECLS_CD,F1,AA,faculty -> AA 'Acad 9/12mth Ben Elig',kb120378
+CLEAN,value_recoded,REF_EMPEE_CLS,ECLS_CD,REF_EMPEE_CLS,ECLS_CD,G1,GA,graduate assistant -> GA 'Graduate Assistants',kb120378
+CLEAN,value_recoded,REF_EMPEE_CLS,ECLS_DESC,REF_EMPEE_CLS,ECLS_DESC,Academic professional (synthetic),Acad/Pro 12mth Ben Elig,public description of BA,kb120378
+CLEAN,value_recoded,REF_EMPEE_CLS,ECLS_DESC,REF_EMPEE_CLS,ECLS_DESC,"Civil service, salaried (synthetic)",CS 75Hr/pay N/E Ben Elig,public description of CA,kb120378
+CLEAN,value_recoded,REF_EMPEE_CLS,ECLS_DESC,REF_EMPEE_CLS,ECLS_DESC,Faculty (synthetic),Acad 9/12mth Ben Elig,public description of AA,kb120378
+CLEAN,value_recoded,REF_EMPEE_CLS,ECLS_DESC,REF_EMPEE_CLS,ECLS_DESC,Graduate assistant (synthetic),Graduate Assistants,public description of GA,kb120378
+CLEAN,table_kept,REF_HIERARCHY_ROOT,,REF_HIERARCHY_ROOT,,,,,
+CLEAN,table_renamed,REF_JOB_CLASS,,T_POSN_CLS_HIST,,,,,rc2009
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP01,RAJAA,Coordinator - General Administration (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP02,SAMBA,Specialist - IT Applications Analyst/Programmer (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP03,SACBA,Specialist - Business and Finance Accounting (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP04,TAMTA,Professional Title - IT Reporting/Data Management (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP05,RALGA,Coordinator - HR Staffing/Recruitment (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP06,NFJAA,Assistant Director - General Administration (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP07,NEPDA,Associate Director - Research Administration (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP08,NAAAA,Director (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP09,LEJAA,Associate Dean - General Administration (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,AP10,LAAAA,Dean (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,FA01,BAEAA,OthAc 9-mo Lecturer (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,FA02,AACAA,Tenur 9-mo Assistant Professor (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,FA03,AABAA,Tenur 9-mo Associate Professor (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,FA04,AAAAA,Tenur 9-mo Professors (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,FA05,AAAEA,Tenur 9-mo Professors Endowed (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,GA01,CASAA,Assistants 9-mo Grad Appt (synthetic),kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,OV01,BEEAA,OthAc Non Service Lecturer - overload (synthetic),kb120569
+CLEAN,column_renamed,REF_JOB_CLASS,CLS_CD,T_POSN_CLS_HIST,POSN_CLS_CD,,,,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 1 (synthetic),Coordinator - General Administration (synthetic),description of AP01 -> RAJAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 2 (synthetic),Specialist - IT Applications Analyst/Programmer (synthetic),description of AP02 -> SAMBA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 3 (synthetic),Specialist - Business and Finance Accounting (synthetic),description of AP03 -> SACBA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 4 (synthetic),Professional Title - IT Reporting/Data Management (synthetic),description of AP04 -> TAMTA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 5 (synthetic),Coordinator - HR Staffing/Recruitment (synthetic),description of AP05 -> RALGA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 6 (synthetic),Assistant Director - General Administration (synthetic),description of AP06 -> NFJAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 7 (synthetic),Associate Director - Research Administration (synthetic),description of AP07 -> NEPDA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 8 (synthetic),Director (synthetic),description of AP08 -> NAAAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 9 (synthetic),Associate Dean - General Administration (synthetic),description of AP09 -> LEJAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Academic Professional Title 10 (synthetic),Dean (synthetic),description of AP10 -> LAAAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Faculty Title 1 (synthetic),OthAc 9-mo Lecturer (synthetic),description of FA01 -> BAEAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Faculty Title 2 (synthetic),Tenur 9-mo Assistant Professor (synthetic),description of FA02 -> AACAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Faculty Title 3 (synthetic),Tenur 9-mo Associate Professor (synthetic),description of FA03 -> AABAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Faculty Title 4 (synthetic),Tenur 9-mo Professors (synthetic),description of FA04 -> AAAAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Faculty Title 5 (synthetic),Tenur 9-mo Professors Endowed (synthetic),description of FA05 -> AAAEA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Graduate Assistant (synthetic),Assistants 9-mo Grad Appt (synthetic),description of GA01 -> CASAA,kb120569
+CLEAN,value_recoded,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,Overload / supplemental (synthetic),OthAc Non Service Lecturer - overload (synthetic),description of OV01 -> BEEAA,kb120569
+CLEAN,column_renamed,REF_JOB_CLASS,CLS_TITLE,T_POSN_CLS_HIST,POSN_CLS_DESC,,,,rc2009
+CLEAN,table_kept,REF_ORG,,REF_ORG,,,,,
+CLEAN,table_kept,T_EMPEE_HIST,,T_EMPEE_HIST,,,,,
+CLEAN,value_recoded,T_EMPEE_HIST,EMPEE_CLS_CD,T_EMPEE_HIST,EMPEE_CLS_CD,A1,BA,academic professional -> BA 'Acad/Pro 12mth Ben Elig',kb120378
+CLEAN,value_recoded,T_EMPEE_HIST,EMPEE_CLS_CD,T_EMPEE_HIST,EMPEE_CLS_CD,C1,CA,"civil service salaried -> CA 'CS 75Hr/pay N/E Ben Elig' (non-exempt, 37.5 h/week)",kb120378
+CLEAN,value_recoded,T_EMPEE_HIST,EMPEE_CLS_CD,T_EMPEE_HIST,EMPEE_CLS_CD,F1,AA,faculty -> AA 'Acad 9/12mth Ben Elig',kb120378
+CLEAN,value_recoded,T_EMPEE_HIST,EMPEE_CLS_CD,T_EMPEE_HIST,EMPEE_CLS_CD,G1,GA,graduate assistant -> GA 'Graduate Assistants',kb120378
+CLEAN,column_renamed,T_EMPEE_HIST,CAMPUS_CD,T_EMPEE_HIST,HR_CAMPUS_CD,,,,rc2009
+CLEAN,column_added,T_EMPEE_HIST,,T_EMPEE_HIST,EMPEE_CUR_INFO_IND,,,Y on the latest effective row among currently recorded rows of each person; N otherwise,rc2009
+CLEAN,column_added,T_EMPEE_HIST,,T_EMPEE_HIST,ACTIVE_EMPEE_IND,,,Y when Employee Status Code <> T (rc2009 active incl. leave),rc2009
+CLEAN,column_added,T_EMPEE_HIST,,T_EMPEE_HIST,COA_CD,,,"home campus chart code from the synthetic campus (U1->1, U2->2, U3->4, U0->9; bridges.yaml synthetic assignment)",kb118751
+CLEAN,table_kept,T_EMPEE_HIST_5,,T_EMPEE_HIST_5,,,,,
+CLEAN,value_recoded,T_EMPEE_HIST_5,TERM_REASON_CD,T_EMPEE_HIST_5,TERM_REASON_CD,END,TE,end of appointment -> TE Terminated/Expired (public group: academic; no CS-specific end code exists),kb120385
+CLEAN,value_recoded,T_EMPEE_HIST_5,TERM_REASON_CD,T_EMPEE_HIST_5,TERM_REASON_CD,RES,TQ,resignation -> TQ Employee Resigned,kb120385
+CLEAN,value_recoded,T_EMPEE_HIST_5,TERM_REASON_CD,T_EMPEE_HIST_5,TERM_REASON_CD,RET,TR,retirement -> TR Retired (SURS annuitant),kb120385
+CLEAN,table_kept,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,,,,,
+CLEAN,column_renamed,T_JOB_DETL_HIST,JOB_STATUS_CD,T_JOB_DETL_HIST,JOB_DETL_STATUS_CD,,,,rc2009
+CLEAN,column_renamed,T_JOB_DETL_HIST,JOB_FTE,T_JOB_DETL_HIST,JOB_DETL_FTE,,,,rc2009
+CLEAN,column_renamed,T_JOB_DETL_HIST,JOB_ANNUAL_SAL_AMT,T_JOB_DETL_HIST,JOB_DETL_ANNUAL_SAL,,,,rc2009
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP01,RAJAA,Coordinator - General Administration (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP02,SAMBA,Specialist - IT Applications Analyst/Programmer (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP03,SACBA,Specialist - Business and Finance Accounting (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP04,TAMTA,Professional Title - IT Reporting/Data Management (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP05,RALGA,Coordinator - HR Staffing/Recruitment (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP06,NFJAA,Assistant Director - General Administration (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP07,NEPDA,Associate Director - Research Administration (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP08,NAAAA,Director (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP09,LEJAA,Associate Dean - General Administration (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,AP10,LAAAA,Dean (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,FA01,BAEAA,OthAc 9-mo Lecturer (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,FA02,AACAA,Tenur 9-mo Assistant Professor (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,FA03,AABAA,Tenur 9-mo Associate Professor (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,FA04,AAAAA,Tenur 9-mo Professors (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,FA05,AAAEA,Tenur 9-mo Professors Endowed (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,GA01,CASAA,Assistants 9-mo Grad Appt (synthetic),kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,OV01,BEEAA,OthAc Non Service Lecturer - overload (synthetic),kb120569
+CLEAN,column_renamed,T_JOB_DETL_HIST,JOB_CLS_CD,T_JOB_DETL_HIST,POSN_CLS_CD,,,,kb120569
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_ECLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,A1,BA,academic professional -> BA 'Acad/Pro 12mth Ben Elig',rc2009
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_ECLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,C1,CA,"civil service salaried -> CA 'CS 75Hr/pay N/E Ben Elig' (non-exempt, 37.5 h/week)",rc2009
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_ECLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,F1,AA,faculty -> AA 'Acad 9/12mth Ben Elig',rc2009
+CLEAN,value_recoded,T_JOB_DETL_HIST,JOB_ECLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,G1,GA,graduate assistant -> GA 'Graduate Assistants',rc2009
+CLEAN,column_renamed,T_JOB_DETL_HIST,JOB_ECLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,,,,rc2009
+CLEAN,column_added,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,JOB_DETL_STATUS_DESC,,,"A -> Active, T -> Terminated",rc2009
+CLEAN,column_added,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,JOB_DETL_APPT_PCT,,,100 (v1 has no appointment percent),rc2009
+CLEAN,column_added,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,EMPEE_GROUP_CD,,,from the job E-Class; values are the v1 group codes (real EMPEE_GROUP_CD values are not public),snip_rn_2010_09
+CLEAN,column_added,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,EMPEE_GROUP_DESC,,,E-Class group heading in kb120378,snip_rn_2010_09
+CLEAN,table_kept,T_PAYR_ACCTG_DETL,,T_PAYR_ACCTG_DETL,,,,,
+CLEAN,value_recoded,T_PAYR_ACCTG_DETL,PAYR_ID,T_PAYR_ACCTG_DETL,PAYR_ID,MN,MO,Pay ID Monthly,kb120369
+CLEAN,table_kept,T_PERS_HIST,,T_PERS_HIST,,,,,
+CLEAN,column_added,T_PERS_HIST,,T_PERS_HIST,PERS_CUR_INFO_IND,,,Y on the latest effective row among currently recorded rows of each person; N otherwise,rc2009
+CLEAN,table_kept,T_POSN_HIST,,T_POSN_HIST,,,,,
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP01,RAJAA,Coordinator - General Administration (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP02,SAMBA,Specialist - IT Applications Analyst/Programmer (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP03,SACBA,Specialist - Business and Finance Accounting (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP04,TAMTA,Professional Title - IT Reporting/Data Management (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP05,RALGA,Coordinator - HR Staffing/Recruitment (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP06,NFJAA,Assistant Director - General Administration (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP07,NEPDA,Associate Director - Research Administration (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP08,NAAAA,Director (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP09,LEJAA,Associate Dean - General Administration (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,AP10,LAAAA,Dean (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,FA01,BAEAA,OthAc 9-mo Lecturer (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,FA02,AACAA,Tenur 9-mo Assistant Professor (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,FA03,AABAA,Tenur 9-mo Associate Professor (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,FA04,AAAAA,Tenur 9-mo Professors (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,FA05,AAAEA,Tenur 9-mo Professors Endowed (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,GA01,CASAA,Assistants 9-mo Grad Appt (synthetic),kb120569
+CLEAN,value_recoded,T_POSN_HIST,POSN_CLS_CD,T_POSN_HIST,POSN_CLS_CD,OV01,BEEAA,OthAc Non Service Lecturer - overload (synthetic),kb120569
+CLEAN,column_added,T_POSN_HIST,,T_POSN_HIST,POSN_STATUS_DESC,,,"A -> Active, I -> Inactive",rc2009
+CLEAN,column_added,T_POSN_HIST,,T_POSN_HIST,POSN_MIN_SAL,,,class range minimum of the position's class (synthetic ranges),rc2009
+CLEAN,column_added,T_POSN_HIST,,T_POSN_HIST,POSN_MAX_SAL,,,class range maximum of the position's class (synthetic ranges),rc2009
+CLEAN,table_added,,,REF_ECLS_PUBLIC,,,,all published E-Class codes,kb120378
+CLEAN,view_added,,,V_EMPEE_HIST_1,,,,SELECT * FROM T_EMPEE_HIST,rc2009
+CLEAN,view_added,,,V_JOB_DETL_HIST_1,,,,SELECT * FROM T_JOB_DETL_HIST,rc2009
+CLEAN,view_added,,,V_EMPEE_PERS_HIST_1,,,,"SELECT EDW_PERS_ID, PERS_EFF_DT, PERS_EXP_DT, PERS_CUR_INFO_IND FROM T_PERS_HIST",rc2009

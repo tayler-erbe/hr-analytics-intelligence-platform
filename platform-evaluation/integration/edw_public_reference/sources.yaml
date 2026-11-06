@@ -1,0 +1,299 @@
+# Source registry and download manifest for the public EDW reference.
+#
+# Every inventory row and code value cites one of these keys. Retrieval times are UTC, 2026-11-06.
+# sha256 is of the bytes as downloaded (HTML pages change; the hash pins what was read).
+# Downloaded copies are NOT committed (University documents; re-fetch from the URL and compare the hash).
+#
+# source_type
+#   full_document   PDF downloaded and fully extracted with pypdf (python -I)
+#   kb_article      answers.uillinois.edu article downloaded with curl; HTML tables parsed in full
+#   search_snippet  only a web-search result excerpt was seen; the document itself was not read
+#                   (www.aits.uillinois.edu / aits.content.uillinois.edu / www.hr.uillinois.edu return
+#                   bot-block 403s and were not bypassed)
+#
+# Hosts never contacted: uillinois.datacookbook.com (login + WAF; off-limits). No mirrors or caches used.
+
+retrieval_date: "2026-11-06"
+sources:
+  # ------------------------------------------------------------------ full documents (nessie.uihr.uillinois.edu)
+  rc2009:
+    title: "HR Job Aid: Reporting Concepts (HR REPORTING CONCEPTS)"
+    url: https://nessie.uihr.uillinois.edu/pdf/reports/reportingconcepts.pdf
+    source_type: full_document
+    document_date: "2009-11-17"
+    retrieved_at: "2026-11-06T21:43:45Z"
+    http_status: 200
+    bytes: 86362
+    sha256: f2d96ca3036cf1845595fc86e3988e642457538e012089c11b20e7f1fb951c19
+    notes: 7 pages, PDF metadata Company AITSUI2. The only public source that names EDW tables/fields for HR reporting; field names are mostly business names, a few physical names verbatim.
+  eclass2015:
+    title: "EMPLOYEE CLASS (E-CLASS) job aid"
+    url: https://nessie.uihr.uillinois.edu/pdf/Banner/JobAid_EClass.pdf
+    source_type: full_document
+    document_date: "2015-05-05"
+    retrieved_at: "2026-11-06T21:46:51Z"
+    http_status: 200
+    bytes: 47509
+    sha256: 262d6eeb68aa75dd332be4a5d549eee0c63abdd9ef91b728265f587a17ddbc52
+  term2014:
+    title: "Termination Codes (Employee level) job aid"
+    url: https://nessie.uihr.uillinois.edu/pdf/Banner/JA_Termination_Codes.pdf
+    source_type: full_document
+    document_date: "2014-01-27"
+    retrieved_at: "2026-11-06T21:46:50Z"
+    http_status: 200
+    bytes: 52872
+    sha256: 9471de0aa9a40a4a5cd8e0903404804a3320cf9666333e28a1ac25d895ff3b24
+  tenure2008:
+    title: "RANK AND TENURE CODE VALUES job aid"
+    url: https://nessie.uihr.uillinois.edu/pdf/Banner/JobAid_Tenurecode.pdf
+    source_type: full_document
+    document_date: "2008-03-12"
+    retrieved_at: "2026-11-06T21:47:28Z"
+    http_status: 200
+    bytes: 18553
+    sha256: 6779035684a516fd65f7e2d011e9cae499c10b10c6b0bb7b586ee9c4ce2cd765
+  jobchg2016:
+    title: "JOB CHANGE REASON CODES job aid"
+    url: https://nessie.uihr.uillinois.edu/pdf/Banner/JobAid_JobChangeCodes.pdf
+    source_type: full_document
+    document_date: "2016-11-09"
+    retrieved_at: "2026-11-06T21:47:28Z"
+    http_status: 200
+    bytes: 113454
+    sha256: 505cc9186e6cf46d502170c5d2ec631532dc258cc0c83834249d47582055d133
+    notes: Page header reads 08/08/2015; PDF created 2016-11-09. Same 116 codes as kb120563.
+
+  # ------------------------------------------------------------------ KB articles (answers.uillinois.edu)
+  kb120569:
+    title: "System HR - Position Class Structure and Exceptions"
+    url: https://answers.uillinois.edu/120569
+    source_type: kb_article
+    document_date: "2026-08-14"
+    retrieved_at: "2026-11-06T21:45:57Z"
+    http_status: 200
+    bytes: 78192
+    sha256: dffe24f6e297cd9a5d1fecd3f496a9e9a8aa807bce64b8be983f8769778dd903
+    notes: Created 2022-08-12. Contains the 2/20/08 change-request exception note.
+  kb120570:
+    title: "System HR - Position/Job Descriptor Requirements"
+    url: https://answers.uillinois.edu/120570
+    source_type: kb_article
+    document_date: "2026-08-14"
+    retrieved_at: "2026-11-06T21:46:49Z"
+    http_status: 200
+    bytes: 46670
+    sha256: 693881195add7a5360a0c45a7b4a6914252e4f2a1f1c9d8fe45c7685f4c9dc89
+  kb120378:
+    title: "System HR - Employee Class (E-Class)"
+    url: https://answers.uillinois.edu/training/system-hr-employee-class-e-class
+    source_type: kb_article
+    document_date: "2026-08-26"
+    retrieved_at: "2026-11-06T21:46:50Z"
+    http_status: 200
+    bytes: 26452
+    sha256: bf019bded6c1bd83998e0b4d30978c9b10abce22fc22d3f27cf33536467e72fc
+    notes: Doc ID 120378. Differs from eclass2015 for CL/CM/DR/DS (see code_domains.yaml drift).
+  kb120385:
+    title: "System HR - Termination Codes (Employee level)"
+    url: https://answers.uillinois.edu/120385
+    source_type: kb_article
+    document_date: "2026-08-05"
+    retrieved_at: "2026-11-06T21:46:48Z"
+    http_status: 200
+    bytes: 43743
+    sha256: 64485a98eaa0f6ab649024000bb4ffcc1b43b69fe1baa277bbf1e4049f0b4135
+    notes: Revised version 8/13/20; adds TW (New Hire Error) to the 2014 list.
+  kb120574:
+    title: "System HR - Rank and Tenure Code Values"
+    url: https://answers.uillinois.edu/120574
+    source_type: kb_article
+    document_date: "2026-08-14"
+    retrieved_at: "2026-11-06T21:47:29Z"
+    http_status: 200
+    bytes: 40088
+    sha256: 75b32c53f7ade32df431d6fcc4cd19ba6326cd6ac4abdcb6b75bda190eced446
+  kb120563:
+    title: "System HR - Job Change Reason Codes"
+    url: https://answers.uillinois.edu/120563
+    source_type: kb_article
+    document_date: "2026-08-14"
+    retrieved_at: "2026-11-06T21:47:30Z"
+    http_status: 200
+    bytes: 65891
+    sha256: 6bb0985e5a3dfe632b06e7205a64d4b3fbd93cfc43bc22e409c1b806824af6db
+  kb120369:
+    title: "System HR - Banner Terminology"
+    url: https://answers.uillinois.edu/120369
+    source_type: kb_article
+    document_date: "2026-08-05"
+    retrieved_at: "2026-11-06T21:46:49Z"
+    http_status: 200
+    bytes: 64882
+    sha256: dc476fb14822215677153fe18f68e14fd947b9273d046190c59932dfc79b7b98
+  kb118751:
+    title: "UAFR - C-FOAPAL Quick Guide"
+    url: https://answers.uillinois.edu/118751
+    source_type: kb_article
+    document_date: "2024-02-02"
+    retrieved_at: "2026-11-06T21:51:37Z"
+    http_status: 200
+    bytes: 41596
+    sha256: bf2360a19f13d8d3843b17890697586e2902a4f4499a7977c242a8f940fc020d
+  kb158288:
+    title: "How to find a Banner payroll earn code"
+    url: https://answers.uillinois.edu/ihr/158288
+    source_type: kb_article
+    document_date: "2026-02-04"
+    retrieved_at: "2026-11-06T21:46:50Z"
+    http_status: 200
+    bytes: 19161
+    sha256: 18c6e86817bfd191896060f9e8c50d3dcf00d1145ae5ffd16f051fc4b6564ad7
+  kb75281:
+    title: "Enterprise Data Warehouse (EDW) Access - Instructions/Procedures"
+    url: https://answers.uillinois.edu/75281
+    source_type: kb_article
+    document_date: "2025-08-04"
+    retrieved_at: "2026-11-06T21:45:58Z"
+    http_status: 200
+    bytes: 42302
+    sha256: cda673714060db0c45061c1968e486140f3154a730d4dab123adea3902e213b1
+    notes: Access procedure only (USC requests access; EDDIE reporting tool). No field content.
+  kb50367:
+    title: "Enterprise Data Warehouse (EDW) Access - Oracle Client and ODBC Information"
+    url: https://answers.uillinois.edu/50367
+    source_type: kb_article
+    document_date: null
+    retrieved_at: "2026-11-06T21:45:57Z"
+    http_status: 200
+    bytes: 35063
+    sha256: 00fe1220a3eff1fa8dbc17b95ac622a6e396ba17cffe87fe3b306584b10d316f
+    notes: The anonymous response carries only the title; the article body is not served publicly. Nothing cited from it.
+
+  # ------------------------------------------------------------------ search snippets seen in this session
+  # The document was NOT read; only the search-result excerpt. Lower confidence by rule.
+  snip_hr_edw_logical:
+    title: "HR EDW Logical Model (AITS Decision Support)"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Data Models/Human Resources Data Models/HR_EDW_Logical_Model.pdf"
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_data_models_page:
+    title: "AITS Metadata for Data Downloaders - Data Models"
+    url: https://www.aits.uillinois.edu/services/reports_and_data/about_data/metadata/metadata_for_data_downloaders/data_models
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_ra_edw_logical:
+    title: "RA EDW Logical Model"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Data Models/Student Data Models/RA_EDW_Logical_Model.pdf"
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_rn_2010_09:
+    title: "DS Release Notes 2010-09"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Release Notes/FY11 (July 2010-June 2011)/DS_Release_Notes_2010-09.pdf"
+    source_type: search_snippet
+    document_date: "2010-09"
+    retrieved_at: "2026-11-06"
+  snip_rn_2008_06:
+    title: "DS Release Notes 2008-06"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Release Notes/FY08 (July 2007-June 2008)/DS_Release_Notes_2008-06.pdf"
+    source_type: search_snippet
+    document_date: "2008-06"
+    retrieved_at: "2026-11-06"
+  snip_rn_2010_05:
+    title: "DS Release Notes 2010-05"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Release Notes/FY10 (July 2009-June 2010)/DS_Release_Notes_2010-05.pdf"
+    source_type: search_snippet
+    document_date: "2010-05"
+    retrieved_at: "2026-11-06"
+  snip_sce_201609:
+    title: "Scheduled Changes and Enhancements 2016-09"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Release%20Notes/FY17%20(July%202016-June2017)/ScheduledChangesEnhancements%20201609.pdf"
+    source_type: search_snippet
+    document_date: "2016-09"
+    retrieved_at: "2026-11-06"
+  snip_usage_prr_stuattr:
+    title: "Usage Notes: PRR Student Attributes"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Usage Notes/UsageNotes_PRR_StudentAttributes.pdf"
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_fte_cube_2023:
+    title: "Headcount FTE Analysis cube definitions (FTE_CUBE_DEFNS 202303)"
+    url: "https://www.aits.uillinois.edu/userfiles/Servers/Server_474/file/DS/Solution%20Library/Human%20Resources/FTE_CUBE_DEFNS%20202303.pdf"
+    source_type: search_snippet
+    document_date: "2023-03"
+    retrieved_at: "2026-11-06"
+  snip_fte_cube_2011:
+    title: "Headcount FTE Analysis cube definitions (FTE_CUBE_DEFNS, older)"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/BI%20Analytics/FTE_CUBE_DEFNS.pdf"
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_pjh_quickref:
+    title: "EDW - HR Position and Job Hierarchy universe Quick Reference Guide"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Universe%20Guides/HR/PJH_QuickReferenceGuide.doc"
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_empadmin_quickref:
+    title: "EDW - HR Employee Administration universe Quick Reference Guide"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Universe Guides/HR/EmpAdmin_QuickReferenceGuide.doc"
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_payroll_quickref:
+    title: "EDW - HR Payroll universe Quick Reference Guide"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Universe%20Guides/Finance/Payroll_Quick_Ref.doc"
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_pyr_dm_logical:
+    title: "PYR DM Logical Model (Payroll Reconciliation Data Mart)"
+    url: "https://www.aits.uillinois.edu/UserFiles/Servers/Server_474/File/DS/Data%20Models/Human%20Resources%20Data%20Models/PYR_DM_Logical_Model.pdf"
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_pjh_universe_page:
+    title: "Universe information: EDW - HR Position and Job Hierarchy"
+    url: https://www.aits.uillinois.edu/services/reports_and_data/about_data/metadata/metadata_for_business_objects_users/universe_information/edw_-_hr_position_and_job_hierarchy
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_hr_nbajobs:
+    title: "University HR - Banner forms field data standards: NBAJOBS"
+    url: https://www.hr.uillinois.edu/human_resource_systems/reporting_portal/data_assistance/hr_banner_forms_field_data_standards/nbajobs_form
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+    notes: Host returned 403 to a plain curl; snippet only.
+  snip_hr_peaempl:
+    title: "University HR - Banner forms field data standards: PEAEMPL (Employee Status)"
+    url: https://www.hr.uillinois.edu/human_resource_systems/reporting_portal/data_assistance/hr_banner_forms_field_data_standards/peaempl_form
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+  snip_hr_nbaposn:
+    title: "University HR - Banner forms field data standards: NBAPOSN"
+    url: https://www.hr.uillinois.edu/human_resource_systems/reporting_portal/data_assistance/hr_banner_forms_field_data_standards/nbaposn_form
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+
+  # ------------------------------------------------------------------ snippets reported by the requester
+  # Seen in the requester's earlier searches; several targeted searches in this session did NOT
+  # reproduce them. Recorded at the lowest confidence; the URL is the page/host the snippet came from.
+  req_prr_edw_physical:
+    title: "PRR_EDW_Physical_Model_Multi-page.pdf (AITS data models) - reported snippet"
+    url: https://www.aits.uillinois.edu/services/reports_and_data/about_data/metadata/metadata_for_data_downloaders/data_models
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+    notes: Requester-reported; lists T_JOB_DETL_HIST, EDW_PERS_ID, POSN_NBR. Exact PDF URL not captured.
+  req_ra_edw_physical:
+    title: "RA_EDW_Physical_Model.pdf (AITS data models) - reported snippet"
+    url: https://www.aits.uillinois.edu/services/reports_and_data/about_data/metadata/metadata_for_data_downloaders/data_models
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+    notes: Requester-reported; lists T_PERS_HIST and EDW_PERS_ID. Exact PDF URL not captured.
+  req_rn_2005_05:
+    title: "DS Release Notes 2005-05 - reported snippet"
+    url: https://www.aits.uillinois.edu/services/reports_and_data/about_data/metadata/metadata_for_data_downloaders/data_models
+    source_type: search_snippet
+    document_date: "2005-05"
+    retrieved_at: "2026-11-06"
+    notes: Requester-reported; mentions V_JOB_DETL_HIST_1 and JOB_DETL_TIME_ENTRY_METHOD_CD. Exact URL not captured (DS release-notes folder on www.aits.uillinois.edu).
+  req_uis_gitlist:
+    title: "UIS public gitlist SQL - reported snippet"
+    url: http://uisgplprod.uis.edu/
+    source_type: search_snippet
+    retrieved_at: "2026-11-06"
+    notes: Requester-reported; host pattern uisgplprod*.uis.edu, HTTP only, unreachable from this environment. SQL references edw.V_EMPEE_HIST_1, edw.V_EMPEE_PERS_HIST_1, PERS_CUR_INFO_IND, EMPEE_CUR_INFO_IND, ACTIVE_EMPEE_IND, EMPEE_EFF_DT, EMPEE_EXP_DT.

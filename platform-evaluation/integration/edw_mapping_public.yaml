@@ -1,0 +1,279 @@
+# Canonical concept -> EDW table.column mapping using PUBLICLY DOCUMENTED University of Illinois EDW names.
+#
+# Same concepts and fields as edw_mapping.yaml; only the physical names, code values and data location
+# differ. Evidence: integration/edw_public_reference/ (field_inventory.csv, code_domains.yaml, sources.yaml).
+# It runs on the synthetic v2 pack (sample_datasets/v2_public_schema), which uses these names:
+#
+#   cd platform-evaluation
+#   HR_DATA_SOURCE=edw HR_EDW_MAPPING=integration/edw_mapping_public.yaml \
+#   HR_SAMPLE_PACK_PATH=sample_datasets/v2_public_schema python integration/build_integrated.py --set longitudinal
+#   (or HR_EDW_DATA=sample_datasets/v2_public_schema/CLEAN/sample.duckdb ... --set CLEAN for one database)
+#
+# TWO provenance keys per field:
+#   provenance         what mapping.py validates (assumed_synthetic_layout | verified_dictionary). Every
+#                      entry stays assumed_synthetic_layout: public documents are NOT a verified dictionary,
+#                      and nothing here was checked against the Data Cookbook or EDW metadata.
+#   public_provenance  where the name comes from:
+#                        public_documentation           the physical name is printed in a public source
+#                                                       (public_source = key in sources.yaml)
+#                        inferred_from_public_pattern   a public source documents the field by business name
+#                                                       ("Job Detail FTE field"); the physical name follows the
+#                                                       verbatim EDW abbreviations (PERS, EMPEE, POSN, JOB_DETL,
+#                                                       CLS, CD, DESC, IND, DT, NBR, PCT, SAL)
+#                        unresolved_needs_cookbook      no public evidence; the v1 assumed name is kept
+#   public_confidence  high | medium | low, as in field_inventory.csv
+# mapping.py ignores the public_* keys (prefer no loader change); tests read them.
+
+mapping_version: "1.0-public"
+source: edw
+default_provenance: assumed_synthetic_layout
+
+data:
+  pack_path: sample_datasets/v2_public_schema   # override with HR_SAMPLE_PACK_PATH, or HR_EDW_DATA for one set
+  storage: duckdb
+  duckdb_file: sample.duckdb
+  sets:
+    longitudinal: longitudinal
+    CLEAN: CLEAN
+
+conventions:
+  effective_end: inclusive                # NOT publicly documented; v1 semantics kept (unresolved_needs_cookbook)
+  recorded_end: exclusive                 # no public evidence that recorded-version columns exist at all
+  open_end: "9999-12-31"                  # unresolved_needs_cookbook
+  provenance: assumed_synthetic_layout
+  public_notes:
+    current_record_indicators:
+      rule: >-
+        Current rows are selected with *_CUR_INFO_IND = 'Y' (Employee History 1: EMPEE_CUR_INFO_IND and
+        ACTIVE_EMPEE_IND = 'Y'; Employee Person History 1: PERS_CUR_INFO_IND = 'Y').
+      public_provenance: public_documentation
+      public_source: rc2009             # business names; physical names from req_uis_gitlist (snippet)
+      public_confidence: medium
+      v2_rule: "Y on each person's latest effective row among currently recorded rows, N otherwise (synthetic derivation)"
+      note: The integration layer selects current rows by effective/recorded dates, not by these flags.
+    security_views:
+      rule: >-
+        Reporting reads go through numbered views (V_EMPEE_HIST_1, V_JOB_DETL_HIST_1, V_EMPEE_PERS_HIST_1,
+        V_EMPEE_PERS_HIST_3, V_EMPEE_VISA_HIST_5). The _1 views are the general reporting layer; higher numbers
+        expose more restricted fields (AGE and race on _3, visa on _5).
+      public_provenance: inferred_from_public_pattern
+      public_source: rc2009
+      public_confidence: low
+      note: >-
+        That the suffix is a security tier is inferred from which fields appear in which variant; no public
+        source states it. This mapping reads the T_ base tables so it also works on Parquet folders; on real
+        EDW access the table names would become the _1 views.
+    position_to_job_link:
+      rule: "Position History and Job tables are linked by position number AND job suffix (POSN_NBR + JOB_SUFFIX)"
+      public_provenance: public_documentation
+      public_source: rc2009
+      public_confidence: high
+    payroll_accounting_link:
+      rule: "Payroll Accounting Detail (Public) rows match a job on Position Number + Job Suffix (and person)"
+      public_provenance: public_documentation
+      public_source: rc2009
+      public_confidence: high
+    primary_job_and_headcount:
+      rule: "Headcount by active employees' primary job (Job Type P); exclude 0-FTE overload jobs and E-Class WT/MM/LP"
+      public_provenance: public_documentation
+      public_source: rc2009
+      public_confidence: high
+      note: The integration layer counts people by highest-FTE assignment; not changed here.
+    fte:
+      rule: "Civil service 37.5/40/42 hours per week = 1 FTE; actual FTE = Job FTE * appointment percent"
+      public_provenance: public_documentation
+      public_source: rc2009
+      public_confidence: high
+      note: Whether JOB_DETL_FTE is stored as a fraction or a percent is NOT public (transform stays none).
+
+code_values:
+  appointment_status_active: {values: ["A"], provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook, public_note: "rc2009 documents only Job Detail Status Description <> 'Terminated'; code letters not public"}
+  appointment_status_terminated: {values: ["T"], provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook}
+  position_status_active: {values: ["A"], provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook, public_note: "rc2009: Position Status Description = 'Active' (letters not public)"}
+  employment_status_active: {values: ["A"], provenance: assumed_synthetic_layout, public_provenance: public_documentation, public_source: rc2009, public_confidence: high, public_note: "Employee Status Code = A (active, excluding leave); <> T includes leave"}
+  surs_retirement_yes: {values: ["Y"], provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook, public_note: "no public SURS retirement indicator; TR = retired SURS annuitant"}
+  separation_reason_group:
+    provenance: assumed_synthetic_layout
+    public_provenance: inferred_from_public_pattern
+    public_source: kb120385
+    public_confidence: medium
+    public_note: Codes are the published employee-level termination codes; the grouping is this project's (code_domains.yaml termination_code.analytic_groups).
+    map:
+      TR: retirement
+      TF: retirement
+      TQ: resignation
+      TE: end_of_appointment
+      TS: end_of_appointment
+      TT: end_of_appointment
+      TJ: end_of_appointment
+      TN: end_of_appointment
+      TK: involuntary
+      TL: involuntary
+      TM: involuntary
+      TP: involuntary
+      TV: involuntary
+      TX: involuntary
+      TY: involuntary
+      TD: death
+  class_source_public_sucss: {values: ["SUCSS"], provenance: assumed_synthetic_layout, public_provenance: unresolved_needs_cookbook, public_note: "CLS_SOURCE is a sample-pack column; EDW has no such column publicly"}
+
+concepts:
+  person:
+    table: T_PERS_HIST
+    public_table_provenance: public_documentation
+    public_table_source: snip_data_models_page
+    grain: person x effective row (x recorded version where present)
+    fields:
+      person_id:      {column: EDW_PERS_ID, type: varchar, role: key, public_provenance: public_documentation, public_source: req_ra_edw_physical, public_confidence: low}
+      eff_date:       {column: PERS_EFF_DT, type: date, public_provenance: inferred_from_public_pattern, public_source: snip_hr_edw_logical, public_confidence: low}
+      exp_date:       {column: PERS_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", public_provenance: inferred_from_public_pattern, public_source: snip_hr_edw_logical, public_confidence: low}
+      birth_date:     {column: BIRTH_DT, type: date, role: restricted, public_provenance: unresolved_needs_cookbook, public_note: "public reporting uses V_EMPEE_PERS_HIST_3.AGE (rc2009)"}
+      current_info_ind: {column: PERS_CUR_INFO_IND, type: varchar, optional: true, public_provenance: public_documentation, public_source: req_uis_gitlist, public_confidence: medium, public_note: "business name in rc2009 (Employee Person History 1)"}
+      recorded_start: {column: ROW_REC_START_DT, type: date, optional: true, public_provenance: unresolved_needs_cookbook}
+      recorded_end:   {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, public_provenance: unresolved_needs_cookbook}
+
+  employment:
+    table: T_EMPEE_HIST
+    public_table_provenance: inferred_from_public_pattern
+    public_table_source: rc2009
+    public_table_note: "rc2009 'Employee History 1 Table' = V_EMPEE_HIST_1 (req_uis_gitlist); T_EMPEE_HIST base name from the repo handoff"
+    grain: person x employment effective row
+    fields:
+      person_id:           {column: EDW_PERS_ID, type: varchar, role: key, public_provenance: public_documentation, public_source: req_uis_gitlist, public_confidence: low}
+      eff_date:            {column: EMPEE_EFF_DT, type: date, public_provenance: public_documentation, public_source: req_uis_gitlist, public_confidence: low}
+      exp_date:            {column: EMPEE_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", public_provenance: public_documentation, public_source: req_uis_gitlist, public_confidence: low}
+      status_code:         {column: EMPEE_STATUS_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      employee_class_code: {column: EMPEE_CLS_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium, public_note: "values recoded to public E-Classes (kb120378)"}
+      first_hire_date:     {column: FIRST_HIRE_DT, type: date, public_provenance: unresolved_needs_cookbook}
+      current_hire_date:   {column: CUR_HIRE_DT, type: date, public_provenance: unresolved_needs_cookbook}
+      home_org_code:       {column: HOME_ORG_CD, type: varchar, optional: true, public_provenance: unresolved_needs_cookbook}
+      campus_code:         {column: HR_CAMPUS_CD, type: varchar, optional: true, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium, public_note: "values U0-U3 are synthetic; real HR campus codes are not public. Home campus = COA_CD (1/2/4/9, kb118751)"}
+      current_info_ind:    {column: EMPEE_CUR_INFO_IND, type: varchar, optional: true, public_provenance: public_documentation, public_source: req_uis_gitlist, public_confidence: medium}
+      active_employee_ind: {column: ACTIVE_EMPEE_IND, type: varchar, optional: true, public_provenance: public_documentation, public_source: req_uis_gitlist, public_confidence: medium}
+      chart_code:          {column: COA_CD, type: varchar, optional: true, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      recorded_start:      {column: ROW_REC_START_DT, type: date, optional: true, public_provenance: unresolved_needs_cookbook}
+      recorded_end:        {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, public_provenance: unresolved_needs_cookbook}
+
+  appointment:
+    table: T_JOB_DETL_HIST
+    public_table_provenance: public_documentation
+    public_table_source: snip_rn_2008_06
+    public_table_note: "also req_prr_edw_physical; reporting view V_JOB_DETL_HIST_1 (snip_rn_2010_09)"
+    grain: person x position x job suffix x effective row (x recorded version where present)
+    fields:
+      person_id:            {column: EDW_PERS_ID, type: varchar, role: key, public_provenance: public_documentation, public_source: req_prr_edw_physical, public_confidence: medium}
+      position_id:          {column: POSN_NBR, type: varchar, role: key, public_provenance: public_documentation, public_source: req_prr_edw_physical, public_confidence: low}
+      job_suffix:           {column: JOB_SUFFIX, type: varchar, role: key, public_provenance: inferred_from_public_pattern, public_source: snip_hr_edw_logical, public_confidence: medium}
+      eff_date:             {column: JOB_DETL_EFF_DT, type: date, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      exp_date:             {column: JOB_DETL_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      contract_type_code:   {column: JOB_CONTRACT_TYPE_CD, type: varchar, public_provenance: unresolved_needs_cookbook, public_note: "values P/O are public (rc2009 Job Type); column name and table (job vs job detail) are not"}
+      status_code:          {column: JOB_DETL_STATUS_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: low, public_note: "rc2009 names the description field; the code column is inferred"}
+      status_desc:          {column: JOB_DETL_STATUS_DESC, type: varchar, optional: true, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      fte:                  {column: JOB_DETL_FTE, type: double, transform: none, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      appointment_pct:      {column: JOB_DETL_APPT_PCT, type: double, optional: true, public_provenance: public_documentation, public_source: rc2009, public_confidence: high}
+      annual_salary:        {column: JOB_DETL_ANNUAL_SAL, type: double, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      job_class_code:       {column: POSN_CLS_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium, public_note: "job P-Class; could be JOB_DETL_POSN_CLS_CD"}
+      employee_class_code:  {column: JOB_DETL_EMPEE_CLS_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      employee_group_code:  {column: EMPEE_GROUP_CD, type: varchar, optional: true, public_provenance: public_documentation, public_source: snip_rn_2010_09, public_confidence: low, public_note: "values not public; v1 group codes used"}
+      org_code:             {column: JOB_ORG_CD, type: varchar, public_provenance: unresolved_needs_cookbook}
+      supervisor_person_id: {column: SUPERVISOR_PERS_ID, type: varchar, optional: true, public_provenance: unresolved_needs_cookbook}
+      recorded_start:       {column: ROW_REC_START_DT, type: date, optional: true, public_provenance: unresolved_needs_cookbook}
+      recorded_end:         {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, public_provenance: unresolved_needs_cookbook}
+
+  position:
+    table: T_POSN_HIST
+    public_table_provenance: public_documentation
+    public_table_source: rc2009
+    grain: position x effective row (x recorded version where present)
+    fields:
+      position_id:    {column: POSN_NBR, type: varchar, role: key, public_provenance: public_documentation, public_source: req_prr_edw_physical, public_confidence: low}
+      eff_date:       {column: POSN_EFF_DT, type: date, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: low, public_note: "business name 'Position History Effective Date'; POSN_HIST_EFF_DT equally plausible"}
+      exp_date:       {column: POSN_EXP_DT, type: date, convention: inclusive, open_end: "9999-12-31", public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: low}
+      status_code:    {column: POSN_STATUS_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: low}
+      status_desc:    {column: POSN_STATUS_DESC, type: varchar, optional: true, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      job_class_code: {column: POSN_CLS_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      org_code:       {column: POSN_ORG_CD, type: varchar, public_provenance: unresolved_needs_cookbook}
+      budget_fte:     {column: POSN_BUDGET_FTE, type: double, transform: none, public_provenance: unresolved_needs_cookbook, public_note: "rc2009 mentions Position FTE (footnote 10); budgeted FTE was Banner NBRPTOT_FTE in 2009"}
+      title:          {column: POSN_TITLE, type: varchar, optional: true, public_provenance: unresolved_needs_cookbook}
+      range_min:      {column: POSN_MIN_SAL, type: double, optional: true, public_provenance: public_documentation, public_source: rc2009, public_confidence: high}
+      range_max:      {column: POSN_MAX_SAL, type: double, optional: true, public_provenance: public_documentation, public_source: rc2009, public_confidence: high}
+      recorded_start: {column: ROW_REC_START_DT, type: date, optional: true, public_provenance: unresolved_needs_cookbook}
+      recorded_end:   {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, public_provenance: unresolved_needs_cookbook}
+
+  separation:
+    table: T_EMPEE_HIST_5
+    public_table_provenance: unresolved_needs_cookbook
+    public_table_note: "no public source places termination fields in T_EMPEE_HIST_5; codes are public (kb120385)"
+    grain: person x termination event (x recorded version where present)
+    fields:
+      person_id:           {column: EDW_PERS_ID, type: varchar, role: key, public_provenance: public_documentation, public_source: req_ra_edw_physical, public_confidence: low}
+      term_date:           {column: TERM_DT, type: date, public_provenance: unresolved_needs_cookbook}
+      term_reason_code:    {column: TERM_REASON_CD, type: varchar, public_provenance: unresolved_needs_cookbook, public_note: "values recoded to public termination codes TQ/TR/TE (kb120385); column name unresolved"}
+      surs_retirement_ind: {column: SURS_RETIR_IND, type: varchar, public_provenance: unresolved_needs_cookbook}
+      recorded_start:      {column: ROW_REC_START_DT, type: date, optional: true, public_provenance: unresolved_needs_cookbook}
+      recorded_end:        {column: ROW_REC_END_DT, type: date, optional: true, convention: exclusive, public_provenance: unresolved_needs_cookbook}
+
+  payroll_line:
+    table: T_PAYR_ACCTG_DETL
+    optional: true                      # absent from the longitudinal set
+    public_table_provenance: inferred_from_public_pattern
+    public_table_source: rc2009
+    public_table_note: "rc2009 'Payroll Accounting Detail Public Table'; physical name from the repo handoff"
+    grain: person x position x suffix x pay period x payroll line
+    fields:
+      person_id:           {column: EDW_PERS_ID, type: varchar, role: key, public_provenance: public_documentation, public_source: req_ra_edw_physical, public_confidence: low}
+      position_id:         {column: POSN_NBR, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      job_suffix:          {column: JOB_SUFFIX, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      pay_period_end_date: {column: PAY_PERIOD_END_DT, type: date, public_provenance: unresolved_needs_cookbook}
+      payroll_id:          {column: PAYR_ID, type: varchar, public_provenance: inferred_from_public_pattern, public_source: snip_hr_edw_logical, public_confidence: low, public_note: "value recoded MN -> MO (Pay ID Monthly, kb120369)"}
+      earn_code:           {column: EARN_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium, public_note: "REG (regular pay) is not a published code; unresolved value"}
+      pay_amount:          {column: PAY_AMT, type: double, public_provenance: unresolved_needs_cookbook, public_note: "public business name is Accounting Detail Expense Amount (snip_payroll_quickref)"}
+      org_code:            {column: ORG_CD, type: varchar, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      payroll_seq:         {column: PAYR_SEQ_NBR, type: bigint, public_provenance: unresolved_needs_cookbook}
+
+  job_class:
+    table: T_POSN_CLS_HIST
+    public_table_provenance: public_documentation
+    public_table_source: rc2009
+    grain: job class code
+    fields:
+      job_class_code:    {column: POSN_CLS_CD, type: varchar, role: key, public_provenance: inferred_from_public_pattern, public_source: rc2009, public_confidence: medium}
+      class_source:      {column: CLS_SOURCE, type: varchar, public_provenance: unresolved_needs_cookbook, public_note: "sample-pack construct, not an EDW column"}
+      class_title:       {column: POSN_CLS_DESC, type: varchar, public_provenance: public_documentation, public_source: rc2009, public_confidence: high}
+      min_annual_amount: {column: MIN_ANNUAL_AMT, type: double, public_provenance: unresolved_needs_cookbook, public_note: "public range fields are on the position: T_POSN_HIST.POSN_MIN_SAL/POSN_MAX_SAL"}
+      max_annual_amount: {column: MAX_ANNUAL_AMT, type: double, public_provenance: unresolved_needs_cookbook}
+
+  org:
+    table: REF_ORG
+    public_table_provenance: unresolved_needs_cookbook
+    public_table_note: "the EDW org hierarchy table is not publicly documented; C-FOAPAL org has 8 levels (kb118751)"
+    grain: "org unit (synthetic tree - U00 system, U10/U20/U30 campuses, U1x colleges, U1xx departments)"
+    fields:
+      org_code:        {column: ORG_CD, type: varchar, role: key, public_provenance: unresolved_needs_cookbook}
+      parent_org_code: {column: PARENT_ORG_CD, type: varchar, public_provenance: unresolved_needs_cookbook}
+      status_code:     {column: ORG_STATUS_CD, type: varchar, public_provenance: unresolved_needs_cookbook}
+      org_title:       {column: ORG_TITLE, type: varchar, public_provenance: unresolved_needs_cookbook}
+
+  role_family:
+    table: REF_ROLE_FAMILY
+    optional: true                      # longitudinal only
+    public_table_provenance: unresolved_needs_cookbook
+    public_table_note: "project construct; not an EDW table"
+    grain: job class code
+    fields:
+      job_class_code: {column: CLS_CD, type: varchar, role: key, public_provenance: unresolved_needs_cookbook}
+      role_family:    {column: ROLE_FAMILY, type: varchar, public_provenance: unresolved_needs_cookbook}
+      role_level:     {column: ROLE_LEVEL, type: integer, public_provenance: unresolved_needs_cookbook}
+      critical_ind:   {column: CRITICAL_IND, type: varchar, public_provenance: unresolved_needs_cookbook}
+
+  employee_class:
+    table: REF_EMPEE_CLS
+    optional: true                      # quality sets only
+    public_table_provenance: unresolved_needs_cookbook
+    public_table_note: "E-Class values and descriptions are public (kb120378; full list in REF_ECLS_PUBLIC); the EDW reference table name is not"
+    grain: employee class code
+    fields:
+      employee_class_code: {column: ECLS_CD, type: varchar, role: key, public_provenance: unresolved_needs_cookbook, public_note: "values public (CA/BA/AA/GA)"}
+      description:         {column: ECLS_DESC, type: varchar, public_provenance: unresolved_needs_cookbook, public_note: "values are the public descriptions"}
+      class_group:         {column: ECLS_GROUP, type: varchar, public_provenance: unresolved_needs_cookbook}
+      pay_basis:           {column: PAY_BASIS, type: varchar, public_provenance: unresolved_needs_cookbook}

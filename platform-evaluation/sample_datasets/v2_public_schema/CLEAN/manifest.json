@@ -1,0 +1,66 @@
+{
+ "set": "CLEAN",
+ "source": "sample_datasets/v1/quality/CLEAN",
+ "tables": {
+  "REF_ECLS_PUBLIC": {
+   "content_sha256": "723e2ba5464f1a36bd67bddc885f7ba8788fbcdf64452479477f2e899e4e2637",
+   "rows": 68,
+   "v1_table": null
+  },
+  "REF_EMPEE_CLS": {
+   "content_sha256": "46317d3e4ffab38b58f310661d15aa84d4445223a2c6b86b89896c5f17d7c4fd",
+   "rows": 4,
+   "v1_table": "REF_EMPEE_CLS"
+  },
+  "REF_HIERARCHY_ROOT": {
+   "content_sha256": "601250335cdd8a2b61386affec07a38f222cdf5ab7353e145bd1f44d33007bd6",
+   "rows": 1,
+   "v1_table": "REF_HIERARCHY_ROOT"
+  },
+  "REF_ORG": {
+   "content_sha256": "99466f45ed4381b18cc82120d6dfff87f9fe40198e933cd3dff77d75b7c17321",
+   "rows": 52,
+   "v1_table": "REF_ORG"
+  },
+  "T_EMPEE_HIST": {
+   "content_sha256": "0bfd1f5f0369485a1a15bcee40ca2e59c380cabb75fd36faeb747ad4618b8e07",
+   "rows": 2268,
+   "v1_table": "T_EMPEE_HIST"
+  },
+  "T_EMPEE_HIST_5": {
+   "content_sha256": "a2de48f5191d6a7aeb1d557944caf1eea0a71787b8dc2ec7f66c65d991369fbc",
+   "rows": 612,
+   "v1_table": "T_EMPEE_HIST_5"
+  },
+  "T_JOB_DETL_HIST": {
+   "content_sha256": "f4a52d7fc69e73199af2077b2a23e81b2540ad1c26278cd7d223c6011fc6b038",
+   "rows": 17775,
+   "v1_table": "T_JOB_DETL_HIST"
+  },
+  "T_PAYR_ACCTG_DETL": {
+   "content_sha256": "0170dda3f3bfd84968758b75d56682f87df085fa4acc0415df42b6525a09045b",
+   "rows": 25571,
+   "v1_table": "T_PAYR_ACCTG_DETL"
+  },
+  "T_PERS_HIST": {
+   "content_sha256": "e98f3f6f73883ed13ed594e6e59428e9b9e94ea483a84b8cd4d3de45b06dfb47",
+   "rows": 1951,
+   "v1_table": "T_PERS_HIST"
+  },
+  "T_POSN_CLS_HIST": {
+   "content_sha256": "14dc52e8a41b787f9d0f0fba666aebf94e30c7192f0b53be1bbc51f4f707ae22",
+   "rows": 899,
+   "v1_table": "REF_JOB_CLASS"
+  },
+  "T_POSN_HIST": {
+   "content_sha256": "449b957ada2917083010ae63e1853028e6acb2814b4d75d0e43af8464ea22e7c",
+   "rows": 2705,
+   "v1_table": "T_POSN_HIST"
+  }
+ },
+ "views": {
+  "V_EMPEE_HIST_1": "SELECT * FROM T_EMPEE_HIST",
+  "V_EMPEE_PERS_HIST_1": "SELECT EDW_PERS_ID, PERS_EFF_DT, PERS_EXP_DT, PERS_CUR_INFO_IND FROM T_PERS_HIST",
+  "V_JOB_DETL_HIST_1": "SELECT * FROM T_JOB_DETL_HIST"
+ }
+}
