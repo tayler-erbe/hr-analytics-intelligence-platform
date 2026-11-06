@@ -221,3 +221,10 @@ POC notebooks and analytical artifacts are maintained in a separate internal Box
 [Portfolio](https://terbe2022.github.io/tayler-portfolio/) · [LinkedIn](https://www.linkedin.com/in/tayler-erbe/)
 
 HR Stakeholder: [Luanne Mayorga](https://www.linkedin.com/in/luannemayorga/), Assistant Chancellor for Illinois HR
+
+
+## Platform evaluation and synthetic practice run
+
+The [platform-evaluation workspace](platform-evaluation/README.md) contains the Snowflake/Databricks/custom evaluation rubric, synthetic benchmark fixtures and reference SQL, blank scorecards, public O*NET and SUCSS reference data, and an offline role-evolution demo.
+
+Start with the [evaluation rubric](platform-evaluation/PLATFORM_EVALUATION_RUBRIC.md) and [benchmark guide](platform-evaluation/benchmark/README.md). All platform scorecards remain ungraded. Internal org charts, employee exports, and local databases are excluded.
