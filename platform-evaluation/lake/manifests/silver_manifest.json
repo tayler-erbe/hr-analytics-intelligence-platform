@@ -1,5 +1,5 @@
 {
- "built_at_utc": "2026-11-06T19:16:19.185336+00:00",
+ "built_at_utc": "2026-11-06T21:34:00.406959+00:00",
  "duckdb_version": "2.0.0",
  "tables": {
   "aei_automation_vs_augmentation_by_task": {
@@ -163,7 +163,7 @@
   "bls_jolts": {
    "domain": "bls_jolts",
    "rows": 628661,
-   "bytes": 833339,
+   "bytes": 825432,
    "note": "JOLTS monthly series with dimension labels; ratelevel L = level (thousands), R = rate",
    "columns": [
     {
@@ -241,7 +241,7 @@
   "bls_oews_all": {
    "domain": "bls_oews",
    "rows": 827964,
-   "bytes": 27832688,
+   "bytes": 27841280,
    "note": "OEWS May estimates, all areas/industries/occupations; values as published text (* = not available, # = top-coded, ** = suppressed)",
    "columns": [
     {
@@ -389,7 +389,7 @@
   "bls_oews_national_history": {
    "domain": "bls_oews",
    "rows": 15219,
-   "bytes": 541841,
+   "bytes": 541870,
    "note": "OEWS national May estimates 2015-2025; column names vary by year (union by name)",
    "columns": [
     {

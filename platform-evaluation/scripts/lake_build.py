@@ -245,7 +245,7 @@ def xlsx_to_csv(xlsx: Path, out: Path, sheet: str | None = None, header_match: s
                     continue
                 w.writerow([str(v).strip() if v is not None else "" for v in row] + list(extra))
                 continue
-            if started and header_match is None:
+            if started is True and header_match is None:
                 started = "done"
                 w.writerow([str(v).strip() if v is not None else "" for v in row] + list(extra))
                 continue
