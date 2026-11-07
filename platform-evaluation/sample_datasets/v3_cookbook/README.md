@@ -9,6 +9,9 @@ v1). No EDW row, extract or login-protected content was used.** The Cookbook tra
 cd platform-evaluation
 python sample_datasets/v3_cookbook/build_v3.py           # rebuild from v2 (~7 s, deterministic)
 python sample_datasets/v3_cookbook/build_v3.py --check   # rebuild in a temp dir; compare content hashes
+python sample_datasets/v3_cookbook/build_v3.py --v2-root <dir> --out <dir> --sets longitudinal --no-id-crosswalk
+                                                          # the same builder on another v2-layout world
+                                                          # (sample_datasets/v3_cookbook_large/build_large.py uses it)
 HR_DATA_SOURCE=edw HR_EDW_MAPPING=integration/edw_mapping_cookbook.yaml \
 HR_SAMPLE_PACK_PATH=sample_datasets/v3_cookbook python integration/build_integrated.py --set longitudinal
 HR_DATA_SOURCE=edw HR_EDW_MAPPING=integration/edw_mapping_cookbook.yaml \
@@ -18,7 +21,7 @@ python -m unittest integration.tests.test_cookbook_v3 -v  # 38 tests (~20 s)
 
 | Path | Contents |
 |---|---|
-| `longitudinal/`, `CLEAN/` | One `<TABLE>.parquet` per table; `sample.duckdb` (tables plus pass-through views `V_JOB_DETL_HIST_1`, `V_EMPEE_HIST_1`, `V_EMPEE_PERS_HIST_1`); `schema.json` (per column: DuckDB type, Oracle type, VARCHAR2 length, PK flag, provenance, `value_status`); `schema_assumptions.json` (same file, the name `mapping.py` reads); `manifest.json` (row counts, v2 row counts, content SHA-256, planted counts, extract date) |
+| `longitudinal/`, `CLEAN/` | One `<TABLE>.parquet` per table; `sample.duckdb` (tables plus pass-through views `V_JOB_DETL_HIST_1`, `V_EMPEE_HIST_1`, `V_EMPEE_PERS_HIST_1`); `schema.json` (per column: DuckDB type, Oracle type, VARCHAR2 length, PK flag, provenance, `value_status`); `schema_assumptions.json` (same file, the name `mapping.py` reads); `manifest.json` (row counts, v2 row counts, content SHA-256, planted counts, change-reason and termination counts, extract date) |
 | `crosswalk_v2_to_v3.csv` | Every v2 → v3 id mapping (6,776 rows), P-Class assignment, added/dropped/moved column, added row and table reshape |
 | `build_v3.py` | Deterministic builder. "Random" choices use an MD5 fraction of a text key |
 
@@ -26,7 +29,7 @@ python -m unittest integration.tests.test_cookbook_v3 -v  # 38 tests (~20 s)
 
 | Table | Columns | Layout | Rows (longitudinal / CLEAN) |
 |---|---:|---|---|
-| `T_JOB_DETL_HIST` | 79 | **Cookbook, exact** | 36,811 / 17,877 |
+| `T_JOB_DETL_HIST` | 79 | **Cookbook, exact** | 36,815 / 17,872 |
 | `T_EMPEE_HIST` | 71 | **Cookbook, exact** | 3,888 / 2,354 |
 | `T_EMPEE_HIST_5` (secured) | 27 | **Cookbook, exact** | 1,480 / 612 |
 | `T_POSN_HIST` | 52 | **Cookbook, exact** | 1,256 / 2,705 |
@@ -65,7 +68,7 @@ bare `NUMBER` → `DOUBLE`; `VARCHAR2(n)` → `VARCHAR` with the length checked 
     `least(JOB_DETL_EFF_DT, extract date)`).
   - `JOB_DETL_HIST_POST_DT` means "inserted or last modified". It is the version's start, or for a superseded
     version the start of the version that replaced it, or for a deleted row the deletion date.
-  - Longitudinal keeps all 16,380 superseded versions and 35,572 late-keyed rows. Our reading of
+  - Longitudinal keeps all 16,384 superseded versions and 35,576 late-keyed rows. Our reading of
     `JOB_DETL_HIST_EFF_DT` as the source version date **must be confirmed on real data**.
 - **Deleted rows (`D`).** 112 longitudinal and 102 CLEAN rows (0.3% and 0.6%) are keyed in error: a copy of a real
   row with an effective date 1–5 days late, deleted 1–3 days after keying, never across a June 30 snapshot date.
@@ -77,8 +80,13 @@ bare `NUMBER` → `DOUBLE`; `VARCHAR2(n)` → `VARCHAR` with the length checked 
   - `N`/`Future`: rows effective after the extract date;
   - `D`/`Deleted`.
   `JOB_DETL_DATA_EXP_DT` is the implied end: the day before the job's next effective row, capped at `JOB_DETL_EXP_DT`.
-  Five longitudinal Terminated rows keep v1's open `JOB_DETL_EXP_DT` although the person was later re-appointed to
-  the same job. Their data expiration date closes them, so they are `N`.
+- **Re-appointment to the same job.** v1 leaves a job's Terminated row open-ended (9999-12-31). When the person is
+  later re-appointed to the same position and suffix (5 longitudinal jobs, `RA001`), that open row would overlap
+  the new Active row under the Cookbook reading of `JOB_DETL_EXP_DT`. The builder closes it the day before the
+  re-appointment, as a new recorded version dated when the re-appointment was keyed (4 jobs; the fifth was keyed
+  before the open version and is closed in place), so the as-known reconstruction still sees the open row until
+  then. `manifest.json: notes.job_rows_reappointment_closed` / `..._close_versions_added` count them. (Earlier
+  builds left the rows open: the erp_readiness J01 finding.)
 - **Tables without a history date** (`T_EMPEE_HIST`, `T_POSN_HIST`, `T_PERS_HIST`) are updated in place. Their key is
   (id, effective date), so only the currently stored version survives. 1,475 superseded longitudinal
   `T_EMPEE_HIST` versions were dropped, and `EMPEE_POST_DT` is when the surviving version was written.
@@ -95,6 +103,14 @@ bare `NUMBER` → `DOUBLE`; `VARCHAR2(n)` → `VARCHAR` with the length checked 
   - Campus follows the integration layer's synthetic assignment in `bridges.yaml`: U10 → UIUC, U20 → UIC,
     U30 → UIS, U00 → System Offices. `COA_CD` and `JOB_DETL_CAMPUS_CD` are 1/2/4/9 (public chart codes; that campus
     code equals chart code is synthetic).
+- **E-Class follows the class type.** v1 longitudinal codes every job `C1` (v2 `CA`) although four of its classes
+  (`SAMBA`, `TAMTA`, `NFJAA`, `NAAAA`, from the synthetic Academic Professional role family) are local
+  academic-professional classes. A job on a local class takes its ladder's E-Class: AP → `BA`, faculty → `AA`,
+  graduate assistant → `GA`; SUCSS classes keep the source E-Class (`CA`). Longitudinal: 6,626 `BA` job rows
+  (`MO` pay), 30,189 `CA` (`BW`); CLEAN is unchanged (its classes and E-Classes already agree). Positions take the
+  E-Class of their jobs and the employee record the E-Class of its primary appointment on the row's reference
+  date (715 longitudinal employee rows). `manifest.json: notes.job_rows_eclass_recoded_to_class_type` counts the
+  recodes. (Earlier builds coded those jobs `CA`: the erp_readiness C01 / X07 finding.)
 - `JOB_DETL_EMPEE_GROUP_CD` is the first character of the E-Class. `JOB_DETL_CIV_SVC_IND` is `Y` iff the E-Class
   begins with C or D (rc2009 rule).
 - Pay. Civil service (E-Class C*) is biweekly: `BW`, 26 pays, 7.5 h/day × FTE, 75 h/pay × FTE. Academic is
@@ -178,10 +194,11 @@ bare `NUMBER` → `DOUBLE`; `VARCHAR2(n)` → `VARCHAR` with the length checked 
 - `OPEN_POSN_IND` = `Y` iff no Active, current-knowledge job fills the position on the version's reference date
   (extract date, or the last effective day). This is tested.
 - `POSN_END_DT` is set only for term positions (CLEAN overload `O*` positions and graduate-assistant positions:
-  285 rows). It is the last job end, or 2027-05-15 when still open. Longitudinal is all civil service, so none.
+  285 rows). It is the last job end, or 2027-05-15 when still open. Longitudinal has no overload or
+  graduate-assistant positions, so none.
 - `PAPE_CIV_SVC_ID` (**value format to confirm**):
   - civil-service classes carry the 4-digit SUCSS code;
-  - academic-professional local classes get the public PAPE codes 49901–49920 in class order;
+  - academic-professional local classes (`BA` positions) get the public PAPE codes 49901–49920 in class order;
   - faculty and GA get NULL.
   `PAPE_CIV_SVC_ID_DESC` is the SUCSS title or "PAPE standard title nnnnn (synthetic)".
 - `POSN_JOB_PRGS_CD` (`JPnnn`): career ladders.

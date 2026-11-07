@@ -152,12 +152,12 @@ class PackResults(unittest.TestCase):
         self.assertEqual(s["as_of"], "2027-01-31")
         st = {r["rule_id"]: r["status"] for r in s["register"]}
         fails = {r["rule_id"]: r["failing"] for r in s["register"] if r["status"] in ("fail", "warn")}
-        self.assertEqual(fails, {"J01": 5, "C01": 135})          # see README: both are v3 pack artefacts
+        self.assertEqual(fails, {})          # J01 (open re-appointed rows) and C01 (CA jobs on AP classes) were fixed in build_v3.py
         self.assertEqual({k for k, v in st.items() if v == "not_evaluable"}, {"O01", "Y01", "Y02", "Y03", "Y04", "Y05"})
         self.assertEqual({k for k, v in st.items() if v == "vacuous"}, {"O02", "O03", "O04"})
         self.assertEqual({k for k, v in st.items() if v == "unbound"}, {"P01", "P02", "S06"})
         supp = {r["rule_id"]: r["failing"] for r in s["supplementary"]}
-        self.assertEqual(supp["X07"], 175)
+        self.assertEqual(supp["X07"], 0)                          # positions follow the corrected job E-Class
         self.assertEqual(sum(v for k, v in supp.items() if k != "X07"), 0)
 
     def test_scores_exclude_unsupported_rules(self):

@@ -1,13 +1,35 @@
 {
  "extract_date": "2026-10-31",
  "notes": {
+  "change_reason_counts": {
+   "EJ001": 413,
+   "EJ002": 210,
+   "FA002": 15,
+   "HR001": 1500,
+   "HR002": 150,
+   "JB001": 61,
+   "OT012": 156,
+   "PR001": 23,
+   "SA001": 12898,
+   "SP003": 206,
+   "none": 2143
+  },
   "empee_rows_deleted_planted": 6,
+  "empee_rows_eclass_recoded_to_primary_job": 0,
   "empee_superseded_versions_dropped": 0,
   "job_rows": 17872,
   "job_rows_deleted_planted": 97,
+  "job_rows_eclass_recoded_to_class_type": 0,
+  "job_rows_reappointment_close_versions_added": 0,
+  "job_rows_reappointment_closed": 0,
   "leave_of_absence_people": 40,
   "payroll_periods": 74,
-  "progression_groups": 750
+  "progression_groups": 750,
+  "termination_counts": {
+   "TE": 212,
+   "TQ": 201,
+   "TR": 199
+  }
  },
  "set": "CLEAN",
  "source": "sample_datasets/v2_public_schema/CLEAN",

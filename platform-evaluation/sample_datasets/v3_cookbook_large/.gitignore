@@ -1,0 +1,3 @@
+# derived from the Parquet files (python build_large.py --rebuild-duckdb); 46 MB
+longitudinal/sample.duckdb
+longitudinal/sample.duckdb.wal

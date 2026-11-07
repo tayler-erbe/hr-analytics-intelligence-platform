@@ -404,7 +404,8 @@ class TestV2Relationships(unittest.TestCase):
             man = json.loads((V3 / s / "manifest.json").read_text(encoding="utf-8"))
             t = man["tables"]
             notes = man["notes"]
-            self.assertEqual(t["T_JOB_DETL_HIST"]["rows"], t["T_JOB_DETL_HIST"]["v2_rows"] + notes["job_rows_deleted_planted"])
+            self.assertEqual(t["T_JOB_DETL_HIST"]["rows"], t["T_JOB_DETL_HIST"]["v2_rows"] + notes["job_rows_deleted_planted"]
+                             + notes["job_rows_reappointment_close_versions_added"])
             self.assertEqual(t["T_EMPEE_HIST"]["rows"], t["T_EMPEE_HIST"]["v2_rows"] - notes["empee_superseded_versions_dropped"]
                              + 2 * notes["leave_of_absence_people"] + notes["empee_rows_deleted_planted"])
             self.assertEqual(t["T_EMPEE_HIST_5"]["rows"], t["T_EMPEE_HIST_5"]["v2_rows"])
@@ -429,9 +430,19 @@ class TestV2Relationships(unittest.TestCase):
             con.execute("""CREATE TABLE b AS SELECT p.v2 AS EDW_PERS_ID, q.v2 AS POSN_NBR, JOB_SUFFIX, JOB_DETL_EFF_DT, JOB_DETL_HIST_EFF_DT AS h,
                             JOB_DETL_FTE AS fte, JOB_DETL_ANNL_SAL AS sal, ORG_CD AS org FROM v3.T_JOB_DETL_HIST j
                             JOIN idm p ON p.col = 'EDW_PERS_ID' AND p.v3 = CAST(j.EDW_PERS_ID AS VARCHAR)
-                            JOIN idm q ON q.col = 'POSN_NBR' AND q.v3 = j.POSN_NBR WHERE JOB_DETL_CUR_INFO_IND <> 'D'""")
+                            JOIN idm q ON q.col = 'POSN_NBR' AND q.v3 = j.POSN_NBR WHERE JOB_DETL_CUR_INFO_IND <> 'D'
+                            AND NOT (JOB_DETL_STATUS_DESC = 'Terminated' AND JOB_DETL_EXP_DT < DATE '9999-12-31' AND EXISTS (
+                                SELECT 1 FROM v3.T_JOB_DETL_HIST k WHERE k.EDW_PERS_ID = j.EDW_PERS_ID AND k.POSN_NBR = j.POSN_NBR
+                                  AND k.JOB_SUFFIX = j.JOB_SUFFIX AND k.JOB_DETL_EFF_DT = j.JOB_DETL_EFF_DT
+                                  AND k.JOB_DETL_HIST_EFF_DT < j.JOB_DETL_HIST_EFF_DT AND k.JOB_DETL_EXP_DT >= DATE '9999-12-31'))""")
+            # (the versions build_v3 adds to close a re-appointed job's open Terminated row have no v2 counterpart)
             self.assertEqual(one(con, "SELECT count(*) FROM (SELECT * FROM a EXCEPT ALL SELECT * FROM b)"), 0, s)
             self.assertEqual(one(con, "SELECT count(*) FROM (SELECT * FROM b EXCEPT ALL SELECT * FROM a)"), 0, s)
+            self.assertEqual(one(con, """WITH cur AS (SELECT EDW_PERS_ID, POSN_NBR, JOB_SUFFIX, JOB_DETL_EFF_DT, JOB_DETL_EXP_DT FROM v3.T_JOB_DETL_HIST
+                    WHERE JOB_DETL_CUR_INFO_IND <> 'D' QUALIFY row_number() OVER (PARTITION BY EDW_PERS_ID, POSN_NBR, JOB_SUFFIX, JOB_DETL_EFF_DT
+                    ORDER BY JOB_DETL_HIST_EFF_DT DESC) = 1)
+                SELECT count(*) FROM (SELECT *, lead(JOB_DETL_EFF_DT) OVER (PARTITION BY EDW_PERS_ID, POSN_NBR, JOB_SUFFIX ORDER BY JOB_DETL_EFF_DT) AS nxt FROM cur)
+                WHERE nxt IS NOT NULL AND JOB_DETL_EXP_DT >= nxt"""), 0, s)   # current knowledge: no row overlaps the next row of its job (re-appointments closed)
             v3 = "v3."
             self.assertEqual(one(con, f"SELECT count(*) FROM {v3}T_JOB_DETL_HIST WHERE EDW_PERS_ID NOT IN (SELECT EDW_PERS_ID FROM {v3}T_PERS_HIST)"), 0)
             self.assertEqual(one(con, f"SELECT count(*) FROM {v3}T_JOB_DETL_HIST WHERE POSN_NBR NOT IN (SELECT POSN_NBR FROM {v3}T_POSN_HIST)"), 0)

@@ -1,0 +1,175 @@
+{
+ "chain": [
+  "synth_edw.py --scale",
+  "v2_public_schema/build_v2.py",
+  "v3_cookbook/build_v3.py"
+ ],
+ "duckdb": "longitudinal/sample.duckdb is git-ignored (46 MB); rebuild it from the Parquet with --rebuild-duckdb",
+ "files": [
+  {
+   "bytes": 139,
+   "path": ".gitignore",
+   "sha256": "743182994d3ecd8260ac806ee55fcc2dab06b73306c4ff6640ece3d5f68c688a"
+  },
+  {
+   "bytes": 6284,
+   "path": "README.md",
+   "sha256": "7e50a7919beaa4377b531e69108fb49ac12da1f18bfbede056df6c15b251c3aa"
+  },
+  {
+   "bytes": 8782,
+   "path": "build_large.py",
+   "sha256": "647dceb9b6805a45084d55381ed96f02fdcd4d7007e73904c560c94ab9c7e38b"
+  },
+  {
+   "bytes": 12590,
+   "path": "crosswalk_v2_to_v3.csv",
+   "sha256": "0716ec790fd06de55277a8e341757a13af81de420de33d6fad51f14012843f37"
+  },
+  {
+   "bytes": 2678,
+   "path": "longitudinal/REF_ECLS_PUBLIC.parquet",
+   "sha256": "809a217e214d4f852214702f67bd03f129a50ac9e4ee90734829b9207c1c032b"
+  },
+  {
+   "bytes": 1935,
+   "path": "longitudinal/REF_ORG.parquet",
+   "sha256": "5d9e92202a0799ab8b103734728958a2bb39c0df908f31772f7d33f3c7e57f01"
+  },
+  {
+   "bytes": 2068,
+   "path": "longitudinal/REF_PCLS_SUCSS_XWALK.parquet",
+   "sha256": "9db0ab0b9c720757140754fbf77dbde9520cf7ac82e7ac924aa2137cb96764c6"
+  },
+  {
+   "bytes": 1380,
+   "path": "longitudinal/REF_ROLE_FAMILY.parquet",
+   "sha256": "0d1cf7616792451374a30f6e4b8b2154867b771e822aa9a2018075b16f7f5834"
+  },
+  {
+   "bytes": 3336314,
+   "path": "longitudinal/T_EMPEE_HIST.parquet",
+   "sha256": "66782aea22feb72f2a2f1ea5c37d8d0fd0acf1afee009e283a5a378ed5f07108"
+  },
+  {
+   "bytes": 598109,
+   "path": "longitudinal/T_EMPEE_HIST_5.parquet",
+   "sha256": "f1dcba1719c63384d3d406544b9ac930d280c52facb01696760a325194b0ea2b"
+  },
+  {
+   "bytes": 20515506,
+   "path": "longitudinal/T_JOB_DETL_HIST.parquet",
+   "sha256": "7330846b959bd1a5d1ff6f80b98de56cc29dee68941e8791073ffbcc4e707f91"
+  },
+  {
+   "bytes": 827156,
+   "path": "longitudinal/T_PERS_HIST.parquet",
+   "sha256": "96ef8a9db9e867749b527460170084b2af23d2b9f625a511fbd50795924885d7"
+  },
+  {
+   "bytes": 2061,
+   "path": "longitudinal/T_POSN_CLS_HIST.parquet",
+   "sha256": "df2fbc72b3962aa3fd84efa834b9160a8c758cb34e9afe6a96ccc9b2ea36e3a0"
+  },
+  {
+   "bytes": 509675,
+   "path": "longitudinal/T_POSN_HIST.parquet",
+   "sha256": "0fab58c13686b2b8de5bbce3a78c6d7df6abe2706453b8c5d5c25b5bed60845c"
+  },
+  {
+   "bytes": 553208,
+   "path": "longitudinal/X_JOB_CONTRACT_TYPE.parquet",
+   "sha256": "c105ed2b0e7a0e71296297cbce16a170bb963f7edbedb2a38193f3711d0ab746"
+  },
+  {
+   "bytes": 3092,
+   "path": "longitudinal/manifest.json",
+   "sha256": "3e25fef7fb379b2fd7aa5b2a7bf4ceecf85dae6496dde92aa61ce5779b9cc9fa"
+  },
+  {
+   "bytes": 68758,
+   "path": "longitudinal/schema.json",
+   "sha256": "a71746b2e1a33dae8ec24b239384838801fa5c30eff45a98eec9ee74127050bf"
+  },
+  {
+   "bytes": 68758,
+   "path": "longitudinal/schema_assumptions.json",
+   "sha256": "a71746b2e1a33dae8ec24b239384838801fa5c30eff45a98eec9ee74127050bf"
+  }
+ ],
+ "generator": "succession_models/synth_edw.py",
+ "generator_version": "1.0",
+ "pack": "v3_cookbook_large",
+ "scale": 7.5,
+ "seed": 20261106,
+ "sets": [
+  "longitudinal"
+ ],
+ "synthetic": true,
+ "v1_planted_events": {
+  "abolished": 2254,
+  "external_hires": 30951,
+  "internal_moves": 34333,
+  "positions_created_by_moves": 2061,
+  "separations": 31603
+ },
+ "v1_row_counts": {
+  "REF_JOB_CLASS": 38,
+  "REF_ORG": 52,
+  "REF_ROLE_FAMILY": 38,
+  "T_EMPEE_HIST": 107812,
+  "T_EMPEE_HIST_5": 31603,
+  "T_JOB_DETL_HIST": 822031,
+  "T_PERS_HIST": 44702,
+  "T_POSN_HIST": 18066
+ },
+ "v3": {
+  "longitudinal": {
+   "extract_date": "2027-03-31",
+   "notes": {
+    "change_reason_counts": {
+     "EJ001": 44226,
+     "EJ002": 20207,
+     "HR001": 44702,
+     "OT009": 6165,
+     "OT010": 15238,
+     "OT012": 9907,
+     "PR001": 3007,
+     "RA001": 16,
+     "SA001": 305168,
+     "SP003": 1503,
+     "none": 2116
+    },
+    "empee_rows_deleted_planted": 239,
+    "empee_rows_eclass_recoded_to_primary_job": 11939,
+    "empee_superseded_versions_dropped": 31507,
+    "extract_date_moved_after_last_posting": "2027-03-15",
+    "job_rows": 824389,
+    "job_rows_deleted_planted": 2343,
+    "job_rows_eclass_recoded_to_class_type": 118039,
+    "job_rows_reappointment_close_versions_added": 15,
+    "job_rows_reappointment_closed": 16,
+    "leave_of_absence_people": 989,
+    "progression_groups": 11,
+    "termination_counts": {
+     "TE": 9893,
+     "TQ": 20207,
+     "TR": 1503
+    }
+   },
+   "rows": {
+    "REF_ECLS_PUBLIC": 68,
+    "REF_ORG": 58,
+    "REF_PCLS_SUCSS_XWALK": 38,
+    "REF_ROLE_FAMILY": 38,
+    "T_EMPEE_HIST": 78522,
+    "T_EMPEE_HIST_5": 31603,
+    "T_JOB_DETL_HIST": 824389,
+    "T_PERS_HIST": 44702,
+    "T_POSN_CLS_HIST": 38,
+    "T_POSN_HIST": 18066,
+    "X_JOB_CONTRACT_TYPE": 79019
+   }
+  }
+ }
+}

@@ -3,6 +3,8 @@
     cd platform-evaluation
     python sample_datasets/v3_cookbook/build_v3.py            # writes longitudinal/ and CLEAN/
     python sample_datasets/v3_cookbook/build_v3.py --check    # rebuild in a temp dir, compare content hashes
+    python sample_datasets/v3_cookbook/build_v3.py --v2-root <dir> --out <dir> --sets longitudinal --no-id-crosswalk
+                                                              # same builder on another v2-layout world (large pack)
 
 Every row is SYNTHETIC. Nothing here comes from EDW rows. The five tables transcribed from the University
 of Illinois Data Cookbook (integration/edw_cookbook_reference/*.tsv) are reproduced column for column, in
@@ -119,6 +121,10 @@ LOCAL_LADDER = {
     "AAAEA": ("FAC", 5), "CASAA": ("GA", 1),
 }
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8}
+# E-Class by class type (public kb120378 codes): local academic ladders take their group's E-Class; SUCSS classes
+# keep the source E-Class (CA in v2). Used on jobs (and so on positions and employees, which follow their jobs).
+LADDER_ECLS = ("CASE WHEN c.cls_source <> 'SUCSS' THEN CASE c.ladder WHEN 'AP' THEN 'BA' WHEN 'FAC' THEN 'AA' WHEN 'GA' THEN 'GA' "
+               "ELSE j.JOB_DETL_EMPEE_CLS_CD END ELSE j.JOB_DETL_EMPEE_CLS_CD END")
 
 
 def h01(key: str) -> float:
@@ -221,10 +227,12 @@ def materialize(con, stage: str, table: str, spec: list[dict]) -> None:
 
 # ----------------------------------------------------------------------------- build one set
 class SetBuilder:
-    def __init__(self, set_name: str, out_dir: Path, xw: list[dict]):
+    def __init__(self, set_name: str, out_dir: Path, xw: list[dict], v2_root: Path = V2, id_crosswalk: bool = True):
         self.s = set_name
         self.out = out_dir
         self.xw = xw
+        self.v2_root = v2_root
+        self.id_crosswalk = id_crosswalk       # False: skip the per-id crosswalk rows (large packs)
         self.X = EXTRACT[set_name]
         self.rec = set_name == "longitudinal"       # v2 longitudinal has recorded-version columns
         self.ecls = eclass_domain()
@@ -244,13 +252,24 @@ class SetBuilder:
             self.db.unlink()
         con = duckdb.connect(str(self.db))
         con.create_function("h01", h01, ["VARCHAR"], "DOUBLE")
-        src = V2 / self.s
+        src = self.v2_root / self.s
         self.v2_tables = sorted(p.stem for p in src.glob("*.parquet"))
         for t in self.v2_tables:
             con.execute(f"CREATE TEMP VIEW v2_{t} AS SELECT * EXCLUDE (file_row_number) FROM read_parquet({lit((src / (t + '.parquet')).as_posix())})"
                         if "file_row_number" in [r[0] for r in con.execute(f"DESCRIBE SELECT * FROM read_parquet({lit((src / (t + '.parquet')).as_posix())})").fetchall()]
                         else f"CREATE TEMP VIEW v2_{t} AS SELECT * FROM read_parquet({lit((src / (t + '.parquet')).as_posix())})")
         self.con = con
+        if self.rec:
+            # The extract date must follow the last posting: a row keyed after the extract cannot be in the extract.
+            # The small pack posts until 2027-01-24 (extract 2027-01-31, the fixed default); a larger world keeps
+            # keying its late-2026 events into March 2027, so the date moves to the end of the last posting month.
+            last_post = max(con.execute(f"SELECT max(ROW_REC_START_DT) FROM v2_{t}").fetchone()[0]
+                            for t in self.v2_tables if "ROW_REC_START_DT" in
+                            [r[0] for r in con.execute(f"DESCRIBE SELECT * FROM v2_{t}").fetchall()])
+            if str(last_post) > self.X:
+                import calendar
+                self.X = f"{last_post.year}-{last_post.month:02d}-{calendar.monthrange(last_post.year, last_post.month)[1]:02d}"
+                self.notes["extract_date_moved_after_last_posting"] = str(last_post)
         X = self.X
         cur = "ROW_REC_END_DT >= DATE '9999-12-31'" if self.rec else "TRUE"
         self.cur = cur
@@ -269,10 +288,10 @@ class SetBuilder:
                 SELECT POSN_NBR AS v2_posn FROM v2_T_POSN_HIST UNION SELECT POSN_NBR FROM v2_T_JOB_DETL_HIST)""")
         if con.execute("SELECT count(*) - count(DISTINCT posn), max(length(posn)), max(CAST(substr(v2_posn, 2) AS INTEGER)) FROM posmap").fetchone() != (0, 6, con.execute("SELECT max(CAST(substr(v2_posn, 2) AS INTEGER)) FROM posmap").fetchone()[0]):
             raise RuntimeError("position map is not injective")
-        for v2_id, pid in con.execute("SELECT v2_id, pid FROM pmap ORDER BY pid").fetchall():
+        for v2_id, pid in (con.execute("SELECT v2_id, pid FROM pmap ORDER BY pid").fetchall() if self.id_crosswalk else []):
             self.x("id_mapped", v2_column="EDW_PERS_ID", v3_column="EDW_PERS_ID", v2_value=v2_id, v3_value=pid,
                    rule=f"{base} + numeric part of the v2 id (9 digits, begins 99; synthetic range)", status="synthetic")
-        for a, b in con.execute("SELECT v2_posn, posn FROM posmap ORDER BY posn").fetchall():
+        for a, b in (con.execute("SELECT v2_posn, posn FROM posmap ORDER BY posn").fetchall() if self.id_crosswalk else []):
             self.x("id_mapped", v2_column="POSN_NBR", v3_column="POSN_NBR", v2_value=a, v3_value=b,
                    rule="letter + 5 digits (VARCHAR2(6)); v2 letters Q/R/O kept, S -> V, so no id uses a real campus letter C/S/U/G",
                    status="synthetic")
@@ -378,16 +397,29 @@ class SetBuilder:
     def build_jobs(self):
         con, X = self.con, self.X
         rec_start = "j.ROW_REC_START_DT" if self.rec else f"least(j.JOB_DETL_EFF_DT, DATE '{X}')"
+        # E-Class follows the class type: a local academic class takes its ladder's E-Class (AP -> BA, faculty -> AA,
+        # GA -> GA); civil-service (SUCSS) classes keep the source E-Class. v1 longitudinal coded every job CA.
         con.execute(f"""CREATE TEMP TABLE jb AS
             SELECT pm.pid, ps.posn, j.JOB_SUFFIX AS suf, j.JOB_DETL_EFF_DT AS eff, {rec_start} AS hist_eff,
                    j.JOB_DETL_EXP_DT AS exp, j.JOB_CONTRACT_TYPE_CD AS ctype, j.JOB_DETL_STATUS_CD AS st,
                    j.JOB_DETL_FTE AS fte, j.JOB_DETL_ANNUAL_SAL AS sal, j.POSN_CLS_CD AS cls_key,
-                   j.JOB_DETL_EMPEE_CLS_CD AS ecls, j.JOB_ORG_CD AS org, sm.pid AS sup_pid, FALSE AS deleted
+                   {LADDER_ECLS} AS ecls, j.JOB_DETL_EMPEE_CLS_CD AS v2_ecls,
+                   j.JOB_ORG_CD AS org, sm.pid AS sup_pid, FALSE AS deleted
             FROM v2_T_JOB_DETL_HIST j JOIN pmap pm ON pm.v2_id = j.EDW_PERS_ID JOIN posmap ps ON ps.v2_posn = j.POSN_NBR
+            JOIN cls c ON c.cls_key = j.POSN_CLS_CD
             LEFT JOIN pmap sm ON sm.v2_id = j.SUPERVISOR_PERS_ID""")
+        n_recoded = con.execute("SELECT count(*) FROM jb WHERE ecls <> v2_ecls").fetchone()[0]
+        self.notes["job_rows_eclass_recoded_to_class_type"] = n_recoded
+        for v2e, v3e, ck, n in con.execute("SELECT v2_ecls, ecls, cls_key, count(*) FROM jb WHERE ecls <> v2_ecls GROUP BY ALL ORDER BY ALL").fetchall():
+            self.x("value_recoded", v2_table="T_JOB_DETL_HIST", v2_column="JOB_DETL_EMPEE_CLS_CD", v3_table="T_JOB_DETL_HIST",
+                   v3_column="JOB_DETL_EMPEE_CLS_CD", v2_value=v2e, v3_value=v3e,
+                   rule=f"class {ck} is a local academic class, so the job takes its ladder's E-Class ({n} rows); civil-service classes keep CA",
+                   status="synthetic")
+        con.execute("ALTER TABLE jb DROP COLUMN v2_ecls")
         # lineage = PK without JOB_DETL_HIST_EFF_DT
         con.execute("""CREATE OR REPLACE TEMP TABLE jb AS SELECT *,
             lead(hist_eff) OVER (PARTITION BY pid, posn, suf, eff ORDER BY hist_eff) AS next_hist FROM jb""")
+        self.close_reappointments()
         # plant keyed-in-error rows that were deleted 1-3 days later (never spanning a June 30 snapshot date)
         cand = con.execute(f"""SELECT pid, posn, suf, eff, hist_eff, exp FROM jb
             WHERE next_hist IS NULL AND eff BETWEEN DATE '2005-01-01' AND DATE '2025-12-31'
@@ -463,6 +495,12 @@ class SetBuilder:
               WHEN fte <> p_fte THEN 'FT001'
               WHEN sal <> p_sal THEN 'SA001'
             END AS chg FROM jcx""")
+        # planted totals for downstream reconciliation (wap_prototype/reconcile.py): change reasons on the
+        # current-knowledge chain and termination reasons
+        self.notes["change_reason_counts"] = {k or "none": int(v) for k, v in con.execute(
+            "SELECT chg, count(*) FROM jreason GROUP BY 1 ORDER BY 1").fetchall()}
+        self.notes["termination_counts"] = {k: int(v) for k, v in con.execute(
+            "SELECT term_cd, count(*) FROM sep GROUP BY 1 ORDER BY 1").fetchall()}
         # supervisor job: supervisor's primary active job on the row's effective date, else latest before, else first
         con.execute("""CREATE TEMP TABLE jsup AS
             WITH need AS (SELECT DISTINCT sup_pid, eff FROM jc WHERE sup_pid IS NOT NULL),
@@ -494,6 +532,48 @@ class SetBuilder:
             FROM jdel d JOIN jc b ON b.pid = d.pid AND b.posn = d.posn AND b.suf = d.suf AND b.eff = d.base_eff""")
         n = con.execute("SELECT count(*) FROM jall").fetchone()[0]
         self.notes["job_rows"] = n
+
+    def close_reappointments(self):
+        """Close JOB_DETL_EXP_DT on a re-appointment to the same job (fix for v1's open Terminated rows).
+
+        v1 leaves the Terminated row of a job open-ended (9999-12-31); when the person is later re-appointed to the
+        same position and suffix, that open row overlaps the new Active row. Under the Cookbook reading
+        (JOB_DETL_EXP_DT = last effective day) the row must end the day before the re-appointment. The close is
+        recorded bitemporally: the open version is superseded on the day the re-appointment was keyed and a new
+        version with the closed date starts then (if the re-appointment was keyed before the open version, the
+        version is closed in place). JOB_DETL_DATA_EXP_DT already carried the implied end.
+        """
+        con = self.con
+        con.execute("""CREATE TEMP TABLE jreapp AS
+            WITH nxt AS (
+                SELECT b.pid, b.posn, b.suf, b.eff, b.hist_eff,
+                       (SELECT min(n.eff) FROM jb n WHERE n.pid = b.pid AND n.posn = b.posn AND n.suf = b.suf AND n.eff > b.eff) AS next_eff
+                FROM jb b WHERE b.next_hist IS NULL AND b.exp >= DATE '9999-12-31')
+            SELECT x.*, CAST(x.next_eff - INTERVAL 1 DAY AS DATE) AS new_exp,
+                   (SELECT min(n.hist_eff) FROM jb n WHERE n.pid = x.pid AND n.posn = x.posn AND n.suf = x.suf AND n.eff = x.next_eff) AS reapp_hist
+            FROM nxt x WHERE x.next_eff IS NOT NULL""")
+        n_total = con.execute("SELECT count(*) FROM jreapp").fetchone()[0]
+        n_versioned = con.execute("SELECT count(*) FROM jreapp WHERE reapp_hist > hist_eff").fetchone()[0]
+        # new version from the day the re-appointment was keyed
+        con.execute("""INSERT INTO jb
+            SELECT b.pid, b.posn, b.suf, b.eff, r.reapp_hist, r.new_exp, b.ctype, b.st, b.fte, b.sal, b.cls_key, b.ecls, b.org, b.sup_pid,
+                   b.deleted, NULL
+            FROM jb b JOIN jreapp r ON r.pid = b.pid AND r.posn = b.posn AND r.suf = b.suf AND r.eff = b.eff AND r.hist_eff = b.hist_eff
+            WHERE r.reapp_hist > r.hist_eff""")
+        con.execute("""UPDATE jb SET next_hist = r.reapp_hist FROM jreapp r
+            WHERE jb.pid = r.pid AND jb.posn = r.posn AND jb.suf = r.suf AND jb.eff = r.eff AND jb.hist_eff = r.hist_eff
+              AND r.reapp_hist > r.hist_eff""")
+        # keyed before (or with) the open version: close in place
+        con.execute("""UPDATE jb SET exp = r.new_exp FROM jreapp r
+            WHERE jb.pid = r.pid AND jb.posn = r.posn AND jb.suf = r.suf AND jb.eff = r.eff AND jb.hist_eff = r.hist_eff
+              AND r.reapp_hist <= r.hist_eff""")
+        self.notes["job_rows_reappointment_closed"] = n_total
+        self.notes["job_rows_reappointment_close_versions_added"] = n_versioned
+        if n_total:
+            self.x("value_recoded", v2_table="T_JOB_DETL_HIST", v2_column="JOB_DETL_EXP_DT", v3_table="T_JOB_DETL_HIST",
+                   v3_column="JOB_DETL_EXP_DT", v2_value="9999-12-31", v3_value="day before the re-appointment",
+                   rule=f"{n_total} open Terminated rows closed on a re-appointment to the same job; {n_versioned} as a new "
+                        "recorded version dated when the re-appointment was keyed", status="derived")
 
     def stage_jobs(self):
         con = self.con
@@ -641,7 +721,7 @@ class SetBuilder:
                    sum(j.sal * 100 / 100.0) FILTER (WHERE j.suf <> 'CE') AS sal
             FROM eref e LEFT JOIN jact j ON j.pid = e.pid AND j.eff <= e.rdt AND j.exp >= e.rdt GROUP BY ALL""")
         con.execute("""CREATE TEMP TABLE eprim AS
-            SELECT e.pid, e.eff, e.kind, j.org FROM eref e JOIN jc j ON j.pid = e.pid
+            SELECT e.pid, e.eff, e.kind, j.org, j.ecls FROM eref e JOIN jc j ON j.pid = e.pid
             QUALIFY row_number() OVER (PARTITION BY e.pid, e.eff, e.kind ORDER BY
                 CASE WHEN j.st = 'A' AND j.eff <= e.rdt AND j.exp >= e.rdt THEN 0 WHEN j.eff <= e.rdt THEN 1 ELSE 2 END,
                 CASE WHEN j.eff <= e.rdt AND j.exp >= e.rdt THEN j.fte ELSE 0 END DESC,
@@ -659,6 +739,15 @@ class SetBuilder:
         con, X = self.con, self.X
         ec = self.ecls
         cs = "(starts_with(e.ecls, 'C') OR starts_with(e.ecls, 'D'))"
+        # the employee E-Class follows the primary appointment on the row's reference date (same rule as the org)
+        n_recoded = con.execute("""SELECT count(*) FROM eref e JOIN eprim p ON p.pid = e.pid AND p.eff = e.eff AND p.kind = e.kind
+                                     WHERE p.ecls <> e.ecls""").fetchone()[0]
+        self.notes["empee_rows_eclass_recoded_to_primary_job"] = n_recoded
+        if n_recoded:
+            self.x("value_recoded", v2_table="T_EMPEE_HIST", v2_column="EMPEE_CLS_CD", v3_table="T_EMPEE_HIST", v3_column="EMPEE_CLS_CD",
+                   rule=f"the E-Class of the primary appointment on the row's reference date ({n_recoded} rows changed)", status="derived")
+        con.execute("""CREATE OR REPLACE TEMP TABLE eref AS SELECT e.* EXCLUDE (ecls), coalesce(p.ecls, e.ecls) AS ecls
+                       FROM eref e LEFT JOIN eprim p ON p.pid = e.pid AND p.eff = e.eff AND p.kind = e.kind""")
         con.execute(f"""CREATE TEMP TABLE stage_empee AS
             WITH sp AS (SELECT e.pid, e.eff, e.kind, max(s.spell_start) AS cur_spell, min(s.spell_start) AS first_spell
                         FROM eref e LEFT JOIN pspell s ON s.pid = e.pid AND s.spell_start <= e.rdt GROUP BY ALL)
@@ -953,7 +1042,7 @@ class SetBuilder:
         con = self.con
         tables = [r[0] for r in con.execute(
             "SELECT table_name FROM information_schema.tables WHERE table_schema = 'main' AND table_type = 'BASE TABLE' ORDER BY 1").fetchall()]
-        manifest = {"set": self.s, "synthetic": True, "source": f"sample_datasets/v2_public_schema/{self.s}",
+        manifest = {"set": self.s, "synthetic": True, "source": (f"sample_datasets/v2_public_schema/{self.s}" if self.v2_root == V2 else f"{self.v2_root.as_posix()}/{self.s}"),
                     "extract_date": self.X, "tables": {}, "views": ["V_EMPEE_HIST_1", "V_EMPEE_PERS_HIST_1", "V_JOB_DETL_HIST_1"],
                     "notes": self.notes}
         schema = {}
@@ -1116,13 +1205,16 @@ def column_schema(con, table: str) -> list[dict]:
 XW_COLS = ["set", "change", "v2_table", "v2_column", "v3_table", "v3_column", "v2_value", "v3_value", "rule", "status"]
 
 
-def build(out_root: Path = HERE) -> dict:
+def build(out_root: Path = HERE, v2_root: Path = V2, sets: list[str] | None = None, id_crosswalk: bool = True) -> dict:
+    """Run the builder. `v2_root` is any folder with the v2 layout (<set>/<TABLE>.parquet); `sets` limits the sets
+    built (default both); `id_crosswalk=False` leaves the per-id rows out of the crosswalk (large packs)."""
+    sets = list(sets or SETS)
     xw: list[dict] = []
     out = {}
-    for s in SETS:
-        b = SetBuilder(s, out_root / s, xw)
+    for s in sets:
+        b = SetBuilder(s, out_root / s, xw, v2_root, id_crosswalk)
         out[s] = b.build()
-    for s in SETS:
+    for s in sets:
         for t in VERIFIED_TABLES:
             if t in out[s]["tables"]:
                 xw.append({"set": s, "change": "table_cookbook_shaped", "v2_table": t if t != "T_EMPEE_HIST_5" else "T_EMPEE_HIST_5",
@@ -1140,25 +1232,30 @@ def build(out_root: Path = HERE) -> dict:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--check", action="store_true", help="rebuild into a temp dir and compare content hashes")
+    ap.add_argument("--v2-root", type=Path, default=V2, help="folder with the v2 layout to adapt (default sample_datasets/v2_public_schema)")
+    ap.add_argument("--out", type=Path, default=HERE, help="output root (default: this folder, the published pack)")
+    ap.add_argument("--sets", nargs="*", choices=SETS, default=None, help="sets to build (default both)")
+    ap.add_argument("--no-id-crosswalk", action="store_true", help="leave the per-id rows out of crosswalk_v2_to_v3.csv")
     a = ap.parse_args(argv)
+    v2_root, out_root, sets, idx = a.v2_root.resolve(), a.out.resolve(), a.sets, not a.no_id_crosswalk
     if a.check:
         tmp = Path(tempfile.mkdtemp())
         try:
-            new = build(tmp)
+            new = build(tmp, v2_root, sets, idx)
             bad = []
             for s, man in new.items():
-                old = json.loads((HERE / s / "manifest.json").read_text(encoding="utf-8"))
+                old = json.loads((out_root / s / "manifest.json").read_text(encoding="utf-8"))
                 for t, v in man["tables"].items():
                     if old["tables"].get(t) != v:
                         bad.append(f"{s}.{t}")
                 if old.get("notes") != json.loads(json.dumps(man["notes"], default=str)):
                     bad.append(f"{s}.notes")
-            same_xw = (tmp / "crosswalk_v2_to_v3.csv").read_bytes() == (HERE / "crosswalk_v2_to_v3.csv").read_bytes()
+            same_xw = (tmp / "crosswalk_v2_to_v3.csv").read_bytes() == (out_root / "crosswalk_v2_to_v3.csv").read_bytes()
             print("content identical" if not bad and same_xw else f"DIFFERENT: {bad} crosswalk_same={same_xw}")
             return 0 if not bad and same_xw else 1
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
-    out = build(HERE)
+    out = build(out_root, v2_root, sets, idx)
     for s, man in out.items():
         print(f"[{s}] " + ", ".join(f"{t}={v['rows']}" for t, v in man["tables"].items()))
         print(f"[{s}] notes: {man['notes']}")

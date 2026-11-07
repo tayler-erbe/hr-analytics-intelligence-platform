@@ -1,12 +1,34 @@
 {
  "extract_date": "2027-01-31",
  "notes": {
+  "change_reason_counts": {
+   "EJ001": 1939,
+   "EJ002": 972,
+   "HR001": 2302,
+   "OT009": 236,
+   "OT010": 626,
+   "OT012": 422,
+   "PR001": 178,
+   "RA001": 5,
+   "SA001": 13546,
+   "SP003": 36,
+   "none": 57
+  },
   "empee_rows_deleted_planted": 10,
+  "empee_rows_eclass_recoded_to_primary_job": 715,
   "empee_superseded_versions_dropped": 1475,
-  "job_rows": 36811,
+  "job_rows": 36815,
   "job_rows_deleted_planted": 112,
+  "job_rows_eclass_recoded_to_class_type": 6608,
+  "job_rows_reappointment_close_versions_added": 4,
+  "job_rows_reappointment_closed": 5,
   "leave_of_absence_people": 48,
-  "progression_groups": 11
+  "progression_groups": 11,
+  "termination_counts": {
+   "TE": 472,
+   "TQ": 972,
+   "TR": 36
+  }
  },
  "set": "longitudinal",
  "source": "sample_datasets/v2_public_schema/longitudinal",
@@ -37,7 +59,7 @@
    "v2_rows": 38
   },
   "T_EMPEE_HIST": {
-   "content_sha256": "438fabd948d71757120053c6c407dacfc6b5b244e012c0971e9caf41c28de3f3",
+   "content_sha256": "48d080ef6430f42cf69fab1be58c4738ade747220ba58b86f2245ea4e8d07031",
    "cookbook_verified": true,
    "rows": 3888,
    "v2_rows": 5257
@@ -49,9 +71,9 @@
    "v2_rows": 1480
   },
   "T_JOB_DETL_HIST": {
-   "content_sha256": "cebf0509e198e6406c89bf256e6055a82128874f800b02b398294643d3deb041",
+   "content_sha256": "5174abbcd341bae9e96d2582db0b3add910b294a0582716dac67c0c51d498823",
    "cookbook_verified": true,
-   "rows": 36811,
+   "rows": 36815,
    "v2_rows": 36699
   },
   "T_PERS_HIST": {
@@ -67,7 +89,7 @@
    "v2_rows": 38
   },
   "T_POSN_HIST": {
-   "content_sha256": "1c539f0f4687268cc6116ac4dc88ed5a14830195f75c271879eb53ab986fec59",
+   "content_sha256": "9078b77c35a54498bd8559d0321d0c62f9261f2e98cab7166c4eb4b696c5689f",
    "cookbook_verified": true,
    "rows": 1256,
    "v2_rows": 1256

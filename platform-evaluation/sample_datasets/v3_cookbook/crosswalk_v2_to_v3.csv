@@ -3400,8 +3400,14 @@ longitudinal,row_added,,,REF_ORG,ORG_CD,,U2A,"synthetic administrative level-2 u
 longitudinal,row_added,,,REF_ORG,ORG_CD,,U2B,"synthetic administrative level-2 unit under U20 (Cookbook org levels: 1 campus, 2 admin, 3 college, 5 department)",synthetic
 longitudinal,row_added,,,REF_ORG,ORG_CD,,U3A,"synthetic administrative level-2 unit under U30 (Cookbook org levels: 1 campus, 2 admin, 3 college, 5 department)",synthetic
 longitudinal,row_added,,,REF_ORG,ORG_CD,,U3B,"synthetic administrative level-2 unit under U30 (Cookbook org levels: 1 campus, 2 admin, 3 college, 5 department)",synthetic
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,CA,BA,"class NAAAA is a local academic class, so the job takes its ladder's E-Class (1051 rows); civil-service classes keep CA",synthetic
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,CA,BA,"class NFJAA is a local academic class, so the job takes its ladder's E-Class (1750 rows); civil-service classes keep CA",synthetic
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,CA,BA,"class SAMBA is a local academic class, so the job takes its ladder's E-Class (1575 rows); civil-service classes keep CA",synthetic
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,T_JOB_DETL_HIST,JOB_DETL_EMPEE_CLS_CD,CA,BA,"class TAMTA is a local academic class, so the job takes its ladder's E-Class (2232 rows); civil-service classes keep CA",synthetic
+longitudinal,value_recoded,T_JOB_DETL_HIST,JOB_DETL_EXP_DT,T_JOB_DETL_HIST,JOB_DETL_EXP_DT,9999-12-31,day before the re-appointment,5 open Terminated rows closed on a re-appointment to the same job; 4 as a new recorded version dated when the re-appointment was keyed,derived
 longitudinal,column_moved,T_JOB_DETL_HIST,JOB_CONTRACT_TYPE_CD,X_JOB_CONTRACT_TYPE,JOB_CONTRACT_TYPE_CD,,,job type (P/O/S) is not among the 79 Cookbook columns; kept per job in a side table,assumed_pending_cookbook
 longitudinal,rows_dropped,T_EMPEE_HIST,,T_EMPEE_HIST,,1475,,"superseded recorded versions: T_EMPEE_HIST's key (EDW_PERS_ID, EMPEE_EFF_DT) has no history date, so only the version now stored survives; EMPEE_POST_DT records when it was written",verified_dictionary
+longitudinal,value_recoded,T_EMPEE_HIST,EMPEE_CLS_CD,T_EMPEE_HIST,EMPEE_CLS_CD,,,the E-Class of the primary appointment on the row's reference date (715 rows changed),derived
 longitudinal,column_dropped,T_POSN_HIST,POSN_ORG_CD,,,,,T_POSN_HIST has no organization column (Cookbook); the integration layer derives a position's org from its jobs,verified_dictionary
 longitudinal,column_added,,,REF_ORG,ORG_HIER_LEVEL_NBR,,,"Cookbook org levels (1 campus, 2 admin, 3 college, 4 school, 5 department, 6-8 sub-org); synthetic tree uses 1/2/3/5",synthetic
 longitudinal,column_added,,,REF_ORG,COA_CD,,,"chart of the org's campus (U1->1, U2->2, U3->4, U0->9)",synthetic
@@ -7712,7 +7718,7 @@ CLEAN,column_moved,T_JOB_DETL_HIST,JOB_CONTRACT_TYPE_CD,X_JOB_CONTRACT_TYPE,JOB_
 CLEAN,column_dropped,T_POSN_HIST,POSN_ORG_CD,,,,,T_POSN_HIST has no organization column (Cookbook); the integration layer derives a position's org from its jobs,verified_dictionary
 CLEAN,column_added,,,REF_ORG,ORG_HIER_LEVEL_NBR,,,"Cookbook org levels (1 campus, 2 admin, 3 college, 4 school, 5 department, 6-8 sub-org); synthetic tree uses 1/2/3/5",synthetic
 CLEAN,column_added,,,REF_ORG,COA_CD,,,"chart of the org's campus (U1->1, U2->2, U3->4, U0->9)",synthetic
-longitudinal,table_cookbook_shaped,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,,36699,36811,exact Data Cookbook column list (79 columns); v2/v3 row counts in v2_value/v3_value,verified_dictionary
+longitudinal,table_cookbook_shaped,T_JOB_DETL_HIST,,T_JOB_DETL_HIST,,36699,36815,exact Data Cookbook column list (79 columns); v2/v3 row counts in v2_value/v3_value,verified_dictionary
 longitudinal,table_cookbook_shaped,T_EMPEE_HIST,,T_EMPEE_HIST,,5257,3888,exact Data Cookbook column list (71 columns); v2/v3 row counts in v2_value/v3_value,verified_dictionary
 longitudinal,table_cookbook_shaped,T_EMPEE_HIST_5,,T_EMPEE_HIST_5,,1480,1480,exact Data Cookbook column list (27 columns); v2/v3 row counts in v2_value/v3_value,verified_dictionary
 longitudinal,table_cookbook_shaped,T_POSN_HIST,,T_POSN_HIST,,1256,1256,exact Data Cookbook column list (52 columns); v2/v3 row counts in v2_value/v3_value,verified_dictionary

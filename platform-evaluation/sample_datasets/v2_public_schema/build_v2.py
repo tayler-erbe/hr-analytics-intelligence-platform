@@ -3,6 +3,8 @@
     cd platform-evaluation
     python sample_datasets/v2_public_schema/build_v2.py            # writes longitudinal/ and CLEAN/
     python sample_datasets/v2_public_schema/build_v2.py --check    # rebuild in a temp dir, compare content hashes
+    python sample_datasets/v2_public_schema/build_v2.py --v1-root <dir> --out <dir> --sets longitudinal
+                                                                   # same adapter on another v1-layout world (large pack)
 
 What it does, per set (v1 longitudinal and v1 quality/CLEAN; DEFECTS is not adapted):
   * renames tables/columns to the publicly documented EDW names in integration/edw_mapping_public.yaml
@@ -231,8 +233,8 @@ def table_hash(con, table: str) -> str:
     return h.hexdigest()
 
 
-def build_set(set_name: str, out_root: Path, xw: list[dict]) -> dict:
-    src = V1 / SETS[set_name]
+def build_set(set_name: str, out_root: Path, xw: list[dict], v1_root: Path = V1) -> dict:
+    src = v1_root / SETS[set_name]
     dst = out_root / set_name
     if dst.exists():
         shutil.rmtree(dst)
@@ -243,7 +245,8 @@ def build_set(set_name: str, out_root: Path, xw: list[dict]) -> dict:
     for t in v1_tables:
         con.execute(f"CREATE TEMP VIEW v1_{t} AS SELECT *, file_row_number AS _rn "
                     f"FROM read_parquet({lit((src / (t + '.parquet')).as_posix())}, file_row_number = true)")
-    manifest = {"set": set_name, "source": f"sample_datasets/v1/{SETS[set_name]}", "tables": {}, "views": {}}
+    source = f"sample_datasets/v1/{SETS[set_name]}" if v1_root == V1 else f"{v1_root.as_posix()}/{SETS[set_name]}"
+    manifest = {"set": set_name, "source": source, "tables": {}, "views": {}}
     schema = {}
     for t in v1_tables:
         cols = [r[0] for r in con.execute(f"DESCRIBE SELECT * FROM v1_{t}").fetchall() if r[0] != "_rn"]
@@ -292,9 +295,11 @@ def build_set(set_name: str, out_root: Path, xw: list[dict]) -> dict:
 XW_COLS = ["set", "change", "v1_table", "v1_column", "v2_table", "v2_column", "v1_value", "v2_value", "rule", "source_key"]
 
 
-def build(out_root: Path = HERE) -> dict:
+def build(out_root: Path = HERE, v1_root: Path = V1, sets: list[str] | None = None) -> dict:
+    """Run the adapter. `v1_root` is any folder with the v1 layout (longitudinal/, quality/CLEAN/); `sets` limits
+    the sets built (default both). The published pack is `build()` with the defaults."""
     xw: list[dict] = []
-    out = {s: build_set(s, out_root, xw) for s in SETS}
+    out = {s: build_set(s, out_root, xw, v1_root) for s in (sets or list(SETS))}
     with open(out_root / "crosswalk_v1_to_v2.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=XW_COLS, lineterminator="\n")
         w.writeheader()
@@ -305,23 +310,27 @@ def build(out_root: Path = HERE) -> dict:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--check", action="store_true", help="rebuild into a temp dir and compare content hashes")
+    ap.add_argument("--v1-root", type=Path, default=V1, help="folder with the v1 layout to adapt (default sample_datasets/v1)")
+    ap.add_argument("--out", type=Path, default=HERE, help="output root (default: this folder, the published pack)")
+    ap.add_argument("--sets", nargs="*", choices=sorted(SETS), default=None, help="sets to build (default both)")
     a = ap.parse_args(argv)
+    v1_root, out_root, sets = a.v1_root.resolve(), a.out.resolve(), a.sets
     if a.check:
         tmp = Path(tempfile.mkdtemp())
         try:
-            new = build(tmp)
+            new = build(tmp, v1_root, sets)
             bad = []
             for s, man in new.items():
-                old = json.loads((HERE / s / "manifest.json").read_text(encoding="utf-8"))
+                old = json.loads((out_root / s / "manifest.json").read_text(encoding="utf-8"))
                 for t, v in man["tables"].items():
                     if old["tables"].get(t) != v:
                         bad.append(f"{s}.{t}")
-            same_xw = (tmp / "crosswalk_v1_to_v2.csv").read_bytes() == (HERE / "crosswalk_v1_to_v2.csv").read_bytes()
+            same_xw = (tmp / "crosswalk_v1_to_v2.csv").read_bytes() == (out_root / "crosswalk_v1_to_v2.csv").read_bytes()
             print("content identical" if not bad and same_xw else f"DIFFERENT: {bad} crosswalk_same={same_xw}")
             return 0 if not bad and same_xw else 1
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
-    out = build(HERE)
+    out = build(out_root, v1_root, sets)
     for s, man in out.items():
         print(f"[{s}] " + ", ".join(f"{t}={v['rows']}" for t, v in man["tables"].items()))
     return 0

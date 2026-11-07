@@ -99,8 +99,12 @@ and reported separately (not scored):
 
 | Set | as-of | Overall | Scored | Failing rules | Entities | Unbound / not evaluable / vacuous |
 |---|---|---:|---:|---:|---:|---|
-| longitudinal | 2027-01-31 | 92.2 | 31 / 43 | 2 (J01, C01) | 140 | 3 / 6 / 3 |
+| longitudinal | 2027-01-31 | 100.0 | 31 / 43 | 0 | 0 | 3 / 6 / 3 |
 | CLEAN | 2026-10-31 | 100.0 | 40 / 43 | 0 | 0 | 3 / 0 / 0 |
+
+Longitudinal scored 92.2 with J01 = 5 and C01 = 135 (X07 = 175) until the two pack defects below were fixed in
+`build_v3.py` (re-appointed jobs closed; E-Class by class type). The rules were not changed. The same binding on the
+UIUC-scale pack (`--pack-dir sample_datasets/v3_cookbook_large`, 44,702 people) also reports 0 failing rules.
 
 CLEAN: every one of the 40 scored rules and all 7 supplementary checks pass, so the semantic drift between v1 and v3
 produces **no false positives** once the bindings above are applied (void/reissue folding for Y05, leave recode for
@@ -126,20 +130,18 @@ saw data (job keys 1,905; pay keys 37,899; active employees 1,031 of 1,500 perso
 The org/supervisory and payroll domains therefore show `ready` for longitudinal only because nothing scored failed;
 `excluded_rules` in the summary says which rules were left out.
 
-### Findings on longitudinal, and what they say about the v3 pack (feedback for build_v3.py; nothing was changed)
+### Findings on longitudinal, and what they said about the v3 pack (items 1 and 2 are now fixed in build_v3.py)
 
-1. **J01, 5 job keys (critical):** the five Terminated rows that keep an open `JOB_DETL_EXP_DT` although the person was
-   re-appointed to the same job (documented in the v3 README). `JOB_DETL_DATA_EXP_DT` closes them, so with
-   `--switch job_end_date=data_exp_dt` J01 is clean. Under the Cookbook reading (`JOB_DETL_EXP_DT` = last effective
-   date) these are genuine overlaps; the builder should close `JOB_DETL_EXP_DT` on a re-appointment, or the pack's
-   README should state that `JOB_DETL_EXP_DT` is not maintained.
-2. **C01, 135 active jobs (critical) and X07, 175 current positions:** longitudinal is "all civil service" (every job
-   and position has E-Class `CA`, `JOB_DETL_CIV_SVC_IND = 'Y'`) but four of its classes (`NAAAA`, `NFJAA`, `SAMBA`,
-   `TAMTA`) are local academic-professional classes: the crosswalk marks them `LOCAL`, the positions carry 5-digit
-   PAPE codes 49901-49904, and `T_POSN_CLS_HIST` holds them as `LOCAL`. A civil-service job whose class is not a SUCSS
-   class is exactly what C01 is for. The builder should either give those classes a civil-service E-Class consistent
-   with their PAPE/P-Class (they came from v2 role families) or make them AP (`BA`) jobs; X07 reports the same 175
-   positions from the position side.
+1. **J01, 5 job keys (critical), fixed:** the five Terminated rows kept an open `JOB_DETL_EXP_DT` although the person
+   was re-appointed to the same job. `JOB_DETL_DATA_EXP_DT` closed them, so with `--switch job_end_date=data_exp_dt`
+   J01 was clean; under the Cookbook reading (`JOB_DETL_EXP_DT` = last effective date) they were genuine overlaps.
+   `build_v3.py` now closes `JOB_DETL_EXP_DT` the day before the re-appointment, as a new recorded version dated when
+   the re-appointment was keyed (v3 README, "Re-appointment to the same job"). J01 = 0.
+2. **C01, 135 active jobs (critical) and X07, 175 current positions, fixed:** longitudinal was "all civil service"
+   (every job and position had E-Class `CA`) but four of its classes (`NAAAA`, `NFJAA`, `SAMBA`, `TAMTA`) are local
+   academic-professional classes with 5-digit PAPE codes 49901-49904. `build_v3.py` now gives a job on a local class
+   its ladder's E-Class (AP → `BA`, faculty → `AA`, GA → `GA`); positions and employee records follow their jobs, so
+   civil-service (`C*`) positions all carry a 4-digit `PAPE_CIV_SVC_ID`. C01 = 0, X07 = 0; CLEAN is unchanged.
 3. **Supervisors:** none in longitudinal (`SUPV_*` NULL everywhere). Four of the six org rules are therefore blind
    on the richer set; if build_v3.py can carry v2's supervisor assignment into longitudinal the rules would run.
 4. **`REF_HIERARCHY_ROOT` and `REF_EMPEE_CLS`** exist only in CLEAN; `REF_ROLE_FAMILY` only in longitudinal. A
@@ -161,8 +163,8 @@ indicator (X03), the secured termination copy (X04), `OPEN_POSN_IND` (X05) and c
 - Compiled SQL runs on DuckDB: the `compiled_duckdb.sql` script (prepared + staging + helpers + 43 rules + 7 checks)
   executes statement by statement on both sets and under every non-default switch option; every rule returns
   three columns.
-- Pack results: CLEAN has zero findings; longitudinal's findings are exactly J01 = 5 and C01 = 135; excluded rules are
-  the documented ones; the `recorded` variant runs.
+- Pack results: CLEAN and longitudinal have zero catalog findings and zero supplementary findings (J01, C01 and X07
+  were pack defects, fixed in `build_v3.py`); excluded rules are the documented ones; the `recorded` variant runs.
 - Planted-defect fixture in the Cookbook layout (a copy of CLEAN modified with DuckDB): J01, J03, J04, J06, E01, E03, S04,
   O01, O03, O04, C01, P05, Y02, Y05, X02 and X04 each detect exactly their planted entity; a deleted (D) copy of a
   current row keyed three days late is **not** reported by J01/J02; the affected domains gate `blocked`.

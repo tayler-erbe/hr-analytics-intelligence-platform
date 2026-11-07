@@ -4,7 +4,7 @@ Synthetic data only. Rules with status unbound / not_evaluable / vacuous are exc
 
 | Set | as-of | Switches | Overall | Scored rules | Failing rules | Failing entities (crit/high/med) | Unbound / not evaluable / vacuous |
 |---|---|---|---:|---:|---:|---|---|
-| longitudinal | 2027-01-31 | job_change_date=business, job_end_date=exp_dt, class_key_source=bridge, fte_unit=fraction, termination_source=secured, pay_earnings_category=E | 92.2 | 31/43 | 2 | 140 (140/0/0) | 3 / 6 / 3 |
+| longitudinal | 2027-01-31 | job_change_date=business, job_end_date=exp_dt, class_key_source=bridge, fte_unit=fraction, termination_source=secured, pay_earnings_category=E | 100.0 | 31/43 | 0 | 0 (0/0/0) | 3 / 6 / 3 |
 | CLEAN | 2026-10-31 | job_change_date=business, job_end_date=exp_dt, class_key_source=bridge, fte_unit=fraction, termination_source=secured, pay_earnings_category=E | 100.0 | 40/43 | 0 | 0 (0/0/0) | 3 / 0 / 0 |
 
 ## longitudinal
@@ -15,9 +15,9 @@ Synthetic data only. Rules with status unbound / not_evaluable / vacuous are exc
 |---|---:|---|---|---:|---:|
 | Person identity and biographic master data | 100.0 | ready | 5 (P01, P02) | 0 | 0 |
 | Employment lifecycle (hire, status, termination) | 100.0 | ready | 8 | 0 | 0 |
-| Effective-dated job / appointment history | 83.9 | blocked | 8 | 1 | 5 |
+| Effective-dated job / appointment history | 100.0 | ready | 8 | 0 | 0 |
 | Position control and job-to-position integrity | 100.0 | ready | 7 (S06) | 0 | 0 |
-| Classification and compensation (SUCSS, AP, faculty) | 61.5 | blocked | 4 | 1 | 135 |
+| Classification and compensation (SUCSS, AP, faculty) | 100.0 | ready | 4 | 0 | 0 |
 | Organizations and reporting lines | 100.0 | ready | 6 (O01, O02, O03, O04) | 0 | 0 |
 | Payroll accounting history | 100.0 | ready | 5 (Y01, Y02, Y03, Y04, Y05) | 0 | 0 |
 
@@ -27,9 +27,7 @@ Synthetic data only. Rules with status unbound / not_evaluable / vacuous are exc
 |---|---|---|---:|---|
 | P01 Same national-ID hash on more than one person ID | critical | unbound | 0 / 2302 | no national-ID hash in the Cookbook layout; SSN/UIN are prohibited and NULL in the pack |
 | P02 Probable duplicate person (same name and birth date, different national-ID hash) | high | unbound | 0 / 2302 | PERS_FNAME/PERS_LNAME exist but are NULL by policy in the pack (never synthesized) |
-| J01 Overlapping job detail intervals | critical | fail | 5 / 3764 | 991000076\|Q00715\|00: row ending 9999-12-31 overlaps row starting 2020-07-15 |
 | S06 Job org differs from its position's org | medium | unbound | 0 / 822 | T_POSN_HIST has no organization column (Cookbook); a position's org is derived from its jobs, so the comparison is circular |
-| C01 Civil-service job class not in the SUCSS catalog | critical | fail | 135 / 822 | 991000022\|Q00805\|00: class NAAAA not in SUCSS catalog |
 | O01 Active primary job with no supervisor | critical | not_evaluable | 822 / 822 | table(s) absent from this set: REF_HIERARCHY_ROOT |
 | O02 Supervisor is not an active worker | high | vacuous | 0 / 822 | NULL on every row: stg_job.supervisor_pers_id |
 | O03 Cycle in reporting lines | critical | vacuous | 0 / 822 | NULL on every row: stg_job.supervisor_pers_id |
@@ -44,13 +42,13 @@ Synthetic data only. Rules with status unbound / not_evaluable / vacuous are exc
 
 | Check | Sev | Failing / population | First example |
 |---|---|---:|---|
-| X01 Current-info indicator disagrees with the data status description | high | 0 / 45737 |  |
+| X01 Current-info indicator disagrees with the data status description | high | 0 / 45741 |  |
 | X02 Job key or employee known only through deleted (D) rows | medium | 0 / 6066 |  |
 | X03 Job current-info indicator disagrees with the as-of state computed from effective dates | high | 0 / 3764 |  |
 | X04 Termination on T_EMPEE_HIST and the secured copy T_EMPEE_HIST_5 disagree | critical | 0 / 1480 |  |
 | X05 OPEN_POSN_IND disagrees with active incumbents on the extract date | medium | 0 / 1059 |  |
 | X06 Live job key with no contract type (P/S/O) in X_JOB_CONTRACT_TYPE | high | 0 / 3764 |  |
-| X07 Position class bridge inconsistent (PAPE_CIV_SVC_ID vs P-Class crosswalk, or civil-service position without a 4-digit identifier) | high | 175 / 1059 | Q00007: PAPE 49903, P-Class SAMBA -> xwalk (none), E-Class CA |
+| X07 Position class bridge inconsistent (PAPE_CIV_SVC_ID vs P-Class crosswalk, or civil-service position without a 4-digit identifier) | high | 0 / 1059 |  |
 
 ## CLEAN
 
