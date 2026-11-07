@@ -1,0 +1,31 @@
+from_table,from_column,to_table,to_column,cardinality,direction,active,note
+dim_date,date_key,fact_headcount_quarter,date_key,1:*,single,true,
+dim_date,date_key,fact_transitions_quarter,date_key,1:*,single,true,
+dim_date,date_key,fact_promotion_expectation,date_key,1:*,single,true,origin quarter
+dim_date,date_key,fact_external_context,date_key,1:*,single,true,
+dim_date,date_key,fact_attrition_forecast,target_date_key,1:*,single,true,forecast charts are by target quarter
+dim_origin_date,date_key,fact_attrition_forecast,origin_date_key,1:*,single,true,dim_origin_date is a copy of dim_date (origin slicer)
+dim_origin_date,date_key,fact_attrition_risk,origin_date_key,1:*,single,true,
+dim_org,org_key,fact_headcount_quarter,org_key,1:*,single,true,
+dim_org,org_key,fact_transitions_quarter,org_key,1:*,single,true,origin unit
+dim_org,org_key,fact_promotion_expectation,org_key,1:*,single,true,
+dim_org,org_key,fact_attrition_forecast,org_key,1:*,single,true,
+dim_org,org_key,fact_attrition_risk,org_key,1:*,single,true,
+dim_role,role_key,fact_headcount_quarter,role_key,1:*,single,true,
+dim_role,role_key,fact_promotion_expectation,role_key,1:*,single,true,
+dim_role,role_key,fact_external_context,role_key,1:*,single,true,
+dim_role,role_key,fact_transitions_quarter,from_role_key,1:*,single,true,
+dim_role,role_key,fact_transitions_quarter,to_role_key,1:*,single,false,inactive; USERELATIONSHIP in [Transitions To Role]
+dim_role_to,role_key,fact_transitions_quarter,to_role_key,1:*,single,true,dim_role_to is a copy of dim_role (mobility matrix columns)
+dim_role_family,role_family_key,dim_role,role_family_key,1:*,single,true,snowflake
+dim_role_family,role_family_key,fact_attrition_forecast,role_family_key,1:*,single,true,
+dim_role_family,role_family_key,fact_attrition_risk,role_family_key,1:*,single,true,
+dim_model_version,model_version,fact_headcount_quarter,model_version,1:*,single,true,
+dim_model_version,model_version,fact_transitions_quarter,model_version,1:*,single,true,
+dim_model_version,model_version,fact_promotion_expectation,model_version,1:*,single,true,
+dim_model_version,model_version,fact_attrition_forecast,model_version,1:*,single,true,
+dim_model_version,model_version,fact_attrition_risk,model_version,1:*,single,true,
+dim_model_version,model_version,fact_model_quality,model_version,1:*,single,true,
+dim_scenario,scenario_key,fact_promotion_expectation,scenario_key,1:*,single,true,
+dim_scenario,scenario_key,fact_attrition_forecast,scenario_key,1:*,single,true,
+dim_scenario,scenario_key,fact_model_quality,scenario_key,1:*,single,true,

@@ -1,0 +1,52 @@
+org_key,admin_level,campus_cd,campus_name,college_cd,college_name,dept_cd,dept_name,parent_org_key,is_active,org_code
+10,campus,U10,Campus 1 (synthetic),,,,,,True,U10
+11,college,U10,Campus 1 (synthetic),U11,College 1.1 (synthetic),,,10,True,U11
+111,dept,U10,Campus 1 (synthetic),U11,College 1.1 (synthetic),U111,Department 1.1.1 (synthetic),11,True,U111
+112,dept,U10,Campus 1 (synthetic),U11,College 1.1 (synthetic),U112,Department 1.1.2 (synthetic),11,True,U112
+113,dept,U10,Campus 1 (synthetic),U11,College 1.1 (synthetic),U113,Department 1.1.3 (synthetic),11,True,U113
+12,college,U10,Campus 1 (synthetic),U12,College 1.2 (synthetic),,,10,True,U12
+121,dept,U10,Campus 1 (synthetic),U12,College 1.2 (synthetic),U121,Department 1.2.1 (synthetic),12,True,U121
+122,dept,U10,Campus 1 (synthetic),U12,College 1.2 (synthetic),U122,Department 1.2.2 (synthetic),12,True,U122
+123,dept,U10,Campus 1 (synthetic),U12,College 1.2 (synthetic),U123,Department 1.2.3 (synthetic),12,True,U123
+13,college,U10,Campus 1 (synthetic),U13,College 1.3 (synthetic),,,10,True,U13
+131,dept,U10,Campus 1 (synthetic),U13,College 1.3 (synthetic),U131,Department 1.3.1 (synthetic),13,True,U131
+132,dept,U10,Campus 1 (synthetic),U13,College 1.3 (synthetic),U132,Department 1.3.2 (synthetic),13,True,U132
+133,dept,U10,Campus 1 (synthetic),U13,College 1.3 (synthetic),U133,Department 1.3.3 (synthetic),13,True,U133
+14,college,U10,Campus 1 (synthetic),U14,College 1.4 (synthetic),,,10,True,U14
+141,dept,U10,Campus 1 (synthetic),U14,College 1.4 (synthetic),U141,Department 1.4.1 (synthetic),14,True,U141
+142,dept,U10,Campus 1 (synthetic),U14,College 1.4 (synthetic),U142,Department 1.4.2 (synthetic),14,True,U142
+143,dept,U10,Campus 1 (synthetic),U14,College 1.4 (synthetic),U143,Department 1.4.3 (synthetic),14,True,U143
+20,campus,U20,Campus 2 (synthetic),,,,,,True,U20
+21,college,U20,Campus 2 (synthetic),U21,College 2.1 (synthetic),,,20,True,U21
+211,dept,U20,Campus 2 (synthetic),U21,College 2.1 (synthetic),U211,Department 2.1.1 (synthetic),21,True,U211
+212,dept,U20,Campus 2 (synthetic),U21,College 2.1 (synthetic),U212,Department 2.1.2 (synthetic),21,True,U212
+213,dept,U20,Campus 2 (synthetic),U21,College 2.1 (synthetic),U213,Department 2.1.3 (synthetic),21,True,U213
+22,college,U20,Campus 2 (synthetic),U22,College 2.2 (synthetic),,,20,True,U22
+221,dept,U20,Campus 2 (synthetic),U22,College 2.2 (synthetic),U221,Department 2.2.1 (synthetic),22,True,U221
+222,dept,U20,Campus 2 (synthetic),U22,College 2.2 (synthetic),U222,Department 2.2.2 (synthetic),22,True,U222
+223,dept,U20,Campus 2 (synthetic),U22,College 2.2 (synthetic),U223,Department 2.2.3 (synthetic),22,True,U223
+23,college,U20,Campus 2 (synthetic),U23,College 2.3 (synthetic),,,20,True,U23
+231,dept,U20,Campus 2 (synthetic),U23,College 2.3 (synthetic),U231,Department 2.3.1 (synthetic),23,True,U231
+232,dept,U20,Campus 2 (synthetic),U23,College 2.3 (synthetic),U232,Department 2.3.2 (synthetic),23,True,U232
+233,dept,U20,Campus 2 (synthetic),U23,College 2.3 (synthetic),U233,Department 2.3.3 (synthetic),23,True,U233
+24,college,U20,Campus 2 (synthetic),U24,College 2.4 (synthetic),,,20,True,U24
+241,dept,U20,Campus 2 (synthetic),U24,College 2.4 (synthetic),U241,Department 2.4.1 (synthetic),24,True,U241
+242,dept,U20,Campus 2 (synthetic),U24,College 2.4 (synthetic),U242,Department 2.4.2 (synthetic),24,True,U242
+243,dept,U20,Campus 2 (synthetic),U24,College 2.4 (synthetic),U243,Department 2.4.3 (synthetic),24,True,U243
+30,campus,U30,Campus 3 (synthetic),,,,,,True,U30
+31,college,U30,Campus 3 (synthetic),U31,College 3.1 (synthetic),,,30,True,U31
+311,dept,U30,Campus 3 (synthetic),U31,College 3.1 (synthetic),U311,Department 3.1.1 (synthetic),31,True,U311
+312,dept,U30,Campus 3 (synthetic),U31,College 3.1 (synthetic),U312,Department 3.1.2 (synthetic),31,True,U312
+313,dept,U30,Campus 3 (synthetic),U31,College 3.1 (synthetic),U313,Department 3.1.3 (synthetic),31,True,U313
+32,college,U30,Campus 3 (synthetic),U32,College 3.2 (synthetic),,,30,True,U32
+321,dept,U30,Campus 3 (synthetic),U32,College 3.2 (synthetic),U321,Department 3.2.1 (synthetic),32,True,U321
+322,dept,U30,Campus 3 (synthetic),U32,College 3.2 (synthetic),U322,Department 3.2.2 (synthetic),32,True,U322
+323,dept,U30,Campus 3 (synthetic),U32,College 3.2 (synthetic),U323,Department 3.2.3 (synthetic),32,True,U323
+33,college,U30,Campus 3 (synthetic),U33,College 3.3 (synthetic),,,30,True,U33
+331,dept,U30,Campus 3 (synthetic),U33,College 3.3 (synthetic),U331,Department 3.3.1 (synthetic),33,True,U331
+332,dept,U30,Campus 3 (synthetic),U33,College 3.3 (synthetic),U332,Department 3.3.2 (synthetic),33,True,U332
+333,dept,U30,Campus 3 (synthetic),U33,College 3.3 (synthetic),U333,Department 3.3.3 (synthetic),33,True,U333
+34,college,U30,Campus 3 (synthetic),U34,College 3.4 (synthetic),,,30,True,U34
+341,dept,U30,Campus 3 (synthetic),U34,College 3.4 (synthetic),U341,Department 3.4.1 (synthetic),34,True,U341
+342,dept,U30,Campus 3 (synthetic),U34,College 3.4 (synthetic),U342,Department 3.4.2 (synthetic),34,True,U342
+343,dept,U30,Campus 3 (synthetic),U34,College 3.4 (synthetic),U343,Department 3.4.3 (synthetic),34,True,U343

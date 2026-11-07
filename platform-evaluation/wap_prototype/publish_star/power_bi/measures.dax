@@ -1,0 +1,93 @@
+// DAX measures for the WAP star schema (contract wap-star-v1, POWER_BI_CONTRACT.md section 2.3).
+// Every measure counts published cells only: suppressed rows have null measures and n is never summed on its own.
+// Each page shows [Suppressed Cells] next to any total.
+
+// ---------- calculated columns (dimension side only; section 2.2)
+// dim_date
+Quarter Sort = dim_date[calendar_year] * 10 + dim_date[calendar_quarter]
+// dim_role
+Ladder Step = IF ( ISBLANK ( dim_role[ladder] ), "Not on a ladder",
+                   dim_role[ladder_desc] & " L" & FORMAT ( dim_role[level], "0" ) )
+Mapping Caveat = SWITCH ( dim_role[mapping_status],
+                   "analyst_confirmed", "", "unreviewed", "O*NET/SOC link unreviewed", "No O*NET/SOC link" )
+
+// ---------- descriptive (fact_headcount_quarter)
+Headcount = SUM ( fact_headcount_quarter[headcount] )
+FTE = SUM ( fact_headcount_quarter[fte_sum] )
+Headcount Prior Q = SUM ( fact_headcount_quarter[headcount_prior_quarter] )
+Separations = SUM ( fact_headcount_quarter[separations_total] )
+Retirements = SUM ( fact_headcount_quarter[sep_retirement] )
+Hires = SUM ( fact_headcount_quarter[hires] )
+Promotions Out = SUM ( fact_headcount_quarter[promotions_out] )
+
+Suppressed Cells = CALCULATE ( COUNTROWS ( fact_headcount_quarter ), fact_headcount_quarter[suppressed] = TRUE () )
+Published Cells  = CALCULATE ( COUNTROWS ( fact_headcount_quarter ), fact_headcount_quarter[suppressed] = FALSE () )
+
+Avg Headcount = DIVIDE ( [Headcount] + [Headcount Prior Q], 2 )
+
+// quarterly rate; the annualised version multiplies by 4 and is labelled "annualised"
+Turnover Rate (Q) = DIVIDE ( [Separations], [Avg Headcount] )
+Turnover Rate (4Q) =
+    VAR seps = CALCULATE ( [Separations], DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH ) )
+    VAR hc   = CALCULATE ( AVERAGEX ( VALUES ( dim_date[date_key] ), [Headcount] ),
+                           DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH ) )
+    RETURN DIVIDE ( seps, hc )
+Retirement Rate (4Q) =
+    VAR r = CALCULATE ( [Retirements], DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH ) )
+    VAR hc = CALCULATE ( AVERAGEX ( VALUES ( dim_date[date_key] ), [Headcount] ),
+                         DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH ) )
+    RETURN DIVIDE ( r, hc )
+Promotion Rate (4Q) =
+    VAR p = CALCULATE ( [Promotions Out], DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH ) )
+    VAR hc = CALCULATE ( AVERAGEX ( VALUES ( dim_date[date_key] ), [Headcount] ),
+                         DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH ) )
+    RETURN DIVIDE ( p, hc )
+
+// ---------- mobility (fact_transitions_quarter)
+Transitions = SUM ( fact_transitions_quarter[n_transitions] )
+Transition Rate = DIVIDE ( [Transitions], SUM ( fact_transitions_quarter[n] ) )
+Transitions To Role =
+    CALCULATE ( [Transitions], USERELATIONSHIP ( dim_role[role_key], fact_transitions_quarter[to_role_key] ) )
+
+// ---------- Model A (fact_promotion_expectation), primary version and default scenario via page filters
+Expected Promotions = SUM ( fact_promotion_expectation[expected] )
+Expected Promotions P10 = SUM ( fact_promotion_expectation[expected_p10] )
+Expected Promotions P90 = SUM ( fact_promotion_expectation[expected_p90] )
+Observed Promotions = CALCULATE ( SUM ( fact_promotion_expectation[observed] ), fact_promotion_expectation[resolved] = TRUE () )
+Expected Promotion Rate = DIVIDE ( [Expected Promotions], CALCULATE ( SUM ( fact_promotion_expectation[n] ), fact_promotion_expectation[suppressed] = FALSE () ) )
+Expected vs Observed = [Expected Promotions] - [Observed Promotions]
+
+// bench coverage: expected internal supply / expected need; shown as a ratio, with P10-P90
+Bench Coverage = DIVIDE ( SUM ( fact_promotion_expectation[pipeline_supply_expected] ), SUM ( fact_promotion_expectation[pipeline_need_expected] ) )
+Bench Coverage P10 = MIN ( fact_promotion_expectation[pipeline_coverage_p10] )
+Bench Coverage P90 = MAX ( fact_promotion_expectation[pipeline_coverage_p90] )
+Bench Status =
+    SWITCH ( TRUE (),
+        ISBLANK ( [Bench Coverage] ), "Suppressed / n < 10",
+        [Bench Coverage P90] < 1, "No internal pipeline",
+        [Bench Coverage] < 1, "Thin",
+        "Covered" )
+Roles Without Pipeline =
+    CALCULATE ( DISTINCTCOUNT ( fact_promotion_expectation[role_key] ),
+                FILTER ( fact_promotion_expectation, fact_promotion_expectation[pipeline_coverage_p90] < 1 ) )
+
+// ---------- Model B (fact_attrition_forecast, fact_attrition_risk)
+Headcount Forecast = SUM ( fact_attrition_forecast[headcount_point] )
+Headcount Forecast P10 = SUM ( fact_attrition_forecast[headcount_p10] )
+Headcount Forecast P90 = SUM ( fact_attrition_forecast[headcount_p90] )
+Separations Forecast = SUM ( fact_attrition_forecast[separations_point] )
+Retirements Forecast = SUM ( fact_attrition_forecast[sep_retirement_point] )
+Hires Forecast = SUM ( fact_attrition_forecast[hires_point] )
+Headcount Actual = SUM ( fact_attrition_forecast[headcount_actual] )
+Forecast Error % = DIVIDE ( [Headcount Forecast] - [Headcount Actual], [Headcount Actual] )
+
+Expected Sep Rate 4Q = AVERAGE ( fact_attrition_risk[expected_sep_rate_4q] )
+Attrition Flagged Units = CALCULATE ( COUNTROWS ( fact_attrition_risk ), fact_attrition_risk[attrition_flag] = TRUE () )
+
+// ---------- model quality (fact_model_quality)
+Metric Value = AVERAGE ( fact_model_quality[metric_value] )
+Thresholds Failed = CALCULATE ( COUNTROWS ( fact_model_quality ), fact_model_quality[threshold_pass] = FALSE () )
+Fairness Flag = CALCULATE ( MAX ( fact_model_quality[fairness_flag] ), fact_model_quality[attribute] <> "all" )
+
+// ---------- row-level security (section 2.4): DAX filter on dim_org for the Campus role
+// [campus_cd] = LOOKUPVALUE ( sec_user_campus[campus_cd], sec_user_campus[upn], USERPRINCIPALNAME () )

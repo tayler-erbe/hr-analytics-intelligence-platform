@@ -1,0 +1,241 @@
+{
+ "ok": false,
+ "errors": [
+  "fact_promotion_expectation: required table file not found (<name>.csv or <name>.parquet)"
+ ],
+ "warnings": [
+  "dim_org: extra column 'org_code' not in contract",
+  "dim_role: extra column 'class_key' not in contract",
+  "fact_attrition_forecast: extra column 'n_mean_headcount_4q' not in contract"
+ ],
+ "tables": {
+  "dim_date": {
+   "rows": 56,
+   "columns": [
+    "date_key",
+    "date",
+    "calendar_year",
+    "calendar_quarter",
+    "fiscal_year",
+    "fiscal_quarter",
+    "quarter_label",
+    "is_forecast_period"
+   ]
+  },
+  "dim_org": {
+   "rows": 51,
+   "columns": [
+    "org_key",
+    "admin_level",
+    "campus_cd",
+    "campus_name",
+    "college_cd",
+    "college_name",
+    "dept_cd",
+    "dept_name",
+    "parent_org_key",
+    "is_active",
+    "org_code"
+   ]
+  },
+  "dim_role": {
+   "rows": 39,
+   "columns": [
+    "role_key",
+    "e_class",
+    "p_class",
+    "class_title",
+    "role_family",
+    "role_family_key",
+    "ladder",
+    "ladder_desc",
+    "level",
+    "is_top_of_ladder",
+    "sucss_class_cd",
+    "onet_soc_code",
+    "soc_code",
+    "onet_job_zone",
+    "mapping_status",
+    "critical_ind",
+    "class_key"
+   ]
+  },
+  "dim_role_family": {
+   "rows": 12,
+   "columns": [
+    "role_family_key",
+    "role_family",
+    "role_family_name",
+    "critical_ind"
+   ]
+  },
+  "dim_model_version": {
+   "rows": 6,
+   "columns": [
+    "model_version",
+    "model_id",
+    "method",
+    "protocol_version",
+    "run_id",
+    "seed",
+    "data_as_of",
+    "train_start",
+    "train_end",
+    "feature_table_hash",
+    "bitemporal_mode",
+    "passes_all_thresholds",
+    "fairness_flag",
+    "is_published_default",
+    "model_card_path",
+    "created_at"
+   ]
+  },
+  "dim_scenario": {
+   "rows": 9,
+   "columns": [
+    "scenario_key",
+    "scenario_cd",
+    "scenario_name",
+    "description",
+    "is_default"
+   ]
+  },
+  "fact_headcount_quarter": {
+   "rows": 20945,
+   "columns": [
+    "date_key",
+    "org_key",
+    "role_key",
+    "model_version",
+    "n",
+    "headcount",
+    "headcount_prior_quarter",
+    "fte_sum",
+    "hires",
+    "sep_voluntary",
+    "sep_retirement",
+    "sep_other",
+    "separations_total",
+    "promotions_in",
+    "promotions_out",
+    "transfers_in",
+    "transfers_out",
+    "suppressed",
+    "data_as_of"
+   ]
+  },
+  "fact_transitions_quarter": {
+   "rows": 2697,
+   "columns": [
+    "date_key",
+    "org_key",
+    "from_role_key",
+    "to_role_key",
+    "transition_type",
+    "model_version",
+    "n",
+    "n_transitions",
+    "transition_rate",
+    "median_years_in_from_role",
+    "suppressed",
+    "data_as_of"
+   ]
+  },
+  "fact_attrition_forecast": {
+   "rows": 2376,
+   "columns": [
+    "origin_date_key",
+    "target_date_key",
+    "horizon_q",
+    "org_key",
+    "role_family_key",
+    "model_version",
+    "scenario_key",
+    "n",
+    "headcount_point",
+    "headcount_p10",
+    "headcount_p90",
+    "hires_point",
+    "hires_p10",
+    "hires_p90",
+    "sep_voluntary_point",
+    "sep_voluntary_p10",
+    "sep_voluntary_p90",
+    "sep_retirement_point",
+    "sep_retirement_p10",
+    "sep_retirement_p90",
+    "sep_other_point",
+    "sep_other_p10",
+    "sep_other_p90",
+    "separations_point",
+    "separations_p10",
+    "separations_p90",
+    "headcount_actual",
+    "hires_actual",
+    "separations_actual",
+    "actual_known",
+    "is_bottom_up",
+    "suppressed",
+    "data_as_of",
+    "n_mean_headcount_4q"
+   ]
+  },
+  "fact_attrition_risk": {
+   "rows": 29,
+   "columns": [
+    "origin_date_key",
+    "org_key",
+    "role_family_key",
+    "model_version",
+    "n",
+    "expected_sep_rate_4q",
+    "expected_sep_rate_p10",
+    "expected_sep_rate_p90",
+    "observed_sep_rate_trailing_4q",
+    "peer_median_rate",
+    "peer_p75_rate",
+    "n_peer_units",
+    "attrition_flag",
+    "suppressed",
+    "data_as_of"
+   ]
+  },
+  "fact_external_context": {
+   "rows": 38,
+   "columns": [
+    "date_key",
+    "role_key",
+    "oews_pay_ratio_local",
+    "bls_projected_growth_pct",
+    "bls_separation_rate",
+    "onet_job_zone",
+    "aei_exposure",
+    "job_evolution_watch",
+    "source_vintage",
+    "mapping_status",
+    "suppressed",
+    "data_as_of"
+   ]
+  },
+  "fact_model_quality": {
+   "rows": 4741,
+   "columns": [
+    "model_version",
+    "scenario_key",
+    "origin_date_key",
+    "horizon",
+    "metric_name",
+    "attribute",
+    "metric_value",
+    "baseline_value",
+    "threshold_id",
+    "threshold_value",
+    "threshold_pass",
+    "fairness_flag",
+    "n",
+    "suppressed",
+    "data_as_of"
+   ]
+  }
+ }
+}

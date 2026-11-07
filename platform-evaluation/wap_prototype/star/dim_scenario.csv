@@ -1,0 +1,10 @@
+scenario_key,scenario_cd,scenario_name,description,is_default
+1,primary,Primary model,The published primary model version for the page,True
+2,base_step,Base rate by ladder step,Historical promotion rate of the ladder step (Model A comparator),False
+3,base_family,Base rate by job family,Historical rate of the job family (Model A comparator),False
+4,snaive,Seasonal naive,Same quarter last year (Model B comparator),False
+5,ets,Exponential smoothing,ETS univariate comparator (Model B),False
+6,no_external,No external context,Primary learner without the external-context features,False
+7,pooled,Pooled ridge comparator,Model B pooled ridge comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False
+8,gbm,LightGBM comparator,Model B lightgbm comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False
+9,ens,Ensemble comparator,Model B ensemble comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False

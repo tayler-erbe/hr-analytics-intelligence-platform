@@ -1,0 +1,376 @@
+{
+ "schema_version": "wap-star-v1",
+ "protocol_version": "wap-protocol-v1",
+ "k_min": 10,
+ "data_as_of": "2027-01-31",
+ "descriptive_model_version": "DESCRIPTIVE-20270131",
+ "run_id": "wap-phase1-v3_longitudinal-JOB_DETL_EFF_DT-Q",
+ "data_source": "v3_longitudinal",
+ "synthetic": true,
+ "phase1_manifest_feature_rows": 31993,
+ "model_outputs_present": {
+  "fact_promotion_expectation": false,
+  "fact_attrition_forecast": true,
+  "fact_attrition_risk": true,
+  "fact_model_quality": true
+ },
+ "model_versions": [
+  "DESCRIPTIVE-20270131",
+  "B-snaive-20261231",
+  "B-ets-20261231",
+  "B-pooled-20261231",
+  "B-gbm-20261231",
+  "B-ens-20261231"
+ ],
+ "suppression": {
+  "fact_headcount_quarter": {
+   "rows": 20945,
+   "suppressed": 20945,
+   "primary_n_below_k": 20945,
+   "small_count": 0,
+   "complementary": 0,
+   "published": 0,
+   "small_counts_withheld_in_published_rows": 0
+  },
+  "fact_transitions_quarter": {
+   "rows": 2697,
+   "suppressed": 2697,
+   "primary_n_below_k": 2695,
+   "small_count": 2,
+   "complementary": 0,
+   "published": 0,
+   "small_counts_withheld_in_published_rows": 0
+  },
+  "fact_external_context": {
+   "rows": 38,
+   "mode": "public",
+   "pay_ratio_published_roles": 29
+  },
+  "fact_promotion_expectation": {
+   "rows": 0,
+   "note": "model outputs not yet published; table not written"
+  },
+  "fact_attrition_forecast": {
+   "rows": 2376,
+   "suppressed": 288,
+   "primary_n_below_k": 216,
+   "small_count": 0,
+   "complementary": 0,
+   "published": 2160,
+   "small_counts_withheld_in_published_rows": 0,
+   "source": "model outputs (complementary suppression applied by the model builder)"
+  },
+  "fact_attrition_risk": {
+   "rows": 29,
+   "suppressed": 0,
+   "primary_n_below_k": 0,
+   "small_count": 0,
+   "complementary": 0,
+   "published": 29,
+   "small_counts_withheld_in_published_rows": 0,
+   "source": "model outputs (complementary suppression applied by the model builder)"
+  },
+  "fact_model_quality": {
+   "rows": 4741,
+   "suppressed": 0,
+   "primary_n_below_k": 0,
+   "small_count": 0,
+   "complementary": 0,
+   "published": 4741,
+   "small_counts_withheld_in_published_rows": 0,
+   "source": "model outputs (complementary suppression applied by the model builder)"
+  }
+ },
+ "tables": {
+  "dim_date": {
+   "rows": 56,
+   "columns": [
+    "date_key",
+    "date",
+    "calendar_year",
+    "calendar_quarter",
+    "fiscal_year",
+    "fiscal_quarter",
+    "quarter_label",
+    "is_forecast_period"
+   ],
+   "sha256_csv": "a5bae6a878527928e078be9c9cfac9413d2366603d8ae7d208639f784c74d611",
+   "sha256_parquet": "013f45e215c9243087cf111ea22f1b44121858d064561cde72d14ca0378c6bed"
+  },
+  "dim_org": {
+   "rows": 51,
+   "columns": [
+    "org_key",
+    "admin_level",
+    "campus_cd",
+    "campus_name",
+    "college_cd",
+    "college_name",
+    "dept_cd",
+    "dept_name",
+    "parent_org_key",
+    "is_active",
+    "org_code"
+   ],
+   "sha256_csv": "3ad3681a59732aa9c12a94fa508c3b466ad530f3b0eecba4fef43ec1ccff88ec",
+   "sha256_parquet": "b987e294971bd21b90600f6326b744349c587111ea30426cacafdef7bd9e2e6d"
+  },
+  "dim_role": {
+   "rows": 39,
+   "columns": [
+    "role_key",
+    "e_class",
+    "p_class",
+    "class_title",
+    "role_family",
+    "role_family_key",
+    "ladder",
+    "ladder_desc",
+    "level",
+    "is_top_of_ladder",
+    "sucss_class_cd",
+    "onet_soc_code",
+    "soc_code",
+    "onet_job_zone",
+    "mapping_status",
+    "critical_ind",
+    "class_key"
+   ],
+   "sha256_csv": "c6bd10ee56eacbc528f1baa7091d280d02d30ccce9374d07912d7a3002ee2031",
+   "sha256_parquet": "f5bc6afb86e3a237a0f4a528662adffa9bba02986ec21bb93193d214fc4ecc47"
+  },
+  "dim_role_family": {
+   "rows": 12,
+   "columns": [
+    "role_family_key",
+    "role_family",
+    "role_family_name",
+    "critical_ind"
+   ],
+   "sha256_csv": "3729eeb3b3e8edad54a1e8114973368c7cf93d73ff1ac1fec71763be12799c75",
+   "sha256_parquet": "381a85c7c27b0f21d3e29508535061b675bb50d875c6463a5fb44dbe62371bf2"
+  },
+  "dim_model_version": {
+   "rows": 6,
+   "columns": [
+    "model_version",
+    "model_id",
+    "method",
+    "protocol_version",
+    "run_id",
+    "seed",
+    "data_as_of",
+    "train_start",
+    "train_end",
+    "feature_table_hash",
+    "bitemporal_mode",
+    "passes_all_thresholds",
+    "fairness_flag",
+    "is_published_default",
+    "model_card_path",
+    "created_at"
+   ],
+   "sha256_csv": "8e23384d8fd283f1655bd050ac447ebb0b0335663ac034753e4be68dd1af170d",
+   "sha256_parquet": "734874a9afdc8a346a90055b16204f0eb0bdaa0b5fdb2cafb46d1fb880c7dd05"
+  },
+  "dim_scenario": {
+   "rows": 9,
+   "columns": [
+    "scenario_key",
+    "scenario_cd",
+    "scenario_name",
+    "description",
+    "is_default"
+   ],
+   "sha256_csv": "fc6d1a314d7584260d1b6a64bfbc1c240be077a8528367ef8cfbf86e7dbc0e1f",
+   "sha256_parquet": "46e920503328890d8c8992788825e4317241dc0b6b35a33bc75274879b6a7f96"
+  },
+  "fact_headcount_quarter": {
+   "rows": 20945,
+   "columns": [
+    "date_key",
+    "org_key",
+    "role_key",
+    "model_version",
+    "n",
+    "headcount",
+    "headcount_prior_quarter",
+    "fte_sum",
+    "hires",
+    "sep_voluntary",
+    "sep_retirement",
+    "sep_other",
+    "separations_total",
+    "promotions_in",
+    "promotions_out",
+    "transfers_in",
+    "transfers_out",
+    "suppressed",
+    "data_as_of"
+   ],
+   "sha256_csv": "8913f2eb1bfe2216edbb9183a036db603a45acc443d4040e985f1fc2d6b97a4a",
+   "sha256_parquet": "1b8c444d91bc486a2d4e7a0f74048d42745bc120c843c08479ec1a33e7cd1c88",
+   "suppressed_rows": 20945
+  },
+  "fact_transitions_quarter": {
+   "rows": 2697,
+   "columns": [
+    "date_key",
+    "org_key",
+    "from_role_key",
+    "to_role_key",
+    "transition_type",
+    "model_version",
+    "n",
+    "n_transitions",
+    "transition_rate",
+    "median_years_in_from_role",
+    "suppressed",
+    "data_as_of"
+   ],
+   "sha256_csv": "8b3fb3b202d097643cd200343a485cf153ac2161d0a7769de1875161f878233a",
+   "sha256_parquet": "123e907ab01954a5075947247131c42f7c29cf9f6a08c21fa7daea73f31a251b",
+   "suppressed_rows": 2697
+  },
+  "fact_attrition_forecast": {
+   "rows": 2376,
+   "columns": [
+    "origin_date_key",
+    "target_date_key",
+    "horizon_q",
+    "org_key",
+    "role_family_key",
+    "model_version",
+    "scenario_key",
+    "n",
+    "headcount_point",
+    "headcount_p10",
+    "headcount_p90",
+    "hires_point",
+    "hires_p10",
+    "hires_p90",
+    "sep_voluntary_point",
+    "sep_voluntary_p10",
+    "sep_voluntary_p90",
+    "sep_retirement_point",
+    "sep_retirement_p10",
+    "sep_retirement_p90",
+    "sep_other_point",
+    "sep_other_p10",
+    "sep_other_p90",
+    "separations_point",
+    "separations_p10",
+    "separations_p90",
+    "headcount_actual",
+    "hires_actual",
+    "separations_actual",
+    "actual_known",
+    "is_bottom_up",
+    "suppressed",
+    "data_as_of",
+    "n_mean_headcount_4q"
+   ],
+   "sha256_csv": "6a008efc3f36d7bd4153aeba56362921110d1b44759ed6e99dce99d8d4effcaa",
+   "sha256_parquet": "d08aa641dbe2962398141ad305ca41da180815c8ec0cd24a43f70bd62a6020c8",
+   "suppressed_rows": 288
+  },
+  "fact_attrition_risk": {
+   "rows": 29,
+   "columns": [
+    "origin_date_key",
+    "org_key",
+    "role_family_key",
+    "model_version",
+    "n",
+    "expected_sep_rate_4q",
+    "expected_sep_rate_p10",
+    "expected_sep_rate_p90",
+    "observed_sep_rate_trailing_4q",
+    "peer_median_rate",
+    "peer_p75_rate",
+    "n_peer_units",
+    "attrition_flag",
+    "suppressed",
+    "data_as_of"
+   ],
+   "sha256_csv": "f64b121aeb72011e9978141b90eeecf9eaeb85aa9af8db49e8905ff60c3f1365",
+   "sha256_parquet": "8c725f4e1d77fd9f816ebdcf33c6930f631d96d6438dbcd19dd9145c1ebdd8d2",
+   "suppressed_rows": 0
+  },
+  "fact_external_context": {
+   "rows": 38,
+   "columns": [
+    "date_key",
+    "role_key",
+    "oews_pay_ratio_local",
+    "bls_projected_growth_pct",
+    "bls_separation_rate",
+    "onet_job_zone",
+    "aei_exposure",
+    "job_evolution_watch",
+    "source_vintage",
+    "mapping_status",
+    "suppressed",
+    "data_as_of"
+   ],
+   "sha256_csv": "720ca8c8cbb8b28d056905e6ccf9fa7901c989ac2218a3de8e9121f95eb73e1f",
+   "sha256_parquet": "d5bd90599b4956445de8a8571dc892841cf59f2f8dc948b49681fc0f8b25f3b2",
+   "suppressed_rows": 0
+  },
+  "fact_model_quality": {
+   "rows": 4741,
+   "columns": [
+    "model_version",
+    "scenario_key",
+    "origin_date_key",
+    "horizon",
+    "metric_name",
+    "attribute",
+    "metric_value",
+    "baseline_value",
+    "threshold_id",
+    "threshold_value",
+    "threshold_pass",
+    "fairness_flag",
+    "n",
+    "suppressed",
+    "data_as_of"
+   ],
+   "sha256_csv": "30cde633bae10368a90675f88918d5d720c15fad5b379681a5025a1c0b6b3775",
+   "sha256_parquet": "48f92595e118df2fa0be10513d028e170c7d08a9088222f3276897a317a7f5d5",
+   "suppressed_rows": 0
+  }
+ },
+ "build_log": [
+  "org tree from integrated db integrated_longitudinal.duckdb dim_org_external; bridge fields from integrated db integrated_longitudinal.duckdb dim_job_class_external",
+  "model_a: folder exists but holds none of ['fact_promotion_expectation', 'fact_attrition_forecast', 'fact_attrition_risk', 'fact_model_quality']",
+  "model_b: read fact_attrition_forecast (2376 rows)",
+  "model_b: read fact_attrition_risk (29 rows)",
+  "model_b: read fact_model_quality (4741 rows)",
+  "model_b: read dim_model_version (5 rows)",
+  "model_b: read dim_scenario (6 rows)",
+  "model_b: read dim_org (3 rows)",
+  "model_b: read dim_role_family (11 rows)",
+  "fact_attrition_forecast: org_key rekeyed through the model folder's dim_org (2376 rows changed)",
+  "fact_attrition_forecast: role_family_key rekeyed through the model folder's dim_role_family (0 rows changed)",
+  "fact_attrition_risk: org_key rekeyed through the model folder's dim_org (29 rows changed)",
+  "fact_attrition_risk: role_family_key rekeyed through the model folder's dim_role_family (0 rows changed)"
+ ],
+ "validator": {
+  "ok": false,
+  "errors": [
+   "fact_promotion_expectation: required table file not found (<name>.csv or <name>.parquet)"
+  ],
+  "warnings": [
+   "dim_org: extra column 'org_code' not in contract",
+   "dim_role: extra column 'class_key' not in contract",
+   "fact_attrition_forecast: extra column 'n_mean_headcount_4q' not in contract"
+  ],
+  "expected_absent_model_tables": [
+   "fact_promotion_expectation: required table file not found (<name>.csv or <name>.parquet)"
+  ],
+  "other_errors": [],
+  "status": "PARTIAL: model outputs not yet published"
+ },
+ "note": "no timestamps: the folder is deterministic for a given input"
+}

@@ -1,0 +1,13 @@
+role_family_key,role_family,role_family_name,critical_ind
+0,EXTERNAL,External (outside the University),False
+1,Academic Professional (synthetic),Academic Professional (synthetic),True
+2,Accountant,Accountant,True
+3,Client Relations Representative,Client Relations Representative,True
+4,Environmental Health & Safety Technician,Environmental Health & Safety Technician,False
+5,Food Service Administrator,Food Service Administrator,True
+6,Health Care Administrator,Health Care Administrator,True
+7,Institutional Compliance Examiner,Institutional Compliance Examiner,True
+8,Medical Technologist,Medical Technologist,False
+9,Payroll Specialist,Payroll Specialist,False
+10,Steam and Power Plant,Steam and Power Plant,True
+11,Storekeeper,Storekeeper,False
