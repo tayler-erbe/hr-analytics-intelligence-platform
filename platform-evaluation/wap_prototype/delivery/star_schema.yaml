@@ -1,0 +1,396 @@
+# Star schema for the Workforce Analytics Intelligence Platform published outputs (Phase 2 -> Phase 3 Power BI).
+# Contract version wap-star-v1. Read with delivery/POWER_BI_CONTRACT.md; enforced by delivery/validate_star_schema.py.
+#
+# Conventions
+# - One file per table in the outputs folder: <table>.csv (UTF-8, header row, ISO dates) or <table>.parquet.
+# - Types: int, float, string, date (YYYY-MM-DD), bool (true/false). `nullable: false` unless stated.
+# - Every fact carries `suppressed` (bool). Under mode k_anonymity a row with n < k_min has suppressed=true and every
+#   measure null; a row with suppressed=true always has every measure null. Public-data facts use mode `public`
+#   (column present, always false).
+# - No table may contain a person or position identifier, a protected attribute or an address (forbidden_columns).
+# - Sentinels in fact_model_quality keys: origin_date_key 0 = "mean over origins"; horizon 0 = not horizon-specific;
+#   attribute "all" = not a fairness row. Keys are never null.
+
+schema_version: wap-star-v1
+protocol_version: wap-protocol-v1
+k_min: 10
+date_key_format: YYYYMMDD           # integer, e.g. 20250331
+forbidden_columns:                  # case-insensitive, substring match on column names
+  - edw_pers_id
+  - pers_id
+  - posn_nbr
+  - uin
+  - birth_dt
+  - birth_date
+  - sex
+  - race_eth
+  - ethnicity
+  - zip
+  - postal
+  - address
+  - first_name
+  - last_name
+  - email
+  - ssn
+
+tables:
+
+  # ---------------------------------------------------------------- dimensions
+  dim_date:
+    kind: dimension
+    required: true
+    grain: one row per calendar quarter end date in the published history and forecast window
+    primary_key: [date_key]
+    columns:
+      - {name: date_key, type: int, description: YYYYMMDD of the quarter-end date}
+      - {name: date, type: date, description: quarter-end date}
+      - {name: calendar_year, type: int}
+      - {name: calendar_quarter, type: int, description: 1-4}
+      - {name: fiscal_year, type: int, description: University fiscal year (July-June)}
+      - {name: fiscal_quarter, type: int, description: 1-4, FY Q1 = Jul-Sep}
+      - {name: quarter_label, type: string, description: e.g. "FY2025 Q3"}
+      - {name: is_forecast_period, type: bool, description: true when the quarter ends after data_as_of}
+
+  dim_org:
+    kind: dimension
+    required: true
+    grain: one row per organisational node at every admin level (campus, college, department); facts key to the node at their reporting level
+    primary_key: [org_key]
+    columns:
+      - {name: org_key, type: int}
+      - {name: admin_level, type: string, description: campus | college | dept}
+      - {name: campus_cd, type: string}
+      - {name: campus_name, type: string}
+      - {name: college_cd, type: string, nullable: true, description: null at campus level}
+      - {name: college_name, type: string, nullable: true}
+      - {name: dept_cd, type: string, nullable: true, description: null above dept level}
+      - {name: dept_name, type: string, nullable: true}
+      - {name: parent_org_key, type: int, nullable: true, description: null for campus rows}
+      - {name: is_active, type: bool}
+    foreign_keys:
+      - {columns: [parent_org_key], references: dim_org, ref_columns: [org_key]}
+
+  dim_role:
+    kind: dimension
+    required: true
+    grain: one row per position class (e_class x p_class) with its ladder step and the SUCSS / O*NET / SOC bridge
+    primary_key: [role_key]
+    columns:
+      - {name: role_key, type: int}
+      - {name: e_class, type: string, description: employee class code}
+      - {name: p_class, type: string, description: position class code}
+      - {name: class_title, type: string}
+      - {name: role_family, type: string, description: Phase 1 role_family}
+      - {name: role_family_key, type: int}
+      - {name: ladder, type: string, nullable: true, description: Phase 1 ladder_code (POSN_JOB_PRGS_CD career ladder); null when the class is not on a ladder}
+      - {name: ladder_desc, type: string, nullable: true}
+      - {name: level, type: int, nullable: true, description: Phase 1 ladder_level (JOB_PRGS_LEVEL_NBR or range-rank, see ladder_level_source)}
+      - {name: is_top_of_ladder, type: bool}
+      - {name: sucss_class_cd, type: string, nullable: true, description: SUCSS civil-service class code (public catalog)}
+      - {name: onet_soc_code, type: string, nullable: true, description: O*NET-SOC code from the sucss_mapping bridge}
+      - {name: soc_code, type: string, nullable: true, description: 6-digit SOC derived from onet_soc_code}
+      - {name: onet_job_zone, type: int, nullable: true}
+      - {name: mapping_status, type: string, description: from Phase 1 external_chain_review_status - unreviewed | analyst_confirmed | none (AGENTS.md rule 7)}
+      - {name: critical_ind, type: bool, description: on the HR-owned critical-role list}
+    foreign_keys:
+      - {columns: [role_family_key], references: dim_role_family, ref_columns: [role_family_key]}
+
+  dim_role_family:
+    kind: dimension
+    required: true
+    grain: one row per job family (the Model B and attrition-risk grain)
+    primary_key: [role_family_key]
+    columns:
+      - {name: role_family_key, type: int}
+      - {name: role_family, type: string}
+      - {name: role_family_name, type: string}
+      - {name: critical_ind, type: bool}
+
+  dim_model_version:
+    kind: dimension
+    required: true
+    grain: one row per model version that produced any published fact row
+    primary_key: [model_version]
+    columns:
+      - {name: model_version, type: string, description: e.g. A-gbm-20261231, B-ens-20261231, DESCRIPTIVE-20261231}
+      - {name: model_id, type: string, description: A | B | DESCRIPTIVE}
+      - {name: method, type: string, description: learner or method run id from MODEL_PROTOCOL_v1.md (A-logit, B-ens, ...)}
+      - {name: protocol_version, type: string, description: wap-protocol-v1}
+      - {name: run_id, type: string}
+      - {name: seed, type: int}
+      - {name: data_as_of, type: date}
+      - {name: train_start, type: date, nullable: true}
+      - {name: train_end, type: date, nullable: true}
+      - {name: feature_table_hash, type: string, description: SHA-256 of the Phase 1 person_period_features used}
+      - {name: bitemporal_mode, type: string, description: bitemporal | effective_only}
+      - {name: passes_all_thresholds, type: bool, nullable: true, description: null for DESCRIPTIVE}
+      - {name: fairness_flag, type: string, description: none | below_4_5 | adverse | not_applicable}
+      - {name: is_published_default, type: bool, description: the version the dashboards show by default}
+      - {name: model_card_path, type: string}
+      - {name: created_at, type: date}
+
+  dim_scenario:
+    kind: dimension
+    required: true
+    grain: one row per published scenario (the comparator shown next to the primary model)
+    primary_key: [scenario_key]
+    columns:
+      - {name: scenario_key, type: int}
+      - {name: scenario_cd, type: string, description: primary | base_step | base_family | snaive | ets | no_external}
+      - {name: scenario_name, type: string}
+      - {name: description, type: string}
+      - {name: is_default, type: bool}
+
+  # ---------------------------------------------------------------- facts
+  fact_headcount_quarter:
+    kind: fact
+    required: true
+    grain: one row per quarter end x org node (dept level) x role; descriptive, from Phase 1 snapshots and transition events
+    primary_key: [date_key, org_key, role_key]
+    foreign_keys:
+      - {columns: [date_key], references: dim_date, ref_columns: [date_key]}
+      - {columns: [org_key], references: dim_org, ref_columns: [org_key]}
+      - {columns: [role_key], references: dim_role, ref_columns: [role_key]}
+      - {columns: [model_version], references: dim_model_version, ref_columns: [model_version]}
+    suppression:
+      mode: k_anonymity
+      n_column: n
+      flag_column: suppressed
+      measure_columns: [headcount, fte_sum, hires, sep_voluntary, sep_retirement, sep_other, separations_total,
+                        promotions_in, promotions_out, transfers_in, transfers_out, headcount_prior_quarter]
+    columns:
+      - {name: date_key, type: int}
+      - {name: org_key, type: int}
+      - {name: role_key, type: int}
+      - {name: model_version, type: string, description: the DESCRIPTIVE version (run that produced the table)}
+      - {name: n, type: int, description: incumbents at quarter end (the suppression count)}
+      - {name: headcount, type: int, nullable: true, description: equals n when published}
+      - {name: headcount_prior_quarter, type: int, nullable: true}
+      - {name: fte_sum, type: float, nullable: true}
+      - {name: hires, type: int, nullable: true, description: external entries during the quarter}
+      - {name: sep_voluntary, type: int, nullable: true}
+      - {name: sep_retirement, type: int, nullable: true}
+      - {name: sep_other, type: int, nullable: true}
+      - {name: separations_total, type: int, nullable: true}
+      - {name: promotions_in, type: int, nullable: true, description: upward transitions into this role in the quarter (candidate label, see protocol 2.7)}
+      - {name: promotions_out, type: int, nullable: true}
+      - {name: transfers_in, type: int, nullable: true, description: lateral moves in}
+      - {name: transfers_out, type: int, nullable: true}
+      - {name: suppressed, type: bool}
+      - {name: data_as_of, type: date}
+
+  fact_transitions_quarter:
+    kind: fact
+    required: true
+    grain: one row per quarter end x origin org node (college level) x from-role x to-role x transition type; descriptive
+    primary_key: [date_key, org_key, from_role_key, to_role_key, transition_type]
+    foreign_keys:
+      - {columns: [date_key], references: dim_date, ref_columns: [date_key]}
+      - {columns: [org_key], references: dim_org, ref_columns: [org_key]}
+      - {columns: [from_role_key], references: dim_role, ref_columns: [role_key]}
+      - {columns: [to_role_key], references: dim_role, ref_columns: [role_key]}
+      - {columns: [model_version], references: dim_model_version, ref_columns: [model_version]}
+    suppression:
+      mode: k_anonymity
+      n_column: n
+      flag_column: suppressed
+      small_count_columns: [n_transitions]      # 0 < value < k_min also forces suppression
+      measure_columns: [n_transitions, transition_rate, median_years_in_from_role]
+    columns:
+      - {name: date_key, type: int}
+      - {name: org_key, type: int, description: origin unit of the movers}
+      - {name: from_role_key, type: int}
+      - {name: to_role_key, type: int, description: equals from_role_key for separations; the external-sink role row for exits}
+      - {name: transition_type, type: string, description: Phase 1 transition_events.event_type for moves and exits - promotion | transfer_lateral | transfer_down | reclassification | separation_resignation | separation_end_of_appointment | separation_involuntary | separation_death | separation_other | retirement | hire | rehire}
+      - {name: model_version, type: string}
+      - {name: n, type: int, description: incumbents of from-role x org at quarter start (population at risk)}
+      - {name: n_transitions, type: int, nullable: true}
+      - {name: transition_rate, type: float, nullable: true, description: n_transitions / n}
+      - {name: median_years_in_from_role, type: float, nullable: true}
+      - {name: suppressed, type: bool}
+      - {name: data_as_of, type: date}
+
+  fact_promotion_expectation:
+    kind: fact
+    required: true
+    grain: one row per origin quarter x org node (reporting level) x role (ladder step) x horizon x model version x scenario; Model A aggregate output
+    primary_key: [date_key, org_key, role_key, horizon_months, model_version, scenario_key]
+    foreign_keys:
+      - {columns: [date_key], references: dim_date, ref_columns: [date_key]}
+      - {columns: [org_key], references: dim_org, ref_columns: [org_key]}
+      - {columns: [role_key], references: dim_role, ref_columns: [role_key]}
+      - {columns: [model_version], references: dim_model_version, ref_columns: [model_version]}
+      - {columns: [scenario_key], references: dim_scenario, ref_columns: [scenario_key]}
+    suppression:
+      mode: k_anonymity
+      n_column: n
+      flag_column: suppressed
+      measure_columns: [expected, expected_p10, expected_p90, expected_rate, observed, pipeline_supply_expected,
+                        pipeline_need_expected, pipeline_coverage, pipeline_coverage_p10, pipeline_coverage_p90]
+    columns:
+      - {name: date_key, type: int, description: origin snapshot (quarter end)}
+      - {name: org_key, type: int}
+      - {name: role_key, type: int}
+      - {name: horizon_months, type: int, description: 12 | 18}
+      - {name: model_version, type: string}
+      - {name: scenario_key, type: int}
+      - {name: n, type: int, description: incumbents of the role x unit at the origin}
+      - {name: expected, type: float, nullable: true, description: sum of calibrated probabilities (expected promotions / transitions out of this step)}
+      - {name: expected_p10, type: float, nullable: true, description: exact Poisson-binomial 10th percentile}
+      - {name: expected_p90, type: float, nullable: true}
+      - {name: expected_rate, type: float, nullable: true, description: expected / n}
+      - {name: observed, type: int, nullable: true, description: realised count; null until resolved}
+      - {name: resolved, type: bool, description: horizon has elapsed by data_as_of}
+      - {name: pipeline_supply_expected, type: float, nullable: true, description: expected internal entrants into this step}
+      - {name: pipeline_need_expected, type: float, nullable: true, description: expected exits from this step (promotion out + separation)}
+      - {name: pipeline_coverage, type: float, nullable: true, description: supply / need (P50)}
+      - {name: pipeline_coverage_p10, type: float, nullable: true}
+      - {name: pipeline_coverage_p90, type: float, nullable: true}
+      - {name: label_name, type: string, description: promoted_12m | promoted_18m | upward_transition_12m | upward_transition_18m (protocol 2.7)}
+      - {name: suppressed, type: bool}
+      - {name: data_as_of, type: date}
+
+  fact_attrition_forecast:
+    kind: fact
+    required: true
+    grain: one row per origin quarter x target quarter x org node (dept, with campus roll-up rows) x job family x model version x scenario; Model B output
+    primary_key: [origin_date_key, target_date_key, org_key, role_family_key, model_version, scenario_key]
+    foreign_keys:
+      - {columns: [origin_date_key], references: dim_date, ref_columns: [date_key]}
+      - {columns: [target_date_key], references: dim_date, ref_columns: [date_key]}
+      - {columns: [org_key], references: dim_org, ref_columns: [org_key]}
+      - {columns: [role_family_key], references: dim_role_family, ref_columns: [role_family_key]}
+      - {columns: [model_version], references: dim_model_version, ref_columns: [model_version]}
+      - {columns: [scenario_key], references: dim_scenario, ref_columns: [scenario_key]}
+    suppression:
+      mode: k_anonymity
+      n_column: n
+      flag_column: suppressed
+      measure_columns: [headcount_point, headcount_p10, headcount_p90, hires_point, hires_p10, hires_p90,
+                        sep_voluntary_point, sep_voluntary_p10, sep_voluntary_p90,
+                        sep_retirement_point, sep_retirement_p10, sep_retirement_p90,
+                        sep_other_point, sep_other_p10, sep_other_p90,
+                        separations_point, separations_p10, separations_p90,
+                        headcount_actual, hires_actual, separations_actual]
+    columns:
+      - {name: origin_date_key, type: int}
+      - {name: target_date_key, type: int}
+      - {name: horizon_q, type: int, description: 1-12 quarters ahead}
+      - {name: org_key, type: int}
+      - {name: role_family_key, type: int}
+      - {name: model_version, type: string}
+      - {name: scenario_key, type: int}
+      - {name: n, type: int, description: mean headcount of the series over the 4 quarters before the origin}
+      - {name: headcount_point, type: float, nullable: true}
+      - {name: headcount_p10, type: float, nullable: true}
+      - {name: headcount_p90, type: float, nullable: true}
+      - {name: hires_point, type: float, nullable: true}
+      - {name: hires_p10, type: float, nullable: true}
+      - {name: hires_p90, type: float, nullable: true}
+      - {name: sep_voluntary_point, type: float, nullable: true}
+      - {name: sep_voluntary_p10, type: float, nullable: true}
+      - {name: sep_voluntary_p90, type: float, nullable: true}
+      - {name: sep_retirement_point, type: float, nullable: true}
+      - {name: sep_retirement_p10, type: float, nullable: true}
+      - {name: sep_retirement_p90, type: float, nullable: true}
+      - {name: sep_other_point, type: float, nullable: true}
+      - {name: sep_other_p10, type: float, nullable: true}
+      - {name: sep_other_p90, type: float, nullable: true}
+      - {name: separations_point, type: float, nullable: true}
+      - {name: separations_p10, type: float, nullable: true}
+      - {name: separations_p90, type: float, nullable: true}
+      - {name: headcount_actual, type: float, nullable: true, description: null until the target quarter is observed}
+      - {name: hires_actual, type: float, nullable: true}
+      - {name: separations_actual, type: float, nullable: true}
+      - {name: actual_known, type: bool}
+      - {name: is_bottom_up, type: bool, description: true when a campus-level row is the sum of dept rows}
+      - {name: suppressed, type: bool}
+      - {name: data_as_of, type: date}
+
+  fact_attrition_risk:
+    kind: fact
+    required: true
+    grain: one row per origin quarter x org node x job family x model version; the unit-level attrition-risk score (protocol 3.5)
+    primary_key: [origin_date_key, org_key, role_family_key, model_version]
+    foreign_keys:
+      - {columns: [origin_date_key], references: dim_date, ref_columns: [date_key]}
+      - {columns: [org_key], references: dim_org, ref_columns: [org_key]}
+      - {columns: [role_family_key], references: dim_role_family, ref_columns: [role_family_key]}
+      - {columns: [model_version], references: dim_model_version, ref_columns: [model_version]}
+    suppression:
+      mode: k_anonymity
+      n_column: n
+      flag_column: suppressed
+      measure_columns: [expected_sep_rate_4q, expected_sep_rate_p10, expected_sep_rate_p90, observed_sep_rate_trailing_4q,
+                        peer_p75_rate, peer_median_rate, attrition_flag]
+    columns:
+      - {name: origin_date_key, type: int}
+      - {name: org_key, type: int}
+      - {name: role_family_key, type: int}
+      - {name: model_version, type: string}
+      - {name: n, type: int, description: headcount at the origin}
+      - {name: expected_sep_rate_4q, type: float, nullable: true}
+      - {name: expected_sep_rate_p10, type: float, nullable: true}
+      - {name: expected_sep_rate_p90, type: float, nullable: true}
+      - {name: observed_sep_rate_trailing_4q, type: float, nullable: true}
+      - {name: peer_median_rate, type: float, nullable: true, description: median expected rate across peer units (same campus and family, n >= k_min)}
+      - {name: peer_p75_rate, type: float, nullable: true}
+      - {name: n_peer_units, type: int, description: units in the peer distribution}
+      - {name: attrition_flag, type: bool, nullable: true, description: protocol 3.5 rule; null when suppressed or n_peer_units < 5}
+      - {name: suppressed, type: bool}
+      - {name: data_as_of, type: date}
+
+  fact_external_context:
+    kind: fact
+    required: true
+    grain: one row per role x source vintage date; public labour-market context joined through the SUCSS / O*NET / SOC bridge
+    primary_key: [date_key, role_key]
+    foreign_keys:
+      - {columns: [date_key], references: dim_date, ref_columns: [date_key]}
+      - {columns: [role_key], references: dim_role, ref_columns: [role_key]}
+    suppression:
+      mode: public
+      flag_column: suppressed
+    columns:
+      - {name: date_key, type: int, description: quarter end at which this vintage applies}
+      - {name: role_key, type: int}
+      - {name: oews_pay_ratio_local, type: float, nullable: true, description: median of Phase 1 pay_ratio_oews_local over incumbents of the role (FTE-adjusted salary / OEWS local-area median)}
+      - {name: bls_projected_growth_pct, type: float, nullable: true, description: Phase 1 proj_growth_pct_2025_35 (BLS 2025-35 employment projection for the SOC)}
+      - {name: bls_separation_rate, type: float, nullable: true, description: Phase 1 proj_occ_separations_rate_pct (BLS occupational separations rate, percent)}
+      - {name: onet_job_zone, type: int, nullable: true}
+      - {name: aei_exposure, type: float, nullable: true, description: Phase 1 aei_observed_exposure (Anthropic Economic Index observed exposure for the SOC)}
+      - {name: job_evolution_watch, type: float, nullable: true, description: Phase 1 je_watch_score (job_evolution module watch score)}
+      - {name: source_vintage, type: string, description: e.g. "OEWS May 2025; BLS EP 2024-34; O*NET 31.0; AEI 2025-09"}
+      - {name: mapping_status, type: string, description: unreviewed | analyst_confirmed | none}
+      - {name: suppressed, type: bool, description: always false (public data)}
+      - {name: data_as_of, type: date}
+
+  fact_model_quality:
+    kind: fact
+    required: true
+    grain: one row per model version x scenario x scope (origin or mean) x horizon x metric x fairness attribute; the backtest, calibration and fairness summary
+    primary_key: [model_version, scenario_key, origin_date_key, horizon, metric_name, attribute]
+    foreign_keys:
+      - {columns: [model_version], references: dim_model_version, ref_columns: [model_version]}
+      - {columns: [scenario_key], references: dim_scenario, ref_columns: [scenario_key]}
+    suppression:
+      mode: k_anonymity
+      n_column: n
+      flag_column: suppressed
+      measure_columns: [metric_value, baseline_value, threshold_value]
+    columns:
+      - {name: model_version, type: string}
+      - {name: scenario_key, type: int}
+      - {name: origin_date_key, type: int, description: backtest origin; 0 = mean over origins}
+      - {name: horizon, type: int, description: months (Model A) or quarters (Model B); 0 = not horizon-specific}
+      - {name: metric_name, type: string, description: auc_roc | auc_pr | brier | brier_skill_family | brier_skill_step | cal_slope | cal_intercept | citl | ece | grain_coverage | mase_rel | smape | cov80 | cov95 | bias_share | hierarchy_discrepancy | flag_precision | min_impact_ratio | max_tpr_gap | max_fpr_gap | groups_suppressed | age_ablation_gain | label_audit_agreement}
+      - {name: attribute, type: string, description: all | sex | race_eth_rpt_cd | age_40_plus (fairness rows only)}
+      - {name: metric_value, type: float, nullable: true}
+      - {name: baseline_value, type: float, nullable: true, description: the comparator value where the threshold is relative}
+      - {name: threshold_id, type: string, nullable: true, description: A1..A9, B1..B7, or null}
+      - {name: threshold_value, type: float, nullable: true}
+      - {name: threshold_pass, type: bool, nullable: true}
+      - {name: fairness_flag, type: string, nullable: true, description: none | below_4_5 | adverse for fairness rows}
+      - {name: n, type: int, description: evaluation rows behind the metric}
+      - {name: suppressed, type: bool}
+      - {name: data_as_of, type: date}
