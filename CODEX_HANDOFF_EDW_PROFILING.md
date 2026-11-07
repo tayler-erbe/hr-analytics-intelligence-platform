@@ -6,6 +6,24 @@ Prepared 2026-11-06 for Codex, working with Tayler Erbe (AITS Decision Support) 
 
 Six tables are already transcribed from the Data Cookbook (`platform-evaluation/integration/edw_cookbook_reference/`), with a verified mapping (`integration/edw_mapping_cookbook.yaml`) and a matching synthetic pack (`sample_datasets/v3_cookbook/`). Step 1 (schema inventory) and Step 2 (mapping) are therefore largely done for those tables: confirm them against `ALL_TAB_COLUMNS`, fill in the remaining reference tables and code lists, and move straight to the Step 3 statistical profile. Extend `integration/edw_mapping_cookbook.yaml` rather than creating a new mapping file.
 
+
+### First check: which job date is the change date?
+
+Tayler confirmed that `JOB_DETL_HIST_EFF_DT` is an effective date and that `JOB_DETL_FTE` is full-time equivalent (1.0 = full time). The Cookbook describes both `JOB_DETL_EFF_DT` and `JOB_DETL_HIST_EFF_DT` as effective dates, and the v3 synthetic pack currently treats `JOB_DETL_EFF_DT` as the change date and `JOB_DETL_HIST_EFF_DT` as a record-version date. Run this aggregate-only query (no rows leave EDW) and record the result in the memo before anything else:
+
+```sql
+SELECT COUNT(*)                                                         AS job_rows,
+       COUNT(DISTINCT EDW_PERS_ID || '|' || POSN_NBR || '|' || JOB_SUFFIX) AS jobs,
+       COUNT(DISTINCT EDW_PERS_ID || '|' || POSN_NBR || '|' || JOB_SUFFIX || '|' || TO_CHAR(JOB_DETL_EFF_DT,'YYYY-MM-DD')) AS job_eff_values,
+       COUNT(DISTINCT EDW_PERS_ID || '|' || POSN_NBR || '|' || JOB_SUFFIX || '|' || TO_CHAR(JOB_DETL_HIST_EFF_DT,'YYYY-MM-DD')) AS hist_eff_values,
+       SUM(CASE WHEN JOB_DETL_HIST_EFF_DT < JOB_DETL_EFF_DT THEN 1 ELSE 0 END) AS hist_before_job_eff,
+       AVG(CASE WHEN JOB_DETL_FTE > 1.5 THEN 1 ELSE 0 END)                 AS share_fte_above_1_5
+FROM   T_JOB_DETL_HIST
+WHERE  JOB_DETL_CUR_INFO_IND <> 'D';
+```
+
+Reading it: if `job_eff_values` is close to `jobs` (one `JOB_DETL_EFF_DT` per job) while `hist_eff_values` is much larger, then `JOB_DETL_EFF_DT` is the job begin date and `JOB_DETL_HIST_EFF_DT` is the change date; report it so `sample_datasets/v3_cookbook/build_v3.py` and `integration/edw_mapping_cookbook.yaml` can be switched. `share_fte_above_1_5` near 0 means FTE is stored as a fraction (1.000), near 1 means a percent (100.000).
+
 ## 1. Why we are doing this
 
 This repository already has many HR analytics modules (succession models, ERP readiness checks, workforce planning workbench, scenario simulator, faculty pipeline and others). Their synthetic data was invented from public aggregates and guessed EDW layouts. The column names, code values and history patterns are guesses.
