@@ -1,0 +1,10 @@
+# Model A (wap_prototype/model_a). Python 3.13. Everything was already present in the evaluation environment;
+# nothing new was pip-installed. Versions are the ones this run was made and tested with.
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.18.1          # protocol/scorers.py (Fisher exact test)
+scikit-learn==1.9.1    # A-logit, A-rf, Platt recalibration
+lightgbm==4.7.0        # A-gbm, A-age-ablation (deterministic=True, num_threads=1)
+pyarrow==26.0.1        # Phase 1 parquet inputs and restricted parquet outputs
+PyYAML                 # delivery/star_schema.yaml (export gate and validation)
+# lifelines 0.30.3 is available but not used by Model A (no survival learner is pre-registered for Model A).

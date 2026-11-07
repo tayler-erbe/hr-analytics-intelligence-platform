@@ -1,0 +1,20 @@
+{
+ "agreement_rule_vs_planted_codes": 1.0,
+ "code_mix": {
+  "OT010": 156,
+  "PR001": 44
+ },
+ "hr_review": "NOT DONE: the stand-in compares the candidate rule with the synthetic generator's planted change-reason codes, not with HR's definition of promotion vs reclassification vs lateral. On real data HR completes label_audit_sheet.csv on the approved machine and the agreement is recomputed from hr_classification.",
+ "label_name": {
+  "12": "promoted_12m",
+  "18": "promoted_18m"
+ },
+ "n_promotion_events": 804,
+ "n_sampled": 200,
+ "n_source_promotion_codes": 804,
+ "reverse_share_of_source_promotion_codes_called_promotion": 1.0,
+ "seed": 20261107,
+ "status": "PROVISIONAL",
+ "strata": "to_ladder",
+ "threshold": 0.85
+}

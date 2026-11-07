@@ -1,0 +1,25 @@
+{
+ "fact_model_quality_rows": 721,
+ "fact_promotion_expectation": {
+  "complementary": 1182,
+  "published": 2472,
+  "rows": 19092,
+  "suppressed": 16620
+ },
+ "person_level_gate": {
+  "open": false,
+  "reason": "person-level scores disabled (default; set WAP_ENABLE_PERSON_LEVEL=1 only after governance approval)"
+ },
+ "primary": null,
+ "published_default": "A-base-step",
+ "scenarios": {
+  "A-base-family": "base_family",
+  "A-base-step": "primary",
+  "A-gbm": "candidate",
+  "A-logit": "candidate",
+  "A-rf": "candidate"
+ },
+ "unit_level": "campus",
+ "validation_errors": [],
+ "validation_ok": true
+}

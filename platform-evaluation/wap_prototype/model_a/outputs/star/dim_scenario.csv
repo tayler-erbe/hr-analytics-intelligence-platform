@@ -1,0 +1,6 @@
+scenario_key,scenario_cd,scenario_name,description,is_default
+1,primary,Primary model,"The learner selected by the protocol 2.4 rule, or A-base-step when no learner passes",True
+2,base_step,Base rate by ladder step,"A-base-step: base rate by (ladder, level), backoff to role family below 30",False
+3,base_family,Base rate by role family,A-base-family: base rate by role_family in the training years,False
+4,candidate,Candidate learner (not selected),A pre-registered learner that was not selected as primary; model-quality page only,False
+5,no_external,Primary without external covariates,Sensitivity S2 of the primary learner (external covariates dropped),False

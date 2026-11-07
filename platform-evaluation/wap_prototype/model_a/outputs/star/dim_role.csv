@@ -1,0 +1,39 @@
+role_key,e_class,p_class,class_title,role_family,role_family_key,ladder,ladder_desc,level,is_top_of_ladder,sucss_class_cd,onet_soc_code,soc_code,onet_job_zone,mapping_status,critical_ind
+1,CA,SAMBA,Academic Professional (synthetic) level 1 (SAMBA),Academic Professional (synthetic),1,JP001,Academic Professional (synthetic),1,False,,,,,none,False
+2,CA,TAMTA,Academic Professional (synthetic) level 2 (TAMTA),Academic Professional (synthetic),1,JP001,Academic Professional (synthetic),2,False,,,,,none,False
+3,CA,NFJAA,Academic Professional (synthetic) level 3 (NFJAA),Academic Professional (synthetic),1,JP001,Academic Professional (synthetic),3,False,,,,,none,True
+4,CA,NAAAA,Academic Professional (synthetic) level 4 (NAAAA),Academic Professional (synthetic),1,JP001,Academic Professional (synthetic),4,True,,,,,none,True
+5,CA,Y0010,Accountant level 1 (Y0010),Accountant,2,JP002,Accountant,1,False,0010,13-2011.00,13-2011,4.0,unreviewed,False
+6,CA,Y0011,Accountant level 2 (Y0011),Accountant,2,JP002,Accountant,2,False,0011,13-2011.00,13-2011,4.0,unreviewed,False
+7,CA,Y0012,Accountant level 3 (Y0012),Accountant,2,JP002,Accountant,3,True,0012,13-2011.00,13-2011,4.0,unreviewed,True
+8,CA,Y4697,Client Relations Representative level 1 (Y4697),Client Relations Representative,3,JP003,Client Relations Representative,1,False,4697,21-1021.00,21-1021,4.0,unreviewed,False
+9,CA,Y4698,Client Relations Representative level 2 (Y4698),Client Relations Representative,3,JP003,Client Relations Representative,2,False,4698,13-2072.00,13-2072,4.0,unreviewed,False
+10,CA,Y4699,Client Relations Representative level 3 (Y4699),Client Relations Representative,3,JP003,Client Relations Representative,3,False,4699,,,,none,False
+11,CA,Y4700,Client Relations Representative level 4 (Y4700),Client Relations Representative,3,JP003,Client Relations Representative,4,True,4700,43-4051.00,43-4051,2.0,unreviewed,True
+12,CA,Y3988,Environmental Health & Safety Technician level 1 (Y3988),Environmental Health & Safety Technician,4,JP004,Environmental Health & Safety Technician,1,False,3988,19-5011.00,19-5011,4.0,unreviewed,False
+13,CA,Y3989,Environmental Health & Safety Technician level 2 (Y3989),Environmental Health & Safety Technician,4,JP004,Environmental Health & Safety Technician,2,False,3989,11-9199.02,11-9199,4.0,unreviewed,False
+14,CA,Y3990,Environmental Health & Safety Technician level 3 (Y3990),Environmental Health & Safety Technician,4,JP004,Environmental Health & Safety Technician,3,True,3990,19-4042.00,19-4042,4.0,unreviewed,False
+15,CA,Y0036,Food Service Administrator level 1 (Y0036),Food Service Administrator,5,JP005,Food Service Administrator,1,False,0036,35-1012.00,35-1012,2.0,unreviewed,False
+16,CA,Y0037,Food Service Administrator level 2 (Y0037),Food Service Administrator,5,JP005,Food Service Administrator,2,False,0037,35-1012.00,35-1012,2.0,unreviewed,False
+17,CA,Y0038,Food Service Administrator level 3 (Y0038),Food Service Administrator,5,JP005,Food Service Administrator,3,False,0038,43-1011.00,43-1011,3.0,unreviewed,True
+18,CA,Y0039,Food Service Administrator level 4 (Y0039),Food Service Administrator,5,JP005,Food Service Administrator,4,True,0039,43-1011.00,43-1011,3.0,unreviewed,True
+19,CA,Y4752,Health Care Administrator level 1 (Y4752),Health Care Administrator,6,JP006,Health Care Administrator,1,False,4752,11-9111.00,11-9111,4.0,unreviewed,False
+20,CA,Y0041,Health Care Administrator level 2 (Y0041),Health Care Administrator,6,JP006,Health Care Administrator,2,False,0041,11-9111.00,11-9111,4.0,unreviewed,True
+21,CA,Y0042,Health Care Administrator level 3 (Y0042),Health Care Administrator,6,JP006,Health Care Administrator,3,True,0042,11-9111.00,11-9111,4.0,unreviewed,True
+22,CA,Y1474,Institutional Compliance Examiner level 1 (Y1474),Institutional Compliance Examiner,7,JP007,Institutional Compliance Examiner,1,False,1474,13-2061.00,13-2061,4.0,unreviewed,False
+23,CA,Y1475,Institutional Compliance Examiner level 2 (Y1475),Institutional Compliance Examiner,7,JP007,Institutional Compliance Examiner,2,False,1475,13-2061.00,13-2061,4.0,unreviewed,False
+24,CA,Y1476,Institutional Compliance Examiner level 3 (Y1476),Institutional Compliance Examiner,7,JP007,Institutional Compliance Examiner,3,False,1476,13-2061.00,13-2061,4.0,unreviewed,True
+25,CA,Y1477,Institutional Compliance Examiner level 4 (Y1477),Institutional Compliance Examiner,7,JP007,Institutional Compliance Examiner,4,True,1477,13-2061.00,13-2061,4.0,unreviewed,True
+26,CA,Y4095,Medical Technologist level 1 (Y4095),Medical Technologist,8,JP008,Medical Technologist,1,False,4095,29-2099.05,29-2099,3.0,unreviewed,False
+27,CA,Y4096,Medical Technologist level 2 (Y4096),Medical Technologist,8,JP008,Medical Technologist,2,False,4096,29-2011.00,29-2011,4.0,unreviewed,False
+28,CA,Y4097,Medical Technologist level 3 (Y4097),Medical Technologist,8,JP008,Medical Technologist,3,True,4097,29-2011.00,29-2011,4.0,unreviewed,False
+29,CA,Y4065,Payroll Specialist level 1 (Y4065),Payroll Specialist,9,JP009,Payroll Specialist,1,False,4065,43-3051.00,43-3051,3.0,unreviewed,False
+30,CA,Y4066,Payroll Specialist level 2 (Y4066),Payroll Specialist,9,JP009,Payroll Specialist,2,False,4066,43-3051.00,43-3051,3.0,unreviewed,False
+31,CA,Y4067,Payroll Specialist level 3 (Y4067),Payroll Specialist,9,JP009,Payroll Specialist,3,True,4067,43-3051.00,43-3051,3.0,unreviewed,False
+32,CA,Y4990,Steam and Power Plant level 1 (Y4990),Steam and Power Plant,10,JP010,Steam and Power Plant,1,False,4990,51-8021.00,51-8021,3.0,unreviewed,False
+33,CA,Y4991,Steam and Power Plant level 2 (Y4991),Steam and Power Plant,10,JP010,Steam and Power Plant,2,False,4991,51-8021.00,51-8021,3.0,unreviewed,False
+34,CA,Y4992,Steam and Power Plant level 3 (Y4992),Steam and Power Plant,10,JP010,Steam and Power Plant,3,False,4992,51-8021.00,51-8021,3.0,unreviewed,True
+35,CA,Y4993,Steam and Power Plant level 4 (Y4993),Steam and Power Plant,10,JP010,Steam and Power Plant,4,True,4993,51-1011.00,51-1011,3.0,unreviewed,True
+36,CA,Y3317,Storekeeper level 1 (Y3317),Storekeeper,11,JP011,Storekeeper,1,False,3317,53-7065.00,53-7065,2.0,unreviewed,False
+37,CA,Y3318,Storekeeper level 2 (Y3318),Storekeeper,11,JP011,Storekeeper,2,False,3318,,,,none,False
+38,CA,Y3319,Storekeeper level 3 (Y3319),Storekeeper,11,JP011,Storekeeper,3,True,3319,53-7065.00,53-7065,2.0,unreviewed,False

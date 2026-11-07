@@ -1,0 +1,11 @@
+run,horizon,A1,A2,A3,A3b,A4,A5,A6,A7,A8,A9_review_required,passes_all,fairness_flag,age_ablation_gain
+A-base-family,12,False,False,False,False,False,True,True,False,True,False,False,below_4_5,0.0
+A-base-family,18,False,False,False,False,False,False,False,False,True,False,False,below_4_5,0.0
+A-base-step,12,False,True,True,True,False,True,True,True,True,False,False,below_4_5,0.0
+A-base-step,18,False,True,True,True,False,False,False,False,True,False,False,below_4_5,0.0
+A-gbm,12,False,True,True,False,False,True,True,True,False,False,False,adverse,-0.002008552643414485
+A-gbm,18,False,True,True,False,False,True,False,False,False,False,False,adverse,-0.0013103810726018406
+A-logit,12,False,True,True,True,False,True,True,True,False,False,False,adverse,0.0
+A-logit,18,False,True,True,True,False,False,False,False,False,False,False,adverse,0.0
+A-rf,12,False,True,True,False,True,True,True,True,False,False,False,adverse,0.0
+A-rf,18,False,True,True,False,True,False,False,False,False,False,False,adverse,0.0

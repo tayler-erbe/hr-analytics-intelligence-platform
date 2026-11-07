@@ -1,0 +1,49 @@
+{
+ "data_as_of": "2027-01-31",
+ "k_min": 10,
+ "protocol_version": "wap-protocol-v1",
+ "run_id": "A-20270131-s20261107",
+ "schema_version": "wap-star-v1",
+ "tables": {
+  "dim_date": {
+   "rows": 44,
+   "sha256": "7904546dc94da1db59db5edf35bd44c2f1cd20fcbf3f0ab92481be8bf64145af",
+   "suppressed_rows": 0
+  },
+  "dim_model_version": {
+   "rows": 5,
+   "sha256": "1b30b98021551b76f2a34818129d1343771a65f913b544e585820d1903576765",
+   "suppressed_rows": 0
+  },
+  "dim_org": {
+   "rows": 51,
+   "sha256": "90f7eae2693eedcae3079963f717cca156b9cae40d6536cd7798465dbb4cb88b",
+   "suppressed_rows": 0
+  },
+  "dim_role": {
+   "rows": 38,
+   "sha256": "86de31b376dc7cf7fde999e323207a86c280294bdd0eeb863427c010842f773a",
+   "suppressed_rows": 0
+  },
+  "dim_role_family": {
+   "rows": 11,
+   "sha256": "bb81ad58a6b792f23d625943972bef8c35fefab21f43b6ffe49d3dd45748726b",
+   "suppressed_rows": 0
+  },
+  "dim_scenario": {
+   "rows": 5,
+   "sha256": "e556605699b05f08336a0cb9bb65567f1eb51fe658c19db2d08e8da986a9e8bd",
+   "suppressed_rows": 0
+  },
+  "fact_model_quality": {
+   "rows": 721,
+   "sha256": "c6b2a3ff3b6c7a10dcf2569e640f44c93f942b67f1d76acfef74e574f30579ef",
+   "suppressed_rows": 0
+  },
+  "fact_promotion_expectation": {
+   "rows": 19092,
+   "sha256": "9b800d5ee5406233b7daa95ab5b5338855288db46dc1fd707c283542ef2e7a25",
+   "suppressed_rows": 16620
+  }
+ }
+}

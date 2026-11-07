@@ -1,0 +1,278 @@
+{
+ "bitemporal_mode": "bitemporal",
+ "categorical_features": [
+  "e_class",
+  "p_class",
+  "role_family",
+  "ladder",
+  "campus"
+ ],
+ "data_as_of": "2027-01-31",
+ "evaluation_label_rule": "Phase 1 target columns (latest knowledge); censored rows dropped",
+ "feature_map": {
+  "aei_exposure": "aei_observed_exposure",
+  "bls_projected_growth_pct": "proj_growth_pct_2025_35",
+  "bls_separation_rate": "proj_occ_separations_rate_pct",
+  "campus": "campus_org_code",
+  "e_class": "e_class",
+  "fte": "fte_primary",
+  "job_evolution_watch": "je_watch_score",
+  "ladder": "ladder_code",
+  "level": "ladder_level",
+  "moves_per_year": "moves_per_year",
+  "oews_pay_ratio_local": "pay_ratio_oews_local",
+  "onet_job_zone": "onet_job_zone",
+  "p_class": "p_class_code",
+  "pay_position_in_range": "pay_range_position",
+  "role_family": "role_family",
+  "tenure_years": "tenure_first_hire_years",
+  "time_in_class_years": "time_in_class_years",
+  "time_in_position_years": "time_in_position_years",
+  "time_since_last_move": "time_since_last_move_years",
+  "unit_churn_12m": "dept_churn_12m"
+ },
+ "feature_table_hash": "2a0ee1f8ab19f6a0af0ca296a194f69d7c75566f33b6b7944f17d88a183431d8",
+ "horizons": [
+  12,
+  18
+ ],
+ "learners": {
+  "A-base-family": {
+   "kind": "base_family"
+  },
+  "A-base-step": {
+   "backoff_min_n": 30,
+   "kind": "base_step"
+  },
+  "A-gbm": {
+   "deterministic": true,
+   "kind": "gbm",
+   "learning_rate": 0.05,
+   "min_child_samples": 100,
+   "n_estimators": 300,
+   "num_leaves": 15,
+   "num_threads": 1
+  },
+  "A-logit": {
+   "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+   ],
+   "cv_folds": 5,
+   "kind": "logit",
+   "penalty": "l2"
+  },
+  "A-rf": {
+   "class_weight": "balanced",
+   "kind": "rf",
+   "max_features": "sqrt",
+   "min_samples_leaf": 50,
+   "n_estimators": 500
+  }
+ },
+ "model_id": "A",
+ "n_backtest_rows": 940540,
+ "n_scoring_rows": 32760,
+ "no_timestamps_note": "outputs are deterministic for a given input and seed; the manifest carries no wall-clock time",
+ "numeric_features": [
+  "tenure_years",
+  "time_in_class_years",
+  "time_in_position_years",
+  "fte",
+  "pay_position_in_range",
+  "moves_per_year",
+  "time_since_last_move",
+  "unit_churn_12m",
+  "level",
+  "onet_job_zone",
+  "bls_projected_growth_pct",
+  "bls_separation_rate",
+  "oews_pay_ratio_local",
+  "aei_exposure",
+  "job_evolution_watch"
+ ],
+ "origins": [
+  "2019-12-31",
+  "2020-12-31",
+  "2021-12-31",
+  "2022-12-31",
+  "2023-12-31"
+ ],
+ "phase1_run_config": {
+  "age_bands": [
+   [
+    0,
+    25,
+    "<25"
+   ],
+   [
+    25,
+    35,
+    "25-34"
+   ],
+   [
+    35,
+    40,
+    "35-39"
+   ],
+   [
+    40,
+    45,
+    "40-44"
+   ],
+   [
+    45,
+    55,
+    "45-54"
+   ],
+   [
+    55,
+    60,
+    "55-59"
+   ],
+   [
+    60,
+    65,
+    "60-64"
+   ],
+   [
+    65,
+    200,
+    "65+"
+   ]
+  ],
+  "as_of_date": "None",
+  "data_source": "v3_longitudinal",
+  "edw_data": null,
+  "hist_mode_known_from": "post_date",
+  "integrated_db": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/data/lake/integrated/integrated_longitudinal.duckdb",
+  "job_change_date_column": "JOB_DETL_EFF_DT",
+  "leave_status_codes": [
+   "B",
+   "F"
+  ],
+  "mapping_file": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/integration/edw_mapping_cookbook.yaml",
+  "min_cell_size": 10,
+  "promotion_rule_version": "candidate_v1_ladder_or_role_family_level_up",
+  "role_family_sources": [
+   "sample_role_family_reference",
+   "integration_dim_job_class_internal",
+   "employee_group_fallback",
+   "unassigned"
+  ],
+  "sample_pack_path": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/sample_datasets/v3_cookbook",
+  "set_name": "longitudinal",
+  "snapshot_frequency": "Q",
+  "snapshot_start": "2016-03-31",
+  "surs_assumption": {
+   "rule_version": "assumption_v1",
+   "tier1": {
+    "reduced": [
+     [
+      55,
+      8
+     ]
+    ],
+    "unreduced": [
+     [
+      55,
+      8
+     ],
+     [
+      62,
+      5
+     ],
+     [
+      0,
+      30
+     ]
+    ]
+   },
+   "tier1_if_first_hire_before": "2011-01-01",
+   "tier2": {
+    "reduced": [
+     [
+      62,
+      10
+     ]
+    ],
+    "unreduced": [
+     [
+      67,
+      10
+     ]
+    ]
+   },
+   "within_years": 5
+  },
+  "target_horizons_months": {
+   "promoted": [
+    12,
+    18
+   ],
+   "retired": [
+    12
+   ],
+   "separated": [
+    6,
+    12
+   ]
+  },
+  "tenure_buckets": [
+   [
+    0,
+    3,
+    "0-3"
+   ],
+   [
+    3,
+    7,
+    "3-7"
+   ],
+   [
+    7,
+    15,
+    "7-15"
+   ],
+   [
+    15,
+    999,
+    "15+"
+   ]
+  ]
+ },
+ "protocol_version": "wap-protocol-v1",
+ "recalibration": "Platt (logit-linear) fitted on (Y-2, Y] rows scored by the model fitted at Y-2; labels as known at Y",
+ "run_id": "A-20270131-s20261107",
+ "runs": [
+  "A-base-family",
+  "A-base-step",
+  "A-logit",
+  "A-rf",
+  "A-gbm",
+  "A-logit:S1",
+  "A-logit:S2",
+  "A-logit:S3",
+  "A-logit:age",
+  "A-rf:S1",
+  "A-rf:S2",
+  "A-rf:S3",
+  "A-rf:age",
+  "A-gbm:S1",
+  "A-gbm:S2",
+  "A-gbm:S3",
+  "A-gbm:age"
+ ],
+ "seconds": 289.5,
+ "seed": 20261107,
+ "training_label_rule": "event of the kind in (snap, snap+h] whose source row was known (row_known_from) on or before the origin",
+ "versions": {
+  "lightgbm": "4.7.0",
+  "numpy": "2.4.6",
+  "pandas": "2.3.3",
+  "python": "3.13.18",
+  "scikit_learn": "1.9.1"
+ }
+}
