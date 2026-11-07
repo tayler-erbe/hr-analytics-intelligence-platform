@@ -5,6 +5,7 @@ scenario_key,scenario_cd,scenario_name,description,is_default
 4,snaive,Seasonal naive,Same quarter last year (Model B comparator),False
 5,ets,Exponential smoothing,ETS univariate comparator (Model B),False
 6,no_external,No external context,Primary learner without the external-context features,False
-7,pooled,Pooled ridge comparator,Model B pooled ridge comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False
-8,gbm,LightGBM comparator,Model B lightgbm comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False
-9,ens,Ensemble comparator,Model B ensemble comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False
+7,candidate,Candidate learner (not selected),A pre-registered learner that was not selected as primary; model-quality page only,False
+8,pooled,Pooled ridge comparator,Model B pooled ridge comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False
+9,gbm,LightGBM comparator,Model B lightgbm comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False
+10,ens,Ensemble comparator,Model B ensemble comparator; the primary scenario follows the per-horizon selection in metrics_b.json,False

@@ -823,7 +823,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", default=str(WAP / "star"))
     ap.add_argument("--integrated-db", default=None, help="default: run_config.json integrated_db")
     ap.add_argument("--sample-pack", default=None, help="fallback REF_ORG source when the integrated db is absent")
-    ap.add_argument("--model-a", default=str(WAP / "model_a" / "outputs"))
+    ap.add_argument("--model-a", default=str(WAP / "model_a" / "outputs" / "star"))
     ap.add_argument("--model-b", default=str(WAP / "model_b" / "outputs"))
     ap.add_argument("--forecast-quarters", type=int, default=12)
     ap.add_argument("--strict", action="store_true", help="also fail when the model facts are absent (contract-complete build)")

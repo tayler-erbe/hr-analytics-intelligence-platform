@@ -1,12 +1,9 @@
 {
- "ok": false,
- "errors": [
-  "fact_promotion_expectation: required table file not found (<name>.csv or <name>.parquet)"
- ],
+ "ok": true,
+ "errors": [],
  "warnings": [
   "dim_org: extra column 'org_code' not in contract",
-  "dim_role: extra column 'class_key' not in contract",
-  "fact_attrition_forecast: extra column 'n_mean_headcount_4q' not in contract"
+  "dim_role: extra column 'class_key' not in contract"
  ],
  "tables": {
   "dim_date": {
@@ -70,7 +67,7 @@
    ]
   },
   "dim_model_version": {
-   "rows": 6,
+   "rows": 11,
    "columns": [
     "model_version",
     "model_id",
@@ -91,7 +88,7 @@
    ]
   },
   "dim_scenario": {
-   "rows": 9,
+   "rows": 10,
    "columns": [
     "scenario_key",
     "scenario_cd",
@@ -141,6 +138,32 @@
     "data_as_of"
    ]
   },
+  "fact_promotion_expectation": {
+   "rows": 19092,
+   "columns": [
+    "date_key",
+    "org_key",
+    "role_key",
+    "horizon_months",
+    "model_version",
+    "scenario_key",
+    "n",
+    "expected",
+    "expected_p10",
+    "expected_p90",
+    "expected_rate",
+    "observed",
+    "resolved",
+    "pipeline_supply_expected",
+    "pipeline_need_expected",
+    "pipeline_coverage",
+    "pipeline_coverage_p10",
+    "pipeline_coverage_p90",
+    "label_name",
+    "suppressed",
+    "data_as_of"
+   ]
+  },
   "fact_attrition_forecast": {
    "rows": 2376,
    "columns": [
@@ -176,8 +199,7 @@
     "actual_known",
     "is_bottom_up",
     "suppressed",
-    "data_as_of",
-    "n_mean_headcount_4q"
+    "data_as_of"
    ]
   },
   "fact_attrition_risk": {
@@ -218,7 +240,7 @@
    ]
   },
   "fact_model_quality": {
-   "rows": 4741,
+   "rows": 5462,
    "columns": [
     "model_version",
     "scenario_key",

@@ -9,13 +9,18 @@
  "synthetic": true,
  "phase1_manifest_feature_rows": 31993,
  "model_outputs_present": {
-  "fact_promotion_expectation": false,
+  "fact_promotion_expectation": true,
   "fact_attrition_forecast": true,
   "fact_attrition_risk": true,
   "fact_model_quality": true
  },
  "model_versions": [
   "DESCRIPTIVE-20270131",
+  "A-base-family-20270131",
+  "A-base-step-20270131",
+  "A-logit-20270131",
+  "A-rf-20270131",
+  "A-gbm-20270131",
   "B-snaive-20261231",
   "B-ets-20261231",
   "B-pooled-20261231",
@@ -47,8 +52,14 @@
    "pay_ratio_published_roles": 29
   },
   "fact_promotion_expectation": {
-   "rows": 0,
-   "note": "model outputs not yet published; table not written"
+   "rows": 19092,
+   "suppressed": 16620,
+   "primary_n_below_k": 15438,
+   "small_count": 0,
+   "complementary": 0,
+   "published": 3654,
+   "small_counts_withheld_in_published_rows": 0,
+   "source": "model outputs (complementary suppression applied by the model builder)"
   },
   "fact_attrition_forecast": {
    "rows": 2376,
@@ -71,12 +82,12 @@
    "source": "model outputs (complementary suppression applied by the model builder)"
   },
   "fact_model_quality": {
-   "rows": 4741,
+   "rows": 5462,
    "suppressed": 0,
    "primary_n_below_k": 0,
    "small_count": 0,
    "complementary": 0,
-   "published": 4741,
+   "published": 5462,
    "small_counts_withheld_in_published_rows": 0,
    "source": "model outputs (complementary suppression applied by the model builder)"
   }
@@ -151,7 +162,7 @@
    "sha256_parquet": "381a85c7c27b0f21d3e29508535061b675bb50d875c6463a5fb44dbe62371bf2"
   },
   "dim_model_version": {
-   "rows": 6,
+   "rows": 11,
    "columns": [
     "model_version",
     "model_id",
@@ -170,11 +181,11 @@
     "model_card_path",
     "created_at"
    ],
-   "sha256_csv": "8e23384d8fd283f1655bd050ac447ebb0b0335663ac034753e4be68dd1af170d",
-   "sha256_parquet": "734874a9afdc8a346a90055b16204f0eb0bdaa0b5fdb2cafb46d1fb880c7dd05"
+   "sha256_csv": "c23377bf19e1890293d36404d36b292c39a5954a7062d1db15b5834946b9afe0",
+   "sha256_parquet": "864715a9ee7033fedb992e2ae51cd0b9fdaab459a9ec6bb61fe6262f17c9fbd3"
   },
   "dim_scenario": {
-   "rows": 9,
+   "rows": 10,
    "columns": [
     "scenario_key",
     "scenario_cd",
@@ -182,8 +193,8 @@
     "description",
     "is_default"
    ],
-   "sha256_csv": "fc6d1a314d7584260d1b6a64bfbc1c240be077a8528367ef8cfbf86e7dbc0e1f",
-   "sha256_parquet": "46e920503328890d8c8992788825e4317241dc0b6b35a33bc75274879b6a7f96"
+   "sha256_csv": "be0d6bd07deecaa563e40bbbe7af8a5469dc2f5ce23e4c178cdde35f156c6bea",
+   "sha256_parquet": "276baa5f76ee09d654e58dd0c9ce5df2d62d6a34650af66d1bdfc989cc5ca53f"
   },
   "fact_headcount_quarter": {
    "rows": 20945,
@@ -232,6 +243,35 @@
    "sha256_parquet": "123e907ab01954a5075947247131c42f7c29cf9f6a08c21fa7daea73f31a251b",
    "suppressed_rows": 2697
   },
+  "fact_promotion_expectation": {
+   "rows": 19092,
+   "columns": [
+    "date_key",
+    "org_key",
+    "role_key",
+    "horizon_months",
+    "model_version",
+    "scenario_key",
+    "n",
+    "expected",
+    "expected_p10",
+    "expected_p90",
+    "expected_rate",
+    "observed",
+    "resolved",
+    "pipeline_supply_expected",
+    "pipeline_need_expected",
+    "pipeline_coverage",
+    "pipeline_coverage_p10",
+    "pipeline_coverage_p90",
+    "label_name",
+    "suppressed",
+    "data_as_of"
+   ],
+   "sha256_csv": "baf109a216760a0a38c08583efca1239c1ce6e54a1c9d4afbce96225cfba5223",
+   "sha256_parquet": "0afcb68cb850b9bc39d4b70d43be7abfe2c1b3b326799fcc2fa822b10e1b1a7c",
+   "suppressed_rows": 16620
+  },
   "fact_attrition_forecast": {
    "rows": 2376,
    "columns": [
@@ -267,11 +307,10 @@
     "actual_known",
     "is_bottom_up",
     "suppressed",
-    "data_as_of",
-    "n_mean_headcount_4q"
+    "data_as_of"
    ],
-   "sha256_csv": "6a008efc3f36d7bd4153aeba56362921110d1b44759ed6e99dce99d8d4effcaa",
-   "sha256_parquet": "d08aa641dbe2962398141ad305ca41da180815c8ec0cd24a43f70bd62a6020c8",
+   "sha256_csv": "687ffc4f8c42c0286deb820abd478c108d786173ca50b2ff137ea7e542b79e0e",
+   "sha256_parquet": "89dbbbf3b800e7919a0ec5406f64eb60c9a77abd55844540406926da7e7c443f",
    "suppressed_rows": 288
   },
   "fact_attrition_risk": {
@@ -318,7 +357,7 @@
    "suppressed_rows": 0
   },
   "fact_model_quality": {
-   "rows": 4741,
+   "rows": 5462,
    "columns": [
     "model_version",
     "scenario_key",
@@ -336,14 +375,19 @@
     "suppressed",
     "data_as_of"
    ],
-   "sha256_csv": "30cde633bae10368a90675f88918d5d720c15fad5b379681a5025a1c0b6b3775",
-   "sha256_parquet": "48f92595e118df2fa0be10513d028e170c7d08a9088222f3276897a317a7f5d5",
+   "sha256_csv": "18a3867620404b914f80f7ac9fcf0516b6170b8cd8a05237778943f738f84c06",
+   "sha256_parquet": "70cdbdc82ffb8edc6becfe8a3c0dc714da5db941aea2eeddea99662105ef732e",
    "suppressed_rows": 0
   }
  },
  "build_log": [
   "org tree from integrated db integrated_longitudinal.duckdb dim_org_external; bridge fields from integrated db integrated_longitudinal.duckdb dim_job_class_external",
-  "model_a: folder exists but holds none of ['fact_promotion_expectation', 'fact_attrition_forecast', 'fact_attrition_risk', 'fact_model_quality']",
+  "model_a: read fact_promotion_expectation (19092 rows)",
+  "model_a: read fact_model_quality (721 rows)",
+  "model_a: read dim_model_version (5 rows)",
+  "model_a: read dim_scenario (5 rows)",
+  "model_a: read dim_org (51 rows)",
+  "model_a: read dim_role_family (11 rows)",
   "model_b: read fact_attrition_forecast (2376 rows)",
   "model_b: read fact_attrition_risk (29 rows)",
   "model_b: read fact_model_quality (4741 rows)",
@@ -351,26 +395,22 @@
   "model_b: read dim_scenario (6 rows)",
   "model_b: read dim_org (3 rows)",
   "model_b: read dim_role_family (11 rows)",
+  "fact_promotion_expectation: org_key rekeyed through the model folder's dim_org (19092 rows changed)",
   "fact_attrition_forecast: org_key rekeyed through the model folder's dim_org (2376 rows changed)",
   "fact_attrition_forecast: role_family_key rekeyed through the model folder's dim_role_family (0 rows changed)",
   "fact_attrition_risk: org_key rekeyed through the model folder's dim_org (29 rows changed)",
   "fact_attrition_risk: role_family_key rekeyed through the model folder's dim_role_family (0 rows changed)"
  ],
  "validator": {
-  "ok": false,
-  "errors": [
-   "fact_promotion_expectation: required table file not found (<name>.csv or <name>.parquet)"
-  ],
+  "ok": true,
+  "errors": [],
   "warnings": [
    "dim_org: extra column 'org_code' not in contract",
-   "dim_role: extra column 'class_key' not in contract",
-   "fact_attrition_forecast: extra column 'n_mean_headcount_4q' not in contract"
+   "dim_role: extra column 'class_key' not in contract"
   ],
-  "expected_absent_model_tables": [
-   "fact_promotion_expectation: required table file not found (<name>.csv or <name>.parquet)"
-  ],
+  "expected_absent_model_tables": [],
   "other_errors": [],
-  "status": "PARTIAL: model outputs not yet published"
+  "status": "OK"
  },
  "note": "no timestamps: the folder is deterministic for a given input"
 }
