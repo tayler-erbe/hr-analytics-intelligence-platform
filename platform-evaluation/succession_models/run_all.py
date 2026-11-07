@@ -4,6 +4,8 @@
     python succession_models/run_all.py --with-readiness-audit  # also run the gated person-level readiness model
                                                                 #   (allowed here only because the data is synthetic)
     python succession_models/run_all.py --extract-dir /secure/extract --skip-generate --no-page   # approved machine
+    python succession_models/run_all.py --layout v3_cookbook --edw-dir sample_datasets/v3_cookbook/longitudinal \
+        --skip-generate --label v3_cookbook --no-page                # Data Cookbook-shaped synthetic pack
 
 Outputs (runs/<label>/, git-ignored):
     export/       role- and unit-level aggregates, k >= K_MIN, the ONLY folder that may leave the machine
@@ -24,6 +26,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import pyarrow.parquet as pq
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -34,9 +37,9 @@ import readiness as R  # noqa: E402
 import snapshot as S  # noqa: E402
 import validate as V  # noqa: E402
 from bench import bench  # noqa: E402
-from config import (DATA_DIR, ERP_DIR, EXTRACT_DATE, HISTORY_START, HORIZONS, K_MIN, MODEL_CARD_DIR,  # noqa: E402
+from config import (DATA_DIR, ERP_DIR, EXTRACT_DATE, HISTORY_START, HORIZONS, K_MIN, LAYOUTS, MODEL_CARD_DIR,  # noqa: E402
                     PERSON_LEVEL_ENV, RUNS_DIR, SEED, SOURCE_MAP, PersonLevelDisabled, add_months,
-                    data_is_synthetic, person_level_gate, write_json)
+                    data_is_synthetic, person_level_gate, resolve_layout, write_json)
 from mobility import Mobility  # noqa: E402
 from vacancy import poisson_binomial_interval, risk_band  # noqa: E402
 
@@ -136,12 +139,72 @@ def erp_smoke(work: Path) -> dict:
                      "the point is that the same SQL and code run unchanged on a second EDW-shaped source.")
 
 
+def manifest_extract_date(d: Path) -> dt.date | None:
+    m = Path(d) / "manifest.json"
+    if not m.exists():
+        return None
+    try:
+        v = json.loads(m.read_text()).get("extract_date")
+        return dt.date.fromisoformat(v) if v else None
+    except (json.JSONDecodeError, ValueError):
+        return None
+
+
+def layout_checks(con, ext: Path, source_map: dict, O: dt.date) -> dict:
+    """v3-only reconciliation figures for the run summary (reported, never a gate)."""
+    out = {}
+    t = source_map["tables"]
+    roles = con.sql("SELECT class_cd, role_family, role_level, critical_ind FROM v_role").df()
+    lad = ext / "X_LADDER.parquet"
+    if lad.exists():
+        ladder = pd.read_parquet(lad).rename(columns={"CLS_CD": "class_cd"})
+        m = roles.merge(ladder, on="class_cd", how="left")
+        # does the HR family partition agree with the ladder partition, and do the levels order the same way?
+        pairs = m.dropna(subset=["POSN_JOB_PRGS_CD"])
+        fam_to_ladders = pairs.groupby("role_family")["POSN_JOB_PRGS_CD"].nunique()
+        ladder_to_fams = pairs.groupby("POSN_JOB_PRGS_CD")["role_family"].nunique()
+        same_order = int((pairs.sort_values(["role_family", "role_level"]).groupby("role_family")["LADDER_LEVEL"]
+                          .apply(lambda s: s.is_monotonic_increasing)).sum())
+        out["ladder_vs_role_family"] = dict(
+            classes=int(len(roles)), classes_with_ladder=int(len(pairs)),
+            families_mapping_to_one_ladder=int((fam_to_ladders == 1).sum()), families=int(len(fam_to_ladders)),
+            ladders_mapping_to_one_family=int((ladder_to_fams == 1).sum()), ladders=int(len(ladder_to_fams)),
+            families_with_levels_in_ladder_order=same_order,
+            note="ladder level = rank of the class's position midpoint within POSN_JOB_PRGS_CD; the HR file's ROLE_LEVEL is authoritative")
+    if "open_ind" in t["position"]["cols"]:
+        k = S.KNOWN.format(a="p")
+        S._snaps(con, [O])
+        rows = con.sql(f"""
+            WITH pk AS (SELECT s.snap_dt, p.* FROM snaps s JOIN v_position p ON {k} WHERE p.exp_dt >= s.snap_dt
+                        QUALIFY ROW_NUMBER() OVER (PARTITION BY p.posn_nbr ORDER BY p.eff_dt DESC, p.rec_start DESC) = 1),
+            jk AS (SELECT DISTINCT j.posn_nbr FROM snaps s JOIN v_job j ON {S.KNOWN.format(a="j")}
+                   WHERE j.contract_type = 'P' AND j.status_cd = 'A' AND j.exp_dt >= s.snap_dt)
+            SELECT pk.status_cd, pk.open_ind, CASE WHEN jk.posn_nbr IS NULL THEN 'no_incumbent' ELSE 'incumbent' END AS jobs, COUNT(*) n
+            FROM pk LEFT JOIN jk ON jk.posn_nbr = pk.posn_nbr GROUP BY ALL ORDER BY ALL""").fetchall()
+        out["position_status_x_open_ind_x_incumbent_at_extract_date"] = [dict(status=a, open_ind=b, jobs=c, n=n) for a, b, c, n in rows]
+        out["open_ind_disagrees_with_job_history"] = int(sum(n for a, b, c, n in rows if a == "A" and
+                                                             ((b == "Y") != (c == "no_incumbent"))))
+    jf = ext / f"{t['job']['file']}.parquet"
+    cols = set(pq.read_schema(jf).names)
+    if "JOB_DETL_CUR_INFO_IND" in cols:
+        d = con.sql(f"SELECT JOB_DETL_CUR_INFO_IND, COUNT(*) FROM read_parquet('{jf.as_posix()}') GROUP BY 1 ORDER BY 1").fetchall()
+        out["job_rows_by_cur_info_ind"] = {a: int(n) for a, n in d}
+    rf = ext / f"{t['ref_role']['file']}.parquet"
+    if "ROLE_SOURCE" in set(pq.read_schema(rf).names):
+        d = con.sql(f"SELECT ROLE_SOURCE, COUNT(*) FROM read_parquet('{rf.as_posix()}') GROUP BY 1 ORDER BY 1").fetchall()
+        out["role_family_rows_by_source"] = {a: int(n) for a, n in d}
+    return out
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--label", default="synthetic")
     ap.add_argument("--edw-dir", type=Path, default=DATA_DIR, help="synthetic 'EDW' Parquet (ignored with --extract-dir)")
     ap.add_argument("--extract-dir", type=Path, help="use an existing extract (approved machine)")
-    ap.add_argument("--extract-date", type=dt.date.fromisoformat, default=EXTRACT_DATE)
+    ap.add_argument("--extract-date", type=dt.date.fromisoformat, default=None,
+                    help="business date of the extract; default: the source manifest's extract_date, else config.EXTRACT_DATE")
+    ap.add_argument("--layout", choices=sorted(LAYOUTS), default=None,
+                    help="source binding: v1 (default, also env SUCC_LAYOUT) or v3_cookbook (Data Cookbook tables)")
     ap.add_argument("--skip-generate", action="store_true")
     ap.add_argument("--regen", action="store_true")
     ap.add_argument("--with-readiness-audit", action="store_true",
@@ -150,6 +213,11 @@ def main(argv=None):
     ap.add_argument("--no-page", action="store_true")
     a = ap.parse_args(argv)
     t0 = time.time()
+    layout, smap, sql_path = resolve_layout(a.layout)
+    if a.extract_date is None:
+        a.extract_date = manifest_extract_date(a.extract_dir or a.edw_dir) or EXTRACT_DATE
+    log(f"layout {layout} ({sql_path.name}); extract date {a.extract_date}"
+        + (f"; switches {smap['switches']}" if layout != "v1" else ""))
     run_dir = RUNS_DIR / a.label
     if run_dir.exists():
         shutil.rmtree(run_dir)
@@ -164,10 +232,10 @@ def main(argv=None):
             import synth_edw
             log("generating synthetic EDW-shaped history")
             synth_edw.generate(SEED, 1.0, a.edw_dir)
-        ext = RUNS_DIR / "extract"
-        log("running extract.sql against the synthetic EDW schema")
-        X.run_duckdb(a.edw_dir, ext)
-    gates = X.validate(ext)
+        ext = RUNS_DIR / ("extract" if layout == "v1" else f"extract_{layout}")
+        log(f"running {sql_path.name} against the synthetic EDW schema")
+        X.run_duckdb(a.edw_dir, ext, extract_date=a.extract_date, source_map=smap)
+    gates = X.validate(ext, smap)
     write_json(met_dir / "extract_validation.json", gates)
     for k, v in gates.items():
         log(f"  gate {v['status']:4s} {k}: {v['detail']}")
@@ -178,7 +246,7 @@ def main(argv=None):
     truth = json.loads((a.edw_dir / "truth.json").read_text()) if (synthetic and (a.edw_dir / "truth.json").exists()) else None
 
     # 3-4. as-of features --------------------------------------------------------------------
-    con = S.open_source(ext)
+    con = S.open_source(ext, smap)
     roles = con.sql("SELECT class_cd, role_family, role_level, critical_ind FROM v_role").df()
     log("building as-of snapshots")
     raw_all = S.incumbents_asof(con, snapshot_dates(a.extract_date))
@@ -252,6 +320,11 @@ def main(argv=None):
                    mobility_window=[str(x) for x in mob.window], n_moves_window=int(mob.N.sum()),
                    bench_status=dict(zip(bn["role_family"], bn["status"])),
                    gates={k: v["status"] for k, v in gates.items()})
+    if layout != "v1":
+        summary["layout"] = dict(name=layout, sql=sql_path.name, switches=smap["switches"], unit_level=smap["unit_level"],
+                                 term_source=smap["tables"]["term"]["file"])
+        summary["layout_checks"] = layout_checks(con, ext, smap, O)
+        log(f"  layout checks: {summary['layout_checks']}")
 
     # 8. recovery (synthetic only) -----------------------------------------------------------------
     if truth is not None:
@@ -312,7 +385,9 @@ def main(argv=None):
         R_out = None
 
     # 10. compatibility smoke test on erp_readiness output --------------------------------------------
-    if not a.no_erp_smoke and a.extract_dir is None:
+    if layout != "v1" and not a.no_erp_smoke:
+        log("erp_readiness compatibility run skipped: it exercises the v1 binding only")
+    elif not a.no_erp_smoke and a.extract_dir is None:
         log("compatibility run on erp_readiness CLEAN synthetic extract (effective-only mode)")
         work = RUNS_DIR / "erp_compat"
         if work.exists():

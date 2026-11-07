@@ -1,6 +1,6 @@
 # Runbook: running the succession models on real EDW history
 
-**Run only on a University-approved AITS machine, or inside the EDW/Denodo environment.** Real employee data must never enter this repository, a laptop outside policy, a cloud session or any AI service. The code is the same as the synthetic run; only `config.SOURCE_MAP`, `extract.sql` bindings and the HR reference files change.
+**Run only on a University-approved AITS machine, or inside the EDW/Denodo environment.** Real employee data must never enter this repository, a laptop outside policy, a cloud session or any AI service. The code is the same as the synthetic run. **Use the v3 / Data Cookbook binding** (`--layout v3_cookbook`: `config.SOURCE_MAP_V3_COOKBOOK` + `extract_v3_cookbook.sql`), which is written against the Cookbook-verified table shapes and was run end to end on `sample_datasets/v3_cookbook/longitudinal` (README, "Results on the v3 Cookbook-shaped pack"). Only its right-hand sides, the column lists in the SQL, the three switches and the HR reference files change on the real EDW. The v1 binding (`extract.sql`, assumed names) stays for the synthetic generator only.
 
 ## 0. Before anything is extracted
 
@@ -24,32 +24,36 @@ pip install -r succession_models/requirements.txt
 - Do not run inside a synced folder (Box, OneDrive) and do not use a cloud notebook.
 - Set `RUNS_DIR` (in `config.py`) to that secure location, or run from a clone that lives there.
 
-## 2. Bind and extract
+## 2. Bind and extract (v3 / Cookbook binding)
 
-1. Read the EDW data dictionary and confirm, for each table in `data_contract.md`:
-   - the column names;
-   - the `*_EXP_DT` convention (inclusive or exclusive, open-end value);
-   - the transaction-time columns.
-
-   Edit the right-hand sides of `config.SOURCE_MAP` and the column lists in `extract.sql`. If there are no row versions, set `bitemporal = False` (see data_contract §4).
-2. Load `REF_ROLE_FAMILY` into a schema the SQL can read, or save it as Parquet in the extract folder.
+1. Start from `extract_v3_cookbook.sql` and `config.SOURCE_MAP_V3_COOKBOOK` (`data_contract.md` §7 lists every column). The table and column names of `T_JOB_DETL_HIST`, `T_EMPEE_HIST`, `T_EMPEE_HIST_5`, `T_POSN_HIST` and `T_PERS_HIST` are Cookbook-verified; confirm the **values** and settle each item below in the protocol before extracting:
+   - `JOB_DETL_HIST_EFF_DT` is the date a history version became known (the default reading). If the dictionary says it is a valid-time change date, set `SUCC_V3_JOB_CHANGE_DATE=JOB_DETL_HIST_EFF_DT`; the gates (G3, G4) will tell you whether the reading is coherent.
+   - `JOB_DETL_STATUS_DESC` spellings: `Active` / `Terminated` are mapped to A / T in `SOURCE_MAP_V3_COOKBOOK["tables"]["job"]["status_values"]`; add leave descriptions there only if they should count as active.
+   - `JOB_DETL_FTE` fraction vs percent, and whether `JOB_DETL_APPT_PCT` varies. The view computes FTE × percent / 100.
+   - `PAPE_CIV_SVC_ID` holds the 4-digit SUCSS code on civil-service positions (the SQL tests `LENGTH() = 4`). If not, replace the `pc` subquery in the job and position blocks with the real P-Class → class table (`T_POSN_CLS_HIST` is the likely key) and drop the synthetic `REF_PCLS_SUCSS_XWALK` joins.
+   - Job type: replace the `X_JOB_CONTRACT_TYPE` join with the primary-job rule (Banner NBRBJOB) or keep `COALESCE(..., 'P')` if every extracted job is primary.
+   - Separations: `T_EMPEE_HIST` (default) or, if the role can only read the secured table, `SUCC_V3_TERM_SOURCE=T_EMPEE_HIST_5`. Where both are readable, check that the termination sets agree.
+   - `SUCC_V3_INPLACE_KNOWN_FROM`: keep `eff_dt` unless archived EDW snapshots show that hire dates or position attributes are corrected in place often (data_contract §7 explains the trade-off).
+   - Unit level: 3 (college) in the Cookbook hierarchy; change `unit_level` if reporting is by admin unit (2) or department (5).
+   - `*_EXP_DT` inclusive with `9999-12-31` open end is Cookbook-confirmed and needs no edit.
+2. Load the HR-owned `REF_ROLE_FAMILY` (class key → family, level, approved `CRITICAL_IND`) into a schema the SQL can read, or save it as Parquet in the extract folder. Classes it does not list fall back to the `POSN_JOB_PRGS_CD` ladder with `CRITICAL_IND = 'N'`; the run summary (`layout_checks.role_family_rows_by_source`) says how many.
 3. Run the extract inside the warehouse:
 
    ```bash
-   python succession_models/extract.py --engine dbapi --dbapi-module oracledb --dsn "<approved DSN>" \
-          --schema <EDW_OWNER> --out /secure/succession/extract
+   python succession_models/extract.py --layout v3_cookbook --engine dbapi --dbapi-module oracledb \
+          --dsn "<approved DSN>" --schema <EDW_OWNER> --extract-date <business date> --out /secure/succession/extract
    ```
 
-   The DB-API path is **untested here** (there is no EDW in this repository). Alternatively, paste each `-- @extract` statement into the approved SQL client and save each result as `<NAME>.parquet` in the extract folder.
-4. Write `manifest.json` in the extract folder with `"synthetic": false`.
+   The DB-API path is **untested here** (there is no EDW in this repository). Alternatively, render the statements (`python -c "import sys; sys.path.insert(0,'succession_models'); import config, extract as X; [print('--', n, '\n', s, ';') for n, s in X.statements(open('succession_models/extract_v3_cookbook.sql').read(), '<EDW_OWNER>', config.HISTORY_START, config.EXTRACT_DATE, X.layout_sql(config.resolve_layout('v3_cookbook')[1])[1])]"`), paste each one into the approved SQL client and save each result as `<NAME>.parquet` in the extract folder. The window function over `JOB_DETL_HIST_EFF_DT` and the `LEAD()`/`DENSE_RANK()` calls are ANSI and run in Oracle.
+4. Write `manifest.json` in the extract folder with `"synthetic": false`, `"layout": "v3_cookbook"`, the extract date and the switch values.
 
 ## 3. Validation gates (all must PASS before modelling)
 
 ```bash
-python succession_models/extract.py --validate-only --out /secure/succession/extract
+python succession_models/extract.py --layout v3_cookbook --validate-only --out /secure/succession/extract
 ```
 
-1. **G1–G7 from data_contract §5.** Any FAIL stops the run. Fix the source or the bindings. Never loosen a gate silently.
+1. **G1–G7 from data_contract §5.** Any FAIL stops the run. Fix the source or the bindings. Never loosen a gate silently. On the v3 pack all seven pass and I1 reports 7.2% late-keyed job rows.
 2. **Data quality.** Run the erp_readiness rule catalog on the same tables (J01–J04, E01–E04, S01–S04). Critical failures in job or employee history block modelling, because overlapping or gapped intervals corrupt spells.
 3. **Reconciliation.** As-of headcount at 3 dates must match the IHR official headcount within an agreed tolerance, with scope differences documented.
 4. **Retro-keying (I1).** Record the rate. If in effective-only mode, run the snapshot comparison in data_contract §4.
@@ -57,9 +61,11 @@ python succession_models/extract.py --validate-only --out /secure/succession/ext
 ## 4. Run
 
 ```bash
-python succession_models/run_all.py --extract-dir /secure/succession/extract --skip-generate --no-page \
+python succession_models/run_all.py --layout v3_cookbook --extract-dir /secure/succession/extract --skip-generate --no-page \
        --label real_<yyyymmdd> --extract-date <business date of the extract>
 ```
+
+Set the same `SUCC_V3_*` switches as at extract time (the extract manifest records them; the run summary records both). The `layout_checks` block of `metrics/summary.json` reports job rows by `CUR_INFO_IND`, role-family rows by source, the ladder cross-check and the position status × `OPEN_POSN_IND` × job-history cross-tab at the extract date; investigate any disagreement between the open flag and job history before publishing vacancy counts.
 
 Defaults that must stay as they are:
 - The person-level readiness model is **not** run.

@@ -1,6 +1,6 @@
 # Succession planning models (EDW-ready, synthetic run)
 
-This is a succession-planning modelling pipeline built to the EDW table shapes named in the repository README: `T_PERS_HIST`, `T_EMPEE_HIST`, `T_EMPEE_HIST_5`, `T_JOB_DETL_HIST`, plus position-control and reference tables. Here it runs end to end on **synthetic** history. The same code runs unchanged on real EDW history on an approved AITS machine ([`run_real.md`](run_real.md)).
+This is a succession-planning modelling pipeline built to the EDW table shapes named in the repository README: `T_PERS_HIST`, `T_EMPEE_HIST`, `T_EMPEE_HIST_5`, `T_JOB_DETL_HIST`, plus position-control and reference tables. Here it runs end to end on **synthetic** history, through two selectable source bindings: the original **v1** layout (assumed column names, `extract.sql`) and the **v3 / Data Cookbook** layout (`--layout v3_cookbook`, `extract_v3_cookbook.sql`), which binds the Cookbook-verified table shapes of [`../sample_datasets/v3_cookbook/`](../sample_datasets/v3_cookbook/README.md). The v3 binding is the one to use on real EDW history on an approved AITS machine ([`run_real.md`](run_real.md)); the model code is the same in both.
 
 **No real employee data is in this folder, and none may be brought into it or into a cloud session.**
 
@@ -21,11 +21,16 @@ The one person-level model, candidate readiness, is **disabled by default**. It 
 From `platform-evaluation/` (Python 3.13; `pip install -r succession_models/requirements.txt`):
 
 ```bash
-python succession_models/run_all.py                    # ~1.5-3 min: generate -> extract.sql -> gates -> backtest -> models -> page
-python -m unittest discover -s succession_models/tests -v   # 18 tests, ~30 s
+python succession_models/run_all.py                    # ~1-3 min: generate -> extract.sql -> gates -> backtest -> models -> page
+python -m unittest discover -s succession_models/tests -v   # 31 tests, ~30 s (18 v1 + 13 v3)
 # optional, synthetic only: demonstrate the gated person-level model and its fairness audit
 python succession_models/run_all.py --label synthetic_readiness_audit --with-readiness-audit --no-page --no-erp-smoke
+# the same pipeline on the Cookbook-shaped v3 pack (~20 s; --no-page keeps the v1 page in output/)
+python succession_models/run_all.py --layout v3_cookbook --edw-dir sample_datasets/v3_cookbook/longitudinal \
+       --skip-generate --label v3_cookbook --no-page
 ```
+
+`--layout` (or `SUCC_LAYOUT=v3_cookbook`) picks the binding; without it everything is the v1 path, byte-identical to before the v3 binding existed (a test pins the hashes). The v3 run takes its extract date (2027-01-31) from the pack's manifest; three environment switches document the unconfirmed Cookbook semantics (`SUCC_V3_JOB_CHANGE_DATE`, `SUCC_V3_INPLACE_KNOWN_FROM`, `SUCC_V3_TERM_SOURCE`; see `config.py` and [`data_contract.md`](data_contract.md) §7).
 
 `data/` and `runs/` are regenerable and git-ignored. Seed 20261106 reproduces every number below; a test checks that the generator is byte-identical between runs.
 
@@ -33,10 +38,12 @@ python succession_models/run_all.py --label synthetic_readiness_audit --with-rea
 
 | Path | What it is |
 |---|---|
-| [`data_contract.md`](data_contract.md) | Minimal EDW fields, conventions, the bitemporal as-of rule, effective-only fallback, validation gates, output classification |
-| [`extract.sql`](extract.sql) | Portable extract, one `-- @extract NAME` block per output. Data-minimised: no names, IDs beyond `EDW_PERS_ID`, ZIP, leave or payroll. Protected attributes go to a separate restricted file |
-| `extract.py` | Runs `extract.sql` (DuckDB over the synthetic "EDW", or a DB-API driver on the approved machine) and gates G1–G7 |
-| `snapshot.py` | **Leakage firewall.** As-of features use only rows effective *and recorded* on or before the snapshot. Separately computes spells and labels, as known at an origin or from the latest data |
+| [`data_contract.md`](data_contract.md) | Minimal EDW fields, conventions, the bitemporal as-of rule, effective-only fallback, validation gates, output classification; §7 is the v3 / Cookbook binding |
+| [`extract.sql`](extract.sql) | v1 extract, one `-- @extract NAME` block per output. Data-minimised: no names, IDs beyond `EDW_PERS_ID`, ZIP, leave or payroll. Protected attributes go to a separate restricted file |
+| [`extract_v3_cookbook.sql`](extract_v3_cookbook.sql) | The same contract against the Cookbook tables: row-version interval from a window over `JOB_DETL_HIST_EFF_DT` per key lineage, `D` rows as deletion events, class key via `PAPE_CIV_SVC_ID` → SUCSS → `REF_ROLE_FAMILY` (crosswalk fallback), position org from jobs, ladder fallback for unmapped classes, separations from `T_EMPEE_HIST` (`_5` alternative) |
+| `config.py` | Paths, parameters, SURS assumptions, `SOURCE_MAP` (v1) and `SOURCE_MAP_V3_COOKBOOK`, the three v3 switches and `resolve_layout()` |
+| `extract.py` | Runs the layout's extract SQL (DuckDB over the synthetic "EDW", or a DB-API driver on the approved machine) and gates G1–G7 |
+| `snapshot.py` | **Leakage firewall.** As-of features use only rows effective *and recorded* on or before the snapshot. Separately computes spells and labels, as known at an origin or from the latest data. The view layer maps v3 status descriptions to codes, applies `JOB_DETL_APPT_PCT`, and uses position pay ranges and `OPEN_POSN_IND` when the layout binds them |
 | `features.py` | Model matrix, SURS Tier 1/2 eligibility bands (assumption-labelled), roll-forward for multi-period projection |
 | `vacancy.py` | (a) Discrete-time cause-specific logistic hazards, Cox PH and Weibull AFT (lifelines), recalibration, baselines, Poisson-binomial aggregation |
 | `mobility.py` | (b) Markov class-transition matrix with Dirichlet smoothing and Beta credible intervals; feeder, dead-end and fast-track roles; pathway diversity; reach-critical probability |
@@ -49,6 +56,7 @@ python succession_models/run_all.py --label synthetic_readiness_audit --with-rea
 | `model_cards/` | Generated cards: vacancy, mobility and bench, readiness |
 | [`run_real.md`](run_real.md) | Runbook for the approved machine: environment, extract, gates, sign-off checklist (Counsel, OAE, IHR), what may leave (k ≥ 10 aggregates only) |
 | `governance/approval.template.json` | Template for the sign-off record that, with `SUCC_ENABLE_PERSON_LEVEL=1`, opens the person-level gate. The real `approval.json` is git-ignored |
+| `tests/test_succession.py`, `tests/test_v3_cookbook.py` | v1 leakage, reproducibility, calibration, suppression and gate tests; v3 layout resolution, the seven gates on the v3 pack, the as-known snapshot on a tiny Cookbook-shaped fixture (late-keyed correction, late-keyed exit, `D` row), separation / FTE / pay-range / vacancy / ladder semantics, and the v1 hash pin |
 
 ### Reuse of erp_readiness (not modified)
 
@@ -141,9 +149,48 @@ The audit found:
 
 This is exactly why the model stays off by default. Full tables are in [`model_cards/readiness_model_card.md`](model_cards/readiness_model_card.md).
 
+## Results on the v3 Cookbook-shaped pack (`runs/v3_cookbook`)
+
+The same pipeline, default settings, on `sample_datasets/v3_cookbook/longitudinal` (`--layout v3_cookbook`, extract date 2027-01-31, person-level readiness off). All seven gates PASS; I1 reports 7.2% of job rows first recorded more than 30 days late. The pack re-expresses the integration layer's v2 longitudinal world, **not** the succession generator above, so the two runs describe two different synthetic populations: 2,302 persons and 822 incumbents (v1: 7,904 and ~2,500), 1,480 separations (v1: 5,382), 1,461 internal moves, 112 deleted (`D`) job versions, two-date job keys, Cookbook termination coding (TQ/TE/TR on `T_EMPEE_HIST`), 11 role families and 7 critical tiers from the same public SUCSS ladders. There is no `truth.json`, so no oracle and no parameter recovery.
+
+### (a) Vacancy risk, five origins (Jan 1 2020–2024), 703–779 incumbents per origin
+
+| Model | Brier 24 mo | Brier skill vs family rate | AUC(t) 12 / 24 mo | C-index | Calibration slope 24 mo | CITL 24 mo |
+|---|---|---|---|---|---|---|
+| Logistic hazard, recalibrated | 0.2287 | +2.7% | 0.602 / 0.610 | 0.587 | 0.89 | +1.7 pp |
+| Logistic hazard, no age/SURS features | 0.2299 | +2.2% | 0.599 / 0.609 | 0.586 | 1.02 | +3.6 pp |
+| Cox PH | 0.2311 | +1.7% | 0.590 / 0.601 | 0.580 | 0.88 | +2.7 pp |
+| Weibull AFT | 0.2310 | +1.8% | 0.591 / 0.601 | 0.580 | 0.88 | +2.6 pp |
+| Baseline: role-family base rate | 0.2352 | 0 | 0.544 / 0.552 | 0.539 | 0.93 | +2.9 pp |
+| Baseline: age band only | 0.2378 | −1.1% | 0.506 / 0.506 | 0.505 | 0.31 | +3.0 pp |
+
+Against the v1 run (Brier 0.2238, skill +1.6%, AUC 0.589 / 0.599, C-index 0.580, slope 1.01):
+
+- **Discrimination is slightly higher (AUC 0.61 vs 0.60) and the Brier skill over the family base rate is larger (+2.7% vs +1.6%).** The v2-derived world has fewer exit drivers than the succession generator (no planted age structure: the age-only baseline is at chance, 0.506, and dropping the age-derived features costs 0.002–0.003 AUC against 0.006 in v1), but its base rates differ more by tenure and pay, which the hazard model picks up. Brier skill is positive at 12 and 24 months on all five origins (24-month skill +1.9% to +3.2%).
+- **Absolute Brier is higher (0.229 vs 0.224)** because the 24-month exit rate is higher (37–40% per origin vs 35–37% in v1), so the outcome variance is larger. That is not a worse model.
+- **Calibration is worse.** Calibration-in-the-large at 24 months is +1.7 pp on average (mean absolute 2.4 pp, against the pre-registered gate of ≤ 2 pp; 1.8 pp at 12 months passes) and ranges from −1.7 to +3.9 pp by origin; the 24-month slope is 0.89 (0.76–1.00 by origin, inside the 0.8–1.2 band on average). The likely reason is size: with roughly 700 incumbents and 270–300 events per origin, the recalibration set (the origin 24 months earlier) is about a quarter of v1's, so the intercept and slope estimates are noisier. Recalibration still improves the 24-month CITL from +3.4 pp to +1.7 pp. On real data the 24-month CITL miss would trigger the "recalibrate; report as uncalibrated" action in `run_real.md` §5.
+- **The hazard model is no better than its own ceiling here either:** without planted parameters there is no oracle, but Cox, Weibull and the logistic hazard agree to 0.01 AUC, as they did in v1.
+
+At the extract date (2027-01-31): 822 incumbents, 40 vacant positions (`POSN_STATUS_CD = 'A'`, `OPEN_POSN_IND = 'Y'`, no incumbent; the flag and job history agree on every position). Expected vacancies: **12 months 161 (P10–P90 147–176), 24 months 252 (235–269)**, i.e. 19.6% and 30.7% of incumbents (v1: 519 and 926 of ~2,500, 21% and 37%). Role-family 24-month rates run from 25% (Storekeeper) to 34% (Institutional Compliance Examiner); v1 ran 24–42%. Suppression bites harder in the smaller world: 4 of 38 role cells, and **88 of 119 unit × family cells** (v1: 29 of 129), are suppressed at k = 10; all 12 college-level units publish (54–93 incumbents each).
+
+### (b) Mobility
+
+771 moves in the 10-year window (v1: ~5,500). The dead-end rule flags 4 classes (Payroll Specialist II and all three Storekeeper levels: move rates 2.6–4.8% a year); there is no planted truth to score it against. Feeder tables are mostly suppressed below k = 10 moves: one unsuppressed feeder per critical family.
+
+### (c) Bench strength
+
+All seven critical tiers are "Thin": internal coverage P50 runs from 0.33 (Health Care Administrator) to 0.64 (Client Relations Representative) and P(coverage < 1) is 0.73–0.97 (v1: 0.44–0.79, ≥ 0.75). Backtest over 35 family × origin cells: realized 24-month need inside P10–P90 in **28 of 35 (80%)**, mean bias −0.2; realized internal supply inside in **34 of 35 (97%)**, bias +0.2 (v1: 28/35 and +1.0; 33/35 and −1.3). The bench band is well sized here; v1's slight over-forecast of supply does not recur.
+
+### What the v3 run does and does not show
+
+- The Cookbook binding runs the full pipeline end to end: extract, seven gates, as-known snapshots over `D` rows and two-date keys, hazard models, mobility, bench, backtest and metrics, in about 20 s.
+- The differences from v1 are explained by the population (smaller, different exit drivers, higher exit rate), not by the binding: on the tiny fixture in `tests/test_v3_cookbook.py` every as-known reconstruction (late keying, correction, deletion, late-keyed exit) matches what HR would have seen.
+- Ladder levels derived from position midpoints agree with the HR file's `ROLE_LEVEL` in only 4 of 11 families, because the pack's pay ranges are invented; the HR file stays authoritative and the ladder is used only as a fallback for unmapped classes (none in this pack).
+- Everything still to confirm on real data is listed in `data_contract.md` §7 and in the v3 pack README (FTE fraction vs percent, the meaning of `JOB_DETL_HIST_EFF_DT`, the `PAPE_CIV_SVC_ID` format, the terminated employee status letter, leave status descriptions).
+
 ## Limits
 
-- Everything is synthetic. Column names, the row-version columns, `T_POSN_HIST`, the critical-role list, the SURS rules and the pay ranges are **assumptions** to confirm on the approved machine.
+- Everything is synthetic. The v1 column names, the row-version columns, `T_POSN_HIST`, the critical-role list, the SURS rules and the pay ranges are **assumptions** to confirm on the approved machine. The v3 binding uses Cookbook-verified names, but several **values** are still unconfirmed (see above).
 - The DB-API extract path and the Oracle/Snowflake dialects are **untested**. Only DuckDB executed `extract.sql`.
 - Covariate uncertainty in the hazard parameters is not propagated into the vacancy-count intervals. The bench interval includes Markov-matrix uncertainty and event noise only.
 - Synthetic moves are push-driven: a line is created when none is vacant. Real moves are pulled by postings and civil-service registers.

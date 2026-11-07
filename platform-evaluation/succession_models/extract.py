@@ -8,6 +8,8 @@ the approved SQL client and save each result as <NAME>.parquet; then run `--vali
     python succession_models/extract.py --engine dbapi --dbapi-module oracledb --dsn "<dsn>" --schema EDW_OWNER \
         --out /secure/path/extract                                       # approved machine (UNTESTED here)
     python succession_models/extract.py --validate-only --out /secure/path/extract
+    python succession_models/extract.py --layout v3_cookbook --edw-dir sample_datasets/v3_cookbook/longitudinal \
+        --extract-date 2027-01-31 --out runs/extract_v3                 # Cookbook-shaped synthetic pack
 """
 from __future__ import annotations
 
@@ -25,14 +27,19 @@ import pyarrow.parquet as pq
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from config import DATA_DIR, EXTRACT_DATE, HISTORY_START, OPEN_END, RUNS_DIR, SOURCE_MAP, write_json  # noqa: E402
+from config import (DATA_DIR, EXTRACT_DATE, HISTORY_START, LAYOUTS, OPEN_END, RUNS_DIR, SOURCE_MAP,  # noqa: E402
+                    resolve_layout, v3_sql_tokens, write_json)
 
 SQL_PATH = HERE / "extract.sql"
 DEFAULT_OUT = RUNS_DIR / "extract"
 IDENTITY_COLS = re.compile(r"(NAME|NATL|SSN|UIN|EMAIL|ADDR|ZIP|POSTAL|PHONE)", re.I)
 
 
-def statements(sql_text: str, schema: str, history_start: dt.date, extract_date: dt.date) -> list[tuple[str, str]]:
+def statements(sql_text: str, schema: str, history_start: dt.date, extract_date: dt.date,
+               tokens: dict | None = None) -> list[tuple[str, str]]:
+    """Split the SQL file into (name, statement) pairs with the tokens rendered.
+
+    `tokens` are extra {{NAME}} -> text substitutions (the v3 layout switches); v1 passes none."""
     out = []
     for block in re.split(r"^-- @extract ", sql_text, flags=re.M)[1:]:
         name, body = block.split("\n", 1)
@@ -40,15 +47,25 @@ def statements(sql_text: str, schema: str, history_start: dt.date, extract_date:
         body = (body.replace("{{SCHEMA}}", schema)
                 .replace("{{HISTORY_START}}", f"DATE '{history_start.isoformat()}'")
                 .replace("{{EXTRACT_DATE}}", f"DATE '{extract_date.isoformat()}'"))
+        for k, v in (tokens or {}).items():
+            body = body.replace("{{" + k + "}}", v)
         if "{{" in body:
             raise ValueError(f"unrendered token in {name}")
         out.append((name.strip(), body))
     return out
 
 
+def layout_sql(source_map: dict = SOURCE_MAP) -> tuple[Path, dict]:
+    """(SQL file, extra tokens) for a source map: extract.sql for v1, extract_v3_cookbook.sql + switch tokens for v3."""
+    if source_map.get("layout", "v1") == "v1":
+        return SQL_PATH, {}
+    return HERE / source_map["sql"], v3_sql_tokens(source_map["switches"])
+
+
 def run_duckdb(edw_dir: Path, out_dir: Path, schema: str = "edw", history_start=HISTORY_START,
-               extract_date=EXTRACT_DATE, prepare=None) -> dict:
-    """Execute extract.sql against Parquet files exposed as views in a DuckDB schema."""
+               extract_date=EXTRACT_DATE, prepare=None, source_map: dict = SOURCE_MAP) -> dict:
+    """Execute the layout's extract SQL against Parquet files exposed as views in a DuckDB schema."""
+    sql_path, tokens = layout_sql(source_map)
     out_dir.mkdir(parents=True, exist_ok=True)
     con = duckdb.connect()
     con.execute(f"CREATE SCHEMA {schema}")
@@ -57,7 +74,7 @@ def run_duckdb(edw_dir: Path, out_dir: Path, schema: str = "edw", history_start=
     if prepare:
         prepare(con, schema)
     counts = {}
-    for name, sql in statements(SQL_PATH.read_text(), schema, history_start, extract_date):
+    for name, sql in statements(sql_path.read_text(), schema, history_start, extract_date, tokens):
         tbl = con.sql(sql).to_arrow_table()
         if hasattr(tbl, "read_all"):
             tbl = tbl.read_all()
@@ -65,19 +82,23 @@ def run_duckdb(edw_dir: Path, out_dir: Path, schema: str = "edw", history_start=
         counts[name] = tbl.num_rows
     src_manifest = Path(edw_dir) / "manifest.json"
     meta = json.loads(src_manifest.read_text()) if src_manifest.exists() else {}
-    write_json(out_dir / "manifest.json", dict(synthetic=meta.get("synthetic", False), source=str(edw_dir),
-                                               extract_date=extract_date, history_start=history_start,
-                                               row_counts=counts))
+    manifest = dict(synthetic=meta.get("synthetic", False), source=str(edw_dir),
+                    extract_date=extract_date, history_start=history_start, row_counts=counts)
+    if source_map.get("layout", "v1") != "v1":
+        manifest.update(layout=source_map["layout"], sql=sql_path.name, switches=source_map["switches"])
+    write_json(out_dir / "manifest.json", manifest)
     return counts
 
 
-def run_dbapi(module: str, dsn: str, schema: str, out_dir: Path) -> dict:  # pragma: no cover - approved machine
+def run_dbapi(module: str, dsn: str, schema: str, out_dir: Path, source_map: dict = SOURCE_MAP,
+              extract_date=EXTRACT_DATE) -> dict:  # pragma: no cover - approved machine
     """Generic DB-API path for the approved machine. UNTESTED in this repository (no EDW here)."""
+    sql_path, tokens = layout_sql(source_map)
     mod = importlib.import_module(module)
     conn = mod.connect(dsn)
     out_dir.mkdir(parents=True, exist_ok=True)
     counts = {}
-    for name, sql in statements(SQL_PATH.read_text(), schema, HISTORY_START, EXTRACT_DATE):
+    for name, sql in statements(sql_path.read_text(), schema, HISTORY_START, extract_date, tokens):
         cur = conn.cursor()
         cur.execute(sql)
         cols = [d[0].upper() for d in cur.description]
@@ -85,8 +106,21 @@ def run_dbapi(module: str, dsn: str, schema: str, out_dir: Path) -> dict:  # pra
         tbl = pa.Table.from_pylist([dict(zip(cols, r)) for r in rows])
         pq.write_table(tbl, out_dir / f"{name}.parquet", compression="zstd")
         counts[name] = len(rows)
-    write_json(out_dir / "manifest.json", dict(synthetic=False, source=f"dbapi:{module}", row_counts=counts))
+    manifest = dict(synthetic=False, source=f"dbapi:{module}", row_counts=counts, extract_date=extract_date)
+    if source_map.get("layout", "v1") != "v1":
+        manifest.update(layout=source_map["layout"], sql=sql_path.name, switches=source_map["switches"])
+    write_json(out_dir / "manifest.json", manifest)
     return counts
+
+
+def rec_cols_for(source_map: dict, logical: str) -> dict:
+    """Transaction-time columns of one table: the per-table override (v3 term rows) or the shared pair."""
+    return source_map["tables"][logical].get("rec_cols", source_map["rec_cols"])
+
+
+def status_value(spec: dict, code: str) -> str:
+    """Physical value of a canonical status code ('A' / 'T') for a table spec (v3 carries descriptions)."""
+    return spec.get("status_values", {}).get(code, code)
 
 
 def validate(out_dir: Path, source_map: dict = SOURCE_MAP) -> dict:
@@ -108,7 +142,7 @@ def validate(out_dir: Path, source_map: dict = SOURCE_MAP) -> dict:
         have = set(pq.read_schema(f).names)
         need = set(spec["cols"].values())
         if source_map["bitemporal"] and logical not in ("ref_class", "ref_org", "ref_role", "protected"):
-            need |= set(source_map["rec_cols"].values())
+            need |= set(rec_cols_for(source_map, logical).values())
         if need - have:
             missing.append(f"{spec['file']}: {sorted(need - have)}")
     gate("G1_required_columns", not missing, missing or "all required files and columns present")
@@ -123,13 +157,14 @@ def validate(out_dir: Path, source_map: dict = SOURCE_MAP) -> dict:
     t = source_map["tables"]
     job = (out_dir / f"{t['job']['file']}.parquet").as_posix()
     jc = t["job"]["cols"]
+    active = status_value(t["job"], "A")
     open_lit = f"DATE '{OPEN_END.isoformat()}'"
     bad, n = con.execute(f"SELECT SUM(CASE WHEN {jc['eff_dt']} > COALESCE({jc['exp_dt']}, {open_lit}) THEN 1 ELSE 0 END), "
                          f"COUNT(*) FROM read_parquet('{job}')").fetchall()[0]
     gate("G3_interval_order", (bad or 0) <= 0.001 * n, f"{bad or 0} of {n} job rows have EFF_DT > EXP_DT (tolerance 0.1%)")
 
     if source_map["bitemporal"]:
-        rs, re_ = source_map["rec_cols"]["rec_start"], source_map["rec_cols"]["rec_end"]
+        rs, re_ = rec_cols_for(source_map, "job")["rec_start"], rec_cols_for(source_map, "job")["rec_end"]
         inv, dup = con.execute(f"""
             WITH v AS (SELECT * FROM read_parquet('{job}'))
             SELECT (SELECT COUNT(*) FROM v WHERE {rs} >= COALESCE({re_}, {open_lit})),
@@ -155,14 +190,14 @@ def validate(out_dir: Path, source_map: dict = SOURCE_MAP) -> dict:
     cov, ncur = con.execute(f"""
         SELECT AVG(CASE WHEN r.{rc['class_cd']} IS NULL THEN 0 ELSE 1 END), COUNT(*)
         FROM read_parquet('{job}') j LEFT JOIN read_parquet('{role}') r ON j.{jc['class_cd']} = r.{rc['class_cd']}
-        WHERE j.{jc['status_cd']} = 'A' AND COALESCE(j.{jc['exp_dt']}, {open_lit}) = {open_lit}""").fetchall()[0]
+        WHERE j.{jc['status_cd']} = '{active}' AND COALESCE(j.{jc['exp_dt']}, {open_lit}) = {open_lit}""").fetchall()[0]
     gate("G6_role_family_coverage", (cov or 0) >= 0.95, f"{(cov or 0):.1%} of open primary job rows map to a role family (need 95%)")
 
     multi = con.execute(f"""
         SELECT AVG(CASE WHEN c > 1 THEN 1 ELSE 0 END) FROM (
           SELECT {jc['pers_id']}, COUNT(DISTINCT {jc['posn_nbr']}) c FROM read_parquet('{job}')
-          WHERE {jc['status_cd']} = 'A' AND COALESCE({jc['exp_dt']}, {open_lit}) = {open_lit}
-          {"AND COALESCE(" + source_map['rec_cols']['rec_end'] + ", " + open_lit + ") = " + open_lit if source_map['bitemporal'] else ""}
+          WHERE {jc['status_cd']} = '{active}' AND COALESCE({jc['exp_dt']}, {open_lit}) = {open_lit}
+          {"AND COALESCE(" + rec_cols_for(source_map, 'job')['rec_end'] + ", " + open_lit + ") = " + open_lit if source_map['bitemporal'] else ""}
           GROUP BY 1)""").fetchall()[0][0]
     gate("G7_one_primary_job", (multi or 0) <= 0.01, f"{(multi or 0):.2%} of persons hold >1 open primary position (tolerance 1%)")
     write_json(out_dir / "extract_validation.json", res)
@@ -178,13 +213,17 @@ def main(argv=None):
     ap.add_argument("--dbapi-module")
     ap.add_argument("--dsn")
     ap.add_argument("--validate-only", action="store_true")
+    ap.add_argument("--layout", choices=sorted(LAYOUTS), default=None,
+                    help="source binding: v1 (default, also SUCC_LAYOUT) or v3_cookbook (Data Cookbook tables)")
+    ap.add_argument("--extract-date", type=dt.date.fromisoformat, default=EXTRACT_DATE)
     a = ap.parse_args(argv)
+    layout, smap, _ = resolve_layout(a.layout)
     if not a.validate_only:
         if a.engine == "duckdb":
-            print("extract:", run_duckdb(a.edw_dir, a.out, a.schema))
+            print("extract:", run_duckdb(a.edw_dir, a.out, a.schema, extract_date=a.extract_date, source_map=smap))
         else:
-            print("extract:", run_dbapi(a.dbapi_module, a.dsn, a.schema, a.out))
-    res = validate(a.out)
+            print("extract:", run_dbapi(a.dbapi_module, a.dsn, a.schema, a.out, smap, a.extract_date))
+    res = validate(a.out, smap)
     for k, v in res.items():
         print(f"  {v['status']:4s} {k}: {v['detail']}")
     if any(v["status"] == "FAIL" for v in res.values()):

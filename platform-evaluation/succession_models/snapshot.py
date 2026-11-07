@@ -38,14 +38,23 @@ def open_source(extract_dir: Path, source_map: dict = SOURCE_MAP) -> duckdb.Duck
     con = duckdb.connect()
     extract_dir = Path(extract_dir)
     bitemporal = source_map["bitemporal"]
-    rc = source_map["rec_cols"]
     for logical, spec in source_map["tables"].items():
         f = extract_dir / f"{spec['file']}.parquet"
         if not f.exists():
             if spec.get("optional"):
                 continue
             raise FileNotFoundError(f)
+        rc = spec.get("rec_cols", source_map["rec_cols"])      # per-table override (v3 termination rows)
         cols = [f"{phys} AS {log}" for log, phys in spec["cols"].items()]
+        if spec.get("status_values"):
+            # physical descriptions -> canonical codes ('Active' -> 'A', 'Terminated' -> 'T'); other values pass through
+            phys = spec["cols"]["status_cd"]
+            when = " ".join(f"WHEN {phys} = '{v}' THEN '{k}'" for k, v in spec["status_values"].items())
+            cols = [c for c in cols if not c.endswith(" AS status_cd")] + [f"CASE {when} ELSE {phys} END AS status_cd"]
+        if "appt_pct" in spec["cols"]:
+            # FTE = JOB_DETL_FTE (fraction) x JOB_DETL_APPT_PCT / 100 (percent); a NULL percent counts as 100
+            cols = [c for c in cols if not c.endswith(" AS fte")] + [
+                f"CAST({spec['cols']['fte']} AS DOUBLE) * COALESCE(CAST({spec['cols']['appt_pct']} AS DOUBLE), 100) / 100 AS fte"]
         if logical not in ("ref_class", "ref_org", "ref_role", "protected"):
             if "exp_dt" in spec["cols"]:
                 cols = [c for c in cols if not c.endswith(" AS exp_dt")]
@@ -92,10 +101,27 @@ def _snaps(con, dates) -> None:
 KNOWN = "{a}.eff_dt <= s.snap_dt AND {a}.rec_start <= s.snap_dt AND s.snap_dt < {a}.rec_end"
 
 
+def _has(con, view: str, col: str) -> bool:
+    return col in {r[0] for r in con.execute(f"DESCRIBE {view}").fetchall()}
+
+
 def incumbents_asof(con, dates) -> pd.DataFrame:
     """One row per (snapshot, incumbent of a primary position) with RAW as-of features."""
     _snaps(con, dates)
     k = KNOWN.format(a="j")
+    # Position pay range as known at S (v3: POSN_MIN_SAL / POSN_MAX_SAL), class range as fallback. The v1
+    # layout binds no position range, and then these fragments are empty and the SQL is unchanged.
+    posr_cte, posr_join, posr_min, posr_max = "", "", "", ""
+    if _has(con, "v_position", "min_amt"):
+        posr_cte = f""",
+    posr AS (
+        SELECT s.snap_dt, p.posn_nbr, CAST(p.min_amt AS DOUBLE) min_amt, CAST(p.max_amt AS DOUBLE) max_amt
+        FROM snaps s JOIN v_position p ON {KNOWN.format(a="p")}
+        QUALIFY ROW_NUMBER() OVER (PARTITION BY s.snap_dt, p.posn_nbr ORDER BY p.eff_dt DESC, p.rec_start DESC) = 1),"""
+        posr_join = "\n    LEFT JOIN posr pz ON pz.snap_dt = c.snap_dt AND pz.posn_nbr = c.posn_nbr"
+        posr_min, posr_max = "COALESCE(pz.min_amt, CAST(rc.min_amt AS DOUBLE))", "COALESCE(pz.max_amt, CAST(rc.max_amt AS DOUBLE))"
+    else:
+        posr_min, posr_max = "CAST(rc.min_amt AS DOUBLE)", "CAST(rc.max_amt AS DOUBLE)"
     sql = f"""
     WITH jk AS (
         SELECT s.snap_dt, j.* FROM snaps s JOIN v_job j ON {k} WHERE j.contract_type = 'P'),
@@ -118,11 +144,11 @@ def incumbents_asof(con, dates) -> pd.DataFrame:
         SELECT j.snap_dt, u.unit_cd, COUNT(*) n_exit FROM jk j JOIN org_unit u ON u.org_cd = j.org_cd
         WHERE j.status_cd = 'T' AND j.eff_dt > j.snap_dt - INTERVAL 365 DAY GROUP BY ALL),
     hc AS (
-        SELECT c.snap_dt, u.unit_cd, COUNT(*) n_hc FROM cur c JOIN org_unit u ON u.org_cd = c.org_cd GROUP BY ALL)
+        SELECT c.snap_dt, u.unit_cd, COUNT(*) n_hc FROM cur c JOIN org_unit u ON u.org_cd = c.org_cd GROUP BY ALL){posr_cte}
     SELECT c.snap_dt, c.pers_id, c.posn_nbr, c.class_cd, r.role_family, r.role_level, r.critical_ind,
            CASE WHEN r.role_level = r.family_top THEN 1 ELSE 0 END AS top_level,
            c.org_cd, u.unit_cd, u.unit_title, CAST(c.fte AS DOUBLE) fte,
-           CAST(c.annual_sal AS DOUBLE) annual_sal, CAST(rc.min_amt AS DOUBLE) min_amt, CAST(rc.max_amt AS DOUBLE) max_amt,
+           CAST(c.annual_sal AS DOUBLE) annual_sal, {posr_min} min_amt, {posr_max} max_amt,
            p.birth_dt, COALESCE(e.first_hire_dt, ro.role_start) first_hire_dt, COALESCE(e.cur_hire_dt, ro.role_start) cur_hire_dt,
            ro.role_start, COALESCE(pr.prior_role, 0) prior_role,
            COALESCE(x.n_exit, 0) * 1.0 / h.n_hc AS unit_churn
@@ -135,7 +161,7 @@ def incumbents_asof(con, dates) -> pd.DataFrame:
     LEFT JOIN emp e ON e.snap_dt = c.snap_dt AND e.pers_id = c.pers_id
     LEFT JOIN per p ON p.snap_dt = c.snap_dt AND p.pers_id = c.pers_id
     LEFT JOIN exits x ON x.snap_dt = c.snap_dt AND x.unit_cd = u.unit_cd
-    LEFT JOIN hc h ON h.snap_dt = c.snap_dt AND h.unit_cd = u.unit_cd
+    LEFT JOIN hc h ON h.snap_dt = c.snap_dt AND h.unit_cd = u.unit_cd{posr_join}
     ORDER BY c.snap_dt, c.posn_nbr, c.pers_id
     """
     df = con.sql(sql).df()
@@ -208,11 +234,16 @@ def spells(con, known_at: dt.date | None = None) -> pd.DataFrame:
 
 
 def vacant_asof(con, d: dt.date) -> pd.DataFrame:
-    """Active positions with no known incumbent at d (needs the position-control table)."""
+    """Active positions with no known incumbent at d (needs the position-control table).
+
+    When the layout binds the position table's open indicator (v3: OPEN_POSN_IND), a vacancy also needs
+    that flag = 'Y' on the version known at d (Cookbook: use it alongside job history). C / F / I positions
+    are never vacancies because only status 'A' qualifies."""
     _snaps(con, [d])
+    open_ind = " AND p.open_ind = 'Y'" if _has(con, "v_position", "open_ind") else ""
     sql = f"""
     WITH pk AS (SELECT s.snap_dt, p.* FROM snaps s JOIN v_position p ON {KNOWN.format(a="p")}
-                WHERE p.exp_dt >= s.snap_dt AND p.status_cd = 'A'),
+                WHERE p.exp_dt >= s.snap_dt AND p.status_cd = 'A'{open_ind}),
     jk AS (SELECT s.snap_dt, j.* FROM snaps s JOIN v_job j ON {KNOWN.format(a="j")}
            WHERE j.contract_type = 'P' AND j.status_cd = 'A' AND j.exp_dt >= s.snap_dt)
     SELECT pk.posn_nbr, pk.class_cd, r.role_family, r.role_level, r.critical_ind, u.unit_cd
