@@ -1,0 +1,4 @@
+org_key,admin_level,campus_cd,campus_name,college_cd,college_name,dept_cd,dept_name,parent_org_key,is_active
+1,campus,U10,U10,,,,,,true
+2,campus,U20,U20,,,,,,true
+3,campus,U30,U30,,,,,,true

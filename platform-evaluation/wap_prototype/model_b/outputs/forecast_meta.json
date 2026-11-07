@@ -1,0 +1,61 @@
+{
+ "origin": "2026-12-31",
+ "origin_index": 43,
+ "selection": {
+  "chosen": "B-ets",
+  "by_horizon": {
+   "1": "B-ets",
+   "2": "B-ets",
+   "3": "B-ets",
+   "4": "B-ets",
+   "5": "B-ets",
+   "6": "B-ets",
+   "7": "B-ets",
+   "8": "B-ets",
+   "9": "B-ets",
+   "10": "B-ets",
+   "11": "B-ets",
+   "12": "B-ets"
+  },
+  "reason": "B-ens fails ['B7'] which another method passes; best by passes-then-MASE is B-ets",
+  "passes_all_gating": true
+ },
+ "n_series": 29,
+ "n_rows": 14616,
+ "risk_units_scored": 29,
+ "risk_flags": 1,
+ "risk_flag_decisions": 29,
+ "peer_scope": "campus",
+ "disparate_burden": [
+  {
+   "attribute": "sex",
+   "n_flagged_units": 1,
+   "n_unflagged_units": 28,
+   "n_persons_flagged": 14,
+   "n_persons_unflagged": 778,
+   "max_share_gap_pp": 15.001836210062436,
+   "burden_flag": true,
+   "groups_suppressed": 1
+  },
+  {
+   "attribute": "race_eth_rpt_cd",
+   "n_flagged_units": 1,
+   "n_unflagged_units": 28,
+   "n_persons_flagged": 14,
+   "n_persons_unflagged": 778,
+   "max_share_gap_pp": NaN,
+   "burden_flag": null,
+   "groups_suppressed": 9
+  },
+  {
+   "attribute": "age_40_plus",
+   "n_flagged_units": 1,
+   "n_unflagged_units": 28,
+   "n_persons_flagged": 14,
+   "n_persons_unflagged": 778,
+   "max_share_gap_pp": 14.065369078222556,
+   "burden_flag": true,
+   "groups_suppressed": 1
+  }
+ ]
+}

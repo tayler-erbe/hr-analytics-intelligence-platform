@@ -1,0 +1,57 @@
+{
+ "data_as_of": "2026-12-31",
+ "feature_table_hash": "2a0ee1f8ab19f6a0af0ca296a194f69d7c75566f33b6b7944f17d88a183431d8",
+ "k_min": 10,
+ "max_conservation_residual": 0.0,
+ "protocol_version": "wap-protocol-v1",
+ "published_model_version": "B-ets-20261231",
+ "run_id": "B-78b0ef423588",
+ "schema_version": "wap-star-v1",
+ "seed": 20261107,
+ "tables": {
+  "dim_date": {
+   "columns": 8,
+   "rows": 56,
+   "sha256": "0d12b136204669fcd12e6a2b7390491b6a7965b0f30421602b7220c3258b99b2"
+  },
+  "dim_model_version": {
+   "columns": 16,
+   "rows": 5,
+   "sha256": "2348d6be2500baea39165ed097eca2c2d6f115586b85d71b95f073bafb9418ba"
+  },
+  "dim_org": {
+   "columns": 10,
+   "rows": 3,
+   "sha256": "6fbd1a3dd2fcfe230ef3f6b44f6f17496d660261f489651ce68a9bee7a620031"
+  },
+  "dim_role_family": {
+   "columns": 4,
+   "rows": 11,
+   "sha256": "f29cda83c28e1e1bcda7ffb2a5f8e60fa3c3e05b5f4c9e69c6e28ab4ed3babf7"
+  },
+  "dim_scenario": {
+   "columns": 5,
+   "rows": 6,
+   "sha256": "4ebd985f57a4ccab70efa5d060c370a6b422620fb8eb92a07291a77c09a22b28"
+  },
+  "fact_attrition_forecast": {
+   "columns": 33,
+   "rows": 2376,
+   "sha256": "5c85af35866279544989e271b3d7aa6f47389b3765cf97655cd7fa15bafe73e3",
+   "suppressed_rows": 288
+  },
+  "fact_attrition_risk": {
+   "columns": 15,
+   "rows": 29,
+   "sha256": "60b3b691d7106bdaf4e95616a8db256490ce0da684dbb59c4cb01619e48a80f8",
+   "suppressed_rows": 0
+  },
+  "fact_model_quality": {
+   "columns": 15,
+   "rows": 4741,
+   "sha256": "afd91ae9fff2feb0b295246e860502acbade79ac45963f80537558fd501521f0",
+   "suppressed_rows": 0
+  }
+ },
+ "validation_ok": true
+}

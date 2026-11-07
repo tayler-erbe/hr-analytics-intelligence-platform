@@ -1,0 +1,7 @@
+scenario_key,scenario_cd,scenario_name,description,is_default
+1,primary,Primary (pre-registered selection),Model B primary (pre-registered selection); the primary scenario follows the per-horizon selection in metrics_b.json,true
+2,snaive,Seasonal naive comparator,Model B seasonal naive comparator; the primary scenario follows the per-horizon selection in metrics_b.json,false
+3,ets,ETS comparator,Model B ets comparator; the primary scenario follows the per-horizon selection in metrics_b.json,false
+4,pooled,Pooled ridge comparator,Model B pooled ridge comparator; the primary scenario follows the per-horizon selection in metrics_b.json,false
+5,gbm,LightGBM comparator,Model B lightgbm comparator; the primary scenario follows the per-horizon selection in metrics_b.json,false
+6,ens,Ensemble comparator,Model B ensemble comparator; the primary scenario follows the per-horizon selection in metrics_b.json,false

@@ -1,0 +1,3 @@
+outputs/restricted/*
+!outputs/restricted/.gitignore
+__pycache__/
