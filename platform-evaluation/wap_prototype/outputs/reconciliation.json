@@ -1,0 +1,229 @@
+{
+ "headcount": [
+  {
+   "check": "headcount 2016-06-30",
+   "expected": 611,
+   "actual": 611,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=586.25 integration=586.25"
+  },
+  {
+   "check": "headcount 2017-06-30",
+   "expected": 640,
+   "actual": 640,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=613.5 integration=613.5"
+  },
+  {
+   "check": "headcount 2018-06-30",
+   "expected": 671,
+   "actual": 671,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=642.0 integration=642.0"
+  },
+  {
+   "check": "headcount 2019-06-30",
+   "expected": 684,
+   "actual": 684,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=653.25 integration=653.25"
+  },
+  {
+   "check": "headcount 2020-06-30",
+   "expected": 715,
+   "actual": 715,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=684.75 integration=684.75"
+  },
+  {
+   "check": "headcount 2021-06-30",
+   "expected": 724,
+   "actual": 724,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=694.75 integration=694.75"
+  },
+  {
+   "check": "headcount 2022-06-30",
+   "expected": 733,
+   "actual": 733,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=702.75 integration=702.75"
+  },
+  {
+   "check": "headcount 2023-06-30",
+   "expected": 763,
+   "actual": 763,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=728.75 integration=728.75"
+  },
+  {
+   "check": "headcount 2024-06-30",
+   "expected": 788,
+   "actual": 788,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=756.5 integration=756.5"
+  },
+  {
+   "check": "headcount 2025-06-30",
+   "expected": 808,
+   "actual": 808,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=774.75 integration=774.75"
+  },
+  {
+   "check": "headcount 2026-06-30",
+   "expected": 813,
+   "actual": 813,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "fte feature=780.5 integration=780.5"
+  }
+ ],
+ "transitions": [
+  {
+   "check": "planted promotion",
+   "expected": 804,
+   "actual": 804,
+   "tolerance": 0.02,
+   "status": "pass",
+   "note": "candidate rule"
+  },
+  {
+   "check": "planted transfer",
+   "expected": 658,
+   "actual": 658,
+   "tolerance": 0.02,
+   "status": "pass",
+   "note": "candidate rule"
+  },
+  {
+   "check": "planted separation_resignation",
+   "expected": 972,
+   "actual": 972,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "from source codes"
+  },
+  {
+   "check": "planted retirement",
+   "expected": 36,
+   "actual": 36,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "from source codes"
+  },
+  {
+   "check": "planted separation_end_of_appointment",
+   "expected": 472,
+   "actual": 472,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "from source codes"
+  },
+  {
+   "check": "planted separations_total",
+   "expected": 1480,
+   "actual": 1480,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "from source codes"
+  },
+  {
+   "check": "planted internal_moves",
+   "expected": 1467,
+   "actual": 1467,
+   "tolerance": 0.02,
+   "status": "pass",
+   "note": "promotions + transfers + reactivations (re-appointment to an earlier job)"
+  },
+  {
+   "check": "planted hire",
+   "expected": 2302,
+   "actual": 2302,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "from source codes"
+  },
+  {
+   "check": "planted rehire",
+   "expected": 0,
+   "actual": 0,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "from source codes"
+  }
+ ],
+ "integration_events": [
+  {
+   "check": "internal moves vs fact_appointment_events",
+   "expected": 1467,
+   "actual": 1467,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "integration rule counts concurrent-job pay cycles as moves (CLEAN); exact on longitudinal"
+  },
+  {
+   "check": "resignation vs fact_separation_events",
+   "expected": 972,
+   "actual": 972,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": ""
+  },
+  {
+   "check": "retirement vs fact_separation_events",
+   "expected": 36,
+   "actual": 36,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": ""
+  },
+  {
+   "check": "end_of_appointment vs fact_separation_events",
+   "expected": 472,
+   "actual": 472,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": ""
+  },
+  {
+   "check": "hires + rehires vs fact_appointment_events",
+   "expected": 2302,
+   "actual": 2302,
+   "tolerance": 0.0,
+   "status": "pass",
+   "note": "integration rule counts concurrent-job pay cycles as moves (CLEAN); exact on longitudinal"
+  }
+ ],
+ "set": "longitudinal",
+ "event_counts": {
+  "promotion": 804,
+  "reactivation": 5,
+  "hire": 2302,
+  "job_end": 1467,
+  "transfer_lateral": 592,
+  "transfer_down": 66,
+  "leave": 48,
+  "no_change": 57,
+  "pay_change": 13546,
+  "separation_resignation": 972,
+  "separation_end_of_appointment": 472,
+  "retirement": 36
+ },
+ "summary": {
+  "pass": 25,
+  "fail": 0,
+  "info": 0,
+  "skipped": 0
+ }
+}

@@ -1,0 +1,364 @@
+year,campus_org_code,role_family,headcount,fte,hires,separations,retirements,promotions,transfers,any_suppressed,suppression_reason,min_cell_size
+2016,U10,Academic Professional (synthetic),42,41.0,,,0,,,true,small_count,10
+2016,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2016,U10,Client Relations Representative,30,28.25,,,0,0,,true,small_count,10
+2016,U10,Environmental Health & Safety Technician,17,17.0,,,0,0,,true,small_count,10
+2016,U10,Food Service Administrator,24,24.0,,,0,,,true,small_count,10
+2016,U10,Health Care Administrator,10,9.75,,,0,,,true,small_count,10
+2016,U10,Institutional Compliance Examiner,14,13.25,,,0,,,true,small_count,10
+2016,U10,Medical Technologist,10,10.0,,,0,,,true,small_count,10
+2016,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2016,U10,Steam and Power Plant,13,12.0,,,0,,,true,small_count,10
+2016,U10,Storekeeper,18,17.5,,,0,0,,true,small_count,10
+2016,U20,Academic Professional (synthetic),33,32.0,,,0,,,true,small_count,10
+2016,U20,Accountant,25,23.0,,,0,0,,true,small_count,10
+2016,U20,Client Relations Representative,23,21.25,,,0,0,,true,small_count,10
+2016,U20,Environmental Health & Safety Technician,12,11.25,,,0,,,true,small_count,10
+2016,U20,Food Service Administrator,10,9.5,,,0,0,0,true,small_count,10
+2016,U20,Health Care Administrator,19,18.0,,0,0,,,true,small_count,10
+2016,U20,Institutional Compliance Examiner,19,18.25,,,0,,,true,small_count,10
+2016,U20,Medical Technologist,26,24.75,0,,0,0,,true,small_count,10
+2016,U20,Payroll Specialist,12,11.5,,,0,0,0,true,small_count,10
+2016,U20,Steam and Power Plant,20,19.5,,,0,,0,true,small_count,10
+2016,U20,Storekeeper,15,15.0,0,,0,0,0,true,small_count,10
+2016,U30,Academic Professional (synthetic),30,28.0,,,0,,,true,small_count,10
+2016,U30,Accountant,18,16.5,,0,0,,,true,small_count,10
+2016,U30,Client Relations Representative,21,20.5,,,,,0,true,small_count,10
+2016,U30,Environmental Health & Safety Technician,15,14.75,,,0,,,true,small_count,10
+2016,U30,Food Service Administrator,25,23.5,,,0,,,true,small_count,10
+2016,U30,Health Care Administrator,22,21.25,,,0,,,true,small_count,10
+2016,U30,Institutional Compliance Examiner,33,31.75,,,0,,,true,small_count,10
+2016,U30,Medical Technologist,21,19.75,,,0,0,,true,small_count,10
+2016,U30,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2016,U30,Steam and Power Plant,26,25.5,,,0,0,,true,small_count,10
+2016,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2017,U10,Academic Professional (synthetic),42,41.5,,,0,,,true,small_count,10
+2017,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2017,U10,Client Relations Representative,32,30.0,,,0,0,,true,small_count,10
+2017,U10,Environmental Health & Safety Technician,17,17.0,,,0,,,true,small_count,10
+2017,U10,Food Service Administrator,22,22.0,,,0,,,true,small_count,10
+2017,U10,Health Care Administrator,14,13.0,,0,0,,0,true,small_count,10
+2017,U10,Institutional Compliance Examiner,14,13.0,,,0,,0,true,small_count,10
+2017,U10,Medical Technologist,12,12.0,,,,,0,true,small_count,10
+2017,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2017,U10,Steam and Power Plant,13,12.0,,,0,,0,true,small_count,10
+2017,U10,Storekeeper,19,18.75,,,0,0,0,true,small_count,10
+2017,U20,Academic Professional (synthetic),35,34.0,,,0,,,true,small_count,10
+2017,U20,Accountant,26,24.25,,,0,,,true,small_count,10
+2017,U20,Client Relations Representative,24,22.75,,,,,,true,small_count,10
+2017,U20,Environmental Health & Safety Technician,11,11.0,,,0,,,true,small_count,10
+2017,U20,Food Service Administrator,12,11.0,,,0,,,true,small_count,10
+2017,U20,Health Care Administrator,20,19.0,,,0,0,,true,small_count,10
+2017,U20,Institutional Compliance Examiner,23,22.0,,0,0,,,true,small_count,10
+2017,U20,Medical Technologist,25,23.25,,,0,,,true,small_count,10
+2017,U20,Payroll Specialist,11,11.0,,,0,0,0,true,small_count,10
+2017,U20,Steam and Power Plant,18,17.5,,,0,0,,true,small_count,10
+2017,U20,Storekeeper,17,16.5,,,,,0,true,small_count,10
+2017,U30,Academic Professional (synthetic),29,26.5,,,0,,,true,small_count,10
+2017,U30,Accountant,20,19.0,,,0,,,true,small_count,10
+2017,U30,Client Relations Representative,21,20.5,,,0,,0,true,small_count,10
+2017,U30,Environmental Health & Safety Technician,16,16.0,,,0,0,,true,small_count,10
+2017,U30,Food Service Administrator,23,22.25,,,0,0,0,true,small_count,10
+2017,U30,Health Care Administrator,21,20.25,0,,0,0,,true,small_count,10
+2017,U30,Institutional Compliance Examiner,33,32.0,,,0,,,true,small_count,10
+2017,U30,Medical Technologist,23,21.5,,,0,0,,true,small_count,10
+2017,U30,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2017,U30,Steam and Power Plant,26,25.25,,,0,,,true,small_count,10
+2017,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2018,U10,Academic Professional (synthetic),45,44.5,,,0,,,true,small_count,10
+2018,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2018,U10,Client Relations Representative,34,32.0,,,,,,true,small_count,10
+2018,U10,Environmental Health & Safety Technician,18,17.75,,,0,0,0,true,small_count,10
+2018,U10,Food Service Administrator,27,26.75,,,0,,0,true,small_count,10
+2018,U10,Health Care Administrator,14,13.75,,,0,0,,true,small_count,10
+2018,U10,Institutional Compliance Examiner,16,15.25,,,0,0,0,true,small_count,10
+2018,U10,Medical Technologist,12,11.0,,,0,,,true,small_count,10
+2018,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2018,U10,Steam and Power Plant,12,11.0,0,,0,0,0,true,small_count,10
+2018,U10,Storekeeper,19,18.75,,0,0,0,0,true,small_count,10
+2018,U20,Academic Professional (synthetic),36,34.5,,,0,,0,true,small_count,10
+2018,U20,Accountant,27,25.5,,,0,,,true,small_count,10
+2018,U20,Client Relations Representative,25,23.25,,,0,,,true,small_count,10
+2018,U20,Environmental Health & Safety Technician,13,13.0,,,0,0,0,true,small_count,10
+2018,U20,Food Service Administrator,12,11.0,,,,,,true,small_count,10
+2018,U20,Health Care Administrator,19,18.0,,,0,0,,true,small_count,10
+2018,U20,Institutional Compliance Examiner,25,24.0,,,0,,0,true,small_count,10
+2018,U20,Medical Technologist,26,24.25,0,,0,,0,true,small_count,10
+2018,U20,Payroll Specialist,13,12.5,,,0,0,,true,small_count,10
+2018,U20,Steam and Power Plant,21,20.75,,0,0,,,true,small_count,10
+2018,U20,Storekeeper,18,17.5,,0,0,,0,true,small_count,10
+2018,U30,Academic Professional (synthetic),35,32.5,,,0,,0,true,small_count,10
+2018,U30,Accountant,21,19.5,,,0,,,true,small_count,10
+2018,U30,Client Relations Representative,21,20.5,,0,0,,,true,small_count,10
+2018,U30,Environmental Health & Safety Technician,17,16.75,,,0,,,true,small_count,10
+2018,U30,Food Service Administrator,25,24.25,,,0,,0,true,small_count,10
+2018,U30,Health Care Administrator,22,20.5,,,0,,0,true,small_count,10
+2018,U30,Institutional Compliance Examiner,32,30.25,,,0,,,true,small_count,10
+2018,U30,Medical Technologist,24,22.5,,,0,0,0,true,small_count,10
+2018,U30,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2018,U30,Steam and Power Plant,30,27.5,,,0,,,true,small_count,10
+2018,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2019,U10,Academic Professional (synthetic),46,45.5,,,0,,0,true,small_count,10
+2019,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2019,U10,Client Relations Representative,33,31.75,,10,,,,true,small_count,10
+2019,U10,Environmental Health & Safety Technician,17,16.75,,,0,,0,true,small_count,10
+2019,U10,Food Service Administrator,28,27.5,,,0,,,true,small_count,10
+2019,U10,Health Care Administrator,14,13.75,,,0,,,true,small_count,10
+2019,U10,Institutional Compliance Examiner,17,16.25,0,0,0,,0,true,small_count,10
+2019,U10,Medical Technologist,14,13.0,,,0,0,0,true,small_count,10
+2019,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2019,U10,Steam and Power Plant,12,11.5,,,0,0,,true,small_count,10
+2019,U10,Storekeeper,20,19.25,,,0,0,0,true,small_count,10
+2019,U20,Academic Professional (synthetic),34,31.75,,,0,,,true,small_count,10
+2019,U20,Accountant,30,27.75,,,,,,true,small_count,10
+2019,U20,Client Relations Representative,26,24.75,,,0,,0,true,small_count,10
+2019,U20,Environmental Health & Safety Technician,14,14.0,0,,0,0,0,true,small_count,10
+2019,U20,Food Service Administrator,12,11.0,,,0,,,true,small_count,10
+2019,U20,Health Care Administrator,18,17.0,,,0,0,,true,small_count,10
+2019,U20,Institutional Compliance Examiner,25,23.5,,,0,,,true,small_count,10
+2019,U20,Medical Technologist,27,25.5,,,,,,true,small_count,10
+2019,U20,Payroll Specialist,15,14.5,,,0,,,true,small_count,10
+2019,U20,Steam and Power Plant,25,25.0,,,0,,,true,small_count,10
+2019,U20,Storekeeper,18,18.0,,,0,0,0,true,small_count,10
+2019,U30,Academic Professional (synthetic),36,33.5,,,0,,,true,small_count,10
+2019,U30,Accountant,24,22.5,,,0,0,0,true,small_count,10
+2019,U30,Client Relations Representative,22,21.5,,,0,,,true,small_count,10
+2019,U30,Environmental Health & Safety Technician,20,19.75,,,0,,,true,small_count,10
+2019,U30,Food Service Administrator,25,24.5,,,0,,,true,small_count,10
+2019,U30,Health Care Administrator,19,17.75,,,0,0,,true,small_count,10
+2019,U30,Institutional Compliance Examiner,32,29.75,,,0,,,true,small_count,10
+2019,U30,Medical Technologist,24,22.75,,,0,,,true,small_count,10
+2019,U30,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2019,U30,Steam and Power Plant,28,25.75,,,0,,0,true,small_count,10
+2019,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2020,U10,Academic Professional (synthetic),43,42.5,,,0,,,true,small_count,10
+2020,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2020,U10,Client Relations Representative,37,35.75,,,0,,,true,small_count,10
+2020,U10,Environmental Health & Safety Technician,18,17.75,,,0,0,,true,small_count,10
+2020,U10,Food Service Administrator,28,27.0,,,,0,,true,small_count,10
+2020,U10,Health Care Administrator,13,12.25,,,0,,,true,small_count,10
+2020,U10,Institutional Compliance Examiner,17,15.5,,,0,,0,true,small_count,10
+2020,U10,Medical Technologist,15,14.0,,,0,,0,true,small_count,10
+2020,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2020,U10,Steam and Power Plant,14,14.0,,,0,0,,true,small_count,10
+2020,U10,Storekeeper,18,17.25,,,,0,,true,small_count,10
+2020,U20,Academic Professional (synthetic),35,33.25,,,0,,,true,small_count,10
+2020,U20,Accountant,28,25.75,,,0,,,true,small_count,10
+2020,U20,Client Relations Representative,27,25.75,,,0,0,,true,small_count,10
+2020,U20,Environmental Health & Safety Technician,14,14.0,,0,0,,0,true,small_count,10
+2020,U20,Food Service Administrator,13,12.0,,,0,,0,true,small_count,10
+2020,U20,Health Care Administrator,19,17.5,,,0,,0,true,small_count,10
+2020,U20,Institutional Compliance Examiner,26,24.75,,,0,,,true,small_count,10
+2020,U20,Medical Technologist,26,24.5,0,,0,,0,true,small_count,10
+2020,U20,Payroll Specialist,15,14.5,0,0,0,0,0,false,,10
+2020,U20,Steam and Power Plant,25,25.0,,,0,,0,true,small_count,10
+2020,U20,Storekeeper,17,16.5,,,0,0,,true,small_count,10
+2020,U30,Academic Professional (synthetic),38,35.5,,,0,0,,true,small_count,10
+2020,U30,Accountant,25,23.75,,0,0,,0,true,small_count,10
+2020,U30,Client Relations Representative,23,22.5,,,0,0,,true,small_count,10
+2020,U30,Environmental Health & Safety Technician,19,18.75,,,0,0,0,true,small_count,10
+2020,U30,Food Service Administrator,28,27.5,,,0,,,true,small_count,10
+2020,U30,Health Care Administrator,21,20.5,,0,0,,,true,small_count,10
+2020,U30,Institutional Compliance Examiner,32,30.5,,,0,,,true,small_count,10
+2020,U30,Medical Technologist,25,23.75,,,0,,,true,small_count,10
+2020,U30,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2020,U30,Steam and Power Plant,28,27.0,,,0,,,true,small_count,10
+2020,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2021,U10,Academic Professional (synthetic),49,47.75,12,,0,,,true,small_count,10
+2021,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2021,U10,Client Relations Representative,34,32.75,,,0,0,,true,small_count,10
+2021,U10,Environmental Health & Safety Technician,20,19.75,,,0,,0,true,small_count,10
+2021,U10,Food Service Administrator,25,24.5,,,0,,,true,small_count,10
+2021,U10,Health Care Administrator,15,13.75,,0,0,0,,true,small_count,10
+2021,U10,Institutional Compliance Examiner,16,13.5,,,0,,,true,small_count,10
+2021,U10,Medical Technologist,16,15.0,,,0,,0,true,small_count,10
+2021,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2021,U10,Steam and Power Plant,16,16.0,,0,0,,0,true,small_count,10
+2021,U10,Storekeeper,18,17.0,,,0,,,true,small_count,10
+2021,U20,Academic Professional (synthetic),35,33.5,,,0,,0,true,small_count,10
+2021,U20,Accountant,29,26.5,,,0,,,true,small_count,10
+2021,U20,Client Relations Representative,27,25.75,,,0,,,true,small_count,10
+2021,U20,Environmental Health & Safety Technician,15,14.75,0,,0,0,0,true,small_count,10
+2021,U20,Food Service Administrator,12,11.0,,,0,0,,true,small_count,10
+2021,U20,Health Care Administrator,16,14.75,,,0,0,,true,small_count,10
+2021,U20,Institutional Compliance Examiner,26,24.25,,,0,,,true,small_count,10
+2021,U20,Medical Technologist,26,24.25,,,0,0,,true,small_count,10
+2021,U20,Payroll Specialist,13,12.5,,,0,0,0,true,small_count,10
+2021,U20,Steam and Power Plant,26,25.75,,,0,,,true,small_count,10
+2021,U20,Storekeeper,18,17.5,0,,0,0,0,true,small_count,10
+2021,U30,Academic Professional (synthetic),38,37.5,,,,,,true,small_count,10
+2021,U30,Accountant,24,23.0,,,0,,,true,small_count,10
+2021,U30,Client Relations Representative,24,23.0,,,0,,0,true,small_count,10
+2021,U30,Environmental Health & Safety Technician,20,19.25,,,,0,,true,small_count,10
+2021,U30,Food Service Administrator,31,30.0,,,0,,,true,small_count,10
+2021,U30,Health Care Administrator,23,22.5,,,0,0,,true,small_count,10
+2021,U30,Institutional Compliance Examiner,34,33.0,,,0,,,true,small_count,10
+2021,U30,Medical Technologist,24,23.5,,,0,,,true,small_count,10
+2021,U30,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2021,U30,Steam and Power Plant,34,33.0,,,0,,,true,small_count,10
+2021,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2022,U10,Academic Professional (synthetic),51,49.75,,,0,,,true,small_count,10
+2022,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2022,U10,Client Relations Representative,35,33.25,,,0,,0,true,small_count,10
+2022,U10,Environmental Health & Safety Technician,20,19.75,,,0,0,0,true,small_count,10
+2022,U10,Food Service Administrator,27,26.25,,,0,0,,true,small_count,10
+2022,U10,Health Care Administrator,16,14.75,0,,0,0,0,true,small_count,10
+2022,U10,Institutional Compliance Examiner,14,12.0,,,0,,0,true,small_count,10
+2022,U10,Medical Technologist,16,15.0,0,,0,,,true,small_count,10
+2022,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2022,U10,Steam and Power Plant,16,15.75,,,0,0,,true,small_count,10
+2022,U10,Storekeeper,18,17.0,,,0,,0,true,small_count,10
+2022,U20,Academic Professional (synthetic),40,38.0,,,0,,,true,small_count,10
+2022,U20,Accountant,32,29.5,,,,0,,true,small_count,10
+2022,U20,Client Relations Representative,30,28.25,,,0,,,true,small_count,10
+2022,U20,Environmental Health & Safety Technician,15,15.0,,0,0,,0,true,small_count,10
+2022,U20,Food Service Administrator,12,11.0,,,0,,,true,small_count,10
+2022,U20,Health Care Administrator,16,14.75,,,0,0,,true,small_count,10
+2022,U20,Institutional Compliance Examiner,25,23.75,,,0,,,true,small_count,10
+2022,U20,Medical Technologist,25,22.5,,,0,,,true,small_count,10
+2022,U20,Payroll Specialist,15,14.0,,,,,0,true,small_count,10
+2022,U20,Steam and Power Plant,26,25.75,,,0,,,true,small_count,10
+2022,U20,Storekeeper,17,17.0,,,0,0,,true,small_count,10
+2022,U30,Academic Professional (synthetic),39,38.5,,,0,,,true,small_count,10
+2022,U30,Accountant,24,23.0,,,0,,0,true,small_count,10
+2022,U30,Client Relations Representative,25,24.5,,,0,,,true,small_count,10
+2022,U30,Environmental Health & Safety Technician,22,21.25,,,0,,0,true,small_count,10
+2022,U30,Food Service Administrator,31,30.25,,,0,,,true,small_count,10
+2022,U30,Health Care Administrator,22,21.0,,,0,,,true,small_count,10
+2022,U30,Institutional Compliance Examiner,37,35.5,,,0,,,true,small_count,10
+2022,U30,Medical Technologist,23,22.5,,,0,,,true,small_count,10
+2022,U30,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2022,U30,Steam and Power Plant,33,32.0,,,,,,true,small_count,10
+2022,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2023,U10,Academic Professional (synthetic),52,50.0,10,,0,,,true,small_count,10
+2023,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2023,U10,Client Relations Representative,37,35.5,,,,,,true,small_count,10
+2023,U10,Environmental Health & Safety Technician,21,20.25,,,0,0,,true,small_count,10
+2023,U10,Food Service Administrator,26,25.25,,,0,,,true,small_count,10
+2023,U10,Health Care Administrator,16,14.25,,,0,0,,true,small_count,10
+2023,U10,Institutional Compliance Examiner,15,13.0,,,0,0,,true,small_count,10
+2023,U10,Medical Technologist,17,16.5,,,0,,,true,small_count,10
+2023,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2023,U10,Steam and Power Plant,15,14.75,,,0,0,0,true,small_count,10
+2023,U10,Storekeeper,20,18.25,,,0,0,0,true,small_count,10
+2023,U20,Academic Professional (synthetic),42,40.5,,,,,,true,small_count,10
+2023,U20,Accountant,33,30.0,,,0,0,0,true,small_count,10
+2023,U20,Client Relations Representative,28,26.0,,,0,,,true,small_count,10
+2023,U20,Environmental Health & Safety Technician,15,15.0,,,0,,0,true,small_count,10
+2023,U20,Food Service Administrator,14,13.5,,,0,0,0,true,small_count,10
+2023,U20,Health Care Administrator,18,16.75,,,0,0,,true,small_count,10
+2023,U20,Institutional Compliance Examiner,28,27.5,,,0,,,true,small_count,10
+2023,U20,Medical Technologist,27,25.5,,,0,,,true,small_count,10
+2023,U20,Payroll Specialist,14,13.0,,,0,0,0,true,small_count,10
+2023,U20,Steam and Power Plant,28,27.5,,,0,,0,true,small_count,10
+2023,U20,Storekeeper,17,17.0,,,0,0,,true,small_count,10
+2023,U30,Academic Professional (synthetic),40,39.5,,,,,,true,small_count,10
+2023,U30,Accountant,24,23.0,0,,0,,,true,small_count,10
+2023,U30,Client Relations Representative,24,23.5,,,0,,,true,small_count,10
+2023,U30,Environmental Health & Safety Technician,25,23.75,,,0,,,true,small_count,10
+2023,U30,Food Service Administrator,32,31.25,,,0,0,,true,small_count,10
+2023,U30,Health Care Administrator,23,22.5,,,0,,,true,small_count,10
+2023,U30,Institutional Compliance Examiner,35,33.75,,,0,,,true,small_count,10
+2023,U30,Medical Technologist,26,25.25,,0,0,,,true,small_count,10
+2023,U30,Payroll Specialist,,,,,,,,true,complementary,10
+2023,U30,Steam and Power Plant,35,34.5,,,0,,,true,small_count,10
+2023,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2024,U10,Academic Professional (synthetic),55,52.0,10,,,,,true,small_count,10
+2024,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2024,U10,Client Relations Representative,37,35.0,,,0,,,true,small_count,10
+2024,U10,Environmental Health & Safety Technician,22,21.0,,,,,,true,small_count,10
+2024,U10,Food Service Administrator,25,23.75,,10,0,,,true,small_count,10
+2024,U10,Health Care Administrator,16,14.75,,,0,,0,true,small_count,10
+2024,U10,Institutional Compliance Examiner,13,11.5,,,0,,0,true,small_count,10
+2024,U10,Medical Technologist,17,16.5,,,0,,0,true,small_count,10
+2024,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2024,U10,Steam and Power Plant,17,16.75,0,0,0,,,true,small_count,10
+2024,U10,Storekeeper,21,19.25,,,0,0,0,true,small_count,10
+2024,U20,Academic Professional (synthetic),43,42.0,,,0,,,true,small_count,10
+2024,U20,Accountant,33,30.5,,,0,0,,true,small_count,10
+2024,U20,Client Relations Representative,32,30.75,,,0,,,true,small_count,10
+2024,U20,Environmental Health & Safety Technician,14,14.0,,0,0,,,true,small_count,10
+2024,U20,Food Service Administrator,15,14.5,,,0,0,,true,small_count,10
+2024,U20,Health Care Administrator,20,19.5,,,0,,0,true,small_count,10
+2024,U20,Institutional Compliance Examiner,26,25.5,,,0,,,true,small_count,10
+2024,U20,Medical Technologist,28,26.5,,,0,,,true,small_count,10
+2024,U20,Payroll Specialist,14,13.0,,,0,0,,true,small_count,10
+2024,U20,Steam and Power Plant,29,28.5,,,,,,true,small_count,10
+2024,U20,Storekeeper,19,19.0,,,0,0,,true,small_count,10
+2024,U30,Academic Professional (synthetic),43,42.5,,,0,,0,true,small_count,10
+2024,U30,Accountant,23,22.25,,,,0,,true,small_count,10
+2024,U30,Client Relations Representative,24,23.0,,,0,0,,true,small_count,10
+2024,U30,Environmental Health & Safety Technician,26,24.75,,,0,,,true,small_count,10
+2024,U30,Food Service Administrator,33,32.0,,,0,0,0,true,small_count,10
+2024,U30,Health Care Administrator,23,22.0,,,0,,,true,small_count,10
+2024,U30,Institutional Compliance Examiner,38,36.5,,,0,,,true,small_count,10
+2024,U30,Medical Technologist,27,25.75,,,0,,,true,small_count,10
+2024,U30,Payroll Specialist,,,,,,,,true,complementary,10
+2024,U30,Steam and Power Plant,35,34.25,,,0,,,true,small_count,10
+2024,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2025,U10,Academic Professional (synthetic),54,51.5,,11,,,,true,small_count,10
+2025,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2025,U10,Client Relations Representative,37,35.0,,,0,,,true,small_count,10
+2025,U10,Environmental Health & Safety Technician,23,22.0,,,0,0,0,true,small_count,10
+2025,U10,Food Service Administrator,28,26.75,,,0,,,true,small_count,10
+2025,U10,Health Care Administrator,16,14.75,0,,0,0,0,true,small_count,10
+2025,U10,Institutional Compliance Examiner,12,10.5,,,,,0,true,small_count,10
+2025,U10,Medical Technologist,17,16.5,0,,0,,0,true,small_count,10
+2025,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2025,U10,Steam and Power Plant,17,16.25,,,0,0,,true,small_count,10
+2025,U10,Storekeeper,22,20.75,,,0,,0,true,small_count,10
+2025,U20,Academic Professional (synthetic),44,43.0,,,0,,,true,small_count,10
+2025,U20,Accountant,36,33.0,,,0,,,true,small_count,10
+2025,U20,Client Relations Representative,35,33.75,,,0,,,true,small_count,10
+2025,U20,Environmental Health & Safety Technician,14,13.5,,,0,0,,true,small_count,10
+2025,U20,Food Service Administrator,14,13.5,,,0,,,true,small_count,10
+2025,U20,Health Care Administrator,22,21.5,,,0,0,,true,small_count,10
+2025,U20,Institutional Compliance Examiner,29,27.5,,,0,0,,true,small_count,10
+2025,U20,Medical Technologist,26,24.5,,,0,,,true,small_count,10
+2025,U20,Payroll Specialist,14,12.75,,,0,,0,true,small_count,10
+2025,U20,Steam and Power Plant,31,30.0,,,0,0,,true,small_count,10
+2025,U20,Storekeeper,18,18.0,0,,0,0,0,true,small_count,10
+2025,U30,Academic Professional (synthetic),38,37.0,,,0,,,true,small_count,10
+2025,U30,Accountant,26,25.5,,,0,,0,true,small_count,10
+2025,U30,Client Relations Representative,28,27.0,,,0,,,true,small_count,10
+2025,U30,Environmental Health & Safety Technician,26,24.75,,,0,0,,true,small_count,10
+2025,U30,Food Service Administrator,32,31.0,,,,,0,true,small_count,10
+2025,U30,Health Care Administrator,24,22.25,,,0,0,,true,small_count,10
+2025,U30,Institutional Compliance Examiner,36,35.25,,,0,,,true,small_count,10
+2025,U30,Medical Technologist,30,29.25,,,0,,0,true,small_count,10
+2025,U30,Payroll Specialist,,,,,,,,true,complementary,10
+2025,U30,Steam and Power Plant,36,34.75,,,0,,,true,small_count,10
+2025,U30,Storekeeper,,,,,,,,true,headcount_below_k,10
+2026,U10,Academic Professional (synthetic),50,47.75,,,0,,,true,small_count,10
+2026,U10,Accountant,,,,,,,,true,headcount_below_k,10
+2026,U10,Client Relations Representative,38,36.5,,,0,,0,true,small_count,10
+2026,U10,Environmental Health & Safety Technician,23,22.0,,,0,0,,true,small_count,10
+2026,U10,Food Service Administrator,31,29.5,,,0,,,true,small_count,10
+2026,U10,Health Care Administrator,15,13.75,0,,0,,0,true,small_count,10
+2026,U10,Institutional Compliance Examiner,14,12.5,,,0,,,true,small_count,10
+2026,U10,Medical Technologist,13,13.0,,,0,,,true,small_count,10
+2026,U10,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2026,U10,Steam and Power Plant,18,17.25,,,0,0,,true,small_count,10
+2026,U10,Storekeeper,23,21.75,,,0,0,0,true,small_count,10
+2026,U20,Academic Professional (synthetic),42,41.5,,,0,,0,true,small_count,10
+2026,U20,Accountant,33,31.0,,,0,,,true,small_count,10
+2026,U20,Client Relations Representative,36,35.0,,,0,,,true,small_count,10
+2026,U20,Environmental Health & Safety Technician,15,14.5,,0,0,0,,true,small_count,10
+2026,U20,Food Service Administrator,14,13.25,,,0,0,,true,small_count,10
+2026,U20,Health Care Administrator,23,22.5,,,0,,0,true,small_count,10
+2026,U20,Institutional Compliance Examiner,30,28.0,0,,0,0,0,true,small_count,10
+2026,U20,Medical Technologist,27,25.5,,0,0,,,true,small_count,10
+2026,U20,Payroll Specialist,13,12.25,,,0,0,0,true,small_count,10
+2026,U20,Steam and Power Plant,32,30.5,,,0,,,true,small_count,10
+2026,U20,Storekeeper,17,17.0,,,0,,,true,small_count,10
+2026,U30,Academic Professional (synthetic),43,41.5,,,0,,,true,small_count,10
+2026,U30,Accountant,26,25.0,,,0,,,true,small_count,10
+2026,U30,Client Relations Representative,29,28.5,,,0,0,,true,small_count,10
+2026,U30,Environmental Health & Safety Technician,27,25.75,,,0,0,,true,small_count,10
+2026,U30,Food Service Administrator,31,30.0,0,0,0,,,true,small_count,10
+2026,U30,Health Care Administrator,23,21.75,,,0,0,,true,small_count,10
+2026,U30,Institutional Compliance Examiner,38,36.25,,,0,,0,true,small_count,10
+2026,U30,Medical Technologist,31,30.25,,,0,0,,true,small_count,10
+2026,U30,Payroll Specialist,,,,,,,,true,headcount_below_k,10
+2026,U30,Steam and Power Plant,37,35.75,,,0,,,true,small_count,10
+2026,U30,Storekeeper,,,,,,,,true,complementary,10

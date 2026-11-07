@@ -1,0 +1,15 @@
+event_type,source_change_reason_label,n
+hire,hire,2302
+job_end,job_end,1467
+leave,(none),48
+no_change,(none),57
+pay_change,pay_change,13546
+promotion,promotion,804
+reactivation,reactivation,5
+retirement,separation_retirement,36
+separation_end_of_appointment,job_end,472
+separation_resignation,separation_resignation,972
+transfer_down,transfer_campus,22
+transfer_down,transfer_lateral,44
+transfer_lateral,transfer_campus,214
+transfer_lateral,transfer_lateral,378

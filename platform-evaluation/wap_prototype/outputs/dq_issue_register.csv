@@ -1,0 +1,26 @@
+check_id,severity,concept,description,rule,n_rows,n_entities,example_ids,status,rule_version
+DQ01,error,T_JOB_DETL_HIST,"Overlapping effective intervals within one job (person, position, suffix)",next valid_from <= previous valid_to on the current-knowledge chain,5,5,991000076/Q00715/2020-07-15; 991000708/Q00457/2011-03-11; 991000866/Q00115/2020-04-15; 991001071/Q00102/2023-12-05; 991001280/Q00733/2023-02-28,fail,wap_phase1_dq_v1
+DQ02,warn,T_JOB_DETL_HIST,Gap between consecutive Active rows of the same job,"next valid_from > previous valid_to + 1 day, both Active",0,0,"",pass,wap_phase1_dq_v1
+DQ03,error,T_JOB_DETL_HIST,Appointment row with no position version effective on its start date,no T_POSN_HIST row with valid_from <= event_date <= valid_to (current knowledge),41,41,Q00003/991000003/1998-08-17; Q00007/991000007/2000-11-30; Q00009/991000009/1999-11-18; Q00010/991000010/1993-07-16; Q00019/991000019/1993-12-16,fail,wap_phase1_dq_v1
+DQ03b,error,T_JOB_DETL_HIST,Appointment row whose position does not exist at all,position_id absent from T_POSN_HIST,0,0,"",pass,wap_phase1_dq_v1
+DQ04,error,T_EMPEE_HIST,Terminated person with an Active appointment effective after the termination date,x_separation.term_date < Active row valid_to and no later rehire row starts after the termination,0,0,"",pass,wap_phase1_dq_v1
+DQ04b,warn,T_EMPEE_HIST,Termination record with no Terminated appointment row on that date,x_separation row without an appointment row of terminated status starting on term_date,0,0,"",pass,wap_phase1_dq_v1
+DQ05,error,T_JOB_DETL_HIST,"FTE outside (0, 1.0] on Active rows (fraction assumption)","fte IS NULL OR fte <= 0 OR fte > 1.0; appointment percent outside (0, 100]",0,0,"",pass,wap_phase1_dq_v1
+DQ06,warn,T_POSN_HIST,FTE-adjusted annual salary outside the position's POSN_MIN_SAL..POSN_MAX_SAL range,annual_salary / fte < min*(1-0.005) or > max*(1+0.005) on Active rows; position version effective at the row start,0,0,"",pass,wap_phase1_dq_v1
+DQ06b,warn,T_POSN_HIST,Position version with a missing or inverted salary range,range_min IS NULL OR range_max IS NULL OR range_min > range_max,0,0,"",pass,wap_phase1_dq_v1
+DQ07,info,T_JOB_DETL_HIST,Active appointment rows with no supervisor (current rows at the extract date),supervisor_person_id IS NULL on rows effective at the extract date,822,822,991000006/Q00522; 991000007/Q01038; 991000022/Q00805; 991000035/Q00005; 991000047/Q00060,warn,wap_phase1_dq_v1
+DQ07b,error,T_JOB_DETL_HIST,Supervisor cycles (self-supervision or A<->B) among current rows,"person supervises themself, or their supervisor's supervisor is them",0,0,"",pass,wap_phase1_dq_v1
+DQ07c,warn,T_JOB_DETL_HIST,Supervisor id that is not a person with any appointment,supervisor_person_id not in the appointment table,0,0,"",pass,wap_phase1_dq_v1
+DQ08,info,T_JOB_DETL_HIST,Appointment rows deleted in source (CUR_INFO_IND = D); excluded from current knowledge,is_deleted,112,109,991000007/Q00821/2024-07-02; 991000016/Q00473/2009-07-02; 991000018/Q00018/2005-07-04; 991000035/Q00035/2007-07-04; 991000035/Q00035/2010-07-05,warn,wap_phase1_dq_v1
+DQ08b,info,T_EMPEE_HIST,Employment rows deleted in source (CUR_INFO_IND = D),current_info_ind in deleted values,10,10,991000343/1991-03-31; 991000921/2012-07-23; 991000967/2013-02-23; 991001054/2014-02-10; 991001180/2015-09-29,warn,wap_phase1_dq_v1
+DQ08c,info,T_POSN_HIST,Position rows deleted in source (CUR_INFO_IND = D),current_info_ind in deleted values,0,0,"",pass,wap_phase1_dq_v1
+DQ09,error,T_JOB_DETL_HIST,"Duplicate primary key (person, position, suffix, eff_date, recorded_start)",count(*) > 1 per key,0,0,"",pass,wap_phase1_dq_v1
+DQ09b,error,T_JOB_DETL_HIST,Lineage with more than one open (currently known) version,"more than one row with known_to = open end per (person, position, suffix, eff_date)",0,0,"",pass,wap_phase1_dq_v1
+DQ10,error,T_JOB_DETL_HIST,Appointment person with no person record,person_id not in the person table,0,0,"",pass,wap_phase1_dq_v1
+DQ10b,warn,T_EMPEE_HIST,Appointment person with no employment record,person_id not in the employment table,0,0,"",pass,wap_phase1_dq_v1
+DQ10c,warn,T_EMPEE_HIST,Employment row whose effective interval is not covered by any appointment of the person (current knowledge),"no appointment row overlapping [valid_from, least(valid_to, extract)] for Active employment rows",1,1,991000250/1998-03-09,warn,wap_phase1_dq_v1
+DQ11,warn,T_JOB_DETL_HIST,Class key with no role family (Unassigned),x_class.role_family_source = 'unassigned',0,0,"",pass,wap_phase1_dq_v1
+DQ11b,info,T_POSN_HIST,Position class with no job-progression ladder,x_ladder.ladder_code IS NULL,0,0,"",pass,wap_phase1_dq_v1
+DQ12,info,T_JOB_DETL_HIST,Rows effective after the extract date (Future),valid_from > extract date,0,0,"",pass,wap_phase1_dq_v1
+DQ12b,info,T_JOB_DETL_HIST,Late-keyed rows: first known more than 30 days after they took effect,min(known_from) over the row's lineage (all versions) - valid_from > 30 days,1378,875,991000003/Q00241/2008-06-02; 991000003/Q00406/2008-06-02; 991000003/Q00436/2016-11-05; 991000006/Q00006/2011-03-10; 991000006/Q00272/2011-03-10,warn,wap_phase1_dq_v1
+DQ13,error,T_PERS_HIST,Restricted or fairness-only fields exposed in the canonical person view,mapping roles restricted / restricted_fairness_only must be hidden,0,0,"",pass,wap_phase1_dq_v1

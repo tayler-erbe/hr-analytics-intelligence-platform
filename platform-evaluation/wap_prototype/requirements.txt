@@ -1,0 +1,6 @@
+# Already present in the evaluation environment (Python 3.13); nothing new was pip-installed for wap_prototype.
+duckdb==2.0.0
+pyarrow==26.0.1
+numpy==2.4.6
+pandas==2.3.3
+PyYAML

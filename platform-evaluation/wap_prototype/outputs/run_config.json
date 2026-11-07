@@ -1,0 +1,143 @@
+{
+ "data_source": "v3_longitudinal",
+ "set_name": "longitudinal",
+ "as_of_date": "None",
+ "job_change_date_column": "JOB_DETL_EFF_DT",
+ "hist_mode_known_from": "post_date",
+ "snapshot_frequency": "Q",
+ "snapshot_start": "2016-03-31",
+ "min_cell_size": 10,
+ "leave_status_codes": [
+  "B",
+  "F"
+ ],
+ "mapping_file": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/integration/edw_mapping_cookbook.yaml",
+ "sample_pack_path": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/sample_datasets/v3_cookbook",
+ "edw_data": null,
+ "integrated_db": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/data/lake/integrated/integrated_longitudinal.duckdb",
+ "target_horizons_months": {
+  "promoted": [
+   12,
+   18
+  ],
+  "separated": [
+   6,
+   12
+  ],
+  "retired": [
+   12
+  ]
+ },
+ "promotion_rule_version": "candidate_v1_ladder_or_role_family_level_up",
+ "surs_assumption": {
+  "rule_version": "assumption_v1",
+  "tier1_if_first_hire_before": "2011-01-01",
+  "tier1": {
+   "unreduced": [
+    [
+     55,
+     8
+    ],
+    [
+     62,
+     5
+    ],
+    [
+     0,
+     30
+    ]
+   ],
+   "reduced": [
+    [
+     55,
+     8
+    ]
+   ]
+  },
+  "tier2": {
+   "unreduced": [
+    [
+     67,
+     10
+    ]
+   ],
+   "reduced": [
+    [
+     62,
+     10
+    ]
+   ]
+  },
+  "within_years": 5
+ },
+ "role_family_sources": [
+  "sample_role_family_reference",
+  "integration_dim_job_class_internal",
+  "employee_group_fallback",
+  "unassigned"
+ ],
+ "tenure_buckets": [
+  [
+   0,
+   3,
+   "0-3"
+  ],
+  [
+   3,
+   7,
+   "3-7"
+  ],
+  [
+   7,
+   15,
+   "7-15"
+  ],
+  [
+   15,
+   999,
+   "15+"
+  ]
+ ],
+ "age_bands": [
+  [
+   0,
+   25,
+   "<25"
+  ],
+  [
+   25,
+   35,
+   "25-34"
+  ],
+  [
+   35,
+   40,
+   "35-39"
+  ],
+  [
+   40,
+   45,
+   "40-44"
+  ],
+  [
+   45,
+   55,
+   "45-54"
+  ],
+  [
+   55,
+   60,
+   "55-59"
+  ],
+  [
+   60,
+   65,
+   "60-64"
+  ],
+  [
+   65,
+   200,
+   "65+"
+  ]
+ ]
+}

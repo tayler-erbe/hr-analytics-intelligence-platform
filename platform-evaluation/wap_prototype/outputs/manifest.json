@@ -1,0 +1,259 @@
+{
+ "config": {
+  "age_bands": [
+   [
+    0,
+    25,
+    "<25"
+   ],
+   [
+    25,
+    35,
+    "25-34"
+   ],
+   [
+    35,
+    40,
+    "35-39"
+   ],
+   [
+    40,
+    45,
+    "40-44"
+   ],
+   [
+    45,
+    55,
+    "45-54"
+   ],
+   [
+    55,
+    60,
+    "55-59"
+   ],
+   [
+    60,
+    65,
+    "60-64"
+   ],
+   [
+    65,
+    200,
+    "65+"
+   ]
+  ],
+  "as_of_date": "None",
+  "data_source": "v3_longitudinal",
+  "edw_data": null,
+  "hist_mode_known_from": "post_date",
+  "integrated_db": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/data/lake/integrated/integrated_longitudinal.duckdb",
+  "job_change_date_column": "JOB_DETL_EFF_DT",
+  "leave_status_codes": [
+   "B",
+   "F"
+  ],
+  "mapping_file": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/integration/edw_mapping_cookbook.yaml",
+  "min_cell_size": 10,
+  "promotion_rule_version": "candidate_v1_ladder_or_role_family_level_up",
+  "role_family_sources": [
+   "sample_role_family_reference",
+   "integration_dim_job_class_internal",
+   "employee_group_fallback",
+   "unassigned"
+  ],
+  "sample_pack_path": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/sample_datasets/v3_cookbook",
+  "set_name": "longitudinal",
+  "snapshot_frequency": "Q",
+  "snapshot_start": "2016-03-31",
+  "surs_assumption": {
+   "rule_version": "assumption_v1",
+   "tier1": {
+    "reduced": [
+     [
+      55,
+      8
+     ]
+    ],
+    "unreduced": [
+     [
+      55,
+      8
+     ],
+     [
+      62,
+      5
+     ],
+     [
+      0,
+      30
+     ]
+    ]
+   },
+   "tier1_if_first_hire_before": "2011-01-01",
+   "tier2": {
+    "reduced": [
+     [
+      62,
+      10
+     ]
+    ],
+    "unreduced": [
+     [
+      67,
+      10
+     ]
+    ]
+   },
+   "within_years": 5
+  },
+  "target_horizons_months": {
+   "promoted": [
+    12,
+    18
+   ],
+   "retired": [
+    12
+   ],
+   "separated": [
+    6,
+    12
+   ]
+  },
+  "tenure_buckets": [
+   [
+    0,
+    3,
+    "0-3"
+   ],
+   [
+    3,
+    7,
+    "3-7"
+   ],
+   [
+    7,
+    15,
+    "7-15"
+   ],
+   [
+    15,
+    999,
+    "15+"
+   ]
+  ]
+ },
+ "dq_summary": {
+  "fail": 2,
+  "pass": 18,
+  "warn": 5
+ },
+ "event_counts": {
+  "hire": 2302,
+  "job_end": 1467,
+  "leave": 48,
+  "no_change": 57,
+  "pay_change": 13546,
+  "promotion": 804,
+  "reactivation": 5,
+  "retirement": 36,
+  "separation_end_of_appointment": 472,
+  "separation_resignation": 972,
+  "transfer_down": 66,
+  "transfer_lateral": 592
+ },
+ "extract": {
+  "date_mode": "eff_date",
+  "deleted_appointment_rows": 112,
+  "has_ladder": true,
+  "has_role_family_reference": true,
+  "has_supervisor": true,
+  "hist_mode_known_from": "n/a (lineage_next)",
+  "integrated_attached": true,
+  "integrated_db": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/data/lake/integrated/integrated_longitudinal.duckdb",
+  "knowledge_date": "2027-01-31",
+  "mapping_file": "/home/user/hr-analytics-intelligence-platform/platform-evaluation/integration/edw_mapping_cookbook.yaml",
+  "rows": {
+   "x_appointment": 36811,
+   "x_class": 38,
+   "x_employment": 3888,
+   "x_ladder": 38,
+   "x_leave": 48,
+   "x_org_path": 58,
+   "x_position": 1256,
+   "x_separation": 1480
+  }
+ },
+ "features": {
+  "first_snapshot": "2016-03-31",
+  "last_snapshot": "2026-12-31",
+  "persons": 1668,
+  "rows": 31993,
+  "snapshots": 44,
+  "supervisor_data_available": false
+ },
+ "reconciliation_summary": {
+  "fail": 0,
+  "info": 0,
+  "pass": 25,
+  "skipped": 0
+ },
+ "restricted_fairness_fields": [
+  "sex_code",
+  "gender_code",
+  "race_eth_rpt_code",
+  "ipeds_race_eth",
+  "citizenship_group",
+  "veteran_class"
+ ],
+ "run_at_note": "no timestamps: outputs are deterministic for a given input",
+ "tables": {
+  "dq_issue_register": {
+   "columns": 10,
+   "csv_sha256": "6e0964481b5038116ed5b011a3d369340b311a28e7f9e2b554de1f314d8d9426",
+   "location": "outputs/",
+   "rows": 25
+  },
+  "feature_summary": {
+   "columns": 17,
+   "csv_sha256": "f471b51818a40bef5da7aebc7371c4ef5d41f8b05d7cffc9af957c94c501c8a3",
+   "location": "outputs/",
+   "rows": 1452
+  },
+  "person_demographics_restricted": {
+   "columns": 9,
+   "csv_sha256": "2d3168b2c9f0cbcbe712536b400680c26b2c25c0953709c7d7f1c01fec06ded9",
+   "location": "outputs/restricted/ (never leaves the machine)",
+   "rows": 2302
+  },
+  "person_period_features": {
+   "columns": 93,
+   "csv_sha256": "c78c34f5071e2187de0cb16c667905b0afc226a2099086d37fc2c81056825987",
+   "location": "outputs/restricted/ (never leaves the machine)",
+   "rows": 31993
+  },
+  "transition_counts": {
+   "columns": 7,
+   "csv_sha256": "2abcabb2c9a2ee9d937bf1fc152325712dfc6c44d6ff19e4e840d68f7459feff",
+   "location": "outputs/",
+   "rows": 3969
+  },
+  "transition_events": {
+   "columns": 59,
+   "csv_sha256": "a33185132e2b1251a12ae5d334741b9ea913a2e68701c2f44dcc6378731a0f7d",
+   "location": "outputs/restricted/ (never leaves the machine)",
+   "rows": 20367
+  },
+  "unit_quarter_aggregates": {
+   "columns": 15,
+   "csv_sha256": "46158f25320cf4b85c3de2cb1f9d57b7fcc9d6fe979d5a18e6e2e0319f3be8eb",
+   "location": "outputs/",
+   "rows": 9375
+  },
+  "unit_year_aggregates": {
+   "columns": 13,
+   "csv_sha256": "20251d68fd4ba1975f9ce9d94749c1378e02a5c564c53f09c2ce0c9f7b7441eb",
+   "location": "outputs/",
+   "rows": 363
+  }
+ }
+}

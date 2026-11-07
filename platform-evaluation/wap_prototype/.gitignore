@@ -1,0 +1,5 @@
+# Person-level outputs never leave the machine (CODEX_HANDOFF.md section 2).
+outputs/restricted/
+outputs/*.duckdb
+outputs/*.duckdb.wal
+__pycache__/
