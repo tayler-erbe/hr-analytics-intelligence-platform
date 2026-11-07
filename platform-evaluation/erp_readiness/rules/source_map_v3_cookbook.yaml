@@ -1,0 +1,382 @@
+# Source map v3: binds the 43-rule catalog (rules/catalog.yaml) to the Data-Cookbook-shaped synthetic
+# EDW pack in sample_datasets/v3_cookbook/{longitudinal,CLEAN}.
+#
+# This file is read ONLY by erp_readiness/v3/run_v3.py. The v1 map (source_map.yaml) and the core
+# toolkit are untouched: run_v3.py loads this map, applies the switches below (`${name}` tokens),
+# creates the `prepared` views, and then calls the unchanged common.staging_sql / run_checks code.
+#
+# Layers:
+#   raw Cookbook tables (edw.T_JOB_DETL_HIST ...)  --prepared-->  edw.V3_* views  --views-->  stg_*/ref_*
+#
+# Everything the rules cannot see in the Cookbook layout is handled in `prepared` or in a column
+# expression here, never in the catalog:
+#   * inclusive *_EXP_DT with 9999-12-31 open end (Cookbook-confirmed; same convention as v1);
+#   * CUR_INFO_IND Y/N/D: D rows (deleted in source) are excluded from every prepared view, so no
+#     catalog rule sees them; their consistency is checked by v3/supplementary_rules.yaml (X01, X02);
+#   * terminations live on T_EMPEE_HIST (TERMN_REASON_CD, EMPEE_TERMN_DT) and on the secured copy
+#     T_EMPEE_HIST_5: switch `termination_source`; X04 compares the two;
+#   * OPEN_POSN_IND is not used by the catalog (which infers vacancy from jobs); X05 compares it;
+#   * POSN_STATUS_CD A/C/F/I: the rules only test = 'A' / <> 'A', so C, F and I all count as inactive;
+#   * class codes: the job carries the 5-char P-Class, the position carries PAPE_CIV_SVC_ID, and the
+#     class table T_POSN_CLS_HIST is keyed by the 4-digit SUCSS code (or the local P-Class):
+#     switch `class_key_source` builds one class key on both sides (the "SUCSS bridge");
+#   * status descriptions instead of codes on job detail: recoded in stg_job.status_cd;
+#   * the two-date job key (JOB_DETL_EFF_DT business date + JOB_DETL_HIST_EFF_DT record version):
+#     switch `job_change_date` chooses which date is the change date and how versions collapse.
+#
+# Dialect note: the prepared layer is executed by DuckDB only. Two expressions in the `recorded`
+# variant use `- INTERVAL 1 DAY` (DuckDB); on another engine treat them like common.add_one_day.
+version: 3
+physical_schema: edw
+pack_dir: sample_datasets/v3_cookbook       # relative to platform-evaluation/
+
+# ------------------------------------------------------------------ switches
+# run_v3.py --switch name=value. Every `${name}` token in `prepared` / `views` is replaced by the
+# chosen option's text. Defaults are the Cookbook reading documented in sample_datasets/v3_cookbook.
+switches:
+  job_change_date:
+    default: business
+    doc: >-
+      Which of the two job dates is the change date for history rules (J01 overlap, J02 gap, J03
+      inversion, J08 future, as-of helpers). `business`: JOB_DETL_EFF_DT is the change date; each
+      lineage (EDW_PERS_ID, POSN_NBR, JOB_SUFFIX, JOB_DETL_EFF_DT) collapses to its latest non-deleted
+      record version (max JOB_DETL_HIST_EFF_DT), i.e. current knowledge. `recorded`: the hypothesis
+      that JOB_DETL_HIST_EFF_DT is the source version date; every non-deleted version is a row, a
+      superseded version ends the day before the next version of its lineage.
+    options:
+      business: |
+        SELECT j.*, j.JOB_DETL_EFF_DT AS JOB_CHG_DT, ${job_end_date} AS JOB_END_DT
+        FROM edw.T_JOB_DETL_HIST j
+        WHERE j.JOB_DETL_CUR_INFO_IND <> 'D'
+          AND j.JOB_DETL_HIST_EFF_DT = (SELECT MAX(v.JOB_DETL_HIST_EFF_DT) FROM edw.T_JOB_DETL_HIST v
+                                        WHERE v.EDW_PERS_ID = j.EDW_PERS_ID AND v.POSN_NBR = j.POSN_NBR
+                                          AND v.JOB_SUFFIX = j.JOB_SUFFIX AND v.JOB_DETL_EFF_DT = j.JOB_DETL_EFF_DT
+                                          AND v.JOB_DETL_CUR_INFO_IND <> 'D')
+      recorded: |
+        SELECT x.*,
+               CASE WHEN x.NXT_HIST_EFF_DT IS NULL THEN x.LINEAGE_END_DT
+                    WHEN CAST(x.NXT_HIST_EFF_DT - INTERVAL 1 DAY AS DATE) < x.LINEAGE_END_DT
+                         THEN CAST(x.NXT_HIST_EFF_DT - INTERVAL 1 DAY AS DATE)
+                    ELSE x.LINEAGE_END_DT END AS JOB_END_DT
+        FROM (SELECT j.*, j.JOB_DETL_HIST_EFF_DT AS JOB_CHG_DT, ${job_end_date} AS LINEAGE_END_DT,
+                     LEAD(j.JOB_DETL_HIST_EFF_DT) OVER (PARTITION BY j.EDW_PERS_ID, j.POSN_NBR, j.JOB_SUFFIX, j.JOB_DETL_EFF_DT
+                                                        ORDER BY j.JOB_DETL_HIST_EFF_DT) AS NXT_HIST_EFF_DT
+              FROM edw.T_JOB_DETL_HIST j
+              WHERE j.JOB_DETL_CUR_INFO_IND <> 'D') x
+  job_end_date:
+    default: exp_dt
+    doc: >-
+      End date of a job row. `exp_dt`: JOB_DETL_EXP_DT (Cookbook: inclusive last effective date,
+      9999-12-31 open). `data_exp_dt`: JOB_DETL_DATA_EXP_DT, the EDW-derived implied end (day before the
+      job's next effective row, capped at JOB_DETL_EXP_DT); use it if JOB_DETL_EXP_DT turns out not to
+      be maintained on superseded rows.
+    options:
+      exp_dt: j.JOB_DETL_EXP_DT
+      data_exp_dt: j.JOB_DETL_DATA_EXP_DT
+  class_key_source:
+    default: bridge
+    doc: >-
+      How the class key compared against T_POSN_CLS_HIST (and between job and position in S07) is
+      built. `bridge`: position key = 4-digit PAPE_CIV_SVC_ID, else REF_PCLS_SUCSS_XWALK lookup of
+      POSN_CLS_CD, else the P-Class; job key = REF_PCLS_SUCSS_XWALK lookup of JOB_DETL_POSN_CLS_CD,
+      else the P-Class (the job table has no SUCSS code). `pclass`: the raw 5-character P-Class on both
+      sides; only meaningful if the class table turns out to be keyed by P-Class.
+    options:
+      bridge: bridge
+      pclass: pclass
+  fte_unit:
+    default: fraction
+    doc: >-
+      JOB_DETL_FTE is described by the Cookbook as a percentage but stored as 1.000 in the pack.
+      `fraction`: fte = JOB_DETL_FTE * JOB_DETL_APPT_PCT / 100. `percent`: fte = JOB_DETL_FTE / 100 *
+      JOB_DETL_APPT_PCT / 100 (if real data stores 100.000).
+    options:
+      fraction: (JOB_DETL_FTE * JOB_DETL_APPT_PCT / 100)
+      percent: (JOB_DETL_FTE / 100 * JOB_DETL_APPT_PCT / 100)
+  termination_source:
+    default: secured
+    doc: >-
+      Where stg_termination (E04) reads terminations. `secured`: T_EMPEE_HIST_5 (the Cookbook's
+      secured termination table). `primary`: the termination columns of T_EMPEE_HIST. X04 checks that
+      the two agree.
+    options:
+      secured: |
+        SELECT t.* FROM edw.T_EMPEE_HIST_5 t
+        WHERE t.EMPEE_CUR_INFO_IND <> 'D' AND t.EMPEE_TERMN_DT IS NOT NULL
+      primary: |
+        SELECT t.EDW_PERS_ID, t.EMPEE_EFF_DT, t.EMPEE_EXP_DT, t.EMPEE_CUR_INFO_IND,
+               t.TERMN_REASON_CD, t.TERMN_REASON_DESC, t.EMPEE_TERMN_DT
+        FROM edw.T_EMPEE_HIST t
+        WHERE t.EMPEE_CUR_INFO_IND <> 'D' AND t.EMPEE_TERMN_DT IS NOT NULL
+  pay_earnings_category:
+    default: E
+    doc: >-
+      PAYR_ACCTG_CATGRY_CD letter of earnings/expense rows (synthetic in the pack; the Cookbook lists
+      earnings, deductions, net pay, budget adjustment and encumbrance without letters). Only these
+      rows feed stg_pay, so encumbrance/liquidation pairs and deductions never reach Y01-Y05.
+    options:
+      E: "'E'"
+
+# ------------------------------------------------------------------ raw tables
+# Loaded from <set>/<TABLE>.parquet into schema edw. Optional tables that a set lacks are created
+# EMPTY with `fallback_columns`, and rules that depend on them are reported as `not_evaluable`
+# (never as a pass). Longitudinal has no payroll, no REF_HIERARCHY_ROOT and no REF_EMPEE_CLS.
+physical_tables:
+  T_JOB_DETL_HIST: {cookbook_verified: true, banner_source: NBRJOBS / NBRBJOB}
+  T_EMPEE_HIST: {cookbook_verified: true, banner_source: PEBEMPL}
+  T_EMPEE_HIST_5: {cookbook_verified: true, banner_source: PEBEMPL termination fields (secured)}
+  T_POSN_HIST: {cookbook_verified: true, banner_source: NBBPOSN / NBRPTOT}
+  T_PERS_HIST: {cookbook_verified: true, banner_source: SPRIDEN / SPBPERS}
+  T_PAYR_ACCTG_DETL:
+    cookbook_verified: true
+    banner_source: PHRHIST / PHRDOCM labor distribution
+    optional: true
+    fallback_columns: {PAYR_ACCTG_TRAN_NBR: BIGINT, EDW_PERS_ID: INTEGER, POSN_NBR: VARCHAR, JOB_SUFFIX: VARCHAR,
+                       PAYR_ACCTG_EFF_DT: DATE, PAYR_ACCTG_EARNS_CD: VARCHAR, PAYR_EVENT_TYPE_CD: VARCHAR,
+                       PAYR_ACCTG_CATGRY_CD: VARCHAR, PAYR_ACCTG_EXPS_AMT: "DECIMAL(15,2)", ORG_CD: VARCHAR}
+  T_POSN_CLS_HIST: {cookbook_verified: false, banner_source: NTRPCLS + SUCSS catalog (v2 layout; keyed by SUCSS code or local P-Class)}
+  REF_PCLS_SUCSS_XWALK: {cookbook_verified: false, banner_source: none (synthetic P-Class -> SUCSS bridge)}
+  REF_ECLS_PUBLIC: {cookbook_verified: false, banner_source: PTRECLS (public kb120378 list)}
+  REF_ORG: {cookbook_verified: false, banner_source: FTVORGN (v2 layout + hierarchy level, chart)}
+  X_JOB_CONTRACT_TYPE: {cookbook_verified: false, banner_source: NBRBJOB contract type P/S/O (not a Cookbook column; synthetic side table)}
+  REF_HIERARCHY_ROOT:
+    cookbook_verified: false
+    banner_source: none (steward list of top-of-house positions)
+    optional: true
+    fallback_columns: {POSN_NBR: VARCHAR}
+
+# ------------------------------------------------------------------ prepared views (created in order)
+prepared:
+  - name: V3_JOB_ROWS
+    doc: One row per job change (see switch job_change_date); deleted rows excluded; JOB_CHG_DT / JOB_END_DT added.
+    sql: ${job_change_date}
+  - name: V3_POSN
+    doc: >-
+      Non-deleted position versions with the bridged class key POSN_CLS_KEY and POSN_ORG_CD_DERIVED (the
+      Cookbook position table has no org column; the org of the position's latest job row stands in, else the
+      campus org of its chart, as the integration layer does).
+    sql: |
+      SELECT p.*,
+             CASE WHEN '${class_key_source}' = 'pclass' THEN p.POSN_CLS_CD
+                  ELSE COALESCE(CASE WHEN LENGTH(p.PAPE_CIV_SVC_ID) = 4 THEN p.PAPE_CIV_SVC_ID END,
+                                w.SUCSS_CLS_CD, p.POSN_CLS_CD) END AS POSN_CLS_KEY,
+             COALESCE((SELECT MAX(j.ORG_CD) FROM edw.V3_JOB_ROWS j
+                       WHERE j.POSN_NBR = p.POSN_NBR
+                         AND j.JOB_CHG_DT = (SELECT MAX(k.JOB_CHG_DT) FROM edw.V3_JOB_ROWS k WHERE k.POSN_NBR = p.POSN_NBR)),
+                      (SELECT MIN(o.ORG_CD) FROM edw.REF_ORG o WHERE o.COA_CD = p.COA_CD AND o.ORG_HIER_LEVEL_NBR = 1)) AS POSN_ORG_CD_DERIVED
+      FROM edw.T_POSN_HIST p
+      LEFT JOIN edw.REF_PCLS_SUCSS_XWALK w ON w.POSN_CLS_CD = p.POSN_CLS_CD
+      WHERE p.POSN_HIST_CUR_INFO_IND <> 'D'
+  - name: V3_JOB
+    doc: V3_JOB_ROWS plus contract type (X_JOB_CONTRACT_TYPE) and the bridged class key JOB_CLS_KEY.
+    sql: |
+      SELECT r.*, x.JOB_CONTRACT_TYPE_CD,
+             CASE WHEN '${class_key_source}' = 'pclass' THEN r.JOB_DETL_POSN_CLS_CD
+                  ELSE COALESCE(w.SUCSS_CLS_CD, r.JOB_DETL_POSN_CLS_CD) END AS JOB_CLS_KEY
+      FROM edw.V3_JOB_ROWS r
+      LEFT JOIN edw.X_JOB_CONTRACT_TYPE x
+        ON x.EDW_PERS_ID = r.EDW_PERS_ID AND x.POSN_NBR = r.POSN_NBR AND x.JOB_SUFFIX = r.JOB_SUFFIX
+      LEFT JOIN edw.REF_PCLS_SUCSS_XWALK w ON w.JOB_DETL_POSN_CLS_CD = r.JOB_DETL_POSN_CLS_CD
+  - name: V3_EMPLOYEE
+    doc: Non-deleted employee rows (update-in-place table; one version per key survives).
+    sql: SELECT e.* FROM edw.T_EMPEE_HIST e WHERE e.EMPEE_CUR_INFO_IND <> 'D'
+  - name: V3_TERMINATION
+    doc: Termination rows (see switch termination_source).
+    sql: ${termination_source}
+  - name: V3_PERSON
+    doc: Non-deleted person versions.
+    sql: SELECT p.* FROM edw.T_PERS_HIST p WHERE p.PERS_CUR_INFO_IND <> 'D'
+  - name: V3_PAY
+    doc: Earnings/expense rows only (see switch pay_earnings_category).
+    sql: SELECT y.* FROM edw.T_PAYR_ACCTG_DETL y WHERE y.PAYR_ACCTG_CATGRY_CD = ${pay_earnings_category}
+  - name: V3_ECLS
+    doc: >-
+      Employee-class reference from the public E-Class list (present in both sets). The group names are
+      recoded to the CS/AP/FA/GA codes the catalog tests; pay basis is assumed SAL for every class because
+      the pack has no pay-basis column and every job carries an annual salary (hourly classes on real data
+      need the PTRECLS pay basis here, or C02/C03 will false-positive).
+    sql: |
+      SELECT r.EMPEE_CLS_CD,
+             CASE r.EMPEE_CLS_GROUP WHEN 'civil_service' THEN 'CS' WHEN 'academic_professionals' THEN 'AP'
+                                    WHEN 'faculty' THEN 'FA' WHEN 'grads_and_pre_doc_fellows' THEN 'GA'
+                                    ELSE UPPER(r.EMPEE_CLS_GROUP) END AS ECLS_GROUP,
+             CAST('SAL' AS VARCHAR(4)) AS PAY_BASIS,
+             r.EMPEE_CLS_DESC
+      FROM edw.REF_ECLS_PUBLIC r
+
+# ------------------------------------------------------------------ logical views
+# Same logical names and columns as source_map.yaml. The physical side may be an expression.
+# EDW_PERS_ID is NUMBER(9) in the Cookbook; rules concatenate ids into entity keys, so it is cast
+# to VARCHAR once here (and the supervisor id the same way) rather than in 43 rules.
+views:
+  stg_person:
+    table: V3_PERSON
+    banner_source: SPRIDEN / SPBPERS via T_PERS_HIST (Cookbook-verified columns)
+    interval: {eff: PERS_HIST_EFF_DT, exp: PERS_EXP_DT, end: inclusive}
+    columns:
+      pers_id: CAST(EDW_PERS_ID AS VARCHAR(9))
+      eff_dt: PERS_HIST_EFF_DT
+      # No national-ID hash exists in the pack and SSN/UIN must never be extracted. On the real EDW
+      # bind this to a hash computed inside the warehouse; here P01 is UNBOUND (see rule_bindings).
+      natl_id_hash: CAST(NULL AS VARCHAR(64))
+      # Name columns exist (Cookbook) but are NULL by policy in the pack, so P02 cannot fire.
+      first_name: PERS_FNAME
+      last_name: PERS_LNAME
+      birth_dt: BIRTH_DT
+  stg_employee:
+    table: V3_EMPLOYEE
+    banner_source: PEBEMPL via T_EMPEE_HIST (Cookbook-verified columns)
+    interval: {eff: EMPEE_EFF_DT, exp: EMPEE_EXP_DT, end: inclusive}
+    columns:
+      pers_id: CAST(EDW_PERS_ID AS VARCHAR(9))
+      eff_dt: EMPEE_EFF_DT
+      # Cookbook: A active, B leave without pay, F leave with pay; T (terminated) is the pack's
+      # unconfirmed letter. Leave letters are recoded to the catalog's 'L'.
+      status_cd: CASE WHEN EMPEE_STATUS_CD IN ('B', 'F') THEN 'L' ELSE EMPEE_STATUS_CD END
+      ecls_cd: EMPEE_CLS_CD
+      first_hire_dt: FIRST_HIRE_DT
+      cur_hire_dt: CUR_HIRE_DT
+      home_org_cd: ORG_CD
+  stg_termination:
+    table: V3_TERMINATION
+    banner_source: PEBEMPL termination fields via T_EMPEE_HIST_5 (secured) or T_EMPEE_HIST
+    columns:
+      pers_id: CAST(EDW_PERS_ID AS VARCHAR(9))
+      term_dt: EMPEE_TERMN_DT
+      term_reason_cd: TERMN_REASON_CD
+      # Cookbook rule for EMPEE_RET_IND (the secured table has no such column): TR/TF => Y.
+      surs_retir_ind: CASE WHEN TERMN_REASON_CD IN ('TR', 'TF') THEN 'Y' ELSE 'N' END
+  stg_job:
+    table: V3_JOB
+    banner_source: NBRJOBS / NBRBJOB via T_JOB_DETL_HIST (Cookbook-verified) + X_JOB_CONTRACT_TYPE (synthetic)
+    interval: {eff: JOB_CHG_DT, exp: JOB_END_DT, end: inclusive}
+    columns:
+      pers_id: CAST(EDW_PERS_ID AS VARCHAR(9))
+      posn_nbr: POSN_NBR
+      suffix: JOB_SUFFIX
+      eff_dt: JOB_CHG_DT
+      contract_type: JOB_CONTRACT_TYPE_CD
+      # The Cookbook carries a description, not a code. Leave spellings are unconfirmed, so anything
+      # starting with 'Leave' is treated as L; other unknown descriptions keep their first letter.
+      status_cd: >-
+        CASE WHEN JOB_DETL_STATUS_DESC = 'Active' THEN 'A' WHEN JOB_DETL_STATUS_DESC = 'Terminated' THEN 'T'
+             WHEN UPPER(JOB_DETL_STATUS_DESC) LIKE 'LEAVE%' THEN 'L' ELSE SUBSTR(JOB_DETL_STATUS_DESC, 1, 1) END
+      fte: ${fte_unit}
+      annual_sal: JOB_DETL_ANNL_SAL
+      class_cd: JOB_CLS_KEY
+      ecls_cd: JOB_DETL_EMPEE_CLS_CD
+      org_cd: ORG_CD
+      supervisor_pers_id: CAST(SUPV_EDW_PERS_ID AS VARCHAR(9))
+  stg_position:
+    table: V3_POSN
+    banner_source: NBBPOSN / NBRPTOT via T_POSN_HIST (Cookbook-verified)
+    interval: {eff: POSN_HIST_EFF_DT, exp: POSN_HIST_EXP_DT, end: inclusive}
+    columns:
+      posn_nbr: POSN_NBR
+      eff_dt: POSN_HIST_EFF_DT
+      status_cd: POSN_STATUS_CD
+      class_cd: POSN_CLS_KEY
+      # The Cookbook position table has NO organization column. The org of the position's latest job
+      # row stands in (so O06 keeps working and no NULL entity ids reach the register); S06, which would
+      # compare a job org with an org derived from jobs, is UNBOUND as circular.
+      org_cd: POSN_ORG_CD_DERIVED
+      # No budgeted-FTE column; POSN_APPT_PCT NUMBER(5,4) is the position appointment fraction.
+      budget_fte: POSN_APPT_PCT
+  stg_pay:
+    table: V3_PAY
+    banner_source: PHRHIST / PHRDOCM via T_PAYR_ACCTG_DETL (Cookbook-verified; CLEAN only)
+    columns:
+      pers_id: CAST(EDW_PERS_ID AS VARCHAR(9))
+      posn_nbr: POSN_NBR
+      suffix: JOB_SUFFIX
+      # The Cookbook comment for PAYR_ACCTG_EFF_DT is unconfirmed; the pack sets it to the pay-period end.
+      period_end_dt: PAYR_ACCTG_EFF_DT
+      # Event type folded into the earnings code so that a void (V) + reissue (I) pair is not reported
+      # by Y05 as a duplicate of the original (C) row.
+      earn_cd: PAYR_ACCTG_EARNS_CD || '/' || PAYR_EVENT_TYPE_CD
+      amount: PAYR_ACCTG_EXPS_AMT
+      org_cd: ORG_CD
+      seq_nbr: PAYR_ACCTG_TRAN_NBR
+  ref_class:
+    table: T_POSN_CLS_HIST
+    banner_source: NTRPCLS + SUCSS catalog (v2 layout, keyed by SUCSS code or local P-Class; ranges synthetic)
+    columns:
+      class_cd: POSN_CLS_CD
+      class_source: CLS_SOURCE
+      class_title: POSN_CLS_DESC
+      min_annual: MIN_ANNUAL_AMT
+      max_annual: MAX_ANNUAL_AMT
+  ref_ecls:
+    table: V3_ECLS
+    banner_source: PTRECLS via the public E-Class list (REF_ECLS_PUBLIC)
+    columns:
+      ecls_cd: EMPEE_CLS_CD
+      ecls_group: ECLS_GROUP
+      pay_basis: PAY_BASIS
+      ecls_desc: EMPEE_CLS_DESC
+  ref_org:
+    table: REF_ORG
+    banner_source: FTVORGN (v2 layout plus ORG_HIER_LEVEL_NBR and COA_CD)
+    columns:
+      org_cd: ORG_CD
+      parent_org_cd: PARENT_ORG_CD
+      status_cd: ORG_STATUS_CD
+      org_title: ORG_TITLE
+  ref_hierarchy_root:
+    table: REF_HIERARCHY_ROOT
+    banner_source: none - steward list (CLEAN only; empty in longitudinal)
+    columns:
+      posn_nbr: POSN_NBR
+
+# ------------------------------------------------------------------ per-rule binding record
+# For every catalog rule: the logical columns it depends on (view.column) and, where the pack cannot
+# support the rule, the reason. run_v3.py reports a rule as `unbound` when listed under `unbound`,
+# `not_evaluable` when one of its raw tables is absent from the set, and `vacuous` when a column it
+# depends on is NULL on every row and it found nothing. Such rules are excluded from domain scores.
+rule_bindings:
+  P01: {columns: [stg_person.pers_id, stg_person.natl_id_hash],
+        unbound: "no national-ID hash in the Cookbook layout; SSN/UIN are prohibited and NULL in the pack"}
+  P02: {columns: [stg_person.pers_id, stg_person.first_name, stg_person.last_name, stg_person.birth_dt],
+        unbound: "PERS_FNAME/PERS_LNAME exist but are NULL by policy in the pack (never synthesized)"}
+  P03: {columns: [stg_person.pers_id, stg_person.eff_dt, stg_person.exp_dt]}
+  P04: {columns: [stg_person.birth_dt, stg_employee.status_cd, stg_job.status_cd]}
+  P05: {columns: [stg_employee.pers_id, stg_person.pers_id]}
+  E01: {columns: [stg_employee.pers_id, stg_employee.eff_dt, stg_employee.exp_dt]}
+  E02: {columns: [stg_employee.pers_id, stg_employee.eff_dt, stg_employee.exp_dt]}
+  E03: {columns: [stg_employee.status_cd, stg_job.status_cd, stg_job.posn_nbr]}
+  E04: {columns: [stg_employee.status_cd, stg_termination.term_dt]}
+  E05: {columns: [stg_employee.first_hire_dt, stg_employee.cur_hire_dt]}
+  E06: {columns: [stg_employee.status_cd, stg_job.status_cd]}
+  E07: {columns: [stg_employee.ecls_cd, ref_ecls.ecls_cd]}
+  E08: {columns: [stg_employee.eff_dt]}
+  J01: {columns: [stg_job.pers_id, stg_job.posn_nbr, stg_job.suffix, stg_job.eff_dt, stg_job.exp_dt]}
+  J02: {columns: [stg_job.pers_id, stg_job.posn_nbr, stg_job.suffix, stg_job.eff_dt, stg_job.exp_dt]}
+  J03: {columns: [stg_job.eff_dt, stg_job.exp_dt]}
+  J04: {columns: [stg_job.contract_type, stg_job.status_cd]}
+  J05: {columns: [stg_job.contract_type, stg_job.status_cd]}
+  J06: {columns: [stg_job.fte, stg_job.status_cd]}
+  J07: {columns: [stg_job.fte, stg_job.status_cd]}
+  J08: {columns: [stg_job.eff_dt]}
+  S01: {columns: [stg_position.status_cd, stg_position.eff_dt, stg_job.posn_nbr, stg_job.status_cd]}
+  S02: {columns: [stg_position.budget_fte, stg_job.fte]}
+  S03: {columns: [stg_position.posn_nbr, stg_position.eff_dt, stg_position.exp_dt]}
+  S04: {columns: [stg_job.posn_nbr, stg_position.posn_nbr]}
+  S05: {columns: [stg_position.status_cd, stg_job.posn_nbr]}
+  S06: {columns: [stg_job.org_cd, stg_position.org_cd],
+        unbound: "T_POSN_HIST has no organization column (Cookbook); a position's org is derived from its jobs, so the comparison is circular"}
+  S07: {columns: [stg_job.class_cd, stg_position.class_cd]}
+  C01: {columns: [stg_job.class_cd, stg_job.ecls_cd, ref_ecls.ecls_group, ref_class.class_cd, ref_class.class_source]}
+  C02: {columns: [stg_job.annual_sal, stg_job.fte, ref_ecls.pay_basis, ref_class.min_annual]}
+  C03: {columns: [stg_job.annual_sal, stg_job.fte, ref_ecls.pay_basis, ref_class.max_annual]}
+  C04: {columns: [stg_job.class_cd]}
+  O01: {columns: [stg_job.contract_type, stg_job.supervisor_pers_id, ref_hierarchy_root.posn_nbr]}
+  O02: {columns: [stg_job.contract_type, stg_job.supervisor_pers_id, stg_employee.status_cd]}
+  O03: {columns: [stg_job.contract_type, stg_job.supervisor_pers_id]}
+  O04: {columns: [stg_job.contract_type, stg_job.supervisor_pers_id]}
+  O05: {columns: [ref_org.org_cd, ref_org.parent_org_cd]}
+  O06: {columns: [stg_job.org_cd, ref_org.org_cd, ref_org.status_cd]}
+  Y01: {columns: [stg_pay.pers_id, stg_pay.posn_nbr, stg_pay.suffix, stg_job.pers_id]}
+  Y02: {columns: [stg_pay.period_end_dt, stg_employee.status_cd]}
+  Y03: {columns: [stg_pay.posn_nbr, stg_position.posn_nbr]}
+  Y04: {columns: [stg_pay.amount, stg_pay.period_end_dt]}
+  Y05: {columns: [stg_pay.earn_cd, stg_pay.amount, stg_pay.seq_nbr]}

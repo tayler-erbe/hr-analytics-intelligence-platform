@@ -1,0 +1,158 @@
+# Supplementary consistency checks for the Cookbook layout. They are NOT part of the 43-rule catalog
+# (the catalog has no config hook for extra rules) and are not scored; run_v3.py runs them after the
+# catalog and reports them in a separate block of the register and summary.
+#
+# They run against the raw Cookbook tables (edw.*), the prepared views (edw.V3_*) and the catalog
+# helpers (cur_job, cur_posn ...). Same output contract as catalog rules: (entity_type, entity_id,
+# detail). `population_sql` returns one count. Portability contract as the catalog, except that the
+# physical layer is addressed directly, so these are tied to the Cookbook column names by design.
+version: 0.1
+rules:
+- id: X01
+  name: Current-info indicator disagrees with the data status description
+  severity: high
+  owner: AITS Decision Support (EDW load)
+  population: history rows (job, employee, employee_5, position, person)
+  note: Y must be Current, D must be Deleted, N must be Expired or Future; anything else is a load inconsistency.
+  population_sql: |
+    SELECT (SELECT COUNT(*) FROM edw.T_JOB_DETL_HIST) + (SELECT COUNT(*) FROM edw.T_EMPEE_HIST)
+         + (SELECT COUNT(*) FROM edw.T_EMPEE_HIST_5) + (SELECT COUNT(*) FROM edw.T_POSN_HIST)
+         + (SELECT COUNT(*) FROM edw.T_PERS_HIST) AS n
+  sql: |
+    SELECT 'row' AS entity_type, u.tbl || '|' || u.k AS entity_id,
+           'CUR_INFO_IND ' || COALESCE(u.ind, '(null)') || ' vs DATA_STATUS ' || COALESCE(u.ds, '(null)') AS detail
+    FROM (SELECT 'T_JOB_DETL_HIST' AS tbl,
+                 CAST(EDW_PERS_ID AS VARCHAR(9)) || '|' || POSN_NBR || '|' || JOB_SUFFIX || '|' || CAST(JOB_DETL_EFF_DT AS VARCHAR(30)) || '|' || CAST(JOB_DETL_HIST_EFF_DT AS VARCHAR(30)) AS k,
+                 JOB_DETL_CUR_INFO_IND AS ind, JOB_DETL_DATA_STATUS_DESC AS ds FROM edw.T_JOB_DETL_HIST
+          UNION ALL
+          SELECT 'T_EMPEE_HIST', CAST(EDW_PERS_ID AS VARCHAR(9)) || '|' || CAST(EMPEE_EFF_DT AS VARCHAR(30)),
+                 EMPEE_CUR_INFO_IND, EMPEE_DATA_STATUS_DESC FROM edw.T_EMPEE_HIST
+          UNION ALL
+          SELECT 'T_EMPEE_HIST_5', CAST(EDW_PERS_ID AS VARCHAR(9)) || '|' || CAST(EMPEE_EFF_DT AS VARCHAR(30)),
+                 EMPEE_CUR_INFO_IND, EMPEE_DATA_STATUS_DESC FROM edw.T_EMPEE_HIST_5
+          UNION ALL
+          SELECT 'T_POSN_HIST', POSN_NBR || '|' || CAST(POSN_HIST_EFF_DT AS VARCHAR(30)),
+                 POSN_HIST_CUR_INFO_IND, POSN_DATA_STATUS_DESC FROM edw.T_POSN_HIST
+          UNION ALL
+          SELECT 'T_PERS_HIST', CAST(EDW_PERS_ID AS VARCHAR(9)) || '|' || CAST(PERS_HIST_EFF_DT AS VARCHAR(30)),
+                 PERS_CUR_INFO_IND, PERS_DSD FROM edw.T_PERS_HIST) u
+    WHERE u.ind IS NULL OR u.ind NOT IN ('Y', 'N', 'D')
+       OR (u.ind = 'Y' AND COALESCE(u.ds, '') <> 'Current')
+       OR (u.ind = 'D' AND COALESCE(u.ds, '') <> 'Deleted')
+       OR (u.ind = 'N' AND COALESCE(u.ds, '') NOT IN ('Expired', 'Future'))
+- id: X02
+  name: Job key or employee known only through deleted (D) rows
+  severity: medium
+  owner: AITS Decision Support (EDW load) with unit HR
+  population: job keys + employees (all rows)
+  note: >-
+    D rows are excluded from every catalog rule. An entity whose every row is D silently disappears from
+    the conversion scope; stewards should confirm the deletion was intended.
+  population_sql: |
+    SELECT (SELECT COUNT(*) FROM (SELECT DISTINCT EDW_PERS_ID, POSN_NBR, JOB_SUFFIX FROM edw.T_JOB_DETL_HIST) a)
+         + (SELECT COUNT(DISTINCT EDW_PERS_ID) FROM edw.T_EMPEE_HIST) AS n
+  sql: |
+    SELECT 'job' AS entity_type, CAST(j.EDW_PERS_ID AS VARCHAR(9)) || '|' || j.POSN_NBR || '|' || j.JOB_SUFFIX AS entity_id,
+           'every job row is D' AS detail
+    FROM edw.T_JOB_DETL_HIST j
+    GROUP BY j.EDW_PERS_ID, j.POSN_NBR, j.JOB_SUFFIX
+    HAVING SUM(CASE WHEN j.JOB_DETL_CUR_INFO_IND <> 'D' THEN 1 ELSE 0 END) = 0
+    UNION
+    SELECT 'person', CAST(e.EDW_PERS_ID AS VARCHAR(9)), 'every employee row is D'
+    FROM edw.T_EMPEE_HIST e
+    GROUP BY e.EDW_PERS_ID
+    HAVING SUM(CASE WHEN e.EMPEE_CUR_INFO_IND <> 'D' THEN 1 ELSE 0 END) = 0
+- id: X03
+  name: Job current-info indicator disagrees with the as-of state computed from effective dates
+  severity: high
+  owner: AITS Decision Support (EDW load)
+  population: job keys (non-deleted)
+  note: >-
+    A 'Y' Active row should be the row the catalog's cur_job helper selects on the extract date, and an
+    Active row effective on the extract date should be flagged 'Y'. Disagreement means the indicator and the
+    dates tell different stories (or the extract date is wrong).
+  population_sql: SELECT COUNT(*) AS n FROM (SELECT DISTINCT EDW_PERS_ID, POSN_NBR, JOB_SUFFIX FROM edw.V3_JOB) k
+  sql: |
+    SELECT DISTINCT 'job' AS entity_type, r.k AS entity_id, r.detail
+    FROM (SELECT CAST(v.EDW_PERS_ID AS VARCHAR(9)) || '|' || v.POSN_NBR || '|' || v.JOB_SUFFIX AS k,
+                 CASE WHEN v.JOB_DETL_CUR_INFO_IND = 'Y' THEN 'flagged current but not active on as-of by dates'
+                      ELSE 'active on as-of by dates but not flagged current' END AS detail,
+                 v.JOB_DETL_CUR_INFO_IND AS ind, v.JOB_DETL_STATUS_DESC AS st, v.JOB_CHG_DT, v.JOB_END_DT
+          FROM edw.V3_JOB v) r
+    WHERE (r.ind = 'Y' AND r.st = 'Active' AND NOT EXISTS (SELECT 1 FROM cur_job c WHERE c.job_key = r.k))
+       OR (r.ind <> 'Y' AND r.st = 'Active' AND r.JOB_CHG_DT <= {{AS_OF}} AND r.JOB_END_DT >= {{AS_OF}})
+- id: X04
+  name: Termination on T_EMPEE_HIST and the secured copy T_EMPEE_HIST_5 disagree
+  severity: critical
+  owner: IHR HR Records with AITS Decision Support
+  population: persons with a termination on either table
+  note: Same key, date and reason must appear on both; restricted roles read only the secured table.
+  population_sql: |
+    SELECT COUNT(*) AS n FROM (SELECT EDW_PERS_ID FROM edw.T_EMPEE_HIST WHERE EMPEE_TERMN_DT IS NOT NULL
+                               UNION SELECT EDW_PERS_ID FROM edw.T_EMPEE_HIST_5 WHERE EMPEE_TERMN_DT IS NOT NULL) p
+  sql: |
+    SELECT DISTINCT 'person' AS entity_type, CAST(a.EDW_PERS_ID AS VARCHAR(9)) AS entity_id,
+           'termination ' || CAST(a.EMPEE_TERMN_DT AS VARCHAR(30)) || ' on T_EMPEE_HIST has no equal secured row' AS detail
+    FROM edw.T_EMPEE_HIST a
+    WHERE a.EMPEE_TERMN_DT IS NOT NULL AND a.EMPEE_CUR_INFO_IND <> 'D'
+      AND NOT EXISTS (SELECT 1 FROM edw.T_EMPEE_HIST_5 b
+                      WHERE b.EDW_PERS_ID = a.EDW_PERS_ID AND b.EMPEE_EFF_DT = a.EMPEE_EFF_DT
+                        AND b.EMPEE_TERMN_DT = a.EMPEE_TERMN_DT AND b.TERMN_REASON_CD = a.TERMN_REASON_CD
+                        AND b.EMPEE_CUR_INFO_IND <> 'D')
+    UNION
+    SELECT DISTINCT 'person', CAST(b.EDW_PERS_ID AS VARCHAR(9)),
+           'secured termination ' || CAST(b.EMPEE_TERMN_DT AS VARCHAR(30)) || ' has no equal T_EMPEE_HIST row'
+    FROM edw.T_EMPEE_HIST_5 b
+    WHERE b.EMPEE_TERMN_DT IS NOT NULL AND b.EMPEE_CUR_INFO_IND <> 'D'
+      AND NOT EXISTS (SELECT 1 FROM edw.T_EMPEE_HIST a
+                      WHERE a.EDW_PERS_ID = b.EDW_PERS_ID AND a.EMPEE_EFF_DT = b.EMPEE_EFF_DT
+                        AND a.EMPEE_TERMN_DT = b.EMPEE_TERMN_DT AND a.TERMN_REASON_CD = b.TERMN_REASON_CD
+                        AND a.EMPEE_CUR_INFO_IND <> 'D')
+- id: X05
+  name: OPEN_POSN_IND disagrees with active incumbents on the extract date
+  severity: medium
+  owner: IHR Position Control
+  population: current position versions
+  note: >-
+    The Cookbook says to use OPEN_POSN_IND alongside job history, not instead of it. 'N' (filled) with no
+    active job, or 'Y' (open) with one, means the indicator and the job history disagree.
+  population_sql: SELECT COUNT(*) AS n FROM edw.T_POSN_HIST WHERE POSN_HIST_CUR_INFO_IND = 'Y'
+  sql: |
+    SELECT 'position' AS entity_type, p.POSN_NBR AS entity_id,
+           'OPEN_POSN_IND ' || COALESCE(p.OPEN_POSN_IND, '(null)') || ' but active jobs on as-of: ' ||
+           CAST((SELECT COUNT(*) FROM cur_job j WHERE j.posn_nbr = p.POSN_NBR) AS VARCHAR(10)) AS detail
+    FROM edw.T_POSN_HIST p
+    WHERE p.POSN_HIST_CUR_INFO_IND = 'Y'
+      AND ((p.OPEN_POSN_IND = 'N' AND NOT EXISTS (SELECT 1 FROM cur_job j WHERE j.posn_nbr = p.POSN_NBR))
+        OR (p.OPEN_POSN_IND = 'Y' AND EXISTS (SELECT 1 FROM cur_job j WHERE j.posn_nbr = p.POSN_NBR)))
+- id: X06
+  name: Live job key with no contract type (P/S/O) in X_JOB_CONTRACT_TYPE
+  severity: high
+  owner: IHR HRIS (job type source still to be located)
+  population: job keys (non-deleted)
+  note: >-
+    Job type is not a Cookbook column; the pack keeps it in a side table. J04/J05/O01-O04 are only
+    meaningful for keys that have one. On the real EDW this points at the missing NBRBJOB source.
+  population_sql: SELECT COUNT(*) AS n FROM (SELECT DISTINCT EDW_PERS_ID, POSN_NBR, JOB_SUFFIX FROM edw.V3_JOB) k
+  sql: |
+    SELECT DISTINCT 'job' AS entity_type, CAST(v.EDW_PERS_ID AS VARCHAR(9)) || '|' || v.POSN_NBR || '|' || v.JOB_SUFFIX AS entity_id,
+           'no contract type' AS detail
+    FROM edw.V3_JOB v WHERE v.JOB_CONTRACT_TYPE_CD IS NULL
+- id: X07
+  name: Position class bridge inconsistent (PAPE_CIV_SVC_ID vs P-Class crosswalk, or civil-service position without a 4-digit identifier)
+  severity: high
+  owner: IHR Classification (SUCSS liaison)
+  population: current position versions
+  note: >-
+    The SUCSS bridge takes a 4-digit PAPE_CIV_SVC_ID first and the P-Class crosswalk second. If both exist
+    and disagree, or a civil-service position (E-Class C*/D*) has no 4-digit identifier, C01-C03 and S07
+    may be judging the wrong class.
+  population_sql: SELECT COUNT(*) AS n FROM edw.T_POSN_HIST WHERE POSN_HIST_CUR_INFO_IND = 'Y'
+  sql: |
+    SELECT 'position' AS entity_type, p.POSN_NBR AS entity_id,
+           'PAPE ' || COALESCE(p.PAPE_CIV_SVC_ID, '(null)') || ', P-Class ' || p.POSN_CLS_CD || ' -> xwalk ' || COALESCE(w.SUCSS_CLS_CD, '(none)') || ', E-Class ' || p.POSN_EMPEE_CLS_CD AS detail
+    FROM edw.T_POSN_HIST p
+    LEFT JOIN edw.REF_PCLS_SUCSS_XWALK w ON w.POSN_CLS_CD = p.POSN_CLS_CD
+    WHERE p.POSN_HIST_CUR_INFO_IND = 'Y'
+      AND ((LENGTH(p.PAPE_CIV_SVC_ID) = 4 AND w.SUCSS_CLS_CD IS NOT NULL AND w.SUCSS_CLS_CD <> p.PAPE_CIV_SVC_ID)
+        OR (SUBSTR(p.POSN_EMPEE_CLS_CD, 1, 1) IN ('C', 'D') AND (p.PAPE_CIV_SVC_ID IS NULL OR LENGTH(p.PAPE_CIV_SVC_ID) <> 4)))
